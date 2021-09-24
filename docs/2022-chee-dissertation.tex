@@ -1,0 +1,207 @@
+\documentclass[edeposit,fullpage,12pt]{uiucthesis2009}
+% Use draftthesis for notes and date markings on every page.  Useful when you
+%   have multiple copies floating around.
+% Use offcenter for the extra .5 inch on the left side. Needed with fullpage and fancy.
+% Use mixcasechap for compatibility with hyperref package, which does NOT like all caps default
+% Use edeposit for the adviser/committee on the title page.
+% Use tocnosub to suppress subsection and lower entries in the TOC.
+% PhD candidates use "proquest" for the proquest abstract.
+
+\makeatletter
+
+\usepackage{setspace}
+%\usepackage{epsfig}  % for figures
+\usepackage{graphicx}  % another package that works for figures
+\usepackage{multirow}
+\usepackage{placeins}
+\usepackage{caption}  % allows center figures caption
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\newcolumntype{b}{>{\hsize=1.0\hsize}X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{x}{>{\hsize=.25\hsize}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} 
+\def\arraystretch{1}
+\graphicspath{{figures/}}
+%\usepackage{subfigure}  % for subfigures
+\usepackage{amsmath}  % for math spacing
+%\usepackage{amssymb}  % for math spacing
+%\usepackage{url}  % Hyphenation of URLs.
+\usepackage{lscape}  % Useful for wide tables or figures.
+\usepackage[justification=raggedright]{caption}	% makes captions ragged right - thanks to Bryce Lobdell
+%\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[acronym,toc]{glossaries}  % acronyms inclusion
+\usepackage{color,soul}
+%\makeglossary
+\usepackage{xspace}
+\usepackage{float}
+\usepackage{subcaption}
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
+\newcommand{\deploy}{\texttt{d3ploy}\xspace}%
+%\glspatchtabularx
+\usepackage{amsmath}%
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, shapes}
+\usetikzlibrary{shapes.geometric,arrows}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+\definecolor{illiniblue}{HTML}{B1C6E2}
+\definecolor{illiniorange}{HTML}{f8c2a2}
+\definecolor{fhrblue}{HTML}{0000ff}
+\definecolor{fhrgrey}{HTML}{808080}
+\definecolor{fhrblack}{HTML}{040404}
+\definecolor{fhrred}{HTML}{f10a0a}
+\definecolor{fhrgreen}{HTML}{2f6d39}
+\definecolor{fhryellow}{HTML}{fdfe36}
+\definecolor{fhrpink}{HTML}{ffb8c5}
+\definecolor{fhrorange}{HTML}{ffa500}
+\definecolor{fhrpurple}{HTML}{800080}
+\definecolor{pink}{HTML}{e2b1c2}
+\definecolor{green}{HTML}{c2e2b1}
+\definecolor{purple}{HTML}{b9b1e2}
+\tikzstyle{loblock} = [rectangle, draw, fill=illiniorange, 
+text width=15em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{lbblock} = [rectangle, draw, fill=illiniblue, 
+text width=15em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{oblock} = [rectangle, draw, fill=illiniorange, 
+text width=10em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{bblock} = [rectangle, draw, fill=illiniblue, 
+text width=10em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{bbblock} = [rectangle, draw, fill=illiniblue, 
+text width=1em, text centered, rounded corners, minimum height=1em]
+\tikzstyle{boblock} = [rectangle, draw, fill=illiniorange, 
+text width=1em, text centered, rounded corners, minimum height=1em]
+\tikzstyle{b72block} = [rectangle, draw, fill=illiniblue, 
+text width=7.3em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{b82block} = [rectangle, draw, fill=illiniblue, 
+text width=8em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{b223block} = [rectangle, draw, fill=illiniblue, 
+text width=22em, text centered, rounded corners, minimum height=3em]
+\usepackage[document]{ragged2e}
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{minted}
+% Uncomment the appropriate one of the following four lines:
+%\msthesis
+\phdthesis
+%\otherdoctorate[abbrev]{Title of Degree}
+%\othermasters[abbrev]{Title of Degree}
+
+\title{Fluoride-Salt-Cooled High-Temperature Reactor Design Optimization with Evolutionary Algorithms}
+\author{Gwendolyn J.Y. Chee}
+\department{Nuclear, Plasma, and Radiological Engineering}
+\degreeyear{2022}
+
+% Advisor name is required for
+% - doctoral students for the ProQuest abstract
+% - master's students who do not have a master's committee
+%\advisor{Professor Kathryn D. Huff}
+
+% Uncomment the \committee command for
+% - all doctoral students
+% - master's students who have a master's committee
+\committee{Associate Professor Kathryn D. Huff, Chair \\
+           Research Scientist Madicken Munk \\
+           Associate Professor Tomasz Kozlowski \\
+           Professor James F. Stubbins \\
+           Research Assistant Professor Huy Trong Tran} 
+
+\begin{document}
+\include{acros}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE
+%
+\maketitle
+\justify
+\parindent 2em%
+
+%\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT
+%
+
+%\begin{abstract}
+%    \input{abs}
+%\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS
+%
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF TABLES
+%
+% The List of Tables is not strictly necessary. Omitting the List of Tables will
+% simplify the thesis check and reduce the number of corrections.
+%\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF FIGURES
+%
+% The List of Figures is not strictly necessary. Omitting the List of Figures will
+% simplify the thesis check and reduce the number of corrections.
+%\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF ABBREVIATIONS
+%
+% The List of Abbreviations is not strictly necessary.
+%\chapter{LIST OF ABBREVIATIONS}
+
+%\printacronyms
+%\begin{symbollist*}
+%\item[MSBR] Molten Salt Breeder Reactor
+%\item[MSR] Molten Salt Reactor
+%\item[ORNL] Oak Ridge National Laboratory
+%\end{symbollist*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIST OF SYMBOLS
+%
+%\begin{symbollist}[0.7in]
+%\item[$\tau$] Time taken to drink one cup of coffee.
+%\end{symbollist}
+
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INSERT REAL CONTENT HERE
+%
+\include{intro}	
+\include{lit-review}
+\include{fhr-benchmark}
+\include{rollo}
+\include{single-obj}
+\include{multi-obj}
+\include{concl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX
+%
+%\appendix
+%\include{apx}
+
+\backmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+%
+%\bibliographystyle{plainurl}
+%\bibliography{2021-chee-dissertation}
+
+\end{document}
