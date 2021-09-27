@@ -664,10 +664,10 @@ input file is set false, \gls{ROLLO} will delete each directory once it
 extracts the fitness values. 
 
 \section{ROLLO Verification}
-To verify \gls{ROLLO}’s optimization capabilities, I conducted two verification studies: 
+To verify \gls{ROLLO}'s optimization capabilities, I conducted two verification studies: 
 a commonly used evolutionary algorithm benchmark problem and a nuclear 
 reactor-specific problem. 
-Together, they prove that \gls{ROLLO}’s evolutionary algorithm is correctly implemented 
+Together, they prove that \gls{ROLLO}'s evolutionary algorithm is correctly implemented 
 and suitable for conducting nuclear reactor optimization problems. 
 
 \subsection{Ackley Function}
@@ -677,32 +677,32 @@ for optimization algorithms \cite{ackley_connectionist_2012}:
     f(x) &= -a \cdot exp \left(-b\sqrt{\frac{1}{d}\Sigma_{i=1}^dx_i^2}\right) - 
     exp \left(\frac{1}{d}\Sigma_{i=1}^d cos(cx_i)\right) + a + exp(1) 
 \end{align}
-The recommended variable values are $a=20$, $b=0.2$, and $c=2\pi$. 
+The recommended variable values are $a=20$, $b=0.2$, and $c=2\pi$
+\cite{noauthor_ackley_nodate}. 
+The Ackley function's global optimum point is $f(0,0) = 0$. 
 Figure \ref{fig:ackley} shows the resulting two-variable Ackley function.
-\begin{figure}[]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{figures/ackley.png} 
+    \includegraphics[width=0.7\linewidth]{figures/ackley.png} 
     \caption{Two variable Ackley function \cite{noauthor_ackley_nodate}.}
     \label{fig:ackley}
 \end{figure}
-The Ackley function's global optimum point is $f(0,0) = 0$. 
 
-I added an integration test to \gls{ROLLO} that checks that a default \gls{ROLLO} simulation 
-will find the Ackley function's global optimum point. 
+I added an integration test to \gls{ROLLO} that checks that a default \gls{ROLLO} 
+simulation will find the Ackley function's global optimum point. 
 \gls{ROLLO} successfully passes it. 
 
 
 \subsection{Pu239 Critical Bare Sphere}
 To ensure \gls{ROLLO} works correctly while coupled with OpenMC, I run \gls{ROLLO} 
-to find the critical radius for a Plutonium-239 bare sphere. 
+to find the critical radius for a $^{239}Pu$ bare sphere. 
 The solution to this problem is well studied and available \cite{blanchard_updated_1999}. 
 Blanchard et al reported that with MCNP4b code and ENDF/B-VI data library, the 
 critical mass of a Pu239 bare sphere is 10.00 kg which corresponds to a diameter 
 of 9.9cm \cite{blanchard_updated_1999}.
-
-Figure \ref{fig:verification_sphere} shows the ROLLO input file for this verification 
+Figure \ref{fig:verification-sphere} shows the ROLLO input file for this verification 
 problem. 
-\begin{figure}[]
+\begin{figure}[H]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -726,29 +726,71 @@ problem.
             "algorithm": {
                 "parallel": "multiprocessing",
                 "objective": ["min"],
-                "optimized_variable": ["radius"],
-                "pop_size": 80,
-                "generations": 10,
+                "optimized_variable": ["radius"]
             }
         }
-        
     \end{minted}
     \caption{\acrfull{ROLLO} JSON input file for finding the minimum radius for 
     a $^{239}Pu$ Critical Bare Sphere.}
-    \label{fig:rollo-input}
+    \label{fig:verification-sphere}
+\end{figure}
+Figure \ref{fig:critical_sphere.py} shows the OpenMC template used in the 
+\gls{ROLLO} simulation. 
+\begin{figure}[H]
+    \begin{minted}[
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+        ]{python}
+            import openmc 
+            import numpy as np
+            
+            pu = openmc.Material()
+            pu.set_density("g/cm3", 19.84)
+            pu.add_nuclide("Pu239", 1)
+            mats = openmc.Materials([pu])
+            
+            radius = {{radius}}
+            
+            fuel_sphere = openmc.Sphere(r=radius, boundary_type='vacuum')
+            fuel_cell = openmc.Cell(fill=pu, region=-fuel_sphere)
+            univ = openmc.Universe(cells=[fuel_cell])
+            geom = openmc.Geometry(univ)
+            
+            settings = openmc.Settings()
+            settings.batches = 100
+            settings.inactive = 20
+            settings.particles = 20000
+            settings.temperature = {"multipole": True, "method": "interpolation"}
+            
+            mats.export_to_xml()
+            geom.export_to_xml()
+            settings.export_to_xml()
+            openmc.run()
+    \end{minted}
+    \caption{OpenMC template input file used in ROLLO simulation to find the 
+    minimum radius for a $^{239}Pu$ Critical Bare Sphere.}
+    \label{fig:critical_sphere.py}
+\end{figure}  
+
+Figure \ref{fig:verification-radius} and \ref{fig:verification-keff} show the 
+critical radius and $k_{eff}$ evolution through the evolutionary algorithm's 
+generations. 
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{verification-radius.png}} 
+    \caption{Minimum, average, and maximum radius values evolution.}
+    \label{fig:verification-radius}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{verification-keff.png}}
+        \caption{Minimum, average, and maximum $k_{eff}$ values evolution.}
+        \label{fig:verification-keff}
+    \end{subfigure}
+    \caption{.}
+    \label{fig:verification-keff}
 \end{figure}
 
-
-\section{Summary}
-This chapter described the \acrfull{ROLLO} framework developed as
-preliminary work for the proposed PhD scope.
-\gls{ROLLO} is a Python package that applies evolutionary algorithm 
-optimization techniques to nuclear reactor design using the \acrfull{DEAP} 
-module, OpenMC, and Moltres. 
-The motivation for \gls{ROLLO} is to enable reactor designers to utilize 
-robust evolutionary algorithm optimization methods without going 
-through the cumbersome process of setting up a genetic algorithm framework,
-selecting appropriate hyperparameters, and setting up its parallelization. 
-\gls{ROLLO} is designed to be effective, flexible, open-source, parallel, 
-reproducible, and usable. 
-\gls{ROLLO} is hosted on Github \cite{chee_rollo_2021}. 
