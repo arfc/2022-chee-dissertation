@@ -693,7 +693,7 @@ simulation will find the Ackley function's global optimum point.
 \gls{ROLLO} successfully passes it. 
 
 
-\subsection{Pu239 Critical Bare Sphere}
+\subsection{Pu-239 Critical Bare Sphere}
 To ensure \gls{ROLLO} works correctly while coupled with OpenMC, I run \gls{ROLLO} 
 to find the critical radius for a $^{239}Pu$ bare sphere. 
 The solution to this problem is well studied and available \cite{blanchard_updated_1999}. 
@@ -702,6 +702,8 @@ critical mass of a Pu239 bare sphere is 10.00 kg which corresponds to a diameter
 of 9.9cm \cite{blanchard_updated_1999}.
 Figure \ref{fig:verification-sphere} shows the ROLLO input file for this verification 
 problem. 
+In the input file, I vary the radius between 1.0 and 8.0cm, with the objective of 
+minimizing radius, while constraining the problem to have $k_{eff} >= 1.0$.
 \begin{figure}[H]
     \begin{minted}[
         frame=lines,
@@ -775,9 +777,15 @@ Figure \ref{fig:critical_sphere.py} shows the OpenMC template used in the
     \label{fig:critical_sphere.py}
 \end{figure}  
 
+\gls{ROLLO} successfully finds the critical radius of the $^{239}Pu$ bare sphere 
+to be 4.9856cm which corresponds to approximately a 9.9cm diameter. 
+The critical sphere's $k_{eff}$ value is 1.00919 $\pm$ 0.00048. 
 Figure \ref{fig:verification-radius} and \ref{fig:verification-keff} show the 
-critical radius and $k_{eff}$ evolution through the evolutionary algorithm's 
+radius and $k_{eff}$ evolution through the evolutionary algorithm's 
 generations. 
+They demonstrate how the average radius and $k_{eff}$ converge
+towards the critical radius while keeping $k_{eff} > 1$ with improvements from 
+each generation.
 \begin{figure}[]
     \centering
     \begin{subfigure}{\textwidth}
@@ -790,7 +798,7 @@ generations.
         \caption{Minimum, average, and maximum $k_{eff}$ values evolution.}
         \label{fig:verification-keff}
     \end{subfigure}
-    \caption{.}
-    \label{fig:verification-keff}
+    \caption{Results for each generation for \gls{ROLLO}'s genetic algorithm optimization 
+    to the find the critical radius of a  $^{239}Pu$ bare sphere.}
 \end{figure}
 
