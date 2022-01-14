@@ -1,0 +1,471 @@
+\chapter{AHTR Slab Optimization}
+In this chapter, I demonstrated using \gls{ROLLO} to conduct single objective 
+\gls{AHTR} optimization for non-conventional geometries and parameters.
+To wholly explore the design space enabled by additive manufacturing, the 
+optimization tool should enable placement of fuel, moderation, and coolant material 
+in any possible location, within physical limits. 
+Since exploration of non-conventional geometries and parameters has not been done, 
+before a simple first attempt approach is taken for this dissertation. 
+I limited the problem's scope to vary the following \gls{AHTR} parameters: 
+\begin{itemize}
+    \item \gls{TRISO} particle packing fraction distribution, $\rho_{TRISO}(\vec{r})$
+    \item Total fuel packing fraction
+    \item \gls{FLiBe} coolant channel shape 
+\end{itemize} 
+Three reactor optimization objectives were selected to address contrasting 
+reactor core qualities. 
+Table \ref{tab:objectives} describes the optimization objectives, how I quantified 
+them, and the motivation for each.
+\begin{table}[!htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{ROLLO} optimization problem objectives with their quantification 
+    descriptions, and motivation.}
+	\label{tab:objectives}
+    \footnotesize
+    \begin{tabular}{p{4cm}p{5cm}p{5cm}}
+    \hline 
+    \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
+    \hline
+    Minimize fuel amount & Minimize total fuel packing fraction & Cost savings, Non-proliferation \\ 
+    \hline
+    Maximize heat transfer & Minimize maximum temperature & Enable system to perform at a higher power with minimized thermal stress \\
+    \hline
+    Minimize normalized power peaking factor & Minimize $P_{high}-P_{ave}$ & Efficient fuel utilization, longer core life, safety\\
+    \hline
+    \end{tabular}
+\end{table}
+% top objectives of any reactor optimization process. 
+% explain why each objective is important 
+% should explore more optimization objectives, but this is good for 
+% the scope of the dissertation
+\gls{ROLLO} drives the evolutionary algorithm optimization process, and 
+utilizes both OpenMC and Moltres software to model the AHTR fuel slab to 
+calculate the problem's objective and constraint values. 
+
+In this chapter, I explore optimizing the AHTR slab geometry for these three 
+objectives. 
+Chapter \ref{ahtr_rollo_assembly} will explore optimizing the AHTR one-third 
+fuel assembly.
+Table \ref{tab:single-obj-breakdown} shows the details of each \gls{ROLLO} 
+optimization problem explored in this chapter.
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
+    fuel slab. $PF$: Total Fuel Packing Fraction, $T_{max}$: Maximum Slab Temperature, 
+    $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
+    \gls{TRISO} particle distribution}
+	\label{tab:single-obj-breakdown}
+    \footnotesize
+    \begin{tabular}{cllll}
+    \hline 
+    \textbf{Num Objectives} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \hline
+    1 & \tabitem max($k_{eff}$) & - &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    1 & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+      & & & \tabitem $PF$ & \\
+    1 & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    1 & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    1 & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
+      & & & \tabitem $PF$ & \\
+    1 & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
+    1 & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
+    \hline
+    2 & \tabitem min($PF$) & $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+      & \tabitem min($T_{max}$) & & \tabitem $PF$ & \\
+    2 & \tabitem min($PF$) & $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+      & \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    2 & \tabitem min($T_{max}$) & $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+      & \tabitem min($PPF$) & & & \\
+    \hline
+    3 & \tabitem min($PF$) & $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & \tabitem min($PPF$) & & \tabitem $PF$ & \\
+      & \tabitem min($T_{max}$) & & & \\
+    \hline
+    \end{tabular}
+\end{table}
+In the subsequent sections, I will describe the AHTR slab geometry, how 
+I set up and verified each of their the OpenMC and Moltres models, and the 
+results of the single and multi objective \gls{AHTR} optimization problems. 
+
+\section{AHTR Slab Geometry}
+% how the slab is set up etc
+% 5.1.1 from prelim 
+The \gls{AHTR} fuel slab used in this problem has straightened perpendicular 
+sides, instead of slanted as in Figure \ref{fig:ahtr-fuel-plank}. 
+Figure \ref{fig:straightened_slab} illustrates the straightened fuel slab.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.85\linewidth]{straightened_slab.png}
+    \begin{tikzpicture}
+        \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+        \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+        \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+       \tkzText[above](-0.3,-0.7){}
+       \end{tikzpicture} 
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+
+            \end{tabular}}}
+    \caption{Straightened \acrfull{AHTR} fuel slab with reflective boundary 
+    conditions. Original slanted fuel slabs can be seen in Figures 
+    \ref{fig:ahtr-fuel-assembly} and \ref{fig:ahtr-fuel-plank}.}
+    \label{fig:straightened_slab}
+\end{figure}
+The slab has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
+boundary conditions.
+I use the same materials as in the \gls{FHR} benchmark, except that I homogenized 
+each \gls{TRISO} particle's four outer layers: 
+porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the 
+outer pyrolytic carbon. 
+The \gls{TRISO} particle dimensions remain the same.
+Table \ref{tab:keff_triso} reports OpenMC's reported $k_{eff}$ for this original 
+straightened \gls{AHTR} configuration with and without the outer layer \gls{TRISO} 
+homogenization.
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{Straightened \acrfull{AHTR} fuel slab $k_{eff}$ for case with 
+    no \gls{TRISO} homogenization and case with homogenization of the four outer 
+    layers. Both simulations were run on one BlueWaters XE Node.}
+	\label{tab:keff_triso}
+    \footnotesize
+    \begin{tabular}{llc}
+    \hline 
+    \textbf{TRISO Homogenization}& \textbf{$k_{eff}$} & \textbf{Simulation time [s]}  \\
+    \hline 
+    None & $1.38548 \pm 0.00124$ & 233\\ 
+    Four outer layers & $1.38625 \pm 0.00109$ & 168\\ 
+    \hline
+    \end{tabular}
+\end{table}
+The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
+speed-up without compromising accuracy with $k_{eff}$ values within each 
+other's uncertainty.
+
+\section{Optimization Problem Definition}
+In this section, I describe the AHTR slab modeling workflow: from the AHTR geometry 
+variation input parameters, to the OpenMC and Moltres models, and finally the 
+output and constraint values. 
+Figure \ref{fig:ahtr-slab-flow} illustrates the modeling workflow. 
+\begin{figure}[]
+    \centering
+    \begin{tikzpicture}[node distance=0.5cm]
+        \tikzstyle{every node}=[font=\footnotesize]
+        \node (1) [e72block] {\textit{Total PF}};
+        \node (2) [b72block, right=of 1] {\textbf{PF}};
+        \node (3) [e72block, above=of 2] {Input Parameters};
+        \node (4) [e72block, below=of 1] {$\rho_{TRISO}(\vec{r})$};
+        \node (5) [b72block, right=of 4] {\textbf{a, b, c}};
+        \node (6) [e72block, below=of 4] {FliBE Coolant Channel Shape};
+        \node (7) [b72block, right=of 6] {?};
+        \node (8) [o72block, right=of 2, xshift=0.8cm, yshift=0.5cm] {OpenMC Model};
+        \node (9) [e72block, above=of 8] {Input Files};
+        \node (10) [o72block, right=of 5, xshift=0.8cm] {Group Constants};
+        \node (11) [o72block, right=of 7, xshift=0.8cm, yshift=-0.5cm] {Moltres Model};
+        \node (12) [b72block, right=of 8, xshift=0.8cm, yshift=0.8cm] {$k_{eff}$}; 
+        \node (13) [e72block, above=of 12] {Constraints};
+        \node (14) [e72block, below=of 12] {Objectives};
+        \node (15) [b72block, below=of 14] {PF};
+        \node (16) [b72block, below=of 15] {PPF};
+        \node (17) [b72block, below=of 16] {$T_{max}$};
+        \draw [arrow] (2) -- ([shift={(0cm,0cm)}]2.east) -- ([shift={(0cm,0cm)}]8.west);
+        \draw [arrow] (5) -- ([shift={(0cm,0cm)}]5.east) -- ([shift={(0cm,0cm)}]8.west);
+        \draw [arrow] (7) -- ([shift={(0cm,0cm)}]7.east) -- ([shift={(0cm,0cm)}]8.west);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.south) -- node[anchor=west] {generates} ([shift={(0cm,0cm)}]10.north);
+        \draw [arrow] (10) -- ([shift={(0cm,0cm)}]10.south) -- node[anchor=west] {input into} ([shift={(0cm,0cm)}]11.north);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]12.west);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]15.west);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]16.west);
+        \draw [arrow] (11) -- ([shift={(0cm,0cm)}]11.east) -- ([shift={(0cm,0cm)}]17.west);
+    \end{tikzpicture}
+    \caption{\acrfull{AHTR} fuel slab modeling workflow.} 
+    \label{fig:ahtr-slab-flow}
+\end{figure}
+
+\subsection{Input Parameter Modeling}
+In this section, I describe how I modeled the \gls{AHTR} input
+parameter variations: total fuel packing fraction, TRISO particle packing fraction 
+distribution, and \gls{FLiBe} coolant channel shape. 
+The total fuel packing fraction is a single numerical input.
+
+I vary the TRISO particle packing fraction across the fuel slab by dividing the 
+slab into ten cells along the x-axis between the \gls{FLiBe} and graphite 
+buffers, resulting in ten $2.31 \times 2.55 \times 1.85\ cm^3$ cells, and varying
+the packing fraction in each cell.
+A sine distribution governs the \gls{TRISO} particle packing fraction's 
+distribution across cells:
+\begin{align}
+    PF(x) &= \left(a\cdot sin(b\cdot x + c) + 2\right) \cdot NF\\
+    \intertext{where}
+    PF &= \mbox{packing fraction } [-] \nonumber \\ 
+    a &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
+    b &= \mbox{angular frequency, rate of change of the function argument } [\frac{radians}{cm}] \nonumber \\
+    c &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
+    x &= \mbox{midpoint value for each cell } [cm]\nonumber \\
+    NF &= \mbox{Normalization factor } [-]\nonumber
+\end{align}
+The normalization factor ensures the correct total packing fraction 
+in the slab regardless the \gls{TRISO} particle distribution.
+I use OpenMC's \texttt{pack\_spheres} function to randomly disperse the calculated packing 
+fraction in each fuel slab slice. 
+For example, a total packing fraction of 0.0979, and packing fraction distribution of 
+$PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right)  \cdot NF$, 
+results in the following packing fractions for the ten cells: 0.103, 0.120, 
+0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
+Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
+the packing fraction at the respective midpoints, and displays the slab's x-y 
+axis view with packing fraction varying based on this sine distribution. 
+\begin{figure}[]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{triso_distribution_sine.png}} 
+    \caption{Above: Straightened \acrfull{AHTR} fuel slab with varying \gls{TRISO} particle 
+    distribution across ten cells based on the sine distribution. 
+    Below: $PF(x) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
+    sine distribution with red points indicating the packing fraction at each cell. }
+    \label{fig:triso_distribution}
+\end{figure}
+Thus, ROLLO will vary $a, b, c$ constants to find an optimal TRISO particle 
+sine distribution. 
+
+%% DESCRIPTION FOR COOLANT CHANNEL SHAPE DEFINITION.
+I vary the FliBE coolant channel shape by: ...
+
+\section{AHTR Slab OpenMC and Moltres Models}
+The input parameter modeling outlined in the previous section are inputs into 
+the OpenMC neutronics model. 
+Therefore, there is TRISO level fidelity in the OpenMC neutronics model. 
+To run Moltres simulations, the user provides group constant data from a neutron 
+transport solver, such as OpenMC, for the Moltres multigroup neutron diffusion 
+calculations and a mesh file representing the reactor geometry. 
+For the Moltres model, a TRISO-level fidelity mesh file is impractical 
+and will result in an extremely long Moltres runtimes. 
+For successful \gls{AHTR} Moltres simulation, I established 
+suitable spatial and energy homogenization that preserves accuracy while 
+maintaining an acceptable runtime.
+
+For spatial homogenization of the straightened \gls{AHTR} fuel slab, I used 
+OpenMC's \textit{cell} domain type to compute multigroup cross sections for 
+different \textit{cells}. 
+I discretized the slab into 13 \textit{cells}: FLiBe, left graphite, right 
+graphite, and ten fuel cells (each cell has a different packing fraction). 
+Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} spatial 
+homogenization for the OpenMC multigroup calculation. 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=\linewidth]{straightened_slab_mg.png}
+    \raggedright
+    \resizebox{0.5\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{llll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe & 
+            \textcolor{fhrgrey}{$\blacksquare$} & Left Graphite \\
+            \textcolor{fhrred}{$\blacksquare$} & Right Graphite &
+            \textcolor{fhrpink}{$\blacksquare$} & Fuel cell 1/6 \\
+            \textcolor{fhryellow}{$\blacksquare$} & Fuel cell 2/7 &
+            \textcolor{fhrorange}{$\blacksquare$} & Fuel cell 3/8 \\
+            \textcolor{fhrgreen}{$\blacksquare$} & Fuel cell 4/9 &
+            \textcolor{fhrpurple}{$\blacksquare$} & Fuel cell 5/10 \\
+            \end{tabular}}}
+    \caption{Straightened \acrfull{AHTR} fuel slab spatially discretized into 
+    13 \textit{cells} for OpenMC multigroup calculation.}
+    \label{fig:straightened_slab_mg}
+\end{figure}
+I used the four group energy structure derived by Gentry et al. 
+\cite{gentry_development_2016} for \gls{AHTR} geometries. 
+Table \ref{tab:energy_structures} defines the group boundaries. 
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{4-group energy structures for \acrfull{AHTR} geometry 
+    derived by \cite{gentry_development_2016}.}
+	\label{tab:energy_structures}
+    \footnotesize
+    \begin{tabular}{lll}
+    \hline
+    \multicolumn{3}{c}{\textbf{Group Boundaries [MeV]}} \\ 
+    \hline
+    \textbf{Group $\#$}& \textbf{Upper Bound} & \textbf{Lower Bound}  \\
+    \hline 
+    1 & $2.0000\times 10^1$ & $9.1188\times 10^{-3}$ \\ 
+    2 & $9.1188\times 10^{-3}$ & $2.9023\times 10^{-5}$\\
+    3 & $2.9023\times 10^{-5}$ & $1.8554\times 10^{-6}$\\
+    4 & $1.8554\times 10^{-6}$ & $1.0000\times 10^{-12}$\\
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Moltres Model's Neutronics Performance}
+In this section, I demonstrate Moltres' ability to reproduce key neutronics 
+parameters using group constant data from OpenMC for the AHTR slab. 
+Comparison key neutronics parameters for the continuous OpenMC and multigroup Moltres 
+simulations determine if the energy and spatial homogenization used are acceptable. 
+The accuracy from this neutronics verification step gives confidence for 
+subsequent AHTR slab multiphysics simulations with Moltres. 
+
+% move this to lit review for Moltres
+Moltres solves the four-group diffusion equations as a steady-state eigenvalue 
+problem to find $k_{eff}$ for the static AHTR slab model: 
+\begin{align}
+    \frac{1}{v_g} \frac{\partial \phi_g}{\partial t} &= \nabla \cdot D_g
+    \nabla \phi_g - \Sigma^r_g \phi_g +
+    \sum^G_{g' \neq g} \Sigma^s_{g' \rightarrow g} \phi_{g'} + \chi^p_g
+    \sum^G_{g'=1} (1-\beta) \nu \Sigma^f_{g'} \phi_{g'} + \chi^d_g \sum^I_i
+    \lambda_i C_i
+\end{align}
+
+I will be comparing the key neutronics parameters between two simulations:
+\begin{enumerate}
+    \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity 
+    \item Moltres simulation with 4-group energy and 13-cell spatial homogenization
+\end{enumerate}
+I outlined the spatially homogenization used in section ??. 
+The OpenMC simulation with TRISO-level fidelity generates the group 
+constants for the energy and spatially homogenized Moltres simulation. 
+
+% Describe how you calculated each simulation. MGXS generation and group 
+% constant generation
+
+% say i changed it to reflective and temperature = 948K
+
+\subsubsection{Effective Multiplication Factor}
+In this section, I include results from a homogenized OpenMC simulation as well to 
+distinguish between differences caused by spatial homogenization, and differing 
+OpenMC and Moltres normalization and solving methods. 
+% explain how this works 
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{AHTR Fuel Slab's $k_{eff}$ values from OpenMC and Moltres at 948K.
+    Normalized difference is the pcm difference normalized by $k_{eff}$}
+	\label{tab:keff_ahtr_moltres}
+    \footnotesize
+    \begin{tabular}{lllcc}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Difference [pcm]}  
+    & \textbf{Normalized Difference [pcm]}\\
+    \hline 
+    OpenMC & No & $1.41402 \pm 0.00140$ & - & -\\ 
+    OpenMC & Yes & $1.41473 \pm 0.00098$ & +71 & -\\ 
+    Moltres & Yes & $1.40696 $ & -706 & -502\\ 
+    \hline
+    \end{tabular}
+\end{table}
+The 71pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
+simulations show that the selected spatial and energy homogenizations
+are acceptable. 
+However, there is a 502pcm difference in the Moltres simulation's $k_{eff}$.
+Possible reasons are that the neutron diffusion method used in Moltres does not 
+approximate this reactor geometry as well. 
+The diffusion coefficients for this reactor type are approximately 1cm. 
+The FliBE coolant channel has a 0.35cm width which is smaller than the diffusion
+coefficient, resulting in poor approximations. 
+
+\subsubsection{Reactivity Coefficients}
+Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
+normalized difference between $k_{eff}$ values with and without DNPs. 
+The  $\beta{eff}$ values from OpenMC and Moltres show excellent 
+agreement with a discrepancy of 0.1pcm. 
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{AHTR Fuel Slab's $\beta_{eff}$ values from OpenMC and Moltres at 948K.}
+	\label{tab:betaeff_ahtr_moltres}
+    \footnotesize
+    \begin{tabular}{lllc}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
+    & \textbf{Difference [pcm]}  \\
+    \hline 
+    OpenMC & No &  654.3 & - \\ 
+    Moltres & Yes & 654.4 & 0.1\\ 
+    \hline
+    \end{tabular}
+\end{table}
+I calculated the temperature reactivity coefficients with equation ??. % FHR BM section
+Temperature reactivity feedback arises mainly from Doppler broadening of 
+resonance absorption peaks and thermal expansion.
+The total temperature coefficients from OpenMC and Moltres show good 
+agreement with a discrepancy of 0.4 pcm/K.
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{AHTR Fuel Slab's total reactivity coefficient values calculated from 
+    OpenMC and Moltres at 948K and 1100K.}
+	\label{tab:reactivity_ahtr_moltres}
+    \footnotesize
+    \begin{tabular}{lllc}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
+    & \textbf{Difference [pcm/K]}  \\
+    \hline 
+    OpenMC & No &  -8.4 & - \\ 
+    Moltres & Yes & -8.8 & -0.4\\ 
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Flux Distribution}
+Moltres' source term ($Q_f$) is defined by: 
+\begin{align}
+    Q_f &= \sum_{g=1}^G \epsilon_{f,g}\Sigma_{f,g}\phi_g
+    \label{eq:fuel_source}
+\intertext{where} 
+Q_f &= \mbox{source term } [\frac{MeV}{cm^3s}] \nonumber \\
+G &= \mbox{number of discrete groups, g } [-] \nonumber \\
+\epsilon_{f,g} &= \mbox{heat produced per fission } [MeV] \nonumber \\
+\Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [\frac{1}{cm}] \nonumber \\
+\phi_g &= \mbox{flux of neutrons in group g } [\frac{n}{cm^2s}]\nonumber
+\end{align}
+The $\epsilon_{f,g}$ and $\Sigma_{f,g}$ terms are provided to Moltres through 
+the group constants generated by neutronics software, OpenMC.
+Thus, differences in the source term between OpenMC and Moltres are dependent on 
+the flux. 
+Comparison of flux distributions produced by Moltres and OpenMC are key to 
+ensuring that temperature distribution is accurately calculated in Moltres.
+
+Figure \ref{fig:flux_948K} shows the 4-group flux distributions for OpenMC and 
+Moltres. 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.48\linewidth]{flux_group1_948K.png} 
+    \includegraphics[width=0.48\linewidth]{flux_group2_948K.png} 
+    \includegraphics[width=0.48\linewidth]{flux_group3_948K.png} 
+    \includegraphics[width=0.48\linewidth]{flux_group4_948K.png} 
+    \caption{AHTR fuel slab's centerline neutron flux distribution in 4 groups
+    at 948K. 
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV}
+    \label{fig:flux_948K}
+\end{figure}
+The OpenMC simulation shows higher flux in Group 1, and lower flux in the
+Group 2 and Group 3. 
+However, there is an overall good agreement for each group's flux. 
+
+\subsubsection{Neutron Energy Spectrum}
+Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum the OpenMC simulation 
+for both 252 and 4 , and 4-group Moltres simulation. 
+
+ \begin{figure}[]
+    \centering
+    \includegraphics[width=\linewidth]{neutron_spectrum_948K.png}
+    \caption{AHTR fuel slab's neutron spectrum.}  
+    \label{fig:neutron_spectrum_948K}
+\end{figure}
+
+\subsection{AHTR Steady-State Temperature Model}
+
+\section{Optimization Results}
+
+\subsection{Single-Objective Optimization}
+
+\subsection{Multi-Objective Optimization}
