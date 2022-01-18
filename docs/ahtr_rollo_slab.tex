@@ -522,7 +522,11 @@ The AHTR's inlet temperature is 923K. %cite ahtr 923K inlet temp
 I calculated the heat transfer coefficient with the assumption that each 1cm 
 AHTR dz slice removes the same amount of power. 
 \begin{align}
-    h &= P_{slab} 
+    h &= \frac{P_{slab}}{A_{coolant}} \div \frac{T_{total}}{H} \\
+      &= \frac{1456 W}{23.1 * 0.5 * 2 cm^2} / (50 K / 550 cm) \nonumber \\
+      &= 990 \nonumber 
+\intertext{where:}
+P_{dz} &= \nonumber
 \end{align}
 
 
