@@ -490,19 +490,45 @@ The Moltres AHTR Steady-State Temperature Model first solves for the neutronics
 in slab, and feeds that into a thermal hydraulics simulation to solve for the 
 temperature distribution in the slab for a defined power. 
 
-The FliBe molten salt is at an initial temperature of 923K, reflecting the AHTR's 
-inlet temperature. %cite ahtr 923K inlet temp 
 For the temperature variable, all boundaries are insulated and we simulate salt 
 cooling with the following convective heat exchanger equation: 
 \begin{align}
     \dot Q &= h \cdot (T(\vec{r})-T_{ref})
 \intertext{where:}
-h &= \mbox{heat transfer coefficient } [\frac{W}{m^2K}] \nonumber \\
+\dot Q &= \mbox{heat removal rate for 1cm thin slice of AHTR slab [W/cm]} \nonumber \\
+h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
 T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
 T_{ref} &= \mbox{reference temperature [K]} \nonumber
 \end{align}
 
+Table \ref{tab:heat-exchanger-constants} shows the constant values used for 
+reference temperature and heat transfer coefficient.
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{AHTR Fuel Slab's heat transfer constants.}
+	\label{tab:heat-exchanger-constants}
+    \footnotesize
+    \begin{tabular}{llll}
+    \hline 
+    \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
+    \hline 
+    h & 990 & $[\frac{W}{cm \cdot K}]$ & \\
+    $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\
+    \hline
+    \end{tabular}
+\end{table} 
+The AHTR's inlet temperature is 923K. %cite ahtr 923K inlet temp 
+I calculated the heat transfer coefficient with the assumption that each 1cm 
+AHTR dz slice removes the same amount of power. 
+\begin{align}
+    h &= P_{slab} 
+\end{align}
+
+
 % plots of the results for constant and peaking PF. 
+% say the shortcomings of this temperature model 
+% justify why its ok 
 
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
