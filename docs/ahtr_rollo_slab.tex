@@ -7,10 +7,73 @@ in any possible location, within physical limits.
 Since exploration of non-conventional geometries and parameters has not been done, 
 a simple first attempt approach is taken for this dissertation. 
 
-In this chapter, I explore optimizing the AHTR slab geometry for three 
-objectives, described in the next section. 
-Chapter \ref{ahtr_rollo_assembly} will explore optimizing the AHTR one-third 
-fuel assembly.
+This chapter will explore optimizing the AHTR slab, while chapter 
+\ref{ahtr_rollo_assembly} will explore optimizing the AHTR one-third fuel assembly.
+In the subsequent sections, I describe the AHTR slab geometry, the optimization 
+problem definition, AHTR slab modeling methods, and results of the 
+single and multi objective \gls{AHTR} slab optimization problems.
+
+\section{AHTR Slab Geometry}
+% how the slab is set up etc
+% 5.1.1 from prelim 
+The \gls{AHTR} fuel slab used in this problem has straightened perpendicular 
+sides, instead of slanted as in Figure \ref{fig:ahtr-fuel-plank}. 
+Figure \ref{fig:straightened_slab} illustrates the straightened fuel slab.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{straightened_slab.png}
+    \begin{tikzpicture}
+        \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+        \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+        \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+       \tkzText[above](-0.3,-0.7){}
+       \end{tikzpicture} 
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+
+            \end{tabular}}}
+    \caption{Straightened \acrfull{AHTR} fuel slab with reflective boundary 
+    conditions. Original slanted fuel slabs can be seen in Figures 
+    \ref{fig:ahtr-fuel-assembly} and \ref{fig:ahtr-fuel-plank}.}
+    \label{fig:straightened_slab}
+\end{figure}
+The slab has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
+boundary conditions.
+I use the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
+except that I homogenized each \gls{TRISO} particle's four outer layers: 
+porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the 
+outer pyrolytic carbon. 
+The \gls{TRISO} particle dimensions remain the same.
+Table \ref{tab:keff_triso} reports OpenMC's reported $k_{eff}$ for this original 
+straightened \gls{AHTR} configuration with and without the outer layer \gls{TRISO} 
+homogenization.
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{Straightened \acrfull{AHTR} fuel slab $k_{eff}$ for case with 
+    no \gls{TRISO} homogenization and case with homogenization of the four outer 
+    layers. Both simulations were run on one BlueWaters XE Node.}
+	\label{tab:keff_triso}
+    \footnotesize
+    \begin{tabular}{llc}
+    \hline 
+    \textbf{TRISO Homogenization}& \textbf{$k_{eff}$} & \textbf{Simulation time [s]}  \\
+    \hline 
+    None & $1.38548 \pm 0.00124$ & 233\\ 
+    Four outer layers & $1.38625 \pm 0.00109$ & 168\\ 
+    \hline
+    \end{tabular}
+\end{table}
+The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
+speed-up without compromising accuracy with $k_{eff}$ values within each 
+other's uncertainty.
+
 
 \section{Optimization Problem Definition}
 I limited the problem's scope to vary the following \gls{AHTR} parameters: 
@@ -91,70 +154,6 @@ optimization problem explored in this chapter.
     \hline
     \end{tabular}
 \end{table}
-In the subsequent sections, I will describe the AHTR slab geometry, how 
-I set up and verified each of their the OpenMC and Moltres models, and the 
-results of the single and multi objective \gls{AHTR} slab optimization problems. 
-
-\section{AHTR Slab Geometry}
-% how the slab is set up etc
-% 5.1.1 from prelim 
-The \gls{AHTR} fuel slab used in this problem has straightened perpendicular 
-sides, instead of slanted as in Figure \ref{fig:ahtr-fuel-plank}. 
-Figure \ref{fig:straightened_slab} illustrates the straightened fuel slab.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\linewidth]{straightened_slab.png}
-    \begin{tikzpicture}
-        \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
-        \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
-        \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
-       \tkzText[above](-0.3,-0.7){}
-       \end{tikzpicture} 
-    \raggedright
-    \resizebox{0.3\textwidth}{!}{
-        \hspace{1cm}
-        \fbox{\begin{tabular}{ll}
-            \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
-            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
-
-            \end{tabular}}}
-    \caption{Straightened \acrfull{AHTR} fuel slab with reflective boundary 
-    conditions. Original slanted fuel slabs can be seen in Figures 
-    \ref{fig:ahtr-fuel-assembly} and \ref{fig:ahtr-fuel-plank}.}
-    \label{fig:straightened_slab}
-\end{figure}
-The slab has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
-boundary conditions.
-I use the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
-except that I homogenized each \gls{TRISO} particle's four outer layers: 
-porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the 
-outer pyrolytic carbon. 
-The \gls{TRISO} particle dimensions remain the same.
-Table \ref{tab:keff_triso} reports OpenMC's reported $k_{eff}$ for this original 
-straightened \gls{AHTR} configuration with and without the outer layer \gls{TRISO} 
-homogenization.
-\begin{table}[H]
-    \centering
-    \onehalfspacing
-    \caption{Straightened \acrfull{AHTR} fuel slab $k_{eff}$ for case with 
-    no \gls{TRISO} homogenization and case with homogenization of the four outer 
-    layers. Both simulations were run on one BlueWaters XE Node.}
-	\label{tab:keff_triso}
-    \footnotesize
-    \begin{tabular}{llc}
-    \hline 
-    \textbf{TRISO Homogenization}& \textbf{$k_{eff}$} & \textbf{Simulation time [s]}  \\
-    \hline 
-    None & $1.38548 \pm 0.00124$ & 233\\ 
-    Four outer layers & $1.38625 \pm 0.00109$ & 168\\ 
-    \hline
-    \end{tabular}
-\end{table}
-The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
-speed-up without compromising accuracy with $k_{eff}$ values within each 
-other's uncertainty.
 
 \section{AHTR Slab Modeling}
 In this section, I describe the AHTR slab modeling workflow: from the AHTR geometry 
@@ -245,6 +244,7 @@ sine distribution.
 I vary the FliBE coolant channel shape by: ...
 
 \subsection{AHTR Slab OpenMC and Moltres Models}
+\label{sec:ahtr-moltres-hom}
 The input parameter modeling outlined in the previous section are inputs into 
 the OpenMC neutronics model. 
 The total packing fraction, TRISO particle distribution, and FliBE coolant 
@@ -319,8 +319,9 @@ compared key neutronics parameters for the continuous OpenMC and multigroup
 Moltres simulations.
 
 \subsection{Moltres Model Neutronics Performance Verification}
-In this section, I demonstrate Moltres' ability to reproduce key neutronics 
-parameters using group constant data from OpenMC for the AHTR slab.  
+In this section, I set up a criticality eigenvalue problem in Moltres to demonstrate  
+it's ability to reproduce key neutronics parameters using multi-group constant 
+data from OpenMC for the AHTR slab.  
 The accuracy from this neutronics verification step gives confidence for 
 subsequent AHTR slab multiphysics simulations with Moltres. 
 
@@ -477,20 +478,28 @@ for both 252 and 4 , and 4-group Moltres simulation.
 \end{figure}
 
 In summary, Moltres replicated the relevant neutronics parameters accurately 
-using group constant data from OpenMC.
+using group constant data from OpenMC. % more description
 
 \subsection{Moltres AHTR Steady-State Temperature Model}
 % how to model heat transfer for constant coolant channel shape and varying shape 
 One of the objectives for the ROLLO AHTR optimization is minimizing maximum 
 temperature in slab. 
 This result cannot be gleaned from a neutronics simulation, thus I introduced 
-AHTR slab temperature modeling with Moltres. 
-I used group constants produced by OpenMC in the Moltres simulation. 
+AHTR slab temperature modeling with Moltres.
+I used OpenMC to generate multigroup neutronics data for the AHTR slab at 948K 
+for eight precursor groups based on the spatial and energy homogenization 
+described in section \ref{sec:ahtr-moltres-hom}.
 The Moltres AHTR Steady-State Temperature Model first solves for the neutronics 
-in slab, and feeds that into a thermal hydraulics simulation to solve for the 
-temperature distribution in the slab for a defined power. 
+in slab, and uses that to solve for the temperature distribution in the slab 
+for a defined power. 
+The temperature model assumes uniform flow, conductive heat transfer, and heat 
+removal through a convective heat exchanger positioned at the coolant areas. 
+These assumptions ignore flow and turbulent effects that would most likely be 
+present. 
+However, an in-depth AHTR Moltres model that includes turbulence model is 
+out of scope for this dissertation. 
 
-For the temperature variable, all boundaries are insulated and we simulate salt 
+For the temperature variable, all boundaries are insulated and I simulate salt 
 cooling with the following convective heat exchanger equation: 
 \begin{align}
     \dot Q &= h \cdot (T(\vec{r})-T_{ref})
@@ -501,8 +510,9 @@ T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
 T_{ref} &= \mbox{reference temperature [K]} \nonumber
 \end{align}
 
-Table \ref{tab:heat-exchanger-constants} shows the constant values used for 
-reference temperature and heat transfer coefficient.
+Table \ref{tab:heat-exchanger-constants} shows the values used for 
+reference temperature and heat transfer coefficient for the convective 
+heat transfer process.
 \begin{table}[H]
     \centering
     \onehalfspacing
@@ -513,25 +523,45 @@ reference temperature and heat transfer coefficient.
     \hline 
     \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
-    h & 990 & $[\frac{W}{cm \cdot K}]$ & \\
+    h & 990 & $\frac{W}{cm \cdot K}$ & \\
     $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\
     \hline
     \end{tabular}
 \end{table} 
 The AHTR's inlet temperature is 923K. %cite ahtr 923K inlet temp 
-I calculated the heat transfer coefficient with the assumption that each 1cm 
-AHTR dz slice removes the same amount of power. 
+I calculated the heat transfer coefficient ($h$) with the assumption that each 
+1cm AHTR dz slice removes a constant amount of heat. 
 \begin{align}
-    h &= \frac{P_{slab}}{A_{coolant}} \div \frac{T_{total}}{H} \\
+    h &= \frac{P_{dz}}{A_{coolant}} \div \frac{T_{total}}{H} \\
       &= \frac{1456 W}{23.1 * 0.5 * 2 cm^2} / (50 K / 550 cm) \nonumber \\
-      &= 990 \nonumber 
+      &= 990 W cm^{-1}K^{-1} \nonumber 
 \intertext{where:}
-P_{dz} &= \nonumber
+h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
+P_{dz} &= \mbox{Power produced in 1cm AHTR slab dz slice [W]}\nonumber \\
+A_{coolant} &= \mbox{Cross-sectional coolant area in AHTR slab [$cm^2$]} \nonumber \\
+T_{total} &= \mbox{Total temperature change from inlet to outlet [K]} \nonumber \\
+H &= \mbox{AHTR Height from inlet to outlet [cm]} \nonumber 
 \end{align}
+The optimization simulations assume that the total coolant area does not change 
+despite it's shape variation, and so the model holds heat transfer coefficient ($h$)
+constant for all the simulations.  
 
-
-% plots of the results for constant and peaking PF. 
-% say the shortcomings of this temperature model 
+Using the described assumptions, I set up a Moltres AHTR steady-state temperature 
+model for a slab with constant packing fraction of 0.0979 across ten fuel cells. 
+The model used can be found at ... % cite DOI   
+Figure \ref{fig:ahtr_constant_temp} shows the Moltres generated temperature 
+distribution.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{ahtr_constant_temp.png}
+    \caption{AHTR fuel slab's Moltres generated temperature distribution for a 
+    slab with constant packing fraction of 0.0979 across ten fuel cells.}  
+    \label{fig:ahtr_constant_temp}
+\end{figure}
+The temperature distribution is consistent with previous temperature models of 
+the AHTR fuel slabs that report an average fuel kernel temperature of 1125K 
+\cite{ramey_methodology_2021}. 
+% verification 
 % justify why its ok 
 
 \subsection{Output Parameter Calculation}
