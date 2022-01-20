@@ -430,8 +430,8 @@ agreement with a discrepancy of 0.4 pcm/K.
 \subsubsection{Flux Distribution}
 Moltres' source term ($Q_f$) is defined by: 
 \begin{align}
+\label{eq:moltres-source-term}
     Q_f &= \sum_{g=1}^G \epsilon_{f,g}\Sigma_{f,g}\phi_g
-    \label{eq:fuel_source}
 \intertext{where} 
 Q_f &= \mbox{source term } [\frac{MeV}{cm^3s}] \nonumber \\
 G &= \mbox{number of discrete groups, g } [-] \nonumber \\
@@ -499,12 +499,46 @@ present.
 However, an in-depth AHTR Moltres model that includes turbulence model is 
 out of scope for this dissertation. 
 
-For the temperature variable, all boundaries are insulated and I simulate salt 
-cooling with the following convective heat exchanger equation: 
+Moltres' governing equation for temperature was described in Equation 
+\ref{eq:moltres-temp}.
+In the AHTR Steady-State Temperature Model, the temperature equation is 
+simplified with the removal of the time-dependent and velocity dependent terms 
+since I am solving for steady-state and there is no moving fuel. 
+The model is spatially homogenized as described by Figure \ref{fig:straightened_slab_mg}
+and has insulated boundary conditions.
 \begin{align}
-    \dot Q &= h \cdot (T(\vec{r})-T_{ref})
+    - \nabla \cdot (k_i \nabla T) &= Q_i
 \intertext{where:}
-\dot Q &= \mbox{heat removal rate for 1cm thin slice of AHTR slab [W/cm]} \nonumber \\
+k_i &= \mbox{thermal conductivity of material i} \nonumber \\
+T &= \mbox{temperature in the slab} \nonumber \\
+Q_i &= \mbox{source or sink term in material i} \nonumber
+\end{align} 
+Table \ref{tab:ahtr-thermal-conducitivity} shows the thermal conducitivity values 
+used for each AHTR slab material. 
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{AHTR Fuel Slab materials' thermal conductivity.}
+	\label{tab:ahtr-thermal-conducitivity}
+    \footnotesize
+    \begin{tabular}{lp{4cm}l}
+    \hline 
+    \textbf{Material}& \textbf{Thermal Conductivity [$Wcm^{-1}K^{-1}$]}& \textbf{References} \\ 
+    \hline 
+    FliBE & 0.01 & \\
+    Graphite  & 0.15 & \\
+    Fuel  & 0.099 & \\
+    \hline
+    \end{tabular}
+\end{table}
+The fission source term in the fuel cells is defined by Equation 
+\ref{eq:moltres-source-term}.
+Heat removal from the AHTR fuel slab is modeled with a convective heat exchanger 
+term in the coolant areas: 
+\begin{align}
+    Q &= h \cdot (T(\vec{r})-T_{ref})
+\intertext{where:}
+Q &= \mbox{heat removal rate for 1cm thin slice of AHTR slab [W/cm]} \nonumber \\
 h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
 T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
 T_{ref} &= \mbox{reference temperature [K]} \nonumber
@@ -523,31 +557,39 @@ heat transfer process.
     \hline 
     \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
-    h & 990 & $\frac{W}{cm \cdot K}$ & \\
+    h & 990 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc} \\
     $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\
     \hline
     \end{tabular}
 \end{table} 
 The AHTR's inlet temperature is 923K. %cite ahtr 923K inlet temp 
-I calculated the heat transfer coefficient ($h$) with the assumption that each 
-1cm AHTR dz slice removes a constant amount of heat. 
+I calculated the heat transfer coefficient ($h$) using Equation \ref{eq:calc-htc} 
+for the 1cm AHTR dz slice with the following assumptions: 
+\begin{itemize}
+    \item it generates a constant amount of power, all of which is removed 
+    by the coolant
+    \item temperature increase per 1cm slice is constant from the inlet to the 
+    outlet 
+\end{itemize} 
 \begin{align}
+    \label{eq:calc-htc}
     h &= \frac{P_{dz}}{A_{coolant}} \div \frac{T_{total}}{H} \\
       &= \frac{1456 W}{23.1 * 0.5 * 2 cm^2} / (50 K / 550 cm) \nonumber \\
       &= 990 W cm^{-1}K^{-1} \nonumber 
 \intertext{where:}
 h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
-P_{dz} &= \mbox{Power produced in 1cm AHTR slab dz slice [W]}\nonumber \\
-A_{coolant} &= \mbox{Cross-sectional coolant area in AHTR slab [$cm^2$]} \nonumber \\
-T_{total} &= \mbox{Total temperature change from inlet to outlet [K]} \nonumber \\
-H &= \mbox{AHTR Height from inlet to outlet [cm]} \nonumber 
+P_{dz} &= \mbox{power produced in 1cm AHTR slab dz slice [W]}\nonumber \\
+A_{coolant} &= \mbox{cross-sectional coolant area in AHTR slab [$cm^2$]} \nonumber \\
+T_{total} &= \mbox{total temperature change from inlet to outlet [K]} \nonumber \\
+H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
 \end{align}
 The optimization simulations assume that the total coolant area does not change 
 despite it's shape variation, and so the model holds heat transfer coefficient ($h$)
 constant for all the simulations.  
 
-Using the described assumptions, I set up a Moltres AHTR steady-state temperature 
-model for a slab with constant packing fraction of 0.0979 across ten fuel cells. 
+Using the described models and assumptions, I set up a Moltres AHTR steady-state 
+temperature model for a slab with constant packing fraction of 0.0979 across ten 
+fuel cells. 
 The model used can be found at ... % cite DOI   
 Figure \ref{fig:ahtr_constant_temp} shows the Moltres generated temperature 
 distribution.
@@ -561,8 +603,13 @@ distribution.
 The temperature distribution is consistent with previous temperature models of 
 the AHTR fuel slabs that report an average fuel kernel temperature of 1125K 
 \cite{ramey_methodology_2021}. 
-% verification 
-% justify why its ok 
+Model differences include that Ramey \cite{ramey_methodology_2021} utilized a 
+1D temperature model with the original 4-layer TRISO model from the FHR benchmark 
+(Figure \ref{fig:straightened_slab}) whereas this model is 2D and randomly disperses 
+TRISO particles throughout the slab, however keeping the same overall packing 
+fraction. 
+A more accurate one-for-one comparison was conducted in Chapter 
+\ref{chap:fhr-multiphysics-model}.
 
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
