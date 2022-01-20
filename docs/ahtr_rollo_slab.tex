@@ -116,7 +116,7 @@ OpenMC and Moltres software, these software calculate the problem's objective
 and constraint values. 
 \gls{ROLLO} then iterates based on these results to find the 
 input parameters that best optimize for the problem's objectives. 
-Table \ref{tab:single-obj-breakdown} shows the details of each \gls{ROLLO} 
+Table \ref{tab:slab-obj-breakdown} shows the details of each \gls{ROLLO} 
 optimization problem explored in this chapter.
 \begin{table}[H]
     \centering
@@ -125,7 +125,7 @@ optimization problem explored in this chapter.
     fuel slab. $PF$: Total Fuel Packing Fraction, $T_{max}$: Maximum Slab Temperature, 
     $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
     \gls{TRISO} particle distribution}
-	\label{tab:single-obj-breakdown}
+	\label{tab:slab-obj-breakdown}
     \footnotesize
     \begin{tabular}{cllll}
     \hline 
@@ -644,8 +644,10 @@ PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 \end{align}
 
 \section{Optimization Results}
+In this section, I report the results from the ROLLO optimization simulations 
+previously outlined in Table \ref{tab:slab-obj-breakdown}.
 Results from this section can be found in the \texttt{2022-chee-dissertation} 
-Github repository under the \texttt{rollo-ahtr-slab} directory []. %cite 
+Github repository under the \texttt{rollo-ahtr-slab} directory. %cite 
 
 \subsection{Single-Objective Optimization}
 
