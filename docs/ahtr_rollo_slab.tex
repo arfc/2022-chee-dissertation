@@ -101,7 +101,7 @@ them, and the motivation for each.
     \hline
     Maximize heat transfer & Minimize maximum temperature & Enable system to perform at a higher power with minimized thermal stress \\
     \hline
-    Minimize normalized power peaking factor & Minimize $P_{high}-P_{ave}$ & Efficient fuel utilization, longer core life, safety\\
+    Minimize power peaking & Minimize power peaking factor normalized by fuel distribution & Efficient fuel utilization, longer core life, safety\\
     \hline
     \end{tabular}
 \end{table}
@@ -614,8 +614,37 @@ A more accurate one-for-one comparison was conducted in Chapter
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
 % PF, Max temp, PPF 
+In this section, I describe how I tallied the AHTR model outputs for the ROLLO 
+optimization problem objectives (as described in Table \ref{tab:objectives}):
+total fuel packing fraction, maximum temperature in slab, and 
+normalized power peaking factor.  
+
+ROLLO will automatically return the total fuel packing fraction output parameter, 
+since it is also an input parameter. 
+In the Moltres AHTR slab model, I defined a post processor object to return the 
+maximum temperature in the slab. 
+
+To ensure efficient fuel utilization, one of the objectives is to minimize 
+fuel-normalized power peaking in the slab, that takes into account fuel amount 
+variations across the slab.
+I discretized the fuel cell area of the slab into 10 $\times$ 5 blocks, and 
+use OpenMC to tally the fission energy production rate (\texttt{fission-q-recoverable}
+$[eV/src]$) in each section.
+I did not normalize the score to calculate power since the final PPF value is a 
+ratio.
+% why fission q recoverable
+The normalized power peaking factor is calculated: 
+\begin{align}
+    PPF &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
+\intertext{where}
+j &= \mbox{discretized fuel area j} \nonumber \\
+PPF &= \mbox{fuel-normalized power peaking factor} \nonumber \\
+fqr_j &= \mbox{fission-q-recoverable at position j} \nonumber \\
+PF_j &= \mbox{fuel packing fraction at position j} \nonumber
+\end{align}
 
 \section{Optimization Results}
+In this section, 
 
 \subsection{Single-Objective Optimization}
 
