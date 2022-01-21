@@ -482,15 +482,15 @@ using group constant data from OpenMC. % more description
 
 \subsection{Moltres AHTR Steady-State Temperature Model}
 % how to model heat transfer for constant coolant channel shape and varying shape 
-One of the objectives for the ROLLO AHTR optimization is minimizing maximum 
-temperature in slab. 
-This result cannot be gleaned from a neutronics simulation, thus I introduced 
+One of the ROLLO AHTR optimization objectives is minimizing the maximum 
+temperature in the slab. 
+A neutronics simulation cannot calculate maximum temperature; thus, I introduced 
 AHTR slab temperature modeling with Moltres.
 I used OpenMC to generate multigroup neutronics data for the AHTR slab at 948K 
 for eight precursor groups based on the spatial and energy homogenization 
 described in section \ref{sec:ahtr-moltres-hom}.
 The Moltres AHTR Steady-State Temperature Model first solves for the neutronics 
-in slab, and uses that to solve for the temperature distribution in the slab 
+in slab and uses that to solve for the temperature distribution in the slab 
 for a defined power. 
 The temperature model assumes uniform flow, conductive heat transfer, and heat 
 removal through a convective heat exchanger positioned at the coolant areas. 
@@ -501,9 +501,8 @@ out of scope for this dissertation.
 
 Moltres' governing equation for temperature was described in Equation 
 \ref{eq:moltres-temp}.
-In the AHTR Steady-State Temperature Model, the temperature equation is 
-simplified with the removal of the time-dependent and velocity dependent terms 
-since I am solving for steady-state and there is no moving fuel. 
+In the AHTR Steady-State Temperature Model, the time-dependent and velocity-dependent 
+terms cancel out since I am solving for steady-state and there is no moving fuel. 
 The model is spatially homogenized as described by Figure \ref{fig:straightened_slab_mg}
 and has insulated boundary conditions.
 \begin{align}
@@ -513,7 +512,7 @@ k_i &= \mbox{thermal conductivity of material i} \nonumber \\
 T &= \mbox{temperature in the slab} \nonumber \\
 Q_i &= \mbox{source or sink term in material i} \nonumber
 \end{align} 
-Table \ref{tab:ahtr-thermal-conducitivity} shows the thermal conducitivity values 
+Table \ref{tab:ahtr-thermal-conducitivity} shows the thermal conductivity values 
 used for each AHTR slab material. 
 \begin{table}[H]
     \centering
@@ -531,10 +530,9 @@ used for each AHTR slab material.
     \hline
     \end{tabular}
 \end{table}
-The fission source term in the fuel cells is defined by Equation 
-\ref{eq:moltres-source-term}.
-Heat removal from the AHTR fuel slab is modeled with a convective heat exchanger 
-term in the coolant areas: 
+Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source term.
+A convective heat exchanger term models the heat removal from the AHTR fuel slab 
+in the coolant areas: 
 \begin{align}
     Q &= h \cdot (T(\vec{r})-T_{ref})
 \intertext{where:}
@@ -558,16 +556,16 @@ heat transfer process.
     \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
     h & 990 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc} \\
-    $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\
+    $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\ %cite ahtr 923K inlet temp 
     \hline
     \end{tabular}
 \end{table} 
-The AHTR's inlet temperature is 923K. %cite ahtr 923K inlet temp 
 I calculated the heat transfer coefficient ($h$) using Equation \ref{eq:calc-htc} 
 for the 1cm AHTR dz slice with the following assumptions: 
 \begin{itemize}
     \item it generates a constant amount of power, all of which is removed 
     by the coolant
+    \item heat removal occurs at the coolant areas
     \item temperature increase per 1cm slice is constant from the inlet to the 
     outlet 
 \end{itemize} 
@@ -583,12 +581,13 @@ A_{coolant} &= \mbox{cross-sectional coolant area in AHTR slab [$cm^2$]} \nonumb
 T_{total} &= \mbox{total temperature change from inlet to outlet [K]} \nonumber \\
 H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
 \end{align}
-The optimization simulations assume that the total coolant area does not change 
-despite it's shape variation, and so the model holds heat transfer coefficient ($h$)
+In the ROLLO optimization simulations, I vary the FliBE coolant channel shape. 
+During the shape variation, I hold the coolant area constant. 
+Therefore, the Moltres temperature model holds the heat transfer coefficient ($h$)
 constant for all the simulations.  
 
 Using the described models and assumptions, I set up a Moltres AHTR steady-state 
-temperature model for a slab with constant packing fraction of 0.0979 across ten 
+temperature model for a slab with a constant packing fraction of 0.0979 across ten 
 fuel cells. 
 The model used can be found at ... % cite DOI   
 Figure \ref{fig:ahtr_constant_temp} shows the Moltres generated temperature 
@@ -597,7 +596,7 @@ distribution.
     \centering
     \includegraphics[width=\linewidth]{ahtr_constant_temp.png}
     \caption{AHTR fuel slab's Moltres generated temperature distribution for a 
-    slab with constant packing fraction of 0.0979 across ten fuel cells.}  
+    slab with a constant packing fraction of 0.0979 across ten fuel cells.}  
     \label{fig:ahtr_constant_temp}
 \end{figure}
 The temperature distribution is consistent with previous temperature models of 
@@ -605,18 +604,18 @@ the AHTR fuel slabs that report an average fuel kernel temperature of 1125K
 \cite{ramey_methodology_2021}. 
 Model differences include that Ramey \cite{ramey_methodology_2021} utilized a 
 1D temperature model with the original 4-layer TRISO model from the FHR benchmark 
-(Figure \ref{fig:straightened_slab}) whereas this model is 2D and randomly disperses 
-TRISO particles throughout the slab, however keeping the same overall packing 
-fraction. 
-A more accurate one-for-one comparison was conducted in Chapter 
-\ref{chap:fhr-multiphysics-model}.
+(Figure \ref{fig:straightened_slab}).
+This model is 2D and randomly disperses TRISO particles throughout the 
+slab while keeping the same overall packing fraction. 
+Chapter \ref{chap:fhr-multiphysics-model} conducts a more accurate one-for-one 
+comparison \ref{chap:fhr-multiphysics-model}.
 
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
 % PF, Max temp, PPF 
-In this section, I describe how I tallied the AHTR model outputs for the ROLLO 
+This section describes how I tallied the AHTR model outputs for the ROLLO 
 optimization problem objectives (as described in Table \ref{tab:objectives}):
-total fuel packing fraction, maximum temperature in slab, and 
+total fuel packing fraction, the maximum temperature in the slab, and 
 normalized power peaking factor.  
 
 ROLLO will automatically return the total fuel packing fraction output parameter, 
