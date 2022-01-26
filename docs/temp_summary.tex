@@ -163,31 +163,38 @@ The temperature distribution is consistent with previous temperature models of
 the AHTR fuel slabs that report an average fuel kernel temperature of 1125K 
 \cite{ramey_methodology_2021}. 
 Model differences include that Ramey \cite{ramey_methodology_2021} utilized a 
-1D temperature model with the original 4-layer TRISO model from the FHR benchmark 
-(Figure \ref{fig:straightened_slab}).
+1D temperature model with the original 4-layer TRISO model from the FHR benchmark. 
 This model is 2D and randomly disperses TRISO particles throughout the 
 slab while keeping the same overall packing fraction. 
 
 \section{FliBE Coolant Channel Shape Variation}
 In the ROLLO optimization simulations, I vary the FliBE coolant channel shape 
 while holding the total coolant area constant.  
-Figure \ref{fig:ahtr-coolant-shape-variation} shows the example of how I intend 
-to vary the channel shape while holding coolant area constant. 
-\begin{figure}[H]
+Figure \ref{fig:ahtr-coolant-shape-variation-1} shows the example of how I will 
+vary the coolant channel's shape. 
+I will model the coolant channel's sinusoidal-like pattern using cylinder 
+surfaces in OpenMC, instead of a sinusoidal function. 
+Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a 
+CAD based tool, which is out of scope of the dissertation.
+By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
+pattern will change as shown in Figure \ref{fig:ahtr-coolant-shape-variation-2}. 
+\begin{figure}[]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{coolant_shape_variation_example.png}
         \caption{Example of where the coolant shape variation will occur.}
+        \label{fig:ahtr-coolant-shape-variation-1}
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{coolant_shape_variation.png}
         \caption{Specific examples of the coolant shape variations.}
+        \label{fig:ahtr-coolant-shape-variation-2}
     \end{subfigure}
     \caption{AHTR Coolant Shape Variation}  
     \label{fig:ahtr-coolant-shape-variation}
 \end{figure}
-Equation \ref{eq:calc-htc} calculated the heat transfer 
-coefficient with the assumption that the slab generates a constant amount of power, 
+I calculated the heat transfer coefficient (Equation \ref{eq:calc-htc}) with 
+the assumption that the slab generates a constant amount of power, 
 and the heat removal occurs over the coolant areas.
 Since the total coolant area is held constant, I use the 
 same heat transfer coefficient ($h$) constant for all the simulations.   
