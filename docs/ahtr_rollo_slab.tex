@@ -487,24 +487,23 @@ temperature in the slab.
 A neutronics simulation cannot calculate maximum temperature; thus, I introduced 
 AHTR slab temperature modeling with Moltres.
 I used OpenMC to generate multigroup neutronics data for the AHTR slab at 948K 
-for eight precursor groups based on the spatial and energy homogenization 
-described in section \ref{sec:ahtr-moltres-hom}.
+for four energy groups and eight precursor groups based on the spatial and 
+energy homogenization described in section \ref{sec:ahtr-moltres-hom}.
 The Moltres AHTR Steady-State Temperature Model first solves for the neutronics 
 in slab and uses that to solve for the temperature distribution in the slab 
 for a defined power. 
-The temperature model assumes uniform flow, conductive heat transfer, and heat 
-removal through a convective heat exchanger positioned at the coolant areas. 
+The temperature model assumes conductive heat transfer throughout the domain 
+and heat removal by uniform salt flow in the coolant region. 
 These assumptions ignore flow and turbulent effects that would most likely be 
 present. 
 However, an in-depth AHTR Moltres model that includes turbulence model is 
 out of scope for this dissertation. 
 
-Moltres' governing equation for temperature was described in Equation 
-\ref{eq:moltres-temp}.
-In the AHTR Steady-State Temperature Model, the time-dependent and velocity-dependent 
-terms cancel out since I am solving for steady-state and there is no moving fuel. 
-The model is spatially homogenized as described by Figure \ref{fig:straightened_slab_mg}
-and has insulated boundary conditions.
+Equation \ref{eq:moltres-temp} described Moltres' governing equation for 
+temperature.
+In the 2D cross-sectional AHTR Steady-State Temperature Model, I ignore the 
+time-dependent and velocity-dependent terms since I am solving for steady-state 
+and there is no moving fuel: 
 \begin{align}
     - \nabla \cdot (k_i \nabla T) &= Q_i
 \intertext{where:}
@@ -512,6 +511,7 @@ k_i &= \mbox{thermal conductivity of material i} \nonumber \\
 T &= \mbox{temperature in the slab} \nonumber \\
 Q_i &= \mbox{source or sink term in material i} \nonumber
 \end{align} 
+I use insulated temperature boundary conditions.  
 Table \ref{tab:ahtr-thermal-conducitivity} shows the thermal conductivity values 
 used for each AHTR slab material. 
 \begin{table}[H]
@@ -531,9 +531,10 @@ used for each AHTR slab material.
     \end{tabular}
 \end{table}
 Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source term.
-A convective heat exchanger term models the heat removal from the AHTR fuel slab 
-in the coolant areas: 
+Equation \ref{eq:moltres-heat-removal} defines the heat removal from the AHTR 
+fuel slab in the coolant areas: 
 \begin{align}
+    \label{eq:moltres-heat-removal}
     Q &= h \cdot (T(\vec{r})-T_{ref})
 \intertext{where:}
 Q &= \mbox{heat removal rate for 1cm thin slice of AHTR slab [W/cm]} \nonumber \\
@@ -561,7 +562,7 @@ heat transfer process.
     \end{tabular}
 \end{table} 
 I calculated the heat transfer coefficient ($h$) using Equation \ref{eq:calc-htc} 
-for the 1cm AHTR dz slice with the following assumptions: 
+for the 1cm-thick AHTR $\Delta z$ slice with the following assumptions: 
 \begin{itemize}
     \item it generates a constant amount of power, all of which is removed 
     by the coolant
@@ -576,10 +577,10 @@ for the 1cm AHTR dz slice with the following assumptions:
       &= 990 W cm^{-1}K^{-1} \nonumber 
 \intertext{where:}
 h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
-P_{dz} &= \mbox{power produced in 1cm AHTR slab dz slice [W]}\nonumber \\
+P_{dz} &= \mbox{power produced in 1cm AHTR slab dz slice [$W$]}\nonumber \\
 A_{coolant} &= \mbox{cross-sectional coolant area in AHTR slab [$cm^2$]} \nonumber \\
-T_{total} &= \mbox{total temperature change from inlet to outlet [K]} \nonumber \\
-H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
+T_{total} &= \mbox{total temperature change from inlet to outlet [$K$]} \nonumber \\
+H &= \mbox{AHTR height from inlet to outlet [$cm$]} \nonumber 
 \end{align}
 In the ROLLO optimization simulations, I vary the FliBE coolant channel shape. 
 During the shape variation, I hold the coolant area constant. 
@@ -589,9 +590,11 @@ constant for all the simulations.
 Using the described models and assumptions, I set up a Moltres AHTR steady-state 
 temperature model for a slab with a constant packing fraction of 0.0979 across ten 
 fuel cells. 
-The model used can be found at ... % cite DOI   
-Figure \ref{fig:ahtr_constant_temp} shows the Moltres generated temperature 
-distribution.
+The \texttt{constant$\_$0.0979} directory in the \texttt{2022-chee-dissertation} 
+Github repository contains the model. % cite DOI   
+Figure \ref{fig:ahtr_constant_temp} shows the Moltres-generated temperature 
+distribution with an average and maximum temperature of 1019K and 1128K, 
+respectively.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{ahtr_constant_temp.png}
