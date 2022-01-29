@@ -613,6 +613,8 @@ slab while keeping the same overall packing fraction.
 Chapter \ref{chap:fhr-multiphysics-model} conducts a more accurate one-for-one 
 comparison \ref{chap:fhr-multiphysics-model}.
 
+% Discuss convergence of Moltres temperature model 
+
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
 % PF, Max temp, PPF 
@@ -656,9 +658,65 @@ In this section, I report the results for single objective optimization.
 
 \subsubsection{Objective: Minimize Total Packing Fraction}
 I varied the TRISO particle distribution and total packing fraction, while
-constraining $k_{eff} > 1.39$. 
+constraining $k_{eff} > 1.39$. % why 1.39
+Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
+figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
+the final generation with the smallest packing fraction. 
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-pf-evol.png}
+        \caption{Minimum, average, and maximum total packing fraction evolution.}
+        \label{fig:slab-obj-1-pf-evol} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-pf-final.png}
+        \caption{TRISO particle distribution for the 5 individuals with the 
+        smallest packing fraction in generation 9.}
+        \label{fig:slab-obj-1-pf-final} 
+    \end{subfigure}
+    \caption{ROLLO single-objective optimization to minimize total packing fraction. 
+    Input parameters varied: total packing fraction, TRISO particle distribution.}
+    \label{fig:slab-obj-1-pf}
+\end{figure}
+The minimum and average packing fractions converged very quickly, as expected 
+in this single-objective optimization problem.
+By the $9_{th}$ generation, the average, minimum, and maximum packing fraction
+values have converged to approximately 0.023. 
+In figure \ref{fig:slab-obj-1-pf-final}, I observe that the TRISO particle packing 
+sine distributions are not exactly the same, but follow a similar pattern of 
+alternating between a higher packing fraction, and a lower packing fraction 
+in the neighboring fuel cell. 
+This up-down fuel packing pattern is to minimize self-shielding effects. 
 
 \subsubsection{Objective: Minimize Maximum Temperature}
+I varied the TRISO particle distribution, while constraining $k_{eff} > 1.0$ and 
+total packing fraction of 0.0979 (similar to the FHR benchmark). 
+Figure \ref{fig:slab-obj-1-temp-evol} shows the slab's maximum temperature evolution 
+and figure \ref{fig:slab-obj-1-temp-final} shows the five TRISO particle 
+distributions in the final generation with the lowest maximum temperature.
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-temp-evol.png}
+        \caption{Minimum, average, and maximum evolution of maximum temperature in 
+        AHTR slab.}
+        \label{fig:slab-obj-1-temp-evol} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-temp-final.png}
+        \caption{TRISO particle distribution for the 5 individuals with the 
+        lowest maximum temperature in AHTR slab at generation 9.}
+        \label{fig:slab-obj-1-temp-final} 
+    \end{subfigure}
+    \caption{ROLLO single-objective optimization to minimize maximum temperature 
+    in the slab. Input parameters varied: TRISO particle distribution.}
+    \label{fig:slab-obj-1-temp}
+\end{figure}
+The minimum and average slab maximum temperature converged to approximately 
+1125 K. 
+In figure \ref{fig:slab-obj-1-temp-final}, I observe that a somewhat flat TRISO 
+particle distribution minimizes maximum temperature in the slab.
 
 \subsubsection{Objective: Minimize Normalized Power Peaking Factor}
 
