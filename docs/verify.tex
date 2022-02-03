@@ -1,13 +1,13 @@
 \section{ROLLO Verification}
-To verify \gls{ROLLO}'s optimization capabilities, I conducted two verification studies: 
-a commonly used evolutionary algorithm benchmark problem and a nuclear 
-reactor-specific problem. 
+To verify \gls{ROLLO}'s optimization capabilities, I conducted multiple verification 
+studies: commonly used evolutionary algorithm single and multi objective benchmark problems
+and a nuclear reactor-specific problem. 
 Together, they prove that \gls{ROLLO}'s evolutionary algorithm is correctly implemented 
 and suitable for conducting nuclear reactor optimization problems. 
 
 \subsection{Ackley Function}
 The Ackley function is a non-convex function, commonly used as a performance test 
-for optimization algorithms \cite{ackley_connectionist_2012}: 
+for single-objective optimization algorithms \cite{ackley_connectionist_2012}: 
 \begin{align}
     f(x) &= -a \cdot exp \left(-b\sqrt{\frac{1}{d}\Sigma_{i=1}^dx_i^2}\right) - 
     exp \left(\frac{1}{d}\Sigma_{i=1}^d cos(cx_i)\right) + a + exp(1) 
@@ -30,6 +30,8 @@ function's many local minimums.
 \gls{ROLLO} successfully finds the global optimum point, and thus passes the 
 integration test. 
 
+\subsection{Binh and Korn Function}
+The Binh and Korn function 
 
 \subsection{Pu-239 Critical Bare Sphere}
 To ensure \gls{ROLLO} works correctly while coupled with OpenMC, I run \gls{ROLLO} 

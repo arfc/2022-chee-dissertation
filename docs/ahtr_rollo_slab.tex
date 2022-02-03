@@ -659,7 +659,7 @@ In this section, I report the results for single objective optimization.
 
 \subsubsection{Objective: Minimize Total Packing Fraction}
 I varied the TRISO particle distribution and total packing fraction, while
-constraining $k_{eff} > 1.39$. % why 1.39
+constraining $k_{eff} >= 1.39$. % why 1.39
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
 figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
 the final generation with the smallest packing fraction. 
@@ -688,7 +688,8 @@ In figure \ref{fig:slab-obj-1-pf-final}, I observe that the TRISO particle packi
 sine distributions are not exactly the same, but follow a similar pattern of 
 alternating between a higher packing fraction, and a lower packing fraction 
 in the neighboring fuel cell. 
-This up-down fuel packing pattern is to minimize self-shielding effects. 
+The up-down fuel packing pattern minimizes self-shielding effects, enabling  
+a lower packing fraction for the same $k_{eff}$. 
 
 \subsubsection{Objective: Minimize Maximum Temperature}
 I varied the TRISO particle distribution, while constraining $k_{eff} >= 1.0$ and 
@@ -723,7 +724,8 @@ points in the slab (6.62cm and 20.48cm).
 A fully flat TRISO particle distribution results in a higher maximum temperature in 
 the slab of 1128K, as reported in section \ref{sec:ahtr-moltres-model}. 
 Figure \ref{fig:slab-obj-1-temp-distr} shows the temperature distribution 
-for the slab with mostly flat and flat TRISO particle distributions.
+for the slab with mostly flat (figure \ref{fig:slab-obj-1-temp-final}) and 
+flat TRISO particle distributions.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{slab-obj-1-temp-distr.png}
@@ -762,3 +764,8 @@ distributions in the final generation with the normalized power peaking factor.
 \end{figure}
 
 \subsection{Multi-Objective Optimization}
+In this section, I report the results for ROLLO's multi-objective optimization. 
+
+\subsubsection{Two Objectives: Minimize Total Packing Fraction and Maximum Temperature}
+I varied the total packing fraction and TRISO particle distribution, while 
+constraining $k_{eff} >= 1.39$.
