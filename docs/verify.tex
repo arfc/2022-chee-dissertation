@@ -31,7 +31,24 @@ function's many local minimums.
 integration test. 
 
 \subsection{Binh and Korn Function}
-The Binh and Korn function 
+The Binh and Korn function is a two-objective function:
+\begin{align}
+    Minimize = \begin{cases}
+        f_1 (x,y) &= 4x^2+4y^2 \\
+        f_2 (x,y) &= (x-5)^2 + (y-5)^2
+    \end{cases}
+\end{align}
+We use it as a performance test for dual-objective optimization.
+Figure \ref{fig:binh} shows the Binh and Korn function's pareto front.
+I use the hypervolume indicator to quantify the goodness of 
+pareto front. 
+The hypervolume indicator is one of the most used set-quality indicators for the 
+assessment of stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
+% describe hypervolume
+I added an integration test to ROLLO that checks that a ROLLO simulation will 
+find a hypervolume comparable to the ideal pareto front when minimizing the
+Binh and Korn function. 
+
 
 \subsection{Pu-239 Critical Bare Sphere}
 To ensure \gls{ROLLO} works correctly while coupled with OpenMC, I run \gls{ROLLO} 

@@ -487,9 +487,17 @@ One of the ROLLO AHTR optimization objectives is minimizing the maximum
 temperature in the slab. 
 A neutronics simulation cannot calculate maximum temperature; thus, I introduced 
 AHTR slab temperature modeling with Moltres.
-I used OpenMC to generate multigroup neutronics data for the AHTR slab at 948K 
+In the next sections, I discuss group constant generation and describe the Moltres 
+temperature model. 
+
+\subsubsection{Group Constant Generation}
+I used OpenMC to generate multigroup neutronics data for the AHTR slab 
 for four energy groups and eight precursor groups based on the spatial and 
 energy homogenization described in section \ref{sec:ahtr-moltres-hom}.
+Moltres has the capability 
+% multiple temperatures in group constants, interpolation 
+
+\subsubsection{Temperature Model}
 The Moltres AHTR Steady-State Temperature Model first solves for the neutronics 
 in slab and uses that to solve for the temperature distribution in the slab 
 for a defined power. 
@@ -768,4 +776,4 @@ In this section, I report the results for ROLLO's multi-objective optimization.
 
 \subsubsection{Two Objectives: Minimize Total Packing Fraction and Maximum Temperature}
 I varied the total packing fraction and TRISO particle distribution, while 
-constraining $k_{eff} >= 1.39$.
+constraining $k_{eff} >= 1.39$
