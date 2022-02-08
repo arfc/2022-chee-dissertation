@@ -487,15 +487,69 @@ One of the ROLLO AHTR optimization objectives is minimizing the maximum
 temperature in the slab. 
 A neutronics simulation cannot calculate maximum temperature; thus, I introduced 
 AHTR slab temperature modeling with Moltres.
-In the next sections, I discuss group constant generation and describe the Moltres 
-temperature model. 
+In the next sections, I discuss the mesh generation, group constant generation 
+and finally, the Moltres temperature model. 
+
+\subsubsection{Mesh Generation}
+The AHTR slab mesh is generated using Gmsh \cite{geuzaine_gmsh_2009} based on 
+the spatial homogenization outlined in Section \label{sec:ahtr-moltres-hom}. 
+I used Gmsh's \textit{refine by splitting} functionality to refine the mesh. 
 
 \subsubsection{Group Constant Generation}
 I used OpenMC to generate multigroup neutronics data for the AHTR slab 
 for four energy groups and eight precursor groups based on the spatial and 
 energy homogenization described in section \ref{sec:ahtr-moltres-hom}.
-Moltres has the capability 
-% multiple temperatures in group constants, interpolation 
+Previously, Moltres could only generate group constant data from Serpent 
+\cite{leppanen_serpent_2014} or SCALE \cite{bucholz_scale:_1982} output files. 
+I implemented functionality in Moltres for group constant data generation with 
+OpenMC. 
+The user can generate group constant data for multiple temperatures. 
+Moltres will then automatically interpolate the group constant data for 
+required temperatures. 
+
+During ROLLO optimization, each new reactor geometry results in the creation of 
+a new Moltres temperature model. 
+Correspondingly, a new set of group constant data will also be created. 
+Group constant data for multiple temperatures requires running multiple neutronics 
+simulations at the various temperatures, thus, increasing the total compute time 
+required for each new reactor model. 
+
+In this section, I explore the effects of using multiple temperature group 
+constant data compared to a single temperature.
+I set up Moltres AHTR steady-state temperature models for a slab (described in the 
+following section) for group constant data at each and all the following temperatures:
+948, 1024, 1100, and 1200 K. 
+Table \ref{tab:moltres-group-constant-temps} shows the average and maximum temperature 
+reported by each Moltres model and their differences compared to the model with 
+group constant data with all four temperatures. 
+Table \ref{tab:moltres-group-constant-temps} also shows the 2-norm of the 
+centerline temperature difference between the AHTR slab model with all four temperatures 
+and each single temperature. 
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{AHTR slab's average and maximum temperature and 2-norm of temperature 
+    discretized across the slab's centerline for varying group constant temperature data.}
+	\label{tab:moltres-group-constant-temps}
+    \scriptsize
+    \begin{tabular}{p{2.5cm}p{2cm}p{2.4cm}p{2cm}p{2.4cm}p{2cm}}
+    \hline 
+    \textbf{Group Constant Data Temps [K]}& \textbf{Ave Slab Temp [K]}& 
+    \textbf{Ave Slab Temp Diff [K]}& \textbf{Max Slab Temp [K]} & 
+    \textbf{Max Slab Temp Diff [K]} & $||T_{all, i} - T_{i}||$ \\ 
+    \hline 
+     948 & 1019.997 &  0.032 & 1128.386 &  0.080 & 0.652\\
+    1024 & 1019.989 &  0.023 & 1128.640 &  0.333 & 2.279 \\
+    1100 & 1019.976 &  0.011 & 1128.300 & -0.006 & 2.875 \\
+    1200 & 1019.943 & -0.023 & 1128.052 & -0.255 & 4.308 \\
+    All  & 1019.965 &  -     & 1128.306 & -      & -    \\
+    \hline
+    \end{tabular}
+\end{table}
+The temperature differences between the AHTR slab model with all four temperatures 
+and the AHTR slab models' with each single temperature are not significant. 
+The 948K single temperature group constant data has the lowest 2-norm, thus, I 
+use this temperature in the neutronics model to generate the group constant data. 
 
 \subsubsection{Temperature Model}
 The Moltres AHTR Steady-State Temperature Model first solves for the neutronics 
