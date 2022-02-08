@@ -494,6 +494,11 @@ and finally, the Moltres temperature model.
 The AHTR slab mesh is generated using Gmsh \cite{geuzaine_gmsh_2009} based on 
 the spatial homogenization outlined in Section \label{sec:ahtr-moltres-hom}. 
 I used Gmsh's \textit{refine by splitting} functionality to refine the mesh. 
+Table \ref{tab:mesh-convergence} shows the average and maximum temperature 
+for each refinement step. 
+Table \ref{tab:mesh-convergence} also shows the 2-norm of the centerline 
+temperature difference between refinement steps. 
+
 
 \subsubsection{Group Constant Generation}
 I used OpenMC to generate multigroup neutronics data for the AHTR slab 
