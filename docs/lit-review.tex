@@ -112,3 +112,54 @@ modeled in this proposed work.
 
 \subsection{Previous AHTR modeling efforts and challenges} 
 \label{sec:previous_ahtr}
+The \gls{AHTR} core design differs significantly from the present \gls{LWR} 
+systems' cores. 
+These differences lead to modeling challenges with the current tools and also 
+highlight the need for verification and validation of current simulation tools 
+for \gls{AHTR} physics \cite{ramey_monte_2018}. 
+Verification and validation of \gls{AHTR} neutronics and thermal-hydraulics 
+simulation capabilities supports the \gls{AHTR} design's licensure and 
+eventual goal of \gls{AHTR} deployment 
+\cite{rahnema_phenomena_2019,rahnema_current_2015}.
+In this section, I outline the previous efforts taken to model and validate 
+the \gls{AHTR}'s neutronics and thermal-hydraulics. 
+
+\subsubsection{AHTR Neutronics Modeling}
+Several neutronics studies conducted along the way to the current \gls{AHTR} 
+design have shed light on the technical challenges facing the design 
+\cite{ramey_monte_2018,holcomb_fluoride_2013,greene_pre-conceptual_2010}. 
+\gls{Georgia Tech} led an Integrated Research Project to 
+understand challenges in \gls{AHTR} materials and modeling its neutronics and 
+thermal-hydraulics \cite{zhang_integrated_2019}. 
+During the research project, a panel of subject matter experts 
+generated a \gls{PIRT}.
+The \gls{PIRT} identifies areas that need additional research to better 
+understand important phenomena for adequate future modeling
+\cite{rahnema_phenomena_2019}. 
+Table \ref{tab:phenomena} lists the phenomena identified as requiring further 
+research. 
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{\acrlong{PIRT} identified \acrlong{AHTR} physical phenomena requiring 
+    further research \cite{rahnema_phenomena_2019}.}
+	\label{tab:phenomena}
+    \footnotesize
+    \begin{tabular}{l|l}
+    \hline
+    \textbf{Category} & \textbf{Phenomena} \\ \hline
+    Fundamental cross section data & - Moderation in FliBe \\
+    & - Thermalization in FliBe \\
+    & - Absorption in FliBe \\
+    & - Thermalization in carbon \\
+    & - Absorption in carbon \\ \hline
+    Material Composition & - Fuel particle distribution \\ \hline
+    Computational Methodology & - Solution Convergence \\ 
+    & - Granularity of depletion regions \\
+    & - Multiple heterogeneity treatment for generating multigroup \\ 
+    & cross sections \\
+    & - Selection of multigroup structure \\
+    & - Boundary conditions for multigroup cross section generation \\ \hline 
+    General Depletion & - Spectral history \\ \hline 
+    \end{tabular}
+\end{table}
