@@ -34,9 +34,37 @@ The \gls{GIF} selected six Generation IV systems for further research and
 development based on target goals in four areas: sustainability, 
 economics, safety and reliability, and proliferation resistance and physical 
 protection \cite{gif_technology_2002}. 
-The systems are: \glspl{GFR}, \glspl{LFR}, \glspl{MSR}, \glspl{SFR}, \glspl{SCWR}, 
+Table \ref{tab:goals-gen4} summarizes the goals in each area. 
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{Goals of Generation IV Nuclear Systems \cite{gif_technology_2002,
+    behar_technology_2014}}
+	\label{tab:goals-gen4}
+    \footnotesize
+    \begin{tabular}{l|l}
+    \hline
+                               \textbf{Area} & \textbf{Goals} \\ \hline
+    Sustainability   & - Have a positive impact on the environment through the displacement of \\
+    & polluting energy and transportation sources by nuclear electricity generation \\
+    & and nuclear-produced hydrogen \\ 
+    & - Promote long-term availability of nuclear fuel \\
+    & - Minimize volume, lifetime, and toxicity of nuclear waste \\ \hline
+    Economics & - Have a life cycle and energy production cost advantage over other energy \\
+    & sources \\ 
+    & - Reduce economic risk to nuclear projects by developing plants using \\
+    & innovative fabrication and construction techniques \\ \hline
+    Safety and Reliability   & - Increase the use of robust designs, and inherent and transparent safety\\
+    & features that can be understood by non-experts \\ 
+    & - Enhance public confidence in the safety of nuclear energy \\\hline
+    Proliferation Resistance & - Provide continued effective proliferation resistance of nuclear energy \\
+    and Physical Protection & systems through improved design features and other measures \\ 
+    & - Increase the robustness of new facilities \\ \hline
+    \end{tabular}
+\end{table}
+The systems are \glspl{GFR}, \glspl{LFR}, \glspl{MSR}, \glspl{SFR}, \glspl{SCWR}, 
 and \glspl{VHTR} \cite{gif_technology_2002}. 
-The \gls{FHR} concept introduced in 2003 uses a low-pressure liquid fluoride-salt 
+The \acrfull{FHR} concept introduced in 2003 uses a low-pressure liquid fluoride-salt 
 coolant and high-temperature coated-particle \gls{TRISO} fuel, combining 
 the best aspects of the \gls{MSR} and \gls{VHTR} systems respectively
 \cite{forsberg_molten-salt-cooled_2003,facilitators_fluoride-salt-cooled_2013}.
@@ -118,7 +146,7 @@ These differences lead to modeling challenges with the current tools and also
 highlight the need for verification and validation of current simulation tools 
 for \gls{AHTR} physics \cite{ramey_monte_2018}. 
 Verification and validation of \gls{AHTR} neutronics and thermal-hydraulics 
-simulation capabilities supports the \gls{AHTR} design's licensure and 
+simulation capabilities support the \gls{AHTR} design's licensure and 
 eventual goal of \gls{AHTR} deployment 
 \cite{rahnema_phenomena_2019,rahnema_current_2015}.
 In this section, I outline the previous efforts taken to model and validate 
@@ -300,3 +328,105 @@ Thus, in 2019 the \gls{NRC} addressed these regulatory challenges by issuing
 a draft action plan to prepare the agency to review applications for 
 additive manufacturing of nuclear components and clarify the industry's 
 expectations of their use \cite{noauthor_roadmap_nodate}.
+
+\subsection{Benefits of 3D Printing Reactor Components}
+\label{sec:am}
+Wide-spread adoption of additive manufacturing methods in the nuclear industry 
+could drastically reduce fabrication costs and timelines, combine multiple 
+systems and assembled components into single parts, increase safety and 
+performance by tailoring local material properties, and enable geometry 
+redesign for optimal load paths \cite{simpson_considerations_2019}. 
+Many Generation IV advanced reactor concepts have complex geometries, 
+such as hex-ducts for sodium-cooled fast reactors, that are costly and difficult 
+to fabricate using standard processing techniques \cite{sridharan_performance_2019}.  
+In summary, reactor core component fabrication with additive manufacturing 
+has the potential to enable further optimization and improvement of fuel 
+geometries to enhance reactor performance at lower costs \cite{bergeron_early_2018}. 
+
+\subsection{Efforts towards 3D Printing Reactor Components}
+In 2019, \gls{ORNL} initiated the \gls{TCR} Demonstration Program.
+The \gls{TCR} program leverages recent scientific achievements in additive 
+manufacturing, nuclear materials, machine learning, and computational modeling
+to reduce deployment costs and timelines for advanced nuclear energy systems. 
+The \gls{TCR} program aims to utilize additive manufacturing technology to 
+establish advanced nuclear energy system designs unconstrained by conventional 
+manufacturing, and demonstrate the method's value by building an additively 
+manufactured microreactor \cite{terrani_transformational_2019}. 
+
+The \gls{TCR} program followed a downselection process based on the program's 
+design contraints to select the reactor's design, materials, and components.
+The downselected TCR design is a TRISO-fueled and yttrium hydride moderated 
+gas-cooled reactor \cite{betzler_transformational_2020}.
+At \gls{ORNL}, Trammel et al \cite{trammell_advanced_2019} demonstrated 
+the fabrication of a SiC fuel element with embedded \gls{TRISO} fuel using 
+additive manufacturing techniques: binderjet printing and \gls{CVI}. 
+They followed the following fabrication steps (depicted in Figure 
+\ref{fig:ornl-triso-print}): 
+\begin{enumerate}
+    \item A SiC fuel element with coolant channel structure is first printed with 
+    binderjet technology. 
+    \item The designated fueled region of the element is loaded with surrogate 
+    \gls{TRISO} particles and additional SiC powder to fill interstitial spaces
+    between particles. 
+    \item The loaded fuel element is densified in a \gls{CVI} process to achieve 
+    microencapsulation of \gls{TRISO} particles in a SiC matrix. 
+\end{enumerate}
+\begin{figure}[]
+    \centering
+    \includegraphics[width=\linewidth]{ornl-triso-print.png} 
+    \caption{Stages of additive manufacturing fabrication conducted at \acrlong{ORNL} to 
+    produce a fuel demonstration element with \gls{TRISO} particles embedded in 
+    a SiC matrix \cite{trammell_advanced_2019}.}
+    \label{fig:ornl-triso-print}
+\end{figure}
+Figure \ref{fig:ornl-fuel-element} shows the the fuel element manufactured at 
+\gls{ORNL} for the \gls{TCR} program \cite{betzler_transformational_2020}. 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.6\linewidth]{ornl-fuel-element.png} 
+    \caption{The top portion of the advanced manufactured fuel element 
+    reproduced from \cite{betzler_transformational_2020} for the \acrfull{TCR} 
+    program at \acrfull{ORNL}. A cutaway of the element shows surrogate TRISO 
+    particles packed in the SiC matrix.}
+    \label{fig:ornl-fuel-element}
+\end{figure}
+The current design uses fuel shapes and coolant channels that are uniform in the 
+axial dimension. 
+The \gls{TCR} programs plans to further optimize for coolant channels that vary 
+in both axial and radial directions within the fuel element 
+\cite{betzler_transformational_2020,sobes_artificial_2020}. 
+
+Besides, the \gls{TCR} program, the nuclear materials research community has made 
+significant progress in demonstrating the application of additive manufacturing 
+to nuclear fuel and structural core material fabrication. 
+Rosales et al. \cite{rosales_characterizing_2019} conducted a feasibility study 
+of direct routes to fabricate dense uranium silicide (U$_3$Si$_2$) fuel pellets 
+using the \gls{INL} approach known as \gls{AMAFT}. 
+U$_3$Si$_2$ demonstrates desirable accident-tolerant nuclear fuel properties 
+such as high uranium density and improved thermal properties, however, it has 
+an expensive and long metallurgical fabrication process. 
+Thus, using \gls{AMAFT} to fabricate U$_3$Si$_2$ will lower cost and ensure a
+timely and commercially-reliable fabrication process \cite{rosales_characterizing_2019}. 
+Sridharan et al. \cite{sridharan_performance_2019} demonstrated the application of
+the laser-blown-powder additive manufacturing process to fabricate \gls{FM} steel, a type of 
+steel commonly used for cladding and structural components in nuclear reactors. 
+Koyanagi et al. \cite{koyanagi_additive_2020} presented the latest 
+additive manufacturing technology for manufacturing nuclear-grade \gls{SiC} materials. 
+They demonstrated that combinations of additive manufacturing techniques and 
+traditional \gls{SiC} densification methods enabled new designs of \gls{SiC} 
+components with complex shapes. 
+\gls{SiC} demonstrates excellent strength at elevated temperatures, chemical inertness, 
+relatively low neutron absorption, and stability under neutron irradiation up 
+to high doses \cite{sauder_ceramic_2014, snead_handbook_2007,koyanagi_additive_2020}. 
+These qualities make \gls{SiC} suitable for many applications in nuclear systems 
+such as fuel cladding, constituents of fuel particles \cite{snead_handbook_2007} 
+and pellets \cite{terrani_progress_2015}, and core structural components in fission 
+reactors \cite{sauder_ceramic_2014}. 
+
+Many of the materials and fabrication methods discussed above are applicable 
+for \gls{FHR}-part manufacturing. 
+Therefore, this reiterates the possibility of leveraging additive manufacturing to 3D print a
+\gls{FHR}-type reactor with non-conventional geometry. 
+
+\section{Nuclear Reactor Design Optimization}
+\label{sec:opt}
