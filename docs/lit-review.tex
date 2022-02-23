@@ -438,5 +438,60 @@ reactors \cite{sauder_ceramic_2014}.
 
 \section{Nuclear Reactor Design Optimization}
 \label{sec:opt}
+Traditional manufacturing constraints result in previous efforts 
+towards nuclear reactor optimization focusing on optimizing classical reactor 
+parameters such as radius of fuel pellet and clad, enrichment of fuel, 
+pin pitch, etc. 
+The optimization methods used for reactor design optimization are either 
+deterministic or stochastic methods. 
+Deterministic optimization methods usually start from a guess solution.
+Then, the algorithm suggests a search direction by applying local 
+information to a pre-specified transition rule. 
+Any better solution becomes the new solution, and the above procedure continues 
+several times \cite{deb_multi-objective_2001}. 
+Drawbacks of deterministic methods include: algorithms tend to get stuck at
+suboptimal solutions, and an algorithm efficient in solving one type of problem 
+may not solve a different problem efficiently \cite{deb_multi-objective_2001}. 
+Stochastic optimization methods, such as evolutionary algorithms and simulated annealing,  
+minimize or maximize an objective function when randomness is present. 
+Stochasticity enables them to find globally optimal solutions more reliably than 
+deterministic methods. 
+Due to stochastic methods' many advantages, recent efforts towards nuclear 
+reactor optimization use these methods. 
 
-\section{Concluding Remarks}
+Additive manufacturing advancements for reactor core components remove
+conventional fuel manufacturing geometric constraints such as slabs as fuel 
+planks, cylinders as fuel rods, spheres as fuel pebbles, axis-aligned coolant 
+channels, etc  \cite{sobes_artificial_2020}.
+Reactor designers can now approach the nuclear design problems with truly 
+arbitrary geometries, and optimize beyond classical parameters to enhance 
+fuel performance and safety further. 
+
+\section{Evolutionary Algorithms} 
+With a substantial increase and change in an arbitrary geometry's design space, 
+it becomes time consuming for a human reactor designer to thoroughly explore 
+and find optimal geometries in the expanded design space. 
+Instead, we can leverage \gls{AI} optimization methods, such as evolutionary 
+algorithms, to promptly explore the large design space to find global optimal 
+designs. 
+\gls{AI} does not replace the human reactor designer but shifts the human 
+designer's focus away from conjecturing suitable geometries to defining design 
+criteria to find optimal designs \cite{sobes_artificial_2020}. 
+Thus, when the human designer changes the reactor criteria, the \gls{AI} 
+model will quickly adapt and produce new global optimal designs to fit the new 
+criteria.  
+
+Evolutionary algorithms, a subset of \gls{AI}, create a population of individual 
+solutions, inspired by biological evolution, and induce goals by using a 
+`fitness function' to mutate and preferentially replicate high-scoring 
+individuals to reach an optimal solution.
+Evolutionary algorithms often perform well at approximating solutions to many 
+problem types because they do not make any assumptions about the 
+underlying fitness landscape.
+Genetic algorithms are the most popular evolutionary algorithms for solving 
+multi-objective problems \cite{byrne_evolving_2014, krish_practical_2011}. 
+
+% why pick EA. Why is good? It's in Stochastic Optimization: Evolutionary Algorithm Method section
+
+\section{Summary}
+

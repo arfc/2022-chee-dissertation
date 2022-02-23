@@ -172,14 +172,14 @@ slab while keeping the same overall packing fraction as the FHR benchmark.
 \section{FliBE Coolant Channel Shape Variation}
 In the ROLLO optimization simulations, I vary the FliBE coolant channel shape 
 while holding the total coolant area constant.  
-Figure \ref{fig:ahtr-coolant-shape-variation-1} shows an example of how I will 
+Figure \ref{fig:ahtr-coolant-shape-variation-3} shows an example of how I will 
 vary the coolant channel's shape. 
 I will model the coolant channel's sinusoidal-like pattern using cylinder 
 surfaces in OpenMC, instead of a sinusoidal function. 
 Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a 
 CAD based tool, which is out of scope of the dissertation.
 By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
-pattern will change as shown in Figure \ref{fig:ahtr-coolant-shape-variation-2}. 
+pattern.
 I calculated the heat transfer coefficient for the Moltres AHTR temperature model 
 (Equation \ref{eq:calc-htc}) with the assumption that the slab generates a 
 constant amount of power and the heat removal occurs over the coolant areas.
@@ -189,14 +189,9 @@ for all the AHTR Moltres temperature models of varying coolant channel shapes.
 \begin{figure}[H]
     \centering
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{coolant_shape_variation_example.png}
-        \caption{Example of where the coolant shape variation will occur.}
-        \label{fig:ahtr-coolant-shape-variation-1}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{coolant_shape_variation.png}
-        \caption{Specific examples of the coolant shape variations.}
-        \label{fig:ahtr-coolant-shape-variation-2}
+        \includegraphics[width=\linewidth]{ahtr-coolant-shape-variation-3.png}
+        \caption{Example of the coolant shape variation.}
+        \label{fig:ahtr-coolant-shape-variation-3}
     \end{subfigure}
     \caption{AHTR Coolant Shape Variation}  
     \label{fig:ahtr-coolant-shape-variation}
