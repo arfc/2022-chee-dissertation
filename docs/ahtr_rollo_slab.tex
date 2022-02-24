@@ -759,6 +759,7 @@ The up-down fuel packing pattern minimizes self-shielding effects, enabling
 a lower packing fraction for the same $k_{eff}$. 
 
 \subsubsection{Objective: Minimize Maximum Temperature}
+\label{sec:1-obj-TRISO-temp}
 I varied the TRISO particle distribution, while constraining $k_{eff} >= 1.0$ and 
 total packing fraction of 0.0979 (similar to the FHR benchmark). 
 Figure \ref{fig:slab-obj-1-temp-evol} shows the slab's maximum temperature evolution 
@@ -806,6 +807,7 @@ has a slight dip near the moderator regions, resulting in a lower maximum
 temperature.  
 
 \subsubsection{Objective: Minimize Normalized Power Peaking Factor}
+\label{sec:1-obj-TRISO-ppf}
 I varied the TRISO particle distribution, while constraining $k_{eff} >= 1.0$ and 
 total packing fraction of 0.0979 (similar to the FHR benchmark). 
 Figure \ref{fig:slab-obj-1-ppf-evol} shows the slab's normalized power peaking 
@@ -832,11 +834,59 @@ distributions in the final generation with the normalized power peaking factor.
 
 \subsection{Multi-Objective Optimization}
 In this section, I report the results for ROLLO's multi-objective optimization. 
+I show the pareto front for each multi-objective problem. 
+For each solution in a set of Pareto front solutions, none of 
+the objective functions can be improved in value without degrading some of the 
+other objective values. 
 
 \subsubsection{Two Objectives: Minimize Total Packing Fraction and Maximum Temperature}
 I varied the total packing fraction and TRISO particle distribution, while 
-constraining $k_{eff} >= 1.39$
+constraining $k_{eff} >= 1.34$
 
 \subsubsection{Two Objectives: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
 
 \subsubsection{Two Objectives: Minimize Maximum Temperature and Normalized Power Peaking Factor}
+I varied the TRISO particle distribution while constraining $k_{eff} >= 1.34$
+and holding total packing fraction at 0.0979.
+Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of maximum temperature 
+against normalized power peaking factor for all the individual reactor models 
+in the ROLLO simulation. 
+The black dots represent individual reactor models, and the red crosses refer to 
+the reactor models on the pareto front. 
+The pareto front shows a negative correlation between maximum temperature and 
+PPF. 
+Higher PPF results in lower maximum temperature and vice versa. 
+Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the TRISO distribution 
+for the reactor models on the pareto front. 
+The TRISO distribution that corresponds to lowest maximum temperature and highest 
+normalized power peaking factor is mostly flat and looks similar to the 
+TRISO distribution from the minimize maximum temperature single objective 
+optimization described in Section \ref{sec:1-obj-TRISO-temp}. 
+The TRISO distribution that corresponds to the highest maximum temperature and 
+lowest normalized power peaking factor has high packing fraction on the sides 
+and reaches a minimum point at the center of the slab, which looks similar to the 
+TRISO distribution from the minimize PPF single objective optimization
+described in Section \ref{sec:1-obj-TRISO-ppf}.
+TRISO distribution that has an average of each objective has a TRISO distribution 
+that alternates between higher and lower packing fraction with a flatter TRISO 
+distribution in the center of the slab. 
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto.png}
+        \caption{}
+        \label{fig:slab-obj-2-tempppf-pareto} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto-distr.png}
+        \caption{.}
+        \label{fig:slab-obj-2-tempppf-pareto-distr} 
+    \end{subfigure}
+    \caption{ROLLO multi-objective optimization to minimize maximum temperature and 
+    normalized power peaking factor in the slab. Input parameters varied: 
+    TRISO particle distribution.}
+    \label{fig:slab-obj-2-tempppf}
+\end{figure}
+
+\subsection{Three Objectives: Minimize Total Packing Fraction, Maximum Temperature, and Normalized Power Peaking Factor}
+
