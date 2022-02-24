@@ -438,8 +438,8 @@ reactors \cite{sauder_ceramic_2014}.
 
 \section{Nuclear Reactor Design Optimization}
 \label{sec:opt}
-Traditional manufacturing constraints result in previous efforts 
-towards nuclear reactor optimization focusing on optimizing classical reactor 
+Traditional manufacturing constraints result in most of past nuclear reactor 
+optimization work focusing on optimizing classical reactor 
 parameters such as radius of fuel pellet and clad, enrichment of fuel, 
 pin pitch, etc. 
 The optimization methods used for reactor design optimization are either 
@@ -466,6 +466,108 @@ channels, etc  \cite{sobes_artificial_2020}.
 Reactor designers can now approach the nuclear design problems with truly 
 arbitrary geometries, and optimize beyond classical parameters to enhance 
 fuel performance and safety further. 
+
+In the subsequent sections, I discuss the previous efforts towards nuclear 
+reactor optimization for classical reactor parameters and arbitrary parameters. 
+
+\subsection{Reactor Optimization for Classical Parameters}
+The most commonly used stochastic optimization methods are simulated annealing 
+and evolutionary algorithms. 
+
+\subsubsection{Reactor Optimization with Simulated Annealing Method}
+Simulated annealing iteratively updates one candidate solution until it reaches 
+the termination criteria. 
+At each iteration, the simulated annealing algorithm selects a random move. 
+If the selected move improves the solution, it is always accepted; however,  
+if it does not improve the solution, the algorithm updates the solution with 
+some probability of less than 1.
+
+Sacco et al. \cite{sacco_two_2006,sacco_metropolis_2008} used stochastic 
+simulated annealing and deterministic-stochastic hybrid optimization techniques 
+to optimize reactor dimensions, enrichment, materials, etc., to 
+minimize the average peaking factor in a three-enrichment-zone reactor. 
+Odeh et al. \cite{odeh_core_2016} used the simulated annealing stochastic algorithm 
+coupled with neutronics and thermal-hydraulics simulation tools, \gls{PARCS} and RELAP5
+\cite{fletcher_relap5mod3_1992}, to develop an optimal \gls{NMR-50} core design 
+with a 10-year cycle length and minimal fissile loading. 
+Kropaczek et al. \cite{kropaczek_large-scale_2019} demonstrated the constraint 
+annealing method: a highly scalable method based on the method of parallel 
+simulated annealing with mixing of states \cite{kropaczek_constraint_2019} for 
+the solution of large-scale, multiconstrained problems in \gls{LWR} fuel cycle 
+optimization. 
+These papers demonstrate the simulated annealing optimization method's success in 
+reactor design optimization problems. 
+
+Nuclear reactor optimization problems require computationally 
+expensive neutronics and thermal-hydraulics software to compute the objective 
+function and constraints. 
+Multiple papers utilized stochastic optimization methods with surrogate models 
+and replace, high-fidelity neutronics or thermal hydraulics 
+simulations to reduce computational cost.
+Kumar et al. \cite{kumar_new_2015} combined genetic algorithm optimization 
+with a surrogate model to optimize for high breeding of $^{233}$U and $^{239}$Pu 
+in desired power peaking limits and keff by varying: fuel pin 
+radius,  fissile material isotopic enrichment, coolant mass flow rate, and 
+core inlet coolant temperature.
+Betzler et al. \cite{betzler_design_2019} developed a systematic approach to 
+build a surrogate model to serve in place of high-fidelity computational 
+analyses. 
+They leveraged the surrogate model with a simulated annealing optimization 
+algorithm to generate optimized designs at a lower computational cost and
+understand the impact of design decisions on desired metrics for \gls{HFIR} \gls{LEU} 
+core designs.
+
+The simulated annealing method uses a point-by-point approach:
+one solution gets updated to a new solution in one iteration, which does not 
+exploit parallel systems' advantages.
+Finding an optimal solution with simulated annealing methods takes very 
+long if high-fidelity computationally expensive codes are used to compute 
+the objective function and constraints.
+Using a simulated annealing method is only practical if a 
+surrogate evaluation model is used, as described in Betzler et al. 
+\cite{betzler_design_2019} and Kumar et al. \cite{kumar_new_2015}.
+
+\subsubsection{Reactor Optimization with Evolutionary Algorithm Method}
+Peireira et al. \cite{pereira_coarse-grained_2003,pereira_parallel_2008} 
+used a coarse-grained parallel genetic algorithm and a niching genetic algorithm
+to optimize the same problem as Sacco et al. \cite{sacco_two_2006}. 
+Kamalpour et al. \cite{kamalpour_smart_2020} utilized the imperialist competitive 
+algorithm, a type of evolutionary algorithm, to optimize a \gls{FCM} fuelled 
+\gls{PWR} to extend the reactor core cycle length. 
+
+Contrary to a single solution per iteration in deterministic and stochastic 
+simulated annealing methods, evolutionary algorithms use a population of solutions in each 
+iteration \cite{deb_multi-objective_2001}. 
+Evolutionary algorithm methods mimic nature's evolutionary principles to drive 
+the search towards an optimal solution. 
+With the affordability and availability of parallel computing systems, the 
+evolutionary algorithm optimization method stands out as a method 
+that easily and conveniently exploits parallel systems. 
+Further, evolutionary algorithms have proved amenable to \gls{HPC} solutions and 
+scalable to tens of thousands of processors \cite{kropaczek_constraint_2019}. 
+Thus, for optimization problems that require high-fidelity evaluation software, 
+the evolutionary algorithm method can leverage parallel computing to find a 
+solution faster than the simulated annealing method.
+Therefore, in this dissertation, I will utilize the evolutionary algorithm 
+optimization method. 
+
+\subsection{Reactor Optimization for Arbitrary Parameters}
+Sobes et al \cite{sobes_artificial_2020} used a genetic algorithm to find 
+minimum volume geometric configurations with multiphysics constraints of 
+1500 pcm excess reactivity and maximum fuel temperature of 618 $^{\circ}C$ under 
+forced-flow cooling conditions for a \gls{TCR}-like reactor. 
+To represent arbitrary geometry variation, they constrained the solution geometry 
+to right cylinders. 
+The authors acknowledge that this work is only a first step towards truly 
+arbitrary geometry expression. 
+They found that the optimal cone-like core configuration is in the geometry 
+shape of a truncated annular cone, with the inlet surface being larger than 
+the outlet \cite{sobes_artificial_2020}.
+
+See et al \cite{see_design_2022} 
+
+\subsection{Impact of Additive Manufacturing on Nuclear Reactor Design 
+Optimization}
 
 \section{Evolutionary Algorithms} 
 With a substantial increase and change in an arbitrary geometry's design space, 
