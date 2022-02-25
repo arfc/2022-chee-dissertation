@@ -841,16 +841,31 @@ the objective functions can be improved in value without degrading some of the
 other objective values. 
 
 \subsubsection{Two Objectives: Minimize Total Packing Fraction and Maximum Temperature}
-I varied the total packing fraction and TRISO particle distribution, while 
-constraining $k_{eff} >= 1.34$
 
 \subsubsection{Two Objectives: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
+I varied the TRISO particle distribution while constraining $k_{eff} >= 1.35$
+and holding total packing fraction at 0.0979.
+Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of total packing fraction 
+against normalized power peaking factor for each individual reactor models 
+in the ROLLO simulation.
+The red crosses refer to the reactor models on final evolutionary algorithm 
+generation's pareto front. 
+The pareto front shows a negative correlation between packing fraction and 
+PPF. 
+Higher PPF results in a lower packing fraction and vice versa. 
+The TRISO distribution with the highest power peaking factor and lowest packing 
+fraction is has a constant packing fraction of 0.02 across the slab. 
+The TRISO distribution with the lowest power peaking factor and highest packing 
+fraction has a packing fraction that peaks in the center of the slab and both 
+sides. 
+% this is probably due to self shielding phenomena. 
+% see pf_ppf_analysis_update.ipynb for plots. 
 
 \subsubsection{Two Objectives: Minimize Maximum Temperature and Normalized Power Peaking Factor}
-I varied the TRISO particle distribution while constraining $k_{eff} >= 1.34$
+I varied the TRISO particle distribution while constraining $k_{eff} >= 1.00$
 and holding total packing fraction at 0.0979.
 Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of maximum temperature 
-against normalized power peaking factor for all the individual reactor models 
+against normalized power peaking factor for each individual reactor models 
 in the ROLLO simulation. 
 The black dots represent individual reactor models, and the red crosses refer to 
 the reactor models on the pareto front. 
