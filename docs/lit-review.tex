@@ -438,6 +438,21 @@ reactors \cite{sauder_ceramic_2014}.
 
 \section{Nuclear Reactor Design Optimization}
 \label{sec:opt}
+A nuclear reactor's complexity results in reactor design optimization being a 
+multi-objective design problem requiring a tradeoff between desirable 
+attributes \cite{byrne_evolving_2014,simon_sciences_2019}. 
+When multiple conflicting objectives compete no single optimum solution 
+simultaneously optimizes all objectives. 
+Instead, multi-objective optimization returns multiple optimal 
+solutions that meets each objective to varying degrees, this is known as the 
+Pareto front \cite{deb_multi-objective_2001}. 
+For a multi-objective problem like reactor design, an ideal optimization method 
+should find widely spread solutions in the obtained Pareto front 
+\cite{deb_multi-objective_2001}. 
+For each solution in a set of Pareto front solutions, none of 
+the objective functions can be improved in value without degrading some of the 
+other objective values. 
+
 Traditional manufacturing constraints result in most of past nuclear reactor 
 optimization work focusing on optimizing classical reactor 
 parameters such as radius of fuel pellet and clad, enrichment of fuel, 
@@ -456,23 +471,27 @@ Stochastic optimization methods, such as evolutionary algorithms and simulated a
 minimize or maximize an objective function when randomness is present. 
 Stochasticity enables them to find globally optimal solutions more reliably than 
 deterministic methods. 
-Due to stochastic methods' many advantages, recent efforts towards nuclear 
+Due to stochastic methods' many advantages, most efforts towards nuclear 
 reactor optimization use these methods. 
 
-Additive manufacturing advancements for reactor core components remove
-conventional fuel manufacturing geometric constraints such as slabs as fuel 
+In recent years, additive manufacturing advancements for reactor core components 
+remove conventional fuel manufacturing geometric constraints such as slabs as fuel 
 planks, cylinders as fuel rods, spheres as fuel pebbles, axis-aligned coolant 
 channels, etc  \cite{sobes_artificial_2020}.
 Reactor designers can now approach the nuclear design problems with truly 
 arbitrary geometries, and optimize beyond classical parameters to enhance 
 fuel performance and safety further. 
+This has opened the door for a re-examination of reactor core 
+optimization in a completely new way, determining the optimal arbitrary geometry 
+and fuel distribution for a given objective function with a much smaller set of 
+constraints \cite{sobes_artificial_2020}. 
 
 In the subsequent sections, I discuss the previous efforts towards nuclear 
 reactor optimization for classical reactor parameters and arbitrary parameters. 
 
 \subsection{Reactor Optimization for Classical Parameters}
-The most commonly used stochastic optimization methods are simulated annealing 
-and evolutionary algorithms. 
+The most commonly used stochastic optimization methods for reactor design 
+optimization are simulated annealing and evolutionary algorithms. 
 
 \subsubsection{Reactor Optimization with Simulated Annealing Method}
 Simulated annealing iteratively updates one candidate solution until it reaches 
@@ -504,11 +523,6 @@ function and constraints.
 Multiple papers utilized stochastic optimization methods with surrogate models 
 and replace, high-fidelity neutronics or thermal hydraulics 
 simulations to reduce computational cost.
-Kumar et al. \cite{kumar_new_2015} combined genetic algorithm optimization 
-with a surrogate model to optimize for high breeding of $^{233}$U and $^{239}$Pu 
-in desired power peaking limits and keff by varying: fuel pin 
-radius,  fissile material isotopic enrichment, coolant mass flow rate, and 
-core inlet coolant temperature.
 Betzler et al. \cite{betzler_design_2019} developed a systematic approach to 
 build a surrogate model to serve in place of high-fidelity computational 
 analyses. 
@@ -525,7 +539,7 @@ long if high-fidelity computationally expensive codes are used to compute
 the objective function and constraints.
 Using a simulated annealing method is only practical if a 
 surrogate evaluation model is used, as described in Betzler et al. 
-\cite{betzler_design_2019} and Kumar et al. \cite{kumar_new_2015}.
+\cite{betzler_design_2019}.
 
 \subsubsection{Reactor Optimization with Evolutionary Algorithm Method}
 Peireira et al. \cite{pereira_coarse-grained_2003,pereira_parallel_2008} 
@@ -534,6 +548,11 @@ to optimize the same problem as Sacco et al. \cite{sacco_two_2006}.
 Kamalpour et al. \cite{kamalpour_smart_2020} utilized the imperialist competitive 
 algorithm, a type of evolutionary algorithm, to optimize a \gls{FCM} fuelled 
 \gls{PWR} to extend the reactor core cycle length. 
+Kumar et al. \cite{kumar_new_2015} combined genetic algorithm optimization 
+with a surrogate model to optimize for high breeding of $^{233}$U and $^{239}$Pu 
+in desired power peaking limits and keff by varying: fuel pin 
+radius,  fissile material isotopic enrichment, coolant mass flow rate, and 
+core inlet coolant temperature.
 
 Contrary to a single solution per iteration in deterministic and stochastic 
 simulated annealing methods, evolutionary algorithms use a population of solutions in each 
@@ -550,6 +569,8 @@ the evolutionary algorithm method can leverage parallel computing to find a
 solution faster than the simulated annealing method.
 Therefore, in this dissertation, I will utilize the evolutionary algorithm 
 optimization method. 
+Further literature review on evolutionary algorithms are described in Section 
+\ref{sec:ea}.
 
 \subsection{Reactor Optimization for Arbitrary Parameters}
 Sobes et al \cite{sobes_artificial_2020} used a genetic algorithm to find 
@@ -570,6 +591,7 @@ See et al \cite{see_design_2022}
 Optimization}
 
 \section{Evolutionary Algorithms} 
+\label{sec:ea}
 With a substantial increase and change in an arbitrary geometry's design space, 
 it becomes time consuming for a human reactor designer to thoroughly explore 
 and find optimal geometries in the expanded design space. 
@@ -596,4 +618,19 @@ multi-objective problems \cite{byrne_evolving_2014, krish_practical_2011}.
 % why pick EA. Why is good? It's in Stochastic Optimization: Evolutionary Algorithm Method section
 
 \section{Summary}
-
+This chapter provided a literature review of relevant past research 
+efforts that give context to this dissertation. 
+In summary, participation in the OECD-NEA FHR benchmarking exercise contributes 
+to the assessment of the current neutron transport and thermal-hydraulics 
+modeling and simulation capabilities for the \gls{AHTR} design.
+Also, additive manufacturing of nuclear reactor components is a quickly 
+developing field thanks to the aerospace and automotive industries, which led to 
+breakthroughs in additive manufacturing fabrication of metal components. 
+The promise of cheaper and faster manufacturing of reactor components with 
+additive manufacturing frees complex reactor geometries from previous 
+manufacturing constraints and allows reactor designers to reexamine reactor 
+design optimization.  
+Stochastic optimization methods such as evolutionary algorithms have proven to 
+work well for finding global optimums in multi-objective design problems such as 
+nuclear reactor optimization and can be leveraged to explore the vast exploration 
+design space enabled by additive manufacturing.
