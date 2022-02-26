@@ -225,7 +225,7 @@ absence of thermal scattering data will impact the accuracy of the results
 \cite{ramey_monte_2018}. 
 
 \subsubsection{AHTR Multiphysics Modeling}
-In past effort towards multiphysics modeling of the \gls{AHTR}, Gentry et al 
+In past effort towards multiphysics modeling of the \gls{AHTR}, Gentry et al. 
 \cite{gentry_development_2016} developed an adapted lattice physics-to-core 
 simulator two-step procedure with Serpent \cite{leppanen_serpent_2014} 
 and \gls{NESTLE} \cite{turinsky_nestle_1994} for the \gls{AHTR} design. 
@@ -237,7 +237,7 @@ analysis is performed by 3-D nodal simulation
 \gls{NESTLE}'s thermal-hydraulics utilizes a \gls{HEM} model for two-phase 
 flow and it solves the few-group neutron diffusion equation utilizing the
 \gls{NEM} for cartesian and hexagonal reactor geometries.  
-Gentry et al concluded that the method required further accuracy improvements 
+Gentry et al. concluded that the method required further accuracy improvements 
 by improving reflector model and optimizing coarse energy group structure further.
 Lin \cite{lin_thermal_2020} used RELAP5, a system-level code, to perform 
 \gls{AHTR} thermal hydraulics transient simulations to investigate the 
@@ -367,7 +367,7 @@ design contraints to select the reactor's design, materials, and components
 \cite{betzler_transformational_2020}.
 The downselected TCR design is a TRISO-fueled and yttrium hydride moderated 
 gas-cooled reactor \cite{betzler_transformational_2020}.
-At \gls{ORNL}, Trammel et al \cite{trammell_advanced_2019} demonstrated 
+At \gls{ORNL}, Trammel et al. \cite{trammell_advanced_2019} demonstrated 
 the fabrication of a SiC fuel element with embedded \gls{TRISO} fuel using 
 additive manufacturing techniques: binderjet printing and \gls{CVI}. 
 They followed the following fabrication steps (depicted in Figure 
@@ -554,9 +554,16 @@ surrogate evaluation model is used, as described in Betzler et al.
 \cite{betzler_design_2019}.
 
 \subsubsection{Reactor Optimization with Evolutionary Algorithm Method}
+Contrary to a single solution per iteration in deterministic and stochastic 
+simulated annealing methods, evolutionary algorithms use a population of 
+solutions in each iteration \cite{deb_multi-objective_2001}. 
+Evolutionary algorithm methods mimic nature's evolutionary principles to drive 
+the search towards an optimal solution. 
+
 Peireira et al. \cite{pereira_coarse-grained_2003,pereira_parallel_2008} 
 used a coarse-grained parallel genetic algorithm and a niching genetic algorithm
-to optimize the same problem as Sacco et al. \cite{sacco_two_2006}. 
+to minimize the average peaking factor in a three-enrichment-zone reactor, 
+repeating the same problem as Sacco et al. \cite{sacco_two_2006}. 
 Kamalpour et al. \cite{kamalpour_smart_2020} utilized the imperialist competitive 
 algorithm, a type of evolutionary algorithm, to optimize a \gls{FCM} fuelled 
 \gls{PWR} to extend the reactor core cycle length. 
@@ -566,11 +573,6 @@ in desired power peaking limits and keff by varying: fuel pin
 radius,  fissile material isotopic enrichment, coolant mass flow rate, and 
 core inlet coolant temperature.
 
-Contrary to a single solution per iteration in deterministic and stochastic 
-simulated annealing methods, evolutionary algorithms use a population of solutions in each 
-iteration \cite{deb_multi-objective_2001}. 
-Evolutionary algorithm methods mimic nature's evolutionary principles to drive 
-the search towards an optimal solution. 
 With the affordability and availability of parallel computing systems, the 
 evolutionary algorithm optimization method stands out as a method 
 that easily and conveniently exploits parallel systems. 
@@ -581,14 +583,13 @@ the evolutionary algorithm method can leverage parallel computing to find a
 solution faster than the simulated annealing method.
 Therefore, in this dissertation, I will utilize the evolutionary algorithm 
 optimization method. 
-Further literature review on evolutionary algorithms are described in Section 
-\ref{sec:ea}.
+Section \ref{sec:ea} gives further literature review on evolutionary algorithms.
 
 \subsection{Reactor Optimization for Arbitrary Parameters}
-Sobes et al \cite{sobes_artificial_2020} used a genetic algorithm to find 
-minimum volume geometric configurations with multiphysics constraints of 
-1500 pcm excess reactivity and maximum fuel temperature of 618 $^{\circ}C$ under 
-forced-flow cooling conditions for a \gls{TCR}-like reactor. 
+Sobes et al. \cite{sobes_artificial_2020} used a genetic algorithm to find 
+minimum volume geometric configurations for a \gls{TCR}-like reactor with 
+multiphysics constraints of 1500 pcm excess reactivity and maximum fuel 
+temperature of 618 $^{\circ}C$ under forced-flow cooling conditions. 
 To represent arbitrary geometry variation, they constrained the solution geometry 
 to right cylinders. 
 The authors acknowledge that this work is only a first step towards truly 
@@ -597,11 +598,44 @@ They found that the optimal cone-like core configuration is in the geometry
 shape of a truncated annular cone, with the inlet surface being larger than 
 the outlet \cite{sobes_artificial_2020}.
 
-See et al \cite{see_design_2022} conducted design optimization with Siemens 
-design optimization tool HEEDS, and \gls{CFD} code, STAR-CCM+, to optimize the 
-\gls{TCR}'s outlet plenum design. 
-The design objectives were to normalize the fluidic temperature profile while 
-maintaining a tight design constraint of 0.5-psi pressure drop. 
+See et al. \cite{see_design_2022} conducted design optimization of the 
+\gls{TCR}'s outlet plenum design with Siemens design optimization tool HEEDS, 
+and \gls{CFD} code, STAR-CCM+. 
+They had to design an instrumentation plane to monitor core coolant flow average 
+temperature within $\pm 5 ^{\circ}C$ while maintaining a tight design 
+constraint of 0.5-psi pressure drop across the outlet plenum.
+The optimal design was able to maintain a pressure drop 
+to 0.49 psi with a instrumentation plane temperature standard deviation of 
+$1.03^{\circ}C$. 
+Figure xx shows the initial and optimal outlet plenum designs. 
+Figure \ref{fig:see3} demonstrates how the optimal design impacted the stream 
+tubes and enabled a smaller temperature standard deviation in the 
+instrumentation plane. 
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{see1.png}
+        \caption{Geometric representation of outer wall spline \cite{see_design_2022}.}
+        \label{fig:see1} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{see2.png}
+        \caption{Geometric representation of inlet channels \cite{see_design_2022}.}
+        \label{fig:see2} 
+    \end{subfigure}
+    \caption{Initial design versus best design of outlet plenum, reproduced 
+    from \cite{see_design_2022}.}
+\end{figure}
+\begin{figure}[btp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{see3.png} 
+    \caption{Initial design versus best design of stream tubes in the outlet 
+    plenum, reproduced from \cite{see_design_2022}.}
+    \label{fig:see3}
+\end{figure}
+
+%Reactor optimization for arbitrary parameters is a very new concept and 
+%very few research demonstration have been done. 
 
 \section{Evolutionary Algorithms} 
 \label{sec:ea}
