@@ -660,17 +660,152 @@ criteria to find optimal designs \cite{sobes_artificial_2020}.
 Thus, when the human designer changes the reactor criteria, the \gls{AI} 
 model will quickly adapt and produce new global optimal designs to fit the new 
 criteria.  
+In this dissertation, I utilize the evolutionary algorithm optimization method 
+as it has proved to perform find global optimal solutions robustly and can take 
+advantage of parallel systems. 
 
-Evolutionary algorithms, a subset of \gls{AI}, create a population of individual 
-solutions, inspired by biological evolution, and induce goals by using a 
-`fitness function' to mutate and preferentially replicate high-scoring 
-individuals to reach an optimal solution.
+Evolutionary algorithms create a population of individual solutions, inspired 
+by biological evolution, and induce goals by using a `fitness function' to 
+mutate and preferentially replicate high-scoring individuals to reach an 
+optimal solution.
 Evolutionary algorithms often perform well at approximating solutions to many 
 problem types because they do not make any assumptions about the 
 underlying fitness landscape.
 Genetic algorithms are the most popular evolutionary algorithms for solving 
 multi-objective problems \cite{byrne_evolving_2014, krish_practical_2011}. 
+In this dissertation, I use the term evolutionary algorithms and genetic 
+algorithms interchangeably, but I am truly referring to genetic algorithms. 
 
+\subsection{Genetic Algorithms}
+\label{sec:genetic_alg}
+Genetic algorithms imitate natural genetics and selection to evolve solutions 
+by maintaining a population of solutions, allowing fitter solutions to reproduce
+and letting lesser fit solutions die off, resulting in final solutions that are 
+better than the previous generations \cite{renner_genetic_2003}. 
+From here, I will refer to a solution as an individual within the population. 
+Genetic algorithms efficiently exploit historical information to speculate new
+ search points, improving each subsequent population's performance 
+\cite{goldberg_genetic_1989}. 
+They are theoretically and empirically proven to provide robust 
+search in complex spaces and are computationally simple yet powerful 
+in their search for improvement \cite{goldberg_genetic_1989}. 
+Genetic algorithms trounce deterministic and stochastic simulated 
+annealing optimization methods, because they:
+\begin{enumerate}
+    \item search from a population of points
+    \item use objective function information, not derivatives or other 
+    auxiliary knowledge of the problem
+    \item use probabilistic transition rules, not deterministic rules
+\end{enumerate}
+Figure \ref{fig:genetic_alg} depicts the iterative process of using a genetic algorithm
+to solve a problem. 
+The genetic algorithm generates new populations iteratively until it meets the termination 
+criteria. 
+\begin{figure}[]
+        \centering
+        \begin{tikzpicture}[node distance=1.7cm]
+                \tikzstyle{every node}=[font=\small]
+                \node (1) [lbblock] {\textbf{Create initial population}};
+                \node (2) [lbblock, below of=1] {\textbf{Evaluate initial population}};
+                \node (3) [lbblock, below of=2, yshift = -1.3cm] {\textbf{Create new population:} \\ 
+                \begin{enumerate} \item \textbf{Select} individuals for mating 
+                                  \item Create offspring by \textbf{crossover} 
+                                  \item \textbf{Mutate} selected individuals 
+                                  \item Keep selected individuals from previous generation
+                                 \end{enumerate}};
+                \node (4) [lbblock, below of=3, yshift=-1.3cm] {\textbf{Evaluate new population}};
+                \node (5) [lbblock, below of=4] {\textbf{Is termination \\ criteria satisfied?}};
+                \node (6) [lbblock, below of=5] {\textbf{Best solution is returned!}};
+                \draw [arrow] (1) -- (2);
+                \draw [arrow] (2) -- (3);
+                \draw [arrow] (3) -- (4);
+                \draw [arrow] (4) -- (5);
+                \draw [arrow] (5) -- node[anchor=east] {yes} (6);
+                \draw [arrow] (5) -- ([shift={(0.5cm,0cm)}]5.east)-- node[anchor=west] {no} ([shift={(0.5cm,0cm)}]3.east)--(3);
+        \end{tikzpicture}
+        \caption{Process of finding optimal solutions for a problem with a 
+        evolutionary algorithm \cite{renner_genetic_2003}. }
+        \label{fig:genetic_alg}
+\end{figure}
+
+Genetic algorithms use mechanisms inspired by biological evolution such as 
+selection, crossover, and mutation. 
+The three operators are simple and straightforward.
+The crossover operator recombines good individuals to form a better 
+individual. 
+The mutation operator alters individuals to create better individuals
+\cite{deb_multi-objective_2001}.  
+The selection operator selects good individuals. 
+The selection operator does not create any new individuals in the population 
+and only makes more copies of good individuals at the expense of not-so-good
+individuals. 
+The crossover and mutation operators perform the creation of new solutions.
+Next, we provide more description and common methods for each operator.
+
+\subsubsection{Crossover/Mating Operator}
+In most crossover operators, the operator picks two individuals from the population 
+at random. 
+The operator exchanges some portion of each individuals' attributes with one 
+another to create two new individuals \cite{deb_multi-objective_2001}. 
+Crossover operator methods utilized in the proposed work include 
+\textit{single-point crossover}, \textit{uniform crossover}, and 
+\textit{blend crossover}. 
+In the \textit{single-point crossover}, the operator randomly selects two 
+individuals from the population and a site along the individual's definition. 
+For example, if the individual is a list, the operator randomly chooses an 
+element in the list and attributes on this cross site's right side are exchanged 
+between the two individuals, creating two new offspring individuals.  
+In a \textit{uniform crossover}, the user defines an independent probability for each 
+individual's attribute to be exchanged; usually, a probability of $p=0.5$ is used. 
+In \textit{blend crossover}, the operator creates two offspring (O) individuals based on 
+a linear combination of two-parent (P) individuals using the following equations: 
+\begin{align}
+    O_1 &= P_1 - \alpha(P_1-P_2) \\
+    O_2 &= P_2 + \alpha(P_1-P_2)
+\intertext{where}
+\alpha &= \mbox{Extent of the interval in which the new values can be drawn} \nonumber \\
+ & \mbox{for each attribute on both side of the parents’ attributes (user-defined)} \nonumber 
+\end{align}
+
+The user defines a crossover probability ($p_c$) to preserve some good 
+individuals selected during the selection operator stage.  
+Therefore, the crossover operator only operates on $100p_c\%$ of the 
+population; the rest proceed to the new population \cite{deb_multi-objective_2001}. 
+The crossover operator covers the search aspect of the genetic algorithms, 
+whereas the mutation operator keeps diversity in the population 
+\cite{deb_multi-objective_2001}. 
+
+\subsubsection{Mutation Operator}
+The mutation operator alters one or more attributes of an individual within 
+a population. 
+Mutation operator methods utilized in the proposed work include 
+\textit{polynomial bounded mutation}, in which each attribute in each individual 
+is mutated based on a polynomial distribution. 
+The user also defines each attribute's upper and lower bounds and the 
+crowding-degree of the mutation, $\eta$ (a large $\eta$ will produce a mutant 
+resembling its parent, while a small $\eta$ will produce the opposite).
+Mutation occurs in the genetic algorithm based on a user-defined mutation 
+probability ($p_m$). 
+A low $p_m$ prevents a primitive random search. 
+
+\subsubsection{Selection Operator}
+The selection operator duplicates good individuals and eliminates bad individuals 
+while keeping the population constant \cite{deb_multi-objective_2001}. 
+It achieves this by identifying above-average individuals in a population, 
+eliminating bad individuals from the population, and replacing them with 
+copies of good individuals.
+Selection operator methods utilized in the proposed work include tournament 
+selection, best selection, and \gls{NSGA-II} selection. 
+In \textit{tournament selection}, a user-defined number of individuals play in 
+tournaments, and the best individual proceeds to the next population.
+This repeats until all the population's spots are filled. 
+In \textit{best selection}, the operator selects a user-defined number of best 
+individuals, and copies are made to keep the population size constant. 
+For \textit{tournament} and \textit{best} selection operators, they maintain 
+population size by adding copies of the best individuals. 
+In \textit{NSGA-II selection}, the operator selects the best individuals 
+from the combination of parent and offspring populations \cite{deb_fast_2002}.
+Only \textit{NSGA-II selection} can be used for multi-objective optimization. 
 
 \section{Summary}
 This chapter provided a literature review of relevant past research 
