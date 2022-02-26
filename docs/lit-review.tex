@@ -789,6 +789,7 @@ probability ($p_m$).
 A low $p_m$ prevents a primitive random search. 
 
 \subsubsection{Selection Operator}
+% this section needs improvement. 
 The selection operator duplicates good individuals and eliminates bad individuals 
 while keeping the population constant \cite{deb_multi-objective_2001}. 
 It achieves this by identifying above-average individuals in a population, 
@@ -806,6 +807,67 @@ population size by adding copies of the best individuals.
 In \textit{NSGA-II selection}, the operator selects the best individuals 
 from the combination of parent and offspring populations \cite{deb_fast_2002}.
 Only \textit{NSGA-II selection} can be used for multi-objective optimization. 
+
+\subsection{Genetic Algorithm Hyperparameter Tuning}
+Hyperparameters refer to parameters whose value controls 
+the genetic algorithm's process, such as the population size. 
+A well-performing genetic algorithm needs to balance the extent of exploration and 
+exploitation; by finding a balance between the conservation of 
+valuable individuals obtained until the current generation while exploring new 
+individuals. 
+With over exploitation of previously obtained individuals, the population loses 
+its diversity, resulting in premature convergence to a suboptimal solution. 
+Alternatively, if too much stress is given on exploration, the algorithm did not 
+appropriately utilize the information obtained thus far, and the genetic 
+algorithm's search procedure behaves like a random search process 
+\cite{deb_multi-objective_2001}. 
+
+A quantitative balance between these two issues, exploitation and exploration, 
+is challenging to achieve. 
+Deb et al. \cite{deb_multi-objective_2001} and Goldberg et al. 
+\cite{goldberg_toward_1993} quantified the relationship between exploitation 
+and exploration. 
+They found that for the one-max test problem, in which the objective seeks to 
+maximize the number of 1s in a string, a genetic algorithm with any arbitrary 
+hyperparameter setting does not work well even on a simple problem. 
+Only genetic algorithms with a selection pressure (s) and crossover probability ($p_c$) 
+falling inside the control map (Figure \ref{fig:controlmap}) will find the desired 
+optimum.  
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.6\linewidth]{controlmap.png} 
+    \caption{Figure reproduced from \cite{goldberg_toward_1993,deb_multi-objective_2001}
+    shows a control map region of selection pressure (s) and crossover probability ($p_c$)
+    values in which the genetic algorithm will find the desired optimum for the 
+    one-max problem.}
+    \label{fig:controlmap}
+\end{figure}
+Another consideration is the population size. 
+A function with considerable variability in objective function values demands 
+a large population size to find a global optimum \cite{deb_multi-objective_2001}. 
+Therefore, finding an optimized solution with genetic algorithms requires the user 
+to conduct a hyperparameter search. 
+
+Ng et al. \cite{ng_improving_2021} suggest that a coarse-to-fine sampling scheme 
+is the best way to perform a systematic hyperparameter search.  
+For a two-dimensional example of a coarse-to-fine sampling scheme, the user 
+first does a coarse sample of the entire square, then a fine search on the 
+coarse search's best-performing region. 
+Ng et al. also suggests to use random sampling over grid sampling because of the 
+former's efficiency in high-dimensional spaces. 
+Figure \ref{fig:random_vs_grid_sampling} illustrates how grid sampling gives 
+even coverage in the original 2-d space, but provides inefficient coverage in 
+projections onto either the x1 or x2 subspace.  
+In contrast, random sampling produces a less even distribution in the original 
+space, but a far more even distribution in the subspaces.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{random_vs_grid_sampling.png} 
+    \caption{The impact of grid sampling vs random sampling on coverage of projections 
+    into subspaces (reproduced from \cite{jordan_hyperparameter_2017}). 
+    Random sampling has better coverage in the subspaces.}
+    \label{fig:random_vs_grid_sampling}
+\end{figure}
 
 \section{Summary}
 This chapter provided a literature review of relevant past research 
