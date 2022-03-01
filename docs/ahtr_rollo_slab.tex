@@ -841,10 +841,44 @@ the objective functions can be improved in value without degrading some of the
 other objective values. 
 
 \subsubsection{Two Objectives: Minimize Total Packing Fraction and Maximum Temperature}
+I varied the total packing fraction and TRISO particle distribution while 
+constraining $k_{eff} >= 1.35$.
+Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of total packing fraction 
+against maximum slab temperature for each individual reactor models 
+in the ROLLO simulation.
+The red crosses refer to the reactor models on final evolutionary algorithm 
+generation's pareto front. 
+Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the TRISO distribution of 
+reactor models on the pareto front. 
+The TRISO distribution that corresponds to lowest packing fraction and highest 
+maximum slab temperature has an up-down fuel packing pattern which looks similar 
+to the TRISO distribution from the minimize packing fraction single objective 
+optimization seen in Figure \ref{fig:slab-obj-1-pf-final}.
+The TRISO distribution that corresponds to lowest maximum slab temperature and 
+highest total packing fraction is mostly flat and looks similar to the 
+TRISO distribution from the minimize maximum temperature single objective 
+optimization seen in Figure \ref{fig:slab-obj-1-temp-final}.
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto.png}
+        \caption{}
+        \label{fig:slab-obj-2-pftemp-pareto} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto-distr.png}
+        \caption{.}
+        \label{fig:slab-obj-2-pftemp-pareto-distr} 
+    \end{subfigure}
+    \caption{ROLLO multi-objective optimization to minimize total packing fraction and 
+    maximum temperature in the slab. Input parameters varied: 
+    TRISO particle distribution and total packing fraction.}
+    \label{fig:slab-obj-2-pftemp}
+\end{figure}
 
 \subsubsection{Two Objectives: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
-I varied the TRISO particle distribution while constraining $k_{eff} >= 1.35$
-and holding total packing fraction at 0.0979.
+I varied the total packing fraction and TRISO particle distribution while 
+constraining $k_{eff} >= 1.35$.
 Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of total packing fraction 
 against normalized power peaking factor for each individual reactor models 
 in the ROLLO simulation.
@@ -853,13 +887,31 @@ generation's pareto front.
 The pareto front shows a negative correlation between packing fraction and 
 PPF. 
 Higher PPF results in a lower packing fraction and vice versa. 
+Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the TRISO distribution of 
+reactor models on the pareto front. 
 The TRISO distribution with the highest power peaking factor and lowest packing 
-fraction is has a constant packing fraction of 0.02 across the slab. 
+fraction has a constant packing fraction of 0.02 across the slab. 
 The TRISO distribution with the lowest power peaking factor and highest packing 
 fraction has a packing fraction that peaks in the center of the slab and both 
 sides. 
 % this is probably due to self shielding phenomena. 
-% see pf_ppf_analysis_update.ipynb for plots. 
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-pfppf-pareto.png}
+        \caption{}
+        \label{fig:slab-obj-2-pfppf-pareto} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-pfppf-pareto-distr.png}
+        \caption{.}
+        \label{fig:slab-obj-2-pfppf-pareto-distr} 
+    \end{subfigure}
+    \caption{ROLLO multi-objective optimization to minimize total packing fraction and 
+    normalized power peaking factor in the slab. Input parameters varied: 
+    TRISO particle distribution and total packing fraction.}
+    \label{fig:slab-obj-2-pfppf}
+\end{figure}
 
 \subsubsection{Two Objectives: Minimize Maximum Temperature and Normalized Power Peaking Factor}
 I varied the TRISO particle distribution while constraining $k_{eff} >= 1.00$
