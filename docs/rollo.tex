@@ -297,40 +297,47 @@ nuclear software.
 Thus, it is up to the user to ensure that the nuclear software and their corresponding 
 executables are properly installed. 
 In a single \gls{ROLLO} input file, users may define any number of evaluators. 
-For each evaluator, mandatory input parameters are \texttt{order}, \texttt{input\_script}, 
-\texttt{inputs}, and \texttt{outputs}, and the optional input parameters are
+For each evaluator, mandatory parameters are \texttt{order}, \texttt{input\_script}, 
+\texttt{inputs}, and \texttt{outputs}, and the optional parameters are
 \texttt{execute} and \texttt{output\_script}. 
-Table \ref{tab:evaluator-inputs} describes the input parameters accepted for each evaluator in 
-ROLLO's \texttt{evaluators} input file section.  
+Table \ref{tab:evaluator-inputs} describes the mandatory and optional parameters 
+accepted by each evaluator in ROLLO's \texttt{evaluators} input file section.  
 \begin{table}[]
     \centering
     \onehalfspacing
-    \caption{}
+    \caption{\acrfull{ROLLO} \texttt{evaluator}: Input Parameter Descriptions.}
 	\label{tab:evaluator-inputs}
     \footnotesize
     \begin{tabular}{l|lp{2.5cm}p{7cm}}
     \hline
     & \textbf{Parameter} & \textbf{Type} & \textbf{Description} \\
     \hline
-    \multirow{6}{2cm}{Mandatory Parameters} & \texttt{order} & int 
+    \multirow{9}{2cm}{Mandatory Parameters} & \texttt{order} & int 
     & evaluator's operational order compared to other evaluators (indexed by 0) \\
     \cline{2-4}
-    & \texttt{inputs} & list of strings & control variables to be placed into the input file template \\
+    & \texttt{inputs} & list of strings & control variables placed in input script template \\
     \cline{2-4}
     & \texttt{input\_script} & list of strings (2-element) & first element: executable to run input script, 
-    second element: input file template's name \\
+    second element: input script template's name \\
+    \cline{2-4}
     & \texttt{outputs} & list of strings & output variables that the evaluator will return to the genetic algorithm \\
-    & & & \\
-    & & & \\
-    & & & \\
+    \hline
+    \multirow{4}{2cm}{Optional Parameters} & \texttt{execute} & list of 2-element lists &
+    enables the user to run other executables or files beyond the input and output scripts. first element: executable to run file, 
+    second element: file to run \\
+    \cline{2-4}
+    & \texttt{output\_script} & list of strings (2-element) & first element: executable to run output script, 
+    second element: output script's name \\
     \hline 
     \end{tabular}
     \end{table}
 
 \gls{ROLLO} utilizes jinja2 templating \cite{ronacher_welcome_2018} to insert 
 the control variable values into the \texttt{input\_script}.
-The user must include a input file template in the same directory as the \gls{ROLLO} input 
+Users must include each evaluator's input file template in the same directory as the \gls{ROLLO} input 
 file. 
+Users must also ensure the template variables correspond to the \texttt{inputs} defined in the 
+corresponding evaluator's section in the ROLLO input file. 
 Lines 6 to 13 in the \gls{ROLLO} input file (Figure \ref{fig:rollo-input}) demonstrate 
 that \texttt{variable1} and \texttt{variable2} are \texttt{inputs} into the 
 \texttt{openmc\_inp.py} \texttt{input\_script}. 
@@ -380,8 +387,51 @@ replaced with values selected by the \gls{ROLLO} genetic algorithm.
     \label{fig:openmcinp.py}
 \end{figure}
 
+\gls{ROLLO} uses two methods to return an output variable to the genetic algorithm. 
+First, if the output parameter is also an input parameter, \gls{ROLLO} will automatically 
+return the input parameter's value. 
+Second, the user may include an \texttt{output\_script} that returns the desired 
+output parameter. 
+The \texttt{output\_script} must include a line that prints a dictionary containing 
+the output parameters' names and their corresponding value as key-value pairs. 
+
+\subsection{Constraints}
+In the constraints section, the user can define constraints on any output parameter. 
+Any individual that does not meet the defined constraints is removed from the 
+population, encouraging the proliferation of individuals that meet the 
+constraints. 
+For each constrained output parameter, the user lists the \texttt{operator}s 
+and \texttt{constrained\_val}s as in Line 17 of the \gls{ROLLO} input file 
+(Figure \ref{fig:rollo-input}). 
+Thus, for this \gls{ROLLO} simulation, \texttt{output\_1} is constrained to be 
+$>= 1.0$ and $< 1.5$. 
+For example, in reactor design, a constraint might be maximum temperature in the 
+core.
+
+\subsection{Algorithm}
+In the algorithm section, users define the simulation's general settings and 
+genetic algorithm's hyperparameters. 
+Table \ref{tab:algorithm-inputs} describes the input parameters accepted by
+ROLLO's \texttt{algorithm} input file section.  
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{ROLLO} \texttt{algorithm}: Input Parameter Descriptions.}
+	\label{tab:algorithm-inputs}
+    \footnotesize
+    \begin{tabular}{l|lp{2.5cm}p{7cm}}
+    \hline
+    & \textbf{Parameter} & \textbf{Type} & \textbf{Description} \\
+    \hline
+    \hline 
+    \end{tabular}
+    \end{table}
 
 \section{ROLLO Software Architecture}
+In this section, I will describe the \gls{ROLLO} v1.0 software architecture and 
+how all the parts come together to optimize reactor design.
+Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
+and describes each class's purpose.
 
 \section{ROLLO Verification}
 
