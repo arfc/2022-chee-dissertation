@@ -1,5 +1,6 @@
 \chapter{ROLLO: Reactor evOLutionary aLgorithm Optimizer}
 \label{chap:rollo}
+% need a nice rollo v1.0 citation
 In this chapter, I introduce the \gls{ROLLO} framework, built 
 for this dissertation. 
 \gls{ROLLO} is a Python package that applies evolutionary algorithm 
@@ -414,8 +415,8 @@ In the algorithm section, users define the simulation's general settings and
 genetic algorithm's hyperparameters. 
 The mandatory input parameters include \texttt{objective}, \texttt{optimized\_variable}, 
 \texttt{pop\_size}, and \texttt{generations}.
-The optional input parameters include \texttt{parallel}, 
-\texttt{mutation\_probability}, \\ \texttt{mating\_probability}, 
+The optional input parameters include \texttt{parallel}, \\
+\texttt{mutation\_probability}, \texttt{mating\_probability}, 
 \texttt{selection\_operator}, \texttt{mutation\_operator}, 
 and \texttt{mating\_operator}. 
 Lines 17 to 31 in the example \gls{ROLLO} input file (Figure \ref{fig:rollo-input}) 
@@ -428,7 +429,7 @@ ROLLO's \texttt{algorithm} input file section.
     \caption{\acrfull{ROLLO} \texttt{algorithm}: Input Parameter Descriptions.}
 	\label{tab:algorithm-inputs}
     \footnotesize
-    \begin{tabular}{l|lp{1.7cm}p{4cm}p{2cm}}
+    \begin{tabular}{l|lp{1.7cm}p{4cm}p{3cm}}
     \hline
     & \textbf{Parameter} & \textbf{Type} & \textbf{Description} & \textbf{Default} \\
     \hline
@@ -442,9 +443,9 @@ ROLLO's \texttt{algorithm} input file section.
     & \texttt{generations} & int & number of generations & -\\
     \hline
     \multirow{9}{1.8cm}{Optional Parameters} 
-    & \texttt{weight} & list of floats & & $[1.0]*len(objective)$\\
+    & \texttt{weight} & list of floats & & \scriptsize{[1.0]*len(objective)}\\
     \cline{2-5}
-    & \texttt{parallel} & string & options include: \textit{none}, \textit{multiprocessing}, \textit{job\_control} & -\\
+    & \texttt{parallel} & string & options include: \textit{none}, \textit{multiprocessing}, \textit{job\_control} & \textit{none} \\
     \cline{2-5}
     & \texttt{keep\_files} & string & options include: \textit{none}, \textit{only\_final}, \textit{all} & \textit{all} \\
     \cline{2-5}
@@ -452,19 +453,22 @@ ROLLO's \texttt{algorithm} input file section.
     \cline{2-5}
     & \texttt{mating\_probability} & float & mating probability & 0.47 \\
     \cline{2-5}
-    & \texttt{selection\_operator} & dict & see Table \ref{tab:deap_operators} & \\
+    & \texttt{selection\_operator} & dict & see Table \ref{tab:deap_operators} & \scriptsize{{"operator": "selTournament", "tournsize": 5}}\\
     \cline{2-5}
-    & \texttt{mutation\_operator} & dict & see Table \ref{tab:deap_operators} & \\
+    & \texttt{mutation\_operator} & dict & see Table \ref{tab:deap_operators} & \scriptsize{{"operator": "mutPolynomialBounded", "eta": 0.23, "indpb": 0.23}}\\
     \cline{2-5}
-    & \texttt{mating\_operator} & dict & see Table \ref{tab:deap_operators} & \\
+    & \texttt{mating\_operator} & dict & see Table \ref{tab:deap_operators} & \scriptsize{{"operator": "cxBlend", "alpha": 0.46}}\\
     \hline 
     \end{tabular}
     \end{table}
+%%% UPDATE THIS
+The hyperparameter default values are selected based on hyperparmater studies conducted for a 
+single objective \gls{FHR} optimization. 
 
 As mentioned previously in Section \ref{sec:genetic_alg}, it is important to 
 select genetic algorithm hyperparameters that balance the extent of exploration 
 and exploitation.
-For each operator, the user can choose from a list of operators and define each
+For each operator, users choose from a list of operators and define each
 of their required hyperparameters. 
 Table \ref{tab:deap_operators} shows the available operators and their respective 
 hyperparameters. 
@@ -478,10 +482,9 @@ hyperparameters.
     \begin{tabular}{l|p{0.23\textwidth}|p{0.55\textwidth}}
     \hline
     \textbf{Operator} & \textbf{Available Options} & \textbf{Hyperparameters} \\ \hline
-    \multirow{4}{1cm}{Selection} & \multirow{2}{2cm}{\texttt{selTournament}} & \texttt{tournsize}: no. of individuals in each tournament\\ 
-    & & \texttt{inds}: no. of individuals to select \\ \cline{2-3}
-    & \texttt{selNSGA2} & \texttt{inds}: no. of individuals to select\\ \cline{2-3}
-    & \texttt{selBest} & \texttt{inds}: no. of individuals to select\\ \hline
+    \multirow{4}{1cm}{Selection} & \texttt{selTournament} & \texttt{tournsize}: no. of individuals in each tournament\\ \cline{2-3}
+    & \texttt{selNSGA2} & - \\ \cline{2-3}
+    & \texttt{selBest} & - \\ \hline
     \multirow{2}{1cm}{Mutation} & \multirow{2}{2cm}{\texttt{mutPolynomialBounded}} & \texttt{eta}: crowding degree of the mutation\\  
     && \texttt{indpb}: independent probability for each attribute to be mutated\\ \hline
     \multirow{3}{1cm}{Mating} & \texttt{cxOnePoint} & -\\ \cline{2-3}
