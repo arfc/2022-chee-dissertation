@@ -202,20 +202,18 @@ The high-level examples use the built-in \gls{DEAP} genetic algorithms,
 whereas the low-level example completely unpacks the genetic algorithm to expose 
 a generational loop. 
 
-The genetic algorithm included in ROLLO's \textbf{\textit{Algorithm}} class 
-is an completely unpacked genetic algorithm. 
+I included a completely unpacked genetic algorithm in ROLLO's 
+\textbf{\textit{Algorithm}} class, depicted in Figure \ref{fig:genetic_alg_nuclear}. 
 The algorithm begins by initializing the starting population and evaluating 
 each individual's fitness value. 
 Then, it enters a generational loop. 
 During each iteration, the mating and mutation operators are applied to the population
 to create an offspring population, and all offspring individuals are evaluated. 
-The selection operator is then applied to both the old population 
-and offspring population to select the best individuals to form 
-the new population. 
+The selection operator is then applied to both the previous and offspring populations 
+to select the best individuals to create the new population. 
 Finally, the constraints are applied, and the results are saved.
-Figure \label{fig:genetic_alg_nuclear} shows the algorithm's flow. 
 
-Applying the selection operator to the combined old and offspring 
+Applying the selection operator to the combined previous and offspring 
 populations expands the population ensuring the effectiveness of 
 elitism selection operators, such as NSGA-II, which work well 
 for multi-objective optimization. 
@@ -225,7 +223,7 @@ for multi-objective optimization.
 There are four sections that the user must define: \\ \texttt{control\_variables}, 
 \texttt{evaluators}, \texttt{constraints}, and \texttt{algorithm}. 
 Figure \ref{fig:rollo-input} shows an example \gls{ROLLO} input file. 
-In this simulation, \gls{ROLLO} uses a genetic algorithm with the defined 
+In this simulation, \gls{ROLLO} uses a genetic algorithm with the user-defined 
 hyperparameters to minimize the \texttt{output1} parameter which is 
 calculated using the OpenMC evaluator that accepts input parameters: 
 \texttt{variable1} and \texttt{variable2}. 
@@ -244,10 +242,12 @@ calculated using the OpenMC evaluator that accepts input parameters:
             }, 
             "evaluators": {
                 "openmc": {
-                    "input_script": "openmc_inp.py",
-                    "output_script": "openmc_output.py", 
+                    "order": 0,
                     "inputs": ["variable1", "variable2"],
+                    "input_script": ["python", "openmc_inp.py"],
+                    "execute": [["openmc"],],
                     "outputs": ["output1", "output2"]
+                    "output_script": ["python", "openmc_output.py"], 
                 }
             }, 
             "constraints": {
@@ -255,12 +255,15 @@ calculated using the OpenMC evaluator that accepts input parameters:
             }, 
             "algorithm": {
                 "objective": ["min"], 
+                "weight": [1.0],
                 "optimized_variable": ["output1"], 
+                "parallel": "job_control",
+                "keep_files": "all",
                 "pop_size": 100, 
                 "generations": 10, 
                 "mutation_probability": 0.23,
                 "mating_probability": 0.46,
-                "selection_operator": {"operator": "selTournament", "inds": 15, "tournsize":5},
+                "selection_operator": {"operator": "selTournament", "tournsize":5},
                 "mutation_operator": {
                     "operator": "mutPolynomialBounded",
                     "indpb": 0.23,
@@ -272,6 +275,109 @@ calculated using the OpenMC evaluator that accepts input parameters:
     \end{minted}
     \caption{\acrfull{ROLLO} sample JSON input file.}
     \label{fig:rollo-input}
+\end{figure}
+
+Next, I will describe how to define each section of a \gls{ROLLO} input file. 
+The \gls{ROLLO} documentation \cite{chee_documentation_2021} provides further 
+descriptions for setting up a \gls{ROLLO} input file.
+
+\subsection{Control Variables}
+Control variables are parameters the genetic algorithm will vary. 
+For each control variable, the user must specify its minimum and maximum values.
+For example, Lines 2 to 5 in Figure \ref{fig:rollo-input} demonstrate that the 
+control variables, \texttt{variable1} and \texttt{variable2}, 
+will be varied from 0 to 10 and -1 to 0, respectively. 
+For example, in traditional reactor design, a control variable might be fuel 
+enrichment. 
+
+\subsection{Evaluators}
+Evaluators are the nuclear software \gls{ROLLO} utilizes to calculate objective functions. 
+\gls{ROLLO} is nuclear code-agnostic and does not have dependencies on any 
+nuclear software.
+Thus, it is up to the user to ensure that the nuclear software and their corresponding 
+executables are properly installed. 
+In a single \gls{ROLLO} input file, users may define any number of evaluators. 
+For each evaluator, mandatory input parameters are \texttt{order}, \texttt{input\_script}, 
+\texttt{inputs}, and \texttt{outputs}, and the optional input parameters are
+\texttt{execute} and \texttt{output\_script}. 
+Table \ref{tab:evaluator-inputs} describes the input parameters accepted for each evaluator in 
+ROLLO's \texttt{evaluators} input file section.  
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{}
+	\label{tab:evaluator-inputs}
+    \footnotesize
+    \begin{tabular}{l|lp{2.5cm}p{7cm}}
+    \hline
+    & \textbf{Parameter} & \textbf{Type} & \textbf{Description} \\
+    \hline
+    \multirow{6}{2cm}{Mandatory Parameters} & \texttt{order} & int 
+    & evaluator's operational order compared to other evaluators (indexed by 0) \\
+    \cline{2-4}
+    & \texttt{inputs} & list of strings & control variables to be placed into the input file template \\
+    \cline{2-4}
+    & \texttt{input\_script} & list of strings (2-element) & first element: executable to run input script, 
+    second element: input file template's name \\
+    & \texttt{outputs} & list of strings & output variables that the evaluator will return to the genetic algorithm \\
+    & & & \\
+    & & & \\
+    & & & \\
+    \hline 
+    \end{tabular}
+    \end{table}
+
+\gls{ROLLO} utilizes jinja2 templating \cite{ronacher_welcome_2018} to insert 
+the control variable values into the \texttt{input\_script}.
+The user must include a input file template in the same directory as the \gls{ROLLO} input 
+file. 
+Lines 6 to 13 in the \gls{ROLLO} input file (Figure \ref{fig:rollo-input}) demonstrate 
+that \texttt{variable1} and \texttt{variable2} are \texttt{inputs} into the 
+\texttt{openmc\_inp.py} \texttt{input\_script}. 
+Figure \ref{fig:openmcinp.py} shows the template and templated openmc script; 
+once the \texttt{openmc\_inp.py} \texttt{input\_script} is templated, 
+\texttt{\{\{variable1\}\}} and \texttt{\{\{variable2\}\}}  on Lines 3 and 4 will be 
+replaced with values selected by the \gls{ROLLO} genetic algorithm. 
+\begin{figure}[]
+    \begin{minipage}{0.4\textwidth}
+        \centering
+    \begin{minted}[
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+        ]{python}
+        import openmc 
+        # templating 
+        variable1 = {{variable1}}
+        variable2 = {{variable2}}
+        # run openmc 
+        ... 
+    \end{minted}
+    \end{minipage}
+    \hspace{2cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \begin{minted}[
+            frame=lines,
+            framesep=2mm,
+            baselinestretch=1.2,
+            fontsize=\footnotesize,
+            linenos
+            ]{python}
+            import openmc 
+            # templating 
+            variable1 = 3.212
+            variable2 = -0.765
+            # run openmc 
+            ... 
+        \end{minted}
+        \end{minipage}
+    \caption{\texttt{openmc\_inp.py} input script template (left). 
+             Templated \texttt{openmc\_inp.py} with variable1 and variable2 
+             values defined (right).}
+    \label{fig:openmcinp.py}
 \end{figure}
 
 
