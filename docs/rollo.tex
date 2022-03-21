@@ -426,7 +426,7 @@ ROLLO's \texttt{algorithm} input file section.
     \caption{\acrfull{ROLLO} \texttt{algorithm}: Input Parameter Descriptions.}
 	\label{tab:algorithm-inputs}
     \footnotesize
-    \begin{tabular}{l|lp{1.7cm}p{4.7cm}p{2cm}}
+    \begin{tabular}{l|lp{1.7cm}p{4.5cm}p{2cm}}
     \hline
     & \textbf{Parameter} & \textbf{Type} & \textbf{Description} & \textbf{Default} \\
     \hline
@@ -450,20 +450,47 @@ ROLLO's \texttt{algorithm} input file section.
     \cline{2-5}
     & \texttt{mating\_probability} & float & mating probability & 0.47 \\
     \cline{2-5}
-    & \texttt{selection\_operator} & dict & &\\
+    & \texttt{selection\_operator} & dict & see Table \ref{tab:deap_operators} & \\
     \cline{2-5}
-    & \texttt{mutation\_operator} & dict & &\\
+    & \texttt{mutation\_operator} & dict & see Table \ref{tab:deap_operators} & \\
     \cline{2-5}
-    & \texttt{mating\_operator} & dict & &\\
+    & \texttt{mating\_operator} & dict & see Table \ref{tab:deap_operators} & \\
     \hline 
+    \end{tabular}
+    \end{table}
+
+As mentioned previously in Section \ref{sec:genetic_alg}, it is important to 
+select genetic algorithm hyperparameters that balance the extent of exploration 
+and exploitation.
+For each operator, the user can choose from a list of operators and define each
+of their required hyperparameters. 
+Table \ref{tab:deap_operators} shows the available operators and their respective 
+hyperparameters. 
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{Selection, mutation, and mating operators available in 
+    \acrfull{ROLLO} and their corresponding hyperparameters. }
+	\label{tab:deap_operators}
+    \footnotesize
+    \begin{tabular}{l|p{0.23\textwidth}|p{0.55\textwidth}}
+    \hline
+    \textbf{Operator} & \textbf{Available Options} & \textbf{Hyperparameters} \\ \hline
+    \multirow{4}{1cm}{Selection} & \multirow{2}{2cm}{\texttt{selTournament}} & \texttt{tournsize}: no. of individuals in each tournament\\ 
+    & & \texttt{inds}: no. of individuals to select \\ \cline{2-3}
+    & \texttt{selNSGA2} & \texttt{inds}: no. of individuals to select\\ \cline{2-3}
+    & \texttt{selBest} & \texttt{inds}: no. of individuals to select\\ \hline
+    \multirow{2}{1cm}{Mutation} & \multirow{2}{2cm}{\texttt{mutPolynomialBounded}} & \texttt{eta}: crowding degree of the mutation\\  
+    && \texttt{indpb}: independent probability for each attribute to be mutated\\ \hline
+    \multirow{3}{1cm}{Mating} & \texttt{cxOnePoint} & -\\ \cline{2-3}
+    & \texttt{cxUniform} & \texttt{indpb}: independent probability for each attribute to be exchanged\\ \cline{2-3}
+    & \texttt{cxBlend} & \texttt{alpha}: Extent of the interval in which the new values can be drawn for each attribute on both side of the parents’ attributes\\ \hline
     \end{tabular}
     \end{table}
 
 \section{ROLLO Software Architecture}
 In this section, I will describe the \gls{ROLLO} v1.0 software architecture and 
 how all the parts come together to optimize reactor design.
-The mandatory input parameters include \texttt{objective}, \texttt{optimized\_variable}, 
-\texttt{pop\_size}, and \texttt{generations}.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
 and describes each class's purpose.
 \begin{table}[]
