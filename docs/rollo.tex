@@ -46,8 +46,8 @@ I briefly summarize how \gls{ROLLO} achieves these goals:
 software, such as neutron transport and thermal-hydraulics codes. 
 \gls{ROLLO} is nuclear code-agnostic and does not have dependencies on any 
 nuclear software. 
-Figure \ref{fig:genetic_alg} from Chapter \ref{chap:lit-review} outlines the 
-evolutionary algorithm iterative problem solving process. 
+Figure \ref{fig:genetic_alg} from Chapter \ref{chap:lit-review} outlines a  
+general evolutionary algorithm iterative problem solving process. 
 I modified Figure \ref{fig:genetic_alg} to produce Figure 
 \ref{fig:genetic_alg_nuclear}, which depicts how the nuclear transport and 
 thermal-hydraulics software fit within \gls{ROLLO}'s evolutionary algorithm 
@@ -59,19 +59,22 @@ optimization process.
             \tikzstyle{every node}=[font=\small]
             \node (1) [lbblock] {\textbf{Create initial population}};
             \node (2) [loblock, below of=1] {\textbf{Evaluate initial population}};
-            \node (3) [lbblock, below of=2, yshift = -1.3cm] {\textbf{Create new population:} \\ 
-            \begin{enumerate} \item \textbf{Select} individuals for mating 
-                              \item Create offspring by \textbf{crossover} 
-                              \item \textbf{Mutate} selected individuals 
-                              \item Keep selected individuals from previous generation
-                             \end{enumerate}};
-            \node (4) [loblock, below of=3, yshift=-1.3cm] {\textbf{Evaluate new population}};
-            \node (5) [lbblock, below of=4] {\textbf{Is termination \\ criteria satisfied?}};
+            \node (3) [lbblock, below of=2, yshift = -1.3cm] {\textbf{Create offspring population:} \\ 
+            \begin{enumerate} \item Apply \textbf{crossover} operator to previous population
+                              \item Apply \textbf{mutation} operator to previous population
+                              \end{enumerate}};
+            \node (4) [loblock, below of=3, yshift=-1.3cm] {\textbf{Evaluate offspring population}};
+            \node (7) [lbblock, below of=4, yshift = -1.3cm] {\textbf{Create new population:} \\
+            \begin{enumerate} \item Apply \textbf{selection} operator to offspring + previous population
+                              \item Apply constraints to new population
+                              \end{enumerate}};
+            \node (5) [lbblock, below of=7, yshift=-1.3cm] {\textbf{Is termination \\ criteria satisfied?}};
             \node (6) [lbblock, below of=5] {\textbf{Best solution is returned!}};
             \draw [arrow] (1) -- (2);
             \draw [arrow] (2) -- (3);
             \draw [arrow] (3) -- (4);
-            \draw [arrow] (4) -- (5);
+            \draw [arrow] (4) -- (7);
+            \draw [arrow] (7) -- (5);
             \draw [arrow] (5) -- node[anchor=east] {yes} (6);
             \draw [arrow] (5) -- ([shift={(0.5cm,0cm)}]5.east)-- node[anchor=west] {no} ([shift={(0.5cm,0cm)}]3.east)--(3);
             \matrix [draw,above right,yshift=10.7cm, xshift=0cm] at (current bounding box.south east) {
@@ -199,7 +202,7 @@ The high-level examples use the built-in \gls{DEAP} genetic algorithms,
 whereas the low-level example completely unpacks the genetic algorithm to expose 
 a generational loop. 
 
-The general genetic algorithm included in ROLLO's \textbf{\textit{Algorithm}} class 
+The genetic algorithm included in ROLLO's \textbf{\textit{Algorithm}} class 
 is an completely unpacked genetic algorithm. 
 The algorithm begins by initializing the starting population and evaluating 
 each individual's fitness value. 
