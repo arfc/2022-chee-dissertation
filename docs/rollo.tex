@@ -412,6 +412,12 @@ core.
 \subsection{Algorithm}
 In the algorithm section, users define the simulation's general settings and 
 genetic algorithm's hyperparameters. 
+The mandatory input parameters include \texttt{objective}, \texttt{optimized\_variable}, 
+\texttt{pop\_size}, and \texttt{generations}.
+The optional input parameters include \texttt{parallel}, 
+\texttt{mutation\_probability}, \\ \texttt{mating\_probability}, 
+\texttt{selection\_operator}, \texttt{mutation\_operator}, 
+and \texttt{mating\_operator}. 
 Table \ref{tab:algorithm-inputs} describes the input parameters accepted by
 ROLLO's \texttt{algorithm} input file section.  
 \begin{table}[]
@@ -432,11 +438,11 @@ ROLLO's \texttt{algorithm} input file section.
     & \texttt{pop\_size} & int & population size & -\\
     \cline{2-5}
     & \texttt{generations} & int & number of generations & -\\
-    \cline{2-5}
-    & \texttt{parallel} & string & options include: \textit{none}, \textit{multiprocessing}, \textit{job\_control} & -\\
     \hline
     \multirow{9}{1.8cm}{Optional Parameters} 
     & \texttt{weight} & list of floats & & $[1.0]*len(objective)$\\
+    \cline{2-5}
+    & \texttt{parallel} & string & options include: \textit{none}, \textit{multiprocessing}, \textit{job\_control} & -\\
     \cline{2-5}
     & \texttt{keep\_files} & string & options include: \textit{none}, \textit{only\_final}, \textit{all} & \textit{all} \\
     \cline{2-5}
@@ -456,6 +462,8 @@ ROLLO's \texttt{algorithm} input file section.
 \section{ROLLO Software Architecture}
 In this section, I will describe the \gls{ROLLO} v1.0 software architecture and 
 how all the parts come together to optimize reactor design.
+The mandatory input parameters include \texttt{objective}, \texttt{optimized\_variable}, 
+\texttt{pop\_size}, and \texttt{generations}.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
 and describes each class's purpose.
 \begin{table}[]
