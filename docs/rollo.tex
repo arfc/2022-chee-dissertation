@@ -519,10 +519,6 @@ and describes each class's purpose.
     function that runs the nuclear software and returns the required fitness values, 
     defined in the input file. \\
     \hline 
-    \textbf{\textit{OpenMCEvaluation}} & The \textbf{\textit{OpenMCEvaluation}} class contains
-    built-in methods for evaluating OpenMC output files. Developers can update 
-    this file with methods to evaluate frequently used OpenMC outputs. \\
-    \hline 
     \textbf{\textit{ToolboxGenerator}} & The \textbf{\textit{ToolboxGenerator}} class initializes
     \gls{DEAP}'s \textit{toolbox} and \textit{creator} modules with genetic algorithm 
     hyperparameters defined in the input file.\\
@@ -554,6 +550,38 @@ and describes each class's purpose.
     \hline
     \end{tabular}
     \end{table}
+Figure \ref{fig:rollo_archi} depicts the \gls{ROLLO} software architecture. 
+\begin{figure}[]
+    \centering
+    \begin{tikzpicture}[node distance=0.5cm]
+        \tikzstyle{every node}=[font=\footnotesize]
+        \node (1) [b72block] {\textbf{\textit{InputValidation}}};
+        \node (2) [b72block, below=of 1] {\textbf{\textit{Evaluation}}};
+        \node (3) [b72block, below=of 2] {\textbf{\textit{ToolboxGenerator}}};
+        \node (4) [b72block, below=of 3] {\textbf{\textit{Constraints}}};
+        \node (5) [b72block, below=of 4] {\textbf{\textit{BackEnd}}};
+        \node (6) [b223block, right=of 2, yshift=0cm, xshift=0.6cm] 
+        {\baselineskip=14.5pt \textbf{\textit{Executor}} \\ \raggedright 
+        1) User input file validation with \textbf{\textit{InputValidation}} \\ 
+        2) Evaluation function generation with \textbf{\textit{Evaluation}} \\ 
+        3) \gls{DEAP} toolbox initialization with \textbf{\textit{ToolboxGenerator}} \\ 
+        4) Constraints initialization with \textbf{\textit{Constraints}} \\ 
+        5) Genetic algorithm execution with \textbf{\textit{Algorithm}} \\};
+        \draw [arrow] (1) -- ([shift={(0cm,0cm)}]1.east) -- ([shift={(-0.5cm,0.8cm)}]6.west)--([shift={(0cm,0.8cm)}]6.west);
+        \draw [arrow] (2) -- ([shift={(0cm,0cm)}]2.east) -- ([shift={(-0.5cm,0.3cm)}]6.west)--([shift={(0cm,0.3cm)}]6.west);
+        \draw [arrow] (3) -- ([shift={(0cm,0cm)}]3.east) -- ([shift={(-0.5cm,-0.25cm)}]6.west)--([shift={(0cm,-0.25cm)}]6.west);
+        \draw [arrow] (4) -- ([shift={(0cm,0cm)}]4.east) -- ([shift={(-0.5cm,-0.8cm)}]6.west)--([shift={(0cm,-0.8cm)}]6.west);
+        \node (7) [b223block, right=of 4, yshift=-0.8cm, xshift=0.6cm] 
+        {\baselineskip=14.5pt \textbf{\textit{Algorithm}} \\ \raggedright 
+        1) Accepts initialized toolbox, constraints, and evaluator \\ \hspace{0.3cm} function \\
+        2) Runs the genetic algorithm \\
+        3) Saves results with \textbf{\textit{BackEnd}} \\};
+        \draw [arrow] (7) -- ([shift={(0.cm,0.25cm)}]7.north) -| ([shift={(-0.5cm,-1.25cm)}]6.west) -- ([shift={(0cm,-1.25cm)}]6.west);
+        \draw [arrow] (5) -- ([shift={(0cm,0cm)}]5.east) -- ([shift={(-0.5cm,-1cm)}]7.west)--([shift={(0cm,-1cm)}]7.west);
+    \end{tikzpicture}
+    \caption{Visualization of \gls{ROLLO} architecture.}
+    \label{fig:rollo_archi}
+\end{figure}
 
 \section{ROLLO Verification}
 
