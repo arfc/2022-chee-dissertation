@@ -121,6 +121,7 @@ evolutionary algorithm component.
 user to customize a specialized algorithm to fit their project \cite{fortin_deap_2012}.
 
 \subsection{Distributed Evolutionary Algorithms in Python}
+\label{sec:deap-works}
 \gls{DEAP} is composed of two simples structures: a \textit{creator} and a 
 \textit{toolbox}.  
 The \textit{creator} module allows the run-time creation of classes via 
@@ -257,10 +258,10 @@ calculated using the OpenMC evaluator that accepts input parameters:
                 "objective": ["min"], 
                 "weight": [1.0],
                 "optimized_variable": ["output1"], 
-                "parallel": "job_control",
-                "keep_files": "all",
                 "pop_size": 100, 
                 "generations": 10, 
+                "parallel": "job_control",
+                "keep_files": "all",
                 "mutation_probability": 0.23,
                 "mating_probability": 0.46,
                 "selection_operator": {"operator": "selTournament", "tournsize":5},
@@ -419,10 +420,35 @@ ROLLO's \texttt{algorithm} input file section.
     \caption{\acrfull{ROLLO} \texttt{algorithm}: Input Parameter Descriptions.}
 	\label{tab:algorithm-inputs}
     \footnotesize
-    \begin{tabular}{l|lp{2.5cm}p{7cm}}
+    \begin{tabular}{l|lp{1.7cm}p{4.7cm}p{2cm}}
     \hline
-    & \textbf{Parameter} & \textbf{Type} & \textbf{Description} \\
+    & \textbf{Parameter} & \textbf{Type} & \textbf{Description} & \textbf{Default} \\
     \hline
+    \multirow{9}{1.8cm}{Mandatory Parameters} 
+    & \texttt{objective} & list of strings & & -\\
+    \cline{2-5}
+    & \texttt{optimized\_variable} & list of strings & & -\\
+    \cline{2-5}
+    & \texttt{pop\_size} & int & population size & -\\
+    \cline{2-5}
+    & \texttt{generations} & int & number of generations & -\\
+    \cline{2-5}
+    & \texttt{parallel} & string & options include: \textit{none}, \textit{multiprocessing}, \textit{job\_control} & -\\
+    \hline
+    \multirow{9}{1.8cm}{Optional Parameters} 
+    & \texttt{weight} & list of floats & & $[1.0]*len(objective)$\\
+    \cline{2-5}
+    & \texttt{keep\_files} & string & options include: \textit{none}, \textit{only\_final}, \textit{all} & \textit{all} \\
+    \cline{2-5}
+    & \texttt{mutation\_probability} & float & mutation probability & 0.23 \\
+    \cline{2-5}
+    & \texttt{mating\_probability} & float & mating probability & 0.47 \\
+    \cline{2-5}
+    & \texttt{selection\_operator} & dict & &\\
+    \cline{2-5}
+    & \texttt{mutation\_operator} & dict & &\\
+    \cline{2-5}
+    & \texttt{mating\_operator} & dict & &\\
     \hline 
     \end{tabular}
     \end{table}
@@ -432,6 +458,62 @@ In this section, I will describe the \gls{ROLLO} v1.0 software architecture and
 how all the parts come together to optimize reactor design.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
 and describes each class's purpose.
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{Classes that make up the \gls{ROLLO} architecture. }
+	\label{tab:rollo-architecture}
+    \footnotesize
+    \begin{tabular}{l|p{0.73\textwidth}}
+    \hline
+    \textbf{Class} & \textbf{Description} \\ \hline
+    \textbf{\textit{InputValidation}} & The \textbf{\textit{InputValidation}} class contains methods 
+    to read and validate the JSON \gls{ROLLO} input file to 
+    ensure the user defined all key parameters. If they did not, \gls{ROLLO} 
+    raises an exception to tell the user which parameters are missing. \\
+    \hline
+    \textbf{\textit{Evaluation}} & \gls{DEAP}'s fitness evaluator (as mentioned in Section 
+    \ref{sec:deap-works}) requires an evaluation function to evaluate each 
+    individual's fitness values. 
+    The \textbf{\textit{Evaluation}} class contains a method that creates an evaluation 
+    function that runs the nuclear software and returns the required fitness values, 
+    defined in the input file. \\
+    \hline 
+    \textbf{\textit{OpenMCEvaluation}} & The \textbf{\textit{OpenMCEvaluation}} class contains
+    built-in methods for evaluating OpenMC output files. Developers can update 
+    this file with methods to evaluate frequently used OpenMC outputs. \\
+    \hline 
+    \textbf{\textit{ToolboxGenerator}} & The \textbf{\textit{ToolboxGenerator}} class initializes
+    \gls{DEAP}'s \textit{toolbox} and \textit{creator} modules with genetic algorithm 
+    hyperparameters defined in the input file.\\
+    \hline
+    \textbf{\textit{Constraints}} & The \textbf{\textit{Constraints}} class 
+    contains methods to initialize constraints defined in the input file 
+    and applies the constraints by removing individuals that do not meet the 
+    constraint.\\
+    \hline 
+    \textbf{\textit{BackEnd}} & The \textbf{\textit{BackEnd}} class contains methods to save 
+    genetic algorithm population results into a pickled checkpoint file and to 
+    restart a partially completed genetic algorithm from the checkpoint file. \\
+    \hline
+    \textbf{\textit{Algorithm}} & The \textbf{\textit{Algorithm}} class contains methods to 
+    initialize and execute the genetic algorithm. It executes a general genetic 
+    algorithm framework that uses the hyperparameters defined in the 
+    \textbf{\textit{ToolboxGenerator}}, applies constraints defined in
+    \textbf{\textit{Constraints}}, evaluates fitness values using the evaluation 
+    function produced by \textbf{\textit{Evaluation}}, and saves all the results 
+    with \textbf{\textit{BackEnd}}. \\
+    \hline
+    \textbf{\textit{Executor}} & The \textbf{\textit{Executor}} class drives the \gls{ROLLO} code
+    execution with the following steps: \\
+    & 1) User input file validation with \textbf{\textit{InputValidation}} \\
+    & 2) Evaluation function generation with \textbf{\textit{Evaluation}} \\
+    & 3) \gls{DEAP} toolbox initialization with \textbf{\textit{ToolboxGenerator}} \\ 
+    & 4) Constraint initialization with \textbf{\textit{Constraints}} \\ 
+    & 5) Genetic algorithm execution with \textbf{\textit{Algorithm}} \\
+    \hline
+    \end{tabular}
+    \end{table}
 
 \section{ROLLO Verification}
 
