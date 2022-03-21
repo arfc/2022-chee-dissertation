@@ -37,10 +37,9 @@ I briefly summarize how \gls{ROLLO} achieves these goals:
     coupled software.
     \item Open-source: \gls{ROLLO} utilizes a well-documented, open-source 
     evolutionary algorithm Python package to drive the optimization process.
-    \item Parallel: Users have the option to run \gls{ROLLO} in parallel
+    \item Parallel: Users have the option to run \gls{ROLLO} in parallel.
     \item Reproducible: Data from every \gls{ROLLO} run saves into a unique, pickled 
-    file (pickle is a Python module that serializes Python objects), and all 
-    results from this work are available on Github. 
+    file (pickle is a Python module that serializes Python objects).
 \end{itemize}
 
 \gls{ROLLO} essentially couples an evolutionary algorithm driver with nuclear 
@@ -95,12 +94,186 @@ In the subsequent sections, I describe the evolutionary algorithm software (DEAP
 that drives \gls{ROLLO}, the nuclear software coupled to \gls{ROLLO}, and details about 
 the \gls{ROLLO} framework, such as the input file format and software architecture. 
 
+\section{Evolutionary Algorithm Driver}
+Evolutionary algorithm computation uses sophisticated, diverse techniques 
+and mechanisms, resulting in even the most well-designed, software frameworks 
+being complicated under the hood. 
+Utilizing an existing evolutionary algorithm framework presents implementation 
+challenges as the user must edit the framework's source code to customize for their 
+application and hyperparameters \cite{fortin_deap_2012}. 
+Therefore, a computation framework that gives the user the capability to build 
+custom evolutionary algorithms is ideal for this project.
+
+Many evolutionary algorithm computation packages exist: 
+\gls{DEAP} \cite{fortin_deap_2012}, inspyred \cite{garrett_inspyred_2014}, 
+Pyevolve \cite{perone_pyevolve_2009}, and OpenBEAGLE \cite{gagne_open_2002}.
+\gls{DEAP} is the newest package and places a high value on code 
+compactness and clarity \cite{fortin_deap_2012}. 
+\gls{DEAP} is the only framework that allows the user to prototype evolutionary 
+algorithms rapidly and define custom algorithms without digging deep into 
+the source code to modify hyperparameters and their application methods.
+Accordingly, I chose \gls{DEAP} to drive the \gls{ROLLO} framework's 
+evolutionary algorithm component. 
+\gls{DEAP} provides building blocks for each optimizer function and allows the 
+user to customize a specialized algorithm to fit their project \cite{fortin_deap_2012}.
+
 \subsection{\acrlong{DEAP}}
+\gls{DEAP} is composed of two simples structures: a \textit{creator} and a 
+\textit{toolbox}.  
+The \textit{creator} module allows the run-time creation of classes via 
+inheritance and composition, enabling individual and population creation from 
+from any data structure: lists, sets, dictionaries, trees, etc \cite{fortin_deap_2012}. 
+The \textit{toolbox} is a container that the user manually populates.
+In the \textit{toolbox}, the user defines the selection, crossover, and 
+mutation operator types and hyperparameters. 
+For example, the user registers a crossover operator under the `mate'
+alias, and a selection operator under the `select' alias. 
+Then, the evolutionary algorithm uses these aliased operators from the 
+\textit{toolbox}. 
+If the user wants to change the crossover operator, they would update the 
+`mate' alias in the \textit{toolbox}, while keeping the evolutionary algorithm 
+unchanged \cite{fortin_deap_2012}. 
 
-\subsection{ROLLO Input File}
+Figure \ref{fig:deap-code} illustrates \gls{DEAP}'s usage of the \textit{creator} and
+\textit{toolbox} modules. 
+\begin{figure}[]
+    \begin{minted}[
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+        ]{python}
+        
+        from deap import creator, base, tools, algorithms
+        creator.create("Objective", base.Fitness, weights=(-1.0,)) # minimum
+        creator.create("Individual", list, fitness=creator.Objective)
 
-\subsection{ROLLO Software Architecture}
+        toolbox = base.Toolbox()
+        toolbox.register("variable_1", random.uniform, 0.0, 10.0)
+        toolbox.register("variable_2", random.uniform, -1.0, 0.0)
+        def individual_creator():
+            return creator.Individual([toolbox.variable_1(), toolbox.variable_2()])
+        toolbox.register("individual", individual_creator())
+        toolbox.register("population", tools.initRepeat, list, toolbox.individual)
+        def evaluator_fn(individual):
+            return tuple([sum(individual)])
+        toolbox.register("evaluate", evaluator_fn)
+        toolbox.register("select", tools.selBest, k=5)
+        toolbox.register("mutate", tools.mutPolynomialBounded, eta=0.5, low=[0, -1], up=[-1, 0])
+        toolbox.register("mate", tools.cxOnePoint)
+    \end{minted}
+    \caption{DEAP sample code demonstrating the usage of the \textit{creator} and
+    \textit{toolbox} modules to initialize the genetic algorithm. In \gls{ROLLO}, \gls{DEAP}'s 
+    \textit{creator} and \textit{toolbox} modules are initialized in the source 
+    code based on the genetic algorithm parameters defined by the user in the 
+    \gls{ROLLO} input file. }
+    \label{fig:deap-code}
+\end{figure}
+Line 2 creates a single-objective fitness class, \texttt{Objective}. 
+The first argument defines the name of the derived class, the second argument 
+specifies the inherited base class, \texttt{base.fitness}, and the third 
+argument indicates the objective fitness ($-1.0$ indicates a minimum objective, 
+$+1.0$ indicates a maximum objective). 
+Line 3 derives an \texttt{Individual} class from the standard Python list type,
+and defines its fitness attribute to be the newly created \texttt{Objective} object. 
+Lines 5-9 initialize the \gls{DEAP} toolbox, register 
+\texttt{variable\_1} and \texttt{variable\_2} with their upper and lower bounds, 
+and defines the \texttt{individual\_creator} function to return an 
+\texttt{Individual} initialized with \texttt{variable\_1}, and \texttt{variable\_2}. 
+Lines 10-11 and 14-17 are aliases for initializing individuals and population, 
+specifying variation operators (\texttt{select}, \texttt{mutate}, \texttt{mate}), 
+and evaluating individual fitness (\texttt{evaluate}) \cite{fortin_deap_2012}. 
+Lines 12-13 define the evaluation function that returns the fitness values. 
 
-\subsection{ROLLO Verification}
+\gls{ROLLO} initializes \gls{DEAP}'s \textit{creator} and \textit{toolbox} modules 
+based on the genetic algorithm parameters defined by the user in the \gls{ROLLO} 
+input file. 
+The evaluation function runs the nuclear software and returns user-defined 
+fitness values. 
 
-\subsection{ROLLO Stopping Criteria}
+\subsection{ROLLO Evolutionary Algorithm Implementation}
+\gls{DEAP} creators provided variations of a classical genetic algorithm 
+exposing different explicitness levels \cite{fortin_deap_2012}. 
+The high-level examples use the built-in \gls{DEAP} genetic algorithms, 
+whereas the low-level example completely unpacks the genetic algorithm to expose 
+a generational loop. 
+
+The general genetic algorithm included in ROLLO's \textbf{\textit{Algorithm}} class 
+is an completely unpacked genetic algorithm. 
+The algorithm begins by initializing the starting population and evaluating 
+each individual's fitness value. 
+Then, it enters a generational loop. 
+During each iteration, the mating and mutation operators are applied to the population
+to create an offspring population, and all offspring individuals are evaluated. 
+The selection operator is then applied to both the old population 
+and offspring population to select the best individuals to form 
+the new population. 
+Finally, the constraints are applied, and the results are saved.
+Figure \label{fig:genetic_alg_nuclear} shows the algorithm's flow. 
+
+Applying the selection operator to the combined old and offspring 
+populations expands the population ensuring the effectiveness of 
+elitism selection operators, such as NSGA-II, which work well 
+for multi-objective optimization. 
+
+\section{ROLLO Input File}
+\gls{ROLLO}'s input file is in JSON format. 
+There are four sections that the user must define: \\ \texttt{control\_variables}, 
+\texttt{evaluators}, \texttt{constraints}, and \texttt{algorithm}. 
+Figure \ref{fig:rollo-input} shows an example \gls{ROLLO} input file. 
+In this simulation, \gls{ROLLO} uses a genetic algorithm with the defined 
+hyperparameters to minimize the \texttt{output1} parameter which is 
+calculated using the OpenMC evaluator that accepts input parameters: 
+\texttt{variable1} and \texttt{variable2}. 
+\begin{figure}[]
+    \begin{minted}[
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+        ]{json}
+        {
+            "control_variables": {
+                "variable1": {"min": 0.0, "max": 10.0}, 
+                "variable2": {"min": -1.0, "max": 0.0}
+            }, 
+            "evaluators": {
+                "openmc": {
+                    "input_script": "openmc_inp.py",
+                    "output_script": "openmc_output.py", 
+                    "inputs": ["variable1", "variable2"],
+                    "outputs": ["output1", "output2"]
+                }
+            }, 
+            "constraints": {
+                "output1": {"operator": [">=", "<"], "constrained_val": [1.0, 1.5]}
+            }, 
+            "algorithm": {
+                "objective": ["min"], 
+                "optimized_variable": ["output1"], 
+                "pop_size": 100, 
+                "generations": 10, 
+                "mutation_probability": 0.23,
+                "mating_probability": 0.46,
+                "selection_operator": {"operator": "selTournament", "inds": 15, "tournsize":5},
+                "mutation_operator": {
+                    "operator": "mutPolynomialBounded",
+                    "indpb": 0.23,
+                    "eta": 0.23
+                },
+                "mating_operator": {"operator": "cxBlend", "alpha": 0.46}
+            }
+        }
+    \end{minted}
+    \caption{\acrfull{ROLLO} sample JSON input file.}
+    \label{fig:rollo-input}
+\end{figure}
+
+
+\section{ROLLO Software Architecture}
+
+\section{ROLLO Verification}
+
+\section{ROLLO Stopping Criteria}
