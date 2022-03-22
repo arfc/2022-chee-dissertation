@@ -705,5 +705,171 @@ The Binh and Korn function \cite{binh_mobes_1997} is a two-objective function:
         0 \leq x_1 \leq 5, 0 \leq x_2 \leq 3 \nonumber
     \end{cases}
 \end{align}
+We use it as a performance test for multi-objective optimization.
+Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's pareto front.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.7\linewidth]{binh-paretofront.png} 
+    \caption{Pareto front of the Binh and Korn test function, taken from 
+    \cite{bassi_statistics_2018}. }
+    \label{fig:binh_paretofront}
+\end{figure}
+I use the hypervolume indicator to quantify the pareto front's goodness. 
+The hypervolume indicator is one of the most used set-quality indicators for the 
+assessment of stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
+The hypervolume indicator measures the volume (in the objective space) covered by 
+non-dominated solutions for problems in which all objectives are to be 
+minimized \cite{deb_multi-objective_2001}. 
+For a two-dimensional problem, Figure \ref{fig:pareto_hypervolume} illustrates the 
+hypervolume enclosed by the non-dominated solutions (A, B, C, D, E) and reference 
+point, W, in the hatched region. 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.7\linewidth]{pareto-hypervolume.png} 
+    \caption{Example hypervolume enclosed by non-dominated solutions, taken from 
+    \cite{deb_multi-objective_2001}.}
+    \label{fig:pareto_hypervolume}
+\end{figure}
+I added an integration test to ROLLO that checks that a ROLLO simulation will 
+find a hypervolume comparable to the ideal pareto front when minimizing the
+Binh and Korn function. 
+
+\subsection{Pu-239 Critical Bare Sphere}
+To ensure \gls{ROLLO} works correctly while coupled with OpenMC, I run \gls{ROLLO} 
+to find the critical radius for a $^{239}Pu$ bare sphere. 
+The solution to this problem is well studied and available \cite{blanchard_updated_1999}. 
+Blanchard et al reported that with MCNP4b code and ENDF/B-VI data library, the 
+critical mass of a Pu239 bare sphere is 10.00 kg which corresponds to a diameter 
+of 9.9cm \cite{blanchard_updated_1999}.
+Figure \ref{fig:verification-sphere} shows the ROLLO input file for this verification 
+problem. 
+In the input file, I vary the radius between 1.0 and 8.0cm, with the objective of 
+minimizing radius, while constraining the problem to have $k_{eff} >= 1.0$.
+\begin{figure}[H]
+    \begin{minted}[
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+        ]{json}
+        {"control_variables": {
+                "radius": {"min": 1.0, "max": 8.0}},
+            "evaluators": {
+                "openmc": {
+                    "order": 0, 
+                    "inputs": ["radius"],
+                    "input_script": ["python", "critical_sphere.py"],
+                    "outputs": ["keff", "radius"],
+                    "output_script": ["python", "calculate_keff.py"]
+                    "keep_files": false}},
+            "constraints": {"keff": {"operator": [">="], "constrained_val": [1.0]}},
+            "algorithm": {
+                "parallel": "multiprocessing",
+                "objective": ["min"],
+                "optimized_variable": ["radius"],
+                "pop_size": 60, 
+                "generations": 10,
+            }}
+    \end{minted}
+    \caption{\acrfull{ROLLO} JSON input file for finding the minimum radius for 
+    a $^{239}Pu$ Critical Bare Sphere.}
+    \label{fig:verification-sphere}
+\end{figure}
+\pagebreak
+Figure \ref{fig:critical_sphere.py} shows the OpenMC template used in the 
+\gls{ROLLO} simulation. 
+\begin{figure}[H]
+    \begin{minted}[
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+        ]{python}
+            import openmc 
+            import numpy as np
+
+            pu = openmc.Material()
+            pu.set_density("g/cm3", 19.84)
+            pu.add_nuclide("Pu239", 1)
+            mats = openmc.Materials([pu])
+            
+            radius = {{radius}}
+            
+            fuel_sphere = openmc.Sphere(r=radius, boundary_type='vacuum')
+            fuel_cell = openmc.Cell(fill=pu, region=-fuel_sphere)
+            univ = openmc.Universe(cells=[fuel_cell])
+            geom = openmc.Geometry(univ)
+            
+            settings = openmc.Settings()
+            settings.batches = 100
+            settings.inactive = 20
+            settings.particles = 20000
+            settings.temperature = {"multipole": True, "method": "interpolation"}
+            
+            mats.export_to_xml()
+            geom.export_to_xml()
+            settings.export_to_xml()
+            openmc.run()
+    \end{minted}
+    \caption{OpenMC template input file used in ROLLO simulation to find the 
+    minimum radius for a $^{239}Pu$ Critical Bare Sphere.}
+    \label{fig:critical_sphere.py}
+\end{figure}  
+
+\gls{ROLLO} successfully finds the critical radius of the $^{239}Pu$ bare sphere 
+to be 4.9856cm which corresponds to approximately a 9.9cm diameter. 
+The critical sphere's $k_{eff}$ value is 1.00919 $\pm$ 0.00048. 
+Figure \ref{fig:verification-radius} and \ref{fig:verification-keff} show the 
+radius and $k_{eff}$ evolution through the evolutionary algorithm's 
+generations. 
+They demonstrate how the average radius and $k_{eff}$ converge
+towards the critical radius while keeping $k_{eff} > 1$ with improvements from 
+each generation.
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{verification-radius.png}} 
+    \caption{Minimum, average, and maximum radius values evolution.}
+    \label{fig:verification-radius}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{verification-keff.png}}
+        \caption{Minimum, average, and maximum $k_{eff}$ values evolution.}
+        \label{fig:verification-keff}
+    \end{subfigure}
+    \caption{Results for each generation for \gls{ROLLO}'s genetic algorithm optimization 
+    to the find the critical radius of a  $^{239}Pu$ bare sphere.}
+\end{figure}
 
 \section{ROLLO Stopping Criteria}
+ROLLO's evolutionary algorithm stopping criterion is defined by the
+\texttt{generations} input parameter.  
+Each nuclear reactor model's evaluation is computationally intensive. 
+Users will most likely be constrained by total available compute time. 
+Therefore, rather than setting a results-based stopping criterion, ROLLO enables 
+users to define the \texttt{generations} and \texttt{pop$\_$size} based on the 
+amount of compute time available to them: 
+\begin{align}
+    t_{total} &= t_{eval} \times gen \times pop 
+\intertext{where}
+    t_{total} &= \mbox{Total compute time available} \nonumber \\
+    t_{eval} &= \mbox{compute time per nuclear reactor model evaluation} \nonumber \\
+    gen &= \mbox{total number of generations in optimization process} \nonumber \\
+    pop &= \mbox{population size in optimization process} \nonumber
+\end{align} 
+
+\subsection{Convergence}
+ROLLO does not utilize a mathematical expression to evaluate problem convergence. 
+The complexity of reactor design optimization means that there is no single 
+indicator that determines if convergence is met. 
+Instead, ROLLO's purpose is to help the human reactor designer to narrow down 
+the search space. 
+When a ROLLO run is completed, the user plots the objectives convergence and 
+pareto front (for multi-objective simulations) to evaluate if they are confident 
+about the final solution set. 
+If not, the user can easily restart the optimization simulation using the 
+\texttt{checkpoint.pkl} file and run the problem for a few more generations. 
+
+\section{Summary}
