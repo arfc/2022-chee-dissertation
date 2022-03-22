@@ -93,10 +93,10 @@ hyperparameters and operators, and finally runs the genetic algorithm following
 the flow chart in Figure \ref{fig:genetic_alg_nuclear}, in which the nuclear 
 software evaluates each individual's fitness. 
 
-% update this 
-In the subsequent sections, I describe the evolutionary algorithm software (DEAP)
-that drives \gls{ROLLO}, the nuclear software coupled to \gls{ROLLO}, and details about 
-the \gls{ROLLO} framework, such as the input file format and software architecture. 
+In the subsequent sections, I describe \gls{ROLLO}'s evolutionary algorithm driver 
+software (DEAP), \gls{ROLLO}'s input file structure, and details about \gls{ROLLO}'s 
+software architecture, methods used to verify \gls{ROLLO}, and \gls{ROLLO}'s stopping 
+criteria. 
 
 \section{Evolutionary Algorithm Driver}
 Evolutionary algorithm computation uses sophisticated, diverse techniques 
@@ -643,7 +643,7 @@ to restart the code from the most recent population and continue the simulation.
 \label{sec:rollo_parallel}
 %% WRITE THIS
 
-\subsection{\gls{ROLLO} Results Analysis}
+\subsection{ROLLO Results Analysis}
 The \textbf{\textit{BackEnd}} class manages results from each \gls{ROLLO} simulation. 
 \textbf{\textit{BackEnd}} puts all the results in a pickled dictionary, which 
 is saved as \texttt{checkpoint.pkl} in the same directory as the input file. 
@@ -873,3 +873,4 @@ If not, the user can easily restart the optimization simulation using the
 \texttt{checkpoint.pkl} file and run the problem for a few more generations. 
 
 \section{Summary}
+% this 
