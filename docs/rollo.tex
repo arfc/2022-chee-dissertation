@@ -641,6 +641,7 @@ to restart the code from the most recent population and continue the simulation.
 
 \subsection{ROLLO Parallelization}
 \label{sec:rollo_parallel}
+%% WRITE THIS
 
 \subsection{\gls{ROLLO} Results Analysis}
 The \textbf{\textit{BackEnd}} class manages results from each \gls{ROLLO} simulation. 
@@ -661,5 +662,48 @@ the genetic algorithm's third generation will be named:
 
 
 \section{ROLLO Verification}
+To verify \gls{ROLLO}'s optimization capabilities, I conducted multiple verification 
+studies: commonly used evolutionary algorithm single and multi objective benchmark problems
+and a nuclear reactor-specific problem. 
+Together, they prove that \gls{ROLLO}'s evolutionary algorithm is correctly implemented 
+and suitable for conducting nuclear reactor optimization problems. 
+
+\subsection{Ackley Function}
+The Ackley function is a non-convex function, commonly used as a performance test 
+for single-objective optimization algorithms \cite{ackley_connectionist_2012}: 
+\begin{align}
+    f(x) &= -a \cdot exp \left(-b\sqrt{\frac{1}{d}\Sigma_{i=1}^dx_i^2}\right) - 
+    exp \left(\frac{1}{d}\Sigma_{i=1}^d cos(cx_i)\right) + a + exp(1) 
+\end{align}
+The recommended variable values are $a=20$, $b=0.2$, and $c=2\pi$
+\cite{sfu_ackley_nodate}. 
+The Ackley function's global optimum point is $f(0,0) = 0$. 
+Figure \ref{fig:ackley} shows the resulting two-variable Ackley function.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{figures/ackley.png} 
+    \caption{Two variable Ackley function \cite{sfu_ackley_nodate}.}
+    \label{fig:ackley}
+\end{figure}
+
+I added an integration test to \gls{ROLLO} that checks that a default \gls{ROLLO} 
+simulation will find the Ackley function's global optimum point. 
+If \gls{ROLLO} performed sub-optimally, it would return one of the Ackley 
+function's many local minimums. 
+\gls{ROLLO} successfully finds the global optimum point, and thus passes the 
+integration test. 
+
+\subsection{Binh and Korn Function}
+The Binh and Korn function \cite{binh_mobes_1997} is a two-objective function:
+\begin{align}
+    Minimize &= \begin{cases}
+        f_1 (x_1,x_2) &= 4x_1^2+4x_2^2 \\
+        f_2 (x_1,x_2) &= (x_1-5)^2 + (x_2-5)^2 
+    \end{cases} \\
+    Such that &= \begin{cases}
+        (x_1-8)^2 + (x_2+3)^2 \geq 7.7 \nonumber \\
+        0 \leq x_1 \leq 5, 0 \leq x_2 \leq 3 \nonumber
+    \end{cases}
+\end{align}
 
 \section{ROLLO Stopping Criteria}
