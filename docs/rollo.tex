@@ -413,7 +413,7 @@ core.
 \subsection{Algorithm}
 In the algorithm section, users define the simulation's general settings and 
 genetic algorithm's hyperparameters. 
-The mandatory input parameters include \texttt{objective}, \texttt{optimized\_variable}, 
+The mandatory input parameters include \texttt{optimized\_variable}, \texttt{objective},
 \texttt{pop\_size}, and \texttt{generations}.
 The optional input parameters include \texttt{parallel}, \\
 \texttt{mutation\_probability}, \texttt{mating\_probability}, 
@@ -434,16 +434,17 @@ ROLLO's \texttt{algorithm} input file section.
     & \textbf{Parameter} & \textbf{Type} & \textbf{Description} & \textbf{Default} \\
     \hline
     \multirow{9}{1.8cm}{Mandatory Parameters} 
-    & \texttt{objective} & list of strings & & -\\
+    & \texttt{optimized\_variable} & list of strings & variables to be optimized & -\\
     \cline{2-5}
-    & \texttt{optimized\_variable} & list of strings & & -\\
+    & \texttt{objective} & list of strings & string options include: min or max.
+    each objective corresponds to a variable in \texttt{optimized\_variable} & -\\
     \cline{2-5}
     & \texttt{pop\_size} & int & population size & -\\
     \cline{2-5}
     & \texttt{generations} & int & number of generations & -\\
     \hline
     \multirow{9}{1.8cm}{Optional Parameters} 
-    & \texttt{weight} & list of floats & & \scriptsize{[1.0]*len(objective)}\\
+    & \texttt{weight} & list of floats & each weight corresponds to a variable in \texttt{optimized\_variable} & \scriptsize{[1.0]*len(objective)}\\
     \cline{2-5}
     & \texttt{parallel} & string & options include: \textit{none}, \textit{multiprocessing}, \textit{job\_control} & \textit{none} \\
     \cline{2-5}
@@ -461,7 +462,7 @@ ROLLO's \texttt{algorithm} input file section.
     \hline 
     \end{tabular}
     \end{table}
-%%% UPDATE THIS
+%%% UPDATE THIS: perhaps put hyperparameter studies in appendix? 
 The hyperparameter default values are selected based on hyperparmater studies conducted for a 
 single objective \gls{FHR} optimization. 
 
@@ -472,6 +473,7 @@ For each operator, users choose from a list of operators and define each
 of their required hyperparameters. 
 Table \ref{tab:deap_operators} shows the available operators and their respective 
 hyperparameters. 
+Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
 \begin{table}[]
     \centering
     \onehalfspacing
@@ -642,6 +644,7 @@ to restart the code from the most recent population and continue the simulation.
 \subsection{ROLLO Parallelization}
 \label{sec:rollo_parallel}
 %% WRITE THIS
+ROLLO's 
 
 \subsection{ROLLO Results Analysis}
 The \textbf{\textit{BackEnd}} class manages results from each \gls{ROLLO} simulation. 
