@@ -692,6 +692,12 @@ looks like this:
 \end{figure}
 Users define each individual command in ROLLO's input file, thus, the \texttt{job\_control} mode enables more 
 control over the parallelization settings of each individual command. 
+Many nuclear softwares, such as OpenMC and MOOSE, use \gls{MPI} or OpenMP to parallelize their runs. 
+With control over each individual command, users can continue to utilize the parallel 
+versions of the nuclear software, thus, having two layers of parallelization. 
+The first layer being the individual software runs' parallelization, and the second layer being ROLLO's parallelization. 
+For example, running four reactor models using ROLLO across 16 nodes on a cluster, and assigning each reactor model to run
+in parallel across four nodes. 
 In-depth details about parallelization setup can be found in the \gls{ROLLO} documentation
  \cite{chee_documentation_2021}.
 
