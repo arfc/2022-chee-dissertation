@@ -582,6 +582,75 @@ Figure \ref{fig:rollo_archi} depicts the \gls{ROLLO} software architecture.
     \caption{Visualization of \gls{ROLLO} architecture.}
     \label{fig:rollo_archi}
 \end{figure}
+When the user runs a \gls{ROLLO} input file, the \textbf{\textit{Executor}} class 
+drives \gls{ROLLO}'s execution from beginning to end.
+The \textbf{\textit{Executor}} calls \textbf{\textit{InputValidation}} to 
+parse the input file to ensure that the user defined all mandatory parameters
+and used the correct formatting.
+Next, it initializes an \textbf{\textit{Evaluation}} object based on the 
+\texttt{evaluators} specifications in the input file. 
+It uses the \textbf{\textit{Evaluation}} object to create a function that will 
+run each evaluator software with the desired input parameters and return the 
+output parameters calculated by the evaluator software. 
+Next, it uses the \textbf{\textit{ToolboxGenerator}} to create an initialized 
+DEAP toolbox object based on the input file's \texttt{algorithm} specifications. 
+The \textbf{\textit{ToolboxGenerator}} object accepts the 
+\textbf{\textit{Evaluation}} object and registers it as the toolbox's `evaluate' 
+tool.  
+Then, it initializes a \textbf{\textit{Constraints}} object to contain 
+\texttt{constraints} specified in the input file. 
+Next, the \textbf{\textit{Executor}} initializes an \textbf{\textit{Algorithm}} 
+object that accepts the initialized \gls{DEAP} toolbox and \textbf{\textit{Constraints}} 
+object. 
+Finally, the \textbf{\textit{Executor}} class uses a method in the 
+\textbf{\textit{Algorithm}} object to run a general genetic algorithm with 
+hyperparameters from the \gls{DEAP} toolbox, apply constraints defined in the 
+\textbf{\textit{Constraints}} object, and calculate objective functions using 
+the evaluation function created by the \textbf{\textit{Evaluation}} object, all 
+the while saving the results using the \textbf{\textit{BackEnd}} class. 
+
+In the \gls{ROLLO} Github repository \cite{chee_rollo_2021}, I include a tests 
+directory that contains unit tests for all methods in the classes described 
+above. % update citation
+
+\subsection{Installing and Running ROLLO}
+There are two ways to install \gls{ROLLO}.
+First, a user can utilize \gls{PyPI} to install \gls{ROLLO}: \texttt{python -m 
+pip install rollo}
+\cite{chee_rollo_2021}.
+Second, a user can download the \gls{ROLLO} repository \cite{chee_rollo_2021}
+from Github and install it from source. 
+
+\gls{ROLLO} is run from the command line interface. 
+A user should first set up the \gls{ROLLO} JSON input file and evaluator 
+scripts in a directory. 
+When running \gls{ROLLO} from the command line, there is one mandatory argument and 
+two optional arguments. 
+The mandatory argument is the input file (\texttt{-i}). 
+The optional argument is the checkpoint file (\texttt{-c}), and verbrose 
+output flag (\texttt{-v}).  
+Thus, the structure of a command line input for running \gls{ROLLO} is: 
+
+\noindent
+\texttt{python -m rollo -i <input file name> -c <checkpoint file name> -v}
+
+The checkpoint file holds the results from the \gls{ROLLO} simulation and also acts 
+as a restart file. 
+Thus, if a \gls{ROLLO} simulation ends prematurely, the checkpoint file can be used 
+to restart the code from the most recent population and continue the simulation. 
+
+\subsection{ROLLO Parallelization}
+\label{sec:rollo_parallel}
+
+\subsection{\gls{ROLLO} Results Analysis}
+The \textbf{\textit{BackEnd}} class manages results from each \gls{ROLLO} simulation. 
+\textbf{\textit{BackEnd}} puts all the results in a pickled dictionary, which 
+is saved as \texttt{checkpoint.pkl} in the same directory as the input file. 
+The checkpoint file can be loaded into a Jupyter notebook and organized 
+to produce desired plots. 
+Examples of \gls{ROLLO} results analysis can be found in the \gls{ROLLO} documentation 
+\cite{chee_documentation_2021}. 
+
 
 \section{ROLLO Verification}
 
