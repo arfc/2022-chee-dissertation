@@ -51,24 +51,32 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \hline
     \end{tabular}
 \end{table}
-I will be applying optimization process to the \gls{AHTR} slab and \gls{AHTR} one-third
+I will be applying optimization process to the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
-The slab optimization acts as a preliminary study to inform the more complex \gls{AHTR} one-third
+The plank optimization acts as a preliminary study to inform the more complex \gls{AHTR} one-third
 assembly optimization setup. 
 In the next section, I will describe both geometries. 
 
 \section{AHTR Geometry for Optimization Problem}
-The optimization process is applied to both the \gls{AHTR} slab and \gls{AHTR} one-third
+The optimization process is applied to both the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
+The geometries are slightly adapted from the \gls{AHTR} design in the \gls{FHR} benchmark,
+outlined in Chapter \ref{chap:fhr-benchmark}.
+The main changes occur in the fuel plank region (see Figure \ref{fig:ahtr-fuel-assembly}). 
+In the \gls{FHR} benchmark, the TRISO particles are arranged in a rectangular lattice within
+two fuel stripes in the plank. 
+For the optimization problem, I instead discretized each plank into ten cells with random 
+TRISO packing and an individually controlled packing fraction. 
+I also omit the graphite spacers. 
 
-\subsection{AHTR Slab Geometry}
-The \gls{AHTR} slab is a single graphite fuel slab model from the \gls{AHTR} design (Figure 
+\subsection{AHTR Plank Geometry}
+The \gls{AHTR} plank is a single graphite fuel plank model from the \gls{AHTR} design (Figure 
 \ref{fig:ahtr}). % replace this ref after fhr benchmark chapter is added. 
-I modified the fuel slab to be straightened with perpendicular sides, instead 
+I modified the fuel plank to be straightened with perpendicular sides, instead 
 of slanted as in Figure \ref{fig:ahtr-fuel-plank}, for ease of modeling. 
 The original \gls{AHTR} geometry will be used for the complex one-third assembly optimization 
 setup. 
-Figure \ref{fig:straightened_slab} illustrates the straightened fuel slab.
+Figure \ref{fig:straightened_plank} illustrates the straightened fuel plank.
 \begin{figure}[]
     \centering
     \includegraphics[width=0.85\linewidth]{straightened_slab.png}
@@ -88,12 +96,12 @@ Figure \ref{fig:straightened_slab} illustrates the straightened fuel slab.
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
 
             \end{tabular}}}
-    \caption{Straightened \acrfull{AHTR} fuel slab with reflective boundary 
-    conditions. Original slanted fuel slabs can be seen in Figures 
+    \caption{Straightened \acrfull{AHTR} fuel plank with reflective boundary 
+    conditions. Original slanted fuel planks can be seen in Figures 
     \ref{fig:ahtr-fuel-assembly} and \ref{fig:ahtr-fuel-plank}.}
-    \label{fig:straightened_slab}
+    \label{fig:straightened_plank}
 \end{figure}
-The slab has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
+The plank has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
 boundary conditions.
 
 I use the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
@@ -107,7 +115,7 @@ homogenization.
 \begin{table}[]
     \centering
     \onehalfspacing
-    \caption{Straightened \acrfull{AHTR} fuel slab $k_{eff}$ for case with 
+    \caption{Straightened \acrfull{AHTR} fuel plank $k_{eff}$ for case with 
     no \gls{TRISO} homogenization and case with homogenization of the four outer 
     layers. Both simulations were run on one BlueWaters XE Node.}
 	\label{tab:keff_triso}
