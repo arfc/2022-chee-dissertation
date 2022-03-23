@@ -1,6 +1,6 @@
 \chapter{AHTR Modeling and Optimization Methodology}
 In this chapter, I describe the modeling and optimization methodology of
-ROLLO \gls{AHTR} optimization for non-conventional geometries and parameters.
+\gls{ROLLO} \gls{AHTR} optimization for non-conventional geometries and parameters.
 To wholly explore the design space enabled by additive manufacturing, the 
 optimization tool should enable placement of fuel, moderation, and coolant material 
 in any possible location, within physical limits. 
@@ -10,9 +10,9 @@ this dissertation attempts a first go at beginning to explore the large design s
 The work done for this dissertation is only an intermediate step towards developing 
 a truly arbitrary geometry expression. 
 
-In the subsequent sections, I will define the optimization problem, describe the 
-AHTR geometries . 
-Then, I will describe the software used to model them and the specific models. 
+%In the subsequent sections, I will define the optimization problem, describe the 
+%AHTR geometries . 
+%Then, I will describe the software used to model them and the specific models. 
 
 \section{Optimization Problem Definition}
 In an effort towards optimizing reactor design for non-conventional geometries 
@@ -24,5 +24,42 @@ I chose to vary the following \gls{AHTR} parameters:
     \item Total fuel packing fraction
     \item \gls{FLiBe} coolant channel shape 
 \end{itemize} 
-The TRISO packing fraction distribution enables exploration of how heterogenous 
-fuel distributions impact reactor performance.  
+The TRISO packing fraction distribution variation enables exploration of how 
+heterogenous fuel distributions impact reactor performance;  
+while the FliBe coolant channel shape variation enables exploration of how non-uniform 
+channel shapes impact reactor performance. 
+
+I selected three key \gls{AHTR} optimization objectives that address contrasting reactor 
+core qualities. 
+Table \ref{tab:objectives} describes each objective, how I quantified them, and the motivation.
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{ROLLO} optimization problem objectives with their quantification 
+    descriptions, and motivation.}
+	\label{tab:objectives}
+    \footnotesize
+    \begin{tabular}{p{4cm}p{5cm}p{5cm}}
+    \hline 
+    \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
+    \hline
+    Minimize fuel amount & Minimize total fuel packing fraction & Cost savings, Non-proliferation \\ 
+    \hline
+    Maximize heat transfer & Minimize maximum temperature & Enable system to perform at a higher power with minimized thermal stress \\
+    \hline
+    Minimize power peaking & Minimize power peaking factor normalized by fuel distribution & Efficient fuel utilization, longer core life, safety\\
+    \hline
+    \end{tabular}
+\end{table}
+I will be applying optimization process to the \gls{AHTR} slab and \gls{AHTR} one-third
+assembly geometries.
+The slab optimization acts as a preliminary study to inform the more complex \gls{AHTR} one-third
+assembly optimization setup. 
+In the next section, I will describe both geometries. 
+
+\section{AHTR Geometry}
+The optimization process is applied to both the \gls{AHTR} slab and \gls{AHTR} one-third
+assembly geometries.
+
+\subsection{AHTR Slab Geometry}
+
