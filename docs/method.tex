@@ -57,9 +57,78 @@ The slab optimization acts as a preliminary study to inform the more complex \gl
 assembly optimization setup. 
 In the next section, I will describe both geometries. 
 
-\section{AHTR Geometry}
+\section{AHTR Geometry for Optimization Problem}
 The optimization process is applied to both the \gls{AHTR} slab and \gls{AHTR} one-third
 assembly geometries.
 
 \subsection{AHTR Slab Geometry}
+The \gls{AHTR} slab is a single graphite fuel slab model from the \gls{AHTR} design (Figure 
+\ref{fig:ahtr}). % replace this ref after fhr benchmark chapter is added. 
+I modified the fuel slab to be straightened with perpendicular sides, instead 
+of slanted as in Figure \ref{fig:ahtr-fuel-plank}, for ease of modeling. 
+The original \gls{AHTR} geometry will be used for the complex one-third assembly optimization 
+setup. 
+Figure \ref{fig:straightened_slab} illustrates the straightened fuel slab.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.85\linewidth]{straightened_slab.png}
+    \begin{tikzpicture}
+        \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+        \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+        \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+       \tkzText[above](-0.3,-0.7){}
+       \end{tikzpicture} 
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+
+            \end{tabular}}}
+    \caption{Straightened \acrfull{AHTR} fuel slab with reflective boundary 
+    conditions. Original slanted fuel slabs can be seen in Figures 
+    \ref{fig:ahtr-fuel-assembly} and \ref{fig:ahtr-fuel-plank}.}
+    \label{fig:straightened_slab}
+\end{figure}
+The slab has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
+boundary conditions.
+
+I use the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
+except that I homogenized each \gls{TRISO} particle's four outer layers: 
+porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the 
+outer pyrolytic carbon. 
+The \gls{TRISO} particle dimensions remain the same.
+Table \ref{tab:keff_triso} reports OpenMC's reported $k_{eff}$ for this original 
+straightened \gls{AHTR} configuration with and without the outer layer \gls{TRISO} 
+homogenization.
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{Straightened \acrfull{AHTR} fuel slab $k_{eff}$ for case with 
+    no \gls{TRISO} homogenization and case with homogenization of the four outer 
+    layers. Both simulations were run on one BlueWaters XE Node.}
+	\label{tab:keff_triso}
+    \footnotesize
+    \begin{tabular}{llc}
+    \hline 
+    \textbf{TRISO Homogenization}& \textbf{$k_{eff}$} & \textbf{Simulation time [s]}  \\
+    \hline 
+    None & $1.38548 \pm 0.00124$ & 233\\ 
+    Four outer layers & $1.38625 \pm 0.00109$ & 168\\ 
+    \hline
+    \end{tabular}
+\end{table}
+The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
+speed-up without compromising accuracy with $k_{eff}$ values within each 
+other's uncertainty.
+
+% fuel cell discretization for fuel distribution 
+% coolant channel shape variation
+
+\subsection{AHTR One-Third Assembly Geometry}
+
+\section{AHTR Model Workflow}
 
