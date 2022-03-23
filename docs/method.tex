@@ -1,0 +1,28 @@
+\chapter{AHTR Modeling and Optimization Methodology}
+In this chapter, I describe the modeling and optimization methodology of
+ROLLO \gls{AHTR} optimization for non-conventional geometries and parameters.
+To wholly explore the design space enabled by additive manufacturing, the 
+optimization tool should enable placement of fuel, moderation, and coolant material 
+in any possible location, within physical limits. 
+Since exploration of non-conventional geometries and parameters has barely been
+attempted (previous attempts described in Section \ref{sec:lit-review-reactor-arbitrary}), 
+this dissertation attempts a first go at beginning to explore the large design space.  
+The work done for this dissertation is only an intermediate step towards developing 
+a truly arbitrary geometry expression. 
+
+In the subsequent sections, I will define the optimization problem, describe the 
+AHTR geometries . 
+Then, I will describe the software used to model them and the specific models. 
+
+\section{Optimization Problem Definition}
+In an effort towards optimizing reactor design for non-conventional geometries 
+and parameters.
+I chose to vary the following \gls{AHTR} parameters: 
+\begin{itemize}
+    \item \gls{TRISO} particle packing fraction distribution, 
+    $\rho_{TRISO}(\vec{r})$
+    \item Total fuel packing fraction
+    \item \gls{FLiBe} coolant channel shape 
+\end{itemize} 
+The TRISO packing fraction distribution enables exploration of how heterogenous 
+fuel distributions impact reactor performance.  
