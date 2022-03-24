@@ -15,6 +15,7 @@ a truly arbitrary geometry expression.
 %Then, I will describe the software used to model them and the specific models. 
 
 \section{Optimization Problem Definition}
+\label{sec:opt-problem}
 In an effort towards optimizing reactor design for non-conventional geometries 
 and parameters.
 I chose to vary the following \gls{AHTR} parameters: 
@@ -184,13 +185,73 @@ in Section \ref{sec:ahtr-plank-geometry}.
 \gls{ROLLO} drives the evolutionary algorithm optimization process. 
 In the \gls{ROLLO} input file, I will define control variables for the genetic algorithm 
 to vary. 
+These control variables are values used to control the \gls{AHTR} parameters described in 
+Section \ref{sec:opt-problem}.
 These control variables will be input into templated nuclear software to model different 
 AHTR geometries.
-The software will calculate the optimization objective and constraint values. 
+The software will then run the \gls{AHTR} models and calculate the optimization objective 
+and constraint values. 
+
+In this work, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s neutronics 
+and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s multi-physics. 
+OpenMC is an open-source Monte Carlo neutron transport code capable of 
+performing k-eigenvalue calculations on models built using either constructive 
+solid geometry or CAD representation. 
+Moltres is an open-source tool designed to simulate \glspl{MSR} using 
+deterministic neutronics and thermal-hydraulics implemented as an application 
+atop the \gls{MOOSE} finite-element framework.  
+Moltres solves arbitrary-group neutron diffusion, temperature, and precursor 
+governing equations on a single mesh and can be deployed on an arbitrary number 
+of processing units \cite{lindsay_introduction_2018}.
+OpenMC and Moltres are both open-source, well-documented, well-supported, and 
+Github version-controlled codes that can run in parallel on \gls{HPC} machines.
 
 In this section, I describe the \gls{AHTR} modeling workflow: from the AHTR geometry 
-variation input parameters, to the OpenMC and Moltres models, and finally the 
+variation input parameters, to the nuclear software models, and finally the 
 output and constraint values. 
+This corresponds to the \textit{evaluate population} orange blocks in Figure 
+\ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
+Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow. 
+\begin{figure}[]
+    \centering
+    \begin{tikzpicture}[node distance=0.5cm]
+        \tikzstyle{every node}=[font=\footnotesize]
+        \node (1) [e72block] {\textit{Total PF}};
+        \node (2) [b72block, right=of 1] {PF};
+        \node (3) [e72block, above=of 2] {Input Parameters};
+        \node (4) [e72block, below=of 1] {$\rho_{TRISO}(\vec{r})$};
+        \node (5) [b72block, right=of 4] {a, b, c, d, e, f};
+        \node (6) [e72block, below=of 4] {FliBE Coolant Channel Shape};
+        \node (7) [b72block, right=of 6] {$r_{top}$, $r_{bot}$};
+        \node (8) [o72block, right=of 2, xshift=0.8cm, yshift=0.5cm] {OpenMC Model};
+        \node (9) [e72block, above=of 8] {Input Files};
+        \node (10) [o72block, right=of 5, xshift=0.8cm] {Group Constants};
+        \node (11) [o72block, right=of 7, xshift=0.8cm, yshift=-0.5cm] {Moltres Model};
+        \node (12) [b72block, right=of 8, xshift=0.8cm, yshift=0.8cm] {$k_{eff}$}; 
+        \node (13) [e72block, above=of 12] {Constraints};
+        \node (14) [e72block, below=of 12] {Objectives};
+        \node (15) [b72block, below=of 14] {PF};
+        \node (16) [b72block, below=of 15] {PPF};
+        \node (17) [b72block, below=of 16] {$T_{max}$};
+        \draw [arrow] (2) -- ([shift={(0cm,0cm)}]2.east) -- ([shift={(0cm,0cm)}]8.west);
+        \draw [arrow] (5) -- ([shift={(0cm,0cm)}]5.east) -- ([shift={(0cm,0cm)}]8.west);
+        \draw [arrow] (7) -- ([shift={(0cm,0cm)}]7.east) -- ([shift={(0cm,0cm)}]8.west);
+        \draw [arrow] (7) -- ([shift={(0cm,0cm)}]7.east) -- ([shift={(0cm,0cm)}]11.west);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.south) -- node[anchor=west] {generates} ([shift={(0cm,0cm)}]10.north);
+        \draw [arrow] (10) -- ([shift={(0cm,0cm)}]10.south) -- node[anchor=west] {input into} ([shift={(0cm,0cm)}]11.north);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]12.west);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]15.west);
+        \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]16.west);
+        \draw [arrow] (11) -- ([shift={(0cm,0cm)}]11.east) -- ([shift={(0cm,0cm)}]17.west);
+    \end{tikzpicture}
+    \caption{\acrfull{AHTR} fuel slab modeling workflow.} 
+    \label{fig:ahtr-model-flow}
+\end{figure}
+
+\subsection{Input Parameter Modeling}
+
+\subsection{AHTR OpenMC and Moltres Models}
+
 
 
 \section{AHTR Model Verification}
