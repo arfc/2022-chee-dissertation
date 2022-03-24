@@ -302,6 +302,7 @@ of processing units \cite{lindsay_introduction_2018}.
 Moltres solves the diffusion equations as a steady-state eigenvalue 
 problem to find $k_{eff}$ for the static AHTR model: 
 \begin{align}
+    \label{eq:moltres-diffusion-equation}
     \frac{1}{v_g} \frac{\partial \phi_g}{\partial t} &= \nabla \cdot D_g
     \nabla \phi_g - \Sigma^r_g \phi_g +
     \sum^G_{g' \neq g} \Sigma^s_{g' \rightarrow g} \phi_{g'} + \chi^p_g
@@ -315,7 +316,6 @@ Equation \ref{eq:moltres-temp} describes Moltres' governing equation for tempera
     \rho c_p\frac{\partial T}{\partial t} &+ \nabla\cdot\left(\rho
         c_f \vec{u}\cdot T -k\nabla T\right) =  Q
 \end{align} 
-
 
 \section{Additive Manufacturing}
 Additive manufacturing is the formal term for what is popularly known as `3D printing' 
