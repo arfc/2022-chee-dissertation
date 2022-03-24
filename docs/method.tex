@@ -76,14 +76,15 @@ TRISO packing and an individually controlled packing fraction.
 I also omit the graphite spacers. 
 
 \subsection{AHTR Plank Geometry}
+\label{sec:ahtr-plank-geometry}
 The \gls{AHTR} plank is a single graphite fuel plank model from the \gls{AHTR} design (Figure 
 \ref{fig:ahtr-fuel-assembly}). 
 I modified the fuel plank to be straightened with perpendicular sides, instead 
 of slanted as in Figure \ref{fig:ahtr-fuel-plank}, for ease of modeling. 
-The original \gls{AHTR} geometry will be used for the complex one-third assembly optimization 
-setup. 
+The original slanted \gls{AHTR} geometry will be used for the complex one-third assembly 
+optimization setup. 
 Figure \ref{fig:straightened_plank} illustrates the straightened fuel plank with 
-fuel cell discretization with random \gls{TRISO} packing.
+ten fuel cells with random \gls{TRISO} packing.
 \begin{figure}[]
     \centering
     \includegraphics[width=0.85\linewidth]{straightened_plank.png}
@@ -111,7 +112,7 @@ fuel cell discretization with random \gls{TRISO} packing.
 The plank has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
 boundary conditions.
 
-I use the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
+I used the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
 except that I homogenized each \gls{TRISO} particle's four outer layers: 
 porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the 
 outer pyrolytic carbon. 
@@ -140,14 +141,56 @@ The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$
 speed-up without compromising accuracy with $k_{eff}$ values within each 
 other's uncertainty.
 
-% fuel cell discretization for fuel distribution 
 % coolant channel shape variation
 
 \subsection{AHTR One-Third Assembly Geometry}
-The \gls{AHTR} One-Third Assembly is one-diamond shape sector of the \gls{AHTR} assembly 
-containing six fuel planks from the \gls{AHTR} design (Figure \ref{fig:ahtr-fuel-assembly}). 
+The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly which
+contains six fuel planks.
+Each graphite plank has graphite buffers and ten rectangular prism fuel cells 
+with random TRISO packing and individually controlled packing fraction. 
+Figure \ref{fig:ahtr_assembly} shows the one-third \gls{AHTR} assembly with 10 x 6 fuel cells with 
+random \gls{TRISO} packing.
+\begin{figure}[]
+    \centering
+    \includegraphics[width=0.85\linewidth]{ahtr_assembly.png}
+    \begin{tikzpicture}
+        \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+        \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+        \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+       \tkzText[above](-0.3,-0.7){}
+       \end{tikzpicture} 
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+
+            \end{tabular}}}
+    \caption{\gls{AHTR} assembly with 10 fuel cells in each graphite plank with random 
+    TRISO packing. Original \gls{FHR} benchmark fuel assembly with fuel stripes can be seen in 
+    Figure \ref{fig:ahtr-fuel-assembly}.}
+    \label{fig:ahtr_assembly}
+\end{figure}
+The assembly model also uses the \gls{TRISO} particle outer four layer homogenization described 
+in Section \ref{sec:ahtr-plank-geometry}.
+
+% coolant channel shape variation
 
 \section{AHTR Model Workflow}
+\gls{ROLLO} drives the evolutionary algorithm optimization process. 
+In the \gls{ROLLO} input file, I will define control variables for the genetic algorithm 
+to vary. 
+These control variables will be input into templated nuclear software to model different 
+AHTR geometries.
+The software will calculate the optimization objective and constraint values. 
+
+In this section, I describe the \gls{AHTR} modeling workflow: from the AHTR geometry 
+variation input parameters, to the OpenMC and Moltres models, and finally the 
+output and constraint values. 
+
 
 \section{AHTR Model Verification}
 
