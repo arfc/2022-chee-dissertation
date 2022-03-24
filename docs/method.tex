@@ -31,8 +31,8 @@ In Chapter \ref{chap:fhr-benchmark}, the results demonstrated that increased fue
 packing does not always correspond with increased $k_{eff}$ due to self-shielding
 effects. 
 Varying total fuel packing fraction and TRISO distribution synergistically enables exploration of
-how TRISO distribution could minimize self-shielding and in turn reduce the fuel 
-required in a reactor design. 
+how heterogenous TRISO distribution could minimize self-shielding and in turn reduce the fuel 
+required for a reactor design. 
 The FliBe coolant channel shape variation enables exploration of how non-uniform 
 channel shapes impact reactor performance. 
 
@@ -145,7 +145,7 @@ other's uncertainty.
 % coolant channel shape variation
 
 \subsection{AHTR One-Third Assembly Geometry}
-The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly which
+The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly and
 contains six fuel planks.
 Each graphite plank has graphite buffers and ten rectangular prism fuel cells 
 with random TRISO packing and individually controlled packing fraction. 
@@ -207,7 +207,7 @@ OpenMC and Moltres are both open-source, well-documented, well-supported, and
 Github version-controlled codes that can run in parallel on \gls{HPC} machines.
 
 In this section, I describe the \gls{AHTR} modeling workflow: from the AHTR geometry 
-variation input parameters, to the nuclear software models, and finally the 
+variation input parameters, to the OpenMC and Moltres models, and finally the 
 output and constraint values. 
 This corresponds to the \textit{evaluate population} orange blocks in Figure 
 \ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
@@ -249,6 +249,11 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
 \end{figure}
 
 \subsection{Input Parameter Modeling}
+In this section, I describe how I modeled the \gls{AHTR} parameter variations: total fuel packing fraction, 
+TRISO particle packing fraction distribution, and \gls{FLiBe} coolant channel shape. 
+The total fuel packing fraction is a single numerical input.
+
+
 
 \subsection{AHTR OpenMC and Moltres Models}
 
