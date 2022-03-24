@@ -191,20 +191,9 @@ These control variables will be input into templated nuclear software to model d
 AHTR geometries.
 The software will then run the \gls{AHTR} models and calculate the optimization objective 
 and constraint values. 
-
 In this work, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s neutronics 
 and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s multi-physics. 
-OpenMC is an open-source Monte Carlo neutron transport code capable of 
-performing k-eigenvalue calculations on models built using either constructive 
-solid geometry or CAD representation. 
-Moltres is an open-source tool designed to simulate \glspl{MSR} using 
-deterministic neutronics and thermal-hydraulics implemented as an application 
-atop the \gls{MOOSE} finite-element framework.  
-Moltres solves arbitrary-group neutron diffusion, temperature, and precursor 
-governing equations on a single mesh and can be deployed on an arbitrary number 
-of processing units \cite{lindsay_introduction_2018}.
-OpenMC and Moltres are both open-source, well-documented, well-supported, and 
-Github version-controlled codes that can run in parallel on \gls{HPC} machines.
+Details about the software can be found in Section \ref{sec:lit-review-modeling-software}.
 
 In this section, I describe the \gls{AHTR} modeling workflow: from the AHTR geometry 
 variation input parameters, to the OpenMC and Moltres models, and finally the 

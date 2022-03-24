@@ -281,6 +281,42 @@ applicable reactor physics experiments for code validation are scarce
 Chapter \ref{chap:fhr-benchmark} will provide a detailed description of the 
 benchmark phases and results obtained so far.
 
+\subsection{Modeling Software}
+\label{sec:lit-review-modeling-software}
+In this dissertation, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s 
+neutronics and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s 
+multi-physics. 
+OpenMC is an open-source Monte Carlo neutron transport code capable of 
+performing k-eigenvalue calculations on models built using either constructive 
+solid geometry or CAD representation. 
+OpenMC supports both continuous-energy and multigroup transport.
+Parallelism is enabled via a hybrid MPI and OpenMP programming model 
+\cite{romano_openmc:_2015}.
+
+Moltres is an open-source tool designed to simulate \glspl{MSR} using 
+deterministic neutronics and thermal-hydraulics implemented as an application 
+atop the \gls{MOOSE} finite-element framework.  
+Moltres solves arbitrary group neutron diffusion, temperature, and precursor 
+governing equations on a single mesh and can be deployed on an arbitrary number 
+of processing units \cite{lindsay_introduction_2018}.
+Moltres solves the diffusion equations as a steady-state eigenvalue 
+problem to find $k_{eff}$ for the static AHTR model: 
+\begin{align}
+    \frac{1}{v_g} \frac{\partial \phi_g}{\partial t} &= \nabla \cdot D_g
+    \nabla \phi_g - \Sigma^r_g \phi_g +
+    \sum^G_{g' \neq g} \Sigma^s_{g' \rightarrow g} \phi_{g'} + \chi^p_g
+    \sum^G_{g'=1} (1-\beta) \nu \Sigma^f_{g'} \phi_{g'} + \chi^d_g \sum^I_i
+    \lambda_i C_i
+\end{align}
+
+Equation \ref{eq:moltres-temp} describes Moltres' governing equation for temperature:
+\begin{align}
+    \label{eq:moltres-temp}
+    \rho c_p\frac{\partial T}{\partial t} &+ \nabla\cdot\left(\rho
+        c_f \vec{u}\cdot T -k\nabla T\right) =  Q
+\end{align} 
+
+
 \section{Additive Manufacturing}
 Additive manufacturing is the formal term for what is popularly known as `3D printing' 
 \cite{gibson_additive_2014}. 
