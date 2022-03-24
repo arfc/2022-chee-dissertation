@@ -152,23 +152,24 @@ Figure \ref{fig:ahtr_assembly} shows the one-third \gls{AHTR} assembly with 10 x
 random \gls{TRISO} packing.
 \begin{figure}[]
     \centering
-    \includegraphics[width=0.85\linewidth]{ahtr_assembly.png}
-    \begin{tikzpicture}
-        \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
-        \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
-        \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
-       \tkzText[above](-0.3,-0.7){}
-       \end{tikzpicture} 
-    \raggedright
-    \resizebox{0.3\textwidth}{!}{
-        \hspace{1cm}
+    \begin{subfigure}{.7\textwidth}
+    \includegraphics[width=\linewidth]{ahtr_assembly.png}
+    \end{subfigure}%
+    \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}
+            \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+            \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+            \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+           \tkzText[above](-0.3,-0.7){}
+        \end{tikzpicture} 
+        \vspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
             \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
             \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
-
-            \end{tabular}}}
+            \end{tabular}}
+    \end{subfigure}
     \caption{\gls{AHTR} assembly with 10 fuel cells in each graphite plank with random 
     TRISO packing. Original \gls{FHR} benchmark fuel assembly with fuel stripes can be seen in 
     Figure \ref{fig:ahtr-fuel-assembly}.}
