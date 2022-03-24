@@ -25,8 +25,14 @@ I chose to vary the following \gls{AHTR} parameters:
     \item \gls{FLiBe} coolant channel shape 
 \end{itemize} 
 The TRISO packing fraction distribution variation enables exploration of how 
-heterogenous fuel distributions impact reactor performance;  
-while the FliBe coolant channel shape variation enables exploration of how non-uniform 
+heterogenous fuel distributions impact reactor performance.
+In Chapter \ref{chap:fhr-benchmark}, the results demonstrated that increased fuel 
+packing does not always correspond with increased $k_{eff}$ due to self-shielding
+effects. 
+Varying total fuel packing fraction and TRISO distribution synergistically enables exploration of
+how TRISO distribution could minimize self-shielding and in turn reduce the fuel 
+required in a reactor design. 
+The FliBe coolant channel shape variation enables exploration of how non-uniform 
 channel shapes impact reactor performance. 
 
 I selected three key \gls{AHTR} optimization objectives that address contrasting reactor 
@@ -51,8 +57,8 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \hline
     \end{tabular}
 \end{table}
-I will be applying optimization process to the \gls{AHTR} plank and \gls{AHTR} one-third
-assembly geometries.
+I will vary the described parameters in the \gls{AHTR} plank and \gls{AHTR} one-third assembly 
+geometries to optimize the described objectives. 
 The plank optimization acts as a preliminary study to inform the more complex \gls{AHTR} one-third
 assembly optimization setup. 
 In the next section, I will describe both geometries. 
@@ -60,9 +66,9 @@ In the next section, I will describe both geometries.
 \section{AHTR Geometry for Optimization Problem}
 The optimization process is applied to both the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
-The geometries are slightly adapted from the \gls{AHTR} design in the \gls{FHR} benchmark,
+The geometries are adapted from the \gls{AHTR} design in the \gls{FHR} benchmark,
 outlined in Chapter \ref{chap:fhr-benchmark}.
-The main changes occur in the fuel plank region (see Figure \ref{fig:ahtr-fuel-assembly}). 
+The main differences occur in the fuel plank region (see Figure \ref{fig:ahtr-fuel-assembly}). 
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices within
 two fuel stripes in the plank. 
 For the optimization problem, I instead discretized each plank into ten cells with random 
