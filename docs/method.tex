@@ -324,11 +324,11 @@ distribution.
 The normalization factor ensures the correct total packing fraction 
 in the plank regardless the \gls{TRISO} particle distribution.
 
-For example in a \gls{AHTR} one-third assembly with a 0.1 total packing fraction, and packing 
+For example in an \gls{AHTR} one-third assembly with a 0.1 total packing fraction, and packing 
 fraction distribution of $PF(x, y) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
 \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$ results in the packing fraction 
 distribution shown in Figure \ref{fig:ahtr-assem-triso-distr-squares}.
-This corresponds to the one-third assembly with varying TRIS) distribution in its fuel 
+This corresponds to the one-third assembly with varying TRISO distribution in its fuel 
 cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}. 
 \begin{figure}[]
     \centering
@@ -355,14 +355,40 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
 \end{figure}
 
 \subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
-I model the coolant channel's sinusoidal-like pattern using cylinder surfaces in OpenMC, 
-instead of a sinusoidal function. 
+I model the variation in coolant channel shape with a sinusoidal-like pattern.
+I use cylinder surfaces in OpenMC, instead of a sinusoidal function. 
 Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a CAD based tool, 
 which is out of scope of the dissertation.
-By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
-pattern.
+By varying the radius of the cylinder, the depth and frequency of the coolant channel shape 
+minimics a sinusoidal-like pattern.
 I vary the FliBE coolant channel shape while holding the total coolant area constant. 
 
+For the \gls{AHTR} plank, $radius_{top}$ and $radius_{bot}$ variables control the coolant channel 
+shape on the bottom and top FliBe channels. 
+Figure \ref{fig:coolant-channel-shape} shows the \gls{AHTR} plank's coolant channel shape 
+for $radius_{top} = 0.2$ and $radius_{bot} = 0.3$.
+\begin{figure}[]
+    \centering
+        \includegraphics[width=\linewidth]{coolant-channel-shape.png}
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe Coolant\\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+        \end{tabular}}}
+    \caption{AHTR Fuel Plank with Coolant Shape Variation, $radius_{top} 
+    = 0.2$ and $radius_{bot} = 0.3$.}  
+    \label{fig:coolant-channel-shape}
+\end{figure}
+$radius_{top}$ and $radius_{bot}$ are the control variables \gls{ROLLO} 
+utilizes to control the coolant channel shape in the \gls{AHTR} plank.
+Thus, \gls{ROLLO} will vary $radius_{top}$ and $radius_{bot}$ to find an optimal coolant 
+channel shape.
+
+% Assembly COolant channel shape variation
 
 \subsection{AHTR OpenMC and Moltres Models}
 \label{sec:ahtr-moltres-hom}
@@ -376,9 +402,89 @@ total packing fraction, and normalized power peaking factor output values.
 Section \ref{sec:ahtr_slab_output} gives further description of calculation for 
 each output and constraint parameter.
 
+For the Moltres model, a TRISO-level fidelity mesh file is impractical 
+and will result in an extremely long Moltres runtimes. 
+Moltres accepts group constant data from OpenMC for the Moltres multigroup 
+neutron diffusion calculations and a mesh file representing the reactor geometry. 
+Thus, for a successful \gls{AHTR} Moltres simulation, I established 
+suitable spatial and energy homogenization that preserves accuracy while 
+maintaining an acceptable runtime.
+For both the \gls{AHTR} plank and one-third assembly models, I used the four group 
+energy structure derived by Gentry et al. \cite{gentry_development_2016} for \gls{AHTR} 
+geometries. 
+Table \ref{tab:energy_structures} defines the group boundaries. 
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{4-group energy structures for \acrfull{AHTR} geometry 
+    derived by \cite{gentry_development_2016}.}
+	\label{tab:energy_structures}
+    \footnotesize
+    \begin{tabular}{lll}
+    \hline
+    \multicolumn{3}{c}{\textbf{Group Boundaries [MeV]}} \\ 
+    \hline
+    \textbf{Group $\#$}& \textbf{Upper Bound} & \textbf{Lower Bound}  \\
+    \hline 
+    1 & $2.0000\times 10^1$ & $9.1188\times 10^{-3}$ \\ 
+    2 & $9.1188\times 10^{-3}$ & $2.9023\times 10^{-5}$\\
+    3 & $2.9023\times 10^{-5}$ & $1.8554\times 10^{-6}$\\
+    4 & $1.8554\times 10^{-6}$ & $1.0000\times 10^{-12}$\\
+    \hline
+    \end{tabular}
+\end{table}
+
+For spatial homogenization of the straightened \gls{AHTR} fuel plank, I used 
+OpenMC's \textit{cell} domain type to compute multigroup cross sections for 
+different \textit{cells}. 
+I discretized the plank into 13 \textit{cells}: FLiBe, left graphite, right 
+graphite, and ten fuel cells (each cell has a different packing fraction). 
+Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} spatial 
+homogenization for the OpenMC multigroup calculation. 
+\begin{figure}[]
+    \centering
+    \includegraphics[width=\linewidth]{straightened_slab_mg.png}
+    \raggedright
+    \resizebox{0.5\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{llll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe & 
+            \textcolor{fhrgrey}{$\blacksquare$} & Left Graphite \\
+            \textcolor{fhrred}{$\blacksquare$} & Right Graphite &
+            \textcolor{fhrpink}{$\blacksquare$} & Fuel cell 1/6 \\
+            \textcolor{fhryellow}{$\blacksquare$} & Fuel cell 2/7 &
+            \textcolor{fhrorange}{$\blacksquare$} & Fuel cell 3/8 \\
+            \textcolor{fhrgreen}{$\blacksquare$} & Fuel cell 4/9 &
+            \textcolor{fhrpurple}{$\blacksquare$} & Fuel cell 5/10 \\
+            \end{tabular}}}
+    \caption{Straightened \acrfull{AHTR} fuel slab spatially discretized into 
+    13 \textit{cells} for OpenMC multigroup calculation.}
+    \label{fig:straightened_slab_mg}
+\end{figure}
+
+For spatial homogenization of the \gls{AHTR} one-third assembly... 
+% include details about spatial homogenization for one-third assembly. 
+
+To ensure that the spatial and energy homogenization preserves accuracy, I 
+compared key neutronics parameters for the continuous OpenMC and multigroup 
+Moltres simulations, for both the \gls{AHTR} plank and one-third assembly.
+The results of the verification studies are described in Section 
+\ref{sec:ahtr_model_verification}.
+
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
+This section describes how I tallied the AHTR model outputs for the ROLLO 
+optimization problem objectives (as described in Table \ref{tab:objectives}):
+total fuel packing fraction, the maximum temperature in the slab, and 
+normalized power peaking factor.  
+
+\gls{ROLLO} will automatically return the total fuel packing fraction output parameter, 
+since it is also an input parameter. 
+In the Moltres AHTR model, I defined a post processor object to return the 
+maximum temperature in the slab. 
+
 
 \section{AHTR Model Verification}
+\label{sec:ahtr_model_verification}
 
 \section{ROLLO Hyperparameter Tuning}
