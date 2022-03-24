@@ -244,7 +244,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
         \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]16.west);
         \draw [arrow] (11) -- ([shift={(0cm,0cm)}]11.east) -- ([shift={(0cm,0cm)}]17.west);
     \end{tikzpicture}
-    \caption{\acrfull{AHTR} fuel slab modeling workflow.} 
+    \caption{\acrfull{AHTR} modeling workflow in ROLLO optimization.} 
     \label{fig:ahtr-model-flow}
 \end{figure}
 
@@ -258,6 +258,9 @@ I describe the other two parameters for both the \gls{AHTR} plank and one-third 
 \subsubsection{Input Parameter Modeling: TRISO particle packing fraction distribution}
 For both the \gls{AHTR} plank and one-third assembly, I utilize sine distributions to govern the 
 \gls{TRISO} particle packing fraction distribution. 
+Based on the sine distributions, the model calculates the packing fraction in each fuel cell, then use 
+OpenMC's \texttt{pack\_spheres} function to randomly disperse the calculated packing fraction in each 
+fuel cell. 
 For the \gls{AHTR} plank, one sine distribution governs the \gls{TRISO} packing fraction distribution 
 across the fuel plank's x-direction. 
 For the \gls{AHTR} one-third assembly, two sine distributions govern the \gls{TRISO} packing fraction 
@@ -273,28 +276,26 @@ distribution across the ten fuel cells, illustrated in Figure \ref{fig:straighte
     b &= \mbox{angular frequency, rate of change of the function argument } [\frac{radians}{cm}] \nonumber \\
     c &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
     x &= \mbox{midpoint value for each cell } [cm]\nonumber \\
-    NF &= \mbox{Normalization factor } [-]\nonumber
+    NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
 The sine distribution's coefficients, \textit{a b c}, are the control variables \gls{ROLLO} 
 utilizes to control the TRISO packing fraction distribution in the plank.
 Thus, \gls{ROLLO} will vary $a, b, c$ constants to find an optimal TRISO particle 
 sine distribution. 
 The normalization factor ensures the correct total packing fraction 
-in the slab regardless the \gls{TRISO} particle distribution.
+in the plank regardless the \gls{TRISO} particle distribution.
 
-I use OpenMC's \texttt{pack\_spheres} function to randomly disperse the calculated packing 
-fraction in each fuel slab slice. 
-For example, a total packing fraction of 0.0979, and packing fraction distribution of 
-$PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right)  \cdot NF$, 
+For example in a \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
+distribution of $PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right)  \cdot NF$, 
 results in the following packing fractions for the ten cells: 0.103, 0.120, 
 0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
 Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
-the packing fraction at the respective midpoints, and displays the slab's x-y 
+the packing fraction at the respective midpoints, and displays the plank's x-y 
 axis view with packing fraction varying based on this sine distribution. 
 \begin{figure}[]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{triso_distribution_sine.png}} 
-    \caption{Above: Straightened \acrfull{AHTR} fuel slab with varying \gls{TRISO} particle 
+    \caption{Above: Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} particle 
     distribution across ten cells based on the sine distribution. 
     Below: $PF(x) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
     sine distribution with red points indicating the packing fraction at each cell. }
@@ -307,7 +308,21 @@ Figure \ref{fig:ahtr_assembly}:
 \begin{align}
     PF(x, y) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
     \cdot \left(d\cdot sin(e\cdot y + f) + 2\right) \cdot NF \\
+    \intertext{where}
+    PF &= \mbox{packing fraction } [-] \nonumber \\ 
+    a, d &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
+    b, e &= \mbox{angular frequency, rate of change of the function argument } [\frac{radians}{cm}] \nonumber \\
+    c, f &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
+    x &= \mbox{midpoint value for each x-direction fuel cell } [cm]\nonumber \\
+    y &= \mbox{midpoint value for fuel plank } [cm]\nonumber \\
+    NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
+The sine distribution's coefficients, \textit{a b c d e f}, are the control variables \gls{ROLLO} 
+utilizes to control the TRISO packing fraction distribution in the assembly.
+Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal TRISO particle 
+distribution. 
+The normalization factor ensures the correct total packing fraction 
+in the plank regardless the \gls{TRISO} particle distribution.
 
 \subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
 I model the coolant channel's sinusoidal-like pattern using cylinder surfaces in OpenMC, 
@@ -317,6 +332,27 @@ which is out of scope of the dissertation.
 By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
 pattern.
 I vary the FliBE coolant channel shape while holding the total coolant area constant. 
+
+For example in a \gls{AHTR} one-third assembly with a 0.1 total packing fraction, and packing 
+fraction distribution of $PF(x, y) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
+\left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$ results in the packing fraction 
+distribution shown in Figure \ref{fig:ahtr-assem-triso-distr-squares}.
+This corresponds to the one-third assembly with varying TRIS) distribution in its fuel 
+cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}. 
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{ahtr-assem-triso-distr-squares.png}
+        \caption{}
+        \label{fig:ahtr-assem-triso-distr-squares} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{ahtr-assem-triso-distr.png}
+        \caption{}
+        \label{fig:ahtr-assem-triso-distr} 
+    \end{subfigure}
+    \caption{}
+\end{figure}
 
 
 \subsection{AHTR OpenMC and Moltres Models}
@@ -332,6 +368,7 @@ Section \ref{sec:ahtr_slab_output} gives further description of calculation for
 each output and constraint parameter.
 
 \subsection{Output Parameter Calculation}
+\label{sec:ahtr_slab_output}
 
 \section{AHTR Model Verification}
 
