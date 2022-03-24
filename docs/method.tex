@@ -100,8 +100,8 @@ ten fuel cells with random \gls{TRISO} packing.
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
 
             \end{tabular}}}
@@ -166,8 +166,8 @@ random \gls{TRISO} packing.
         \vspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Plank)\\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Stripe) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}
     \end{subfigure}
@@ -324,15 +324,6 @@ distribution.
 The normalization factor ensures the correct total packing fraction 
 in the plank regardless the \gls{TRISO} particle distribution.
 
-\subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
-I model the coolant channel's sinusoidal-like pattern using cylinder surfaces in OpenMC, 
-instead of a sinusoidal function. 
-Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a CAD based tool, 
-which is out of scope of the dissertation.
-By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
-pattern.
-I vary the FliBE coolant channel shape while holding the total coolant area constant. 
-
 For example in a \gls{AHTR} one-third assembly with a 0.1 total packing fraction, and packing 
 fraction distribution of $PF(x, y) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
 \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$ results in the packing fraction 
@@ -348,11 +339,29 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\linewidth]{ahtr-assem-triso-distr.png}
+        \raggedleft
+        \resizebox{0.5\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+        \end{tabular}}}
         \caption{}
         \label{fig:ahtr-assem-triso-distr} 
     \end{subfigure}
     \caption{}
 \end{figure}
+
+\subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
+I model the coolant channel's sinusoidal-like pattern using cylinder surfaces in OpenMC, 
+instead of a sinusoidal function. 
+Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a CAD based tool, 
+which is out of scope of the dissertation.
+By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
+pattern.
+I vary the FliBE coolant channel shape while holding the total coolant area constant. 
 
 
 \subsection{AHTR OpenMC and Moltres Models}
