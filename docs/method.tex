@@ -249,15 +249,89 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
 \end{figure}
 
 \subsection{Input Parameter Modeling}
-In this section, I describe how I modeled the \gls{AHTR} parameter variations: total fuel packing fraction, 
-TRISO particle packing fraction distribution, and \gls{FLiBe} coolant channel shape. 
-The total fuel packing fraction is a single numerical input.
+In this section, I describe how I modeled the \gls{AHTR} parameter variations: total fuel packing 
+fraction, \gls{TRISO} particle packing fraction distribution, and \gls{FLiBe} coolant channel shape. 
+For both the \gls{AHTR} plank and one-third assembly models, total fuel packing fraction parameter 
+is a single numerical input.
+I describe the other two parameters for both the \gls{AHTR} plank and one-third assembly. 
 
+\subsubsection{Input Parameter Modeling: TRISO particle packing fraction distribution}
+For both the \gls{AHTR} plank and one-third assembly, I utilize sine distributions to govern the 
+\gls{TRISO} particle packing fraction distribution. 
+For the \gls{AHTR} plank, one sine distribution governs the \gls{TRISO} packing fraction distribution 
+across the fuel plank's x-direction. 
+For the \gls{AHTR} one-third assembly, two sine distributions govern the \gls{TRISO} packing fraction 
+distribution across each fuel plank's x-direction, and the assembly's y-direction, respectively. 
+
+For the \gls{AHTR} plank, a sine distribution governs the \gls{TRISO} particle packing fraction 
+distribution across the ten fuel cells, illustrated in Figure \ref{fig:straightened_plank}:
+\begin{align}
+    PF(x) &= \left(a\cdot sin(b\cdot x + c) + 2\right) \cdot NF\\
+    \intertext{where}
+    PF &= \mbox{packing fraction } [-] \nonumber \\ 
+    a &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
+    b &= \mbox{angular frequency, rate of change of the function argument } [\frac{radians}{cm}] \nonumber \\
+    c &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
+    x &= \mbox{midpoint value for each cell } [cm]\nonumber \\
+    NF &= \mbox{Normalization factor } [-]\nonumber
+\end{align}
+The sine distribution's coefficients, \textit{a b c}, are the control variables \gls{ROLLO} 
+utilizes to control the TRISO packing fraction distribution in the plank.
+Thus, \gls{ROLLO} will vary $a, b, c$ constants to find an optimal TRISO particle 
+sine distribution. 
+The normalization factor ensures the correct total packing fraction 
+in the slab regardless the \gls{TRISO} particle distribution.
+
+I use OpenMC's \texttt{pack\_spheres} function to randomly disperse the calculated packing 
+fraction in each fuel slab slice. 
+For example, a total packing fraction of 0.0979, and packing fraction distribution of 
+$PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right)  \cdot NF$, 
+results in the following packing fractions for the ten cells: 0.103, 0.120, 
+0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
+Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
+the packing fraction at the respective midpoints, and displays the slab's x-y 
+axis view with packing fraction varying based on this sine distribution. 
+\begin{figure}[]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{triso_distribution_sine.png}} 
+    \caption{Above: Straightened \acrfull{AHTR} fuel slab with varying \gls{TRISO} particle 
+    distribution across ten cells based on the sine distribution. 
+    Below: $PF(x) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
+    sine distribution with red points indicating the packing fraction at each cell. }
+    \label{fig:triso_distribution}
+\end{figure}
+
+For the \gls{AHTR} one-third assembly, two sine distributions govern the x and y direction
+\gls{TRISO} particle packing fraction distributions in the 10 x 6 fuel cell shape, illustrated in 
+Figure \ref{fig:ahtr_assembly}:
+\begin{align}
+    PF(x, y) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
+    \cdot \left(d\cdot sin(e\cdot y + f) + 2\right) \cdot NF \\
+\end{align}
+
+\subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
+I model the coolant channel's sinusoidal-like pattern using cylinder surfaces in OpenMC, 
+instead of a sinusoidal function. 
+Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a CAD based tool, 
+which is out of scope of the dissertation.
+By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
+pattern.
+I vary the FliBE coolant channel shape while holding the total coolant area constant. 
 
 
 \subsection{AHTR OpenMC and Moltres Models}
+\label{sec:ahtr-moltres-hom}
+The input parameter modeling outlined in the previous section are inputs into 
+the OpenMC neutronics model. 
+The total packing fraction, TRISO particle distribution, and FliBE coolant 
+channel shape are reflected in the OpenMC input file. 
+Thus, there is TRISO level fidelity in the OpenMC neutronics model. 
+The OpenMC neutronics model outputs the $k_{eff}$ constraint value, and the 
+total packing fraction, and normalized power peaking factor output values. 
+Section \ref{sec:ahtr_slab_output} gives further description of calculation for 
+each output and constraint parameter.
 
-
+\subsection{Output Parameter Calculation}
 
 \section{AHTR Model Verification}
 
