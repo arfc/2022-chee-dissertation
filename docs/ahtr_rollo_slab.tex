@@ -180,21 +180,21 @@ distributions in the final generation with the most minimized $T_{max}$.
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-evol.png}
-        \caption{Minimum, average, and maximum evolution of maximum temperature in 
+        \caption{Minimum, average, and maximum evolution of $T_{max}$ in 
         AHTR plank.}
         \label{fig:slab-obj-1-temp-evol} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-final.png}
         \caption{TRISO particle distribution for the 5 individuals with the 
-        lowest maximum temperature in AHTR plank at generation 9.}
+        lowest $T_{max}$ in AHTR plank at generation 9.}
         \label{fig:slab-obj-1-temp-final} 
     \end{subfigure}
-    \caption{ROLLO single-objective optimization to minimize maximum temperature 
+    \caption{ROLLO single-objective optimization to minimize $T_{max}$ 
     in the plank. Input parameters varied: TRISO particle distribution.}
     \label{fig:slab-obj-1-temp}
 \end{figure}
-The minimum and average plank's maximum temperature converged to approximately 
+The minimum and average plank's $T_{max}$ converged to approximately 
 1125 K. 
 In Figure \ref{fig:slab-obj-1-temp-final}, a mostly flat TRISO 
 particle distribution minimizes $T_{max}$ in the plank, the TRISO particle distribution 
@@ -211,17 +211,62 @@ total packing fraction.
     TRISO distribution. Both models have a total packing fraction of 0.0979.}
     \label{fig:slab-obj-1-temp-distr}
 \end{figure}
-The AHTR slab with a flat TRISO particle distribution has higher slab temperatures 
+The AHTR plank with a flat TRISO particle distribution has higher plank temperatures 
 on the left and right sides near the moderator. 
 To combat this temperature peak, ROLLO found a TRISO particle distribution that 
-has a slight dip near the moderator regions, resulting in a lower maximum 
-temperature.  
+has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
 \subsubsection{Simulation 1f: Variation of FliBe Channel Shape}
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
 
 \subsubsection{Simulation 1d: Variation of $\rho_{TRISO}(\vec{r})$}
+Table \ref{tab:simulation1c} shows simulation 1d's optimization problem parameters. 
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{Simulation 1d Optimization Problem Parameters}
+	\label{tab:simulation1d}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation 1d}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PPF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0<a<2$ \\
+    & $0<b<\frac{\pi}{2}$ \\
+    & $0<c<2\pi$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
+    & Generations: 10 \\
+    \hline
+    \end{tabular}
+\end{table}
+
 \subsubsection{Simulation 1g: Variation of FliBe Channel Shape}
+Figure \ref{fig:slab-obj-1-ppf-evol} shows the plank's normalized power peaking 
+factor (PPF_) evolution and Figure \ref{fig:slab-obj-1-ppf-final} shows the five 
+TRISO particle distributions in the final generation with the most minimized PPF.
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol.png}
+        \caption{Minimum, average, and maximum evolution of normalized power 
+        peaking factor in AHTR slab.}
+        \label{fig:slab-obj-1-ppf-evol} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-ppf-final.png}
+        \caption{TRISO particle distribution for the 5 individuals with the 
+        lowest normalized power peaking factor in AHTR slab at generation 9.}
+        \label{fig:slab-obj-1-ppf-final} 
+    \end{subfigure}
+    \caption{ROLLO single-objective optimization to minimize normalized power 
+    peaking factor in the slab. Input parameters varied: TRISO particle distribution.}
+    \label{fig:slab-obj-1-ppf}
+\end{figure}
 
 \section{AHTR Plank: Multi-Objective Optimization Results}
