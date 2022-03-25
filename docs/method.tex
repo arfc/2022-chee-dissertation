@@ -238,6 +238,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
 \end{figure}
 
 \subsection{Input Parameter Modeling}
+\label{sec:input-parameter-modeling}
 In this section, I describe how I modeled the \gls{AHTR} parameter variations: total fuel packing 
 fraction, \gls{TRISO} particle packing fraction distribution, and \gls{FLiBe} coolant channel shape. 
 For both the \gls{AHTR} plank and one-third assembly models, total fuel packing fraction parameter 
@@ -608,8 +609,9 @@ normalized power peaking factor.
 
 \gls{ROLLO} will automatically return the total fuel packing fraction output parameter, 
 since it is also an input parameter. 
+% describe why I chose maximum temperature, rather than average etc. 
 In the Moltres AHTR model, I defined a post processor object to return the 
-maximum temperature in the slab. 
+maximum temperature in the plank. 
 To ensure efficient fuel utilization, one of the objectives is to minimize 
 fuel-normalized power peaking in the slab, that takes into account fuel amount 
 variations across the slab.

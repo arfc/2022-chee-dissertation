@@ -1,1 +1,78 @@
 \chapter{AHTR Plank Optimization Results}
+In this chapter, I describe and report the \gls{AHTR} plank \gls{ROLLO} 
+optimization results. 
+In the previous chapter, I detailed the \gls{AHTR} plank's modeling and \gls{ROLLO} 
+optimization methodology. 
+Specifically, I described the \gls{AHTR} plank geometry in Section 
+\ref{sec:ahtr-plank-geometry}.
+I described how I will vary the following \gls{AHTR} plank's input parameters in Section
+\ref{sec:input-parameter-modeling}:  
+\begin{itemize}
+    \item \gls{TRISO} particle packing fraction distribution, 
+    $\rho_{TRISO}(\vec{r})$
+    \item Total fuel packing fraction
+    \item \gls{FLiBe} coolant channel shape 
+\end{itemize} 
+I described and verified the \gls{AHTR} plank's OpenMC neutronics and Moltres 
+temperature models in Sections \ref{sec:ahtr-moltres-hom} and 
+\ref{sec:ahtr_model_verification}. 
+I described the optimization objectives and how I calculated them from the OpenMC 
+and Moltres model outputs in Sections \ref{sec:opt-problem} and 
+\ref{sec:ahtr_slab_output}.
+
+In the subsequent sections, I outline single-objective and multi-objective 
+ROLLO optimization simulations that are run, and their respective results. 
+
+\section{ROLLO Optimization Simulations Overview}
+Table \ref{tab:slab-obj-breakdown} shows the details of each \gls{ROLLO} 
+optimization problems explored in this chapter.
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
+    plank. $PF$: Total Fuel Packing Fraction, $T_{max}$: Maximum Plank Temperature, 
+    $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
+    \gls{TRISO} particle distribution}
+	\label{tab:slab-obj-breakdown}
+    \footnotesize
+    \begin{tabular}{p{2cm}|llll}
+    \hline 
+    \textbf{Number of Objectives} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \hline
+    \multirow{9}{2cm}{1}& \tabitem max($k_{eff}$) & - &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    \cline{2-5}
+    & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    & & & \tabitem $PF$ & \\
+    \cline{2-5}
+    & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \cline{2-5}
+    & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    \cline{2-5}
+    & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
+    & & & \tabitem $PF$ & \\
+    \cline{2-5}
+    & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
+    \cline{2-5}
+    & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
+    \hline
+    \multirow{6}{2cm}{2}& \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & \tabitem min($T_{max}$) & & \tabitem $PF$ & \\
+    \cline{2-5}
+    & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    \cline{2-5}
+    & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & \tabitem min($PPF$) & & & \\
+    \hline
+    \multirow{3}{2cm}{3}& \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    & \tabitem min($T_{max}$) & & & \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Single-Objective Optimization Results}
+
+\subsubsection{Objective: Minimize Total Packing Fraction}
+
+\subsubsection{Objective: Minimize Maximum Temperature}
