@@ -1,6 +1,5 @@
 \chapter{AHTR Plank Optimization Results}
-In this chapter, I describe and report the \gls{AHTR} plank \gls{ROLLO} 
-optimization results. 
+In this chapter, I report the \gls{AHTR} plank \gls{ROLLO} optimization results. 
 In the previous chapter, I detailed the \gls{AHTR} plank's modeling and \gls{ROLLO} 
 optimization methodology. 
 Specifically, I described the \gls{AHTR} plank geometry in Section 
@@ -35,44 +34,122 @@ optimization problems explored in this chapter.
     \gls{TRISO} particle distribution}
 	\label{tab:slab-obj-breakdown}
     \footnotesize
-    \begin{tabular}{p{2cm}|llll}
+    \begin{tabular}{p{1.4cm}|p{1cm}|llll}
     \hline 
-    \textbf{Number of Objectives} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
-    \multirow{9}{2cm}{1}& \tabitem max($k_{eff}$) & - &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
-    \cline{2-5}
-    & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
-    & & & \tabitem $PF$ & \\
-    \cline{2-5}
-    & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    \cline{2-5}
-    & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
-    \cline{2-5}
-    & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
-    & & & \tabitem $PF$ & \\
-    \cline{2-5}
-    & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
-    \cline{2-5}
-    & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
+    \multirow{9}{2cm}{1}& 1a & \tabitem max($k_{eff}$) & - &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    \cline{2-6}
+    & 1b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    & & & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & 1c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \cline{2-6}
+    & 1d & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    \cline{2-6}
+    & 1e & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
+    & & & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & 1f & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
+    \cline{2-6}
+    & 1g & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
     \hline
-    \multirow{6}{2cm}{2}& \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    & \tabitem min($T_{max}$) & & \tabitem $PF$ & \\
-    \cline{2-5}
-    & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
-    & \tabitem min($PPF$) & & \tabitem $PF$ & \\
-    \cline{2-5}
-    & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    & \tabitem min($PPF$) & & & \\
+    \multirow{6}{2cm}{2}& 2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & &\tabitem min($T_{max}$) & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & 2b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & & \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & 2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & & \tabitem min($PPF$) & & & \\
     \hline
-    \multirow{3}{2cm}{3}& \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    & \tabitem min($PPF$) & & \tabitem $PF$ & \\
-    & \tabitem min($T_{max}$) & & & \\
+    \multirow{3}{2cm}{3}& 3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    && \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    && \tabitem min($T_{max}$) & & & \\
+    \hline
+    \end{tabular}
+\end{table}
+I first conducted single objective, single input parameter \gls{ROLLO} optimizations to 
+understand the individual impacts of each objective on each input parameter. 
+Their results will inform the multi-objective optimization simulations setup. 
+
+The $k_{eff}$ constraint value is 1.39 and 1.0 for optimization problems that do
+and do not minimize total packing fraction, respectively. 
+$k_{eff}$ is strongly correlated with total packing fraction. 
+The FHR Benchmark's assembly model had a $k_{eff}$ of 1.39, thus, I constrainined
+$k_{eff} > 1.39$ to find optimal input parameters that achieve similar performance 
+to the original benchmark TRISO distribution. 
+
+\section{AHTR Plank: Single-Objective Optimization Results}
+
+\subsection{Objective: Maximize $k_{eff}$}
+
+\subsubsection{Simulation 1a: Variation of $\rho_{TRISO}(\vec{r})$}
+
+\subsection{Objective: Minimize Total Packing Fraction}
+\subsubsection{Simulation 1b: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
+Table \ref{tab:simulation1b} shows simulation 1b optimization problem parameters. 
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{Simulation 1b: }
+	\label{tab:objectives}
+    \footnotesize
+    \begin{tabular}{l|l}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation 1b}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02 < PF < 0.04$\\
     \hline
     \end{tabular}
 \end{table}
 
-\subsection{Single-Objective Optimization Results}
+I varied $\rho_{TRISO}(\vec{r})$ and total packing fraction, while
+constraining $k_{eff} >= 1.39$, with the objective of minimizing total packing fraction. 
+Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
+figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
+the final generation with the smallest packing fraction. 
+\begin{figure}[]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-pf-evol.png}
+        \caption{Minimum, average, and maximum total packing fraction evolution.}
+        \label{fig:slab-obj-1-pf-evol} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-pf-final.png}
+        \caption{TRISO particle distribution for the 5 individuals with the 
+        smallest packing fraction in generation 9.}
+        \label{fig:slab-obj-1-pf-final} 
+    \end{subfigure}
+    \caption{ROLLO single-objective optimization to minimize total packing fraction. 
+    Input parameters varied: total packing fraction, TRISO particle distribution.}
+    \label{fig:slab-obj-1-pf}
+\end{figure}
+The minimum and average packing fractions converged very quickly, as expected 
+in this single-objective optimization problem.
+By the $9^{th}$ generation, the average, minimum, and maximum packing fraction
+values converged to approximately 0.023. 
+In figure \ref{fig:slab-obj-1-pf-final}, I observe that the TRISO particle packing 
+sine distributions are not exactly the same, but follow a similar pattern of 
+alternating between a higher packing fraction, and a lower packing fraction 
+in the neighboring fuel cell. 
+The up-down fuel packing pattern minimizes self-shielding effects, enabling  
+a lower packing fraction for the same $k_{eff}$. 
 
-\subsubsection{Objective: Minimize Total Packing Fraction}
+\subsubsection{Simulation 1e: Variation of FliBe Channel Shape and PF}
 
-\subsubsection{Objective: Minimize Maximum Temperature}
+\subsection{Objective: Minimize Maximum Temperature}
+
+\subsubsection{Simulation 1c: Variation of $\rho_{TRISO}(\vec{r})$}
+
+\subsubsection{Simulation 1f: Variation of FliBe Channel Shape}
+
+\subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
+
+\subsubsection{Simulation 1d: Variation of $\rho_{TRISO}(\vec{r})$}
+\subsubsection{Simulation 1g: Variation of FliBe Channel Shape}
+
+\section{AHTR Plank: Multi-Objective Optimization Results}
