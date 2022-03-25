@@ -410,11 +410,6 @@ Previously, Moltres could only generate group constant data from Serpent
 I implemented functionality in Moltres for group constant data generation with 
 OpenMC. 
 
-Besides group constant data, each Moltres model also requires a mesh file. 
-A mesh generation python script accepts the FliBe coolant channel shape input parameters 
-and generates a mesh file representing the reactor geometry, which is then accepted by the 
-Moltres model. 
-
 To enable successful \gls{AHTR} Moltres simulations, I established suitable spatial and 
 energy homogenization for group constant generation. 
 These homogenizations preserve accuracy while maintaining an acceptable runtime.
@@ -480,7 +475,16 @@ Moltres simulations, for both the \gls{AHTR} plank and one-third assembly.
 The results of the verification studies are described in Section 
 \ref{sec:ahtr_model_verification}.
 
+\subsubsection{AHTR Moltres Mesh Generation}
+I wrote a python script that accepts the FliBe coolant channel shape input 
+parameters and generates a geometry script file (\texttt{.geo}) based on the 
+spatial homogenization outlined in Section \label{sec:ahtr-moltres-hom}.
+The AHTR geometry mesh is then generated from the geometry script file using 
+Gmsh \cite{geuzaine_gmsh_2009}.
+I used Gmsh's \textit{refine by splitting} functionality to refine the mesh. 
+
 \subsubsection{AHTR Moltres Temperature Model}
+\label{sec:ahtr-moltres-temperature-model}
 The group constants and mesh file are inputs to the Moltres AHTR Steady-State 
 Temperature Model.
 The model first solves for the neutronics and uses that to solve for the \gls{AHTR}'s 
@@ -759,7 +763,68 @@ Group 2 and Group 3.
 However, there is an overall good agreement for each group's flux.  
 
 \subsubsection{Neutron Energy Spectrum}
+Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum the OpenMC simulation 
+for both 252 and 4 groups, and 4-group Moltres simulation. 
+ \begin{figure}[]
+    \centering
+    \includegraphics[width=\linewidth]{neutron_spectrum_948K.png}
+    \caption{AHTR fuel slab's neutron spectrum.}  
+    \label{fig:neutron_spectrum_948K}
+\end{figure}
+There is good agreement between OpenMC and Moltres models 4-group spectrums. 
+
+In summary, Moltres replicated the relevant neutronics parameters accurately 
+using group constant data from OpenMC for the \gls{AHTR} plank model. 
 
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
+
+\subsection{AHTR Plank: Mesh Refinement Study}
+
+\subsection{AHTR Plank: Group Constant Temperature Study}
+During ROLLO optimization, each new reactor geometry results in the creation of 
+a new Moltres temperature model. 
+Correspondingly, a new set of group constant data will also be created. 
+Group constant data for multiple temperatures requires running multiple neutronics 
+simulations at the various temperatures, thus, increasing the total compute time 
+required for each new reactor model. 
+
+In this section, I explore the effects of using multiple temperature group 
+constant data compared to a single temperature.
+I set up Moltres AHTR steady-state temperature models for a plank (described in the 
+Section \ref{sec:ahtr-moltres-temperature-model}) with group constant data at each and 
+all the following temperatures: 948, 1024, 1100, and 1200 K. 
+The group constant data is generated with OpenMC \gls{AHTR} models at the specified 
+temperatures. 
+Table \ref{tab:moltres-group-constant-temps} shows the average and maximum temperature 
+reported by each Moltres model and their differences compared to the model with 
+group constant data with all four temperatures. 
+Table \ref{tab:moltres-group-constant-temps} also shows the 2-norm of the 
+centerline temperature difference between the AHTR slab model with all four temperatures 
+and each single temperature. 
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{AHTR slab's average and maximum temperature and 2-norm of temperature 
+    discretized across the slab's centerline for varying group constant temperature data.}
+	\label{tab:moltres-group-constant-temps}
+    \scriptsize
+    \begin{tabular}{p{2.5cm}p{2cm}p{2.4cm}p{2cm}p{2.4cm}p{2cm}}
+    \hline 
+    \textbf{Group Constant Data Temps [K]}& \textbf{Ave Slab Temp [K]}& 
+    \textbf{Ave Slab Temp Diff [K]}& \textbf{Max Slab Temp [K]} & 
+    \textbf{Max Slab Temp Diff [K]} & $||T_{all, i} - T_{i}||$ \\ 
+    \hline 
+     948 & 1019.997 &  0.032 & 1128.386 &  0.080 & 0.652\\
+    1024 & 1019.989 &  0.023 & 1128.640 &  0.333 & 2.279 \\
+    1100 & 1019.976 &  0.011 & 1128.300 & -0.006 & 2.875 \\
+    1200 & 1019.943 & -0.023 & 1128.052 & -0.255 & 4.308 \\
+    All  & 1019.965 &  -     & 1128.306 & -      & -    \\
+    \hline
+    \end{tabular}
+\end{table}
+The temperature differences between the AHTR slab model with all four temperatures 
+and the AHTR slab models' with each single temperature are not significant. 
+The 948K single temperature group constant data has the lowest 2-norm, thus, I 
+use this temperature in the neutronics model to generate the group constant data. 
 
 \section{ROLLO Hyperparameter Tuning}
