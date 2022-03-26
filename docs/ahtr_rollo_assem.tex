@@ -1,1 +1,49 @@
 \chapter{AHTR One-Third Assembly Optimization Results}
+In this chapter, I report the \gls{AHTR} one-third assembly \gls{ROLLO} 
+optimization results. 
+
+\section{ROLLO Optimization Simulations Overview}
+Table \ref{tab:assem-obj-breakdown} shows the details of each \gls{ROLLO} 
+optimization problems explored in this chapter.
+\begin{table}[]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
+    one-third assembly. $PF$: Total Fuel Packing Fraction, $T_{max}$: Maximum Plank Temperature, 
+    $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
+    \gls{TRISO} particle distribution}
+	\label{tab:slab-obj-breakdown}
+    \footnotesize
+    \begin{tabular}{p{1.4cm}|p{1cm}|llll}
+    \hline 
+    \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \hline
+    \multirow{9}{2cm}{1}& a-1b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    & & & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & a-1c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \cline{2-6}
+    & a-1d & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    \cline{2-6}
+    & a-1e & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
+    & & & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & a-1f & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
+    \cline{2-6}
+    & a-1g & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
+    \hline
+    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & &\tabitem min($T_{max}$) & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & a-2b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & & \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    \cline{2-6}
+    & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & & \tabitem min($PPF$) & & & \\
+    \hline
+    \multirow{3}{2cm}{3}& 3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    && \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    && \tabitem min($T_{max}$) & & & \\
+    \hline
+    \end{tabular}
+\end{table}
