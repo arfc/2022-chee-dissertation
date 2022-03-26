@@ -84,20 +84,20 @@ to the original benchmark TRISO distribution.
 
 \subsection{Objective: Maximize $k_{eff}$}
 
-\subsubsection{Simulation 1a: Variation of $\rho_{TRISO}(\vec{r})$}
+\subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$}
 
 \subsection{Objective: Minimize Total Packing Fraction}
-\subsubsection{Simulation 1b: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
-Table \ref{tab:simulation1b} shows simulation 1b's optimization problem parameters. 
+\subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
+Table \ref{tab:simulation1b} shows simulation p-1b's optimization problem parameters. 
 \begin{table}[H]
     \centering
     \onehalfspacing
-    \caption{Simulation 1b Optimization Problem Parameters}
+    \caption{Simulation p-1b Optimization Problem Parameters}
 	\label{tab:simulation1b}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation 1b}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1b}} \\
     \hline 
     \textbf{Objectives} & Minimize PF \\
     \hline 
@@ -144,21 +144,21 @@ in the neighboring fuel cell.
 The up-down fuel packing pattern minimizes self-shielding effects, enabling  
 a lower packing fraction for the same $k_{eff}$. 
 
-\subsubsection{Simulation 1e: Variation of FliBe Channel Shape and PF}
+\subsubsection{Simulation p-1e: Variation of FliBe Channel Shape and PF}
 
 \subsection{Objective: Minimize Maximum Temperature}
 
-\subsubsection{Simulation 1c: Variation of $\rho_{TRISO}(\vec{r})$}
-Table \ref{tab:simulation1c} shows simulation 1c's optimization problem parameters. 
+\subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
+Table \ref{tab:simulation1c} shows simulation p-1c's optimization problem parameters. 
 \begin{table}[H]
     \centering
     \onehalfspacing
-    \caption{Simulation 1c Optimization Problem Parameters}
+    \caption{Simulation p-1c Optimization Problem Parameters}
 	\label{tab:simulation1c}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation 1c}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1c}} \\
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
@@ -216,21 +216,21 @@ on the left and right sides near the moderator.
 To combat this temperature peak, ROLLO found a TRISO particle distribution that 
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
-\subsubsection{Simulation 1f: Variation of FliBe Channel Shape}
+\subsubsection{Simulation p-1f: Variation of FliBe Channel Shape}
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
 
-\subsubsection{Simulation 1d: Variation of $\rho_{TRISO}(\vec{r})$}
-Table \ref{tab:simulation1d} shows simulation 1d's optimization problem parameters. 
+\subsubsection{Simulation p-1d: Variation of $\rho_{TRISO}(\vec{r})$}
+Table \ref{tab:simulation1d} shows simulation p-1d's optimization problem parameters. 
 \begin{table}[H]
     \centering
     \onehalfspacing
-    \caption{Simulation 1d Optimization Problem Parameters}
+    \caption{Simulation p-1d Optimization Problem Parameters}
 	\label{tab:simulation1d}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation 1d}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1d}} \\
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
@@ -275,11 +275,38 @@ moderator, whereas the plank's center has a lower flux due to self shielding.
 Thus, to minimize PPF, \gls{ROLLO} found a plank TRISO distribution that has higher 
 packing fraction at the edges, and a lower packing fraction in the center. 
 
-\subsubsection{Simulation 1g: Variation of FliBe Channel Shape}
+\subsubsection{Simulation p-1g: Variation of FliBe Channel Shape}
 
 \section{AHTR Plank: Two-Objective Optimization Results}
 
 \subsection{Minimize Total Packing Fraction and Maximum Temperature}
+Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
+\begin{table}[H]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-2a Optimization Problem Parameters}
+	\label{tab:simulationp2a}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2a}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PF \\
+    & Minimize $T_{max}$ \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    & $0<a<2$ \\
+    & $0<b<\frac{\pi}{2}$ \\
+    & $0<c<2\pi$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.39$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
+    & Generations: 10 \\
+    \hline
+    \end{tabular}
+\end{table}
+
 
 \subsection{Minimize Total Packing Fraction and Normalized Power Peaking Factor}
 
