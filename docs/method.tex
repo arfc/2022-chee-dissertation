@@ -46,7 +46,7 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     descriptions, and motivation.}
 	\label{tab:objectives}
     \footnotesize
-    \begin{tabular}{p{4cm}p{5cm}p{5cm}}
+    \begin{tabular}{p{4cm}|p{5cm}p{5cm}}
     \hline 
     \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
     \hline
@@ -59,7 +59,9 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \end{tabular}
 \end{table}
 I will vary the described parameters in the \gls{AHTR} plank and \gls{AHTR} one-third assembly 
-geometries to optimize the described objectives. 
+geometries to optimize the described objectives.
+The results for the plank and one-third assembly are reported in Chapters \ref{chap:ahtr-plank-opt-results}
+and \ref{chap:ahtr-assem-opt-results}, respectively. 
 The plank optimization acts as a preliminary study to inform the more complex \gls{AHTR} one-third
 assembly optimization setup. 
 In the next section, I will describe both geometries. 
@@ -145,9 +147,9 @@ other's uncertainty.
 % coolant channel shape variation
 
 \subsection{AHTR One-Third Assembly Geometry}
-The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly and
-contains six fuel planks.
-Each graphite plank has graphite buffers and ten rectangular prism fuel cells 
+The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly that
+contains six graphite fuel planks.
+Each graphite fuel plank has graphite buffers and ten rectangular prism fuel cells 
 with random TRISO packing and individually controlled packing fraction. 
 Figure \ref{fig:ahtr_assembly} shows the one-third \gls{AHTR} assembly with 10 x 6 fuel cells with 
 random \gls{TRISO} packing.
@@ -193,13 +195,13 @@ The software will then run the \gls{AHTR} models and calculate the optimization 
 and constraint values. 
 In this work, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s neutronics 
 and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s multi-physics. 
-Details about the software can be found in Section \ref{sec:lit-review-modeling-software}.
+Details about each software can be found in Section \ref{sec:lit-review-modeling-software}.
 
 In this section, I describe the \gls{AHTR} modeling workflow: from the AHTR geometry 
 variation input parameters, to the OpenMC and Moltres models, and finally the 
 output and constraint values. 
-This corresponds to the \textit{evaluate population} orange blocks in Figure 
-\ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
+The \gls{AHTR} modeling workflow falls within the \textit{evaluate population} orange blocks 
+in Figure \ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
 Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow. 
 \begin{figure}[]
     \centering
@@ -239,7 +241,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
 
 \subsection{Input Parameter Modeling}
 \label{sec:input-parameter-modeling}
-In this section, I describe how I modeled the \gls{AHTR} parameter variations: total fuel packing 
+In this section, I describe how I model the \gls{AHTR} parameter variations: total fuel packing 
 fraction, \gls{TRISO} particle packing fraction distribution, and \gls{FLiBe} coolant channel shape. 
 For both the \gls{AHTR} plank and one-third assembly models, total fuel packing fraction parameter 
 is a single numerical input.
