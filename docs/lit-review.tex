@@ -3,19 +3,18 @@
 
 This chapter provides a literature review of relevant past research efforts 
 to give context to this dissertation. 
-I begin with an overview of the \gls{FHR} concept, 
-then go into detail about one specific \gls{FHR} design: the \gls{AHTR}, 
-previous efforts and technical challenges of modeling the design, and a 
-description of how these efforts led to the \gls{OECD} \gls{NEA}'s initiation 
-of the \gls{FHR} benchmark.
+I begin with an overview of the \gls{FHR} concept, then detail one specific 
+\gls{FHR} design: the \gls{AHTR}, previous efforts and technical 
+challenges of modeling the design, and how these efforts led to the \gls{OECD} 
+\gls{NEA}'s initiation of the \gls{FHR} benchmark.
 Next, I outline additive manufacturing's history and describe the current 
-research towards applying additive manufacturing to the fabrication of 
-nuclear reactor components. 
-I also review previous efforts towards nuclear reactor design optimization, 
-describe how additive manufacturing of nuclear reactor components enables 
-optimization for less constrained reactor geometries, and types of optimization 
-methods, such as the evolutionary algorithm, that can be leveraged to find 
-optimal reactor designs in the expanded design space.   
+research on applying additive manufacturing to the fabrication of nuclear 
+reactor components. 
+I review previous nuclear reactor design optimization efforts and describe how 
+additive manufacturing of nuclear reactor components enables optimization for 
+less constrained reactor geometries. 
+I describe optimization methods, such as the evolutionary algorithm, that can 
+be leveraged to find optimal reactor designs in the expanded design space.
 Finally, I give a background of the evolutionary algorithms and detail a specific 
 evolutionary algorithm: the genetic algorithm and how it works to conduct global 
 optimization robustly.
@@ -27,9 +26,8 @@ To ensure continued global use and expansion of nuclear energy technology, in
 \cite{gif_technology_2002}.
 The \gls{GIF} aims to enhance the role of nuclear energy in our global energy 
 ecosystem by coordinating global research and development to test the 
-feasibility and performance of fourth generation nuclear systems, with the goal 
-of making Gen IV reactors available for industrial deployment by 2030 
-\cite{gif_technology_2002}.
+feasibility and performance of Gen IV nuclear reactor systems, enabling 
+their industrial deployment by 2030 \cite{gif_technology_2002}.
 The \gls{GIF} selected six Generation IV systems for further research and 
 development based on target goals in four areas: sustainability, 
 economics, safety and reliability, and proliferation resistance and physical 
@@ -54,8 +52,8 @@ Table \ref{tab:goals-gen4} summarizes the goals in each area.
     & sources \\ 
     & - Reduce economic risk to nuclear projects by developing plants using \\
     & innovative fabrication and construction techniques \\ \hline
-    Safety and Reliability   & - Increase the use of robust designs, and inherent and transparent safety\\
-    & features that can be understood by non-experts \\ 
+    Safety and Reliability   & - Increase the use of robust designs and inherent and transparent safety\\
+    & features that non-experts can understand \\ 
     & - Enhance public confidence in the safety of nuclear energy \\\hline
     Proliferation Resistance & - Provide continued effective proliferation resistance of nuclear energy \\
     and Physical Protection & systems through improved design features and other measures \\ 
@@ -72,23 +70,22 @@ the best aspects of the \gls{MSR} and \gls{VHTR} systems respectively
 \gls{MSR} systems produce fission power in a circulating molten salt fuel 
 mixture. 
 Researchers recommend molten fluoride salts because they have high uranium 
-solubility, chemical stability, very low vapor pressure even at high 
-temperatures, good heat transfer properties, resistance against radiation 
-damage, and are inert to common structural materials 
-\cite{rosenthal_molten-salt_1970}. 
+solubility, chemical stability, low vapor pressure at high temperatures, 
+good heat transfer properties, radiation damage resistance, and are inert 
+to common structural materials \cite{rosenthal_molten-salt_1970}. 
 Molten salt reactor coolants also introduce inherent safety due to the 
 low system vapor pressure and the salts' high boiling temperature and 
 volumetric heat capacity \cite{ho_molten_2013}.
 Fluoride salt used in \glspl{FHR} is Li$_2$BeF$_4$ (FLiBe), 
 which remains liquid without pressurization up to 1400 $^{\circ}$C and has a greater 
 heat capacity than water \cite{ho_molten_2013,forsberg_fluoride-salt-cooled_2012}.
-\gls{VHTR} systems use a once-through uranium cycle and leverage their 
-high outlet temperature for high-temperature heat applications, such as 
+\gls{VHTR} systems use a once-through uranium cycle and leverage 
+high outlet temperatures for high-temperature heat applications, such as 
 hydrogen production. 
-Graphite-moderated and helium-cooled, \glspl{VHTR} use \gls{TRISO} fuel
+Graphite-moderated and helium-cooled \glspl{VHTR} use \gls{TRISO} fuel
 which withstands high burnup and temperature, enabling higher operating 
 temperatures \cite{gif_technology_2002}.  
-The advantages of higher operating temperatures include: increased power 
+Higher operating temperatures advantages include increased power 
 conversion efficiency, reduced waste heat generation, and co-generation and 
 process heat capabilities \cite{scarlat_design_2014}.
 However, the \glspl{VHTR} system's helium coolant is at 100 atm requiring a 
@@ -96,11 +93,11 @@ thick concrete vessel.
 
 By combining the FLiBE coolant from \gls{MSR} technology and 
 \gls{TRISO} fuel from \gls{VHTR} technology, the \gls{FHR} benefits from 
-a low operating pressure and large thermal margin enabled by the molten 
+low operating pressure and large thermal margin enabled by the molten 
 salt coolant and the thermal resilience of \gls{TRISO} particle fuel. 
-Molten salt coolant's superior cooling properties compared to the \gls{VHTR}'s
-helium coolant increases system safety with an atmospheric operating pressure 
-instead of 100 atm. 
+Molten salt coolant has superior cooling properties. Molten salt coolant 
+increases system safety with an atmospheric operating pressure compared to 
+\gls{VHTR}'s 100 atm. 
 \gls{TRISO} solid fuel cladding in the \gls{FHR} system adds an extra barrier 
 to fission product release compared to \glspl{MSR} with liquid fuel 
 \cite{ho_molten_2013}.
@@ -109,8 +106,9 @@ Several types of \gls{FHR} conceptual designs exist worldwide: the \gls{PBFHR}
 developed at \gls{UCB} with circulating pebble-fuel 
 \cite{scarlat_current_2014,krumwiede_three-dimensional_2013}, the \gls{SF-TMSR} 
 developed at the \gls{SINAP} in China with static pebble-fuel \cite{liu_preliminary_2016}, 
-the large central-station \gls{AHTR} at \gls{ORNL} \cite{holcomb_core_2011, varma_ahtr_2012} and 
-the \gls{SmAHTR} at ORNL \cite{greene_pre-conceptual_2010} with static, plate fuel. 
+the large central-station \gls{AHTR} at \gls{ORNL} \cite{holcomb_core_2011, varma_ahtr_2012}, 
+and the \gls{SmAHTR} at ORNL \cite{greene_pre-conceptual_2010} with static, 
+plate fuel. 
 
 \subsection{\acrlong{AHTR} Design}
 This dissertation focuses on the prismatic \gls{FHR} design with hexagonal fuel 
@@ -142,23 +140,22 @@ modeled in this proposed work.
 \label{sec:previous_ahtr}
 The \gls{AHTR} core design differs significantly from the present \gls{LWR} 
 systems' cores. 
-These differences lead to modeling challenges with the current tools and also 
-highlight the need for verification and validation of current simulation tools 
+These differences lead to modeling challenges with the current tools, 
+highlighting the need to verify and validate current simulation tools
 for \gls{AHTR} physics \cite{ramey_monte_2018}. 
 Verification and validation of \gls{AHTR} neutronics and thermal-hydraulics 
-simulation capabilities support the \gls{AHTR} design's licensure and 
+simulation capabilities support the \gls{AHTR} design's licensure and the
 eventual goal of \gls{AHTR} deployment 
 \cite{rahnema_phenomena_2019,rahnema_current_2015}.
-In this section, I outline the previous efforts taken to model and validate 
+This section outlines the previous efforts taken to model and validate 
 the \gls{AHTR}'s neutronics and thermal-hydraulics. 
 
 \subsubsection{AHTR Neutronics Modeling}
 Several neutronics studies conducted along the way to the current \gls{AHTR} 
-design have shed light on the technical challenges facing the design 
+design have shed light on the design's technical challenges 
 \cite{ramey_monte_2018,holcomb_fluoride_2013,greene_pre-conceptual_2010}. 
-\gls{Georgia Tech} led an Integrated Research Project to 
-understand challenges in \gls{AHTR} materials and modeling its neutronics and 
-thermal-hydraulics \cite{zhang_integrated_2019}. 
+\gls{Georgia Tech} led an Integrated Research Project to understand \gls{AHTR} 
+material and modeling challengess \cite{zhang_integrated_2019}. 
 During the research project, a panel of subject matter experts 
 generated a \gls{PIRT}.
 The \gls{PIRT} identifies areas that need additional research to better 
@@ -196,11 +193,11 @@ The \emph{triple heterogeneous} \gls{AHTR} fuel, comprised of \gls{TRISO}
 particles embedded in strategically arranged plates, presents simulation 
 challenges. 
 Researchers must obtain detailed reference power distributions with individual 
-\gls{TRISO} particle fidelity to best understand nuances in the physics, such 
+\gls{TRISO} particle fidelity to understand nuances in the physics, such 
 as self-shielding.
 Deterministic codes that use multigroup cross sections and traditional 
 homogenization methods \cite{ramey_monte_2018}, insufficiently capture the 
-correct physics in \glspl{AHTR} due to these multiple heterogeneities
+\glspl{AHTR} physics due to these multiple heterogeneities 
 \cite{ramey_monte_2018}. 
 In the \gls{AHTR}, single and multiple slab homogenization decreased total 
 neutron transport simulation time by an order of 10; however, the homogenization 
@@ -209,36 +206,37 @@ introduced a nontrivial $k_{eff}$ error of $\sim$3\%
 To determine the feasibility and safety of the \gls{AHTR} design, researchers 
 must calculate core physics parameters to an acceptable uncertainty. 
 With Monte Carlo neutron transport, increasing neutron histories reduces statistical 
-uncertainty but increases computational cost typically, requiring the use of 
+uncertainty but increases computational cost typically, requiring
 supercomputers to run the simulations.
 
 This \gls{AHTR} presents another technical challenge: the uncertainty of 
 graphite moderator material properties: densities, temperatures, and thermal 
 scattering data.
-Problematically, the thermal scattering data ($S(\alpha,\beta)$ matrices) for 
+Also, the thermal scattering data ($S(\alpha,\beta)$ matrices) for 
 the bound nuclei in \gls{FLiBe} salts are lacking \cite{ramey_monte_2018}. 
 Mei et al. \cite{mei_investigation_2013} and Zhu et al. \cite{zhu_thermal_2017} 
 examined the thermal scattering behavior of solid and liquid \gls{FLiBe}.
 They concluded that the bound and free atom cross section of \gls{FLiBe} are 
-identical above 0.1eV and diverges below 0.01eV, which means that the use or 
+identical above 0.1eV and diverge below 0.01eV, which means that the use or 
 absence of thermal scattering data will impact the accuracy of the results 
 \cite{ramey_monte_2018}. 
 
 \subsubsection{AHTR Multiphysics Modeling}
-In past effort towards multiphysics modeling of the \gls{AHTR}, Gentry et al. 
+In past effort toward \gls{AHTR} multiphysics modeling, Gentry et al. 
 \cite{gentry_development_2016} developed an adapted lattice physics-to-core 
 simulator two-step procedure with Serpent \cite{leppanen_serpent_2014} 
 and \gls{NESTLE} \cite{turinsky_nestle_1994} for the \gls{AHTR} design. 
 The adapted lattice physics-to-core simulator two-step procedure proved to be 
-successful for \glspl{LWR} in which few group assembly homogenized group 
-constants are generated by 2-D transport lattice calculation and then core 
+successful for \glspl{LWR}. A 2-D transport lattice calculation generates the 
+\gls{LWR}'s group assembly homogenized group constants, and then core 
 analysis is performed by 3-D nodal simulation 
 \cite{koebke_new_1980,gentry_development_2016}.
 \gls{NESTLE}'s thermal-hydraulics utilizes a \gls{HEM} model for two-phase 
-flow and it solves the few-group neutron diffusion equation utilizing the
+flow, and it solves the few-group neutron diffusion equation utilizing the
 \gls{NEM} for cartesian and hexagonal reactor geometries.  
-Gentry et al. concluded that the method required further accuracy improvements 
-by improving reflector model and optimizing coarse energy group structure further.
+Gentry et al. concluded that the method required accuracy improvements 
+by improving the reflector model and further optimizing the coarse energy group 
+structure.
 Lin \cite{lin_thermal_2020} used RELAP5, a system-level code, to perform 
 \gls{AHTR} thermal hydraulics transient simulations to investigate the 
 capability of the passive heat removal system. 
@@ -269,7 +267,7 @@ and Deterministic neutronics software, such as Serpent \cite{leppanen_serpent_20
 OpenMC \cite{romano_openmc_2013}, and WIMS \cite{lindley_current_2017}. 
 
 The benchmark has three phases: a single fuel assembly simulation 
-without burnup (Phase I), full core depletion (Phase II), and multi-physics 
+without burnup (Phase I), full core depletion (Phase II), and multiphysics 
 feedback (Phase III). 
 The benchmark aims to identify the applicability, accuracy, and practicality 
 of the latest methods and codes to assess the current state 
@@ -285,7 +283,7 @@ benchmark phases and results obtained so far.
 \label{sec:lit-review-modeling-software}
 In this dissertation, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s 
 neutronics and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s 
-multi-physics. 
+multiphysics. 
 OpenMC is an open-source Monte Carlo neutron transport code capable of 
 performing k-eigenvalue calculations on models built using either constructive 
 solid geometry or CAD representation. 
