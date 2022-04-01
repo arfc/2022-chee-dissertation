@@ -735,7 +735,7 @@ Figure \ref{fig:genetic_alg} depicts the iterative process of using a genetic al
 to solve a problem. 
 The genetic algorithm generates new populations iteratively until it meets the termination 
 criteria. 
-\begin{figure}[]
+\begin{figure}[btp]
         \centering
         \begin{tikzpicture}[node distance=1.7cm]
                 \tikzstyle{every node}=[font=\small]
@@ -867,7 +867,7 @@ hyperparameter setting does not work well even on a simple problem.
 Only genetic algorithms with a selection pressure (s) and crossover probability ($p_c$) 
 falling inside the control map (Figure \ref{fig:controlmap}) will find the desired 
 optimum.  
-\begin{figure}[]
+\begin{figure}[btp]
     \centering
     \includegraphics[width=0.6\linewidth]{controlmap.png} 
     \caption{Figure reproduced from \cite{goldberg_toward_1993,deb_multi-objective_2001}
@@ -894,7 +894,7 @@ even coverage in the original 2-d space but provides inefficient coverage in
 projections onto either the x1 or x2 subspace.  
 In contrast, random sampling produces a less even distribution in the original 
 space but a far more even distribution in the subspaces.
-\begin{figure}[]
+\begin{figure}[btp]
     \centering
     \includegraphics[width=0.8\linewidth]{random_vs_grid_sampling.png} 
     \caption{The impact of grid sampling vs random sampling on coverage of projections 
