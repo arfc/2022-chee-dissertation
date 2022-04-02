@@ -276,42 +276,86 @@ for the challenging \gls{AHTR} geometry, which is especially useful since
 applicable reactor physics experiments for code validation are scarce 
 \cite{petrovic_fhrahtr_2019,petrovic_preliminary_2021}. 
 Chapter \ref{chap:fhr-benchmark} will provide a detailed description of the 
-benchmark phases and results.
+benchmark's phases and results.
 
 \subsection{Modeling Software}
 \label{sec:lit-review-modeling-software}
 In this dissertation, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s 
 neutronics and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s 
 multiphysics. 
-OpenMC is an open-source Monte Carlo neutron transport code capable of 
-performing k-eigenvalue calculations on models built using either constructive 
-solid geometry or CAD representation. 
-OpenMC supports both continuous-energy and multigroup transport.
-A hybrid MPI and OpenMP programming model enables OpenMC's parallelism
-\cite{romano_openmc:_2015}.
 
+\subsubsection{OpenMC}
+OpenMC \cite{romano_openmc:_2015} is a continuous-energy Monte Carlo neutron transport 
+open-source code hosted on Github.
+It was created in 2011 at \gls{MIT} as an effort to develop scalable parallel Monte 
+Carlo neutron transport algorithms for future exascale supercomputers 
+\cite{romano_openmc:_2015}.
+OpenMC runs in parallel using \gls{MPI} and OpenMP. 
+Many components of OpenMC have been validated and verified with experimental data 
+and other well established neutron transport codes through benchmarks 
+\cite{romano_openmc:_2015}. 
+
+OpenMC is capable of performing fixed source and k-eigenvalue calculations. 
+The latter is used in this dissertation for \gls{AHTR} simulation. 
+The data governing the interaction of neutrons with various nuclei are represented using 
+the ACE format \cite{x-5_monte_carlo_team_mcnp_2003}.
+The ACE-format data is generated with the NJOY nuclear data processing system 
+\cite{macfarlane_njoy_2017}, which converts raw ENDF/B data into linearly-interpolable 
+data.
+OpenMC models use constructive solid geometry representation, they provide standard 
+geometric surfaces (e.g. planes, cylinders) for defining reactor geometries.  
+This dissertation uses v0.12.2 of OpenMC with the ENDF VII.1 nuclear data library
+\cite{chadwick_endf/b-vii.1_2011}. 
+
+\subsubsection{Moltres}
 Moltres is an open-source tool designed to simulate \glspl{MSR} using 
 deterministic neutronics and thermal-hydraulics implemented as an application 
 atop the \gls{MOOSE} finite-element framework.  
 Moltres solves arbitrary group neutron diffusion, temperature, and precursor 
 governing equations on a single mesh and can be deployed on an arbitrary number 
 of processing units \cite{lindsay_introduction_2018}.
-Moltres solves the diffusion equations as a steady-state eigenvalue 
-problem to find $k_{eff}$ for the static AHTR model: 
+Moltres solves for the neutron fluxes governed by the multigroup neutron diffusion 
+equations given by:
 \begin{align}
     \label{eq:moltres-diffusion-equation}
     \frac{1}{v_g} \frac{\partial \phi_g}{\partial t} &= \nabla \cdot D_g
     \nabla \phi_g - \Sigma^r_g \phi_g +
     \sum^G_{g' \neq g} \Sigma^s_{g' \rightarrow g} \phi_{g'} + \chi^p_g
     \sum^G_{g'=1} (1-\beta) \nu \Sigma^f_{g'} \phi_{g'} + \chi^d_g \sum^I_i
-    \lambda_i C_i
+    \lambda_i C_i \\
+    \intertext{where}
+    v_g &= \text{ average speed of neutrons in group $g$,} \nonumber \\
+    \phi_g &= \text{ neutron flux in group $g$,}\nonumber \\
+    t &= \text{ time,} \nonumber \\
+    D_g &= \text{ diffusion coefficient of neutrons in group $g$,} \nonumber \\
+    \Sigma^r_g &= \text{ macroscopic cross section for removal of neutrons from group $g$,} \nonumber \\
+    \Sigma^s_{g' \rightarrow g} &= \text{ macroscopic cross section of scattering from groups $g'$ to $g$,} \nonumber \\
+    \chi^p_g &= \text{ prompt fission spectrum for neutrons in group $g$,} \nonumber \\
+    G &= \text{ total number of discrete neutron groups,} \nonumber \\
+    \nu &= \text{ average number of neutrons produced per fission,} \nonumber \\
+    \Sigma^f_{g} &= \text{ macroscopic fission cross section for neutron in group $g$,} \nonumber \\
+    \chi^d_g &= \text{ delayed fission spectrum for neutrons in group $g$,} \nonumber \\
+    I &= \text{ total number of delayed neutron precursor groups,} \nonumber \\
+    \beta &= \text{ total delayed neutron fraction.} \nonumber
 \end{align}
 
-Equation \ref{eq:moltres-temp} describes Moltres' governing equation for temperature:
+The governing equation for temperature in Moltres is an advection-diffusion
+equation with a fission heat source term $Q_f$ given by:
 \begin{align}
     \label{eq:moltres-temp}
-    \rho c_p\frac{\partial T}{\partial t} &+ \nabla\cdot\left(\rho
-        c_f \vec{u}\cdot T -k\nabla T\right) =  Q
+    \rho c_{p} \frac{\partial T}{\partial t} &= - \rho c_p \vec{u}
+    \cdot \nabla T + \nabla \cdot \left(k \nabla T \right) + Q_f
+    \intertext{and}
+    Q_f l \sum^G_{g=1} \epsilon_g \Sigma_g^f \phi_g
+    \intertext{where}
+    \rho =& \text{ density of the molten salt,}
+    \nonumber \\
+    c_p =& \text{ specific heat capacity of molten salt,} \nonumber \\
+    T =& \text{ temperature of molten salt,} \nonumber \\
+    k =& \text{ effective thermal conductivity of molten salt,} \nonumber \\
+    Q_f =& \text{ fission heat source,} \nonumber \\
+    \epsilon_g =& \text{ average fission energy released by neutrons in group
+    $g$.} \nonumber
 \end{align} 
 
 \section{Additive Manufacturing}
