@@ -2,19 +2,18 @@
 \label{chap:lit-review}
 
 This chapter provides a literature review of relevant past research efforts 
-to give context to this dissertation. 
+giving context to this dissertation. 
 I begin with an overview of the \gls{FHR} concept, then detail one specific 
-\gls{FHR} design: the \gls{AHTR}, previous efforts and technical 
-challenges of modeling the design, and how these efforts led to the \gls{OECD} 
-\gls{NEA}'s initiation of the \gls{FHR} benchmark.
+\gls{FHR} design: the \gls{AHTR}. 
+I describe previous efforts and technical challenges of modeling the \gls{AHTR} design, 
+and how these efforts led to the \gls{OECD} \gls{NEA}'s \gls{FHR} benchmark initiation.
 Next, I outline additive manufacturing's history and describe the current 
-research on applying additive manufacturing to the fabrication of nuclear 
-reactor components. 
+research on using additive manufacturing for nuclear reactor component fabrication. 
 I review previous nuclear reactor design optimization efforts and describe how 
 additive manufacturing of nuclear reactor components enables optimization for 
 less constrained reactor geometries. 
-I describe optimization methods, such as the evolutionary algorithm, that can 
-be leveraged to find optimal reactor designs in the expanded design space.
+I describe optimization methods that can be leveraged to find optimal reactor 
+designs in the expanded design space.
 Finally, I give a background of the evolutionary algorithms and detail a specific 
 evolutionary algorithm: the genetic algorithm and how it works to conduct global 
 optimization robustly.
@@ -26,7 +25,7 @@ To ensure continued global use and expansion of nuclear energy technology, in
 \cite{gif_technology_2002}.
 The \gls{GIF} aims to enhance the role of nuclear energy in our global energy 
 ecosystem by coordinating global research and development to test the 
-feasibility and performance of Gen IV nuclear reactor systems, enabling 
+feasibility and performance of Generation IV nuclear reactor systems, to enable 
 their industrial deployment by 2030 \cite{gif_technology_2002}.
 The \gls{GIF} selected six Generation IV systems for further research and 
 development based on target goals in four areas: sustainability, 
@@ -60,7 +59,7 @@ Table \ref{tab:goals-gen4} summarizes the goals in each area.
     & - Increase the robustness of new facilities \\ \hline
     \end{tabular}
 \end{table}
-The systems are \glspl{GFR}, \glspl{LFR}, \glspl{MSR}, \glspl{SFR}, \glspl{SCWR}, 
+The systems selected are \glspl{GFR}, \glspl{LFR}, \glspl{MSR}, \glspl{SFR}, \glspl{SCWR}, 
 and \glspl{VHTR} \cite{gif_technology_2002}. 
 The \acrfull{FHR} concept introduced in 2003 uses a low-pressure liquid fluoride-salt 
 coolant and high-temperature coated-particle \gls{TRISO} fuel, combining 
@@ -69,16 +68,16 @@ the best aspects of the \gls{MSR} and \gls{VHTR} systems respectively
 
 \gls{MSR} systems produce fission power in a circulating molten salt fuel 
 mixture. 
+Molten salt reactor coolants introduce inherent safety due to the 
+low system vapor pressure and the salts' high boiling temperature and 
+volumetric heat capacity \cite{ho_molten_2013}.
+Fluoride salt used in \glspl{FHR} is Li$_2$BeF$_4$, also known as \gls{FLiBe}, 
+which remains liquid without pressurization up to 1400 $^{\circ}$C and has a greater 
+heat capacity than water \cite{ho_molten_2013,forsberg_fluoride-salt-cooled_2012}.
 Researchers recommend molten fluoride salts because they have high uranium 
 solubility, chemical stability, low vapor pressure at high temperatures, 
 good heat transfer properties, radiation damage resistance, and are inert 
 to common structural materials \cite{rosenthal_molten-salt_1970}. 
-Molten salt reactor coolants also introduce inherent safety due to the 
-low system vapor pressure and the salts' high boiling temperature and 
-volumetric heat capacity \cite{ho_molten_2013}.
-Fluoride salt used in \glspl{FHR} is Li$_2$BeF$_4$ (FLiBe), 
-which remains liquid without pressurization up to 1400 $^{\circ}$C and has a greater 
-heat capacity than water \cite{ho_molten_2013,forsberg_fluoride-salt-cooled_2012}.
 \gls{VHTR} systems use a once-through uranium cycle and leverage 
 high outlet temperatures for high-temperature heat applications, such as 
 hydrogen production. 
@@ -91,13 +90,12 @@ process heat capabilities \cite{scarlat_design_2014}.
 However, the \glspl{VHTR} system's helium coolant is at 100 atm requiring a 
 thick concrete vessel. 
 
-By combining the FLiBE coolant from \gls{MSR} technology and 
+By combining \gls{FLiBe} coolant from \gls{MSR} technology and 
 \gls{TRISO} fuel from \gls{VHTR} technology, the \gls{FHR} benefits from 
-low operating pressure and big thermal margin enabled by the molten 
+low operating pressure and large thermal margin enabled by the molten fluoride
 salt coolant and the thermal resilience of \gls{TRISO} particle fuel. 
-Molten salt coolant has superior cooling properties. Molten salt coolant 
-increases system safety with an atmospheric operating pressure compared to 
-\gls{VHTR}'s 100 atm. 
+Molten fluoride salts low vapor pressure ensures reduced stress on the system
+and increased safety compared to the \gls{VHTR}'s high operating pressure. 
 \gls{TRISO} solid fuel cladding in the \gls{FHR} system adds an extra barrier 
 to fission product release compared to \glspl{MSR} with liquid fuel 
 \cite{ho_molten_2013}.
@@ -105,7 +103,7 @@ to fission product release compared to \glspl{MSR} with liquid fuel
 Several types of \gls{FHR} conceptual designs exist worldwide: the \gls{PBFHR} 
 developed at \gls{UCB} with circulating pebble-fuel 
 \cite{scarlat_current_2014,krumwiede_three-dimensional_2013}, the \gls{SF-TMSR} 
-developed at the \gls{SINAP} in China with static pebble-fuel \cite{liu_preliminary_2016}, 
+developed at the \gls{SINAP} with static pebble-fuel \cite{liu_preliminary_2016}, 
 the large central-station \gls{AHTR} at \gls{ORNL} \cite{holcomb_core_2011, varma_ahtr_2012}, 
 and the \gls{SmAHTR} at ORNL \cite{greene_pre-conceptual_2010} with static, 
 plate fuel. 
@@ -134,15 +132,17 @@ Within each fuel stripe is a graphite matrix filled with \gls{TRISO} particles.
 The core consists of 252 assemblies radially surrounded by reflectors
 \cite{ramey_monte_2018}. 
 Chapter \ref{chap:fhr-benchmark} details the specifications of the AHTR geometry
-modeled in this proposed work.
+modeled in this dissertation.
 
 \subsection{Previous AHTR modeling efforts and challenges} 
 \label{sec:previous_ahtr}
-The \gls{AHTR} core design differs significantly from the present \gls{LWR} 
-systems' cores. 
-These differences lead to modeling challenges with the current tools, 
-highlighting the need to verify and validate current simulation tools
-for \gls{AHTR} physics \cite{ramey_monte_2018}. 
+Nuclear reactor scientists built most of the current state-of-the-art reactor simulation 
+tools for \gls{LWR} modeling.
+The \gls{AHTR} core design differs significantly from the currently operating \gls{LWR} 
+cores.  
+These differences lead to modeling challenges with the current tools, highlighting
+the need to verify and validate current simulation tools for \gls{AHTR} physics 
+\cite{ramey_monte_2018}. 
 Verification and validation of \gls{AHTR} neutronics and thermal-hydraulics 
 simulation capabilities support the \gls{AHTR} design's licensure and the
 eventual goal of \gls{AHTR} deployment 
@@ -155,10 +155,10 @@ Several neutronics studies conducted along the way to the current \gls{AHTR}
 design have shed light on the design's technical challenges 
 \cite{ramey_monte_2018,holcomb_fluoride_2013,greene_pre-conceptual_2010}. 
 \gls{Georgia Tech} led an Integrated Research Project to understand \gls{AHTR} 
-material and modeling challengess \cite{zhang_integrated_2019}. 
+material and modeling challenges \cite{zhang_integrated_2019}. 
 During the research project, a panel of subject matter experts 
 generated a \gls{PIRT}.
-The \gls{PIRT} identifies areas that need additional research to better 
+The \gls{PIRT} identifies \gls{AHTR} areas that need additional research to better 
 understand important phenomena for adequate future modeling
 \cite{rahnema_phenomena_2019}. 
 Table \ref{tab:phenomena} lists the phenomena identified as requiring further 
@@ -625,8 +625,7 @@ Sobes et al. \cite{sobes_artificial_2020} used a genetic algorithm to find
 minimum volume geometric configurations for a \gls{TCR}-like reactor with 
 multiphysics constraints of 1500 pcm excess reactivity and maximum fuel 
 temperature of 618 $^{\circ}C$ under forced-flow cooling conditions. 
-They constrained the solution geometry to right cylinders to represent 
-arbitrary geometry variation.
+This study represented arbitrary geometry variations using right cylinders.
 The authors acknowledge that this work is only a first step towards truly 
 arbitrary geometry expression. 
 They found that the optimal cone-like core configuration is in the geometry 
@@ -673,22 +672,22 @@ research demonstrations have begun exploring the large new design space.
 As additive manufacturing technology advances and the \gls{TCR} program 
 demonstrates the first 3D printed operational reactor, more reactor designers 
 will begin to explore the huge design space enabled by 3D printing. 
-To fully explore the design space enabled by additive manufacturing, the 
-exploration process should allow the placement of fuel, moderation, and coolant 
-material in any possible location, within physical limits. 
+Thoroughly exploring the design space using additive manufacturing should allow 
+the placement of fuel, moderation, and coolant material in any possible location, 
+within physical limits. 
 In this dissertation, I will begin to explore the large design space while 
 also acknowledging (like the authors in \cite{sobes_artificial_2020}) that 
-this work is only an intermediary step towards truly arbitrary geometry expression. 
+this work is only an intermdiate step towards developing a truly arbitrary 
+geometry expression. 
 
 \section{Evolutionary Algorithms} 
 \label{sec:ea}
-With a substantial increase and change in an arbitrary geometry's design space, 
-it becomes time-consuming for a human reactor designer to thoroughly explore 
-and find optimal geometries in the expanded design space. 
+The expanded design space associated with an arbitrary reactor geometry increases 
+the time for reactor designers to thoroughly explore and find optimal geometries.
 Instead, we can leverage \gls{AI} optimization methods, such as evolutionary 
-algorithms, to promptly explore the large design space to find global optimal 
+algorithms, to rapidly explore the large design space to find global optimal 
 designs. 
-\gls{AI} does not replace the human reactor designer but shifts the human 
+\gls{AI} does not replace the human reactor designer, but shifts the human 
 designer's focus away from conjecturing suitable geometries to defining design 
 criteria to find optimal designs \cite{sobes_artificial_2020}. 
 Thus, when the human designer changes the reactor criteria, the \gls{AI} 
@@ -781,7 +780,7 @@ In most crossover operators, the operator randomly picks two individuals from
 the population. 
 The operator exchanges some portion of each individuals' attributes with one 
 another to create two new individuals \cite{deb_multi-objective_2001}. 
-Crossover operator methods utilized in the proposed work include 
+Crossover operator methods utilized in this dissertation include 
 \textit{single-point crossover}, \textit{uniform crossover}, and 
 \textit{blend crossover}. 
 In the \textit{single-point crossover}, the operator randomly selects two 
@@ -813,7 +812,7 @@ whereas the mutation operator keeps diversity in the population
 \subsubsection{Mutation Operator}
 The mutation operator alters one or more attributes of an individual within 
 a population. 
-Mutation operator methods utilized in the proposed work include 
+Mutation operator methods utilized in this dissertation include 
 \textit{polynomial bounded mutation}, in which each attribute in each individual 
 is mutated based on a polynomial distribution. 
 The user also defines each attribute's upper and lower bounds and the 
@@ -829,7 +828,7 @@ The selection operator duplicates good individuals and eliminates bad individual
 while keeping the population constant \cite{deb_multi-objective_2001}. 
 It achieves this by identifying above-average individuals, eliminating bad 
 individuals from the population, and replacing them with copies of good individuals.
-Selection operator methods utilized in the proposed work include tournament 
+Selection operator methods utilized in this dissertation include tournament 
 selection, best selection, and \gls{NSGA-II} selection. 
 In \textit{tournament selection}, a user-defined number of individuals play in a
 tournament, and the best individual proceeds to the next population. 
