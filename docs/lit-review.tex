@@ -287,8 +287,8 @@ multiphysics.
 \subsubsection{OpenMC}
 OpenMC \cite{romano_openmc:_2015} is a continuous-energy Monte Carlo neutron transport 
 open-source code hosted on Github.
-It was created in 2011 at \gls{MIT} as an effort to develop scalable parallel Monte 
-Carlo neutron transport algorithms for future exascale supercomputers 
+It was created in 2011 at \gls{MIT} as part of an effort to develop scalable parallel 
+Monte Carlo neutron transport algorithms for future exascale supercomputers 
 \cite{romano_openmc:_2015}.
 OpenMC runs in parallel using \gls{MPI} and OpenMP. 
 Many components of OpenMC have been validated and verified with experimental data 
@@ -296,7 +296,7 @@ and other well established neutron transport codes through benchmarks
 \cite{romano_openmc:_2015}. 
 
 OpenMC is capable of performing fixed source and k-eigenvalue calculations. 
-The latter is used in this dissertation for \gls{AHTR} simulation. 
+The latter is used in this dissertation for \gls{AHTR} neutronics modeling. 
 The data governing the interaction of neutrons with various nuclei are represented using 
 the ACE format \cite{x-5_monte_carlo_team_mcnp_2003}.
 The ACE-format data is generated with the NJOY nuclear data processing system 
@@ -322,7 +322,7 @@ user-provided OpenMC/Serpent 2 output files and creates Moltres-compatible JSON
 containing all required group constant data.
 
 Moltres solves for the neutron fluxes governed by the multigroup neutron diffusion 
-equations given by:
+equations:
 \begin{align}
     \label{eq:moltres-diffusion-equation}
     \frac{1}{v_g} \frac{\partial \phi_g}{\partial t} &= \nabla \cdot D_g
@@ -346,8 +346,8 @@ equations given by:
     \beta &= \text{ total delayed neutron fraction.} \nonumber
 \end{align}
 
-The governing equation for temperature in Moltres is an advection-diffusion
-equation with a fission heat source term $Q_f$ given by:
+Moltres' governing temperature equation is an advection-diffusion
+equation with a fission heat source term $Q_f$: 
 \begin{align}
     \label{eq:moltres-temp}
     \rho c_{p} \frac{\partial T}{\partial t} &= - \rho c_p \vec{u}
@@ -445,7 +445,7 @@ manufacturing, nuclear materials, machine learning, and computational modeling
 to reduce deployment costs and timelines for advanced nuclear energy systems. 
 The \gls{TCR} program aims to utilize additive manufacturing technology to 
 establish advanced nuclear energy system designs unconstrained by conventional 
-manufacturingand build an additively manufactured microreactor 
+manufacturing and additively manufacture a microreactor 
 \cite{terrani_transformational_2019}. 
 
 The \gls{TCR} program followed a downselection process based on the program's 
@@ -476,7 +476,7 @@ They followed the following fabrication steps (depicted in Figure
     \cite{trammell_advanced_2019}.}
     \label{fig:ornl-triso-print}
 \end{figure}
-Figure \ref{fig:ornl-fuel-element} shows the the fuel element manufactured at 
+Figure \ref{fig:ornl-fuel-element} shows the fuel element manufactured at 
 \gls{ORNL} for the \gls{TCR} program \cite{betzler_transformational_2020}. 
 \begin{figure}[btp]
     \centering
@@ -487,8 +487,7 @@ Figure \ref{fig:ornl-fuel-element} shows the the fuel element manufactured at
     particles packed in the SiC matrix.}
     \label{fig:ornl-fuel-element}
 \end{figure}
-The current design uses fuel shapes and coolant channels that are uniform in the 
-axial dimension. 
+The current design uses axially uniform fuel shapes and coolant channels. 
 The \gls{TCR} program plans to optimize the coolant channels to vary in axial 
 and radial directions within the fuel element 
 \cite{betzler_transformational_2020,sobes_artificial_2020}. 
@@ -510,7 +509,7 @@ a type of steel commonly used for cladding and structural components in nuclear
 reactors. 
 Koyanagi et al. \cite{koyanagi_additive_2020} presented the latest 
 additive manufacturing technology for manufacturing nuclear-grade \gls{SiC} materials. 
-They demonstrated that combinations of additive manufacturing techniques and 
+They demonstrated that the combination of additive manufacturing techniques and 
 traditional \gls{SiC} densification methods enabled new designs of \gls{SiC} 
 components with complex shapes. 
 \gls{SiC} demonstrates excellent strength at elevated temperatures, chemical inertness, 
@@ -520,13 +519,6 @@ These qualities make \gls{SiC} suitable for many applications in nuclear systems
 such as fuel cladding, constituents of fuel particles \cite{snead_handbook_2007} 
 and pellets \cite{terrani_progress_2015}, and core structural components in fission 
 reactors \cite{sauder_ceramic_2014}. 
-
-% Advancements of nuclear material additive manufacturing technology 
-% will enable 3D printing of nuclear reactors which will reduce the cost 
-% and fabrication timelines. 
-
-% The TCR Program's prototype demonstration of 3D printing a reactor shows promise 
-% for the field.  
 
 %Many of the materials and fabrication methods discussed above are applicable 
 %for \gls{FHR}-part manufacturing. 
@@ -549,7 +541,7 @@ An ideal optimization method for a multi-objective problem like reactor design
 should find widely spread solutions in the obtained Pareto front 
 \cite{deb_multi-objective_2001}. 
 
-Traditional manufacturing constraints result in most of past nuclear reactor 
+Traditional manufacturing constraints result in most of the past nuclear reactor 
 optimization work focusing on optimizing classical reactor 
 parameters such as radius of fuel pellet and clad, enrichment of fuel, 
 pin pitch, etc. 
@@ -570,7 +562,7 @@ deterministic methods.
 Due to stochastic methods' many advantages, most efforts toward nuclear 
 reactor optimization use these methods. 
 
-In recent years, additive manufacturing advancements for reactor core components 
+Additive manufacturing advancements for reactor core components have
 removed conventional reactor manufacturing geometric constraints such as slabs as fuel 
 planks, cylinders as fuel rods, spheres as fuel pebbles, axis-aligned coolant 
 channels, etc  \cite{sobes_artificial_2020}.
@@ -666,7 +658,7 @@ scalable to tens of thousands of processors \cite{kropaczek_constraint_2019}.
 Thus, for optimization problems that require high-fidelity evaluation software, 
 the evolutionary algorithm method can leverage parallel computing to find a 
 solution faster than the simulated annealing method.
-herefore, I will utilize the evolutionary algorithm optimization method in 
+Therefore, I will utilize the evolutionary algorithm optimization method in 
 this dissertation.
 Section \ref{sec:ea} gives a literature review on evolutionary algorithms.
 
@@ -679,19 +671,20 @@ temperature of 618 $^{\circ}C$ under forced-flow cooling conditions.
 This study represented arbitrary geometry variations using right cylinders.
 The authors acknowledge that this work is only a first step towards truly 
 arbitrary geometry expression. 
-They found that the optimal cone-like core configuration is in the geometry 
-shape of a truncated annular cone, with the inlet surface being larger than 
-the outlet \cite{sobes_artificial_2020}.
+They found that the optimal cone-like core configuration has a truncated annular 
+cone geometry, with the inlet surface being larger than the outlet 
+\cite{sobes_artificial_2020}.
 
 See et al. \cite{see_design_2022} conducted design optimization of the 
-\gls{TCR}'s outlet plenum design with Siemens design optimization tool HEEDS
+\gls{TCR}'s outlet plenum design with Siemens design optimization tool, HEEDS,
 and \gls{CFD} code, STAR-CCM+. 
 They had to design an instrumentation plane to monitor core coolant flow average 
 temperature within $\pm 5 ^{\circ}C$ while maintaining a tight design 
 constraint of 0.5-psi pressure drop across the outlet plenum.
 The optimal design maintained a pressure drop to 0.49 psi with an instrumentation 
 plane temperature standard deviation of $1.03^{\circ}C$. 
-Figure xx shows the initial and optimal outlet plenum designs. 
+Figure \ref{fig:compare-outlet-plenum} shows the initial and optimal outlet plenum 
+designs. 
 Figure \ref{fig:see3} demonstrates how the optimal design impacted the stream 
 tubes and enabled a smaller temperature standard deviation in the 
 instrumentation plane. 
@@ -707,14 +700,19 @@ instrumentation plane.
         \caption{Geometric representation of inlet channels.}
         \label{fig:see2} 
     \end{subfigure}
-    \caption{Initial design versus the best design of outlet plenum, reproduced 
-    from \cite{see_design_2022}.}
+    \caption{Initial design versus the optimal design of outlet plenum, reproduced 
+    from \cite{see_design_2022}. The optimal design meets the following design objectives: 
+    0.5-psi pressure drop across the outlet plenum, monitor core coolant flow average 
+    temperature within $\pm 5 ^{\circ}C$.}
+    \label{fig:compare-outlet-plenum}
 \end{figure}
 \begin{figure}[btp]
     \centering
     \includegraphics[width=0.8\linewidth]{see3.png} 
-    \caption{Initial design versus best design of stream tubes in the outlet 
-    plenum, reproduced from \cite{see_design_2022}.}
+    \caption{Initial design versus optimal design of stream tubes in the outlet 
+    plenum, reproduced from \cite{see_design_2022}.The optimal design meets the following 
+    design objectives: 0.5-psi pressure drop across the outlet plenum, monitor core 
+    coolant flow average temperature within $\pm 5 ^{\circ}C$.}
     \label{fig:see3}
 \end{figure}
 
