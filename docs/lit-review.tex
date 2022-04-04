@@ -25,7 +25,7 @@ To ensure continued global use and expansion of nuclear energy technology, in
 \cite{gif_technology_2002}.
 The \gls{GIF} aims to enhance the role of nuclear energy in our global energy 
 ecosystem by coordinating global research and development to test the 
-feasibility and performance of Generation IV nuclear reactor systems, to enable 
+feasibility and performance of Generation IV nuclear reactor systems to enable 
 their industrial deployment by 2030 \cite{gif_technology_2002}.
 The \gls{GIF} selected six Generation IV systems for further research and 
 development based on target goals in four areas: sustainability, 
@@ -147,7 +147,7 @@ Verification and validation of \gls{AHTR} neutronics and thermal-hydraulics
 simulation capabilities support the \gls{AHTR} design's licensure and the
 eventual goal of \gls{AHTR} deployment 
 \cite{rahnema_phenomena_2019,rahnema_current_2015}.
-This section outlines the previous efforts taken to model and validate 
+This section outlines the previous efforts to model and validate 
 the \gls{AHTR}'s neutronics and thermal-hydraulics. 
 
 \subsubsection{AHTR Neutronics Modeling}
@@ -292,17 +292,18 @@ Monte Carlo neutron transport algorithms for future exascale supercomputers
 \cite{romano_openmc:_2015}.
 OpenMC runs in parallel using \gls{MPI} and OpenMP. 
 Many components of OpenMC have been validated and verified with experimental data 
-and other well established neutron transport codes through benchmarks 
+and other well-established neutron transport codes through benchmarks 
 \cite{romano_openmc:_2015}. 
 
 OpenMC is capable of performing fixed source and k-eigenvalue calculations. 
-The latter is used in this dissertation for \gls{AHTR} neutronics modeling. 
-The data governing the interaction of neutrons with various nuclei are represented using 
-the ACE format \cite{x-5_monte_carlo_team_mcnp_2003}.
-The ACE-format data is generated with the NJOY nuclear data processing system 
-\cite{macfarlane_njoy_2017}, which converts raw ENDF/B data into linearly-interpolable 
-data.
-OpenMC models use constructive solid geometry representation, they provide standard 
+This dissertation uses OpenMC's k-eigenvalue calculations for \gls{AHTR} neutronics 
+modeling.
+OpenMC represents neutron interaction with various nuclei in the ACE format 
+\cite{x-5_monte_carlo_team_mcnp_2003}.
+The NJOY nuclear data processing system \cite{macfarlane_njoy_2017} converts the 
+raw ENDF/B data into linearly-interpolable ACE-format data, enabling the nuclear 
+data libraries to provide continuous energy cross section data at discrete temperatures.
+OpenMC models use constructive solid geometry representation; they provide standard 
 geometric surfaces (e.g. planes, cylinders) for defining reactor geometries.  
 This dissertation uses v0.12.2 of OpenMC with the ENDF VII.1 nuclear data library
 \cite{chadwick_endf/b-vii.1_2011}. 
@@ -317,7 +318,7 @@ of processing units \cite{lindsay_introduction_2018}.
 To perform neutronics calculations, Moltres requires group constant data from 
 high-fidelity neutronics software such as OpenMC \cite{romano_openmc:_2015} or 
 Serpent 2 \cite{leppanen_serpent_2014}. 
-Users can run a Python script in Moltres' Github repository, which automatically reads
+Users run a Python script in Moltres' Github repository, which automatically reads
 user-provided OpenMC/Serpent 2 output files and creates Moltres-compatible JSON 
 containing all required group constant data.
 
@@ -376,7 +377,7 @@ to traditional machining, which subtracts material instead
 \cite{standard_standard_2012}. 
 All commercialized additive manufacturing machines to date use a layer-based 
 approach.
-The major ways they differ are in materials, layer creation method, and 
+The methods differ in the following ways: materials, layer creation method, and 
 how the layers are bonded \cite{gibson_additive_2014}.
 These major differences will determine the: accuracy of the 
 final part, material and mechanical properties, time required to manufacture 
@@ -505,11 +506,10 @@ Thus, using \gls{AMAFT} to fabricate U$_3$Si$_2$ will lower costs and ensure a
 timely and commercially-reliable fabrication process \cite{rosales_characterizing_2019}. 
 Sridharan et al. \cite{sridharan_performance_2019} demonstrated applying
 the laser-blown-powder additive manufacturing process to fabricate \gls{FM} steel, 
-a type of steel commonly used for cladding and structural components in nuclear 
-reactors. 
+commonly used for cladding and structural components in nuclear reactors. 
 Koyanagi et al. \cite{koyanagi_additive_2020} presented the latest 
 additive manufacturing technology for manufacturing nuclear-grade \gls{SiC} materials. 
-They demonstrated that the combination of additive manufacturing techniques and 
+They demonstrated that combining additive manufacturing techniques and 
 traditional \gls{SiC} densification methods enabled new designs of \gls{SiC} 
 components with complex shapes. 
 \gls{SiC} demonstrates excellent strength at elevated temperatures, chemical inertness, 
@@ -572,13 +572,13 @@ power level.
 However, reactor designers can now approach nuclear design problems with truly 
 arbitrary geometries and optimize beyond classical parameters to further enhance 
 fuel performance and safety.
-This has opened the door for a re-examination of reactor core 
-optimization completely, determining the optimal arbitrary geometry 
+This has opened the door for a complete re-examination of reactor core 
+optimization, determining the optimal arbitrary geometry 
 and fuel distribution for a given objective function with a much smaller set of 
 constraints \cite{sobes_artificial_2020}. 
 
-In the subsequent sections, I discuss the previous nuclear reactor optimization 
-efforts for classical and arbitrary parameters.
+I discuss the previous nuclear reactor optimization efforts for classical and 
+arbitrary parameters in the subsequent sections.
 
 \subsection{Reactor Optimization for Classical Parameters}
 The most commonly used stochastic optimization methods for reactor design 
@@ -603,7 +603,7 @@ with a 10-year cycle length and minimal fissile loading.
 Kropaczek et al. \cite{kropaczek_large-scale_2019} demonstrated the constraint 
 annealing method: a highly scalable method based on the parallel simulated annealing 
 method with mixing of states \cite{kropaczek_constraint_2019} to solve large-scale, 
-multiconstrained problems in \gls{LWR} fuel cycle optimization. 
+multiconstrained \gls{LWR} fuel cycle optimization problems. 
 These papers demonstrate the simulated annealing optimization method's success in 
 reactor design optimization problems. 
 
@@ -958,7 +958,7 @@ In summary, participation in the \acrfull{OECD}-\acrfull{NEA} \acrfull{FHR}
 benchmarking exercise contributes to assessing the current neutron transport and 
 thermal-hydraulics modeling and simulation capabilities for the \acrfull{AHTR} design.
 Also, additive manufacturing of nuclear reactor components is a quickly 
-developing field thanks to the aerospace and automotive industries, which led 
+developing field thanks to the aerospace and automotive industries, which led to
 breakthroughs in metal component additive manufacturing fabrication. 
 The promise of cheaper and faster manufacturing of reactor components with 
 additive manufacturing frees complex reactor geometries from previous 
