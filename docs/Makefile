@@ -1,4 +1,4 @@
-manuscript = diff
+manuscript = 2022-chee-dissertation
 references = $(wildcard *.bib)
 latexopt   = -shell-escape -halt-on-error -file-line-error 
 
