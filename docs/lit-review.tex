@@ -32,7 +32,7 @@ development based on target goals in four areas: sustainability,
 economics, safety and reliability, and proliferation resistance and physical 
 protection \cite{gif_technology_2002}. 
 Table \ref{tab:goals-gen4} summarizes the goals in each area. 
-\begin{table}[btp]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{Goals of Generation IV Nuclear Systems \cite{gif_technology_2002,
@@ -116,7 +116,7 @@ The \gls{AHTR} has 3400 MWt thermal power and 1400 MW electric power with
 inlet/outlet temperatures of 650/700$^{\circ}$C \cite{varma_ahtr_2012}.  
 Figure \ref{fig:ahtr} shows the prismatic AHTR's fuel assembly and core 
 configuration.  
-\begin{figure}[btp]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{ahtr.png} 
     \caption{\acrlong{AHTR} fuel assembly (left) and core configuration (right) 
@@ -163,7 +163,7 @@ understand important phenomena for adequate future modeling
 \cite{rahnema_phenomena_2019}. 
 Table \ref{tab:phenomena} lists the phenomena identified as requiring further 
 research. 
-\begin{table}[btp]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{\acrlong{PIRT} identified \acrlong{AHTR} physical phenomena requiring 
@@ -353,7 +353,7 @@ equation with a fission heat source term $Q_f$:
     \rho c_{p} \frac{\partial T}{\partial t} &= - \rho c_p \vec{u}
     \cdot \nabla T + \nabla \cdot \left(k \nabla T \right) + Q_f
     \intertext{and}
-    Q_f l \sum^G_{g=1} \epsilon_g \Sigma_g^f \phi_g
+    Q_f &= \sum^G_{g=1} \epsilon_g \Sigma_g^f \phi_g
     \intertext{where}
     \rho =& \text{ density of the molten salt,}
     \nonumber \\
@@ -467,7 +467,7 @@ They followed the following fabrication steps (depicted in Figure
     \item The loaded fuel element is densified in a \gls{CVI} process to achieve 
     microencapsulation of \gls{TRISO} particles in a SiC matrix. 
 \end{enumerate}
-\begin{figure}[btp]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{ornl-triso-print.png} 
     \caption{Stages of additive manufacturing fabrication conducted at \acrlong{ORNL} to 
@@ -478,13 +478,13 @@ They followed the following fabrication steps (depicted in Figure
 \end{figure}
 Figure \ref{fig:ornl-fuel-element} shows the fuel element manufactured at 
 \gls{ORNL} for the \gls{TCR} program \cite{betzler_transformational_2020}. 
-\begin{figure}[btp]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.6\linewidth]{ornl-fuel-element.png} 
     \caption{The top portion of the advanced manufactured fuel element 
-    reproduced from \cite{betzler_transformational_2020} for the \acrfull{TCR} 
-    program at \acrfull{ORNL}. A cutaway of the element shows surrogate TRISO 
-    particles packed in the SiC matrix.}
+    for the \acrfull{TCR} program at \acrfull{ORNL}.
+    A cutaway of the element shows surrogate TRISO particles packed in the SiC matrix.
+    Figure reproduced from \cite{betzler_transformational_2020}.}
     \label{fig:ornl-fuel-element}
 \end{figure}
 The current design uses axially uniform fuel shapes and coolant channels. 
@@ -688,7 +688,7 @@ designs.
 Figure \ref{fig:see3} demonstrates how the optimal design impacted the stream 
 tubes and enabled a smaller temperature standard deviation in the 
 instrumentation plane. 
-\begin{figure}[btp]
+\begin{figure}[htb!]
     \centering
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\linewidth]{see1.png}
@@ -700,19 +700,20 @@ instrumentation plane.
         \caption{Geometric representation of inlet channels.}
         \label{fig:see2} 
     \end{subfigure}
-    \caption{Initial design versus the optimal design of outlet plenum, reproduced 
-    from \cite{see_design_2022}. The optimal design meets the following design objectives: 
-    0.5-psi pressure drop across the outlet plenum, monitor core coolant flow average 
-    temperature within $\pm 5 ^{\circ}C$.}
+    \caption{Initial design versus the optimal design of outlet plenum. The optimal design 
+    meets the following design objectives: 0.5-psi pressure drop across the outlet plenum, 
+    monitor core coolant flow average temperature within $\pm 5 ^{\circ}C$.
+    Figures reproduced from \cite{betzler_transformational_2020}.}
     \label{fig:compare-outlet-plenum}
 \end{figure}
-\begin{figure}[btp]
+\begin{figure}[htb!]
     \centering
-    \includegraphics[width=0.8\linewidth]{see3.png} 
+    \includegraphics[width=0.9\linewidth]{see3.png} 
     \caption{Initial design versus optimal design of stream tubes in the outlet 
-    plenum, reproduced from \cite{see_design_2022}.The optimal design meets the following 
-    design objectives: 0.5-psi pressure drop across the outlet plenum, monitor core 
-    coolant flow average temperature within $\pm 5 ^{\circ}C$.}
+    plenum.The optimal design meets the following design objectives: 0.5-psi pressure 
+    drop across the outlet plenum, monitor core coolant flow average temperature 
+    within $\pm 5 ^{\circ}C$.
+    Figures reproduced from \cite{see_design_2022}.}
     \label{fig:see3}
 \end{figure}
 
@@ -732,8 +733,8 @@ geometry expression.
 \section{Evolutionary Algorithms} 
 \label{sec:ea}
 The expanded design space associated with an arbitrary reactor geometry increases 
-the time for reactor designers to thoroughly explore and find optimal geometries.
-Instead, we can leverage \gls{AI} optimization methods, such as evolutionary 
+the time required for reactor designers to thoroughly explore and find optimal geometries.
+Instead, reactor designers can leverage \gls{AI} optimization methods, such as evolutionary 
 algorithms, to rapidly explore the large design space to find global optimal 
 designs. 
 \gls{AI} does not replace the human reactor designer, but shifts the human 
@@ -756,13 +757,13 @@ underlying fitness landscape.
 Genetic algorithms are the most popular evolutionary algorithms for solving 
 multi-objective problems \cite{byrne_evolving_2014, krish_practical_2011}. 
 In this dissertation, I use the terms evolutionary and genetic algorithms 
-interchangeably, but I am referring to genetic algorithms.
+interchangeably to refer to genetic algorithms.
 
 \subsection{Genetic Algorithms}
 \label{sec:genetic_alg}
 Genetic algorithms imitate natural genetics and selection to evolve solutions 
 by maintaining a population of solutions, allowing fitter solutions to reproduce,
-and letting lesser fit solutions die off, resulting in final solutions that are 
+and letting less fit solutions die off, resulting in final solutions that are 
 better than the previous generations \cite{renner_genetic_2003}. 
 I will refer to a solution as an individual within the population. 
 Genetic algorithms efficiently exploit historical information to speculate new
@@ -783,7 +784,7 @@ Figure \ref{fig:genetic_alg} depicts the iterative process of using a genetic al
 to solve a problem. 
 The genetic algorithm generates new populations iteratively until it meets the termination 
 criteria. 
-\begin{figure}[btp]
+\begin{figure}[htb!]
         \centering
         \begin{tikzpicture}[node distance=1.7cm]
                 \tikzstyle{every node}=[font=\small]
@@ -877,18 +878,16 @@ The selection operator duplicates good individuals and eliminates bad individual
 while keeping the population constant \cite{deb_multi-objective_2001}. 
 It achieves this by identifying above-average individuals, eliminating bad 
 individuals from the population, and replacing them with copies of good individuals.
-Selection operator methods utilized in this dissertation include tournament 
-selection, best selection, and \gls{NSGA-II} selection. 
+Selection operator methods utilized in this dissertation include \textit{tournament 
+selection}, \textit{best selection}, and \textit{\gls{NSGA-II} selection}. 
 In \textit{tournament selection}, a user-defined number of individuals play in a
 tournament, and the best individual proceeds to the next population. 
 The tournament repeats until all the population's spots are filled.
 In \textit{best selection}, the operator selects a user-defined number of best 
 individuals, and copies are made to keep the population size constant. 
-For \textit{tournament} and \textit{best} selection operators, they maintain 
-population size by adding copies of the best individuals. 
 In \textit{NSGA-II selection}, the elitist operator selects the best individuals 
 from the combination of parent and offspring populations \cite{deb_fast_2002}.
-Only \textit{NSGA-II selection} can be used for multi-objective optimization. 
+\textit{NSGA-II selection} works well for multi-objective optimization. 
 
 \subsection{Genetic Algorithm Hyperparameter Tuning}
 Hyperparameters refer to parameters whose value controls 
@@ -915,13 +914,13 @@ hyperparameter setting does not work well even on a simple problem.
 Only genetic algorithms with a selection pressure (s) and crossover probability ($p_c$) 
 falling inside the control map (Figure \ref{fig:controlmap}) will find the desired 
 optimum.  
-\begin{figure}[btp]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.6\linewidth]{controlmap.png} 
-    \caption{Figure reproduced from \cite{goldberg_toward_1993,deb_multi-objective_2001}
-    shows a control map region of selection pressure (s) and crossover probability ($p_c$)
-    values in which the genetic algorithm will find the desired optimum for the 
-    one-max problem.}
+    \caption{Control map region of selection pressure (s) and crossover probability 
+    ($p_c$) values in which the genetic algorithm will find the desired optimum for the 
+    one-max problem.
+    Figure reproduced from \cite{goldberg_toward_1993,deb_multi-objective_2001}.}
     \label{fig:controlmap}
 \end{figure}
 Another consideration is the population size. 
@@ -942,7 +941,7 @@ even coverage in the original 2-d space but provides inefficient coverage in
 projections onto either the x1 or x2 subspace.  
 In contrast, random sampling produces a less even distribution in the original 
 space but a far more even distribution in the subspaces.
-\begin{figure}[btp]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.8\linewidth]{random_vs_grid_sampling.png} 
     \caption{The impact of grid sampling vs random sampling on coverage of projections 
@@ -955,12 +954,12 @@ space but a far more even distribution in the subspaces.
 % this also needs improvement. 
 This chapter provided a literature review of relevant past research 
 efforts that give context to this dissertation. 
-In summary, participation in the OECD-NEA FHR benchmarking exercise contributes 
-to assessing the current neutron transport and thermal-hydraulics 
-modeling and simulation capabilities for the \gls{AHTR} design.
+In summary, participation in the \acrfull{OECD}-\acrfull{NEA} \acrfull{FHR} 
+benchmarking exercise contributes to assessing the current neutron transport and 
+thermal-hydraulics modeling and simulation capabilities for the \acrfull{AHTR} design.
 Also, additive manufacturing of nuclear reactor components is a quickly 
-developing field thanks to the aerospace and automotive industries, which led to 
-breakthroughs in the additive manufacturing fabrication of metal components. 
+developing field thanks to the aerospace and automotive industries, which led 
+breakthroughs in metal component additive manufacturing fabrication. 
 The promise of cheaper and faster manufacturing of reactor components with 
 additive manufacturing frees complex reactor geometries from previous 
 manufacturing constraints and allows reactor designers to reexamine reactor 
