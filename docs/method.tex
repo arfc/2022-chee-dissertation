@@ -349,8 +349,8 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
 \subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
 I model the variation in coolant channel shape with a sinusoidal-like pattern, 
 using OpenMC's cylinder surfaces.
-By varying the radius of the cylinder, the depth and frequency of the coolant channel shape 
-minimics a sinusoidal-like pattern.
+Varying the radius of the cylinder results in the depth and frequency of the coolant 
+channel shape minimicing a sinusoidal pattern.
 I vary the FliBE coolant channel shape while holding the total coolant area constant. 
 
 For the \gls{AHTR} plank, $radius_{top}$ and $radius_{bot}$ variables control the coolant channel 
@@ -383,7 +383,7 @@ channel shape.
 \subsection{AHTR OpenMC and Moltres Models}
 \label{sec:ahtr-moltres-hom}
 The input parameter modeling outlined in the previous section are inputs into 
-the OpenMC neutronics and Moltres multiphysucs models. 
+the OpenMC neutronics and Moltres multiphysics models. 
 In this section, I describe details and assumptions for the models. 
 
 \subsubsection{AHTR OpenMC Model}
@@ -486,14 +486,15 @@ I used Gmsh's \textit{refine by splitting} functionality to refine the mesh.
 
 \subsubsection{AHTR Moltres Temperature Model}
 \label{sec:ahtr-moltres-temperature-model}
-The group constants and mesh file are inputs to the Moltres AHTR Steady-State 
-Temperature Model.
-The model first solves for the neutronics and uses that to solve for the \gls{AHTR}'s 
-temperature distribution for a defined power. 
+The Moltres AHTR Steady-State Temperature Model is a 2D model of the AHTR slab's 
+x-y cross-section with Figure \ref{fig:straightened_slab_mg}'s geometry. 
+% 3d model with unit thickness 
+The model first solves the slab's neutronics and uses that to solve the slab's 
+temperature distribution for a defined power.
 The temperature model assumes conductive heat transfer throughout the domain 
 and heat removal by uniform salt flow in the coolant region. 
 These assumptions ignore turbulent effects that would most likely be present. 
-However, an in-depth AHTR Moltres model that includes turbulence model is 
+However, an in-depth AHTR Moltres model that includes turbulence modeling is 
 out of scope for this dissertation. 
 
 Moltres solves the four-group diffusion equations (Equation \ref{eq:moltres-diffusion-equation}) 
@@ -544,20 +545,20 @@ G &= \mbox{number of discrete groups, g } [-] \nonumber \\
 \end{align}
 
 Equation \ref{eq:moltres-heat-removal} defines the heat removal from the AHTR 
-fuel slab in a 1cm coolant volume slice: 
+fuel slab:
 \begin{align}
     \label{eq:moltres-heat-removal}
-    Q &= h \cdot (T(\vec{r})-T_{ref})
+    Q &= h \cdot A \cdot(T(\vec{r})-T_{ref})
 \intertext{where:}
 Q &= \mbox{heat removal rate for 1cm thin slice of AHTR slab [W/cm]} \nonumber \\
-h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
+h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+A &= \mbox{coolant area } [cm^2] \nonumber \\
 T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
 T_{ref} &= \mbox{reference temperature [K]} \nonumber
 \end{align}
 
-Table \ref{tab:heat-exchanger-constants} shows the values used for 
-reference temperature and heat transfer coefficient for the convective 
-heat transfer process.
+Table \ref{tab:heat-exchanger-constants} shows reference temperature and heat 
+transfer coefficient values for the convective heat transfer process.
 \begin{table}[H]
     \centering
     \onehalfspacing
@@ -574,30 +575,32 @@ heat transfer process.
     \end{tabular}
 \end{table} 
 I calculated the heat transfer coefficient ($h$) using Equation \ref{eq:calc-htc} 
-for the 1cm-thick AHTR $\Delta z$ slice with the following assumptions: 
+with the following assumptions: 
 \begin{itemize}
-    \item it generates a constant amount of power, all of which is removed 
+    \item slab generates a constant amount of power, all of which is removed 
     by the coolant
-    \item heat removal occurs in 1cm coolant volume slice
-    \item temperature increase per 1cm slice is constant from the inlet to the 
-    outlet 
-\end{itemize} 
+    \item linear increase in temperature from inlet to outlet 
+\end{itemize}
 \begin{align}
     \label{eq:calc-htc}
-    h &= \frac{P_{dz}}{A_{coolant}} \div \frac{T_{total}}{H} \\
-      &= \frac{1456 W}{23.1 * 0.5 * 2 cm^2} / (50 K / 550 cm) \nonumber \\
-      &= 990 W cm^{-1}K^{-1} \nonumber 
+    h &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
+      &= \frac{1456 W/cm}{23.1cm \times 0.35cm \times 1cm \times 2} \div 0.0909 K/cm \nonumber \\
+      &= 990 W cm^{-3}K^{-1} \nonumber 
+\intertext{and}
+\Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
 \intertext{where:}
-h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
-P_{dz} &= \mbox{power produced in 1cm AHTR slab dz slice [$W$]}\nonumber \\
-A_{coolant} &= \mbox{cross-sectional coolant area in AHTR slab [$cm^2$]} \nonumber \\
+h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+P_{dz} &= \mbox{power produced in 1cm AHTR slab $\Delta z$ slice [$W/cm$]}\nonumber \\
+V_{coolant} &= \mbox{coolant volume in AHTR slab [$cm^3$]} \nonumber \\
+\Delta T &= \mbox{temperature change across 1cm AHTR slab $\Delta z$ slice [$K$]}\\
 T_{total} &= \mbox{total temperature change from inlet to outlet [$K$]} \nonumber \\
-H &= \mbox{AHTR height from inlet to outlet [$cm$]} \nonumber 
+H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
 \end{align}
 In the ROLLO optimization simulations, I vary the FliBE coolant channel shape. 
-During the shape variation, I hold the coolant area constant. 
-Therefore, the Moltres temperature model holds the heat transfer coefficient ($h$)
-constant for all the simulations.
+During the shape variation, I hold the coolant volume constant. 
+Since the coolant volume is held constant through the coolant channel 
+optimization process, I use the same heat transfer coefficient ($h$)
+for all the AHTR Moltres temperature models of varying coolant channel shapes.  
 
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
@@ -654,7 +657,7 @@ In this section, I compare the following key neutronics parameters: effective mu
 factor, reactivity coefficients, flux distribution, and neutron energy spectrum for the 
 \gls{AHTR} plank model. 
 
-\subsubsection{Effective Multiplication Factor}
+\subsubsection{AHTR Plank: Effective Multiplication Factor}
 Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor 
 for OpenMC simulation with TRISO fidelity, OpenMC simulation using the homogenized 
 group constants, and Moltres simulation using the homogenized group constants. 
@@ -689,7 +692,7 @@ The diffusion coefficients for this reactor type are approximately 1cm.
 The FliBE coolant channel has a 0.35cm width which is smaller than the diffusion
 coefficient, resulting in poor approximations. 
 
-\subsubsection{Reactivity Coefficients}
+\subsubsection{AHTR Plank: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without DNPs. 
 The  $\beta{eff}$ values from OpenMC and Moltres show excellent 
@@ -734,7 +737,7 @@ agreement with a discrepancy of 0.4 pcm/K.
     \end{tabular}
 \end{table}
 
-\subsubsection{Flux Distribution}
+\subsubsection{AHTR Plank: Flux Distribution}
 The $\epsilon_{f,g}$ and $\Sigma_{f,g}$ terms in the Moltres source term (Equation 
 \ref{eq:moltres-source-term}) are provided to Moltres through 
 the group constants generated by neutronics software, OpenMC.
@@ -763,7 +766,7 @@ The OpenMC simulation shows higher flux in Group 1, and lower flux in the
 Group 2 and Group 3. 
 However, there is an overall good agreement for each group's flux.  
 
-\subsubsection{Neutron Energy Spectrum}
+\subsubsection{AHTR Plank: Neutron Energy Spectrum}
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum the OpenMC simulation 
 for both 252 and 4 groups, and 4-group Moltres simulation. 
  \begin{figure}[]
@@ -778,6 +781,11 @@ In summary, Moltres replicated the relevant neutronics parameters accurately
 using group constant data from OpenMC for the \gls{AHTR} plank model. 
 
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
+
+\subsubsection{AHTR One-Third Assembly: Effective Multiplication Factor}
+\subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
+\subsubsection{AHTR One-Third Assembly: Flux Distribution}
+\subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
 
 \subsection{AHTR Plank: Mesh Refinement Study}
 
