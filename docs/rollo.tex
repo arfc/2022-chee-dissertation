@@ -5,9 +5,10 @@ In this chapter, I introduce the \gls{ROLLO} framework built
 for this dissertation. 
 \gls{ROLLO} is a Python package that applies evolutionary algorithm 
 techniques to optimize nuclear reactor design. 
-Applying evolutionary algorithms to nuclear design problems is not new, as I
-previously discussed in Section \ref{sec:opt}, and available evolutionary algorithm 
-packages can be customized for reactor design optimization problems. 
+Applying evolutionary algorithms to nuclear design problems is not new, as
+discussed in Section \ref{sec:opt}. 
+Reactor designers have individually customized available evolutionary algorithm 
+packages for their reactor design optimization problems.
 However, the evolutionary algorithm setup is highly customizable with
 an assortment of genetic algorithm designs and operators.
 A reactor designer unfamiliar with evolutionary algorithms will have
@@ -15,15 +16,16 @@ to go through the cumbersome process of customizing a genetic algorithm
 for their needs and determine which operators and hyperparameters work best for 
 their problem. 
 Furthermore, computing fitness values with nuclear software is computationally 
-expensive, necessitating using supercomputers and setting up parallelization 
-for the genetic algorithm.
+xpensive, necessitating using supercomputers. 
+Reactor designers have to set up parallelization to use the genetic algorithm 
+optimization with nuclear software.
 
-Therefore, the motivation behind creating \gls{ROLLO} is to limit these inconveniences and 
+Therefore, the motivation for \gls{ROLLO} is to limit these inconveniences and 
 facilitate using evolutionary algorithms for reactor design optimization.
 \gls{ROLLO} provides a general genetic algorithm framework, sets up 
 parallelization for the user, and promotes usability with an input file 
 that only exposes mandatory parameters.
-\gls{ROLLO} also strives to be effective, flexible, open-source, parallel, reproducible, 
+\gls{ROLLO} strives to be effective, flexible, open-source, parallel, reproducible, 
 and usable. 
 I briefly summarize how \gls{ROLLO} achieves these goals:  
 \begin{itemize}
@@ -94,8 +96,8 @@ the flow chart in Figure \ref{fig:genetic_alg_nuclear}, in which the nuclear
 software evaluates each individual's fitness. 
 
 In the subsequent sections, I describe \gls{ROLLO}'s evolutionary algorithm driver 
-software (DEAP), \gls{ROLLO}'s input file structure, and details about \gls{ROLLO}'s 
-software architecture, methods used to verify \gls{ROLLO}, and \gls{ROLLO}'s stopping 
+software (DEAP), \gls{ROLLO}'s input file structure, \gls{ROLLO}'s software 
+architecture, methods used to verify \gls{ROLLO}, and \gls{ROLLO}'s stopping 
 criteria. 
 
 \section{Evolutionary Algorithm Driver}
@@ -181,7 +183,7 @@ specifies the inherited base class, \texttt{base.fitness}, and the third
 argument indicates the objective fitness ($-1.0$ indicates a minimum objective, 
 $+1.0$ indicates a maximum objective). 
 Line 3 derives an \texttt{Individual} class from the standard Python list type,
-and defines its fitness attribute to be the newly created \texttt{Objective} object. 
+and defines its fitness attribute as the newly created \texttt{Objective} object. 
 Lines 5-9 initialize the \gls{DEAP} toolbox, register 
 \texttt{variable\_1} and \texttt{variable\_2} with their upper and lower bounds, 
 and defines the \texttt{individual\_creator} function to return an 
