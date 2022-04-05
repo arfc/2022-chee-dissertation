@@ -25,7 +25,7 @@ Madicken Munk.
 The three-phase \gls{FHR} benchmark begins with a single fuel assembly 
 simulation without burnup and gradually extends to full core depletion. 
 Table \ref{tab:phases} outlines the complete and incomplete benchmark phases.
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{\acrfull{OECD} \acrfull{NEA} \acrfull{FHR} benchmark Phases 
@@ -59,7 +59,7 @@ Figure \ref{fig:reactor-schematic} shows the \acrfull{AHTR} schematic and a vert
 cut of the reactor vessel. 
 The \gls{AHTR} operates at 3400 MWt thermal power and 1400 MWe 
 electric power \cite{varma_ahtr_2012}. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{reactor-schematic.png} 
     \caption{\acrfull{AHTR} schematic (left) and vessel (right) reproduced from
@@ -78,7 +78,7 @@ The benchmark's phases I and II use room temperature dimensions while phase III
 will address dimensional changes brought about by temperature expansion. 
 Figure \ref{fig:ahtr-fuel-assembly} shows a detailed 2D view of the 
 \gls{AHTR}'s hexagonal fuel assembly. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.9\linewidth]{ahtr-fuel-element.png} 
     \resizebox{0.4\textwidth}{!}{
@@ -118,7 +118,7 @@ Figure \ref{fig:ahtr-fuel-assembly})
 \cite{varma_ahtr_2012,ramey_monte_2018,petrovic_benchmark_2021}.
 For a single fuel assembly, the internal $120^\circ{}$ rotational symmetry is 
 represented by periodic boundary conditions, as seen in Figure \ref{fig:bc}. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.72\linewidth]{bc.png} 
     \begin{tikzpicture}
@@ -134,7 +134,7 @@ represented by periodic boundary conditions, as seen in Figure \ref{fig:bc}.
 
 Figure \ref{fig:ahtr-fuel-plank} magnifies a single fuel plank. 
 Fuel stripes line the upper and lower sides of each graphite fuel plank. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{ahtr-fuel-plank.png} 
     \resizebox{0.4\textwidth}{!}{
@@ -164,7 +164,7 @@ deep in the y-direction, and 5936 particles tall in the z-direction.
 Figure \ref{fig:ahtr-triso} shows the \gls{TRISO} particle's cross section 
 which consists of five layers: oxycarbide fuel kernel, porous carbon buffer, 
 inner pyrolytic carbon, silicon carbide layer, and the outer pyrolitic carbon. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.6\linewidth]{ahtr-triso.png} 
     \caption{\acrlong{AHTR}'s TRISO particle schematic reproduced from 
@@ -179,7 +179,7 @@ or integral (dispersed) option.
 Figure \ref{fig:discrete-poison} shows the discrete option with z-direction axially 
 stacked small spherical $Eu_2O_3$ particles at five XY locations in each 
 fuel plank. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.82\linewidth]{discrete-poison.png}
     \begin{tikzpicture}
@@ -301,7 +301,7 @@ For Phase I-A, the benchmark specifies that each participant must produce a
 steady-state 2D model of one fresh fuel assembly for nine cases
 and report the required results listed in Section \ref{sec:phase1}.  
 Table \ref{tab:phase1a-cases} describes each case. 
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{Description of the \acrlong{FHR} benchmark Phase I-A cases \cite{noauthor_fluoride_nodate}.}
@@ -378,7 +378,7 @@ which each have 32 cores \cite{ncsa_about_2017}.
 To reduce the statistical uncertainty of $k_{eff}$ to $\sim$10pcm, I ran each 
 simulation with 500 active cycles, 100 inactive cycles, and 200000 neutrons. 
 Each simulation took \gls{WCT} ranging from 2 to 5 hours. 
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{\acrlong{UIUC}'s \acrlong{FHR} Benchmark Phase I-A results 
@@ -441,7 +441,7 @@ reduces power.
 \subsubsection{Results: Fission Source Distribution (c)}
 Figure \ref{fig:phase1a-c} shows Cases 1A and 3A's fission source distribution 
 discretized by one-fifth fuel stripe. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.49\linewidth]{p1a_c1a_c.png} 
     \includegraphics[width=0.49\linewidth]{p1a_c3a_c.png} 
@@ -477,7 +477,7 @@ fission distribution trends, but case 6A has a bigger fission source value range
 \subsubsection{Results: Average Neutron Flux (d)}
 Figure \ref{fig:phase1a-d} shows the average neutron flux in the fuel assembly in 
 three coarse energy groups. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{phase1a-d-flux.png} 
     \caption{\acrlong{UIUC} results: \acrlong{FHR} Benchmark's Neutron flux, 
@@ -491,7 +491,7 @@ the thermal group, and the least flux in the fast group.
 \subsubsection{Results: Neutron Flux Distribution (e)}
 Figure \ref{fig:phase1a-e} shows the neutron flux distribution in a 100 $\times$ 
 100 mesh for Cases 1A, 3A, and 6A for three coarse energy groups. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{phase1a-e-c1a.png} 
     \includegraphics[width=\linewidth]{phase1a-e-c3a.png} 
@@ -513,7 +513,7 @@ fast-flux peaking and thermal flux dip in the fuel stripe area.
 
 \subsubsection{Results: Neutron Spectrum (f)}
 Figure \ref{fig:phase1a-f} shows the neutron spectrum for Cases 1A and 6A. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.49\linewidth]{p1a_c1a_f.png} 
     \includegraphics[width=0.49\linewidth]{p1a_c6a_f.png} 
@@ -530,7 +530,7 @@ loading and higher enrichment, respectively.
 \subsection{Results: Phase I-B}
 Figure \ref{fig:phase1b_keff} shows the $k_{eff}$ evolution during depletion 
 for Cases 1B, 4B, and 7B.
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{phase1b_keff.png} 
     \caption{\acrlong{UIUC} results: \acrlong{FHR} Benchmark Phase I-B depletion 
