@@ -347,10 +347,8 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
 \end{figure}
 
 \subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
-I model the variation in coolant channel shape with a sinusoidal-like pattern.
-I use cylinder surfaces in OpenMC, instead of a sinusoidal function. 
-Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a CAD based tool, 
-which is out of scope of the dissertation.
+I model the variation in coolant channel shape with a sinusoidal-like pattern, 
+using OpenMC's cylinder surfaces.
 By varying the radius of the cylinder, the depth and frequency of the coolant channel shape 
 minimics a sinusoidal-like pattern.
 I vary the FliBE coolant channel shape while holding the total coolant area constant. 
@@ -494,8 +492,7 @@ The model first solves for the neutronics and uses that to solve for the \gls{AH
 temperature distribution for a defined power. 
 The temperature model assumes conductive heat transfer throughout the domain 
 and heat removal by uniform salt flow in the coolant region. 
-These assumptions ignore flow and turbulent effects that would most likely be 
-present. 
+These assumptions ignore turbulent effects that would most likely be present. 
 However, an in-depth AHTR Moltres model that includes turbulence model is 
 out of scope for this dissertation. 
 
@@ -547,7 +544,7 @@ G &= \mbox{number of discrete groups, g } [-] \nonumber \\
 \end{align}
 
 Equation \ref{eq:moltres-heat-removal} defines the heat removal from the AHTR 
-fuel slab in the coolant areas: 
+fuel slab in a 1cm coolant volume slice: 
 \begin{align}
     \label{eq:moltres-heat-removal}
     Q &= h \cdot (T(\vec{r})-T_{ref})
@@ -581,7 +578,7 @@ for the 1cm-thick AHTR $\Delta z$ slice with the following assumptions:
 \begin{itemize}
     \item it generates a constant amount of power, all of which is removed 
     by the coolant
-    \item heat removal occurs at the coolant areas
+    \item heat removal occurs in 1cm coolant volume slice
     \item temperature increase per 1cm slice is constant from the inlet to the 
     outlet 
 \end{itemize} 

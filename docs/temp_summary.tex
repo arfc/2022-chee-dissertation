@@ -63,14 +63,15 @@ Table \ref{tab:energy_structures} defines the group boundaries.
     \end{tabular}
 \end{table}
 
-The Moltres AHTR Steady-State Temperature Model first solves for the neutronics 
-in slab and uses that to solve for the temperature distribution in the slab 
-for a defined power. 
+The Moltres AHTR Steady-State Temperature Model is a 2D model of the AHTR slab's 
+x-y cross-section with Figure \ref{fig:straightened_slab_mg}'s geometry. 
+% 3d model with unit thickness 
+The model first solves the slab's neutronics and uses that to solve the slab's 
+temperature distribution for a defined power.
 The temperature model assumes conductive heat transfer throughout the domain 
 and heat removal by uniform salt flow in the coolant region. 
-These assumptions ignore flow and turbulent effects that would most likely be 
-present. 
-However, an in-depth AHTR Moltres model that includes turbulence model is 
+These assumptions ignore turbulent effects that would most likely be present. 
+However, an in-depth AHTR Moltres model that includes turbulence modeling is 
 out of scope for this dissertation. 
 
 Equation \ref{eq:moltres-temp} describes Moltres' governing equation for temperature
@@ -100,18 +101,18 @@ Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source ter
     \Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [\frac{1}{cm}] \nonumber \\
     \phi_g &= \mbox{flux of neutrons in group g } [\frac{n}{cm^2s}]\nonumber
     \end{align}
-The heat removal from the AHTR fuel slab in the coolant areas: 
+The heat removal from the AHTR fuel slab:
 \begin{align}
-    Q &= h \cdot (T(\vec{r})-T_{ref})
+    Q &= h \cdot A \cdot(T(\vec{r})-T_{ref})
 \intertext{where:}
 Q &= \mbox{heat removal rate for 1cm thin slice of AHTR slab [W/cm]} \nonumber \\
-h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
+h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+A &= \mbox{coolant area } [cm^2] \nonumber \\
 T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
 T_{ref} &= \mbox{reference temperature [K]} \nonumber
 \end{align}
-Table \ref{tab:heat-exchanger-constants} shows the values used for 
-reference temperature and heat transfer coefficient for the convective 
-heat transfer process.
+Table \ref{tab:heat-exchanger-constants} shows reference temperature and heat 
+transfer coefficient values for the convective heat transfer process.
 \begin{table}[H]
     \centering
     \onehalfspacing
@@ -127,24 +128,25 @@ heat transfer process.
     \hline
     \end{tabular}
 \end{table} 
-I calculated the heat transfer coefficient ($h$) using Equation \ref{eq:calc-htc} 
-for the 1cm-thick AHTR $\Delta z$ slice with the following assumptions: 
+I calculated the heat transfer coefficient ($h$) using Equation \ref{eq:calc-htc}
+with the following assumptions: 
 \begin{itemize}
-    \item it generates a constant amount of power, all of which is removed 
+    \item slab generates a constant amount of power, all of which is removed 
     by the coolant
-    \item heat removal occurs at the coolant areas
-    \item temperature increase per 1cm slice is constant from the inlet to the 
-    outlet 
+    \item linear increase in temperature from inlet to outlet 
 \end{itemize} 
 \begin{align}
     \label{eq:calc-htc}
-    h &= \frac{P_{dz}}{A_{coolant}} \div \frac{T_{total}}{H} \\
-      &= \frac{1456 W}{23.1cm \times 0.5cm \times 2} / (50 K / 550 cm) \nonumber \\
-      &= 990 W cm^{-1}K^{-1} \nonumber 
+    h &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
+      &= \frac{1456 W/cm}{23.1cm \times 0.35cm \times 1cm \times 2} \div 0.0909 K/cm \nonumber \\
+      &= 990 W cm^{-3}K^{-1} \nonumber 
+\intertext{and}
+\Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
 \intertext{where:}
-h &= \mbox{heat transfer coefficient } [\frac{W}{cm \cdot K}] \nonumber \\
-P_{dz} &= \mbox{power produced in 1cm AHTR slab $\Delta z$ slice [$W$]}\nonumber \\
-A_{coolant} &= \mbox{cross-sectional coolant area in AHTR slab [$cm^2$]} \nonumber \\
+h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+P_{dz} &= \mbox{power produced in 1cm AHTR slab $\Delta z$ slice [$W/cm$]}\nonumber \\
+V_{coolant} &= \mbox{coolant volume in AHTR slab [$cm^3$]} \nonumber \\
+\Delta T &= \mbox{temperature change across 1cm AHTR slab $\Delta z$ slice [$K$]}\\
 T_{total} &= \mbox{total temperature change from inlet to outlet [$K$]} \nonumber \\
 H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
 \end{align}
@@ -171,19 +173,17 @@ slab while keeping the same overall packing fraction as the FHR benchmark.
 
 \section{FliBE Coolant Channel Shape Variation}
 In the ROLLO optimization simulations, I vary the FliBE coolant channel shape 
-while holding the total coolant area constant.  
+while holding the total coolant volume constant.  
 Figure \ref{fig:ahtr-coolant-shape-variation-3} shows an example of how I will 
 vary the coolant channel's shape. 
-I will model the coolant channel's sinusoidal-like pattern using cylinder 
-surfaces in OpenMC, instead of a sinusoidal function. 
-Creating complicated sinusoidal shapes in OpenMC requires the use of DAGMC, a 
-CAD based tool, which is out of scope of the dissertation.
-By varying the radius of the cylinder, the depth and frequency of sinusoidal-like 
-pattern.
+I model the variation in coolant channel shape with a sinusoidal-like pattern, 
+using OpenMC's cylinder surfaces.
+Varying the radius of the cylinder results in the depth and frequency of the coolant 
+channel shape minimicing a sinusoidal pattern.
 I calculated the heat transfer coefficient for the Moltres AHTR temperature model 
 (Equation \ref{eq:calc-htc}) with the assumption that the slab generates a 
-constant amount of power and the heat removal occurs over the coolant areas.
-Since the total coolant area is held constant through the coolant channel 
+constant amount of power and coolant removes all the heat.
+Since the coolant volume is held constant through the coolant channel 
 optimization process, I use the same heat transfer coefficient ($h$)
 for all the AHTR Moltres temperature models of varying coolant channel shapes.   
 \begin{figure}[H]
