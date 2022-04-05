@@ -39,7 +39,7 @@ channel shapes impact reactor performance.
 I selected three key \gls{AHTR} optimization objectives that address contrasting reactor 
 core qualities. 
 Table \ref{tab:objectives} describes each objective, how I quantified them, and the motivation.
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} optimization problem objectives with their quantification 
@@ -88,7 +88,7 @@ The original slanted \gls{AHTR} geometry will be used for the complex one-third 
 optimization setup. 
 Figure \ref{fig:straightened_plank} illustrates the straightened fuel plank with 
 ten fuel cells with random \gls{TRISO} packing.
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.85\linewidth]{straightened_plank.png}
     \begin{tikzpicture}
@@ -123,7 +123,7 @@ The \gls{TRISO} particle dimensions remain the same.
 Table \ref{tab:keff_triso} reports OpenMC's reported $k_{eff}$ for this original 
 straightened \gls{AHTR} configuration with and without the outer layer \gls{TRISO} 
 homogenization.
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{Straightened \acrfull{AHTR} fuel plank $k_{eff}$ for case with 
@@ -153,7 +153,7 @@ Each graphite fuel plank has graphite buffers and ten rectangular prism fuel cel
 with random TRISO packing and individually controlled packing fraction. 
 Figure \ref{fig:ahtr_assembly} shows the one-third \gls{AHTR} assembly with 10 x 6 fuel cells with 
 random \gls{TRISO} packing.
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \begin{subfigure}{.7\textwidth}
     \includegraphics[width=\linewidth]{ahtr_assembly.png}
@@ -203,7 +203,7 @@ output and constraint values.
 The \gls{AHTR} modeling workflow falls within the \textit{evaluate population} orange blocks 
 in Figure \ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
 Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \begin{tikzpicture}[node distance=0.5cm]
         \tikzstyle{every node}=[font=\footnotesize]
@@ -284,7 +284,7 @@ results in the following packing fractions for the ten cells: 0.103, 0.120,
 Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
 the packing fraction at the respective midpoints, and displays the plank's x-y 
 axis view with packing fraction varying based on this sine distribution. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{triso_distribution_sine.png}} 
     \caption{Above: Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} particle 
@@ -322,7 +322,7 @@ fraction distribution of $PF(x, y) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right)
 distribution shown in Figure \ref{fig:ahtr-assem-triso-distr-squares}.
 This corresponds to the one-third assembly with varying TRISO distribution in its fuel 
 cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\linewidth]{ahtr-assem-triso-distr-squares.png}
@@ -357,7 +357,7 @@ For the \gls{AHTR} plank, $radius_{top}$ and $radius_{bot}$ variables control th
 shape on the bottom and top FliBe channels. 
 Figure \ref{fig:coolant-channel-shape} shows the \gls{AHTR} plank's coolant channel shape 
 for $radius_{top} = 0.2$ and $radius_{bot} = 0.3$.
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
         \includegraphics[width=\linewidth]{coolant-channel-shape.png}
     \raggedright
@@ -418,7 +418,7 @@ For both the \gls{AHTR} plank and one-third assembly models, I used eight precur
 and a four group energy structure derived by Gentry et al. \cite{gentry_development_2016} 
 for \gls{AHTR} geometries. 
 Table \ref{tab:energy_structures} defines the group boundaries. 
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{4-group energy structures for \acrfull{AHTR} geometry 
@@ -446,7 +446,7 @@ I discretized the plank into 13 \textit{cells}: FLiBe, left graphite, right
 graphite, and ten fuel cells (each cell has a different packing fraction).
 Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} spatial 
 homogenization for the OpenMC multigroup calculation. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{straightened_slab_mg.png}
     \raggedright
@@ -514,7 +514,7 @@ I use insulated temperature boundary conditions.
 Table \ref{tab:ahtr-thermal-conducitivity} shows the thermal conductivity values 
 used for each AHTR slab material. 
 % add citations
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{AHTR Fuel Slab materials' thermal conductivity.}
@@ -559,7 +559,7 @@ T_{ref} &= \mbox{reference temperature [K]} \nonumber
 
 Table \ref{tab:heat-exchanger-constants} shows reference temperature and heat 
 transfer coefficient values for the convective heat transfer process.
-\begin{table}[H]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{AHTR Fuel Slab's heat transfer constants.}
@@ -664,7 +664,7 @@ group constants, and Moltres simulation using the homogenized group constants.
 I included results from a homogenized OpenMC simulation as well to 
 distinguish between differences caused by spatial homogenization, and differing 
 OpenMC and Moltres normalization and solving methods. 
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{AHTR Fuel Slab's $k_{eff}$ values from OpenMC and Moltres at 948K.
@@ -697,7 +697,7 @@ Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the
 normalized difference between $k_{eff}$ values with and without DNPs. 
 The  $\beta{eff}$ values from OpenMC and Moltres show excellent 
 agreement with a discrepancy of 0.1pcm. 
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{AHTR Fuel Slab's $\beta_{eff}$ values from OpenMC and Moltres at 948K.}
@@ -719,7 +719,7 @@ Temperature reactivity feedback arises mainly from Doppler broadening of
 resonance absorption peaks and thermal expansion.
 The total temperature coefficients from OpenMC and Moltres show good 
 agreement with a discrepancy of 0.4 pcm/K.
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{AHTR Fuel Slab's total reactivity coefficient values calculated from 
@@ -748,7 +748,7 @@ ensuring that temperature distribution is accurately calculated in Moltres.
 
 Figure \ref{fig:flux_948K} shows the 4-group flux distributions for OpenMC and 
 Moltres. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.48\linewidth]{flux_group1_948K.png} 
     \includegraphics[width=0.48\linewidth]{flux_group2_948K.png} 
@@ -769,7 +769,7 @@ However, there is an overall good agreement for each group's flux.
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum the OpenMC simulation 
 for both 252 and 4 groups, and 4-group Moltres simulation. 
- \begin{figure}[]
+ \begin{figure}[htb!]
     \centering
     \includegraphics[width=\linewidth]{neutron_spectrum_948K.png}
     \caption{AHTR fuel slab's neutron spectrum.}  
@@ -781,6 +781,9 @@ In summary, Moltres replicated the relevant neutronics parameters accurately
 using group constant data from OpenMC for the \gls{AHTR} plank model. 
 
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
+In this section, I compare the following key neutronics parameters: effective multiplication 
+factor, reactivity coefficients, flux distribution, and neutron energy spectrum for the 
+\gls{AHTR} one-third assembly model. 
 
 \subsubsection{AHTR One-Third Assembly: Effective Multiplication Factor}
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
@@ -810,7 +813,7 @@ group constant data with all four temperatures.
 Table \ref{tab:moltres-group-constant-temps} also shows the 2-norm of the 
 centerline temperature difference between the AHTR slab model with all four temperatures 
 and each single temperature. 
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{AHTR slab's average and maximum temperature and 2-norm of temperature 

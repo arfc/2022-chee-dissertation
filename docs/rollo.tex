@@ -56,7 +56,7 @@ I modified Figure \ref{fig:genetic_alg} to produce Figure
 thermal-hydraulics software fit within \gls{ROLLO}'s evolutionary algorithm 
 optimization process. 
 % need to update with new algorithm style
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \begin{tikzpicture}[node distance=1.7cm]
             \tikzstyle{every node}=[font=\small]
@@ -143,7 +143,7 @@ unchanged \cite{fortin_deap_2012}.
 
 Figure \ref{fig:deap-code} illustrates \gls{DEAP}'s usage of the \textit{creator} and
 \textit{toolbox} modules. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -231,7 +231,7 @@ In this simulation, \gls{ROLLO} uses a genetic algorithm with the user-defined
 hyperparameters to minimize the \texttt{output1} parameter, which is 
 calculated using the OpenMC evaluator that accepts input parameters: 
 \texttt{variable1} and \texttt{variable2}. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -306,7 +306,7 @@ For each evaluator, mandatory parameters are \texttt{order}, \texttt{input\_scri
 \texttt{execute} and \texttt{output\_script}. 
 Table \ref{tab:evaluator-inputs} describes the mandatory and optional parameters 
 accepted by each evaluator in the ROLLO \texttt{evaluators}' input file section.  
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} \texttt{evaluator}: Input Parameter Descriptions.}
@@ -349,7 +349,7 @@ Figure \ref{fig:openmcinp.py} shows the template and templated openmc script;
 once the \texttt{openmc\_inp.py} \texttt{input\_script} is templated, 
 \texttt{\{\{variable1\}\}} and \texttt{\{\{variable2\}\}}  on Lines 3 and 4 will be 
 replaced with values selected by the \gls{ROLLO} genetic algorithm. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \begin{minipage}{0.4\textwidth}
         \centering
     \begin{minted}[
@@ -425,7 +425,7 @@ Lines 17 to 31 in the example \gls{ROLLO} input file (Figure \ref{fig:rollo-inpu
 demonstrate \texttt{algorithm} specifications. 
 Table \ref{tab:algorithm-inputs} describes the input parameters accepted by
 ROLLO's \texttt{algorithm} input file section.  
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} \texttt{algorithm}: Input Parameter Descriptions.}
@@ -476,7 +476,7 @@ of their required hyperparameters.
 Table \ref{tab:deap_operators} shows the available operators and their respective 
 hyperparameters. 
 Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{Selection, mutation, and mating operators available in 
@@ -502,7 +502,7 @@ In this section, I will describe the \gls{ROLLO} v1.0 software architecture and
 how all the parts come together to optimize reactor design.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
 and describes each class's purpose.
-\begin{table}[]
+\begin{table}[htb!]
     \centering
     \onehalfspacing
     \caption{Classes that make up the \gls{ROLLO} architecture. }
@@ -555,7 +555,7 @@ and describes each class's purpose.
     \end{tabular}
     \end{table}
 Figure \ref{fig:rollo_archi} depicts the \gls{ROLLO} software architecture. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \begin{tikzpicture}[node distance=0.5cm]
         \tikzstyle{every node}=[font=\footnotesize]
@@ -672,7 +672,7 @@ variables and runs the nuclear software.
 function calls for the different reactor models by backgrounding each command.
 For example, a ROLLO simulation with a population size of 2 has a combined command that
 looks like this:
-\begin{figure}[H]
+\begin{figure}[htb!]
     \centering
     \begin{minipage}{0.5\textwidth}
     \begin{minted}[
@@ -739,7 +739,7 @@ The recommended variable values are $a=20$, $b=0.2$, and $c=2\pi$
 \cite{sfu_ackley_nodate}. 
 The Ackley function's global minimum point is $f(0,0) = 0$. 
 Figure \ref{fig:ackley} shows the resulting two-variable Ackley function.
-\begin{figure}[H]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.65\linewidth]{figures/ackley.png} 
     \caption{Two variable Ackley function \cite{sfu_ackley_nodate}.}
@@ -767,7 +767,7 @@ The Binh and Korn function \cite{binh_mobes_1997} is a two-objective function:
 \end{align}
 We use it as a performance test for multiobjective optimization.
 Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto front.
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.7\linewidth]{binh-paretofront.png} 
     \caption{Pareto front of the Binh and Korn test function, taken from 
@@ -783,7 +783,7 @@ minimized \cite{deb_multi-objective_2001}.
 For a two-dimensional problem, Figure \ref{fig:pareto_hypervolume} illustrates the 
 hypervolume enclosed by the non-dominated solutions (A, B, C, D, E) and reference 
 point, W, in the hatched region. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.7\linewidth]{pareto-hypervolume.png} 
     \caption{Example hypervolume enclosed by non-dominated solutions, taken from 
@@ -805,7 +805,7 @@ Figure \ref{fig:verification-sphere} shows the ROLLO input file for this verific
 problem. 
 In the input file, I vary the radius between 1.0 and 8.0cm, with the objective of 
 minimizing the radius while constraining the problem to have $k_{eff} >= 1.0$.
-\begin{figure}[H]
+\begin{figure}[htb!]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -839,7 +839,7 @@ minimizing the radius while constraining the problem to have $k_{eff} >= 1.0$.
 \pagebreak
 Figure \ref{fig:critical_sphere.py} shows the OpenMC template used in the 
 \gls{ROLLO} simulation. 
-\begin{figure}[]
+\begin{figure}[htb!]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -887,7 +887,7 @@ generations.
 They demonstrate how the average radius and $k_{eff}$ converge
 towards the critical radius while keeping $k_{eff} > 1$ with improvements from 
 each generation.
-\begin{figure}[]
+\begin{figure}[htb!]
     \centering
     \begin{subfigure}{\textwidth}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{verification-radius.png}} 
