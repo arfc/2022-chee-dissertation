@@ -1,14 +1,14 @@
 \chapter{ROLLO: Reactor evOLutionary aLgorithm Optimizer}
 \label{chap:rollo}
 % need a nice rollo v1.0 citation
-In this chapter, I introduce the \gls{ROLLO} framework, built 
+In this chapter, I introduce the \gls{ROLLO} framework built 
 for this dissertation. 
 \gls{ROLLO} is a Python package that applies evolutionary algorithm 
 techniques to optimize nuclear reactor design. 
 Applying evolutionary algorithms to nuclear design problems is not new, as I
 previously discussed in Section \ref{sec:opt}, and available evolutionary algorithm 
 packages can be customized for reactor design optimization problems. 
-However, evolutionary algorithm setup is highly customizable with
+However, the evolutionary algorithm setup is highly customizable with
 an assortment of genetic algorithm designs and operators.
 A reactor designer unfamiliar with evolutionary algorithms will have
 to go through the cumbersome process of customizing a genetic algorithm 
@@ -100,10 +100,10 @@ criteria.
 
 \section{Evolutionary Algorithm Driver}
 Evolutionary algorithm computation uses sophisticated, diverse techniques 
-and mechanisms, resulting in even the most well-designed, software frameworks 
+and mechanisms, resulting in even the most well-designed software frameworks 
 being complicated under the hood. 
 Utilizing an existing evolutionary algorithm framework presents implementation 
-challenges as the user must edit the framework's source code to customize for their 
+challenges as the user must edit the framework's source code to customize it for their 
 application and hyperparameters \cite{fortin_deap_2012}. 
 Therefore, a computation framework that gives the user the capability to build 
 custom evolutionary algorithms is ideal for this project.
@@ -126,17 +126,17 @@ user to customize a specialized algorithm to fit their project \cite{fortin_deap
 \gls{DEAP} is composed of two simples structures: a \textit{creator} and a 
 \textit{toolbox}.  
 The \textit{creator} module allows the run-time creation of classes via 
-inheritance and composition, enabling individual and population creation from 
+inheritance and composition, enabling individual and population creation 
 from any data structure: lists, sets, dictionaries, trees, etc \cite{fortin_deap_2012}. 
 The \textit{toolbox} is a container that the user manually populates.
 In the \textit{toolbox}, the user defines the selection, crossover, and 
-mutation operator types and hyperparameters. 
+mutation operator types and their respective hyperparameters.
 For example, the user registers a crossover operator under the `mate'
-alias, and a selection operator under the `select' alias. 
+alias and a selection operator under the `select' alias. 
 Then, the evolutionary algorithm uses these aliased operators from the 
 \textit{toolbox}. 
-If the user wants to change the crossover operator, they would update the 
-`mate' alias in the \textit{toolbox}, while keeping the evolutionary algorithm 
+If the user wants to change the crossover operator, they update the 
+`mate' alias in the \textit{toolbox} while keeping the evolutionary algorithm 
 unchanged \cite{fortin_deap_2012}. 
 
 Figure \ref{fig:deap-code} illustrates \gls{DEAP}'s usage of the \textit{creator} and
@@ -185,8 +185,8 @@ and defines its fitness attribute to be the newly created \texttt{Objective} obj
 Lines 5-9 initialize the \gls{DEAP} toolbox, register 
 \texttt{variable\_1} and \texttt{variable\_2} with their upper and lower bounds, 
 and defines the \texttt{individual\_creator} function to return an 
-\texttt{Individual} initialized with \texttt{variable\_1}, and \texttt{variable\_2}. 
-Lines 10-11 and 14-17 are aliases for initializing individuals and population, 
+\texttt{Individual} initialized with \texttt{variable\_1} and \texttt{variable\_2}. 
+Lines 10-11 and 14-17 are aliases for initializing individuals and populations, 
 specifying variation operators (\texttt{select}, \texttt{mutate}, \texttt{mate}), 
 and evaluating individual fitness (\texttt{evaluate}) \cite{fortin_deap_2012}. 
 Lines 12-13 define the evaluation function that returns the fitness values. 
@@ -204,7 +204,7 @@ The high-level examples use the built-in \gls{DEAP} genetic algorithms,
 whereas the low-level example completely unpacks the genetic algorithm to expose 
 a generational loop. 
 
-I included a completely unpacked genetic algorithm in ROLLO's 
+I included an unpacked genetic algorithm in ROLLO's 
 \textbf{\textit{Algorithm}} class, depicted in Figure \ref{fig:genetic_alg_nuclear}. 
 The algorithm begins by initializing the starting population and evaluating 
 each individual's fitness value. 
@@ -216,9 +216,9 @@ to select the best individuals to create the new population.
 Finally, the constraints are applied, and the results are saved.
 
 Applying the selection operator to the combined previous and offspring 
-populations expands the population ensuring the effectiveness of 
+populations expands the population, ensuring the effectiveness of 
 elitism selection operators, such as NSGA-II, which work well 
-for multi-objective optimization. 
+for multiobjective optimization. 
 
 \section{ROLLO Input File}
 \gls{ROLLO}'s input file is in JSON format. 
@@ -226,7 +226,7 @@ There are four sections that the user must define: \\ \texttt{control\_variables
 \texttt{evaluators}, \texttt{constraints}, and \texttt{algorithm}. 
 Figure \ref{fig:rollo-input} shows an example \gls{ROLLO} input file. 
 In this simulation, \gls{ROLLO} uses a genetic algorithm with the user-defined 
-hyperparameters to minimize the \texttt{output1} parameter which is 
+hyperparameters to minimize the \texttt{output1} parameter, which is 
 calculated using the OpenMC evaluator that accepts input parameters: 
 \texttt{variable1} and \texttt{variable2}. 
 \begin{figure}[]
@@ -297,13 +297,13 @@ Evaluators are the nuclear software \gls{ROLLO} utilizes to calculate objective 
 \gls{ROLLO} is nuclear code-agnostic and does not have dependencies on any 
 nuclear software.
 Thus, it is up to the user to ensure that the nuclear software and their corresponding 
-executables are properly installed. 
+executables are correctly installed. 
 In a single \gls{ROLLO} input file, users may define any number of evaluators. 
 For each evaluator, mandatory parameters are \texttt{order}, \texttt{input\_script}, 
 \texttt{inputs}, and \texttt{outputs}, and the optional parameters are
 \texttt{execute} and \texttt{output\_script}. 
 Table \ref{tab:evaluator-inputs} describes the mandatory and optional parameters 
-accepted by each evaluator in ROLLO's \texttt{evaluators} input file section.  
+accepted by each evaluator in the ROLLO \texttt{evaluators}' input file section.  
 \begin{table}[]
     \centering
     \onehalfspacing
@@ -317,7 +317,7 @@ accepted by each evaluator in ROLLO's \texttt{evaluators} input file section.
     \multirow{9}{2cm}{Mandatory Parameters} & \texttt{order} & int 
     & evaluator's operational order compared to other evaluators (indexed by 0) \\
     \cline{2-4}
-    & \texttt{inputs} & list of strings & control variables placed in input script template \\
+    & \texttt{inputs} & list of strings & control variables placed in the input script template \\
     \cline{2-4}
     & \texttt{input\_script} & list of strings (2-element) & first element: executable to run input script, 
     second element: input script template's name \\
@@ -407,11 +407,11 @@ and \texttt{constrained\_val}s as in Line 17 of the \gls{ROLLO} input file
 (Figure \ref{fig:rollo-input}). 
 Thus, for this \gls{ROLLO} simulation, \texttt{output\_1} is constrained to be 
 $>= 1.0$ and $< 1.5$. 
-For example, in reactor design, a constraint might be maximum temperature in the 
+For example, for reactor safety, a constraint might be the maximum temperature in the 
 core.
 
 \subsection{Algorithm}
-In the algorithm section, users define the simulation's general settings and 
+In the algorithm section, users define the simulation's general settings and the
 genetic algorithm's hyperparameters. 
 The mandatory input parameters include \texttt{optimized\_variable}, \texttt{objective},
 \texttt{pop\_size}, and \texttt{generations}.
@@ -463,8 +463,8 @@ ROLLO's \texttt{algorithm} input file section.
     \end{tabular}
     \end{table}
 %%% UPDATE THIS: perhaps put hyperparameter studies in appendix? 
-The hyperparameter default values are selected based on hyperparmater studies conducted for a 
-single objective \gls{FHR} optimization. 
+The hyperparameter default values are selected based on hyperparameter studies conducted 
+for a single objective \gls{FHR} optimization. 
 
 As mentioned previously in Section \ref{sec:genetic_alg}, it is important to 
 select genetic algorithm hyperparameters that balance the extent of exploration 
@@ -491,7 +491,7 @@ Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
     && \texttt{indpb}: independent probability for each attribute to be mutated\\ \hline
     \multirow{3}{1cm}{Mating} & \texttt{cxOnePoint} & -\\ \cline{2-3}
     & \texttt{cxUniform} & \texttt{indpb}: independent probability for each attribute to be exchanged\\ \cline{2-3}
-    & \texttt{cxBlend} & \texttt{alpha}: Extent of the interval in which the new values can be drawn for each attribute on both side of the parents’ attributes\\ \hline
+    & \texttt{cxBlend} & \texttt{alpha}: Extent of the interval in which the new values can be drawn for each attribute on both sides of the parents’ attributes\\ \hline
     \end{tabular}
     \end{table}
 
@@ -518,7 +518,7 @@ and describes each class's purpose.
     \ref{sec:deap-works}) requires an evaluation function to evaluate each 
     individual's fitness values. 
     The \textbf{\textit{Evaluation}} class contains a method that creates an evaluation 
-    function that runs the nuclear software and returns the required fitness values, 
+    function that runs the nuclear software and returns the required fitness values
     defined in the input file. \\
     \hline 
     \textbf{\textit{ToolboxGenerator}} & The \textbf{\textit{ToolboxGenerator}} class initializes
@@ -608,7 +608,7 @@ Finally, the \textbf{\textit{Executor}} class uses a method in the
 \textbf{\textit{Algorithm}} object to run a general genetic algorithm with 
 hyperparameters from the \gls{DEAP} toolbox, apply constraints defined in the 
 \textbf{\textit{Constraints}} object, and calculate objective functions using 
-the evaluation function created by the \textbf{\textit{Evaluation}} object, all 
+the evaluation function created by the \textbf{\textit{Evaluation}} object; all 
 the while saving the results using the \textbf{\textit{BackEnd}} class. 
 
 In the \gls{ROLLO} Github repository \cite{chee_rollo_2021}, I include a tests 
@@ -629,7 +629,7 @@ scripts in a directory.
 When running \gls{ROLLO} from the command line, there is one mandatory argument and 
 two optional arguments. 
 The mandatory argument is the input file (\texttt{-i}). 
-The optional argument is the checkpoint file (\texttt{-c}), and verbrose 
+The optional arguments are the checkpoint file (\texttt{-c}) and verbose 
 output flag (\texttt{-v}).  
 Thus, the structure of a command line input for running \gls{ROLLO} is: 
 
@@ -646,7 +646,7 @@ to restart the code from the most recent population and continue the simulation.
 \gls{ROLLO} has a serial run mode and two modes for parallelization. 
 The serial run mode utilizes a map() function to run the nuclear software for each 
 reactor model.
-The map function accepts a function and iterable, and returns a map object of the results 
+The map function accepts a function and iterable and returns a map object of the results 
 by applying the given function to each item of the iterable. 
 In \gls{ROLLO}, the given function is generated by the \textbf{\textit{Evaluation}} class 
 that accepts the reactor model's control variables and runs the nuclear software;
@@ -659,7 +659,7 @@ This \textit{multiprocessing} mode is useful for parallelizing runs on a local m
 a single node on a computer cluster. 
 However, it is unable to parallelize across distributed memory systems.
 
-The second parallel mode, \texttt{job\_control}, utilizes unix systems job control 
+The second parallel mode, \texttt{job\_control}, utilizes the Unix system's job control 
 features to give users more flexibility with parallelization setup, enabling 
 parallelizing across distributed memory systems such as clusters and supercomputers. 
 This method does not utilize the map() function. 
@@ -690,15 +690,15 @@ looks like this:
     \caption{Example combined bash command generated by \gls{ROLLO}'s parallel mode \texttt{job\_control}.}
     \label{fig:job-control-example}
 \end{figure}
-Users define each individual command in ROLLO's input file, thus, the \texttt{job\_control} mode enables more 
+Users define each individual command in ROLLO's input file; thus, the \texttt{job\_control} mode enables more 
 control over the parallelization settings of each individual command. 
-Many nuclear softwares, such as OpenMC and MOOSE, use \gls{MPI} or OpenMP to parallelize their runs. 
+Many nuclear software, such as OpenMC and MOOSE, use \gls{MPI} or OpenMP to parallelize their runs. 
 With control over each individual command, users can continue to utilize the parallel 
 versions of the nuclear software, thus, having two layers of parallelization. 
-The first layer being the individual software runs' parallelization, and the second layer being ROLLO's parallelization. 
-For example, running four reactor models using ROLLO across 16 nodes on a cluster, and assigning each reactor model to run
-in parallel across four nodes. 
-In-depth details about parallelization setup can be found in the \gls{ROLLO} documentation
+The first layer is the individual software runs' parallelization, and the second layer is ROLLO's parallelization. 
+For example, running four reactor models using ROLLO across 16 nodes on a cluster and assigning each reactor 
+model to run in parallel across four nodes. 
+In-depth details about the parallelization setup can be found in the \gls{ROLLO} documentation
  \cite{chee_documentation_2021}.
 
 \subsection{ROLLO Results Analysis}
@@ -721,7 +721,7 @@ the genetic algorithm's third generation will be named:
 
 \section{ROLLO Verification}
 To verify \gls{ROLLO}'s optimization capabilities, I conducted multiple verification 
-studies: commonly used evolutionary algorithm single and multi objective benchmark problems
+studies: commonly used evolutionary algorithm single and multiobjective benchmark problems
 and a nuclear reactor-specific problem. 
 Together, they prove that \gls{ROLLO}'s evolutionary algorithm is correctly implemented 
 and suitable for conducting nuclear reactor optimization problems. 
@@ -735,7 +735,7 @@ for single-objective optimization algorithms \cite{ackley_connectionist_2012}:
 \end{align}
 The recommended variable values are $a=20$, $b=0.2$, and $c=2\pi$
 \cite{sfu_ackley_nodate}. 
-The Ackley function's global optimum point is $f(0,0) = 0$. 
+The Ackley function's global minimum point is $f(0,0) = 0$. 
 Figure \ref{fig:ackley} shows the resulting two-variable Ackley function.
 \begin{figure}[H]
     \centering
@@ -745,10 +745,10 @@ Figure \ref{fig:ackley} shows the resulting two-variable Ackley function.
 \end{figure}
 
 I added an integration test to \gls{ROLLO} that checks that a default \gls{ROLLO} 
-simulation will find the Ackley function's global optimum point. 
+simulation will find the Ackley function's global minimum point. 
 If \gls{ROLLO} performed sub-optimally, it would return one of the Ackley 
 function's many local minimums. 
-\gls{ROLLO} successfully finds the global optimum point, and thus passes the 
+\gls{ROLLO} successfully finds the global minimum point, and thus passes the 
 integration test. 
 
 \subsection{Binh and Korn Function}
@@ -763,8 +763,8 @@ The Binh and Korn function \cite{binh_mobes_1997} is a two-objective function:
         0 \leq x_1 \leq 5, 0 \leq x_2 \leq 3 \nonumber
     \end{cases}
 \end{align}
-We use it as a performance test for multi-objective optimization.
-Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's pareto front.
+We use it as a performance test for multiobjective optimization.
+Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto front.
 \begin{figure}[]
     \centering
     \includegraphics[width=0.7\linewidth]{binh-paretofront.png} 
@@ -772,7 +772,7 @@ Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's pareto fron
     \cite{bassi_statistics_2018}. }
     \label{fig:binh_paretofront}
 \end{figure}
-I use the hypervolume indicator to quantify the pareto front's goodness. 
+I use the hypervolume indicator to quantify the Pareto front's goodness. 
 The hypervolume indicator is one of the most used set-quality indicators for the 
 assessment of stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
 The hypervolume indicator measures the volume (in the objective space) covered by 
@@ -789,12 +789,12 @@ point, W, in the hatched region.
     \label{fig:pareto_hypervolume}
 \end{figure}
 I added an integration test to ROLLO that checks that a ROLLO simulation will 
-find a hypervolume comparable to the ideal pareto front when minimizing the
+find a hypervolume comparable to the ideal Pareto front when minimizing the
 Binh and Korn function. 
 
 \subsection{Pu-239 Critical Bare Sphere}
-To ensure \gls{ROLLO} works correctly while coupled with OpenMC, I run \gls{ROLLO} 
-to find the critical radius for a $^{239}Pu$ bare sphere. 
+To ensure \gls{ROLLO}-OpenMC coupling works, I run a verification problem:
+finding the critical radius for a $^{239}Pu$ bare sphere. 
 The solution to this problem is well studied and available \cite{blanchard_updated_1999}. 
 Blanchard et al reported that with MCNP4b code and ENDF/B-VI data library, the 
 critical mass of a Pu239 bare sphere is 10.00 kg which corresponds to a diameter 
@@ -802,7 +802,7 @@ of 9.9cm \cite{blanchard_updated_1999}.
 Figure \ref{fig:verification-sphere} shows the ROLLO input file for this verification 
 problem. 
 In the input file, I vary the radius between 1.0 and 8.0cm, with the objective of 
-minimizing radius, while constraining the problem to have $k_{eff} >= 1.0$.
+minimizing the radius while constraining the problem to have $k_{eff} >= 1.0$.
 \begin{figure}[H]
     \begin{minted}[
         frame=lines,
@@ -905,7 +905,7 @@ each generation.
 ROLLO's evolutionary algorithm stopping criterion is defined by the
 \texttt{generations} input parameter.  
 Each nuclear reactor model's evaluation is computationally intensive. 
-Users will most likely be constrained by total available compute time. 
+Users will most likely be constrained by the total available compute time. 
 Therefore, rather than setting a results-based stopping criterion, ROLLO enables 
 users to define the \texttt{generations} and \texttt{pop$\_$size} based on the 
 amount of compute time available to them: 
@@ -924,8 +924,8 @@ The complexity of reactor design optimization means that there is no single
 indicator that determines if convergence is met. 
 Instead, ROLLO's purpose is to help the human reactor designer to narrow down 
 the search space. 
-When a ROLLO run is completed, the user plots the objectives convergence and 
-pareto front (for multi-objective simulations) to evaluate if they are confident 
+When a ROLLO run is completed, the user plots the objectives' convergence and 
+Pareto front (for multiobjective simulations) to evaluate if they are confident 
 about the final solution set. 
 If not, the user can easily restart the optimization simulation using the 
 \texttt{checkpoint.pkl} file and run the problem for a few more generations. 
