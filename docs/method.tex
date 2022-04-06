@@ -656,6 +656,26 @@ energy and spatially homogenized Moltres simulation.
 In this section, I compare the following key neutronics parameters: effective multiplication 
 factor, reactivity coefficients, flux distribution, and neutron energy spectrum for the 
 \gls{AHTR} plank model. 
+% Describe geometry
+For this verification study, I used an AHTR plank model with a 0.0979 total packing fraction and 
+packing fraction distribution of $PF(x) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
+The AHTR plank model with TRISO-level fidelity is depicted in Figure \ref{fig:ahtr-plank-verification}. 
+ \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{ahtr-plank-verification.png}
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe Coolant\\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+        \end{tabular}}}
+    \caption{AHTR plank geometry and packing fraction distribution used for AHTR plank's key 
+    neutronics parameters verification.}  
+    \label{fig:ahtr-plank-verification}
+\end{figure}
 
 \subsubsection{AHTR Plank: Effective Multiplication Factor}
 Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor 
@@ -784,6 +804,26 @@ using group constant data from OpenMC for the \gls{AHTR} plank model.
 In this section, I compare the following key neutronics parameters: effective multiplication 
 factor, reactivity coefficients, flux distribution, and neutron energy spectrum for the 
 \gls{AHTR} one-third assembly model. 
+For this verification study, I used an AHTR one-third assembly model with a constant 0.0979 total 
+packing fraction across all fuel cells.  
+The AHTR one-third assembly model with TRISO-level fidelity is depicted in Figure 
+\ref{fig:ahtr-assem-verification}. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{ahtr-plank-verification.png}
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe Coolant\\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+        \end{tabular}}}
+    \caption{AHTR one-third assembly geometry and packing fraction distribution used for AHTR 
+    one-third assembly's key neutronics parameters verification.}  
+    \label{fig:ahtr-assem-verification}
+\end{figure}
 
 \subsubsection{AHTR One-Third Assembly: Effective Multiplication Factor}
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
