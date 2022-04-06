@@ -791,7 +791,8 @@ factor, reactivity coefficients, flux distribution, and neutron energy spectrum 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
 
 \subsection{AHTR Plank: Mesh Refinement Study}
-
+To ensure that the geometry mesh input to the Moltres temperature model is sufficiently converged, 
+I performed a mesh refinement study, outlined in Table \ref{tab:ahtr-plank-mesh-refinement}. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -809,6 +810,7 @@ factor, reactivity coefficients, flux distribution, and neutron energy spectrum 
     \hline
     \end{tabular}
 \end{table}
+I used x3 mesh refinement for all AHTR Plank Moltres temperature models. 
 
 \subsection{AHTR Plank: Group Constant Temperature Study}
 During ROLLO optimization, each new reactor geometry results in the creation of 
