@@ -95,7 +95,7 @@ hyperparameters and operators, and finally runs the genetic algorithm following
 the flow chart in Figure \ref{fig:genetic_alg_nuclear}, in which the nuclear 
 software evaluates each individual's fitness. 
 
-In the subsequent sections, I describe \gls{ROLLO}'s evolutionary algorithm driver 
+The subsequent sections describe \gls{ROLLO}'s evolutionary algorithm driver 
 software (DEAP), \gls{ROLLO}'s input file structure, \gls{ROLLO}'s software 
 architecture, methods used to verify \gls{ROLLO}, and \gls{ROLLO}'s stopping 
 criteria. 
@@ -287,7 +287,7 @@ descriptions for setting up a \gls{ROLLO} input file.
 
 \subsection{Control Variables}
 Control variables are parameters the genetic algorithm will vary. 
-For each control variable, the user must specify its minimum and maximum values.
+The user must specify the minimum and maximum values for each control variable.
 For example, Lines 2 to 5 in Figure \ref{fig:rollo-input} demonstrate that the 
 control variables, \texttt{variable1} and \texttt{variable2}, 
 will be varied from 0 to 10 and -1 to 0, respectively. 
@@ -304,8 +304,8 @@ In a single \gls{ROLLO} input file, users may define any number of evaluators.
 For each evaluator, mandatory parameters are \texttt{order}, \texttt{input\_script}, 
 \texttt{inputs}, and \texttt{outputs}, and the optional parameters are
 \texttt{execute} and \texttt{output\_script}. 
-Table \ref{tab:evaluator-inputs} describes the mandatory and optional parameters 
-accepted by each evaluator in the ROLLO \texttt{evaluators}' input file section.  
+Table \ref{tab:evaluator-inputs} describes each evaluator's mandatory and optional parameters 
+in the \gls{ROLLO} \texttt{evaluators}' input file section.  
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -392,8 +392,8 @@ replaced with values selected by the \gls{ROLLO} genetic algorithm.
 \end{figure}
 
 \gls{ROLLO} uses two methods to return an output variable to the genetic algorithm. 
-First, if the output parameter is also an input parameter, \gls{ROLLO} will automatically 
-return the input parameter's value. 
+First, \gls{ROLLO} will automatically return the input parameter's value if the output 
+parameter is also an input parameter. 
 Second, the user may include an \texttt{output\_script} that returns the desired 
 output parameter. 
 The \texttt{output\_script} must include a line that prints a dictionary containing 
@@ -464,9 +464,9 @@ ROLLO's \texttt{algorithm} input file section.
     \hline 
     \end{tabular}
     \end{table}
-%%% UPDATE THIS: perhaps put hyperparameter studies in appendix? 
 The hyperparameter default values are selected based on hyperparameter studies conducted 
 for a single objective \gls{FHR} optimization. 
+Section \ref{sec:hyperparameter-studies} describe the hyperparameter studies. 
 
 As mentioned previously in Section \ref{sec:genetic_alg}, it is important to 
 select genetic algorithm hyperparameters that balance the extent of exploration 
@@ -493,12 +493,12 @@ Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
     && \texttt{indpb}: independent probability for each attribute to be mutated\\ \hline
     \multirow{3}{1cm}{Mating} & \texttt{cxOnePoint} & -\\ \cline{2-3}
     & \texttt{cxUniform} & \texttt{indpb}: independent probability for each attribute to be exchanged\\ \cline{2-3}
-    & \texttt{cxBlend} & \texttt{alpha}: Extent of the interval in which the new values can be drawn for each attribute on both sides of the parents’ attributes\\ \hline
+    & \texttt{cxBlend} & \texttt{alpha}: Extent of the interval that the new values can be drawn for each attribute on both sides of the parents’ attributes\\ \hline
     \end{tabular}
     \end{table}
 
 \section{ROLLO Software Architecture}
-In this section, I will describe the \gls{ROLLO} v1.0 software architecture and 
+This section will describe the \gls{ROLLO} v1.0 software architecture and 
 how all the parts come together to optimize reactor design.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
 and describes each class's purpose.
@@ -607,11 +607,12 @@ Next, the \textbf{\textit{Executor}} initializes an \textbf{\textit{Algorithm}}
 object that accepts the initialized \gls{DEAP} toolbox and \textbf{\textit{Constraints}} 
 object. 
 Finally, the \textbf{\textit{Executor}} class uses a method in the 
-\textbf{\textit{Algorithm}} object to run a general genetic algorithm with 
-hyperparameters from the \gls{DEAP} toolbox, apply constraints defined in the 
-\textbf{\textit{Constraints}} object, and calculate objective functions using 
-the evaluation function created by the \textbf{\textit{Evaluation}} object; all 
-the while saving the results using the \textbf{\textit{BackEnd}} class. 
+\textbf{\textit{Algorithm}} object to run a general genetic algorithm. 
+The \textbf{\textit{Executor}} class uses the hyperparameters from the \gls{DEAP} 
+toolbox, applies constraints defined in the \textbf{\textit{Constraints}} object, 
+and calculates objective functions using the evaluation function created by the 
+\textbf{\textit{Evaluation}} object; all the while saving the results using the 
+\textbf{\textit{BackEnd}} class. 
 
 In the \gls{ROLLO} Github repository \cite{chee_rollo_2021}, I include a tests 
 directory that contains unit tests for all methods in the classes described 
@@ -625,7 +626,7 @@ pip install rollo}
 Second, a user can download the \gls{ROLLO} repository \cite{chee_rollo_2021}
 from Github and install it from source. 
 
-\gls{ROLLO} is run from the command line interface. 
+Users run \gls{ROLLO} from the command line interface. 
 A user should first set up the \gls{ROLLO} JSON input file and evaluator 
 scripts in a directory. 
 When running \gls{ROLLO} from the command line, there is one mandatory argument and 
@@ -638,10 +639,9 @@ Thus, the structure of a command line input for running \gls{ROLLO} is:
 \noindent
 \texttt{python -m rollo -i <input file name> -c <checkpoint file name> -v}
 
-The checkpoint file holds the results from the \gls{ROLLO} simulation and also acts 
-as a restart file. 
-Thus, if a \gls{ROLLO} simulation ends prematurely, the checkpoint file can be used 
-to restart the code from the most recent population and continue the simulation. 
+The checkpoint file holds the \gls{ROLLO} simulation results and acts as a restart file.
+Thus, if a \gls{ROLLO} simulation ends prematurely, users can use the checkpoint file to 
+restart the code from the most recent population and continue the simulation. 
 
 \subsection{ROLLO Parallelization}
 \label{sec:rollo_parallel}
@@ -649,24 +649,25 @@ to restart the code from the most recent population and continue the simulation.
 The serial run mode utilizes a map() function to run the nuclear software for each 
 reactor model.
 The map function accepts a function and iterable and returns a map object of the results 
-by applying the given function to each item of the iterable. 
-In \gls{ROLLO}, the given function is generated by the \textbf{\textit{Evaluation}} class 
+by applying the function to each item of the iterable. 
+In \gls{ROLLO}, the \textbf{\textit{Evaluation}} class generates the function 
 that accepts the reactor model's control variables and runs the nuclear software;
 and the iterable is a list containing the control variables for each reactor model. 
 The first parallel mode, \textit{multiprocessing}, replaces the default map function 
 with the \texttt{multiprocessing\_on\_dill} map \cite{smallshire_multiprocessing_on_dill_nodate}.
-The \texttt{multiprocessing\_on\_dill} map chops the iterable into a number of chunks 
+The \texttt{multiprocessing\_on\_dill} map chops the iterable into several chunks 
 which it submits to the process pool as separate tasks.
 This \textit{multiprocessing} mode is useful for parallelizing runs on a local machine or 
 a single node on a computer cluster. 
 However, it is unable to parallelize across distributed memory systems.
 
 The second parallel mode, \texttt{job\_control}, utilizes the Unix system's job control 
-features to give users more flexibility with parallelization setup, enabling 
-parallelizing across distributed memory systems such as clusters and supercomputers. 
-This method does not utilize the map() function. 
-Similar to the \textit{multiprocessing} mode, the \texttt{job\_control} mode generates a 
-function with the \textbf{\textit{Evaluation}} class that accepts the reactor model's control 
+features to give users more flexibility with parallelization setup. 
+This flexibility enables parallelization across distributed memory systems such as 
+clusters and supercomputers. 
+The second parallel mode does not utilize the map() function. 
+Like the \textit{multiprocessing} mode, the \texttt{job\_control} mode generates a 
+function using the \textbf{\textit{Evaluation}} class that accepts the reactor model's control 
 variables and runs the nuclear software. 
 \gls{ROLLO} will then generate a combined bash command that launches multiple evaluation 
 function calls for the different reactor models by backgrounding each command.
@@ -692,24 +693,24 @@ looks like this:
     \caption{Example combined bash command generated by \gls{ROLLO}'s parallel mode \texttt{job\_control}.}
     \label{fig:job-control-example}
 \end{figure}
-Users define each individual command in ROLLO's input file; thus, the \texttt{job\_control} mode enables more 
-control over the parallelization settings of each individual command. 
+Users define each command in ROLLO's input file; thus, the \texttt{job\_control} mode enables 
+more control over the parallelization settings of each command. 
 Many nuclear software, such as OpenMC and MOOSE, use \gls{MPI} or OpenMP to parallelize their runs. 
-With control over each individual command, users can continue to utilize the parallel 
+With control over each command, users can continue to utilize the parallel 
 versions of the nuclear software, thus, having two layers of parallelization. 
-The first layer is the individual software runs' parallelization, and the second layer is ROLLO's parallelization. 
+The first layer is the individual software's parallelization, and the second layer is ROLLO's parallelization. 
 For example, running four reactor models using ROLLO across 16 nodes on a cluster and assigning each reactor 
 model to run in parallel across four nodes. 
-In-depth details about the parallelization setup can be found in the \gls{ROLLO} documentation
+Users can find in-depth details about the parallelization setup in the ROLLO documentation
  \cite{chee_documentation_2021}.
 
 \subsection{ROLLO Results Analysis}
 The \textbf{\textit{BackEnd}} class manages results from each \gls{ROLLO} simulation. 
-\textbf{\textit{BackEnd}} puts all the results in a pickled dictionary, which 
-is saved as \texttt{checkpoint.pkl} in the same directory as the input file. 
+\textbf{\textit{BackEnd}} puts all the results in a pickled dictionary, 
+saved as \texttt{checkpoint.pkl} in the same directory as the input file. 
 The checkpoint file can be loaded into a Jupyter notebook and organized 
 to produce desired plots. 
-Examples of \gls{ROLLO} results analysis can be found in the \gls{ROLLO} documentation 
+Users can find examples of \gls{ROLLO} results analysis in the \gls{ROLLO} documentation
 \cite{chee_documentation_2021}. 
 
 The evaluation function creates a new directory for each generation and individual, 
@@ -722,10 +723,10 @@ the genetic algorithm's third generation will be named:
 
 
 \section{ROLLO Verification}
-To verify \gls{ROLLO}'s optimization capabilities, I conducted multiple verification 
-studies: commonly used evolutionary algorithm single and multiobjective benchmark problems
-and a nuclear reactor-specific problem. 
-Together, they prove that \gls{ROLLO}'s evolutionary algorithm is correctly implemented 
+I conducted multiple verification studies to verify \gls{ROLLO}'s optimization capabilities: 
+commonly used evolutionary algorithm single and multiobjective benchmark problems and 
+a nuclear reactor-specific problem. 
+They prove that \gls{ROLLO}'s evolutionary algorithm is correctly implemented 
 and suitable for conducting nuclear reactor optimization problems. 
 
 \subsection{Ackley Function}
@@ -775,14 +776,14 @@ Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto fron
     \label{fig:binh_paretofront}
 \end{figure}
 I use the hypervolume indicator to quantify the Pareto front's goodness. 
-The hypervolume indicator is one of the most used set-quality indicators for the 
-assessment of stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
+The hypervolume indicator is the most used set-quality indicators for assessing 
+stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
 The hypervolume indicator measures the volume (in the objective space) covered by 
 non-dominated solutions for problems in which all objectives are to be 
 minimized \cite{deb_multi-objective_2001}. 
-For a two-dimensional problem, Figure \ref{fig:pareto_hypervolume} illustrates the 
-hypervolume enclosed by the non-dominated solutions (A, B, C, D, E) and reference 
-point, W, in the hatched region. 
+Figure \ref{fig:pareto_hypervolume} illustrates the hypervolume enclosed by the 
+non-dominated solutions (A, B, C, D, E) and reference point, W, in the hatched region 
+for a two-dimensional problem.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\linewidth]{pareto-hypervolume.png} 
@@ -904,8 +905,8 @@ each generation.
 \end{figure}
 
 \section{ROLLO Stopping Criteria}
-ROLLO's evolutionary algorithm stopping criterion is defined by the
-\texttt{generations} input parameter.  
+The \texttt{generations} input parameter defines \gls{ROLLO}'s evolutionary algorithm 
+stopping criterion. 
 Each nuclear reactor model's evaluation is computationally intensive. 
 Users will most likely be constrained by the total available compute time. 
 Therefore, rather than setting a results-based stopping criterion, ROLLO enables 
@@ -922,11 +923,11 @@ amount of compute time available to them:
 
 \subsection{Convergence}
 ROLLO does not utilize a mathematical expression to evaluate problem convergence. 
-The complexity of reactor design optimization means that there is no single 
-indicator that determines if convergence is met. 
-Instead, ROLLO's purpose is to help the human reactor designer to narrow down 
+The complexity of reactor design optimization means that no single indicator determines 
+if convergence is met.
+Instead, ROLLO's purpose is to help the human reactor designer narrow down 
 the search space. 
-When a ROLLO run is completed, the user plots the objectives' convergence and 
+When a ROLLO run completes, the user plots the objectives' convergence and 
 Pareto front (for multiobjective simulations) to evaluate if they are confident 
 about the final solution set. 
 If not, the user can easily restart the optimization simulation using the 
@@ -942,6 +943,6 @@ The motivation for \gls{ROLLO} is to enable reactor designers to utilize
 robust evolutionary algorithm optimization methods without going 
 through the cumbersome process of setting up a genetic algorithm framework,
 selecting appropriate hyperparameters, and setting up its parallelization. 
-\gls{ROLLO} is designed to be effective, flexible, open-source, parallel, 
+I designed  \gls{ROLLO} to be effective, flexible, open-source, parallel, 
 reproducible, and usable. 
 \gls{ROLLO} is hosted on Github \cite{chee_rollo_2021}. 
