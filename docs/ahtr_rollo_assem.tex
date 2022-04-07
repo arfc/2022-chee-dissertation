@@ -6,7 +6,7 @@ optimization results.
 \section{ROLLO AHTR One-Third Assembly Optimization Simulations Overview}
 Table \ref{tab:assem-obj-breakdown} shows the details of each \gls{ROLLO} 
 optimization problems explored in this chapter.
-\begin{table}[]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
@@ -54,6 +54,55 @@ optimization problems explored in this chapter.
 \end{table}
 
 \section{AHTR One-Third Assembly: Single-Objective Optimization Results}
+
+\subsection{Objective: Minimize Total Packing Fraction}
+
+\subsubsection{Simulation a-1b: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
+Table \ref{tab:simulationa1b} shows simulation a-1b's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-1b Optimization Problem Parameters}
+	\label{tab:simulationa1b}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1b}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    & $0<a<2$ $0<d<2$\\
+    & $0<b<\frac{\pi}{2}$ $0<e<\frac{\pi}{2}$\\
+    & $0<c<2\pi$ $0<f<2\pi$\\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
+Figure \ref{fig:assem-obj-1-pf-evol} shows the total packing fraction evolution and 
+figure \ref{fig:assem-obj-1-pf-final} shows the four TRISO particle distributions in 
+the final generation with the most minimized packing fractions. 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-1-pf-evol.png}
+        \caption{Minimum, average, and maximum total packing fraction evolution.}
+        \label{fig:assem-obj-1-pf-evol} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-1-pf-final.png}
+        \caption{TRISO particle distribution for the 4 individuals with the 
+        smallest packing fraction in generation 3.}
+        \label{fig:assem-obj-1-pf-final} 
+    \end{subfigure}
+    \caption{ROLLO single-objective optimization to minimize total packing fraction. 
+    Input parameters varied: total packing fraction, TRISO particle distribution.}
+    \label{fig:assem-obj-1-pf}
+\end{figure}
 
 \section{AHTR One-Third Assembly: Two-Objective Optimization Results}
 
