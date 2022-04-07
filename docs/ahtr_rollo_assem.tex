@@ -13,7 +13,7 @@ optimization problems explored in this chapter.
     one-third assembly. $PF$: Total Fuel Packing Fraction, $T_{max}$: Maximum Plank Temperature, 
     $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
     \gls{TRISO} particle distribution}
-	\label{tab:slab-obj-breakdown}
+	\label{tab:assem-obj-breakdown}
     \footnotesize
     \begin{tabular}{p{1.4cm}|p{1cm}|llll}
     \hline 
@@ -42,9 +42,21 @@ optimization problems explored in this chapter.
     & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & & \tabitem min($PPF$) & & & \\
     \hline
-    \multirow{3}{2cm}{3}& 3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{3}{2cm}{3}& a-3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF$) & & \tabitem $PF$ & \\
     && \tabitem min($T_{max}$) & & & \\
     \hline
+    \multirow{3}{2cm}{3}& a-3b &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    && \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    && \tabitem min($T_{max}$) & & \tabitem FLiBe channel shape& \\
+    \hline
     \end{tabular}
 \end{table}
+
+\section{AHTR One-Third Assembly: Single-Objective Optimization Results}
+
+\section{AHTR One-Third Assembly: Two-Objective Optimization Results}
+
+\section{AHTR One-Third Assembly: Three-Objective Optimization Results}
+
+\section{AHTR One-Third Assembly Optimization Results Discussion and Significance}
