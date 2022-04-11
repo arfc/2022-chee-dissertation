@@ -424,9 +424,9 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \end{tabular}
 \end{table}
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor models' 
-total packing fraction against normalized power peaking factor, red crosses mark the reactor 
+total packing fraction against maximum slab temperature, red crosses mark the reactor 
 models that fall on the pareto front.
-Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the four TRISO particle distributions in 
+Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO particle distributions in 
 the final generation that fall on the pareto front. 
 \begin{figure}[htbp]
     \centering
@@ -447,7 +447,12 @@ the final generation that fall on the pareto front.
     TRISO particle distribution.}
     \label{fig:slab-obj-2-pftemp}
 \end{figure}
-
+In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the lowest 
+total packing fraction and highest maximum slab temperature (the blue distribution) has 
+an up-down fuel packing pattern, similar to ... 
+In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO particle distribution with the 
+lowest maximum slab temperature and highest total packing fraction (the purple distribution)
+has an almost constant packing fraction of $\sim0.032$ across the slab. 
 
 \subsection{p-2b: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
 Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
@@ -523,19 +528,46 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     \textbf{Objectives} & Minimize $T_{max}$ \\
     & Minimize PPF \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
-    & $0<a<2$ \\
+    \textbf{Input Parameter variations} & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.35$\\ 
+    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
-    & Generations: 5 \\
+    \textbf{Genetic Algorithm Parameters} & Population size: 120 \\
+    & Generations: 4 \\
     \hline
     \end{tabular}
 \end{table}
-
+Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's reactor models' 
+maximum plank temperature against normalized power peaking factor, red crosses mark the reactor 
+models that fall on the pareto front.
+Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO particle distributions in 
+the final generation that fall on the pareto front. 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto.png}
+        \caption{Plot of final generation's reactor models' maximum plank temperature against normalized 
+        power peaking factor. Red crosses indicate the reactor models on the pareto front. }
+        \label{fig:slab-obj-2-tempppf-pareto} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto-distr.png}
+        \caption{TRISO particle distribution for the 8 reactor models on the pareto front.}
+        \label{fig:slab-obj-2-tempppf-pareto-distr} 
+    \end{subfigure}
+    \caption{ROLLO two-objective optimization to minimize maximum slab temperature $T_{max}$ and normalized power 
+    peaking factor (PPF) in the plank. Input parameters varied: TRISO particle distribution.}
+    \label{fig:slab-obj-2-tempppf}
+\end{figure}
+In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO particle distribution with 
+the lowest maximum temperature and highest normalized power peaking factor (the orange 
+distribution) ... 
+In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO particle distribution with 
+the highest maximum temperature and lowest normalized power peaking factor (the grey 
+distribution) peaks near the sides of the plank, and has a minimum point at the center
+of the plank. 
 
 \section{AHTR Plank: Three-Objective Optimization Results}
 
