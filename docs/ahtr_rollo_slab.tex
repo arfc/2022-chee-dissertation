@@ -39,21 +39,19 @@ optimization problem explored in this chapter.
     \hline 
     \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
-    \multirow{9}{2cm}{1}& p-1a & \tabitem max($k_{eff}$) & - &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
-    \cline{2-6}
-    & p-1b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    & p-1a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF$ & \\
     \cline{2-6}
-    & p-1c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & p-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     \cline{2-6}
-    & p-1d & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & p-1c & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
-    & p-1e & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
+    & p-1d & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
     & & & & \tabitem $PF$ & \\
     \cline{2-6}
-    & p-1f & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
+    & p-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
     \cline{2-6}
-    & p-1g & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
+    & p-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
     \hline
     \multirow{6}{2cm}{2}& p-2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & &\tabitem min($T_{max}$) & & \tabitem $PF$ & \\
@@ -85,24 +83,25 @@ The FHR Benchmark's assembly model had a $k_{eff}$ of 1.39, thus, I constrainine
 $k_{eff} > 1.39$ to find optimal input parameters that achieve similar performance 
 to the original benchmark TRISO distribution. 
 
+All simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
+Facility under the Director's Discretionary Allocation Program 
+\cite{noauthor_argonne_2022}. 
+% discuss compute time amounts for each simulation (table?)
+
 \section{AHTR Plank: Single-Objective Optimization Results}
 
-\subsection{Objective: Maximize $k_{eff}$}
-
-\subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$}
-
 \subsection{Objective: Minimize Total Packing Fraction}
-\subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
-Table \ref{tab:simulation1b} shows simulation p-1b's optimization problem parameters. 
+\subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
+Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Simulation p-1b Optimization Problem Parameters}
-	\label{tab:simulation1b}
+    \caption{Simulation p-1a Optimization Problem Parameters}
+	\label{tab:simulationp1a}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1b}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1a}} \\
     \hline 
     \textbf{Objectives} & Minimize PF \\
     \hline 
@@ -149,17 +148,17 @@ in the neighboring fuel cell.
 The up-down fuel packing pattern minimizes self-shielding effects, enabling  
 a lower packing fraction for the same $k_{eff}$. 
 
-\subsubsection{Simulation p-1e: Variation of FliBe Channel Shape and PF}
-Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem parameters. 
+\subsubsection{Simulation p-1d: Variation of FliBe Channel Shape and PF}
+Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Simulation p-1e Optimization Problem Parameters}
+    \caption{Simulation p-1d Optimization Problem Parameters}
 	\label{tab:simulationp1e}
     \footnotesize
     \begin{tabular}{l|p{4cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1e}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1d}} \\
     \hline 
     \textbf{Objectives} & Minimize PF \\
     \hline 
@@ -177,17 +176,17 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
 
 \subsection{Objective: Minimize Maximum Temperature}
 
-\subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
-Table \ref{tab:simulation1c} shows simulation p-1c's optimization problem parameters. 
+\subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
+Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Simulation p-1c Optimization Problem Parameters}
-	\label{tab:simulation1c}
+    \caption{Simulation p-1b Optimization Problem Parameters}
+	\label{tab:simulationp1b}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1c}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1b}} \\
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
@@ -245,17 +244,17 @@ on the left and right sides near the moderator.
 To combat this temperature peak, ROLLO found a TRISO particle distribution that 
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
-\subsubsection{Simulation p-1f: Variation of FliBe Channel Shape}
-Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
+\subsubsection{Simulation p-1e: Variation of FliBe Channel Shape}
+Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Simulation p-1f Optimization Problem Parameters}
-	\label{tab:simulationp1f}
+    \caption{Simulation p-1e Optimization Problem Parameters}
+	\label{tab:simulationp1e}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1f}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1e}} \\
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
@@ -272,17 +271,17 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
 
-\subsubsection{Simulation p-1d: Variation of $\rho_{TRISO}(\vec{r})$}
-Table \ref{tab:simulation1d} shows simulation p-1d's optimization problem parameters. 
-\begin{table}[H]
+\subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
+Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem parameters. 
+\begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Simulation p-1d Optimization Problem Parameters}
-	\label{tab:simulation1d}
+    \caption{Simulation p-1c Optimization Problem Parameters}
+	\label{tab:simulationp1c}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
-    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1d}} \\
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1c}} \\
     \hline 
     \textbf{Objectives} & Minimize PPF \\
     \hline 
@@ -327,13 +326,13 @@ moderator, whereas the plank's center has a lower flux due to self shielding.
 Thus, to minimize PPF, \gls{ROLLO} found a plank TRISO distribution that has higher 
 packing fraction at the edges, and a lower packing fraction in the center. 
 
-\subsubsection{Simulation p-1g: Variation of FliBe Channel Shape}
-Table \ref{tab:simulationp1g} shows simulation p-1g's optimization problem parameters. 
+\subsubsection{Simulation p-1f: Variation of FliBe Channel Shape}
+Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Simulation p-1g Optimization Problem Parameters}
-	\label{tab:simulationp1g}
+    \caption{Simulation p-1f Optimization Problem Parameters}
+	\label{tab:simulationp1f}
     \footnotesize
     \begin{tabular}{l|p{3cm}}
     \hline 
@@ -390,7 +389,10 @@ Since the minimize total packing fraction and minimize normalized power peaking 
 objectives are not impacted by variations in coolant channel shape, I can
 skip multi-objective optimization for coolant channel shape variations.  
 
-\subsection{Minimize Total Packing Fraction and Maximum Temperature}
+Table \ref{tab:slab-obj-breakdown} summarizes the two-objective simulations in this 
+section: p-2a, p-2b, and p-2c.
+
+\subsection{p-2a: Minimize Total Packing Fraction and Maximum Temperature}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
@@ -405,10 +407,12 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \textbf{Objectives} & Minimize PF \\
     & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
-    & $0.05<r_{bot}<0.35$ \\
+    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    & $0<a<2$ \\
+    & $0<b<\frac{\pi}{2}$ \\
+    & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
+    \textbf{Constraints} & $k_{eff} > 1.35$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
     & Generations: 5 \\
@@ -417,10 +421,66 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
 \end{table}
 
 
-\subsection{Minimize Total Packing Fraction and Normalized Power Peaking Factor}
+\subsection{p-2b: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
+Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-2b Optimization Problem Parameters}
+	\label{tab:simulationp2b}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2b}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PF \\
+    & Minimize PPF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    & $0<a<2$ \\
+    & $0<b<\frac{\pi}{2}$ \\
+    & $0<c<2\pi$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.35$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 5 \\
+    \hline
+    \end{tabular}
+\end{table}
 
-\subsection{Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
+\subsection{p-2c: Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
+Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-2c Optimization Problem Parameters}
+	\label{tab:simulationp2c}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2c}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $T_{max}$ \\
+    & Minimize PPF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    & $0<a<2$ \\
+    & $0<b<\frac{\pi}{2}$ \\
+    & $0<c<2\pi$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.35$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 5 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \section{AHTR Plank: Three-Objective Optimization Results}
+
+\subsection{p-3a: Variation of of $\rho_{TRISO}(\vec{r})$ and Total Packing Fraction}
+
+\subsection{p-3b: Variation of $\rho_{TRISO}(\vec{r})$, Total Packing Fraction, and FliBe Channel Shape}
 
 \section{AHTR Plank Optimization Results Discussion and Significance}
