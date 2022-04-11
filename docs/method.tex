@@ -10,11 +10,11 @@ this dissertation attempts a first go at beginning to explore the large design s
 The work done for this dissertation is only an intermediate step towards developing 
 a truly arbitrary geometry expression. 
 
-%In the subsequent sections, I will define the optimization problem, describe the 
-%AHTR geometries . 
-%Then, I will describe the software used to model them and the specific models. 
+The subsequent sections define the optimization problems, describe the \gls{AHTR} geometries, 
+outline the \gls{AHTR} modeling workflow, verify the \gls{AHTR} models, and describe the process of
+tuning \gls{ROLLO}'s hyperparameters.
 
-\section{ROLLO Optimization Problem Definition}
+\section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
 In an effort towards optimizing reactor design for non-conventional geometries 
 and parameters.
@@ -69,7 +69,7 @@ In the next section, I will describe both geometries.
 \section{AHTR Geometry for Optimization Problem}
 The optimization process is applied to both the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
-The geometries are adapted from the \gls{AHTR} design in the \gls{FHR} benchmark,
+The geometries are adapted from the \gls{FHR} benchmark's \gls{AHTR} design,
 outlined in Chapter \ref{chap:fhr-benchmark}.
 The main differences occur in the fuel plank region (see Figure \ref{fig:ahtr-fuel-assembly}). 
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices within
@@ -120,9 +120,8 @@ except that I homogenized each \gls{TRISO} particle's four outer layers:
 porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the 
 outer pyrolytic carbon. 
 The \gls{TRISO} particle dimensions remain the same.
-Table \ref{tab:keff_triso} reports OpenMC's reported $k_{eff}$ for this original 
-straightened \gls{AHTR} configuration with and without the outer layer \gls{TRISO} 
-homogenization.
+Table \ref{tab:keff_triso} reports OpenMC's $k_{eff}$ for the straightened \gls{AHTR} configuration 
+with and without the outer layer \gls{TRISO} homogenization.
 \begin{table}[htbp]
     \centering
     \onehalfspacing

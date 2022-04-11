@@ -20,13 +20,13 @@ I described the optimization objectives and how I calculated them from the OpenM
 and Moltres model outputs in Sections \ref{sec:opt-problem} and 
 \ref{sec:ahtr_slab_output}.
 
-In the subsequent sections, I outline single-objective and multi-objective 
-ROLLO optimization simulations that are run, and their respective results. 
+The subsequent sections outline the single-objective and multi-objective 
+ROLLO optimization simulations for the \gls{AHTR} plank, and their respective results. 
 
 \section{ROLLO AHTR Plank Optimization Simulations Overview}
 Table \ref{tab:slab-obj-breakdown} shows the details of each \gls{ROLLO} 
-optimization problems explored in this chapter.
-\begin{table}[]
+optimization problem explored in this chapter.
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
@@ -94,7 +94,7 @@ to the original benchmark TRISO distribution.
 \subsection{Objective: Minimize Total Packing Fraction}
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
 Table \ref{tab:simulation1b} shows simulation p-1b's optimization problem parameters. 
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{Simulation p-1b Optimization Problem Parameters}
@@ -121,7 +121,7 @@ Table \ref{tab:simulation1b} shows simulation p-1b's optimization problem parame
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
 figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
 the final generation with the most minimized packing fractions. 
-\begin{figure}[]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol.png}
@@ -155,7 +155,7 @@ a lower packing fraction for the same $k_{eff}$.
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulation1c} shows simulation p-1c's optimization problem parameters. 
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{Simulation p-1c Optimization Problem Parameters}
@@ -181,7 +181,7 @@ Table \ref{tab:simulation1c} shows simulation p-1c's optimization problem parame
 Figure \ref{fig:slab-obj-1-temp-evol} shows the plank's $T_{max}$ evolution 
 and Figure \ref{fig:slab-obj-1-temp-final} shows the five TRISO particle 
 distributions in the final generation with the most minimized $T_{max}$.
-\begin{figure}[]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-evol.png}
@@ -209,7 +209,7 @@ Figure \ref{fig:slab-obj-1-temp-distr} compares the Moltres-generated centerline
 temperature distribution for the plank with mostly flat (Figure 
 \ref{fig:slab-obj-1-temp-final}) and flat TRISO particle distributions for the same 
 total packing fraction.
-\begin{figure}[]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{slab-obj-1-temp-distr.png}
     \caption{Comparison of Moltres-generated AHTR Plank Temperature Distribution for non-flat and flat
@@ -253,7 +253,7 @@ Table \ref{tab:simulation1d} shows simulation p-1d's optimization problem parame
 Figure \ref{fig:slab-obj-1-ppf-evol} shows the slab's normalized power peaking 
 factor evolution and Figure \ref{fig:slab-obj-1-ppf-final} shows the five TRISO particle 
 distributions in the final generation with the normalized power peaking factor.
-\begin{figure}[]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol.png}
@@ -286,7 +286,7 @@ packing fraction at the edges, and a lower packing fraction in the center.
 
 \subsection{Minimize Total Packing Fraction and Maximum Temperature}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
-\begin{table}[H]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{Simulation p-2a Optimization Problem Parameters}
