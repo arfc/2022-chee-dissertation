@@ -119,7 +119,7 @@ Table \ref{tab:simulation1b} shows simulation p-1b's optimization problem parame
     \end{tabular}
 \end{table}
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
-figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
+Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
 the final generation with the most minimized packing fractions. 
 \begin{figure}[htbp]
     \centering
@@ -150,6 +150,30 @@ The up-down fuel packing pattern minimizes self-shielding effects, enabling
 a lower packing fraction for the same $k_{eff}$. 
 
 \subsubsection{Simulation p-1e: Variation of FliBe Channel Shape and PF}
+Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-1e Optimization Problem Parameters}
+	\label{tab:simulationp1e}
+    \footnotesize
+    \begin{tabular}{l|p{4cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1e}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02<PF<0.10$ \\
+    & $0.05<r_{top}<0.35$ \\
+    & $0.05<r_{bot}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Objective: Minimize Maximum Temperature}
 
@@ -222,6 +246,29 @@ To combat this temperature peak, ROLLO found a TRISO particle distribution that
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
 \subsubsection{Simulation p-1f: Variation of FliBe Channel Shape}
+Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-1f Optimization Problem Parameters}
+	\label{tab:simulationp1f}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1f}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $T_{max}$ \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
+    & $0.05<r_{bot}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
 
@@ -237,7 +284,7 @@ Table \ref{tab:simulation1d} shows simulation p-1d's optimization problem parame
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1d}} \\
     \hline 
-    \textbf{Objectives} & Minimize $T_{max}$ \\
+    \textbf{Objectives} & Minimize PPF \\
     \hline 
     \textbf{Input Parameter variations} & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
@@ -281,8 +328,66 @@ Thus, to minimize PPF, \gls{ROLLO} found a plank TRISO distribution that has hig
 packing fraction at the edges, and a lower packing fraction in the center. 
 
 \subsubsection{Simulation p-1g: Variation of FliBe Channel Shape}
+Table \ref{tab:simulationp1g} shows simulation p-1g's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-1g Optimization Problem Parameters}
+	\label{tab:simulationp1g}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1f}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PPF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
+    & $0.05<r_{bot}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 5 \\
+    \hline
+    \end{tabular}
+\end{table}
+Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the slab's normalized power peaking 
+factor evolution and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows a plot of total 
+radius ($r_{top} + r_{bot}$) against normalized power peaking factor. 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol-coolant.png}
+        \caption{Minimum, average, and maximum evolution of normalized power 
+        peaking factor in AHTR plank.}
+        \label{fig:slab-obj-1-ppf-evol-coolant} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-ppf-final-coolant.png}
+        \caption{TRISO particle distribution for the 5 individuals with the 
+        lowest normalized power peaking factor in AHTR slab at generation 9.}
+        \label{fig:slab-obj-1-ppf-final-coolant} 
+    \end{subfigure}
+    \caption{ROLLO single-objective optimization to minimize normalized power 
+    peaking factor in the slab. Input parameters varied: Coolant Channel Shape 
+    ($r_{top}, r_{bot}$).}
+    \label{fig:slab-obj-1-ppf-coolant}
+\end{figure}
+Figure \ref{fig:slab-obj-1-ppf-evol-coolant} has the same axis as Figure 
+\ref{fig:slab-obj-1-ppf-evol}, which, demonstrates how variation in TRISO packing fraction 
+distribution impacts normalized power peaking factor. 
+Comparison of the two plots demonstrates that the normalized power
+peaking factor is barely impacted by variation in FliBE coolant channel shape compared 
+to variation in TRISO packing fraction distribution.
+Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
+between total radius and normalized power peaking factor. 
 
 \section{AHTR Plank: Two-Objective Optimization Results}
+The previous section's one-objective optimization results inform the simulations that 
+are run for two-objective optimization. 
+Since the minimize total packing fraction and minimize normalized power peaking factor 
+objectives are not impacted by variations in coolant channel shape, I can
+skip multi-objective optimization for coolant channel shape variations.  
 
 \subsection{Minimize Total Packing Fraction and Maximum Temperature}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
@@ -299,15 +404,13 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \textbf{Objectives} & Minimize PF \\
     & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
-    & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
+    \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
+    & $0.05<r_{bot}<0.35$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.39$\\ 
+    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
-    & Generations: 10 \\
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 5 \\
     \hline
     \end{tabular}
 \end{table}
