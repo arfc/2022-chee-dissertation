@@ -39,34 +39,34 @@ optimization problem explored in this chapter.
     \hline 
     \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
-    & p-1a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    & p-1a & \tabitem min($PF$) & \tabitem $k_{eff}$ $\geq$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF$ & \\
     \cline{2-6}
-    & p-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & p-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $\geq$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     \cline{2-6}
-    & p-1c & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & p-1c & \tabitem min($PPF$) & \tabitem $k_{eff}$ $\geq$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
-    & p-1d & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
+    & p-1d & \tabitem min($PF$) & \tabitem $k_{eff}$ $\geq$ 1.36 &\tabitem FLiBe channel shape & OpenMC \\
     & & & & \tabitem $PF$ & \\
     \cline{2-6}
-    & p-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
+    & p-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $\geq$ 1.36 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
     \cline{2-6}
-    & p-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
+    & p-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $\geq$ 1.36 &\tabitem FLiBe channel shape & OpenMC\\
     \hline
-    \multirow{6}{2cm}{2}& p-2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{6}{2cm}{2}& p-2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $\geq$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & &\tabitem min($T_{max}$) & & \tabitem $PF$ & \\
     \cline{2-6}
-    & p-2b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & p-2b & \tabitem min($PF$) & \tabitem $k_{eff}$ $\geq$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     & & \tabitem min($PPF$) & & \tabitem $PF$ & \\
     \cline{2-6}
-    & p-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & p-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $\geq$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & & \tabitem min($PPF$) & & & \\
     \hline
-    \multirow{3}{2cm}{3}& p-3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{3}{2cm}{3}& p-3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $\geq$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF$) & & \tabitem $PF$ & \\
     && \tabitem min($T_{max}$) & & & \\
     \hline
-    \multirow{3}{2cm}{3}& p-3b &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{3}{2cm}{3}& p-3b &\tabitem min($PF$) & \tabitem $k_{eff}$ $\geq$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF$) & & \tabitem $PF$ & \\
     && \tabitem min($T_{max}$) & & \tabitem FLiBe channel shape& \\
     \hline
@@ -80,7 +80,7 @@ The $k_{eff}$ constraint value is 1.39 and 1.0 for optimization problems that do
 and do not minimize total packing fraction, respectively. 
 $k_{eff}$ is strongly correlated with total packing fraction. 
 The FHR Benchmark's assembly model had a $k_{eff}$ of 1.39, thus, I constrainined
-$k_{eff} > 1.39$ to find optimal input parameters that achieve similar performance 
+$k_{eff} \geq 1.39$ to find optimal input parameters that achieve similar performance 
 to the original benchmark TRISO distribution. 
 
 All simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
@@ -110,7 +110,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.39$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.39$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
     & Generations: 10 \\
@@ -119,7 +119,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
 \end{table}
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
 Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
-the final generation with the most minimized packing fractions. 
+the final generation with the most-minimized packing fractions. 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
@@ -167,7 +167,7 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     & $0.05<r_{top}<0.35$ \\
     & $0.05<r_{bot}<0.35$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} \leq 1.36$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
     & Generations: 3 \\
@@ -192,14 +192,14 @@ and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius
         \label{fig:slab-obj-1-pf-final-coolant} 
     \end{subfigure}
     \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize total 
-    packing fraction. Input parameters varied: Coolant Channel Shape 
+    packing fraction. Input parameters varied: coolant channel shape 
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-pf-coolant}
 \end{figure}
 Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
 between total packing fraction and total radius. 
 
-\subsection{Objective: Minimize Maximum Temperature}
+\subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
 
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem parameters. 
@@ -219,7 +219,7 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
     & Generations: 10 \\
@@ -228,7 +228,7 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
 \end{table}
 Figure \ref{fig:slab-obj-1-temp-evol} shows the plank's $T_{max}$ evolution 
 and Figure \ref{fig:slab-obj-1-temp-final} shows the five TRISO particle 
-distributions in the final generation with the most minimized $T_{max}$.
+distributions in the final generation with the most-minimized $T_{max}$.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
@@ -286,16 +286,16 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
     \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
     & $0.05<r_{bot}<0.35$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
-    & Generations: 3 \\
+    & Generations: 4 \\
     \hline
     \end{tabular}
 \end{table}
-Figure \ref{fig:slab-obj-1-temp-evol-coolant} shows the maximum plank temperature evolution 
+Figure \ref{fig:slab-obj-1-temp-evol-coolant} shows the plank's $T_{max}$ evolution 
 and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius 
-($r_{top} + r_{bot}$) against maximum plank temperature. 
+($r_{top} + r_{bot}$) against $T_{max}$. 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
@@ -311,14 +311,14 @@ and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius
         \label{fig:slab-obj-1-temp-final-coolant} 
     \end{subfigure}
     \caption{Simulation p-1e -- ROLLO single-objective optimization to minimize 
-    maximum plank temperature ($T_{max}$). Input parameters varied: Coolant Channel Shape 
+    maximum plank temperature ($T_{max}$). Input parameters varied: coolant channel shape 
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-temp-coolant}
 \end{figure}
 Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
 linear correlation between maximum plank temperature and total radius. 
 
-\subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
+\subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor (PPF)}
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem parameters. 
@@ -338,7 +338,7 @@ Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem param
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
     & Generations: 10 \\
@@ -392,7 +392,7 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
     & $0.05<r_{bot}<0.35$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
     & Generations: 5 \\
@@ -418,7 +418,7 @@ radius ($r_{top} + r_{bot}$) against normalized power peaking factor.
         \label{fig:slab-obj-1-ppf-final-coolant} 
     \end{subfigure}
     \caption{Simulation p-1f -- ROLLO single-objective optimization to minimize normalized power 
-    peaking factor in the slab. Input parameters varied: Coolant Channel Shape 
+    peaking factor in the slab. Input parameters varied: coolant channel shape 
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-ppf-coolant}
 \end{figure}
@@ -465,7 +465,7 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.35$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
     & Generations: 2 \\
@@ -529,7 +529,7 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.35$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
     & Generations: 3 \\
@@ -591,7 +591,7 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 120 \\
     & Generations: 4 \\
