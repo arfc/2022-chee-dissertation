@@ -435,8 +435,8 @@ between total radius and normalized power peaking factor.
 The previous section's one-objective optimization results inform the simulations that 
 are run for two-objective optimization. 
 Since the minimize total packing fraction and minimize normalized power peaking factor 
-objectives are not impacted by variations in coolant channel shape, I can
-skip multi-objective optimization for coolant channel shape variations.  
+objectives are not impacted by variations in coolant channel shape, I do not conduct 
+multi-objective optimization for coolant channel shape variations.  
 
 Table \ref{tab:slab-obj-breakdown} summarizes the two-objective simulations in this 
 section: p-2a, p-2b, and p-2c.
@@ -473,8 +473,8 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \end{tabular}
 \end{table}
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor models' 
-total packing fraction against maximum slab temperature, red crosses mark the reactor 
-models that fall on the pareto front.
+total packing fraction against $T_{max}$, crosses mark the reactor models that fall on the pareto 
+front.
 Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO particle distributions in 
 the final generation that fall on the pareto front. 
 \begin{figure}[htbp]
@@ -482,8 +482,8 @@ the final generation that fall on the pareto front.
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto.png}
         \caption{Plot of final generation's reactor models' total packing fraction against 
-        maximum slab temperature. 
-        Red crosses indicate the reactor models on the pareto front. }
+        $T_{max}$. Crosses indicate the reactor models on the pareto front. Cross colors correspond  
+        to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-pftemp-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
@@ -507,7 +507,7 @@ In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO particle distribut
 lowest maximum slab temperature and highest total packing fraction (the purple distribution)
 has an almost constant packing fraction of $\sim0.032$ across the slab. 
 This distribution follows a similar flat shape as simulation p-1b's most-minimized maximum 
-plank temperature TRISO distribution.
+plank temperature TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
 
 \subsection{p-2b: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
 Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
@@ -537,7 +537,7 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     \end{tabular}
 \end{table}
 Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor models' 
-total packing fraction against normalized power peaking factor, red crosses mark the reactor 
+total packing fraction against normalized power peaking factor, crosses mark the reactor 
 models that fall on the pareto front.
 Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO particle distributions in 
 the final generation that fall on the pareto front. 
@@ -546,7 +546,8 @@ the final generation that fall on the pareto front.
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-pareto.png}
         \caption{Plot of final generation's reactor models' PF against PPF. 
-        Red crosses indicate the reactor models on the pareto front. }
+        Crosses indicate the reactor models on the pareto front. Cross colors correspond  
+        to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-pfppf-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
@@ -565,7 +566,7 @@ a constant packing fraction of 0.02 across the slab.
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO particle distribution with the 
 lowest power peaking factor and highest packing fraction (the blue distribution), has 
 a packing fraction that peaks in the center of the slab and both sides. 
-However, all reactor models on the pareto front have a relatively flat packing fraction 
+All reactor models on the pareto front have a relatively flat packing fraction 
 distribution, varying between 0.02 and 0.04. 
 Unlike simulations p-2a and p-2c, both extreme cases do not have similar distributions to their 
 single-objective counterparts. 
@@ -599,7 +600,7 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     \end{tabular}
 \end{table}
 Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's reactor models' 
-maximum plank temperature against normalized power peaking factor, red crosses mark the reactor 
+maximum plank temperature against normalized power peaking factor, crosses mark the reactor 
 models that fall on the pareto front.
 Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO particle distributions in 
 the final generation that fall on the pareto front. 
@@ -608,7 +609,8 @@ the final generation that fall on the pareto front.
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto.png}
         \caption{Plot of final generation's reactor models' maximum plank temperature against normalized 
-        power peaking factor. Red crosses indicate the reactor models on the pareto front. }
+        power peaking factor. Crosses indicate the reactor models on the pareto front. Cross colors 
+        correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-tempppf-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
@@ -625,12 +627,13 @@ the lowest maximum temperature and highest normalized power peaking factor (the 
 distribution) has an almost constant packing fraction of $\sim0.10$ across the slab, 
 with a slight up-down pattern. 
 This distribution follows a similar flat shape as simulation p-1b's most-minimized maximum 
-plank temperature TRISO distribution.
+plank temperature TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}).
 In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO particle distribution with 
 the highest maximum temperature and lowest normalized power peaking factor (the grey 
 distribution) peaks near the sides of the plank, and has a minimum point at the center
 of the plank. 
 This distribution is somewhat similar to p-1c's most-minimized PPF TRISO distribution 
+(Figure \ref{fig:slab-obj-1-ppf-final})
 which also has a minimum point at the center of the plank, but differs as its' peaks 
 are on the fuel regions' edges instead of the plank's edges. 
 The differences between the above cases and their single objective counterparts are due to 
@@ -639,6 +642,34 @@ influences from the other objectives.
 \section{AHTR Plank: Three-Objective Optimization Results}
 
 \subsection{p-3a: Variation of of $\rho_{TRISO}(\vec{r})$ and Total Packing Fraction}
+Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-3a Optimization Problem Parameters}
+	\label{tab:simulationp3a}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-3a}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PF \\
+    & Minimize $T_{max}$ \\
+    & Minimize PPF \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    & $0<a<2$ \\
+    & $0<b<\frac{\pi}{2}$ \\
+    & $0<c<2\pi$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 120 \\
+    & Generations: 4 \\
+    \hline
+    \end{tabular}
+\end{table}
+
 
 \subsection{p-3b: Variation of $\rho_{TRISO}(\vec{r})$, Total Packing Fraction, and FliBe Channel Shape}
 
