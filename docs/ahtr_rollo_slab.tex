@@ -155,7 +155,7 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \centering
     \onehalfspacing
     \caption{Simulation p-1d Optimization Problem Parameters}
-	\label{tab:simulationp1e}
+	\label{tab:simulationp1d}
     \footnotesize
     \begin{tabular}{l|p{4cm}}
     \hline 
@@ -163,17 +163,40 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \hline 
     \textbf{Objectives} & Minimize PF \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.10$ \\
+    \textbf{Input Parameter variations} & $0.02<PF<0.05$ \\
     & $0.05<r_{top}<0.35$ \\
     & $0.05<r_{bot}<0.35$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.36$\\ 
+    \textbf{Constraints} & $k_{eff} \leq 1.36$\\ 
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
     & Generations: 3 \\
     \hline
     \end{tabular}
 \end{table}
+Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the total packing fraction evolution 
+and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius 
+($r_{top} + r_{bot}$) against total packing fraction. 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-pf-evol-coolant.png}
+        \caption{Minimum, average, and maximum total packing fraction evolution.}
+        \label{fig:slab-obj-1-pf-evol-coolant} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-pf-final-coolant.png}
+        \caption{TRISO particle distribution for the 5 individuals with the 
+        smallest packing fraction in generation 9.}
+        \label{fig:slab-obj-1-pf-final-coolant} 
+    \end{subfigure}
+    \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize total 
+    packing fraction. Input parameters varied: Coolant Channel Shape 
+    ($r_{top}, r_{bot}$).}
+    \label{fig:slab-obj-1-pf-coolant}
+\end{figure}
+Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
+between total packing fraction and total radius. 
 
 \subsection{Objective: Minimize Maximum Temperature}
 
@@ -269,6 +292,27 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+Figure \ref{fig:slab-obj-1-temp-evol-coolant} shows the maximum plank temperature evolution 
+and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius 
+($r_{top} + r_{bot}$) against maximum plank temperature. 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-temp-evol-coolant.png}
+        \caption{Minimum, average, and maximum total packing fraction evolution.}
+        \label{fig:slab-obj-1-temp-evol-coolant} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-temp-final-coolant.png}
+        \caption{TRISO particle distribution for the 5 individuals with the 
+        smallest packing fraction in generation 9.}
+        \label{fig:slab-obj-1-temp-final-coolant} 
+    \end{subfigure}
+    \caption{Simulation p-1e -- ROLLO single-objective optimization to minimize 
+    maximum plank temperature ($T_{max}$). Input parameters varied: Coolant Channel Shape 
+    ($r_{top}, r_{bot}$).}
+    \label{fig:slab-obj-1-temp-coolant}
+\end{figure}
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
 
