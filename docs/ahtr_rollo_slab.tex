@@ -186,8 +186,9 @@ and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-final-coolant.png}
-        \caption{TRISO particle distribution for the 5 individuals with the 
-        smallest packing fraction in generation 9.}
+        \caption{Plot of total radius ($r_{top} + r_{bot}$) against total packing 
+        fraction (PF). Red crosses indicate the five reactor models with the 
+        lowest PF.}
         \label{fig:slab-obj-1-pf-final-coolant} 
     \end{subfigure}
     \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize total 
@@ -304,8 +305,9 @@ and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-final-coolant.png}
-        \caption{TRISO particle distribution for the 5 individuals with the 
-        smallest packing fraction in generation 9.}
+        \caption{Plot of total radius ($r_{top} + r_{bot}$) against maximum plank 
+        temperature ($T_{max}$). Red crosses indicate the five reactor models with the 
+        lowest $T_{max}$.}
         \label{fig:slab-obj-1-temp-final-coolant} 
     \end{subfigure}
     \caption{Simulation p-1e -- ROLLO single-objective optimization to minimize 
@@ -313,6 +315,8 @@ and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-temp-coolant}
 \end{figure}
+Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
+linear correlation between maximum plank temperature and total radius. 
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor}
 
