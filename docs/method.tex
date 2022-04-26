@@ -710,6 +710,8 @@ approximate this reactor geometry as well.
 The diffusion coefficients for this reactor type are approximately 1cm. 
 The FliBE coolant channel has a 0.35cm width which is smaller than the diffusion
 coefficient, resulting in poor approximations. 
+The $k_{eff}$ are acceptable since I am not using the Moltres simulation for 
+neutronics modeling, but only for \gls{AHTR} plank temperature modeling. 
 
 \subsubsection{AHTR Plank: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
@@ -783,7 +785,9 @@ Moltres.
 \end{figure}
 The OpenMC simulation shows higher flux in Group 1, and lower flux in the
 Group 2 and Group 3. 
-However, there is an overall good agreement for each group's flux.  
+However, there is an overall good agreement for each group's flux.
+The flux neutronics parameter is most important as it contributes to the 
+source term in the Moltres simulation. 
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum the OpenMC simulation 
@@ -796,8 +800,8 @@ for both 252 and 4 groups, and 4-group Moltres simulation.
 \end{figure}
 There is good agreement between OpenMC and Moltres models 4-group spectrums. 
 
-In summary, Moltres replicated the relevant neutronics parameters accurately 
-using group constant data from OpenMC for the \gls{AHTR} plank model. 
+In summary, Moltres replicated the relevant neutronics parameters with sufficient 
+accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
 
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
 In this section, I compare the following key neutronics parameters: effective multiplication 
@@ -809,8 +813,7 @@ The AHTR one-third assembly model with TRISO-level fidelity is depicted in Figur
 \ref{fig:ahtr-assem-verification}. 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{ahtr-plank-verification.png}
-    \raggedright
+    \includegraphics[width=0.6\linewidth]{assem-constant-0.0979-verification.png}
     \resizebox{0.3\textwidth}{!}{
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
@@ -825,6 +828,31 @@ The AHTR one-third assembly model with TRISO-level fidelity is depicted in Figur
 \end{figure}
 
 \subsubsection{AHTR One-Third Assembly: Effective Multiplication Factor}
+Table \ref{tab:keff_ahtr_moltres_assem} compares effective multiplication factor 
+for OpenMC simulation with TRISO fidelity, OpenMC simulation using the homogenized 
+group constants, and Moltres simulation using the homogenized group constants. 
+I included results from a homogenized OpenMC simulation as well to 
+distinguish between differences caused by spatial homogenization, and differing 
+OpenMC and Moltres normalization and solving methods. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{AHTR Fuel Slab's $k_{eff}$ values from OpenMC and Moltres at 948K.
+    Normalized difference is the pcm difference normalized by $k_{eff}$}
+	\label{tab:keff_ahtr_moltres_assem}
+    \footnotesize
+    \begin{tabular}{lllcc}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Difference [pcm]}  
+    & \textbf{Normalized Difference [pcm]}\\
+    \hline 
+    OpenMC & No & $1.41656 \pm 0.00131$ & - & -\\ 
+    OpenMC & Yes & $ \pm$ &  & -\\ 
+    Moltres & Yes & $1.40889 $ & -766 & \\ 
+    \hline
+    \end{tabular}
+\end{table}
+
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
 \subsubsection{AHTR One-Third Assembly: Flux Distribution}
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
