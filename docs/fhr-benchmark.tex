@@ -553,7 +553,49 @@ due to burn-up of the poison material.
 Case 7B has a $19.75\%$ fuel enrichment, resulting in a higher initial $k_{eff}$. 
 With a higher enrichment, the assembly stays critical till 140 Gwd/tU. 
 
-\section{FHR Multiphysics Model}
+\section{FHR Benchmark Multiphysics Model}
+I used Moltres \cite{lindsay_moltres_2017} to conduct \gls{AHTR} full assembly multiphysics 
+simulations. 
+AHTR Moltres simulations will capture thermal feedback effects, absent from the purely 
+neutronics OpenMC simulations conducted in the \gls{FHR} benchmark's Phase I-A.
+To run Moltres simulations, the user provides group constant data from a neutron transport 
+solver, such as OpenMC, for the Moltres multigroup neutron diffusion calculations and
+a mesh file representing the reactor geometry. 
+A TRISO-level fidelity mesh file is impractical and will result in an extremely long Moltres 
+runtime. 
+For successful AHTR Moltres simulation, I must establish suitable spatial and energy 
+homogenization that preserves accuracy while maintaining an acceptable runtime.
 
+I use the continuous energy OpenMC simulation to generate multigroup cross section data defined 
+over discretized energy groups and spatial segments.
+I then use OpenMC's multigroup calculation mode with the previously generated multigroup cross 
+section data to calculate $k_{eff}$ . 
+Comparison of $k_{eff}$ for the continuous and multigroup simulations determines if the
+energy and spatial homogenization used are acceptable.
+
+I modeled the FHR benchmark's Phase I-A hot zero power case 2AH, the OpenMC simulation's 
+geometry with TRISO fidelity is shown in Figure \ref{fig:ahtr-fuel-assembly}.
+For spatial homogenization of the straightened AHTR fuel assembly, I used OpenMC's \textit{cell} 
+domain type to compute multigroup cross sections for different \textit{cells}.
+I discretized the fuel assembly into 61 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped 
+graphite structure, control rod slot \gls{FLiBe}, graphite spacers, each diamond shape section's 
+inter-plank \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).
+
+\subsection{FHR Benchmark: Key Neutronics Parameters Verification}
+In this section, I verify that the spatial and energy homogenizations I chose are acceptable. 
+I compare the following key neutronics parameters: effective multiplication factor, reactivity 
+coefficients, flux distribution, and neutron energy spectrum for the OpenMC's continuous energy 
+and Moltres' \gls{FHR} benchmark full assembly model. 
+
+\subsubsection{FHR Benchmark: Effective Multiplication Factor}
+
+
+\subsection{FHR Benchmark: Temperature Model}
+
+\subsubsection{FHR Benchmark: Temperature Model Setup}
+
+
+\subsubsection{FHR Benchmark: Temperature Model Results}
+Figure \ref{fig:benchmark-temperature-model} shows ... 
 
 \section{Summary}
