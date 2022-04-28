@@ -500,17 +500,19 @@ The results of the verification studies are described in Section
 \subsubsection{AHTR Moltres Mesh Generation}
 I wrote a python script that accepts the FliBe coolant channel shape input 
 parameters and generates a geometry script file (\texttt{.geo}) based on the 
-spatial homogenization outlined in Section \ref{sec:ahtr-moltres-hom}.
+spatial homogenizations outlined in Section \ref{sec:ahtr-moltres-hom}.
 The AHTR geometry mesh is then generated from the geometry script file using 
 Gmsh \cite{geuzaine_gmsh_2009}.
 I used Gmsh's \textit{refine by splitting} functionality to refine the mesh. 
 
 \subsubsection{AHTR Moltres Temperature Model}
 \label{sec:ahtr-moltres-temperature-model}
-The Moltres AHTR Steady-State Temperature Model is a 2D model of the AHTR slab's 
-x-y cross-section with Figure \ref{fig:straightened_slab_mg}'s geometry. 
+The Moltres \gls{AHTR} Steady-State Temperature Model is a 2D model of the \gls{AHTR} plank and 
+one-third assembly x-y cross-section with geometry from 
+Figure \ref{fig:straightened_slab_mg} and Figure \ref{fig:fhr_onethird_assem_homogenization}
+, respectively.  
 % 3d model with unit thickness 
-The model first solves the slab's neutronics and uses that to solve the slab's 
+The model first solves the \gls{AHTR} neutronics and uses that to solve the \gls{AHTR}'s 
 temperature distribution for a defined power.
 The temperature model assumes conductive heat transfer throughout the domain 
 and heat removal by uniform salt flow in the coolant region. 
@@ -533,12 +535,12 @@ Q_i &= \mbox{source or sink term in material i} \nonumber
 \end{align} 
 I use insulated temperature boundary conditions.  
 Table \ref{tab:ahtr-thermal-conducitivity} shows the thermal conductivity values 
-used for each AHTR slab material. 
+used for each \gls{AHTR} material. 
 % add citations
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR Fuel Slab materials' thermal conductivity.}
+    \caption{\acrfull{AHTR} materials' thermal conductivity.}
 	\label{tab:ahtr-thermal-conducitivity}
     \footnotesize
     \begin{tabular}{lp{4cm}l}
@@ -586,34 +588,40 @@ transfer coefficient values for the convective heat transfer process.
     \caption{AHTR Fuel Slab's heat transfer constants.}
 	\label{tab:heat-exchanger-constants}
     \footnotesize
-    \begin{tabular}{llll}
+    \begin{tabular}{lllll}
     \hline 
-    \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
+    \textbf{Geometry} & \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
-    h & 990 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc} \\
-    $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\ %cite ahtr 923K inlet temp 
+    Plank & $h_{plank}$ & 990 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc} \\
+    Assembly & $h_{assem}$ & 611 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc} \\
+    Both & $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\ %cite ahtr 923K inlet temp 
     \hline
     \end{tabular}
 \end{table} 
-I calculated the heat transfer coefficient ($h$) using Equation \ref{eq:calc-htc} 
-with the following assumptions: 
+I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} plank and one-third 
+using Equation \ref{eq:calc-htc-plank}, \ref{eq:calc-htc-assem} with the following assumptions: 
 \begin{itemize}
     \item slab generates a constant amount of power, all of which is removed 
     by the coolant
     \item linear increase in temperature from inlet to outlet 
 \end{itemize}
 \begin{align}
-    \label{eq:calc-htc}
-    h &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
+    \label{eq:calc-htc-plank}
+    h_{plank} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
       &= \frac{1456 W/cm}{23.1cm \times 0.35cm \times 1cm \times 2} \div 0.0909 K/cm \nonumber \\
-      &= 990 W cm^{-3}K^{-1} \nonumber 
+      &= 990 W cm^{-3}K^{-1} \nonumber \\
+      \label{eq:calc-htc-assem}
+      h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
+      &= \frac{8741 W/cm}{157cm^3} \div 0.0909 K/cm \nonumber \\
+      &= 611 W cm^{-3}K^{-1} \nonumber 
 \intertext{and}
 \Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
 \intertext{where:}
-h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
-P_{dz} &= \mbox{power produced in 1cm AHTR slab $\Delta z$ slice [$W/cm$]}\nonumber \\
-V_{coolant} &= \mbox{coolant volume in AHTR slab [$cm^3$]} \nonumber \\
-\Delta T &= \mbox{temperature change across 1cm AHTR slab $\Delta z$ slice [$K$]}\\
+h_{plank} &= \mbox{plank's heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+h_{assem} &= \mbox{one-third assembly's heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+P_{dz} &= \mbox{power produced in 1cm AHTR plank/one-third assem $\Delta z$ slice [$W/cm$]}\nonumber \\
+V_{coolant} &= \mbox{coolant volume in AHTR plank/one-third assem [$cm^3$]} \nonumber \\
+\Delta T &= \mbox{temperature change across 1cm AHTR $\Delta z$ slice [$K$]}\\
 T_{total} &= \mbox{total temperature change from inlet to outlet [$K$]} \nonumber \\
 H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
 \end{align}
