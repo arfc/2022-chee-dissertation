@@ -438,12 +438,13 @@ Table \ref{tab:energy_structures} defines the group boundaries.
     \end{tabular}
 \end{table}
 
-For spatial homogenization of the straightened \gls{AHTR} fuel plank, I used 
-OpenMC's \textit{cell} domain type to compute multigroup cross sections for 
-different \textit{cells}. 
-I discretized the plank into 13 \textit{cells}: FLiBe, left graphite, right 
-graphite, and ten fuel cells (each cell has a different packing fraction).
-Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} spatial 
+For spatial homogenization of the straightened \gls{AHTR} fuel plank and 
+one-third assembly, I used OpenMC's \textit{cell} domain type to compute 
+multigroup cross sections for different \textit{cells}. 
+For the \gls{AHTR} fuel plank, I discretized the plank into 13 \textit{cells}:
+FLiBe, left graphite, right graphite, and ten fuel cells (each cell has a different 
+packing fraction).
+Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} plank's spatial 
 homogenization for the OpenMC multigroup calculation. 
 \begin{figure}[htbp]
     \centering
@@ -466,8 +467,32 @@ homogenization for the OpenMC multigroup calculation.
     \label{fig:straightened_slab_mg}
 \end{figure}
 
-For spatial homogenization of the \gls{AHTR} one-third assembly... 
-% include details about spatial homogenization for one-third assembly. 
+For the \gls{AHTR} one-third assembly, I discretized the one-third assembly into 
+70 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped graphite structure, control 
+rod slot \gls{FLiBe}, inter-plank \gls{FLiBe}, each graphite plank (6), and 10 fuel 
+cells per plank (60).
+Figure \ref{fig:fhr_onethird_assem_homogenization} illustrates the \gls{AHTR} 
+one-third assembly's spatial homogenization for the OpenMC multigroup calculation. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{fhr_onethird_assem_homogenization.png}
+    \raggedright
+    \resizebox{0.5\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{llll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe & 
+            \textcolor{fhrgrey}{$\blacksquare$} & Left Graphite \\
+            \textcolor{fhrred}{$\blacksquare$} & Right Graphite &
+            \textcolor{fhrpink}{$\blacksquare$} & Fuel cell 1/6 \\
+            \textcolor{fhryellow}{$\blacksquare$} & Fuel cell 2/7 &
+            \textcolor{fhrorange}{$\blacksquare$} & Fuel cell 3/8 \\
+            \textcolor{fhrgreen}{$\blacksquare$} & Fuel cell 4/9 &
+            \textcolor{fhrpurple}{$\blacksquare$} & Fuel cell 5/10 \\
+            \end{tabular}}}
+    \caption{Straightened \acrfull{AHTR} one-third assembly spatially discretized into 
+    70 \textit{cells} for OpenMC multigroup calculation.}
+    \label{fig:fhr_onethird_assem_homogenization}
+\end{figure}
 
 To ensure that the spatial and energy homogenization preserves accuracy, I 
 compared key neutronics parameters for the continuous OpenMC and multigroup 
@@ -846,9 +871,9 @@ OpenMC and Moltres normalization and solving methods.
     \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Difference [pcm]}  
     & \textbf{Normalized Difference [pcm]}\\
     \hline 
-    OpenMC & No & $1.41656 \pm 0.00131$ & - & -\\ 
+    OpenMC & No & $1.41657 \pm 0.00131$ & - & -\\ 
     OpenMC & Yes & $ \pm$ &  & -\\ 
-    Moltres & Yes & $1.40889 $ & -766 & \\ 
+    Moltres & Yes & $1.40895 $ & -762 & \\ 
     \hline
     \end{tabular}
 \end{table}
