@@ -885,7 +885,17 @@ OpenMC and Moltres normalization and solving methods.
 
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
 \subsubsection{AHTR One-Third Assembly: Flux Distribution}
+
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
+Figure \ref{fig:assem_neutron_spectrum_948K} shows the neutron spectrum of the OpenMC 
+simulation for both 252 and 4 groups, and 4-group Moltres simulation. 
+ \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{assem_neutron_spectrum_948K.png}
+    \caption{AHTR one-third assembly's neutron spectrum.}  
+    \label{fig:assem_neutron_spectrum_948K}
+\end{figure}
+There is good agreement between OpenMC and Moltres models 4-group spectrums. 
 
 \subsection{AHTR Plank: Mesh Refinement Study}
 To ensure that the geometry mesh input to the Moltres temperature model is sufficiently converged, 
@@ -908,6 +918,8 @@ I performed a mesh refinement study, outlined in Table \ref{tab:ahtr-plank-mesh-
     \end{tabular}
 \end{table}
 I used x3 mesh refinement for all AHTR Plank Moltres temperature models. 
+
+\subsection{AHTR One-Third Assembly: Mesh Refinement Study}
 
 \subsection{AHTR Plank: Group Constant Temperature Study}
 During ROLLO optimization, each new reactor geometry results in the creation of 
@@ -955,6 +967,8 @@ The temperature differences between the AHTR slab model with all four temperatur
 and the AHTR slab models' with each single temperature are not significant. 
 The 948K single temperature group constant data has the lowest 2-norm, thus, I 
 use this temperature in the neutronics model to generate the group constant data. 
+
+\subsection{AHTR One-Third Assembly: Group Constant Temperature Study}
 
 \section{ROLLO Hyperparameter Tuning}
 \label{sec:hyperparameter-studies}
