@@ -884,6 +884,27 @@ OpenMC and Moltres normalization and solving methods.
 \end{table}
 
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
+Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
+normalized difference between $k_{eff}$ values with and without DNPs. 
+The  $\beta{eff}$ values from OpenMC and Moltres in Table 
+\ref{tab:betaeff_ahtr_moltres_assem} show excellent agreement with a discrepancy of 0.8pcm. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{AHTR one-third assembly's $\beta_{eff}$ values from OpenMC and Moltres at 948K.}
+	\label{tab:betaeff_ahtr_moltres_assem}
+    \footnotesize
+    \begin{tabular}{lllc}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
+    & \textbf{Difference [pcm]}  \\
+    \hline 
+    OpenMC & No &  652.3 & - \\ 
+    Moltres & Yes & 651.5 & -0.8\\ 
+    \hline
+    \end{tabular}
+\end{table}
+
 \subsubsection{AHTR One-Third Assembly: Flux Distribution}
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
