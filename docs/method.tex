@@ -904,6 +904,29 @@ The  $\beta{eff}$ values from OpenMC and Moltres in Table
     \hline
     \end{tabular}
 \end{table}
+I calculated the temperature reactivity coefficients with Equation 
+\ref{eq:reactivity-coefficient}.
+Temperature reactivity feedback arises mainly from Doppler broadening of 
+resonance absorption peaks and thermal expansion.
+Table \ref{tab:reactivity_ahtr_moltres_assem} shows that the total temperature 
+coefficients from OpenMC and Moltres show good agreement with a discrepancy of 0.2 pcm/K.
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{AHTR one-third assembly's total reactivity coefficient values calculated from 
+    OpenMC and Moltres at 948K and 1100K.}
+	\label{tab:reactivity_ahtr_moltres_assem}
+    \footnotesize
+    \begin{tabular}{lllc}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
+    & \textbf{Difference [pcm/K]}  \\
+    \hline 
+    OpenMC & No &  -3.64 & - \\ 
+    Moltres & Yes & -3.44 & +0.2\\ 
+    \hline
+    \end{tabular}
+\end{table}
 
 \subsubsection{AHTR One-Third Assembly: Flux Distribution}
 
