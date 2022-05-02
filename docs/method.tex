@@ -746,44 +746,29 @@ neutronics modeling, but only for \gls{AHTR} plank temperature modeling.
 \subsubsection{AHTR Plank: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without DNPs. 
-The  $\beta{eff}$ values from OpenMC and Moltres show excellent 
-agreement with a discrepancy of 0.1pcm. 
-\begin{table}[htbp]
-    \centering
-    \onehalfspacing
-    \caption{AHTR Fuel Slab's $\beta_{eff}$ values from OpenMC and Moltres at 948K.}
-	\label{tab:betaeff_ahtr_moltres}
-    \footnotesize
-    \begin{tabular}{lllc}
-    \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
-    & \textbf{Difference [pcm]}  \\
-    \hline 
-    OpenMC & No &  654.3 & - \\ 
-    Moltres & Yes & 654.4 & 0.1\\ 
-    \hline
-    \end{tabular}
-\end{table}
+Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the $\beta{eff}$ values from OpenMC and 
+Moltres show excellent agreement with a discrepancy of 0.1pcm. 
 I calculated the temperature reactivity coefficients with Equation 
 \ref{eq:reactivity-coefficient}.
 Temperature reactivity feedback arises mainly from Doppler broadening of 
 resonance absorption peaks and thermal expansion.
-The total temperature coefficients from OpenMC and Moltres show good 
-agreement with a discrepancy of 0.4 pcm/K.
+Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the total temperature coefficients from 
+OpenMC and Moltres show good agreement with a discrepancy of 0.4 pcm/K.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR Fuel Slab's total reactivity coefficient values calculated from 
-    OpenMC and Moltres at 948K and 1100K.}
-	\label{tab:reactivity_ahtr_moltres}
+    \caption{AHTR Fuel Plank's $\beta_{eff}$ values from OpenMC and Moltres at 948K, and 
+    total reactivity coefficient values calculated from OpenMC and Moltres at 948K and 1100K.}
+	\label{tab:ahtr_plank_moltres_coeffs}
     \footnotesize
-    \begin{tabular}{lllc}
+    \begin{tabular}{llllll}
     \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
-    & \textbf{Difference [pcm/K]}  \\
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
+    & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
+    & \textbf{Diff [pcm/K]} \\
     \hline 
-    OpenMC & No &  -8.4 & - \\ 
-    Moltres & Yes & -8.8 & -0.4\\ 
+    OpenMC & No &  654.3 & - &  -8.4 & - \\ 
+    Moltres & Yes & 654.4 & +0.1 & -8.8 & -0.4\\ 
     \hline
     \end{tabular}
 \end{table}
@@ -888,22 +873,6 @@ Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the
 normalized difference between $k_{eff}$ values with and without DNPs. 
 The  $\beta{eff}$ values from OpenMC and Moltres in Table 
 \ref{tab:betaeff_ahtr_moltres_assem} show excellent agreement with a discrepancy of 0.8pcm. 
-\begin{table}[htbp]
-    \centering
-    \onehalfspacing
-    \caption{AHTR one-third assembly's $\beta_{eff}$ values from OpenMC and Moltres at 948K.}
-	\label{tab:betaeff_ahtr_moltres_assem}
-    \footnotesize
-    \begin{tabular}{lllc}
-    \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
-    & \textbf{Difference [pcm]}  \\
-    \hline 
-    OpenMC & No &  652.3 & - \\ 
-    Moltres & Yes & 651.5 & -0.8\\ 
-    \hline
-    \end{tabular}
-\end{table}
 I calculated the temperature reactivity coefficients with Equation 
 \ref{eq:reactivity-coefficient}.
 Temperature reactivity feedback arises mainly from Doppler broadening of 
@@ -913,17 +882,18 @@ coefficients from OpenMC and Moltres show good agreement with a discrepancy of 0
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR one-third assembly's total reactivity coefficient values calculated from 
-    OpenMC and Moltres at 948K and 1100K.}
-	\label{tab:reactivity_ahtr_moltres_assem}
+    \caption{AHTR one-third assembly's $\beta_{eff}$ values from OpenMC and Moltres at 948K, and 
+    total reactivity coefficient values calculated from OpenMC and Moltres at 948K and 1100K.}
+	\label{tab:ahtr_assem_moltres_coeffs}
     \footnotesize
-    \begin{tabular}{lllc}
+    \begin{tabular}{llllll}
     \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
-    & \textbf{Difference [pcm/K]}  \\
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
+    & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
+    & \textbf{Diff [pcm/K]} \\
     \hline 
-    OpenMC & No &  -3.64 & - \\ 
-    Moltres & Yes & -3.44 & +0.2\\ 
+    OpenMC & No &  652.3 & - &  -3.64 & - \\ 
+    Moltres & Yes & 651.5 & -0.8 & -3.44 & +0.2\\ 
     \hline
     \end{tabular}
 \end{table}
@@ -942,18 +912,19 @@ simulation for both 252 and 4 groups, and 4-group Moltres simulation.
 There is good agreement between OpenMC and Moltres models 4-group spectrums. 
 
 \subsection{AHTR Plank: Mesh Refinement Study}
-To ensure that the geometry mesh input to the Moltres temperature model is sufficiently converged, 
-I performed a mesh refinement study, outlined in Table \ref{tab:ahtr-plank-mesh-refinement}. 
+To ensure that the geometry mesh input to the \gls{AHTR} plank Moltres temperature model is 
+sufficiently converged, I performed a mesh refinement study, outlined in Table 
+\ref{tab:ahtr-plank-mesh-refinement}. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR plank's mesh refinement study.}
+    \caption{\acrfull{AHTR} plank's mesh refinement study.}
 	\label{tab:ahtr-plank-mesh-refinement}
     \scriptsize
     \begin{tabular}{lll}
     \hline 
     \textbf{Refinement} & \textbf{Max Plank Temp [K]} 
-    & \textbf{Max Plank Temp [K] Diff} \\ 
+    & \textbf{Diff [K]} \\ 
     \hline 
     1 & 1126.219 & - \\
     2 & 1127.711 & -1.491 \\
@@ -964,6 +935,28 @@ I performed a mesh refinement study, outlined in Table \ref{tab:ahtr-plank-mesh-
 I used x3 mesh refinement for all AHTR Plank Moltres temperature models. 
 
 \subsection{AHTR One-Third Assembly: Mesh Refinement Study}
+To ensure that the geometry mesh input to the \gls{AHTR} one-third assembly Moltres temperature 
+model is sufficiently converged, I performed a mesh refinement study, outlined in Table 
+\ref{tab:ahtr-assem-mesh-refinement}. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} one-third assembly's mesh refinement study.}
+	\label{tab:ahtr-assem-mesh-refinement}
+    \scriptsize
+    \begin{tabular}{lll}
+    \hline 
+    \textbf{Refinement} & \textbf{Max One-Third Assem Temp [K]} 
+    & \textbf{Diff [K]} \\ 
+    \hline 
+    1 &  & - \\
+    2 &  &  \\
+    3 &  &  \\ 
+    4 &  &  \\ 
+    \hline
+    \end{tabular}
+\end{table}
+I used x4 mesh refinement for all AHTR Plank Moltres temperature models. 
 
 \subsection{AHTR Plank: Group Constant Temperature Study}
 During ROLLO optimization, each new reactor geometry results in the creation of 
