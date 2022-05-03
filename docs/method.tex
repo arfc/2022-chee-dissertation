@@ -1056,12 +1056,14 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
     \hline
     \end{tabular}
 \end{table}
+
 Both AHTR plank and one-third assembly show suitable convergence in refinement steps. 
 I used x3 mesh refinement for all AHTR plank Moltres temperature models, and 
 used x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
 models. 
-Further refinement is unfeasible due to the large mesh size resulting in insufficient memory 
-on supercomputers to save the mesh for Moltres runs. 
+Further refinement is unfeasible due to the large mesh size. 
+Each supercomputer node saves the entire mesh file, further refinement results in 
+mesh sizes that are larger than the each node's memory size. 
 
 \subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
 During ROLLO optimization, each new reactor geometry results in the creation of 
@@ -1080,22 +1082,22 @@ The group constant data is generated with OpenMC \gls{AHTR} models at the specif
 temperatures. 
 
 Tables \ref{tab:moltres-group-constant-temps} and \ref{tab:moltres-group-constant-temps-assem}
-shows the average and maximum temperature reported by each Moltres model and their 
-differences compared to the model with group constant data with all four temperatures for 
-the plank and one-third assembly models, respectively. 
+shows the average and maximum temperature reported by plank and one-third assembly Moltres models 
+and their differences compared to the model with group constant data with all four temperatures. 
 Both tables also shows the normalized 2-norm of the centerline temperature difference between the 
-AHTR model with all four temperatures and each single temperature (Equation \ref{eq:2-norm-tdiff-all}).
+AHTR model with all four temperatures and each single temperature (Equation \ref{eq:2-norm-tdiff-all}):
 \begin{align}
     \label{eq:2-norm-tdiff-all}
     ||\Delta T||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{all, i} - T_{i})^2} \\
 \intertext{where}
     ||\Delta T||_N &= \mbox{normalized 2-norm temperature difference} \nonumber \\
     N &= \mbox{total number of discretized points} \nonumber \\
-    T_{all} &= \mbox{temperature from model with group constant data with all four temperatures} \nonumber \\
-    T &= \mbox{temperature from model with group constant data with one temperature} \nonumber 
+    T_{all} &= \mbox{temperatures from model with group constant data at all four temperatures} \nonumber \\
+    T &= \mbox{temperatures from model with group constant data at one temperature} \nonumber 
 \end{align}
 The centerlines for the plank and one-third models are depicted in Figures 
 \ref{fig:ahtr-plank-verification} and \ref{fig:ahtr-assem-verification}, respectively. 
+
 \begin{table}[htbp]
     \centering
     \onehalfspacing
