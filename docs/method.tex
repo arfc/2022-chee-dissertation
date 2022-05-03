@@ -1,6 +1,7 @@
 \chapter{AHTR Modeling and Optimization Methodology}
 In this chapter, I describe the modeling and optimization methodology of
-\gls{ROLLO} \gls{AHTR} optimization for non-conventional geometries and parameters.
+\acrfull{ROLLO} \acrfull{AHTR} optimization for non-conventional geometries and 
+parameters.
 To wholly explore the design space enabled by additive manufacturing, the 
 optimization tool should enable placement of fuel, moderation, and coolant material 
 in any possible location, within physical limits. 
@@ -46,22 +47,22 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     descriptions, and motivation.}
 	\label{tab:objectives}
     \footnotesize
-    \begin{tabular}{p{4cm}|p{5cm}p{5cm}}
+    \begin{tabular}{p{4.5cm}|p{5cm}p{5cm}}
     \hline 
     \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
     \hline
-    Minimize fuel amount & Minimize total fuel packing fraction & Cost savings, Non-proliferation \\ 
+    \textbf{Minimize fuel amount} & Minimize total fuel packing fraction & Cost savings, Non-proliferation \\ 
     \hline
-    Maximize heat transfer & Minimize maximum temperature & Enable system to perform at a higher power with minimized thermal stress \\
+    \textbf{Maximize heat transfer} & Minimize maximum temperature & Enable system to perform at a higher power with minimized thermal stress \\
     \hline
-    Minimize power peaking & Minimize power peaking factor normalized by fuel distribution & Efficient fuel utilization, longer core life, safety\\
+    \textbf{Minimize power peaking} & Minimize power peaking factor normalized by fuel distribution & Efficient fuel utilization, longer core life, safety\\
     \hline
     \end{tabular}
 \end{table}
 I will vary the described parameters in the \gls{AHTR} plank and \gls{AHTR} one-third assembly 
 geometries to optimize the described objectives.
-The results for the plank and one-third assembly are reported in Chapters \ref{chap:ahtr-plank-opt-results}
-and \ref{chap:ahtr-assem-opt-results}, respectively. 
+The optimization results for the plank and one-third assembly are reported in Chapters 
+\ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results}, respectively. 
 The plank optimization acts as a preliminary study to inform the more complex \gls{AHTR} one-third
 assembly optimization setup. 
 In the next section, I will describe both geometries. 
@@ -70,12 +71,14 @@ In the next section, I will describe both geometries.
 The optimization process is applied to both the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
 The geometries are adapted from the \gls{FHR} benchmark's \gls{AHTR} design,
-outlined in Chapter \ref{chap:fhr-benchmark}.
-The main differences occur in the fuel plank region (see Figure \ref{fig:ahtr-fuel-assembly}). 
+outlined in Chapter \ref{chap:fhr-benchmark} (see Figure \ref{fig:ahtr-fuel-assembly}).
+The main differences occur in the fuel plank region. 
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices within
-two fuel stripes in the plank. 
+two fuel stripes in the fuel plank region. 
 For the optimization problem, I instead discretized each plank into ten cells with random 
 TRISO packing and an individually controlled packing fraction. 
+Thus, the \gls{AHTR} plank has ten fuel cells and the \gls{AHTR}  one-third assembly has 
+60 fuel cells, this is further described in the subsequent sub-sections.  
 I also omit the graphite spacers. 
 
 \subsection{AHTR Plank Geometry}
@@ -143,15 +146,13 @@ The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$
 speed-up without compromising accuracy with $k_{eff}$ values within each 
 other's uncertainty.
 
-% coolant channel shape variation
-
 \subsection{AHTR One-Third Assembly Geometry}
-The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly that
-contains six graphite fuel planks.
+The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly. 
+The one-third assembly contains six graphite fuel planks.
 Each graphite fuel plank has graphite buffers and ten rectangular prism fuel cells 
 with random TRISO packing and individually controlled packing fraction. 
-Figure \ref{fig:ahtr_assembly} shows the one-third \gls{AHTR} assembly with 10 x 6 fuel cells with 
-random \gls{TRISO} packing.
+Figure \ref{fig:ahtr_assembly} shows the one-third \gls{AHTR} assembly with 10 x 6 
+fuel cells with random \gls{TRISO} packing.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{.7\textwidth}
@@ -172,15 +173,13 @@ random \gls{TRISO} packing.
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}
     \end{subfigure}
-    \caption{\gls{AHTR} assembly with 10 fuel cells in each graphite plank with random 
-    TRISO packing. Original \gls{FHR} benchmark fuel assembly with fuel stripes can be seen in 
-    Figure \ref{fig:ahtr-fuel-assembly}.}
+    \caption{\acrfull{AHTR} one-third assembly with 10 fuel cells in each graphite plank 
+    with random TRISO packing. Original \gls{FHR} benchmark fuel assembly with fuel 
+    stripes can be seen in Figure \ref{fig:ahtr-fuel-assembly}.}
     \label{fig:ahtr_assembly}
 \end{figure}
-The assembly model also uses the \gls{TRISO} particle outer four layer homogenization described 
-in Section \ref{sec:ahtr-plank-geometry}.
-
-% coolant channel shape variation
+The one-third assembly model also uses the \gls{TRISO} particle outer four layer 
+homogenization described in Section \ref{sec:ahtr-plank-geometry}.
 
 \section{AHTR Model Workflow}
 \gls{ROLLO} drives the evolutionary algorithm optimization process. 
@@ -190,8 +189,8 @@ These control variables are values used to control the \gls{AHTR} parameters des
 Section \ref{sec:opt-problem}.
 These control variables will be input into templated nuclear software to model different 
 AHTR geometries.
-The software will then run the \gls{AHTR} models and calculate the optimization objective 
-and constraint values. 
+The nuclear software will then run the \gls{AHTR} models and calculate the optimization 
+objective and constraint values. 
 In this work, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s neutronics 
 and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s multi-physics. 
 Details about each software can be found in Section \ref{sec:lit-review-modeling-software}.
@@ -234,7 +233,15 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
         \draw [arrow] (8) -- ([shift={(0cm,0cm)}]8.east) -- ([shift={(0cm,0cm)}]16.west);
         \draw [arrow] (11) -- ([shift={(0cm,0cm)}]11.east) -- ([shift={(0cm,0cm)}]17.west);
     \end{tikzpicture}
-    \caption{\acrfull{AHTR} modeling workflow in ROLLO optimization.} 
+    \caption{\acrfull{AHTR} modeling workflow in \acrfull{ROLLO} optimization. The entire 
+    workflow falls within the "evaluate population" orange blocks in ROLLO's evolutionary 
+    algorithm optimization process depicted in Figure \ref{fig:genetic_alg_nuclear}. 
+    For each reactor model in the optimization process, the workflow begins with ROLLO 
+    selecting the control parameters. 
+    ROLLO inserts control parameters into templated OpenMC and Moltres input files. 
+    The OpenMC and Moltres models are run. 
+    ROLLO analyzes the OpenMC and Moltres output files to determine constraint and 
+    objective values.} 
     \label{fig:ahtr-model-flow}
 \end{figure}
 
@@ -536,7 +543,7 @@ Q_i &= \mbox{source or sink term in material i} \nonumber
 I use insulated temperature boundary conditions.  
 Table \ref{tab:ahtr-thermal-conducitivity} shows the thermal conductivity values 
 used for each \gls{AHTR} material. 
-% add citations
+%TODO add citations
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -640,7 +647,7 @@ normalized power peaking factor.
 
 \gls{ROLLO} will automatically return the total fuel packing fraction output parameter, 
 since it is also an input parameter. 
-% describe why I chose maximum temperature, rather than average etc. 
+%TODO describe why I chose maximum temperature, rather than average etc. 
 In the Moltres AHTR model, I defined a post processor object to return the 
 maximum temperature in the plank. 
 To ensure efficient fuel utilization, one of the objectives is to minimize 
@@ -685,7 +692,7 @@ energy and spatially homogenized Moltres simulation.
 In this section, I compare the following key neutronics parameters: effective multiplication 
 factor, reactivity coefficients, flux distribution, and neutron energy spectrum for the 
 \gls{AHTR} plank model. 
-% Describe geometry
+%TODO Describe geometry
 For this verification study, I used an AHTR plank model with a 0.0979 total packing fraction and 
 packing fraction distribution of $PF(x) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
 The AHTR plank model with TRISO-level fidelity is depicted in Figure \ref{fig:ahtr-plank-verification}. 
@@ -727,7 +734,7 @@ OpenMC and Moltres normalization and solving methods.
     & \textbf{Normalized Difference [pcm]}\\
     \hline 
     OpenMC & No & $1.41402 \pm 0.00140$ & - & -\\ 
-    OpenMC & Yes & $1.41473 \pm 0.00098$ & +71 & -\\ 
+    OpenMC & Yes & $1.41473 \pm 0.00098$ & +71 & +50\\ 
     Moltres & Yes & $1.40696 $ & -706 & -502\\ 
     \hline
     \end{tabular}
@@ -768,8 +775,8 @@ OpenMC and Moltres show good agreement with a discrepancy of 0.4 pcm/K.
     & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
     & \textbf{Diff [pcm/K]} \\
     \hline 
-    OpenMC & No &  654.3 & - &  -8.4 & - \\ 
-    Moltres & Yes & 654.4 & +0.1 & -8.8 & -0.4\\ 
+    OpenMC & No &  654.31 & - &  -4.26 & - \\ 
+    Moltres & Yes & 654.28 & -0.03 & -4.49 & -0.23\\ 
     \hline
     \end{tabular}
 \end{table}
