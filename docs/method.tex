@@ -946,22 +946,34 @@ converged.
 Tables \ref{tab:ahtr-plank-mesh-refinement} and \ref{tab:ahtr-assem-mesh-refinement}
 show the mesh refinement study results for the \gls{AHTR} plank and one-third 
 assembly, respectively. 
-The differences reported are from the previous refinement step. 
+The mesh refinement study reports the average, maximum, and normalized 2-norm temperature 
+difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i}).
+\begin{align}
+    \label{eq:2-norm-tdiff-i}
+    ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2} \\
+\intertext{where}
+    ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps} \nonumber \\
+    N &= \mbox{total number of discretized points} \nonumber \\
+    k &= \mbox{refinement step} \nonumber \\
+    T_{k-1} &= \mbox{temperatures from previous refinement step} \nonumber \\
+    T &= \mbox{temperatures from current refinement step} \nonumber 
+\end{align} 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} plank's mesh refinement study.}
 	\label{tab:ahtr-plank-mesh-refinement}
     \scriptsize
-    \begin{tabular}{lll}
-    \hline 
-    \textbf{Refinement} & \textbf{Max Plank Temp [K]} 
-    & \textbf{Diff [K]} \\ 
-    \hline 
-    1 & 1126.219 & - \\
-    2 & 1127.711 & -1.491 \\
-    3 & 1128.434 & -0.723 \\ 
-    \hline
+    \begin{tabular}{lp{2.7cm}lp{2.7cm}ll}
+        \hline 
+        \textbf{Refinement} & \textbf{Max Plank Temp [K]} 
+        & \textbf{Diff [K]} & \textbf{Ave Plank Temp [K]}
+        & \textbf{Diff [K]} & $||\Delta T_k||_N$\\ 
+        \hline 
+        1 & 1126.219 & - & 1011.209 & - & - \\
+        2 & 1127.711 & +1.492 & 1017.630 & +6.421 & 0.839\\
+        3 & 1128.434 & +0.723 & 1020.021 & +2.390 & 0.313\\ 
+        \hline
     \end{tabular}
 \end{table}
 \begin{table}[htbp]
@@ -974,7 +986,7 @@ The differences reported are from the previous refinement step.
     \hline 
     \textbf{Refinement} & \textbf{Max One-Third Assem Temp [K]} 
     & \textbf{Diff [K]} & \textbf{Ave One-Third Assem Temp [K]}
-    & \textbf{Diff [K]} & $||T_{diff}||_N$\\ 
+    & \textbf{Diff [K]} & $||\Delta T_k||_N$\\ 
     \hline 
     1 & 1185.436 & - & 995.963 & - & - \\
     2 & 1186.045 & +0.609 & 1001.751 & +5.788 & 0.703\\
@@ -983,9 +995,12 @@ The differences reported are from the previous refinement step.
     \hline
     \end{tabular}
 \end{table}
-I used x3 mesh refinement for all AHTR Plank Moltres temperature models, and 
+Both AHTR plank and one-third assembly show suitable convergence in refinement steps. 
+I used x3 mesh refinement for all AHTR plank Moltres temperature models, and 
 used x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
 models. 
+Further refinement is unfeasible due to the large mesh size resulting in insufficient memory 
+on supercomputers to save the mesh for Moltres runs. 
 
 \subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
 During ROLLO optimization, each new reactor geometry results in the creation of 
@@ -1008,11 +1023,12 @@ shows the average and maximum temperature reported by each Moltres model and the
 differences compared to the model with group constant data with all four temperatures for 
 the plank and one-third assembly models, respectively. 
 Both tables also shows the normalized 2-norm of the centerline temperature difference between the 
-AHTR model with all four temperatures and each single temperature:
+AHTR model with all four temperatures and each single temperature (Equation \ref{eq:2-norm-tdiff-all}).
 \begin{align}
-    ||T_{diff}||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{all, i} - T_{i})^2} \\
+    \label{eq:2-norm-tdiff-all}
+    ||\Delta T||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{all, i} - T_{i})^2} \\
 \intertext{where}
-    ||T_{diff}||_N &= \mbox{normalized 2-norm temperature difference} \nonumber \\
+    ||\Delta T||_N &= \mbox{normalized 2-norm temperature difference} \nonumber \\
     N &= \mbox{total number of discretized points} \nonumber \\
     T_{all} &= \mbox{temperature from model with group constant data with all four temperatures} \nonumber \\
     T &= \mbox{temperature from model with group constant data with one temperature} \nonumber 
@@ -1030,7 +1046,7 @@ The centerlines for the plank and one-third models are depicted in Figures
     \hline 
     \textbf{Group Constant Data Temps [K]}& \textbf{Ave Slab Temp [K]}& 
     \textbf{Ave Slab Temp Diff [K]}& \textbf{Max Slab Temp [K]} & 
-    \textbf{Max Slab Temp Diff [K]} & $||T_{diff}||_N$ \\ 
+    \textbf{Max Slab Temp Diff [K]} & $||\Delta T||_N$ \\ 
     \hline 
     All  & 1019.965 &  -     & 1128.306 & -      & -    \\
     948 & 1019.997 &  0.032 & 1128.386 &  0.080 & 0.007\\
@@ -1057,7 +1073,7 @@ use 948K in the \gls{AHTR} plank neutronics model to generate the group constant
     \hline 
     \textbf{Group Constant Data Temps [K]}& \textbf{Ave One-Third Assembly Temp [K]}& 
     \textbf{Diff [K]}& \textbf{Max One-Third Assembly Temp [K]} & 
-    \textbf{Diff [K]} & $||T_{diff}||_N$ \\ 
+    \textbf{Diff [K]} & $||\Delta T||_N$ \\ 
     \hline 
     All  & 1004.366 &  -     & 1186.359 & -      & -    \\
     948 & 1004.708 & +0.341 & 1187.658 & +1.299 & 0.044 \\
