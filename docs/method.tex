@@ -1006,28 +1006,36 @@ Tables \ref{tab:moltres-group-constant-temps} and \ref{tab:moltres-group-constan
 shows the average and maximum temperature reported by each Moltres model and their 
 differences compared to the model with group constant data with all four temperatures for 
 the plank and one-third assembly models, respectively. 
-Both tables also shows the 2-norm of the centerline temperature difference between the 
-AHTR model with all four temperatures and each single temperature.
+Both tables also shows the normalized 2-norm of the centerline temperature difference between the 
+AHTR model with all four temperatures and each single temperature:
+\begin{align}
+    ||T_{diff}||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{all, i} - T_{i})^2} \\
+\intertext{where}
+    ||T_{diff}||_N &= \mbox{normalized 2-norm temperature difference} \nonumber \\
+    N &= \mbox{total number of discretized points} \nonumber \\
+    T_{all} &= \mbox{temperature from model with group constant data with all four temperatures} \nonumber \\
+    T &= \mbox{temperature from model with group constant data with one temperature} \nonumber 
+\end{align}
 The centerlines for the plank and one-third models are depicted in Figures 
 \ref{fig:ahtr-plank-verification} and \ref{fig:ahtr-assem-verification}, respectively. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR slab's average and maximum temperature and 2-norm of temperature 
-    discretized across the slab's centerline for varying group constant temperature data.}
+    \caption{AHTR slab's average and maximum temperature and normalized 2-norm of discretized 
+    temperature difference across the slab's centerline for varying group constant temperature data.}
 	\label{tab:moltres-group-constant-temps}
     \scriptsize
     \begin{tabular}{p{2.5cm}p{2cm}p{2.4cm}p{2cm}p{2.4cm}p{2cm}}
     \hline 
     \textbf{Group Constant Data Temps [K]}& \textbf{Ave Slab Temp [K]}& 
     \textbf{Ave Slab Temp Diff [K]}& \textbf{Max Slab Temp [K]} & 
-    \textbf{Max Slab Temp Diff [K]} & $||T_{all, i} - T_{i}||$ \\ 
+    \textbf{Max Slab Temp Diff [K]} & $||T_{diff}||_N$ \\ 
     \hline 
-     948 & 1019.997 &  0.032 & 1128.386 &  0.080 & 0.652\\
-    1024 & 1019.989 &  0.023 & 1128.640 &  0.333 & 2.279 \\
-    1100 & 1019.976 &  0.011 & 1128.300 & -0.006 & 2.875 \\
-    1200 & 1019.943 & -0.023 & 1128.052 & -0.255 & 4.308 \\
     All  & 1019.965 &  -     & 1128.306 & -      & -    \\
+    948 & 1019.997 &  0.032 & 1128.386 &  0.080 & 0.007\\
+    1024 & 1019.989 &  0.023 & 1128.640 &  0.333 & 0.023 \\
+    1100 & 1019.976 &  0.011 & 1128.300 & -0.006 & 0.029 \\
+    1200 & 1019.943 & -0.023 & 1128.052 & -0.255 & 0.043 \\
     \hline
     \end{tabular}
 \end{table}
@@ -1048,19 +1056,19 @@ use 948K in the \gls{AHTR} plank neutronics model to generate the group constant
     \hline 
     \textbf{Group Constant Data Temps [K]}& \textbf{Ave One-Third Assembly Temp [K]}& 
     \textbf{Diff [K]}& \textbf{Max One-Third Assembly Temp [K]} & 
-    \textbf{Diff [K]} & $||T_{all, i} - T_{i}||$ \\ 
+    \textbf{Diff [K]} & $||T_{diff}||_N$ \\ 
     \hline 
     All  & 1004.366 &  -     & 1186.359 & -      & -    \\
-    948 & 1004.708 & +0.341 & 1187.658 & +1.299 & 8.876 \\
-    1024 & 1004.676 & +0.310 & 1187.148 & +0.788 & 8.178 \\
-    1100 & 1004.622 & +0.256 & 1186.085 & -0.274 & 9.119\\
-    1200 & 1004.539 & +0.172 & 1185.359 & -1.000 & 9.398 \\
+    948 & 1004.708 & +0.341 & 1187.658 & +1.299 & 0.044 \\
+    1024 & 1004.676 & +0.310 & 1187.148 & +0.788 & 0.041 \\
+    1100 & 1004.622 & +0.256 & 1186.085 & -0.274 & 0.046\\
+    1200 & 1004.539 & +0.172 & 1185.359 & -1.000 & 0.047 \\
     \hline
     \end{tabular}
 \end{table}
 The temperature differences between the AHTR one-third assembly model with all four 
 temperatures and the AHTR plank models' with each single temperature are small ($<1K$). 
-The 1024K single temperature group constant data has the lowest 2-norm, thus, I 
+The 1024K single temperature group constant data has the lowest normalized 2-norm, thus, I 
 use 1024K in the \gls{AHTR} one-third assembly neutronics model to generate the group 
 constant data.
 
