@@ -865,8 +865,8 @@ OpenMC and Moltres normalization and solving methods.
     & \textbf{Normalized Difference [pcm]}\\
     \hline 
     OpenMC & No & $1.41657 \pm 0.00131$ & - & -\\ 
-    OpenMC & Yes & $ \pm$ &  & -\\ 
-    Moltres & Yes & $1.40895 $ & -762 & \\ 
+    OpenMC & Yes & $ 1.41670 \pm 0.00116$ & +13 & +9\\ 
+    Moltres & Yes & $1.40895 $ & -762 & -537 \\ 
     \hline
     \end{tabular}
 \end{table}
@@ -946,6 +946,7 @@ converged.
 Tables \ref{tab:ahtr-plank-mesh-refinement} and \ref{tab:ahtr-assem-mesh-refinement}
 show the mesh refinement study results for the \gls{AHTR} plank and one-third 
 assembly, respectively. 
+The differences reported are from the previous refinement step. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -969,16 +970,16 @@ assembly, respectively.
     \caption{\acrfull{AHTR} one-third assembly's mesh refinement study.}
 	\label{tab:ahtr-assem-mesh-refinement}
     \scriptsize
-    \begin{tabular}{lllll}
+    \begin{tabular}{lp{2.7cm}lp{2.7cm}ll}
     \hline 
     \textbf{Refinement} & \textbf{Max One-Third Assem Temp [K]} 
     & \textbf{Diff [K]} & \textbf{Ave One-Third Assem Temp [K]}
-    & \textbf{Diff [K]} \\ 
+    & \textbf{Diff [K]} & $||T_{diff}||_N$\\ 
     \hline 
-    1 & 1184.43 & - & 995.96 & -\\
-    2 & 1186.04 & +0.61 & 1001.75 & +5.79\\
-    3 & 1185.99 & -0.05 & 1003.62 & +1.87\\ 
-    4 & 1187.65 & +1.66 & 1004.71 & +1.09\\
+    1 & 1185.436 & - & 995.963 & - & - \\
+    2 & 1186.045 & +0.609 & 1001.751 & +5.788 & 0.703\\
+    3 & 1185.994 & -0.051 & 1003.625 & +1.874 & 0.200\\ 
+    4 & 1187.658 & +1.664 & 1004.708 & +1.083 & 0.102\\
     \hline
     \end{tabular}
 \end{table}
