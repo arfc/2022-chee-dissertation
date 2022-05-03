@@ -726,7 +726,8 @@ factor, reactivity coefficients, flux distribution, and neutron energy spectrum 
 %TODO Describe geometry
 For this verification study, I used an AHTR plank model with a 0.0979 total packing fraction and 
 packing fraction distribution of $PF(x) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
-The AHTR plank model with TRISO-level fidelity is depicted in Figure \ref{fig:ahtr-plank-verification}. 
+Figure \ref{fig:ahtr-plank-verification} shows the AHTR plank model with TRISO-level 
+fidelity.
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{ahtr-plank-verification.png}
@@ -864,8 +865,8 @@ factor, reactivity coefficients, flux distribution, and neutron energy spectrum 
 \gls{AHTR} one-third assembly model. 
 For this verification study, I used an AHTR one-third assembly model with a constant 0.0979 total 
 packing fraction across all fuel cells.  
-The AHTR one-third assembly model with TRISO-level fidelity is depicted in Figure 
-\ref{fig:ahtr-assem-verification}. 
+Figure \ref{fig:ahtr-assem-verification} shows the \gls{AHTR} one-third assembly 
+model with TRISO-level fidelity.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\linewidth]{assem-constant-0.0979-verification.png}
@@ -908,18 +909,31 @@ OpenMC and Moltres normalization and solving methods.
     \hline
     \end{tabular}
 \end{table}
+The 13pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
+simulations show that the selected spatial and energy homogenizations
+are acceptable. 
+However, there is a 537pcm difference in the Moltres simulation's $k_{eff}$.
+Possible reasons are that the neutron diffusion method used in Moltres does not 
+approximate this reactor geometry as well. 
+The diffusion coefficients for this reactor type are approximately 1cm. 
+The FliBE coolant channel has a 0.7cm width which is smaller than the diffusion
+coefficient, resulting in poor approximations. 
+The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
+neutronics modeling, but only for \gls{AHTR} one-third assembly temperature modeling. 
 
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without DNPs. 
 The  $\beta{eff}$ values from OpenMC and Moltres in Table 
-\ref{tab:betaeff_ahtr_moltres_assem} show excellent agreement with a discrepancy of 0.8pcm. 
+\ref{tab:ahtr_assem_moltres_coeffs} show excellent agreement with a discrepancy of
+ 0.8pcm. 
 I calculated the temperature reactivity coefficients with Equation 
 \ref{eq:reactivity-coefficient}.
 Temperature reactivity feedback arises mainly from Doppler broadening of 
 resonance absorption peaks and thermal expansion.
-Table \ref{tab:reactivity_ahtr_moltres_assem} shows that the total temperature 
-coefficients from OpenMC and Moltres show good agreement with a discrepancy of 0.2 pcm/K.
+Table \ref{tab:ahtr_assem_moltres_coeffs} shows that the total temperature 
+coefficients from OpenMC and Moltres show good agreement with a discrepancy of 
+0.2 pcm/K.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -965,10 +979,15 @@ the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}).
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV}
     \label{fig:flux_948K_assem}
 \end{figure}
+The OpenMC simulation shows slightly higher flux in Group 1, Group 2, Group 4. 
+However, there is an overall good agreement for each group's flux.
+The flux neutronics parameter is most important as it contributes to the 
+source term in the Moltres simulation. 
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
-Figure \ref{fig:assem_neutron_spectrum_948K} shows the neutron spectrum of the OpenMC 
-simulation for both 252 and 4 groups, and 4-group Moltres simulation. 
+Figure \ref{fig:assem_neutron_spectrum_948K} shows the one-third assembly's neutron 
+spectrum of the OpenMC simulation for both 252 and 4 groups, and 4-group Moltres 
+simulation. 
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{assem_neutron_spectrum_948K.png}
@@ -976,6 +995,10 @@ simulation for both 252 and 4 groups, and 4-group Moltres simulation.
     \label{fig:assem_neutron_spectrum_948K}
 \end{figure}
 There is good agreement between OpenMC and Moltres models 4-group spectrums. 
+
+In summary, Moltres replicated the relevant neutronics parameters with sufficient 
+accuracy using OpenMC's group constant data for the \gls{AHTR} one-third assembly 
+model. 
 
 \subsection{AHTR Plank and One-Third Assembly: Mesh Refinement Studies}
 I performed a mesh refinement studies on the \gls{AHTR} plank and one-third assembly 
