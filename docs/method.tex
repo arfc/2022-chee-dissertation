@@ -347,7 +347,7 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
             \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
-        \caption{TRISO distribution.}
+        \caption{TRISO distribution in one-third assembly model.}
         \label{fig:ahtr-assem-triso-distr} 
     \end{subfigure}
     \caption{\acrfull{AHTR} one-third assembly with varying \gls{TRISO} particle 
@@ -385,26 +385,35 @@ for $radius_{top} = 0.2$ and $radius_{bot} = 0.3$.
     = 0.2$ and $radius_{bot} = 0.3$.}  
     \label{fig:coolant-channel-shape}
 \end{figure}
-$radius_{top}$ and $radius_{bot}$ are the control variables \gls{ROLLO} 
-utilizes to control the coolant channel shape in the \gls{AHTR} plank.
 Thus, \gls{ROLLO} will vary $radius_{top}$ and $radius_{bot}$ to find an optimal coolant 
 channel shape.
 
-% Assembly COolant channel shape variation
+% TODO: Assembly COolant channel shape variation
 
 \subsection{AHTR OpenMC and Moltres Models}
 \label{sec:ahtr-moltres-hom}
 The input parameter modeling outlined in the previous section are inputs into 
 the OpenMC neutronics and Moltres multiphysics models. 
-In this section, I describe details and assumptions for the models. 
+The OpenMC and Moltres models' workflow:  
+\begin{enumerate}
+\item OpenMC neutronics model
+\item OpenMC neutronics model produces group constants data for the Moltres 
+model
+\item Moltres model mesh generation 
+\item Moltres temperature model accepts group constants data and mesh
+\end{enumerate}
+In the subsequent sub-sections, I describe details and assumptions for each step of 
+the OpenMC and Moltres models' workflow.
 
 \subsubsection{AHTR OpenMC Model}
-The OpenMC templated model accepts the following input parameters: total packing fraction, 
-TRISO particle distribution, and FliBe coolant channel shapes, from \gls{ROLLO}.
+The OpenMC templated model accepts the following input parameters from \gls{ROLLO}: 
+total packing fraction ($PF$), TRISO particle distribution ($a, b, c, d, e, f$), 
+and FliBe coolant channel shapes ($radius_{top}, radius_{bot}$). 
+% TODO: update after assem's coolant is defined
 The OpenMC model takes the input parameters and generates an \gls{AHTR} model with 
 \gls{TRISO}-level fidelity. 
-A separate OpenMC output file analyzes the results output from the OpenMC model and 
-calculates the $k_{eff}$ constraint value and normalized power peaking factor output value.
+A separate OpenMC output file analyzes the OpenMC model's output and 
+calculates the $k_{eff}$ constraint and normalized power peaking factor.
 Section \ref{sec:ahtr_slab_output} gives further description of calculation for 
 each output and constraint parameter.
 Figures \ref{fig:triso_distribution}, \ref{fig:ahtr-assem-triso-distr},
@@ -414,8 +423,8 @@ Figures \ref{fig:triso_distribution}, \ref{fig:ahtr-assem-triso-distr},
 \label{sec:ahtr-moltres-group-constant-gen}
 Unlike the OpenMC model, Moltres does not explicitly model each \gls{TRISO}
 particle. 
-This is because a TRISO-level fidelity mesh file is impractical and will result in an extremely 
-long runtimes. 
+This is because a TRISO-level fidelity mesh file is impractical and will result in an 
+extremely long runtimes. 
 Instead, Moltres relies on the OpenMC model to generate group constants data for the 
 Moltres' multigroup neutron diffusion calculations. 
 Previously, Moltres could only generate group constant data from Serpent 
@@ -429,7 +438,7 @@ These homogenizations preserve accuracy while maintaining an acceptable runtime.
 For both the \gls{AHTR} plank and one-third assembly models, I used eight precursor groups 
 and a four group energy structure derived by Gentry et al. \cite{gentry_development_2016} 
 for \gls{AHTR} geometries. 
-Table \ref{tab:energy_structures} defines the group boundaries. 
+Table \ref{tab:energy_structures} defines the 4-group energy boundaries. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -451,7 +460,7 @@ Table \ref{tab:energy_structures} defines the group boundaries.
     \end{tabular}
 \end{table}
 
-For spatial homogenization of the straightened \gls{AHTR} fuel plank and 
+For spatial homogenization of the straightened \gls{AHTR} plank and 
 one-third assembly, I used OpenMC's \textit{cell} domain type to compute 
 multigroup cross sections for different \textit{cells}. 
 For the \gls{AHTR} fuel plank, I discretized the plank into 13 \textit{cells}:
@@ -476,7 +485,8 @@ homogenization for the OpenMC multigroup calculation.
             \textcolor{fhrpurple}{$\blacksquare$} & Fuel cell 5/10 \\
             \end{tabular}}}
     \caption{Straightened \acrfull{AHTR} fuel slab spatially discretized into 
-    13 \textit{cells} for OpenMC multigroup calculation.}
+    13 \textit{cells} for OpenMC multigroup calculation to produce group constants 
+    data for Moltres model.}
     \label{fig:straightened_slab_mg}
 \end{figure}
 
@@ -500,23 +510,42 @@ one-third assembly's spatial homogenization for the OpenMC multigroup calculatio
             \textcolor{fhrblack1}{$\blacksquare$} \textcolor{fhrwhite1}{$\blacksquare$} & fuel cells
             \end{tabular}}}
     \caption{Straightened \acrfull{AHTR} one-third assembly spatially discretized into 
-    70 \textit{cells} for OpenMC multigroup calculation.}
+    70 \textit{cells} for OpenMC multigroup calculation to produce group constants 
+    data for Moltres model.}
     \label{fig:fhr_onethird_assem_homogenization}
 \end{figure}
 
-To ensure that the spatial and energy homogenization preserves accuracy, I 
-compared key neutronics parameters for the continuous OpenMC and multigroup 
-Moltres simulations, for both the \gls{AHTR} plank and one-third assembly.
-The results of the verification studies are described in Section 
+I compared the key neutronics parameters for the continuous OpenMC and multigroup 
+Moltres simulations for both the \gls{AHTR} plank and one-third assembly, to ensure 
+that the spatial and energy homogenization preserve accuracy.
+The results of the verification studies are reported in Section 
 \ref{sec:ahtr_model_verification}.
 
 \subsubsection{AHTR Moltres Mesh Generation}
-I wrote a python script that accepts the FliBe coolant channel shape input 
-parameters and generates a geometry script file (\texttt{.geo}) based on the 
-spatial homogenizations outlined in Section \ref{sec:ahtr-moltres-hom}.
+I wrote python scripts for the \gls{AHTR} plank and one-third models that accept the 
+FliBe coolant channel shape input parameters and generates a geometry script file 
+(\texttt{.geo}) based on the spatial homogenizations outlined in the previous 
+sub-section.
 The AHTR geometry mesh is then generated from the geometry script file using 
 Gmsh \cite{geuzaine_gmsh_2009}.
 I used Gmsh's \textit{refine by splitting} functionality to refine the mesh. 
+Figures \ref{fig:ahtr-plank-geo} and \ref{fig:ahtr-assem-geo} show a Gmsh rendered 
+geometry file example generated by the geometry script files for the AHTR plank 
+and one-third assembly, respectively. 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.9\textwidth}
+        \includegraphics[width=\linewidth]{ahtr-plank-geo.png}
+        \caption{}
+        \label{fig:ahtr-plank-geo} 
+    \end{subfigure}
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[width=\linewidth]{ahtr-assem-geo.png}
+        \caption{.}
+        \label{fig:ahtr-assem-geo} 
+    \end{subfigure}
+    \caption{}
+\end{figure}
 
 \subsubsection{AHTR Moltres Temperature Model}
 \label{sec:ahtr-moltres-temperature-model}
