@@ -913,6 +913,20 @@ ensuring that temperature distribution is accurately calculated in Moltres.
 Figure \ref{fig:flux_948K_assem} shows the 4-group flux distributions for OpenMC and 
 Moltres alone the \gls{AHTR} one-third assembly's centerline along the y-axis at 
 the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}). 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.48\linewidth]{flux_group1_948K_assem.png} 
+    \includegraphics[width=0.48\linewidth]{flux_group2_948K_assem.png} 
+    \includegraphics[width=0.48\linewidth]{flux_group3_948K_assem.png} 
+    \includegraphics[width=0.48\linewidth]{flux_group4_948K_assem.png} 
+    \caption{AHTR fuel one-third assembly's centerline neutron flux distribution in 
+    4 groups at 948K. 
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV}
+    \label{fig:flux_948K_assem}
+\end{figure}
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
 Figure \ref{fig:assem_neutron_spectrum_948K} shows the neutron spectrum of the OpenMC 
@@ -958,15 +972,16 @@ model is sufficiently converged, I performed a mesh refinement study, outlined i
     \caption{\acrfull{AHTR} one-third assembly's mesh refinement study.}
 	\label{tab:ahtr-assem-mesh-refinement}
     \scriptsize
-    \begin{tabular}{lll}
+    \begin{tabular}{lllll}
     \hline 
     \textbf{Refinement} & \textbf{Max One-Third Assem Temp [K]} 
+    & \textbf{Diff [K]} & \textbf{Ave One-Third Assem Temp [K]}
     & \textbf{Diff [K]} \\ 
     \hline 
-    1 & 1184.73 & - \\
-    2 & 1185.35 & 0.62 \\
-    3 & 1185.27 & -0.08 \\ 
-    4 & 1186.08 & 0.81 \\ 
+    1 & 1184.43 & - & 995.96 & -\\
+    2 & 1186.04 & 0.61 & 1001.75 & 5.79\\
+    3 & 1185.99 & -0.05 & 1003.62 & 1.87\\ 
+    4 & 1187.65 & 1.66 & 1004.71 & 1.09\\
     \hline
     \end{tabular}
 \end{table}
