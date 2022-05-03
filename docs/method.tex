@@ -704,22 +704,18 @@ fqr_j &= \mbox{fission-q-recoverable at position j} \nonumber \\
 PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 \end{align}
 
-\section{AHTR Model Verification}
+\section{AHTR Moltres Model Verification}
 \label{sec:ahtr_model_verification}
 In this section, I conduct \gls{AHTR} Moltres model verification for key neutronics parameters.
-I set up a criticality eigenvalue problem in Moltres to demonstrate  
-Moltres' ability to reproduce key neutronics parameters using multi-group constant 
-data from OpenMC for the \gls{AHTR} plank and one-third assembly models.  
-The accuracy from this neutronics verification step gives confidence for 
-subsequent \gls{AHTR} plank and one-third assembly multiphysics simulations with Moltres. 
-
+I setup a criticality eigenvalue problem in Moltres and calculated key neutronics parameters 
+using group constants data from OpenMC. 
 For both the \gls{AHTR} plank and one-third assembly models, I compare the key neutronics 
 parameters between two simulations:
 \begin{enumerate}
     \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity 
     \item Moltres simulation with 4-group energy and spatial homogenization
 \end{enumerate}
-Section \ref{sec:ahtr-moltres-group-constant-gen} outlines the spatial homogenization used.
+Section \ref{sec:ahtr-moltres-group-constant-gen} outlined the spatial homogenization used.
 The OpenMC simulation with TRISO-level fidelity generates the group constants for the 
 energy and spatially homogenized Moltres simulation. 
 
@@ -783,20 +779,20 @@ approximate this reactor geometry as well.
 The diffusion coefficients for this reactor type are approximately 1cm. 
 The FliBE coolant channel has a 0.35cm width which is smaller than the diffusion
 coefficient, resulting in poor approximations. 
-The $k_{eff}$ are acceptable since I am not using the Moltres simulation for 
+The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
 neutronics modeling, but only for \gls{AHTR} plank temperature modeling. 
 
 \subsubsection{AHTR Plank: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without DNPs. 
-Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the $\beta{eff}$ values from OpenMC and 
-Moltres show excellent agreement with a discrepancy of 0.1pcm. 
+Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the $\beta{eff}$ values from 
+OpenMC and Moltres show excellent agreement with a discrepancy of 0.03pcm. 
 I calculated the temperature reactivity coefficients with Equation 
 \ref{eq:reactivity-coefficient}.
 Temperature reactivity feedback arises mainly from Doppler broadening of 
 resonance absorption peaks and thermal expansion.
-Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the total temperature coefficients from 
-OpenMC and Moltres show good agreement with a discrepancy of 0.4 pcm/K.
+Table \ref{tab:ahtr_plank_moltres_coeffs} also shows that the total temperature 
+coefficients from OpenMC and Moltres show good agreement with a discrepancy of 0.23 pcm/K.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
