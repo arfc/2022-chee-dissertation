@@ -939,10 +939,13 @@ simulation for both 252 and 4 groups, and 4-group Moltres simulation.
 \end{figure}
 There is good agreement between OpenMC and Moltres models 4-group spectrums. 
 
-\subsection{AHTR Plank: Mesh Refinement Study}
-To ensure that the geometry mesh input to the \gls{AHTR} plank Moltres temperature model is 
-sufficiently converged, I performed a mesh refinement study, outlined in Table 
-\ref{tab:ahtr-plank-mesh-refinement}. 
+\subsection{AHTR Plank and One-Third Assembly: Mesh Refinement Studies}
+I performed a mesh refinement studies on the \gls{AHTR} plank and one-third assembly 
+Moltres temperature models to ensure that their geometry mesh inputs are sufficiently 
+converged. 
+Tables \ref{tab:ahtr-plank-mesh-refinement} and \ref{tab:ahtr-assem-mesh-refinement}
+show the mesh refinement study results for the \gls{AHTR} plank and one-third 
+assembly, respectively. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -960,12 +963,6 @@ sufficiently converged, I performed a mesh refinement study, outlined in Table
     \hline
     \end{tabular}
 \end{table}
-I used x3 mesh refinement for all AHTR Plank Moltres temperature models. 
-
-\subsection{AHTR One-Third Assembly: Mesh Refinement Study}
-To ensure that the geometry mesh input to the \gls{AHTR} one-third assembly Moltres temperature 
-model is sufficiently converged, I performed a mesh refinement study, outlined in Table 
-\ref{tab:ahtr-assem-mesh-refinement}. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -979,16 +976,17 @@ model is sufficiently converged, I performed a mesh refinement study, outlined i
     & \textbf{Diff [K]} \\ 
     \hline 
     1 & 1184.43 & - & 995.96 & -\\
-    2 & 1186.04 & 0.61 & 1001.75 & 5.79\\
-    3 & 1185.99 & -0.05 & 1003.62 & 1.87\\ 
-    4 & 1187.65 & 1.66 & 1004.71 & 1.09\\
+    2 & 1186.04 & +0.61 & 1001.75 & +5.79\\
+    3 & 1185.99 & -0.05 & 1003.62 & +1.87\\ 
+    4 & 1187.65 & +1.66 & 1004.71 & +1.09\\
     \hline
     \end{tabular}
 \end{table}
-I used x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
+I used x3 mesh refinement for all AHTR Plank Moltres temperature models, and 
+used x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
 models. 
 
-\subsection{AHTR Plank: Group Constant Temperature Study}
+\subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
 During ROLLO optimization, each new reactor geometry results in the creation of 
 a new Moltres temperature model. 
 Correspondingly, a new set of group constant data will also be created. 
