@@ -597,8 +597,8 @@ used for each \gls{AHTR} material.
     \end{tabular}
 \end{table}
 
-Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source term.
-Moltres' source term ($Q_f$) is defined by: 
+Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source term 
+($Q_f$):
 \begin{align}
 \label{eq:moltres-source-term}
     Q_f &= \sum_{g=1}^G \epsilon_{f,g}\Sigma_{f,g}\phi_g
@@ -628,23 +628,23 @@ transfer coefficient values for the convective heat transfer process.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR Fuel Slab's heat transfer constants.}
+    \caption{AHTR plank and one-third assembly heat transfer constants.}
 	\label{tab:heat-exchanger-constants}
     \footnotesize
     \begin{tabular}{lllll}
     \hline 
     \textbf{Geometry} & \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
-    Plank & $h_{plank}$ & 990 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc} \\
-    Assembly & $h_{assem}$ & 611 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc} \\
-    Both & $T_{ref}$ & 923 & K & AHTR Inlet Temperature \\ %cite ahtr 923K inlet temp 
+    Plank & $h_{plank}$ & 990 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-plank} \\
+    Assembly & $h_{assem}$ & 611 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-assem} \\
+    Both & $T_{ref}$ & 923 & K & AHTR Inlet Temperature \cite{ramey_methodology_2021} \\ 
     \hline
     \end{tabular}
 \end{table} 
-I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} plank and one-third 
+I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} plank and one-third assembly
 using Equation \ref{eq:calc-htc-plank}, \ref{eq:calc-htc-assem} with the following assumptions: 
 \begin{itemize}
-    \item slab generates a constant amount of power, all of which is removed 
+    \item AHTR models generate constant amount of power, all of which is removed 
     by the coolant
     \item linear increase in temperature from inlet to outlet 
 \end{itemize}
@@ -677,13 +677,12 @@ for all the AHTR Moltres temperature models of varying coolant channel shapes.
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
 This section describes how I tallied the AHTR model outputs for the ROLLO 
-optimization problem objectives (as described in Table \ref{tab:objectives}):
+optimization problem objectives (described in Table \ref{tab:objectives}):
 total fuel packing fraction, the maximum temperature in the slab, and 
 normalized power peaking factor.  
 
 \gls{ROLLO} will automatically return the total fuel packing fraction output parameter, 
-since it is also an input parameter. 
-%TODO describe why I chose maximum temperature, rather than average etc. 
+since it is also an input parameter.  
 In the Moltres AHTR model, I defined a post processor object to return the 
 maximum temperature in the plank. 
 To ensure efficient fuel utilization, one of the objectives is to minimize 
