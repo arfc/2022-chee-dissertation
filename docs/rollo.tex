@@ -16,7 +16,7 @@ to go through the cumbersome process of customizing a genetic algorithm
 for their needs and determine which operators and hyperparameters work best for 
 their problem. 
 Furthermore, computing fitness values with nuclear software is computationally 
-xpensive, necessitating using supercomputers. 
+expensive, necessitating using supercomputers. 
 Reactor designers have to set up parallelization to use the genetic algorithm 
 optimization with nuclear software.
 
@@ -125,7 +125,7 @@ user to customize a specialized algorithm to fit their project \cite{fortin_deap
 
 \subsection{Distributed Evolutionary Algorithms in Python}
 \label{sec:deap-works}
-\gls{DEAP} is composed of two simples structures: a \textit{creator} and a 
+\gls{DEAP} is composed of two simple structures: a \textit{creator} and a 
 \textit{toolbox}.  
 The \textit{creator} module allows the run-time creation of classes via 
 inheritance and composition, enabling individual and population creation 
@@ -178,11 +178,11 @@ Figure \ref{fig:deap-code} illustrates \gls{DEAP}'s usage of the \textit{creator
     \label{fig:deap-code}
 \end{figure}
 Line 2 creates a single-objective fitness class, \texttt{Objective}. 
-The first argument defines the name of the derived class, the second argument 
-specifies the inherited base class, \texttt{base.fitness}, and the third 
+The first argument defines the derived class's name; the second argument 
+specifies the inherited base class, \texttt{base.fitness}; the third 
 argument indicates the objective fitness ($-1.0$ indicates a minimum objective, 
 $+1.0$ indicates a maximum objective). 
-Line 3 derives an \texttt{Individual} class from the standard Python list type,
+Line 3 derives an \texttt{Individual} class from the standard Python list type
 and defines its fitness attribute as the newly created \texttt{Objective} object. 
 Lines 5-9 initialize the \gls{DEAP} toolbox, register 
 \texttt{variable\_1} and \texttt{variable\_2} with their upper and lower bounds, 
@@ -227,9 +227,10 @@ for multiobjective optimization.
 There are four sections that the user must define: \\ \texttt{control\_variables}, 
 \texttt{evaluators}, \texttt{constraints}, and \texttt{algorithm}. 
 Figure \ref{fig:rollo-input} shows an example \gls{ROLLO} input file. 
-In this simulation, \gls{ROLLO} uses a genetic algorithm with the user-defined 
-hyperparameters to minimize the \texttt{output1} parameter, which is 
-calculated using the OpenMC evaluator that accepts input parameters: 
+In this simulation, \gls{ROLLO} uses a genetic algorithm with user-defined 
+hyperparameters to minimize the \texttt{output1} parameter.
+The OpenMC evaluator accepts input parameters: \texttt{variable1} and 
+\texttt{variable2}, and calculates the \texttt{output1} parameter.
 \texttt{variable1} and \texttt{variable2}. 
 \begin{figure}[htbp]
     \begin{minted}[
@@ -742,7 +743,7 @@ The Ackley function's global minimum point is $f(0,0) = 0$.
 Figure \ref{fig:ackley} shows the resulting two-variable Ackley function.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/ackley.png} 
+    \includegraphics[width=0.8\linewidth]{ackley.png} 
     \caption{Two variable Ackley function. Figure reproduced from \cite{sfu_ackley_nodate}.}
     \label{fig:ackley}
 \end{figure}
@@ -751,7 +752,7 @@ I added an integration test to \gls{ROLLO} that checks that a default \gls{ROLLO
 simulation will find the Ackley function's global minimum point. 
 If \gls{ROLLO} performed sub-optimally, it would return one of the Ackley 
 function's many local minimums. 
-\gls{ROLLO} successfully finds the global minimum point, and thus passes the 
+\gls{ROLLO} successfully finds the global minimum point and thus passes the 
 integration test. 
 
 \subsection{Binh and Korn Function}
@@ -777,7 +778,7 @@ Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto fron
     \label{fig:binh_paretofront}
 \end{figure}
 I use the hypervolume indicator to quantify the Pareto front's goodness. 
-The hypervolume indicator is the most used set-quality indicators for assessing 
+The hypervolume indicator is the most used set-quality indicator for assessing 
 stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
 The hypervolume indicator measures the volume (in the objective space) covered by 
 non-dominated solutions for problems in which all objectives are to be 

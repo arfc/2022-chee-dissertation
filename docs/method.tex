@@ -1167,6 +1167,7 @@ The subsequent sections describe the hyperparameter search I conducted for singl
 and multi-objective optimization. 
 
 \subsection{ROLLO Single-Objective Optimization Hyperparameters}
+\label{sec:rollo-single-hyp}
 I performed the single-objective hyperparameter search with a coarse-to-fine random 
 sampling scheme, whose advantages I previously discussed in Section \ref{sec:balance}.
 I used an \gls{AHTR} plank OpenMC model for the hyperparameter search (Figure 
@@ -1183,6 +1184,7 @@ The number of evaluations correlated the population size and number of generatio
 I randomly sampled population size and used the following equation to calculate 
 the number of generations: 
 \begin{align}
+    \label{eq:pop_gen}
     \mbox{no. of generations} &= \frac{\mbox{no. of evaluations}}{\mbox{population size} }
 \end{align}
 Table \ref{tab:hyperparameter_search} shows the lower and upper bounds used 
@@ -1341,7 +1343,60 @@ I use the hyperparameter set from experiment 39.
 For the multi-objective optimization case, I did not use an OpenMC example problem or 
 a coarse-to-fine random sampling scheme, due to lack of computational resources. 
 I instead used the Binh and Korn function described in Section \ref{sec:binhandkorn} as 
-an example problem to conduct the hyperparameter search. 
+an example problem to conduct the hyperparameter search.
 
+I conducted a simpler hyperparameter search for the multi-objective optimization. 
+For the selection operator, I chose to use \texttt{SelNSGA2}, since it is an elitist 
+operator that works well for multi-objective optimization. 
+Next I varied each of the following parameters individually and compared their 
+hypervolume values: population size/generations, mutation probability, and mating 
+probability.
+As described in Section \ref{sec:binhandkorn}, the hypervolume indicator quantifies 
+the Pareto front's goodness (larger = better). 
+In the following figures, I ran each simulation 25 times to produce each box plot. 
+
+Figure \ref{fig:hypervolume-comparison-gens} shows a boxplot comparing hypervolume 
+for different population size and generation combinations. 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.55\textwidth}
+    \makebox[\textwidth][c]{\includegraphics[width=\linewidth]{hypervolume-comparison-gens.png}} 
+    \caption{}
+    \label{fig:hypervolume-comparison-gens}
+    \end{subfigure}
+    \begin{subfigure}{0.55\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=\linewidth]{hypervolume-comparison-matpb.png}}
+        \caption{}
+        \label{fig:hypervolume-comparison-matpb}
+    \end{subfigure}
+    \begin{subfigure}{0.55\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=\linewidth]{hypervolume-comparison-mutpb.png}}
+        \caption{}
+        \label{fig:hypervolume-comparison-mutpb}
+    \end{subfigure}
+    \caption{.}
+\end{figure}
+
+Similar to Section \ref{sec:rollo-single-hyp}, I held the total number of OpenMC 
+evaluations constant at 600. 
+Equation \ref{eq:pop_gen} shows the relationship between population size and generations.
+For each population size - generation pair in Figure \ref{fig:hypervolume-comparison-gens}, 
+The 120/5 population size /generations combination performs the best with the highest 
+hypervolume median (orange line). 
+
+Figure \ref{fig:hypervolume-comparison-matpb} shows a boxplot comparing hypervolume 
+for different mating probabilities. 
+The 0.9 mutation probability performs the best with the highest hypervolume median 
+(orange line), compared to the 0.46 from the best single-objective hyperparameter set 
+(Section \ref{sec:rollo-single-hyp}). 
+
+Figure \ref{fig:hypervolume-comparison-matpb} shows a boxplot comparing hypervolume 
+for different mutation probabilities. 
+
+
+% varying 
+% pop size + generations 
+% matpb 
+% mut pb 
 
 \section{Summary}
