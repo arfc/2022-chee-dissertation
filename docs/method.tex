@@ -1353,10 +1353,10 @@ hypervolume values: population size/generations, mutation probability, and matin
 probability.
 As described in Section \ref{sec:binhandkorn}, the hypervolume indicator quantifies 
 the Pareto front's goodness (larger = better). 
-In the following figures, I ran each simulation 25 times to produce each box plot. 
 
-Figure \ref{fig:hypervolume-comparison-gens} shows a boxplot comparing hypervolume 
-for different population size and generation combinations. 
+Figure \ref{fig:hypervolume-comparison} shows boxplots comparing hypervolumes 
+for varying hyperparameters. 
+I ran each simulation 25 times to produce each box plot. 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.55\textwidth}
@@ -1374,13 +1374,14 @@ for different population size and generation combinations.
         \caption{}
         \label{fig:hypervolume-comparison-mutpb}
     \end{subfigure}
-    \caption{.}
+    \caption{}
+    \label{fig:hypervolume-comparison}
 \end{figure}
-
+Figure \ref{fig:hypervolume-comparison-gens} shows the boxplot comparing hypervolume 
+for different population size and generation combinations. 
 Similar to Section \ref{sec:rollo-single-hyp}, I held the total number of OpenMC 
 evaluations constant at 600. 
-Equation \ref{eq:pop_gen} shows the relationship between population size and generations.
-For each population size - generation pair in Figure \ref{fig:hypervolume-comparison-gens}, 
+Equation \ref{eq:pop_gen} shows the relationship between population size and generations. 
 The 120/5 population size /generations combination performs the best with the highest 
 hypervolume median (orange line). 
 
@@ -1389,14 +1390,12 @@ for different mating probabilities.
 The 0.9 mutation probability performs the best with the highest hypervolume median 
 (orange line), compared to the 0.46 from the best single-objective hyperparameter set 
 (Section \ref{sec:rollo-single-hyp}). 
-
 Figure \ref{fig:hypervolume-comparison-matpb} shows a boxplot comparing hypervolume 
 for different mutation probabilities. 
+The 0.23 mating probability from the best single-objective hyperparameter set 
+(Section \ref{sec:rollo-single-hyp}) performs as well as the 0.1 mating probability. 
 
-
-% varying 
-% pop size + generations 
-% matpb 
-% mut pb 
+Table \ref{fig:multi-obj-hyp} shows the hyperparameters I used for \gls{ROLLO} 
+multi-objective optimization. 
 
 \section{Summary}
