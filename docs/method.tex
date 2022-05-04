@@ -1395,7 +1395,30 @@ for different mutation probabilities.
 The 0.23 mating probability from the best single-objective hyperparameter set 
 (Section \ref{sec:rollo-single-hyp}) performs as well as the 0.1 mating probability. 
 
-Table \ref{fig:multi-obj-hyp} shows the hyperparameters I used for \gls{ROLLO} 
-multi-objective optimization. 
+Table \ref{tab:multi-obj-hyp} summarizes the hyperparameters I used for \gls{ROLLO} 
+multi-objective optimization based on the hyperparameter search. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{}
+	\label{tab:multi-obj-hyp}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Multi-Objective Optimization Hyperparameters Used}} \\
+    \hline 
+    \textbf{Hyperparameter} & \textbf{Value} \\
+    \hline 
+    Population size & 120 \\
+    Generations & 5 \\
+    Mutation probability & 0.9 \\
+    Mating probability & 0.23 \\
+    Selection operator & \texttt{SelNSGA2} \\
+    Mutation operator & \texttt{mutPolynomial} \texttt{Bounded} \\
+    Mating operator & \texttt{cxBlend} \\
+    \hline
+    \end{tabular}
+\end{table}
+
 
 \section{Summary}
