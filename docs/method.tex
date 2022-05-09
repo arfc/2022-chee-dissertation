@@ -188,24 +188,27 @@ uses the \gls{TRISO} particle outer four layer
 homogenization described in Section \ref{sec:ahtr-plank-geometry}.
 
 \section{AHTR Model Workflow}
-\gls{ROLLO} drives the evolutionary algorithm optimization process. 
-In the \gls{ROLLO} input file, I will define control variables for the genetic algorithm 
+The \gls{ROLLO} software drives the evolutionary algorithm optimization process, 
+depicted in Figure \ref{fig:genetic_alg_nuclear}. 
+In a \gls{ROLLO} input file, I define control variables for the genetic algorithm 
 to vary. 
-These control variables are values used to control the \gls{AHTR} parameters described in 
+These control variables control the \gls{AHTR} parameters described in 
 Section \ref{sec:opt-problem}.
-These control variables will be input into templated nuclear software to model different 
+The control variables are input into the nuclear software templates to model different 
 AHTR geometries.
 The nuclear software will then run the \gls{AHTR} models and calculate the optimization 
 objective and constraint values. 
 In this work, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s neutronics 
 and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s multi-physics. 
-Details about each software can be found in Section \ref{sec:lit-review-modeling-software}.
+Descriptions of each software can be found in Section 
+\ref{sec:lit-review-modeling-software}.
 
-In this section, I describe the \gls{AHTR} modeling workflow: from the AHTR geometry 
-variation input parameters, to the OpenMC and Moltres models, and finally the 
-output and constraint values. 
-The \gls{AHTR} modeling workflow falls within the \textit{evaluate population} orange blocks 
-in Figure \ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
+In the following sub-sections, I describe the \gls{AHTR} modeling workflow: from the 
+AHTR geometry variation input parameters, to the OpenMC and Moltres models, 
+and finally the calculation of output and constraint values. 
+The \gls{AHTR} modeling workflow described in this section falls within the 
+\textit{evaluate population} orange blocks in Figure \ref{fig:genetic_alg_nuclear}'s 
+genetic algorithm flow chart.
 Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow. 
 \begin{figure}[htbp]
     \centering
@@ -217,7 +220,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
         \node (4) [e72block, below=of 1] {$\rho_{TRISO}(\vec{r})$};
         \node (5) [b72block, right=of 4] {a, b, c, d, e, f};
         \node (6) [e72block, below=of 4] {FliBE Coolant Channel Shape};
-        \node (7) [b72block, right=of 6] {$r_{top}$, $r_{bot}$};
+        \node (7) [b72block, right=of 6] {$r_{top}$, $r_{bot}$, $r_i$};
         \node (8) [o72block, right=of 2, xshift=0.8cm, yshift=0.5cm] {OpenMC Model};
         \node (9) [e92block, above=of 8] {Nuclear Software Models};
         \node (10) [o72block, right=of 5, xshift=0.8cm] {Group Constants};
@@ -240,29 +243,33 @@ Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow.
         \draw [arrow] (11) -- ([shift={(0cm,0cm)}]11.east) -- ([shift={(0cm,0cm)}]17.west);
     \end{tikzpicture}
     \caption{\acrfull{AHTR} modeling workflow in \acrfull{ROLLO} optimization. The entire 
-    workflow falls within the "evaluate population" orange blocks in ROLLO's evolutionary 
+    workflow falls within the 'evaluate population' orange blocks in ROLLO's evolutionary 
     algorithm optimization process depicted in Figure \ref{fig:genetic_alg_nuclear}. 
-    For each reactor model in the optimization process, the workflow begins with ROLLO 
-    selecting the control parameters. 
+    For each reactor model in the optimization process, the modeling workflow begins 
+    with ROLLO selecting the control parameters. 
     ROLLO inserts control parameters into templated OpenMC and Moltres input files. 
     The OpenMC and Moltres models are run. 
     ROLLO analyzes the OpenMC and Moltres output files to determine constraint and 
-    objective values.} 
+    objective values.
+    PF: Total packing fraction, $\rho_{TRISO}(\vec{r})$: TRISO packing fraction 
+    distribution, PPF: normalized power peaking factor, $T_{max}$: model's maximum 
+    temperature.} 
     \label{fig:ahtr-model-flow}
 \end{figure}
 
 \subsection{Input Parameter Modeling}
 \label{sec:input-parameter-modeling}
-In this section, I describe how I model the \gls{AHTR} parameter variations: total fuel packing 
-fraction, \gls{TRISO} particle packing fraction distribution, and \gls{FLiBe} coolant channel shape. 
-For both the \gls{AHTR} plank and one-third assembly models, total fuel packing fraction parameter 
-is a single numerical input.
+In this section, I describe how I model the \gls{AHTR} input parameter variations: 
+total fuel packing fraction, \gls{TRISO} particle packing fraction distribution, 
+and \gls{FLiBe} coolant channel shape. 
+For both the \gls{AHTR} plank and one-third assembly models, total fuel packing fraction 
+parameter is a single numerical input.
 In the subsequent sub-sections, I describe how I modeled the other two parameters for 
-both the \gls{AHTR} plank and one-third assembly. 
+both the \gls{AHTR} plank and one-third assembly models. 
 
 \subsubsection{Input Parameter Modeling: TRISO particle packing fraction distribution}
-For both the \gls{AHTR} plank and one-third assembly, I utilize sine distributions to govern the 
-\gls{TRISO} particle packing fraction distribution. 
+For both the \gls{AHTR} plank and one-third assembly models, I utilize sine 
+distributions to govern the \gls{TRISO} particle packing fraction distribution. 
 Based on the sine distributions, the model calculates the packing fraction in each fuel cell, then use 
 OpenMC's \texttt{pack\_spheres} function to randomly disperse the calculated packing fraction in each 
 fuel cell. 
