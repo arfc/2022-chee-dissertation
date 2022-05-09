@@ -269,7 +269,7 @@ both the \gls{AHTR} plank and one-third assembly models.
 
 \subsubsection{Input Parameter Modeling: TRISO particle packing fraction distribution}
 For both the \gls{AHTR} plank and one-third assembly models, I utilize sine 
-distributions to govern the \gls{TRISO} particle packing fraction distribution. 
+distributions to govern the \gls{TRISO} packing fraction distribution. 
 Based on the sine distributions, the model calculates the packing fraction in each fuel cell, then use 
 OpenMC's \texttt{pack\_spheres} function to randomly disperse the calculated packing fraction in each 
 fuel cell. 
@@ -278,9 +278,10 @@ across the fuel plank's x-direction.
 For the \gls{AHTR} one-third assembly, two sine distributions govern the \gls{TRISO} packing fraction 
 distribution across each fuel plank's x-direction, and the assembly's y-direction, respectively. 
 
-For the \gls{AHTR} plank, a sine distribution governs the \gls{TRISO} particle packing fraction 
-distribution across the ten fuel cells, illustrated in Figure \ref{fig:straightened_plank}:
+For the \gls{AHTR} plank, Equation \ref{eq:plank-sine}'s sine distribution governs 
+the \gls{TRISO} particle packing fraction distribution across the ten fuel cells:
 \begin{align}
+    \label{eq:plank-sine}
     PF(x) &= \left(a\cdot sin(b\cdot x + c) + 2\right) \cdot NF\\
     \intertext{where}
     PF(x) &= \mbox{packing fraction distribution across ten cells } [-] \nonumber \\ 
@@ -290,16 +291,17 @@ distribution across the ten fuel cells, illustrated in Figure \ref{fig:straighte
     x &= \mbox{midpoint value for each cell } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
-The sine distribution's coefficients, \textit{a b c}, are the control variables \gls{ROLLO} 
-utilizes to control the TRISO packing fraction distribution in the plank.
-Thus, \gls{ROLLO} will vary $a, b, c$ constants to find an optimal TRISO particle 
+The ten fuel cells are depicted in Figure \ref{fig:straightened_plank}.
+The sine distribution's coefficients, \textit{a b c}, are the control variables 
+\gls{ROLLO} utilizes to control the plank's TRISO packing fraction distribution.
+Thus, \gls{ROLLO} will vary $a, b, c$ variables to find an optimal TRISO particle 
 sine distribution. 
 The normalization factor normalizes the \gls{TRISO} particle distribution based on the 
 defined total packing fraction.
 
-For example an \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
-distribution of $PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right)  \cdot NF$, 
-results in the following packing fractions for the ten cells: 0.103, 0.120, 
+An \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
+distribution of $PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right) 
+\cdot NF$, results in the following packing fractions for the ten cells: 0.103, 0.120, 
 0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
 Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
 the packing fraction at the respective midpoints, and displays the plank's x-y 
@@ -310,7 +312,7 @@ axis view with packing fraction varying based on this sine distribution.
     \caption{Above: Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} particle 
     distribution across ten cells based on the sine distribution. 
     Below: $PF(x) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
-    sine distribution with red points indicating the packing fraction at each cell. }
+    sine distribution with red points indicating the packing fraction at each cell.}
     \label{fig:triso_distribution}
 \end{figure}
 
