@@ -594,12 +594,13 @@ and one-third assembly, respectively.
 
 \subsubsection{AHTR Moltres Temperature Model}
 \label{sec:ahtr-moltres-temperature-model}
-The Moltres \gls{AHTR} Steady-State Temperature Model is a 2D model of the 
-\gls{AHTR} plank and one-third assembly x-y cross-section with geometry from 
+The Moltres \gls{AHTR} Steady-State Temperature Model is a 2D x-y cross-section 
+model of the \gls{AHTR} plank and one-third assembly.
+The plank and one-third assembly geometries are depicted in
 Figure \ref{fig:straightened_slab_mg} and Figure 
 \ref{fig:fhr_onethird_assem_homogenization}, respectively.  
-The temperature model first solves the \gls{AHTR} neutronics and uses that to solve 
-the \gls{AHTR}'s temperature distribution for a defined power.
+The Moltres temperature model first solves the \gls{AHTR} neutronics and uses that to 
+solve the \gls{AHTR}'s temperature distribution for a defined power.
 The temperature model assumes conductive heat transfer throughout the domain 
 and heat removal by uniform salt flow in the coolant region. 
 These assumptions ignore turbulent effects that would most likely be present. 
@@ -612,12 +613,13 @@ as a steady-state eigenvalue problem to find $k_{eff}$ for the static AHTR model
 In the 2D cross-sectional AHTR Steady-State Temperature Model, I ignore the 
 time-dependent and velocity-dependent terms from Moltres' temperature governing 
 equation (Equation \ref{eq:moltres-temp}) since it is a steady-state model with
-no moving fuel: 
+no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}: 
 \begin{align}
+    \label{eq:moltres-temp-ss}
     - \nabla \cdot (k_i \nabla T) &= Q_i
 \intertext{where}
 k_i &= \mbox{thermal conductivity of material i} \nonumber \\
-T &= \mbox{temperature in the slab} \nonumber \\
+T &= \mbox{temperature in the model} \nonumber \\
 Q_i &= \mbox{source or sink term in material i} \nonumber
 \end{align} 
 I use insulated temperature boundary conditions.  
@@ -626,11 +628,11 @@ used for each \gls{AHTR} material.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} materials' thermal conductivities taken from 
-    \cite{ramey_methodology_2021}, used in Moltres temperature models.}
+    \caption{\acrfull{AHTR} materials' thermal conductivities used in Moltres 
+    temperature models, taken from \cite{ramey_methodology_2021}.}
 	\label{tab:ahtr-thermal-conductivity}
     \footnotesize
-    \begin{tabular}{lp{4cm}}
+    \begin{tabular}{ll}
     \hline 
     \textbf{Material}& \textbf{Thermal Conductivity [$Wcm^{-1}K^{-1}$]} \\ 
     \hline 
@@ -655,12 +657,12 @@ G &= \mbox{number of discrete groups, g } [-] \nonumber \\
 \end{align}
 
 Equation \ref{eq:moltres-heat-removal} defines the heat removal from the AHTR 
-fuel slab:
+model:
 \begin{align}
     \label{eq:moltres-heat-removal}
     Q &= h \cdot A \cdot(T(\vec{r})-T_{ref})
 \intertext{where:}
-Q &= \mbox{heat removal rate for 1cm thin slice of AHTR slab [W/cm]} \nonumber \\
+Q &= \mbox{heat removal rate for 1cm thin slice of the AHTR model [W/cm]} \nonumber \\
 h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
 A &= \mbox{coolant area } [cm^2] \nonumber \\
 T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
@@ -712,9 +714,14 @@ V_{coolant} &= \mbox{coolant volume in AHTR plank/one-third assem [$cm^3$]} \non
 T_{total} &= \mbox{total temperature change from inlet to outlet [$K$]} \nonumber \\
 H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
 \end{align}
-In the ROLLO optimization simulations, I vary the \gls{FLiBe} coolant channel shape. 
-During the shape variation, I hold the coolant volume constant. 
-Since the coolant volume is held constant through the coolant channel 
+The power produced by the \gls{AHTR} plank and one-third models are calculated based 
+on the \gls{FHR} benchmark model's specific power of 200 $\frac{W}{gU}$, and FHR 
+benchmark's TRISO packing fractions in the plank and one-third assembly.
+
+In the \gls{ROLLO} optimization simulations, I vary the \gls{FLiBe} coolant channel 
+shape. 
+During the coolant channel shape variation, I hold the coolant volume constant. 
+Since the coolant volume is held constant throughout the coolant channel 
 optimization process, I use the same heat transfer coefficient ($h$)
 for all the AHTR Moltres temperature models of varying coolant channel shapes.  
 
@@ -722,8 +729,8 @@ for all the AHTR Moltres temperature models of varying coolant channel shapes.
 \label{sec:ahtr_slab_output}
 This section describes how I tallied the AHTR model outputs for the ROLLO 
 optimization problem objectives (described in Table \ref{tab:objectives}):
-total fuel packing fraction, the maximum temperature in the slab, and 
-normalized power peaking factor.  
+total fuel packing fraction, maximum temperature in the slab, and 
+fuel-normalized power peaking factor.  
 
 \gls{ROLLO} will automatically return the total fuel packing fraction output parameter, 
 since it is also an input parameter.  
@@ -738,8 +745,9 @@ I then use OpenMC to tally the fission energy production rate (\texttt{fission-q
 $[eV/src]$) in each section.
 I did not normalize the score to calculate power since the final PPF value is a 
 ratio.
-The normalized power peaking factor is calculated: 
+Equation \ref{eq:ppf} calculates the fuel-normalized power peaking factor:
 \begin{align}
+    \label{eq:ppf}
     PPF &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
 \intertext{where}
 j &= \mbox{discretized fuel area j} \nonumber \\
@@ -784,9 +792,9 @@ fidelity.
             \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
-    \caption{AHTR plank geometry and packing fraction distribution used for AHTR plank's key 
-    neutronics parameters verification. White line corresponds to centerline where 
-    flux distribution is measured. }  
+    \caption{\acrfull{AHTR} plank geometry and packing fraction distribution used for 
+    \gls{AHTR} plank's key neutronics parameters verification. 
+    White line corresponds to centerline where flux distribution is measured. }  
     \label{fig:ahtr-plank-verification}
 \end{figure}
 
