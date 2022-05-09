@@ -1,37 +1,38 @@
 \chapter{AHTR Modeling and Optimization Methodology}
 \label{chap:method}
-In this chapter, I describe the modeling and optimization methodology of
-\acrfull{ROLLO} \acrfull{AHTR} optimization for non-conventional geometries and 
-parameters.
+In this chapter, I describe the modeling and optimization methodology of the 
+\acrfull{AHTR} optimization for non-conventional geometries and parameters
+conducted using \acrfull{ROLLO}.
 To wholly explore the design space enabled by additive manufacturing, the 
 optimization tool should enable placement of fuel, moderation, and coolant material 
 in any possible location, within physical limits. 
 Since exploration of non-conventional geometries and parameters has barely been
 attempted (previous attempts described in Section \ref{sec:lit-review-reactor-arbitrary}), 
-this dissertation attempts a first go at beginning to explore the large design space.  
+this dissertation does a first go at beginning to explore the large design space.  
 The work done for this dissertation is only an intermediate step towards developing 
 a truly arbitrary geometry expression. 
 
-The subsequent sections define the optimization problems, describe the \gls{AHTR} geometries, 
-outline the \gls{AHTR} modeling workflow, verify the \gls{AHTR} models, and describe the process of
-tuning \gls{ROLLO}'s hyperparameters.
+The subsequent sections define the optimization problem definitions, describe the 
+\gls{AHTR} geometries, outline the \gls{AHTR} modeling workflow, verify the \gls{AHTR} 
+models, and describe the process of tuning \gls{ROLLO}'s hyperparameters for the optimization 
+problems.
 
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
-In an effort towards optimizing reactor design for non-conventional geometries 
+In an effort towards optimizing the \gls{AHTR} design for non-conventional geometries 
 and parameters.
 I chose to vary the following \gls{AHTR} parameters: 
 \begin{itemize}
-    \item \gls{TRISO} particle packing fraction distribution, 
-    $\rho_{TRISO}(\vec{r})$
+    \item \gls{TRISO} packing fraction distribution
+    ($\rho_{TRISO}(\vec{r})$)
     \item Total fuel packing fraction
     \item \gls{FLiBe} coolant channel shape 
 \end{itemize} 
 The TRISO packing fraction distribution variation enables exploration of how 
 heterogenous fuel distributions impact reactor performance.
-In Chapter \ref{chap:fhr-benchmark}, the results demonstrated that increased fuel 
-packing does not always correspond with increased $k_{eff}$ due to self-shielding
-effects. 
+In Section \ref{sec:fhr-benchmark-keff}, the \gls{FHR} benchmark results demonstrated that 
+increased fuel packing does not always correspond with increased $k_{eff}$ due to 
+self-shielding effects. 
 Varying total fuel packing fraction and TRISO distribution synergistically enables exploration of
 how heterogenous TRISO distribution could minimize self-shielding and in turn reduce the fuel 
 required for a reactor design. 
@@ -60,16 +61,18 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \hline
     \end{tabular}
 \end{table}
-I will vary the described parameters in the \gls{AHTR} plank and \gls{AHTR} one-third assembly 
-geometries to optimize the described objectives.
-The optimization results for the plank and one-third assembly are reported in Chapters 
-\ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results}, respectively. 
-The plank optimization acts as a preliminary study to inform the more complex \gls{AHTR} one-third
-assembly optimization setup. 
+
+I will vary the described parameters in \gls{AHTR} plank and \gls{AHTR} one-third assembly 
+models to optimize the described objectives.
+The optimization results for the \gls{AHTR} plank and \gls{AHTR} one-third assembly are 
+reported in Chapters \ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results}, 
+respectively. 
+The plank optimization acts as a preliminary study to inform the more complex \gls{AHTR} 
+one-third assembly optimization setup. 
 In the next section, I will describe both geometries. 
 
 \section{AHTR Geometry for Optimization Problem}
-The optimization process is applied to both the \gls{AHTR} plank and \gls{AHTR} one-third
+I apply the optimizaiton process to both the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
 The geometries are adapted from the \gls{FHR} benchmark's \gls{AHTR} design,
 outlined in Chapter \ref{chap:fhr-benchmark} (see Figure \ref{fig:ahtr-fuel-assembly}).
@@ -79,17 +82,17 @@ two fuel stripes in the fuel plank region.
 For the optimization problem, I instead discretized each plank into ten cells with random 
 TRISO packing and an individually controlled packing fraction. 
 Thus, the \gls{AHTR} plank has ten fuel cells and the \gls{AHTR}  one-third assembly has 
-60 fuel cells, this is further described in the subsequent sub-sections.  
+60 fuel cells, this is further described in the ensuing sub-sections.  
 I also omit the graphite spacers. 
 
 \subsection{AHTR Plank Geometry}
 \label{sec:ahtr-plank-geometry}
-The \gls{AHTR} plank is a single graphite fuel plank model from the \gls{AHTR} design (Figure 
-\ref{fig:ahtr-fuel-assembly}). 
+The \gls{AHTR} plank is a single graphite fuel plank model from the \gls{AHTR} design 
+(Figure \ref{fig:ahtr-fuel-assembly}). 
 I modified the fuel plank to be straightened with perpendicular sides, instead 
 of slanted as in Figure \ref{fig:ahtr-fuel-plank}, for ease of modeling. 
-The original slanted \gls{AHTR} geometry will be used for the complex one-third assembly 
-optimization setup. 
+The original slanted \gls{AHTR} geometry will be used in the one-third assembly 
+optimization. 
 Figure \ref{fig:straightened_plank} illustrates the straightened fuel plank with 
 ten fuel cells with random \gls{TRISO} packing.
 \begin{figure}[htbp]
@@ -180,7 +183,8 @@ fuel cells with random \gls{TRISO} packing.
     stripes can be seen in Figure \ref{fig:ahtr-fuel-assembly}.}
     \label{fig:ahtr_assembly}
 \end{figure}
-The one-third assembly model also uses the \gls{TRISO} particle outer four layer 
+The one-third assembly model has reflective boundary conditions and  
+uses the \gls{TRISO} particle outer four layer 
 homogenization described in Section \ref{sec:ahtr-plank-geometry}.
 
 \section{AHTR Model Workflow}
@@ -988,7 +992,8 @@ the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}).
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV}
     \label{fig:flux_948K_assem}
 \end{figure}
-The OpenMC simulation shows slightly higher flux in Group 1, Group 2, Group 4. 
+The OpenMC simulation shows slightly higher flux in Group 1, and lower flux in 
+Group 2 and Group 4. 
 However, there is an overall good agreement for each group's flux.
 The flux neutronics parameter is most important as it contributes to the 
 source term in the Moltres simulation. 
