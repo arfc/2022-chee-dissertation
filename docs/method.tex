@@ -883,25 +883,29 @@ midpoint (white line on Figure \ref{fig:ahtr-plank-verification}).
     \includegraphics[width=0.48\linewidth]{flux_group2_948K.png} 
     \includegraphics[width=0.48\linewidth]{flux_group3_948K.png} 
     \includegraphics[width=0.48\linewidth]{flux_group4_948K.png} 
-    \caption{AHTR fuel plank's centerline neutron flux distribution in 4 groups
-    at 948K. 
+    \caption{\acrfull{AHTR} plank's centerline neutron flux distribution 
+    in 4 groups at 948K. Comparison between OpenMC simulation with continuous energy 
+    and TRISO-level spatial fidelity and Moltres simulation with 4-group energy and 
+    spatial homogenization.  
     Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
     Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
     Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
-    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV}
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux_948K}
 \end{figure}
 The OpenMC simulation shows higher flux in Group 1, and lower flux in the
 Group 2 and Group 3. 
-However, there is an good overall agreement for each group's flux.
+There is an good overall agreement for each group's flux.
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
-Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum the OpenMC simulation 
-for both 252 and 4 groups, and 4-group Moltres simulation. 
+Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum of the OpenMC 
+simulation for both 252 and 4 groups, and 4-group Moltres simulation. 
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{neutron_spectrum_948K.png}
-    \caption{AHTR fuel slab's neutron spectrum.}  
+    \caption{\acrfull{AHTR} plank's neutron spectrum for OpenMC simulation with 
+    continuous energy and TRISO-level spatial fidelity for 252 and 4 groups, and 
+    Moltres simulation with 4-group energy and spatial homogenization for 4 groups.}  
     \label{fig:neutron_spectrum_948K}
 \end{figure}
 There is good agreement between OpenMC and Moltres models 4-group spectrums. 
