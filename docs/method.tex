@@ -274,7 +274,7 @@ Based on the sine distributions, the model calculates the packing fraction in ea
 OpenMC's \texttt{pack\_spheres} function to randomly disperse the calculated packing fraction in each 
 fuel cell. 
 For the \gls{AHTR} plank, one sine distribution governs the \gls{TRISO} packing fraction distribution 
-across the fuel plank's x-direction. 
+across the \gls{AHTR} plank's x-direction. 
 For the \gls{AHTR} one-third assembly, two sine distributions govern the \gls{TRISO} packing fraction 
 distribution across each fuel plank's x-direction, and the assembly's y-direction, respectively. 
 
@@ -296,7 +296,7 @@ The sine distribution's coefficients, \textit{a b c}, are the control variables
 \gls{ROLLO} utilizes to control the plank's TRISO packing fraction distribution.
 Thus, \gls{ROLLO} will vary $a, b, c$ variables to find an optimal TRISO particle 
 sine distribution. 
-The normalization factor normalizes the \gls{TRISO} particle distribution based on the 
+The normalization factor normalizes the \gls{TRISO} distribution based on the 
 defined total packing fraction.
 
 An \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
@@ -316,10 +316,11 @@ axis view with packing fraction varying based on this sine distribution.
     \label{fig:triso_distribution}
 \end{figure}
 
-For the \gls{AHTR} one-third assembly, two sine distributions govern the x and y direction
-\gls{TRISO} particle packing fraction distributions in the 10 x 6 fuel cell shape, illustrated in 
-Figure \ref{fig:ahtr_assembly}:
+For the \gls{AHTR} one-third assembly, Equation \ref{assem-sine}'s two sine 
+distributions govern \gls{TRISO} packing fraction distributions in the x and y direction 
+for the 10 x 6 fuel cells:
 \begin{align}
+    \label{assem-sine}
     PF(x, y) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
     \cdot \left(d\cdot sin(e\cdot y + f) + 2\right) \cdot NF \\
     \intertext{where}
@@ -331,14 +332,16 @@ Figure \ref{fig:ahtr_assembly}:
     y &= \mbox{midpoint value for each fuel plank } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
-The sine distribution's coefficients, \textit{a b c d e f}, are the control variables \gls{ROLLO} 
-utilizes to control the TRISO packing fraction distribution in the assembly.
-Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal TRISO particle 
+The 10 x 6 fuel cells are depicted in Figure \ref{fig:ahtr_assembly}.
+The sine distribution's coefficients, \textit{a b c d e f}, are the control variables 
+\gls{ROLLO} utilizes to control the TRISO packing fraction distribution in the 
+one-thirdassembly.
+Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal TRISO 
 distribution. 
-The normalization factor ensures the correct total packing fraction 
-in the plank regardless the \gls{TRISO} particle distribution.
+The normalization factor normalizes the \gls{TRISO} distribution based on the 
+defined total packing fraction.
 
-For example in an \gls{AHTR} one-third assembly with a 0.1 total packing fraction, and packing 
+An \gls{AHTR} one-third assembly with a 0.1 total packing fraction, and packing 
 fraction distribution of $PF(x, y) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
 \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$ results in the packing fraction 
 distribution shown in Figure \ref{fig:ahtr-assem-triso-distr-squares}.
@@ -366,7 +369,7 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
         \label{fig:ahtr-assem-triso-distr} 
     \end{subfigure}
     \caption{\acrfull{AHTR} one-third assembly with varying \gls{TRISO} particle 
-        distribution across 60 cells based on the sine distributions: $PF(x, y) = 
+        distribution across 10 x 6 cells based on the sine distributions: $PF(x, y) = 
         \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
         \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$. 
         The packing fraction values on the left correspond to the TRISO 
@@ -374,16 +377,18 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
 \end{figure}
 
 \subsubsection{Input Parameter Modeling: FliBe Coolant Channel Shape}
-I model the variation in coolant channel shape with a sinusoidal-like pattern, 
-using OpenMC's cylinder surfaces.
-Varying the radius of the cylinder results in the depth and frequency of the coolant 
+For both the \gls{AHTR} plank and one-third assembly models, I model the variation in 
+coolant channel shape with a sinusoidal-like pattern, using OpenMC's cylinder surfaces
+functionality.
+Varying the cylinders' radius results in the depth and frequency of the coolant 
 channel shape minimicing a sinusoidal pattern.
-I vary the FliBE coolant channel shape while holding the total coolant volume constant. 
+I vary the \gls{FLiBe} coolant channel shape while holding the total coolant volume 
+constant. 
 
-For the \gls{AHTR} plank, $radius_{top}$ and $radius_{bot}$ variables control the coolant channel 
-shape on the bottom and top FliBe channels. 
-Figure \ref{fig:coolant-channel-shape} shows the \gls{AHTR} plank's coolant channel shape 
-for $radius_{top} = 0.2$ and $radius_{bot} = 0.3$.
+For the \gls{AHTR} plank, $r_{top}$ and $r_{bot}$ variables control the coolant channel 
+shape on the top and bottom \gls{FLiBe} channels. 
+Figure \ref{fig:coolant-channel-shape} shows the \gls{AHTR} plank's coolant channel 
+shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=\linewidth]{coolant-channel-shape.png}
@@ -396,12 +401,12 @@ for $radius_{top} = 0.2$ and $radius_{bot} = 0.3$.
             \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
-    \caption{AHTR Fuel Plank with Coolant Shape Variation, $radius_{top} 
-    = 0.2$ and $radius_{bot} = 0.3$.}  
+    \caption{\acrfull{AHTR} plank with coolant shape variation, $r_{top} 
+    = 0.2$ and $r_{bot} = 0.3$}  
     \label{fig:coolant-channel-shape}
 \end{figure}
-Thus, \gls{ROLLO} will vary $radius_{top}$ and $radius_{bot}$ to find optimal coolant 
-channel shapes.
+Thus, \gls{ROLLO} will vary $r_{top}$ and $r_{bot}$ to find optimal coolant 
+channel shapes for the \gls{AHTR} plank model.
 
 % TODO: Assembly COolant channel shape variation
 For the \gls{AHTR} one-third assembly, $r_1, r_2, r_3, r_4, r_5$ variables control the
@@ -409,8 +414,23 @@ coolant channel shape in the inter-plank \gls{FLiBe}.
 Figure \ref{fig:coolant-channel-shape-assem} shows the \gls{AHTR} one-third assembly's 
 inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = ... $
 % add figure
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[width=\linewidth]{coolant-channel-shape.png}
+    \raggedright
+    \resizebox{0.3\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe Coolant\\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+        \end{tabular}}}
+    \caption{\acrfull{AHTR} one-third assembly with coolant shape variation ...}  
+    \label{fig:coolant-channel-shape-assem}
+\end{figure}
 Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
-channel shapes.
+channel shapes for the \gls{AHTR} one-third assembly model.
 
 \subsection{AHTR OpenMC and Moltres Models}
 \label{sec:ahtr-moltres-hom}
