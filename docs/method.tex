@@ -1253,8 +1253,8 @@ I started with 25 coarse experiments and fine-tuned the hyperparameters
 with 15 more experiments. 
 For each genetic algorithm experiment, the number of OpenMC evaluations remained
 constant at 600.
-The number of evaluations correlated the population size and number of generations. 
-I randomly sampled population size and used the following equation to calculate 
+The number of evaluations correlates the population size and number of generations. 
+I randomly sampled population size and used Equation \ref{eq:pop_gen} to calculate 
 the number of generations: 
 \begin{align}
     \label{eq:pop_gen}
@@ -1298,14 +1298,15 @@ which suggests better hyperparameter sets.
 \begin{figure}[htbp]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{hyperparameter_sens.png}} 
-    \caption{Coarse hyperparameters search's results. Hyperparameter values are plotted 
-    against each other with a third color dimension representing each experiment's 
-    final population's $\overline{k_{eff}}$.}
+    \caption{Coarse \acrfull{ROLLO} hyperparameters search's results. 
+    Hyperparameter values are plotted against each other with a third color dimension 
+    representing each experiment's final population's $\overline{k_{eff}}$.}
     \label{fig:hyperparameter_sens}
 \end{figure}
 I plotted the hyperparameters against each other to visualize the interdependence 
 between hyperparameters. 
-From the coarse hyperparameter search, I noticed the following trends: 
+From the coarse hyperparameter search (Figure \ref{fig:hyperparameter_sens}), 
+I noticed the following trends: 
 \begin{itemize}
     \item Mutation probability has a higher $\overline{k_{eff}}$, between 0.2 and 0.4. 
     \item Mating probability has a higher $\overline{k_{eff}}$, between 0.1 and 0.3. 
