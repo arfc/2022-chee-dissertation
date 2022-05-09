@@ -3,12 +3,13 @@
 In this chapter, I describe the modeling and optimization methodology of the 
 \acrfull{AHTR} optimization for non-conventional geometries and parameters
 conducted using \acrfull{ROLLO}.
-To wholly explore the design space enabled by additive manufacturing, the 
-optimization tool should enable placement of fuel, moderation, and coolant material 
-in any possible location, within physical limits. 
-Since exploration of non-conventional geometries and parameters has barely been
+The optimization tool should enable the placement of fuel, moderation, and coolant 
+material in any possible location, within physical limits, to wholly explore the 
+design space enabled by additive manufacturing. 
+Since exploring non-conventional geometries and parameters has barely been
 attempted (previous attempts described in Section \ref{sec:lit-review-reactor-arbitrary}), 
-this dissertation does a first go at beginning to explore the large design space.  
+this dissertation does one of the first goes at beginning to explore the large design 
+space. 
 The work done for this dissertation is only an intermediate step towards developing 
 a truly arbitrary geometry expression. 
 
@@ -19,7 +20,7 @@ problems.
 
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
-In an effort towards optimizing the \gls{AHTR} design for non-conventional geometries 
+In an effort toward optimizing the \gls{AHTR} design for non-conventional geometries 
 and parameters.
 I chose to vary the following \gls{AHTR} parameters: 
 \begin{itemize}
@@ -29,13 +30,13 @@ I chose to vary the following \gls{AHTR} parameters:
     \item \gls{FLiBe} coolant channel shape 
 \end{itemize} 
 The TRISO packing fraction distribution variation enables exploration of how 
-heterogenous fuel distributions impact reactor performance.
-In Section \ref{sec:fhr-benchmark-keff}, the \gls{FHR} benchmark results demonstrated that 
-increased fuel packing does not always correspond with increased $k_{eff}$ due to 
+heterogeneous fuel distributions impact reactor performance.
+In Section \ref{sec:fhr-benchmark-keff}, the \gls{FHR} benchmark results demonstrated 
+that increased fuel packing does not always correspond with increased $k_{eff}$ due to 
 self-shielding effects. 
-Varying total fuel packing fraction and TRISO distribution synergistically enables exploration of
-how heterogenous TRISO distribution could minimize self-shielding and in turn reduce the fuel 
-required for a reactor design. 
+Varying total fuel packing fraction and TRISO distribution synergistically enable 
+exploration of how heterogenous TRISO distribution could minimize self-shielding and 
+thus, reduce the fuel required for a reactor design. 
 The \gls{FLiBe} coolant channel shape variation enables exploration of how non-uniform 
 channel shapes impact reactor performance. 
 
@@ -46,53 +47,56 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} optimization problem objectives with their quantification 
-    descriptions, and motivation.}
+    descriptions and motivation.}
 	\label{tab:objectives}
     \footnotesize
     \begin{tabular}{p{4.5cm}|p{5cm}p{5cm}}
     \hline 
     \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
     \hline
-    \textbf{Minimize fuel amount} & Minimize total fuel packing fraction & Cost savings, Non-proliferation \\ 
+    \textbf{Minimize fuel amount} & Minimize total fuel packing fraction 
+    & Cost savings, Non-proliferation \\ 
     \hline
-    \textbf{Maximize heat transfer} & Minimize maximum temperature & Enable system to perform at a higher power with minimized thermal stress \\
+    \textbf{Maximize heat transfer} & Minimize maximum temperature 
+    & Enable the system to perform at a higher power with minimized thermal stress \\
     \hline
-    \textbf{Minimize power peaking} & Minimize power peaking factor normalized by fuel distribution & Efficient fuel utilization, longer core life, safety\\
+    \textbf{Minimize power peaking} & Minimize power peaking factor normalized by fuel distribution 
+    & Efficient fuel utilization, longer core life, safety\\
     \hline
     \end{tabular}
 \end{table}
 
-I will vary the described parameters in \gls{AHTR} plank and \gls{AHTR} one-third assembly 
-models to optimize the described objectives.
-The optimization results for the \gls{AHTR} plank and \gls{AHTR} one-third assembly are 
+To optimize the described objectives, I will vary the described parameters in the
+\gls{AHTR} plank and one-third assembly models. 
+The optimization results for the \gls{AHTR} plank and one-third assembly models are 
 reported in Chapters \ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results}, 
 respectively. 
-The plank optimization acts as a preliminary study to inform the more complex \gls{AHTR} 
+The plank optimization is a preliminary study to inform the more complex \gls{AHTR} 
 one-third assembly optimization setup. 
 In the next section, I will describe both geometries. 
 
 \section{AHTR Geometry for Optimization Problem}
-I apply the optimizaiton process to both the \gls{AHTR} plank and \gls{AHTR} one-third
+I apply the optimization process to the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
 The geometries are adapted from the \gls{FHR} benchmark's \gls{AHTR} design,
 outlined in Chapter \ref{chap:fhr-benchmark} (see Figure \ref{fig:ahtr-fuel-assembly}).
 The main differences occur in the fuel plank region. 
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices within
 two fuel stripes in the fuel plank region. 
-For the optimization problem, I instead discretized each plank into ten cells with random 
+For the optimization problem, I discretized each plank into ten cells with random 
 TRISO packing and an individually controlled packing fraction. 
-Thus, the \gls{AHTR} plank has ten fuel cells and the \gls{AHTR}  one-third assembly has 
-60 fuel cells, this is further described in the ensuing sub-sections.  
+Thus, the \gls{AHTR} plank has ten fuel cells, and the \gls{AHTR} one-third assembly 
+has 60 fuel cells.  
+The subsequent sub-sections describe each geometry in further detail.
 I also omit the graphite spacers. 
 
 \subsection{AHTR Plank Geometry}
 \label{sec:ahtr-plank-geometry}
 The \gls{AHTR} plank is a single graphite fuel plank model from the \gls{AHTR} design 
 (Figure \ref{fig:ahtr-fuel-assembly}). 
-I modified the fuel plank to be straightened with perpendicular sides, instead 
-of slanted as in Figure \ref{fig:ahtr-fuel-plank}, for ease of modeling. 
-The original slanted \gls{AHTR} geometry will be used in the one-third assembly 
-optimization. 
+I modified the fuel plank to be straightened with perpendicular sides instead 
+of slanted as in Figure \ref{fig:ahtr-fuel-plank} for ease of modeling. 
+The one-third assembly optimization uses the original slanted \gls{AHTR} planks. 
 Figure \ref{fig:straightened_plank} illustrates the straightened fuel plank with 
 ten fuel cells with random \gls{TRISO} packing.
 \begin{figure}[htbp]
@@ -132,7 +136,7 @@ with and without the outer layer \gls{TRISO} homogenization.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Straightened \acrfull{AHTR} fuel plank $k_{eff}$ for case with 
+    \caption{Straightened \acrfull{AHTR} fuel plank $k_{eff}$ for the case with 
     no \gls{TRISO} homogenization and case with homogenization of the four outer 
     layers. Both simulations were run on one BlueWaters XE Node.}
 	\label{tab:keff_triso}
@@ -155,7 +159,7 @@ other's uncertainty.
 The \gls{AHTR} one-third assembly is one-diamond shape sector of the \gls{AHTR} assembly. 
 The one-third assembly contains six graphite fuel planks.
 Each graphite fuel plank has graphite buffers and ten rectangular prism fuel cells 
-with random TRISO packing and individually controlled packing fraction. 
+with random TRISO packing and individually controlled packing fractions. 
 Figure \ref{fig:ahtr_assembly} shows the one-third \gls{AHTR} assembly with 10 x 6 
 fuel cells with random \gls{TRISO} packing.
 \begin{figure}[htbp]
@@ -178,13 +182,13 @@ fuel cells with random \gls{TRISO} packing.
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}
     \end{subfigure}
-    \caption{\acrfull{AHTR} one-third assembly with 10 fuel cells in each graphite plank 
+    \caption{\acrfull{AHTR} one-third assembly with ten fuel cells in each graphite plank 
     with random TRISO packing. Original \gls{FHR} benchmark fuel assembly with fuel 
     stripes can be seen in Figure \ref{fig:ahtr-fuel-assembly}.}
     \label{fig:ahtr_assembly}
 \end{figure}
 The one-third assembly model has reflective boundary conditions and  
-uses the \gls{TRISO} particle outer four layer 
+uses the \gls{TRISO} particle outer four-layer 
 homogenization described in Section \ref{sec:ahtr-plank-geometry}.
 
 \section{AHTR Model Workflow}
@@ -203,9 +207,9 @@ and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s multi-phy
 Descriptions of each software can be found in Section 
 \ref{sec:lit-review-modeling-software}.
 
-In the following sub-sections, I describe the \gls{AHTR} modeling workflow: from the 
-AHTR geometry variation input parameters, to the OpenMC and Moltres models, 
-and finally the calculation of output and constraint values. 
+In the following sub-sections, I describe the \gls{AHTR} modeling workflow: the varied
+\gls{AHTR} input parameters, the OpenMC and Moltres models, and the output 
+and constraint values calculation. 
 The \gls{AHTR} modeling workflow described in this section falls within the 
 \textit{evaluate population} orange blocks in Figure \ref{fig:genetic_alg_nuclear}'s 
 genetic algorithm flow chart.
@@ -1510,3 +1514,6 @@ energy homogenizations used for the plank and one-third assembly Moltres tempera
 models preserved accuracy.
 I described the \gls{ROLLO} hyperparameter tuning process and reported the final 
 hyperparameters used for the single and multi-objective optimization problems. 
+
+The next two chapters: \gls{AHTR} plank optimization results and \gls{AHTR} 
+one-third assembly optimization results use the methods described in this chapter. 
