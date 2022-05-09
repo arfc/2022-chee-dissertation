@@ -803,12 +803,12 @@ for OpenMC simulation with TRISO fidelity, OpenMC simulation using the homogeniz
 group constants, and Moltres simulation using the homogenized group constants. 
 I included results from a homogenized OpenMC simulation as well to 
 distinguish between differences caused by spatial homogenization, and differing 
-OpenMC and Moltres normalization and solving methods. 
+OpenMC and Moltres solving methods. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR Fuel Slab's $k_{eff}$ values from OpenMC and Moltres at 948K.
-    Normalized difference is the pcm difference normalized by $k_{eff}$}
+    \caption{AHTR plank's $k_{eff}$ values from OpenMC and Moltres at 948K.
+    Normalized difference is the pcm difference normalized by $k_{eff}$.}
 	\label{tab:keff_ahtr_moltres}
     \footnotesize
     \begin{tabular}{lllcc}
@@ -822,24 +822,25 @@ OpenMC and Moltres normalization and solving methods.
     \hline
     \end{tabular}
 \end{table}
-The 71pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
+
+The 50pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
 simulations show that the selected spatial and energy homogenizations
 are acceptable. 
-However, there is a 502pcm difference in the Moltres simulation's $k_{eff}$.
-Possible reasons are that the neutron diffusion method used in Moltres does not 
+However, there is a 502 pcm difference in the Moltres simulation's $k_{eff}$.
+A possible reason is that the neutron diffusion method used in Moltres does not 
 approximate this reactor geometry as well. 
-The diffusion coefficients for this reactor type are approximately 1cm. 
+The diffusion coefficients for this reactor type are approximately 1cm.
 The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
 coefficient, resulting in poor approximations. 
 The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
-neutronics modeling, but only for \gls{AHTR} plank temperature modeling. 
+neutronics modeling, but for \gls{AHTR} plank temperature modeling. 
 
 \subsubsection{AHTR Plank: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without DNPs. 
 Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the $\beta{eff}$ values from 
 OpenMC and Moltres show excellent agreement with a discrepancy of 0.03pcm. 
-I calculated the temperature reactivity coefficients with Equation 
+I calculated the temperature reactivity coefficients using Equation 
 \ref{eq:reactivity-coefficient}.
 Temperature reactivity feedback arises mainly from Doppler broadening of 
 resonance absorption peaks and thermal expansion.
@@ -882,7 +883,7 @@ midpoint (white line on Figure \ref{fig:ahtr-plank-verification}).
     \includegraphics[width=0.48\linewidth]{flux_group2_948K.png} 
     \includegraphics[width=0.48\linewidth]{flux_group3_948K.png} 
     \includegraphics[width=0.48\linewidth]{flux_group4_948K.png} 
-    \caption{AHTR fuel slab's centerline neutron flux distribution in 4 groups
+    \caption{AHTR fuel plank's centerline neutron flux distribution in 4 groups
     at 948K. 
     Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
     Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
@@ -892,9 +893,7 @@ midpoint (white line on Figure \ref{fig:ahtr-plank-verification}).
 \end{figure}
 The OpenMC simulation shows higher flux in Group 1, and lower flux in the
 Group 2 and Group 3. 
-However, there is an overall good agreement for each group's flux.
-The flux neutronics parameter is most important as it contributes to the 
-source term in the Moltres simulation. 
+However, there is an good overall agreement for each group's flux.
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum the OpenMC simulation 
