@@ -387,10 +387,17 @@ for $radius_{top} = 0.2$ and $radius_{bot} = 0.3$.
     = 0.2$ and $radius_{bot} = 0.3$.}  
     \label{fig:coolant-channel-shape}
 \end{figure}
-Thus, \gls{ROLLO} will vary $radius_{top}$ and $radius_{bot}$ to find an optimal coolant 
-channel shape.
+Thus, \gls{ROLLO} will vary $radius_{top}$ and $radius_{bot}$ to find optimal coolant 
+channel shapes.
 
 % TODO: Assembly COolant channel shape variation
+For the \gls{AHTR} one-third assembly, $r_1, r_2, r_3, r_4, r_5$ variables control the
+coolant channel shape in the inter-plank \gls{FLiBe}. 
+Figure \ref{fig:coolant-channel-shape-assem} shows the \gls{AHTR} one-third assembly's 
+inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = ... $
+% add figure
+Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
+channel shapes.
 
 \subsection{AHTR OpenMC and Moltres Models}
 \label{sec:ahtr-moltres-hom}
@@ -638,7 +645,7 @@ transfer coefficient values for the convective heat transfer process.
     \textbf{Geometry} & \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
     Plank & $h_{plank}$ & 990 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-plank} \\
-    Assembly & $h_{assem}$ & 611 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-assem} \\
+    One-Third Assembly & $h_{assem}$ & 611 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-assem} \\
     Both & $T_{ref}$ & 923 & K & AHTR Inlet Temperature \cite{ramey_methodology_2021} \\ 
     \hline
     \end{tabular}
