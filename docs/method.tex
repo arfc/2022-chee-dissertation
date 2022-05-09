@@ -1088,10 +1088,10 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} plank's mesh refinement study.}
+    \caption{\acrfull{AHTR} plank's Moltres temperature model's mesh refinement study.}
 	\label{tab:ahtr-plank-mesh-refinement}
     \scriptsize
-    \begin{tabular}{lp{2.7cm}lp{2.7cm}ll}
+    \begin{tabular}{lp{3.2cm}lp{3.2cm}ll}
         \hline 
         \textbf{Refinement} & \textbf{Max Plank Temp [K]} 
         & \textbf{Diff [K]} & \textbf{Ave Plank Temp [K]}
@@ -1106,13 +1106,14 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} one-third assembly's mesh refinement study.}
+    \caption{\acrfull{AHTR} one-third assembly's Moltres temperature model's mesh 
+    refinement study.}
 	\label{tab:ahtr-assem-mesh-refinement}
     \scriptsize
-    \begin{tabular}{lp{2.7cm}lp{2.7cm}ll}
+    \begin{tabular}{lp{3.2cm}lp{3.1cm}ll}
     \hline 
-    \textbf{Refinement} & \textbf{Max One-Third Assem Temp [K]} 
-    & \textbf{Diff [K]} & \textbf{Ave One-Third Assem Temp [K]}
+    \textbf{Refinement} & \textbf{Max One-Third Assembly Temp [K]} 
+    & \textbf{Diff [K]} & \textbf{Ave One-Third Assembly Temp [K]}
     & \textbf{Diff [K]} & $||\Delta T_k||_N$\\ 
     \hline 
     1 & 1185.436 & - & 995.963 & - & - \\
@@ -1123,24 +1124,26 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
     \end{tabular}
 \end{table}
 
-Both AHTR plank and one-third assembly show suitable convergence in refinement steps. 
+Both \gls{AHTR} plank and one-third assembly show suitable $||\Delta T_k||_N$ 
+convergence with more refinement steps. 
 I used x3 mesh refinement for all AHTR plank Moltres temperature models, and 
 used x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
 models. 
 Further refinement is unfeasible due to the large mesh size. 
+I am using the Theta supercomputer \cite{noauthor_thetathetagpu_nodate} for this work.
 Each supercomputer node saves the entire mesh file, further refinement results in 
-mesh sizes that are larger than the each node's memory size. 
+mesh sizes that are larger than each Theta node's memory size. 
 
 \subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
-During ROLLO optimization, each new reactor geometry results in the creation of 
+During ROLLO optimization, each new reactor model results in the creation of 
 a new Moltres temperature model. 
-Correspondingly, a new set of group constant data will also be created. 
-Group constant data for multiple temperatures requires running multiple neutronics 
+Correspondingly, a new set of group constant data needs to be created. 
+Group constant data with multiple temperatures requires running multiple neutronics 
 simulations at the various temperatures, thus, increasing the total compute time 
 required for each new reactor model. 
 
 In this section, I explore the effects of using multiple temperature group 
-constant data compared to a single temperature.
+constant data compared to single temperature group constant data.
 I set up Moltres AHTR steady-state temperature models for the plank and one-third 
 assembly with group constant data at each and all the following temperatures: 948, 
 1024, 1100, and 1200 K. 
@@ -1148,7 +1151,7 @@ The group constant data is generated with OpenMC \gls{AHTR} models at the specif
 temperatures. 
 
 Tables \ref{tab:moltres-group-constant-temps} and \ref{tab:moltres-group-constant-temps-assem}
-shows the average and maximum temperature reported by plank and one-third assembly Moltres models 
+show the average and maximum temperature reported by plank and one-third assembly Moltres models 
 and their differences compared to the model with group constant data with all four temperatures. 
 Both tables also shows the normalized 2-norm of the centerline temperature difference between the 
 AHTR model with all four temperatures and each single temperature (Equation \ref{eq:2-norm-tdiff-all}):
@@ -1167,15 +1170,18 @@ The centerlines for the plank and one-third models are depicted in Figures
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR slab's average and maximum temperature and normalized 2-norm of discretized 
-    temperature difference across the slab's centerline for varying group constant temperature data.}
+    \caption{\acrfull{AHTR} plank's average and maximum temperature and normalized 
+    2-norm of discretized temperature difference across the plank's centerline for 
+    varying group constant temperature data. The difference values are calculated from 
+    comparison against the model with group constant data with all four temperatures 
+    (All).}
 	\label{tab:moltres-group-constant-temps}
     \scriptsize
     \begin{tabular}{p{2.5cm}p{2cm}p{2.4cm}p{2cm}p{2.4cm}p{2cm}}
     \hline 
-    \textbf{Group Constant Data Temps [K]}& \textbf{Ave Slab Temp [K]}& 
-    \textbf{Ave Slab Temp Diff [K]}& \textbf{Max Slab Temp [K]} & 
-    \textbf{Max Slab Temp Diff [K]} & $||\Delta T||_N$ \\ 
+    \textbf{Group Constant Data Temps [K]}& \textbf{Ave Plank Temp [K]}& 
+    \textbf{Ave Plank Temp Diff [K]}& \textbf{Max Plank Temp [K]} & 
+    \textbf{Max Plank Temp Diff [K]} & $||\Delta T||_N$ \\ 
     \hline 
     All  & 1019.965 &  -     & 1128.306 & -      & -    \\
     948 & 1019.997 &  0.032 & 1128.386 &  0.080 & 0.007\\
@@ -1187,15 +1193,18 @@ The centerlines for the plank and one-third models are depicted in Figures
 \end{table}
 The temperature differences between the AHTR plank model with all four temperatures 
 and the AHTR plank models' with each single temperature are not significant. 
-The 948K single temperature group constant data has the lowest 2-norm, thus, I 
-use 948K in the \gls{AHTR} plank neutronics model to generate the group constant data.
+The 948K single temperature group constant data has the lowest 2-norm difference 
+($||\Delta T||_N$), thus, I use 948K in the \gls{AHTR} plank neutronics model to 
+generate the group constant data.
 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{AHTR one-third assembly's average and maximum temperature and 2-norm of 
     temperature discretized across the slab's centerline for varying group constant 
-    temperature data.}
+    temperature data. The difference values are calculated from 
+    comparison against the model with group constant data with all four temperatures 
+    (All).}
 	\label{tab:moltres-group-constant-temps-assem}
     \scriptsize
     \begin{tabular}{p{2.5cm}p{2.5cm}p{2cm}p{2.5cm}p{2cm}p{2cm}}
@@ -1214,9 +1223,9 @@ use 948K in the \gls{AHTR} plank neutronics model to generate the group constant
 \end{table}
 The temperature differences between the AHTR one-third assembly model with all four 
 temperatures and the AHTR plank models' with each single temperature are small ($<1K$). 
-The 1024K single temperature group constant data has the lowest normalized 2-norm, thus, I 
-use 1024K in the \gls{AHTR} one-third assembly neutronics model to generate the group 
-constant data.
+The 1024K single temperature group constant data has the lowest 2-norm difference 
+($||\Delta T||_N$), thus, I use 1024K in the \gls{AHTR} one-third assembly 
+neutronics model to generate the group constant data.
 
 \section{ROLLO Hyperparameter Tuning}
 \label{sec:hyperparameter-studies}
