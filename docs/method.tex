@@ -1464,7 +1464,7 @@ for different mating probabilities.
 The 0.9 mutation probability performs the best with the highest hypervolume median 
 (orange line), compared to the 0.46 from the best single-objective hyperparameter set 
 (Section \ref{sec:rollo-single-hyp}). 
-Figure \ref{fig:hypervolume-comparison-matpb} shows a boxplot comparing hypervolume 
+Figure \ref{fig:hypervolume-comparison-mutpb} shows a boxplot comparing hypervolume 
 for different mutation probabilities. 
 The 0.23 mating probability from the best single-objective hyperparameter set 
 (Section \ref{sec:rollo-single-hyp}) performs as well as the 0.1 mating probability. 
@@ -1492,5 +1492,21 @@ multi-objective optimization based on the hyperparameter search.
     \end{tabular}
 \end{table}
 
-
 \section{Summary}
+This chapter describes the modeling and optimization methodology of the 
+\acrfull{AHTR} plank and one-third assembly optimization for non-conventional 
+geometries and parameters conducted using the \acrfull{ROLLO} software.
+I defined the \gls{AHTR} input parameters varied for the optimization problems: 
+\acrfull{TRISO} packing distribution, total fuel packing fraction and coolant 
+channel shape. 
+I also defined the key optimization objectives: minimize fuel amount, maximize 
+heat transfer, and minimize power peaking.
+I described the \gls{AHTR} plank and one-third assembly geometries. 
+I detailed the \gls{AHTR} modeling workflow: the control variables used to vary 
+the input parameters, the OpenMC neutronics model, the Moltres temperature model, and 
+the output constraint and objective value calculations. 
+I conducted a key neutronics parameter verification which ensured that the spatial and
+energy homogenizations used for the plank and one-third assembly Moltres temperature 
+models preserved accuracy.
+I described the \gls{ROLLO} hyperparameter tuning process and reported the final 
+hyperparameters used for the single and multi-objective optimization problems. 
