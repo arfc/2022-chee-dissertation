@@ -1459,7 +1459,8 @@ I ran each simulation 25 times to produce each box plot.
         \caption{Mutation probability variation}
         \label{fig:hypervolume-comparison-mutpb}
     \end{subfigure}
-    \caption{Hypervolume comparisons for varying \acrfull{ROLLO} hyperparameters. }
+    \caption{Hypervolume comparisons for varying \acrfull{ROLLO} hyperparameters for 
+    multi-objective optimization hyperparameter search. }
     \label{fig:hypervolume-comparison}
 \end{figure}
 Figure \ref{fig:hypervolume-comparison-gens} shows the boxplot comparing hypervolume 
@@ -1507,20 +1508,22 @@ multi-objective optimization based on the hyperparameter search.
 This chapter describes the modeling and optimization methodology of the 
 \acrfull{AHTR} plank and one-third assembly optimization for non-conventional 
 geometries and parameters conducted using the \acrfull{ROLLO} software.
-I defined the \gls{AHTR} input parameters for optimization problems: 
+I defined and described the \gls{AHTR} input parameters varied for the optimization 
+problems. 
+The input parameters include: 
 \acrfull{TRISO} packing distribution, total fuel packing fraction and coolant 
 channel shape. 
-I also defined the key optimization objectives: minimizing fuel amount,
+I defined and motivated the key optimization objectives: minimizing fuel amount,
 maximizing heat transfer, and minimizing power peaking.
-I described the \gls{AHTR} plank and one-third assembly geometries. 
-I detailed the \gls{AHTR} modeling workflow: the control variables used to vary 
+I described the \gls{AHTR} plank and one-third assembly geometries and  
+detailed the \gls{AHTR} modeling workflow: the control variables used to vary 
 the input parameters, the OpenMC neutronics model, the Moltres temperature model, and 
 the output constraint and objective value calculations. 
-I conducted a key neutronics parameter verification which ensured that the spatial and
+I conducted key neutronics parameter verifications which ensured that the spatial and
 energy homogenizations used for the plank and one-third assembly Moltres temperature 
 models preserved accuracy.
-I described the \gls{ROLLO} hyperparameter tuning process and reported the final 
-hyperparameters used for the single and multi-objective optimization problems. 
+Finally, I described the \gls{ROLLO} hyperparameter tuning process and reported the 
+final hyperparameters used for the single and multi-objective optimization problems. 
 
 The following two chapters: \gls{AHTR} plank optimization results and \gls{AHTR} 
 one-third assembly optimization results, use the methods described. 
