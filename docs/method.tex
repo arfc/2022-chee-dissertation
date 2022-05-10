@@ -319,7 +319,7 @@ the packing fraction at the respective midpoints, and displays the plank's x-y
 axis view with the packing fraction varying based on this sine distribution. 
 \begin{figure}[htbp]
     \centering
-    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{triso_distribution_sine.png}} 
+    \makebox[\textwidth][c]{\includegraphics[width=\linewidth]{triso_distribution_sine.png}} 
     \caption{Above: Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} particle 
     distribution across ten cells based on the sine distribution. 
     Below: $PF(x) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
@@ -412,7 +412,7 @@ shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
             \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
-    \caption{\acrfull{AHTR} plank with coolant shape variation, $r_{top} 
+    \caption{\acrfull{AHTR} plank with coolant channel shape variation, $r_{top} 
     = 0.2$ and $r_{bot} = 0.3$.}  
     \label{fig:coolant-channel-shape}
 \end{figure}
@@ -427,17 +427,18 @@ inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = ... $
 % add figure
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=\linewidth]{coolant-channel-shape.png}
-    \raggedright
-    \resizebox{0.3\textwidth}{!}{
-        \hspace{1cm}
+    \begin{subfigure}{.69\textwidth}
+        \includegraphics[width=\linewidth]{ahtr-assem-triso-distr.png}
+    \end{subfigure}
+    \begin{subfigure}{.3\textwidth}
         \fbox{\begin{tabular}{ll}
-            \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} Coolant\\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
+            \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
             \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
-        \end{tabular}}}
-    \caption{\acrfull{AHTR} one-third assembly with coolant shape variation ...}  
+            \end{tabular}}
+    \end{subfigure}
+    \caption{\acrfull{AHTR} one-third assembly with coolant channel shape variation ...}  
     \label{fig:coolant-channel-shape-assem}
 \end{figure}
 Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
@@ -704,6 +705,7 @@ transfer coefficient values for the convective heat transfer process.
     \hline
     \end{tabular}
 \end{table} 
+
 I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} plank and one-third assembly
 using Equation \ref{eq:calc-htc-plank}, \ref{eq:calc-htc-assem} with the following assumptions: 
 \begin{itemize}
