@@ -1209,7 +1209,7 @@ generate the group constant data.
     \centering
     \onehalfspacing
     \caption{AHTR one-third assembly's average and maximum temperature and 2-norm 
-    of discretized temperature difference across the slab's centerline for varying 
+    of the discretized temperature difference across the slab's centerline for varying 
     group constant temperature data. The difference values are calculated from 
     comparison against the model with group constant data with all four temperatures 
     (All).}
@@ -1232,8 +1232,9 @@ generate the group constant data.
 The temperature differences between the AHTR one-third assembly model with all four 
 temperatures and the AHTR plank models' with each single temperature are small ($<1K$). 
 The 1024K single temperature group constant data has the lowest 2-norm difference 
-($||\Delta T||_N$), thus, I use 1024K in the \gls{AHTR} one-third assembly 
-neutronics model to generate the group constant data.
+($||\Delta T||_N$). 
+Thus, I use 1024K in the \gls{AHTR} one-third assembly neutronics model to generate 
+the group constant data.
 
 \section{ROLLO Hyperparameter Tuning}
 \label{sec:hyperparameter-studies}
@@ -1253,15 +1254,15 @@ I performed the single-objective hyperparameter search with a coarse-to-fine ran
 sampling scheme, whose advantages I previously discussed in Section \ref{sec:balance}.
 I used an \gls{AHTR} plank OpenMC model for the hyperparameter search (Figure 
 \ref{fig:straightened_plank}). 
-The hyperparameters varied included population size, number of generations, 
+The hyperparameters are population size, number of generations, 
 mutation probability, mating probability, selection operator, selection operator's 
 number of individuals, selection operator's tournament size, mutation operator, 
 and mating operator.  
 I started with 25 coarse experiments and fine-tuned the hyperparameters
 with 15 more experiments. 
-For each genetic algorithm experiment, the number of OpenMC evaluations remained
-constant at 600.
-The number of evaluations correlates the population size and number of generations. 
+For each genetic algorithm experiment, OpenMC evaluations remained constant at 600.
+The number of evaluations correlates with the population size and the number of 
+generations. 
 I randomly sampled population size and used Equation \ref{eq:pop_gen} to calculate 
 the number of generations: 
 \begin{align}
@@ -1302,7 +1303,7 @@ Figure \ref{fig:hyperparameter_sens} shows the hyperparameters' plotted against
 each other with a third color dimension representing the average $k_{eff}$ value
 ($\overline{k_{eff}}$) in each experiment's final generation. 
 Lighter scatter points indicate higher final population $\overline{k_{eff}}$ values, 
-which suggests better hyperparameter sets. 
+suggesting better hyperparameter sets. 
 \begin{figure}[htbp]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{hyperparameter_sens.png}} 
@@ -1337,10 +1338,11 @@ I determined these new hyperparameter bounds based on these reasons:
 \begin{itemize}
     \item Mutation probability has a higher $\overline{k_{eff}}$, between 0.2 and 0.3.
     \item I overlooked $\overline{k_{eff}}$  peaking at mating probability between 
-    0.45 and 0.6 in the previous \textit{Fine Search 1}, thus shifted the bounds. 
+    0.45 and 0.6 in the previous \textit{Fine Search 1}; thus, I shifted the bounds. 
     \item The highest $\overline{k_{eff}}$ occurred for \texttt{selTournament}. 
     \item I narrowed down mating operator options to \texttt{cxBlend} and 
-    \texttt{cxOnePoint} since they had higher $\overline{k_{eff}}$. 
+    \texttt{cxOnePoint} since they had higher $\overline{k_{eff}}$ than 
+    \texttt{cxUniform}. 
     \item I selected arbitrary numbers for population size, 
     selection individuals, and tournament size since they did not 
     correlate with $\overline{k_{eff}}$ values. 
@@ -1374,9 +1376,9 @@ of individual OpenMC simulations.
 Each OpenMC simulation takes approximately 13 minutes to run on a single BlueWaters 
 XE node. 
 With approximately 600 OpenMC evaluations per \gls{ROLLO} simulation, the
-\gls{ROLLO} simulation takes about 130 BlueWaters node-hours. 
+\gls{ROLLO} simulation takes about 130 BlueWaters node hours. 
 The hyperparameter search ran 40 \gls{ROLLO} simulations, thus using approximately
-5200 node-hours.
+5200 node hours.
 
 Table \ref{tab:topfive} shows the hyperparameters for the five experiments 
 with the highest final generation $\overline{k_{eff}}$.
@@ -1422,18 +1424,19 @@ Therefore, for single-objective ROLLO optimization simulations in this dissertat
 I use the hyperparameter set from experiment 39. 
 
 \subsection{ROLLO Multi-Objective Optimization Hyperparameters}
-For the multi-objective optimization case, I did not use an OpenMC example problem or 
-a coarse-to-fine random sampling scheme, due to lack of computational resources. 
-I instead used the Binh and Korn function described in Section \ref{sec:binhandkorn} as 
+Due to a lack of computational resources, I did not use an OpenMC example problem or 
+a coarse-to-fine random sampling scheme for the multi-objective optimization 
+hyperparameter search.
+I used the Binh and Korn function described in Section \ref{sec:binhandkorn} as 
 an example problem to conduct the hyperparameter search.
 
-I conducted a simpler hyperparameter search for the multi-objective optimization. 
-For the selection operator, I chose to use \texttt{SelNSGA2}, since it is an elitist 
+I conducted a simpler hyperparameter search for the multi-objective optimization case. 
+I chose to use \texttt{SelNSGA2} for the selection operator, since it is an elitist 
 operator that works well for multi-objective optimization. 
-Next I varied each of the following parameters individually and compared their 
+Next, I varied each of the following parameters individually and compared their 
 hypervolume values: population size/generations, mutation probability, and mating 
 probability.
-As described in Section \ref{sec:binhandkorn}, the hypervolume indicator quantifies 
+Section \ref{sec:binhandkorn} states that the hypervolume indicator quantifies 
 the multi-objective optimization's Pareto front's goodness (larger = better). 
 
 Figure \ref{fig:hypervolume-comparison} shows boxplots comparing hypervolumes 
