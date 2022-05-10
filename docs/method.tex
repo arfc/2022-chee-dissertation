@@ -858,8 +858,8 @@ discretization, or differing OpenMC and Moltres solve methods.
 \end{table}
 
 The 50pcm $k_{eff}$ difference between continuous and homogenized OpenMC simulations 
-is within uncertainty, showing that the selected spatial and energy homogenizations 
-are acceptable. 
+is within uncertainty, showing that the selected spatial homogenizations
+and energy discretizations are acceptable. 
 However, there is a 502 pcm difference in the Moltres simulation's $k_{eff}$.
 A possible reason is that the neutron diffusion method used in Moltres does not 
 approximate this reactor geometry as well. 
@@ -871,7 +871,7 @@ neutronics modeling but for \gls{AHTR} plank temperature modeling.
 
 \subsubsection{AHTR Plank: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
-normalized difference between $k_{eff}$ values with and without DNPs. 
+normalized difference between $k_{eff}$ values with and without \glspl{DNP}. 
 Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the $\beta{eff}$ values from 
 OpenMC and Moltres show excellent agreement with a discrepancy of 0.03pcm. 
 I calculated the temperature reactivity coefficients using Equation 
@@ -954,6 +954,7 @@ There is good agreement between OpenMC and Moltres models 4-group spectrums.
 
 In summary, Moltres replicated the relevant neutronics parameters with sufficient 
 accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
+\pagebreak
 
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
 This section compares the following key neutronics parameters: effective multiplication 
@@ -992,16 +993,22 @@ model with TRISO-level fidelity.
 
 \subsubsection{AHTR One-Third Assembly: Effective Multiplication Factor}
 Table \ref{tab:keff_ahtr_moltres_assem} compares effective multiplication factor 
-for OpenMC simulation with TRISO fidelity, OpenMC simulation using the homogenized 
-group constants, and Moltres simulation using the homogenized group constants. 
+for OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
+OpenMC simulation with 4-group energy and spatial homogenization, 
+and Moltres simulation with 4-group energy and spatial homogenization.
 I included results from a homogenized OpenMC simulation to 
-distinguish between differences caused by spatial homogenization, and differing 
-OpenMC and Moltres solve methods. 
+distinguish between differences caused by spatial homogenization and energy 
+discretization, or differing OpenMC and Moltres solve methods. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR Fuel Slab's $k_{eff}$ values from OpenMC and Moltres at 948K.
-    The normalized difference is the pcm difference normalized by $k_{eff}$}
+    \caption{\acrfull{AHTR} one-third assembly's $k_{eff}$ values from the OpenMC 
+    simulation with continuous energy and TRISO-level spatial fidelity, 
+    OpenMC simulation with 4-group energy and spatial homogenization, and Moltres 
+    simulation with 4-group energy and spatial homogenization. 
+    All simulations are at 948K.
+    The normalized difference is the pcm difference normalized by OpenMC non-homogenized 
+    model's $k_{eff}$.}
 	\label{tab:keff_ahtr_moltres_assem}
     \footnotesize
     \begin{tabular}{lllcc}
@@ -1017,8 +1024,8 @@ OpenMC and Moltres solve methods.
 \end{table}
 
 The 9pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
-simulations is within uncertainty, showing that the selected spatial and energy 
-homogenizations are acceptable. 
+simulations is within uncertainty, showing that the selected spatial homogenizations
+and energy discretizations are acceptable. 
 However, there is a 537pcm difference in the Moltres simulation's $k_{eff}$, similar 
 to the \gls{AHTR} plank model's difference in Section \ref{sec:plank-knp}.
 Again, a possible reason is that the neutron diffusion method used in Moltres 
@@ -1031,20 +1038,22 @@ neutronics modeling but for \gls{AHTR} one-third assembly temperature modeling.
 
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
-normalized difference between $k_{eff}$ values with and without DNPs. 
-The  $\beta{eff}$ values from OpenMC and Moltres in Table 
+normalized difference between $k_{eff}$ values with and without \glspl{DNP}. 
+The $\beta{eff}$ values from OpenMC and Moltres in Table 
 \ref{tab:ahtr_assem_moltres_coeffs} show excellent agreement with a discrepancy of
- 0.8pcm. 
+0.8pcm. 
 I calculated the temperature reactivity coefficients with Equation 
 \ref{eq:reactivity-coefficient}.
 Table \ref{tab:ahtr_assem_moltres_coeffs} shows that the total temperature 
-coefficients from OpenMC and Moltres show good agreement with a discrepancy of 
+coefficients from OpenMC and Moltres have good agreement with a discrepancy of 
 0.2 pcm/K.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{AHTR one-third assembly's $\beta_{eff}$ values from OpenMC and Moltres at 948K, and 
-    total reactivity coefficient values calculated from OpenMC and Moltres at 948K and 1100K.}
+    total reactivity coefficient values calculated from OpenMC and Moltres at 948K and 1100K.
+    The OpenMC simulation has continuous energy and TRISO-level spatial fidelity and
+    Moltres simulation has 4-group energy and spatial homogenization.}
 	\label{tab:ahtr_assem_moltres_coeffs}
     \footnotesize
     \begin{tabular}{llllll}
