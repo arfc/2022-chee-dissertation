@@ -595,12 +595,12 @@ and one-third assembly.
 % TODO: update assem figure with varying coolant channel
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{0.9\textwidth}
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{ahtr-plank-geo.png}
         \caption{AHTR plank geometry file}
         \label{fig:ahtr-plank-geo} 
     \end{subfigure}
-    \begin{subfigure}{0.9\textwidth}
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{ahtr-assem-geo.png}
         \caption{AHTR one-third assembly geometry file}
         \label{fig:ahtr-assem-geo} 
@@ -613,9 +613,9 @@ and one-third assembly.
 \label{sec:ahtr-moltres-temperature-model}
 The Moltres \gls{AHTR} Steady-State Temperature Model is a 2D x-y cross-section 
 model of the \gls{AHTR} plank and one-third assembly.
-The plank and one-third assembly geometries are depicted in
+The plank and one-third assembly spatially homogenized geometries are depicted in
 Figure \ref{fig:straightened_slab_mg} and Figure 
-\ref{fig:fhr_onethird_assem_homogenization}, respectively.  
+\ref{fig:fhr_onethird_assem_homogenization}.  
 The Moltres temperature model first solves the \gls{AHTR} neutronics and uses that to 
 solve the \gls{AHTR}'s temperature distribution for a defined power.
 The temperature model assumes conductive heat transfer throughout the domain 
@@ -626,8 +626,8 @@ out of scope for this dissertation.
 
 Moltres solves the four-group diffusion equations 
 (Equation \ref{eq:moltres-diffusion-equation}) 
-as a steady-state eigenvalue problem to find $k_{eff}$ for the static AHTR models.
-In the 2D cross-sectional AHTR Steady-State Temperature Model, I ignore the 
+as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
+In the 2D cross-sectional \gls{AHTR} steady-state temperature model, I ignore the 
 time-dependent and velocity-dependent terms from Moltres' temperature governing 
 equation (Equation \ref{eq:moltres-temp}) since it is a steady-state model with
 no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}: 
