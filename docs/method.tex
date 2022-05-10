@@ -425,10 +425,17 @@ Figure \ref{fig:coolant-channel-shape-assem} shows the \gls{AHTR} one-third asse
 inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1, 0.2, 0.3$.
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{.69\textwidth}
-        \includegraphics[width=\linewidth]{coolant-channel-shape-assem.png}
-    \end{subfigure}
+    \begin{subfigure}{.7\textwidth}
+    \includegraphics[width=\linewidth]{coolant-channel-shape-assem.png}
+    \end{subfigure}%
     \begin{subfigure}{.3\textwidth}
+        \begin{tikzpicture}
+            \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+            \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+            \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+           \tkzText[above](-0.3,-0.7){}
+        \end{tikzpicture} 
+        \vspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
             \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
@@ -437,7 +444,7 @@ inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1,
             \end{tabular}}
     \end{subfigure}
     \caption{\acrfull{AHTR} one-third assembly with coolant channel shape variation, 
-    $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1, 0.2, 0.3$. }  
+    $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1, 0.2, 0.3$.}
     \label{fig:coolant-channel-shape-assem}
 \end{figure}
 Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
