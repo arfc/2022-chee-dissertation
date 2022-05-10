@@ -1,8 +1,9 @@
 \chapter{AHTR Modeling and Optimization Methodology}
+\glsresetall
 \label{chap:method}
 In this chapter, I describe the modeling and optimization methodology of the 
-\acrfull{AHTR} optimization for non-conventional geometries and parameters
-conducted using \acrfull{ROLLO}.
+\gls{AHTR} optimization for non-conventional geometries and parameters
+conducted using \gls{ROLLO}.
 The optimization tool should enable the placement of fuel, moderation, and coolant 
 material in any possible location, within physical limits, to wholly explore the 
 design space enabled by additive manufacturing. 
@@ -15,8 +16,8 @@ a truly arbitrary geometry expression.
 
 The subsequent sections define the optimization problem definitions, describe the 
 \gls{AHTR} geometries, outline the \gls{AHTR} modeling workflow, verify the \gls{AHTR} 
-models, and describe the process of tuning \gls{ROLLO}'s hyperparameters for the optimization 
-problems.
+models, and describe the process of tuning \gls{ROLLO}'s hyperparameters for the 
+optimization problems.
 
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
@@ -46,8 +47,8 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{ROLLO} optimization problem objectives with their quantification 
-    descriptions and motivation.}
+    \caption{\acrfull{ROLLO} \acrfull{AHTR} optimization problem objectives with 
+    their quantification descriptions and motivation.}
 	\label{tab:objectives}
     \footnotesize
     \begin{tabular}{p{4.5cm}|p{5cm}p{5cm}}
@@ -83,7 +84,7 @@ outlined in Chapter \ref{chap:fhr-benchmark} (see Figure \ref{fig:ahtr-fuel-asse
 The main differences occur in the fuel plank region. 
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices within
 two fuel stripes in the fuel plank region. 
-For the optimization problem, I discretized each plank into ten cells with random 
+For the optimization problems, I discretized each plank into ten cells with random 
 TRISO packing and an individually controlled packing fraction. 
 Thus, the \gls{AHTR} plank has ten fuel cells, and the \gls{AHTR} one-third assembly 
 has 60 fuel cells.  
@@ -119,7 +120,9 @@ ten fuel cells with random \gls{TRISO} packing.
 
             \end{tabular}}}
     \caption{Straightened \acrfull{AHTR} fuel plank with 10 fuel cells with random 
-    TRISO packing. Original slanted fuel planks can be seen in Figures 
+    TRISO packing, graphite buffers, and \gls{FLiBe} coolant channels. 
+    This geometry is used for \gls{AHTR} plank optimization. 
+    Original slanted fuel planks can be seen in Figures 
     \ref{fig:ahtr-fuel-assembly} and \ref{fig:ahtr-fuel-plank}.}
     \label{fig:straightened_plank}
 \end{figure}
@@ -150,6 +153,7 @@ with and without the outer layer \gls{TRISO} homogenization.
     \hline
     \end{tabular}
 \end{table}
+
 The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
 speed-up without compromising accuracy with $k_{eff}$ values within each 
 other's uncertainty.
@@ -182,8 +186,9 @@ fuel cells with random \gls{TRISO} packing.
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}
     \end{subfigure}
-    \caption{\acrfull{AHTR} one-third assembly with ten fuel cells in each graphite plank 
-    with random TRISO packing. Original \gls{FHR} benchmark fuel assembly with fuel 
+    \caption{\acrfull{AHTR} one-third assembly with ten fuel cells in each graphite 
+    plank with random TRISO packing, graphite structure, and \gls{FLiBe} coolant. 
+    Original \gls{FHR} benchmark fuel assembly with fuel 
     stripes can be seen in Figure \ref{fig:ahtr-fuel-assembly}.}
     \label{fig:ahtr_assembly}
 \end{figure}
@@ -208,12 +213,12 @@ Descriptions of each software can be found in Section
 \ref{sec:lit-review-modeling-software}.
 
 In the following sub-sections, I describe the \gls{AHTR} modeling workflow: the
-\gls{AHTR} input parameters, the OpenMC and Moltres models, and the output 
+\gls{AHTR} input parameter variations, the OpenMC and Moltres models, and the output 
 and constraint values calculations. 
 The \gls{AHTR} modeling workflow described in this section falls within the 
 \textit{evaluate population} orange blocks in Figure \ref{fig:genetic_alg_nuclear}'s 
 genetic algorithm flow chart.
-Figure \ref{fig:ahtr-model-flow} illustrates the modeling workflow. 
+Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow. 
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[node distance=0.5cm]
@@ -666,7 +671,7 @@ model:
 \begin{align}
     \label{eq:moltres-heat-removal}
     Q &= h \cdot A \cdot(T(\vec{r})-T_{ref})
-\intertext{where:}
+\intertext{where}
 Q &= \mbox{heat removal rate for 1cm thin slice of the AHTR model [W/cm]} \nonumber \\
 h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
 A &= \mbox{coolant area } [cm^2] \nonumber \\
@@ -710,7 +715,7 @@ using Equation \ref{eq:calc-htc-plank}, \ref{eq:calc-htc-assem} with the followi
       &= 611 W cm^{-3}K^{-1} \nonumber 
 \intertext{and}
 \Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
-\intertext{where:}
+\intertext{where}
 h_{plank} &= \mbox{plank's heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
 h_{assem} &= \mbox{one-third assembly's heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
 P_{dz} &= \mbox{power produced in 1cm AHTR plank/one-third assem $\Delta z$ slice [$W/cm$]}\nonumber \\
@@ -1135,7 +1140,8 @@ I used x3 mesh refinement for all AHTR plank Moltres temperature models and
 x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
 models. 
 Further refinement is unfeasible due to the large mesh size. 
-I am using the Theta supercomputer \cite{noauthor_thetathetagpu_nodate} for this work.
+I am using the Theta supercomputer \cite{noauthor_thetathetagpu_nodate} for the 
+optimization work.
 Each supercomputer node saves the entire mesh file, further refinement results in 
 mesh sizes that are larger than each Theta node's memory size. 
 
@@ -1437,7 +1443,7 @@ Next, I varied each of the following parameters individually and compared their
 hypervolume values: population size/generations, mutation probability, and mating 
 probability.
 Section \ref{sec:binhandkorn} states that the hypervolume indicator quantifies 
-the multi-objective optimization's Pareto front's goodness (larger = better). 
+the multi-objective optimization's Pareto front's goodness (bigger = better). 
 
 Figure \ref{fig:hypervolume-comparison} shows boxplots comparing hypervolumes 
 for varying hyperparameters. 
