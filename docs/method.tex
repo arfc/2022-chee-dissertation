@@ -486,8 +486,8 @@ Previously, Moltres could only generate group constant data from Serpent
 I implemented functionality in Moltres for group constant data generation with 
 OpenMC \cite{lindsay_moltres_2017}. 
 
-To enable successful Moltres \gls{AHTR} model simulations, I established suitable 
-spatial and energy homogenization for group constant generation. 
+To enable successful Moltres \gls{AHTR} temperature model simulations, I established 
+suitable spatial and energy homogenization for group constant generation. 
 These homogenizations preserve accuracy while maintaining an acceptable runtime.
 For both the \gls{AHTR} plank and one-third assembly models, I used eight precursor 
 groups and a four-group energy structure derived by Gentry et al. 
@@ -521,7 +521,7 @@ For the \gls{AHTR} plank, I discretized the plank into 13 \textit{cells}:
 FLiBe, left graphite, right graphite, and ten fuel cells (each cell has a different 
 packing fraction).
 Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} plank's spatial 
-homogenization for the OpenMC multigroup calculation. 
+homogenization for the OpenMC multigroup calculation for group constant generation. 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{straightened_slab_mg.png}
@@ -540,7 +540,9 @@ homogenization for the OpenMC multigroup calculation.
             \end{tabular}}}
     \caption{Straightened \acrfull{AHTR} fuel plank spatially discretized into 
     13 \textit{cells} for OpenMC multigroup calculation to produce group constants 
-    data for the Moltres model.}
+    data for the Moltres model. 13 \textit{cells}:
+    FLiBe, left graphite, right graphite, and ten fuel cells (each cell has a different 
+    packing fraction).}
     \label{fig:straightened_slab_mg}
 \end{figure}
 
@@ -549,7 +551,8 @@ For the \gls{AHTR} one-third assembly, I discretized the one-third assembly into
 rod slot \gls{FLiBe}, inter-plank \gls{FLiBe}, each graphite plank (6), and ten fuel 
 cells per plank (60).
 Figure \ref{fig:fhr_onethird_assem_homogenization} illustrates the \gls{AHTR} 
-one-third assembly's spatial homogenization for the OpenMC multigroup calculation. 
+one-third assembly's spatial homogenization for the OpenMC multigroup calculation
+for group constant generation. 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{fhr_onethird_assem_homogenization.png}
@@ -565,7 +568,10 @@ one-third assembly's spatial homogenization for the OpenMC multigroup calculatio
             \end{tabular}}}
     \caption{Straightened \acrfull{AHTR} one-third assembly spatially discretized into 
     70 \textit{cells} for OpenMC multigroup calculation to produce group constants 
-    data for Moltres model.}
+    data for Moltres model.
+    70 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped graphite structure, control 
+    rod slot \gls{FLiBe}, inter-plank \gls{FLiBe}, each graphite plank (6), and ten fuel 
+    cells per plank (60).}
     \label{fig:fhr_onethird_assem_homogenization}
 \end{figure}
 
@@ -589,12 +595,12 @@ and one-third assembly.
 % TODO: update assem figure with varying coolant channel
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{0.7\textwidth}
+    \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{ahtr-plank-geo.png}
         \caption{AHTR plank geometry file}
         \label{fig:ahtr-plank-geo} 
     \end{subfigure}
-    \begin{subfigure}{0.7\textwidth}
+    \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{ahtr-assem-geo.png}
         \caption{AHTR one-third assembly geometry file}
         \label{fig:ahtr-assem-geo} 
