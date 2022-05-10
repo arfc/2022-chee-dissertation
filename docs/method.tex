@@ -1208,8 +1208,8 @@ OpenMC \gls{AHTR} models at the specified temperatures generate the group consta
 
 Tables \ref{tab:moltres-group-constant-temps} and 
 \ref{tab:moltres-group-constant-temps-assem}
-show the average and maximum temperature reported by plank and one-third assembly 
-Moltres models and their differences compared to the model with group constant data 
+show the average and maximum temperature reported by the \gls{AHTR} plank and one-third 
+assembly Moltres models and their differences compared to the model with group constant data 
 with all four temperatures. 
 Both tables also show the normalized 2-norm of the centerline temperature difference 
 between the AHTR model with all four temperatures and the AHTR models with single 
@@ -1223,16 +1223,16 @@ temperatures (Equation \ref{eq:2-norm-tdiff-all}):
     T_{all} &= \mbox{temperatures from model with group constant data at all four temperatures} \nonumber \\
     T &= \mbox{temperatures from model with group constant data at one temperature} \nonumber 
 \end{align}
-The centerlines for the plank and one-third models are depicted in Figures 
+The centerlines for the \gls{AHTR} plank and one-third models are depicted in Figures 
 \ref{fig:ahtr-plank-verification} and \ref{fig:ahtr-assem-verification}, respectively. 
 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} plank's average and maximum temperature and normalized 
-    2-norm of the discretized temperature difference across the plank's centerline for 
+    2-norm of the temperature difference across the plank's centerline for 
     varying group constant temperature data. The difference values are calculated from 
-    comparison against the model with group constant data with all four temperatures 
+    comparison against the model using group constant data with all four temperatures 
     (All).}
 	\label{tab:moltres-group-constant-temps}
     \scriptsize
@@ -1254,16 +1254,16 @@ The temperature differences between the AHTR plank model with all four temperatu
 and the AHTR plank models' with each single temperature are not significant. 
 The 948K single temperature group constant data has the lowest 2-norm difference 
 ($||\Delta T||_N$). 
-Thus, I use a 948K in the \gls{AHTR} plank neutronics model to 
-generate the group constant data.
+Thus, I use a 948K in the \gls{AHTR} plank OpenMC neutronics model to 
+generate the group constant data for the Moltres temperature models.
 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{AHTR one-third assembly's average and maximum temperature and 2-norm 
-    of the discretized temperature difference across the slab's centerline for varying 
+    of the temperature difference across the slab's centerline for varying 
     group constant temperature data. The difference values are calculated from 
-    comparison against the model with group constant data with all four temperatures 
+    comparison against the model using group constant data with all four temperatures 
     (All).}
 	\label{tab:moltres-group-constant-temps-assem}
     \scriptsize
@@ -1285,8 +1285,8 @@ The temperature differences between the AHTR one-third assembly model with all f
 temperatures and the AHTR plank models' with each single temperature are small ($<1K$). 
 The 1024K single temperature group constant data has the lowest 2-norm difference 
 ($||\Delta T||_N$). 
-Thus, I use 1024K in the \gls{AHTR} one-third assembly neutronics model to generate 
-the group constant data.
+Thus, I use 1024K in the \gls{AHTR} one-third assembly OpenMC neutronics model to generate 
+the group constant data for the Moltres temperature models.
 
 \section{ROLLO Hyperparameter Tuning}
 \label{sec:hyperparameter-studies}
@@ -1297,7 +1297,7 @@ balancing exploitation and exploration to find an optimal solution quickly
 and accurately. 
 Finding a good hyperparameter set requires a trial-and-error process. 
 
-The subsequent sections describe the hyperparameter search I conducted for single-objective 
+The subsequent subsections describe the hyperparameter search I conducted for single-objective 
 and multi-objective optimization. 
 
 \subsection{ROLLO Single-Objective Optimization Hyperparameters}
