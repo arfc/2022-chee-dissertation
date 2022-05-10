@@ -780,7 +780,7 @@ energy and spatially homogenized Moltres simulation.
 This section compares the following key neutronics parameters: effective 
 multiplication factor, reactivity coefficients, flux distribution, and neutron energy 
 spectrum for the \gls{AHTR} plank model. 
-I used an AHTR plank model for this verification study with a 0.0979 total packing 
+For this verification study, I used an AHTR plank model with a 0.0979 total packing 
 fraction and packing fraction distribution of 
 $PF(x) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
 Figure \ref{fig:ahtr-plank-verification} shows the AHTR plank model with TRISO-level 
@@ -943,8 +943,8 @@ model with TRISO-level fidelity.
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
     \caption{AHTR one-third assembly geometry and packing fraction distribution used for AHTR 
-    one-third assembly's key neutronics parameters verification. White line corresponds to 
-    centerline where flux distribution is measured. }  
+    one-third assembly's key neutronics parameters verification. 
+    The white line corresponds to the centerline where flux distribution is measured. }  
     \label{fig:ahtr-assem-verification}
 \end{figure}
 
@@ -952,14 +952,14 @@ model with TRISO-level fidelity.
 Table \ref{tab:keff_ahtr_moltres_assem} compares effective multiplication factor 
 for OpenMC simulation with TRISO fidelity, OpenMC simulation using the homogenized 
 group constants, and Moltres simulation using the homogenized group constants. 
-I included results from a homogenized OpenMC simulation as well to 
+I included results from a homogenized OpenMC simulation to 
 distinguish between differences caused by spatial homogenization, and differing 
 OpenMC and Moltres solve methods. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{AHTR Fuel Slab's $k_{eff}$ values from OpenMC and Moltres at 948K.
-    Normalized difference is the pcm difference normalized by $k_{eff}$}
+    The normalized difference is the pcm difference normalized by $k_{eff}$}
 	\label{tab:keff_ahtr_moltres_assem}
     \footnotesize
     \begin{tabular}{lllcc}
@@ -975,11 +975,11 @@ OpenMC and Moltres solve methods.
 \end{table}
 
 The 9pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
-simulations show that the selected spatial and energy homogenizations
-are acceptable. 
+simulations is within uncertainty, showing that the selected spatial and energy 
+homogenizations are acceptable. 
 However, there is a 537pcm difference in the Moltres simulation's $k_{eff}$, similar 
 to the \gls{AHTR} plank model's difference in Section \ref{sec:plank-knp}.
-Again, a possible reason is that that the neutron diffusion method used in Moltres 
+Again, a possible reason is that the neutron diffusion method used in Moltres 
 does not approximate this reactor geometry as well. 
 The diffusion coefficients for this reactor type are approximately 1cm. 
 The \gls{FLiBe} coolant channel has a 0.7cm width which is smaller than the diffusion
@@ -1027,7 +1027,7 @@ Comparison of flux distributions produced by Moltres and OpenMC are key to
 ensuring that temperature distribution is accurately calculated in Moltres.
 
 Figure \ref{fig:flux_948K_assem} shows the 4-group flux distributions for OpenMC and 
-Moltres on the \gls{AHTR} one-third assembly's centerline which is along the y-axis at 
+Moltres on the \gls{AHTR} one-third assembly's centerline, along the y-axis at 
 the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}). 
 \begin{figure}[htbp]
     \centering
@@ -1048,20 +1048,20 @@ the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}).
     \label{fig:flux_948K_assem}
 \end{figure}
 
-The OpenMC simulation shows slightly higher flux in Group 1, and lower flux in 
-Group 2 and Group 4. 
+The OpenMC simulation shows slightly higher flux in Group 1 and lower flux in 
+Group 2 and 4. 
 There is a good overall agreement for each group's flux.
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
 Figure \ref{fig:assem_neutron_spectrum_948K} shows the one-third assembly's neutron 
-spectrum of the OpenMC simulation for both 252 and 4 groups, and 4-group Moltres 
+spectrum of the OpenMC simulation for 252 and 4 groups and 4-group Moltres 
 simulation. 
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{assem_neutron_spectrum_948K.png}
     \caption{\acrfull{AHTR} one-third assembly's neutron spectrum.
-    Spectrums include: 252 and 4 group spectrums from OpenMC simulation with continuous 
-    energy and TRISO-level spatial fidelity, and 4 group spectrum from Moltres 
+    Spectrums include 252 and 4 group spectrums from OpenMC simulation with continuous 
+    energy and TRISO-level spatial fidelity and 4 group spectrum from Moltres 
     simulation with 4-group energy and spatial homogenization.}  
     \label{fig:assem_neutron_spectrum_948K}
 \end{figure}
@@ -1077,7 +1077,7 @@ Moltres temperature models to ensure that their geometry mesh inputs are suffici
 converged. 
 Tables \ref{tab:ahtr-plank-mesh-refinement} and \ref{tab:ahtr-assem-mesh-refinement}
 show the mesh refinement study results for the \gls{AHTR} plank and one-third 
-assembly, respectively. 
+assembly.
 The mesh refinement studies report the average, maximum, and normalized 2-norm 
 temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i}):
 \begin{align}
@@ -1131,8 +1131,8 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
 
 Both \gls{AHTR} plank and one-third assembly show suitable $||\Delta T_k||_N$ 
 convergence with more refinement steps. 
-I used x3 mesh refinement for all AHTR plank Moltres temperature models, and 
-used x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
+I used x3 mesh refinement for all AHTR plank Moltres temperature models and 
+x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
 models. 
 Further refinement is unfeasible due to the large mesh size. 
 I am using the Theta supercomputer \cite{noauthor_thetathetagpu_nodate} for this work.
@@ -1147,19 +1147,21 @@ Group constant data with multiple temperatures requires running multiple neutron
 simulations at the various temperatures, thus, increasing the total compute time 
 required for each new reactor model. 
 
-In this section, I explore the effects of using multiple temperature group 
+This section explores the effects of using multiple temperature group 
 constant data compared to single temperature group constant data.
 I set up Moltres AHTR steady-state temperature models for the plank and one-third 
-assembly with group constant data at each and all the following temperatures: 948, 
+assembly with group constant data at each and all the of following temperatures: 948, 
 1024, 1100, and 1200 K. 
-The group constant data is generated with OpenMC \gls{AHTR} models at the specified 
-temperatures. 
+OpenMC \gls{AHTR} models at the specified temperatures generate the group constant data.
 
-Tables \ref{tab:moltres-group-constant-temps} and \ref{tab:moltres-group-constant-temps-assem}
-show the average and maximum temperature reported by plank and one-third assembly Moltres models 
-and their differences compared to the model with group constant data with all four temperatures. 
-Both tables also shows the normalized 2-norm of the centerline temperature difference between the 
-AHTR model with all four temperatures and each single temperature (Equation \ref{eq:2-norm-tdiff-all}):
+Tables \ref{tab:moltres-group-constant-temps} and 
+\ref{tab:moltres-group-constant-temps-assem}
+show the average and maximum temperature reported by plank and one-third assembly 
+Moltres models and their differences compared to the model with group constant data 
+with all four temperatures. 
+Both tables also show the normalized 2-norm of the centerline temperature difference 
+between the AHTR model with all four temperatures and the AHTR models with single 
+temperatures (Equation \ref{eq:2-norm-tdiff-all}):
 \begin{align}
     \label{eq:2-norm-tdiff-all}
     ||\Delta T||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{all, i} - T_{i})^2} \\
@@ -1176,7 +1178,7 @@ The centerlines for the plank and one-third models are depicted in Figures
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} plank's average and maximum temperature and normalized 
-    2-norm of discretized temperature difference across the plank's centerline for 
+    2-norm of the discretized temperature difference across the plank's centerline for 
     varying group constant temperature data. The difference values are calculated from 
     comparison against the model with group constant data with all four temperatures 
     (All).}
@@ -1199,7 +1201,8 @@ The centerlines for the plank and one-third models are depicted in Figures
 The temperature differences between the AHTR plank model with all four temperatures 
 and the AHTR plank models' with each single temperature are not significant. 
 The 948K single temperature group constant data has the lowest 2-norm difference 
-($||\Delta T||_N$), thus, I use 948K in the \gls{AHTR} plank neutronics model to 
+($||\Delta T||_N$). 
+Thus, I use a 948K in the \gls{AHTR} plank neutronics model to 
 generate the group constant data.
 
 \begin{table}[htbp]
