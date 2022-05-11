@@ -1322,12 +1322,12 @@ the number of generations:
     \mbox{no. of generations} &= \frac{\mbox{no. of evaluations}}{\mbox{population size} }
 \end{align}
 Table \ref{tab:hyperparameter_search} shows the lower and upper bounds used 
-for randomly sampling each hyperparameter.
+for randomly sampling each hyperparameter at each phase of the hyperparameter search.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{Hyperparameter search is conducted in three phases: \textit{Coarse Search}, 
-    \textit{Fine Search 1}, \textit{Fine Search 2}. Each hyperparameter's lower and
+    \textit{Fine Search 1}, \textit{Fine Search 2}. Hyperparameters' lower and
     upper bounds for each search phase are listed.}
 	\label{tab:hyperparameter_search}
     \footnotesize
@@ -1351,7 +1351,7 @@ for randomly sampling each hyperparameter.
 
 The initial 25 coarse experiments' sought to narrow down the hyperparameters 
 to find a smaller set of hyperparameter bounds that produce higher $k_{eff}$ values.
-Figure \ref{fig:hyperparameter_sens} shows the hyperparameters' plotted against 
+Figure \ref{fig:hyperparameter_sens} shows the hyperparameters' plot against 
 each other with a third color dimension representing the average $k_{eff}$ value
 ($\overline{k_{eff}}$) in each experiment's final generation. 
 Lighter scatter points indicate higher final population $\overline{k_{eff}}$ values, 
@@ -1360,11 +1360,11 @@ suggesting better hyperparameter sets.
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{hyperparameter_sens.png}} 
     \caption{Coarse \acrfull{ROLLO} hyperparameters search's results. 
-    Hyperparameter values are plotted against each other with a third color dimension 
+    Hyperparameter values are plot against each other with a third color dimension 
     representing each experiment's final population's $\overline{k_{eff}}$.}
     \label{fig:hyperparameter_sens}
 \end{figure}
-I plotted the hyperparameters against each other to visualize the interdependence 
+I plot the hyperparameters against each other to visualize the interdependence 
 between hyperparameters. 
 From the coarse hyperparameter search (Figure \ref{fig:hyperparameter_sens}), 
 I noticed the following trends: 
@@ -1408,7 +1408,7 @@ experiments' scatter points are opaque.
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{input_hyperparameters_sens.png}} 
     \caption{ \acrfull{ROLLO} hyperparameters search's results for all 40 experiments 
-    (coarse and fine). I plotted the hyperparameters against: a,b,c control parameters, 
+    (coarse and fine). I plot the hyperparameters against: a,b,c control parameters, 
     each experiment's final generation $k_{eff max}$, and final generation 
     $\overline{k_{eff}}$ with a third color dimension representing each experiment's final 
     population's $\overline{k_{eff}}$ (color bar representing the $k_{eff}$ values 
@@ -1422,12 +1422,13 @@ In Figure \ref{fig:input_hyperparameters_sens}, on average, the fine experiments
 hyperparameter search process met its objective of finding hyperparameter 
 bounds that enable quicker and more accurate optimization. 
 
-I ran these simulations on the BlueWaters supercomputer \cite{ncsa_about_2017}. 
+I ran these hyperparameter search simulations on the BlueWaters supercomputer 
+\cite{ncsa_about_2017}. 
 In each \gls{ROLLO} simulation, each generation runs a population size number 
 of individual OpenMC simulations. 
 Each OpenMC simulation takes approximately 13 minutes to run on a single BlueWaters 
 XE node. 
-With approximately 600 OpenMC evaluations per \gls{ROLLO} simulation, the
+With approximately 600 OpenMC evaluations per \gls{ROLLO} simulation, one
 \gls{ROLLO} simulation takes about 130 BlueWaters node hours. 
 The hyperparameter search ran 40 \gls{ROLLO} simulations, thus using approximately
 5200 node hours.
@@ -1470,8 +1471,7 @@ with the highest final generation $\overline{k_{eff}}$.
 I define the best-performing hyperparameter set as the experiment that produces 
 the highest $\overline{k_{eff}}$ in its final generation. 
 \textit{Fine Search 2}'s experiment 39 produces the best performing 
-hyperparameter set, shown in Table \ref{tab:topfive}, with 
-center-peaking packing fraction distribution of $max(k_{eff}) = 1.40519$. 
+hyperparameter set, with $max(k_{eff}) = 1.40519$. 
 Therefore, for single-objective ROLLO optimization simulations in this dissertation, 
 I use the hyperparameter set from experiment 39. 
 
@@ -1488,11 +1488,11 @@ operator that works well for multi-objective optimization.
 Next, I varied each of the following parameters individually and compared their 
 hypervolume values: population size/generations, mutation probability, and mating 
 probability.
-Section \ref{sec:binhandkorn} states that the hypervolume indicator quantifies 
+Section \ref{sec:binhandkorn} describes that the hypervolume indicator quantifies 
 the multi-objective optimization's Pareto front's goodness (bigger = better). 
 
 Figure \ref{fig:hypervolume-comparison} shows boxplots comparing hypervolumes 
-for varying hyperparameters. 
+for various hyperparameters. 
 I ran each simulation 25 times to produce each box plot. 
 \begin{figure}[htbp]
     \centering
@@ -1511,7 +1511,7 @@ I ran each simulation 25 times to produce each box plot.
         \caption{Mutation probability variation}
         \label{fig:hypervolume-comparison-mutpb}
     \end{subfigure}
-    \caption{Hypervolume comparisons for varying \acrfull{ROLLO} hyperparameters for 
+    \caption{Hypervolume comparisons for varying \acrfull{ROLLO} hyperparameters for the
     multi-objective optimization hyperparameter search. }
     \label{fig:hypervolume-comparison}
 \end{figure}
@@ -1520,7 +1520,7 @@ for different population size and generation combinations.
 Similar to Section \ref{sec:rollo-single-hyp}, I held the total number of OpenMC 
 evaluations constant at 600. 
 Equation \ref{eq:pop_gen} shows the relationship between population size and generations. 
-The 120/5 population size /generations combination performs the best with the highest 
+The 120-5 population size-generations combination performs the best with the highest 
 hypervolume median (orange line). 
 
 Figure \ref{fig:hypervolume-comparison-matpb} shows a boxplot comparing hypervolume 
@@ -1557,12 +1557,13 @@ multi-objective optimization based on the hyperparameter search.
 \end{table}
 
 \section{Summary}
+\glsresetall
 This chapter describes the modeling and optimization methodology of the 
-\acrfull{AHTR} plank and one-third assembly optimization for non-conventional 
-geometries and parameters conducted using the \acrfull{ROLLO} software.
+\gls{AHTR} plank and one-third assembly optimization for non-conventional 
+geometries and parameters conducted using the \gls{ROLLO} software.
 I defined and described the \gls{AHTR} input parameters varied for the optimization 
 problems. 
-The input parameters include \acrfull{TRISO} packing distribution, total fuel packing 
+The input parameters include \gls{TRISO} packing distribution, total fuel packing 
 fraction, and coolant channel shape. 
 I defined and motivated the key optimization objectives: minimizing fuel amount,
 maximizing heat transfer, and minimizing power peaking.
