@@ -579,8 +579,8 @@ section data to calculate $k_{eff}$ .
 Comparison of $k_{eff}$ for the continuous and multigroup simulations determines if the
 energy and spatial homogenization used are acceptable.
 
-I modeled the FHR benchmark's Phase I-A hot zero power case 2AH, the OpenMC simulation's 
-geometry with TRISO fidelity is shown in Figure \ref{fig:ahtr-fuel-assembly}.
+I generated group constants by running the OpenMC simulation geometry with TRISO fidelity 
+(Figure \ref{fig:ahtr-fuel-assembly}) at 948K, 1024K, 1100K, and 1200K.
 For spatial homogenization of the straightened AHTR fuel assembly, I used OpenMC's \textit{cell} 
 domain type to compute multigroup cross sections for different \textit{cells}.
 I discretized the fuel assembly into 61 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped 
@@ -623,8 +623,8 @@ Table \ref{tab:ahtr-full-assem-mesh-refinement} report the average, maximum, and
         & \textbf{Diff [K]} & \textbf{Ave Assembly Temp [K]}
         & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
         \hline 
-        1 & & - & & - & -\\
-        2 & 1049.453 & & 963.028& & \\
+        1 & 1041.191& - & 960.762 & - & -\\
+        2 & 1049.453 & \Plus8.262 & 963.028 & \Plus2.266 & 0.321\\
         3 & 1058.505 & \Plus9.052 & 964.384 & \Plus1.356 & 0.139\\
         4 & 1063.463 & \Plus4.958 & 965.826 & \Plus1.441 & 0.124\\
         \hline
