@@ -913,7 +913,7 @@ Comparison of flux distributions produced by Moltres and OpenMC are key to ensur
 that Moltres accurately calculates the temperature distribution.
 
 Figure \ref{fig:flux_948K} shows the 4-group flux distributions for OpenMC and 
-Moltres on the \gls{AHTR} plank's centerline, along the x-axis at the y-axis' 
+Moltres models' on the \gls{AHTR} plank's centerline, along the x-axis at the y-axis' 
 midpoint (white line on Figure \ref{fig:ahtr-plank-verification}). 
 \begin{figure}[htbp]
     \centering
@@ -935,15 +935,15 @@ midpoint (white line on Figure \ref{fig:ahtr-plank-verification}).
 \end{figure}
 Table \ref{tab:ahtr-plank-verification-flux} reports the 2-norm percentage difference 
 (Equation \ref{eq:ahtr-plank-flux-2norm}) and maximum percentage difference between 
-OpenMC and Moltres. 
+centerline flux values from OpenMC and Moltres models. 
 \begin{align}
     \label{eq:ahtr-plank-flux-2norm}
     ||\Delta \phi||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(\frac{\phi_{moltres, i} - \phi_{openmc, i}}{\phi_{openmc, i}}\times100)^2} \\
 \intertext{where}
     ||\Delta \phi||_N &= \mbox{normalized 2-norm flux percentage difference between Moltres and OpenMC } [\%] \nonumber \\
     N &= \mbox{total number of discretized points} \nonumber \\
-    \phi_{moltres} &= \mbox{Moltres simulation's centerline flux } [\frac{n}{cm^2s}] \nonumber \\
-    \phi_{openmc} &= \mbox{OpenMC simulation's centerline flux } [\frac{n}{cm^2s}] \nonumber 
+    \phi_{moltres} &= \mbox{Moltres model's centerline flux } [\frac{n}{cm^2s}] \nonumber \\
+    \phi_{openmc} &= \mbox{OpenMC model's centerline flux } [\frac{n}{cm^2s}] \nonumber 
 \end{align} 
 \begin{table}[htbp]
     \centering
@@ -968,9 +968,14 @@ OpenMC and Moltres.
     \end{tabular}
 \end{table}
 
-The OpenMC simulation shows higher flux in Group 1 and lower flux in
-Group 2 and 3. 
-There is a good overall agreement for each group's flux.
+Figure \ref{fig:flux_948K} shows that the OpenMC model has higher flux in Group 1 and 
+lower flux in Group 2 and 4 compared to the Moltres model. 
+Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
+between OpenMC and Moltres models' flux values are slight, demonstrating that there is a 
+good overall agreement for each group's flux.
+The flux neutronics parameter is most important as it contributes to the source term in the 
+Moltres simulation. Thus, these accurate flux comparison results verify the accurate calculation 
+of the temperature distribution in the Moltres model. 
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum of the OpenMC 
