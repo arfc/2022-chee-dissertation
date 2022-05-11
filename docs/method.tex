@@ -950,7 +950,7 @@ centerline flux values from OpenMC and Moltres models.
     \onehalfspacing
     \caption{\acrfull{AHTR} plank's centerline normalized 2-norm of flux percentage difference 
     across plank's and maximum flux percentage difference. 
-    Centerline is the white line in Figure \ref{fig:ahtr-assem-verification}.
+    Centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
     The difference values are calculated from comparison between the OpenMC simulation with 
     continuous energy and TRISO-level spatial fidelity and Moltres simulation with 4-group energy 
     and spatial homogenization.}
@@ -975,7 +975,7 @@ between OpenMC and Moltres models' flux values are slight, demonstrating that th
 good overall agreement for each group's flux.
 The flux neutronics parameter is most important as it contributes to the source term in the 
 Moltres simulation. Thus, these accurate flux comparison results verify the accurate calculation 
-of the temperature distribution in the Moltres model. 
+of the temperature distribution in the Moltres \gls{AHTR} plank model. 
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron spectrum of the OpenMC 
@@ -1137,10 +1137,40 @@ the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}).
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux_948K_assem}
 \end{figure}
+Table \ref{tab:ahtr-assem-verification-flux} reports the 2-norm percentage difference 
+(Equation \ref{eq:ahtr-plank-flux-2norm}) and maximum percentage difference between 
+centerline flux values from OpenMC and Moltres models. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} one-third assembly's centerline normalized 2-norm of flux percentage 
+    difference across plank's and maximum flux percentage difference. 
+    Centerline is the white line in Figure \ref{fig:ahtr-assem-verification}.
+    The difference values are calculated from comparison between the OpenMC simulation with 
+    continuous energy and TRISO-level spatial fidelity and Moltres simulation with 4-group energy 
+    and spatial homogenization.}
+	\label{tab:ahtr-assem-verification-flux}
+    \footnotesize
+    \begin{tabular}{lll}
+    \hline 
+    \textbf{Energy Group}& \textbf{2-norm difference [$\%$]}& \textbf{Max difference [$\%$]} \\
+    \hline 
+    1 & 0.15 & \Minus5.36 \\
+    2 & 0.29 & \Plus7.13 \\
+    3 & 0.33 & \Plus11.66 \\
+    4 & 0.26 & \Plus5.82 \\
+    \hline
+    \end{tabular}
+\end{table}
 
-The OpenMC simulation shows slightly higher flux in Group 1 and lower flux in 
-Group 2 and 4. 
-There is a good overall agreement for each group's flux.
+Figure \ref{fig:flux_948K_assem} shows that the OpenMC model has 
+lower flux in Group 2 and 4 compared to the Moltres model. 
+Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
+between OpenMC and Moltres models' flux values are slight, demonstrating that there is a 
+good overall agreement for each group's flux.
+The flux neutronics parameter is most important as it contributes to the source term in the 
+Moltres simulation. Thus, these accurate flux comparison results verify the accurate calculation 
+of the temperature distribution in the Moltres \gls{AHTR} one-third assembly model. 
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
 Figure \ref{fig:assem_neutron_spectrum_948K} shows the one-third assembly's neutron 
