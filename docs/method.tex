@@ -933,6 +933,40 @@ midpoint (white line on Figure \ref{fig:ahtr-plank-verification}).
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux_948K}
 \end{figure}
+Table \ref{tab:ahtr-plank-verification-flux} reports the 2-norm percentage difference 
+(Equation \ref{eq:ahtr-plank-flux-2norm}) and maximum percentage difference between 
+OpenMC and Moltres. 
+\begin{align}
+    \label{eq:ahtr-plank-flux-2norm}
+    ||\Delta \phi||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(\frac{\phi_{moltres, i} - \phi_{openmc, i}}{\phi_{openmc, i}}\times100)^2} \\
+\intertext{where}
+    ||\Delta \phi||_N &= \mbox{normalized 2-norm flux percentage difference between Moltres and OpenMC } [\%] \nonumber \\
+    N &= \mbox{total number of discretized points} \nonumber \\
+    \phi_{moltres} &= \mbox{Moltres simulation's centerline flux } [\frac{n}{cm^2s}] \nonumber \\
+    \phi_{openmc} &= \mbox{OpenMC simulation's centerline flux } [\frac{n}{cm^2s}] \nonumber 
+\end{align} 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} plank's centerline normalized 2-norm of flux percentage difference 
+    across plank's and maximum flux percentage difference. 
+    Centerline is the white line in Figure \ref{fig:ahtr-assem-verification}.
+    The difference values are calculated from comparison between the OpenMC simulation with 
+    continuous energy and TRISO-level spatial fidelity and Moltres simulation with 4-group energy 
+    and spatial homogenization.}
+	\label{tab:ahtr-plank-verification-flux}
+    \footnotesize
+    \begin{tabular}{lll}
+    \hline 
+    \textbf{Energy Group}& \textbf{2-norm difference [$\%$]}& \textbf{Max difference [$\%$]} \\
+    \hline 
+    1 & 0.28 & \Minus4.90 \\
+    2 & 0.39 & \Plus5.17 \\
+    3 & 0.40 & \Plus6.82 \\
+    4 & 0.27 & \Plus5.22 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 The OpenMC simulation shows higher flux in Group 1 and lower flux in
 Group 2 and 3. 
