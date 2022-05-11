@@ -1204,13 +1204,13 @@ The mesh refinement studies report the average, maximum, and normalized 2-norm
 temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i}):
 \begin{align}
     \label{eq:2-norm-tdiff-i}
-    ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2} \\
+    ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 } [K]\\
 \intertext{where}
     ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps} \nonumber \\
     N &= \mbox{total number of discretized points} \nonumber \\
     k &= \mbox{refinement step} \nonumber \\
-    T_{k-1} &= \mbox{temperatures from previous refinement step} \nonumber \\
-    T &= \mbox{temperatures from current refinement step} \nonumber 
+    T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
+    T &= \mbox{temperatures from current refinement step } [K]\nonumber 
 \end{align} 
 \begin{table}[htbp]
     \centering
@@ -1289,10 +1289,10 @@ temperatures (Equation \ref{eq:2-norm-tdiff-all}):
     \label{eq:2-norm-tdiff-all}
     ||\Delta T||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{all, i} - T_{i})^2} \\
 \intertext{where}
-    ||\Delta T||_N &= \mbox{normalized 2-norm temperature difference} \nonumber \\
+    ||\Delta T||_N &= \mbox{normalized 2-norm temperature difference } [K]\nonumber \\
     N &= \mbox{total number of discretized points} \nonumber \\
-    T_{all} &= \mbox{temperatures from model with group constant data at all four temperatures} \nonumber \\
-    T &= \mbox{temperatures from model with group constant data at one temperature} \nonumber 
+    T_{all} &= \mbox{temperatures from model with group constant data at all four temperatures } [K] \nonumber \\
+    T &= \mbox{temperatures from model with group constant data at one temperature } [K] \nonumber 
 \end{align}
 The centerlines for the \gls{AHTR} plank and one-third models are depicted in Figures 
 \ref{fig:ahtr-plank-verification} and \ref{fig:ahtr-assem-verification}, respectively. 
