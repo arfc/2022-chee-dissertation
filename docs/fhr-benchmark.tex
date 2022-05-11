@@ -595,6 +595,45 @@ and Moltres' \gls{FHR} benchmark full assembly model.
 
 \subsubsection{FHR Benchmark: Effective Multiplication Factor}
 
+\subsection{FHR Benchmark: Mesh Refinement Study}
+I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature model 
+to ensure that the geometry mesh inputs and sufficiently converged. 
+Table \ref{tab:ahtr-full-assem-mesh-refinement} report the average, maximum, and normalized 
+2-norm temperature difference between refinement steps (Equation 
+\ref{eq:2-norm-tdiff-i-full-assem}):
+\begin{align}
+    \label{eq:2-norm-tdiff-i-full-assem}
+    ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 }\\
+\intertext{where}
+    ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps } [K]\nonumber \\
+    N &= \mbox{total number of discretized points} \nonumber \\
+    k &= \mbox{refinement step} \nonumber \\
+    T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
+    T &= \mbox{temperatures from current refinement step } [K]\nonumber 
+\end{align} 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} full assembly's Moltres temperature model's mesh refinement study.}
+	\label{tab:ahtr-full-assem-mesh-refinement}
+    \scriptsize
+    \begin{tabular}{lp{2.5cm}lp{2.5cm}ll}
+        \hline 
+        \textbf{Refinement} & \textbf{Max Assembly Temp [K]} 
+        & \textbf{Diff [K]} & \textbf{Ave Assembly Temp [K]}
+        & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
+        \hline 
+        1 & & - & & - & -\\
+        2 & 1049.453 & & 963.028& & \\
+        3 & 1058.505 & \Plus9.052 & 964.384 & \Plus1.356 & 0.139\\
+        4 & 1063.463 & \Plus4.958 & 965.826 & \Plus1.441 & 0.124\\
+        \hline
+    \end{tabular}
+\end{table}
+The mesh refinement study shows suitable $||\Delta T_k||_N$ convergence with more 
+refinement steps. 
+I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres temperature model. 
+
 \subsection{FHR Benchmark: Temperature Model}
 
 \subsubsection{FHR Benchmark: Temperature Model Setup}

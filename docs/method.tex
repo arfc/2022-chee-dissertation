@@ -1205,9 +1205,9 @@ The mesh refinement studies report the average, maximum, and normalized 2-norm
 temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i}):
 \begin{align}
     \label{eq:2-norm-tdiff-i}
-    ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 } [K]\\
+    ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 }\\
 \intertext{where}
-    ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps} \nonumber \\
+    ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps } [K] \nonumber \\
     N &= \mbox{total number of discretized points} \nonumber \\
     k &= \mbox{refinement step} \nonumber \\
     T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
@@ -1223,7 +1223,7 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
         \hline 
         \textbf{Refinement} & \textbf{Max Plank Temp [K]} 
         & \textbf{Diff [K]} & \textbf{Ave Plank Temp [K]}
-        & \textbf{Diff [K]} & $||\Delta T_k||_N$\\ 
+        & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
         \hline 
         1 & 1126.219 & - & 1011.209 & - & - \\
         2 & 1127.711 & \Plus1.492 & 1017.630 & \Plus6.421 & 0.839\\
@@ -1242,7 +1242,7 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
     \hline 
     \textbf{Refinement} & \textbf{Max One-Third Assembly Temp [K]} 
     & \textbf{Diff [K]} & \textbf{Ave One-Third Assembly Temp [K]}
-    & \textbf{Diff [K]} & $||\Delta T_k||_N$\\ 
+    & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
     \hline 
     1 & 1185.436 & - & 995.963 & - & - \\
     2 & 1186.045 & \Plus0.609 & 1001.751 & \Plus5.788 & 0.703\\
