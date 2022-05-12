@@ -668,6 +668,35 @@ I compare the following key neutronics parameters: effective multiplication fact
 reactivity coefficients, flux distribution, and neutron energy spectrum. 
 
 \paragraph{Effective Multiplication Factor}
+Table \ref{tab:keff_assem_comparison} compares effective multiplication factor 
+for OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
+OpenMC simulation with 4-group energy and spatial homogenization, 
+and Moltres simulation with 4-group energy and spatial homogenization.
+I included results from the homogenized OpenMC simulation to 
+distinguish between differences caused by spatial homogenization and energy 
+discretization, or differing OpenMC and Moltres solve methods. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} assembly's $k_{eff}$ values from the OpenMC simulation with 
+    continuous energy and TRISO-level spatial fidelity, OpenMC simulation with 4-group 
+    energy and spatial homogenization, and Moltres simulation with 4-group energy and 
+    spatial homogenization. All simulations are at 948K.
+    The normalized difference is the pcm difference normalized by OpenMC non-homogenized 
+    model's $k_{eff}$.}
+	\label{tab:keff_assem_comparison}
+    \footnotesize
+    \begin{tabular}{lllcc}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Difference [pcm]}  
+    & \textbf{Normalized Difference [pcm]}\\
+    \hline 
+    OpenMC & No & $1.40100 \pm 0.00162$ & - & -\\ 
+    OpenMC & Yes & $ $ & & \\ 
+    Moltres & Yes & $1.402738 $ & \Plus173 & \Plus123\\ 
+    \hline
+    \end{tabular}
+\end{table}
 
 \subsection{FHR Benchmark: Moltres Mesh Generation}
 
