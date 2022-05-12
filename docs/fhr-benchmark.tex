@@ -567,15 +567,31 @@ neutronics OpenMC simulations conducted in the \gls{FHR} benchmark's Phase I-A.
 To run Moltres simulations, the user provides group constant data from a neutron transport 
 solver, such as OpenMC, for the Moltres multigroup neutron diffusion calculations and
 a mesh file representing the reactor geometry. 
-A TRISO-level fidelity mesh file is impractical and will result in an extremely long Moltres 
-runtime. 
-For successful \gls{AHTR} Moltres temperature model simulation, I established suitable spatial 
-and energy homogenization that preserves accuracy while maintaining an acceptable runtime.
+In the next subsections, I will describe the steps required to produce an 
+\gls{AHTR} temperature model with Moltres:
+\begin{itemize}
+    \item OpenMC neutronics model produces group constants data for the Moltres model
+    \item Moltres model mesh generation
+    \item Moltres temperature model accepts group constants data and mesh
+\end{itemize}
 
-I use the continuous energy OpenMC simulation to generate multigroup cross section data defined 
-over discretized energy groups and spatial segments.
+\subsection{FHR Benchmark: Group Constant Generation}
+Unlike the OpenMC neutronics model from the previous sections, Moltres does not explicitly 
+model each \gls{TRISO} particle. 
+A TRISO-level fidelity mesh file is impractical and will result in an extremely long 
+Moltres simulation runtime. 
+Instead, Moltres relies on the OpenMC model to generate group constants data
+for the Moltres simulations. 
+Previously, Moltres could only generate group constant data from Serpent 
+\cite{leppanen_serpent_2014} or SCALE \cite{bucholz_scale:_1982} output files. 
+I implemented functionality in Moltres for group constant data generation with 
+OpenMC \cite{lindsay_moltres_2017}. 
+
+To enable successful Moltres \gls{AHTR} temperature model simulations, I established 
+suitable spatial and energy homogenization for group constant generation.
+These homogenizations preserve accuracy while maintaining an acceptable runtime.
 I used eight precursor groups and a four-group energy structure derived by Gentry et al. 
-\cite{gentry_development_2016} for \gls{AHTR} geometries. 
+\cite{gentry_development_2016} for \gls{AHTR} geometries.
 Table \ref{tab:energy_structures-bm} defines the 4-group energy boundaries. 
 \begin{table}[htbp]
     \centering
@@ -603,7 +619,7 @@ I discretized the fuel assembly into 61 \textit{cells}: inter-assembly \gls{FLiB
 graphite structure, control rod slot \gls{FLiBe}, graphite spacers, each diamond shape section's 
 inter-plank \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).
 Figure \ref{fig:assembly_mg} illustrates the \gls{AHTR} assembly's spatial 
-homogenization for the OpenMC multigroup calculation for group constant generation. 
+homogenization for the OpenMC multigroup calculation for group constant generation.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{assembly_mg.png}
@@ -627,55 +643,24 @@ homogenization for the OpenMC multigroup calculation for group constant generati
     \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).}
     \label{fig:assembly_mg}
 \end{figure}
-I generated group constants by running the OpenMC simulation geometry with TRISO fidelity 
-(Figure \ref{fig:ahtr-fuel-assembly}) at 948K, 1024K, 1100K, and 1200K.
 
-\subsection{FHR Benchmark: Key Neutronics Parameters Verification}
-In this section, I verify that the spatial and energy homogenizations I chose are acceptable. 
-I compare the following key neutronics parameters: effective multiplication factor, reactivity 
-coefficients, flux distribution, and neutron energy spectrum for the OpenMC's continuous energy 
-and Moltres' \gls{FHR} benchmark full assembly model. 
+With the above described energy discretization and spatial homogenization, I generated 
+group constants with Moltres using four OpenMC simulations at 948K, 1024K, 1100K, and 
+1200K.
+In the next subsection, I compared the key neutronics parameters for the continuous 
+OpenMC and multigroup Moltres simulations for the \gls{AHTR} assembly at 948K to 
+ensure that the spatial homogenization and energy discretization preserve accuracy. 
 
-\subsubsection{FHR Benchmark: Effective Multiplication Factor}
+\subsubsection{FHR Benchmark: Key Neutronics Parameters Verification}
+In this section, I verify that the spatial and energy homogenizations I chose are 
+acceptable. 
+I compare the following key neutronics parameters: effective multiplication factor, 
+reactivity coefficients, flux distribution, and neutron energy spectrum for the OpenMC's 
+continuous energy and Moltres' \gls{FHR} benchmark full assembly model. 
 
-\subsection{FHR Benchmark: Mesh Refinement Study}
-I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature model 
-to ensure that the geometry mesh inputs and sufficiently converged. 
-Table \ref{tab:ahtr-full-assem-mesh-refinement} report the average, maximum, and normalized 
-2-norm temperature difference between refinement steps (Equation 
-\ref{eq:2-norm-tdiff-i-full-assem}):
-\begin{align}
-    \label{eq:2-norm-tdiff-i-full-assem}
-    ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 }\\
-\intertext{where}
-    ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps } [K]\nonumber \\
-    N &= \mbox{total number of discretized points} \nonumber \\
-    k &= \mbox{refinement step} \nonumber \\
-    T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
-    T &= \mbox{temperatures from current refinement step } [K]\nonumber 
-\end{align} 
-\begin{table}[htbp]
-    \centering
-    \onehalfspacing
-    \caption{\acrfull{AHTR} full assembly's Moltres temperature model's mesh refinement study.}
-	\label{tab:ahtr-full-assem-mesh-refinement}
-    \scriptsize
-    \begin{tabular}{lp{2.5cm}lp{2.5cm}ll}
-        \hline 
-        \textbf{Refinement} & \textbf{Max Assembly Temp [K]} 
-        & \textbf{Diff [K]} & \textbf{Ave Assembly Temp [K]}
-        & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
-        \hline 
-        1 & 1041.191& - & 960.762 & - & -\\
-        2 & 1049.453 & \Plus8.262 & 963.028 & \Plus2.266 & 0.321\\
-        3 & 1058.505 & \Plus9.052 & 964.384 & \Plus1.356 & 0.139\\
-        4 & 1063.463 & \Plus4.958 & 965.826 & \Plus1.441 & 0.124\\
-        \hline
-    \end{tabular}
-\end{table}
-The mesh refinement study shows suitable $||\Delta T_k||_N$ convergence with more 
-refinement steps. 
-I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres temperature model. 
+\subsection{FHR Benchmark: Moltres Mesh Generation}
+
+\subsubsection{FHR Benchmark: Mesh Refinement Study}
 
 \subsection{FHR Benchmark: Temperature Model}
 
