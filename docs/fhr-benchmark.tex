@@ -569,23 +569,66 @@ solver, such as OpenMC, for the Moltres multigroup neutron diffusion calculation
 a mesh file representing the reactor geometry. 
 A TRISO-level fidelity mesh file is impractical and will result in an extremely long Moltres 
 runtime. 
-For successful AHTR Moltres simulation, I must establish suitable spatial and energy 
-homogenization that preserves accuracy while maintaining an acceptable runtime.
+For successful \gls{AHTR} Moltres temperature model simulation, I established suitable spatial 
+and energy homogenization that preserves accuracy while maintaining an acceptable runtime.
 
 I use the continuous energy OpenMC simulation to generate multigroup cross section data defined 
 over discretized energy groups and spatial segments.
-I then use OpenMC's multigroup calculation mode with the previously generated multigroup cross 
-section data to calculate $k_{eff}$ . 
-Comparison of $k_{eff}$ for the continuous and multigroup simulations determines if the
-energy and spatial homogenization used are acceptable.
-
-I generated group constants by running the OpenMC simulation geometry with TRISO fidelity 
-(Figure \ref{fig:ahtr-fuel-assembly}) at 948K, 1024K, 1100K, and 1200K.
-For spatial homogenization of the straightened AHTR fuel assembly, I used OpenMC's \textit{cell} 
+I used eight precursor groups and a four-group energy structure derived by Gentry et al. 
+\cite{gentry_development_2016} for \gls{AHTR} geometries. 
+Table \ref{tab:energy_structures-bm} defines the 4-group energy boundaries. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{4-group energy structures for \acrfull{AHTR} geometry 
+    derived by Gentry et al. \cite{gentry_development_2016}.}
+	\label{tab:energy_structures-bm}
+    \footnotesize
+    \begin{tabular}{lll}
+    \hline
+    \multicolumn{3}{c}{\textbf{Group Boundaries [MeV]}} \\ 
+    \hline
+    \textbf{Group $\#$}& \textbf{Upper Bound} & \textbf{Lower Bound}  \\
+    \hline 
+    1 & $2.0000\times 10^1$ & $9.1188\times 10^{-3}$ \\ 
+    2 & $9.1188\times 10^{-3}$ & $2.9023\times 10^{-5}$\\
+    3 & $2.9023\times 10^{-5}$ & $1.8554\times 10^{-6}$\\
+    4 & $1.8554\times 10^{-6}$ & $1.0000\times 10^{-12}$\\
+    \hline
+    \end{tabular}
+\end{table}
+For spatial homogenization of the \gls{AHTR} fuel assembly, I used OpenMC's \textit{cell} 
 domain type to compute multigroup cross sections for different \textit{cells}.
 I discretized the fuel assembly into 61 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped 
 graphite structure, control rod slot \gls{FLiBe}, graphite spacers, each diamond shape section's 
 inter-plank \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).
+Figure \ref{fig:assembly_mg} illustrates the \gls{AHTR} assembly's spatial 
+homogenization for the OpenMC multigroup calculation for group constant generation. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{assembly_mg.png}
+    \raggedright
+    \resizebox{0.5\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue1}{$\blacksquare$} & inter-assembly \gls{FLiBe} \\
+            \textcolor{fhrgrey1}{$\blacksquare$} & Y-shaped graphite structure \\
+            \textcolor{fhrblue2}{$\blacksquare$} & control rod slot \gls{FLiBe} \\
+            \textcolor{fhrblue3}{$\blacksquare$} & inter-plank \gls{FLiBe} \\
+            \textcolor{fhrpink1}{$\blacksquare$} & spacers \\
+            \textcolor{fhrred1}{$\blacksquare$} & graphite planks \\
+            \textcolor{fhrblack1}{$\blacksquare$} \textcolor{fhrwhite1}{$\blacksquare$} & fuel stripes
+            \end{tabular}}}
+    \caption{\acrfull{AHTR} assembly spatially discretized into 
+    61 \textit{cells} for OpenMC multigroup calculation to produce group constants 
+    data for Moltres model.
+    61 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped graphite structure, control 
+    rod slot \gls{FLiBe}, graphite spacers, each diamond shape section's inter-plank 
+    \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).}
+    \label{fig:assembly_mg}
+\end{figure}
+I generated group constants by running the OpenMC simulation geometry with TRISO fidelity 
+(Figure \ref{fig:ahtr-fuel-assembly}) at 948K, 1024K, 1100K, and 1200K.
 
 \subsection{FHR Benchmark: Key Neutronics Parameters Verification}
 In this section, I verify that the spatial and energy homogenizations I chose are acceptable. 
