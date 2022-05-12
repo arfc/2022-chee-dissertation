@@ -653,10 +653,21 @@ ensure that the spatial homogenization and energy discretization preserve accura
 
 \subsubsection{FHR Benchmark: Key Neutronics Parameters Verification}
 In this section, I verify that the spatial and energy homogenizations I chose are 
-acceptable. 
+acceptable by conducting a verification for key neutronics parameters.
+I set up a criticality eigenvalue problem in Moltres and calculate key neutronics 
+parameters using group constants data from OpenMC. 
+I compare the key neutronics parameters between two simulations:
+\begin{enumerate}
+    \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity 
+    \item Moltres simulation with 4-group energy and spatial homogenization
+\end{enumerate}
+All materials' in the OpenMC simulation are 948K. 
+The OpenMC simulation with TRISO-level fidelity generates the group constants for the 
+energy and spatially homogenized Moltres simulation. 
 I compare the following key neutronics parameters: effective multiplication factor, 
-reactivity coefficients, flux distribution, and neutron energy spectrum for the OpenMC's 
-continuous energy and Moltres' \gls{FHR} benchmark full assembly model. 
+reactivity coefficients, flux distribution, and neutron energy spectrum. 
+
+\paragraph{Effective Multiplication Factor}
 
 \subsection{FHR Benchmark: Moltres Mesh Generation}
 
