@@ -701,6 +701,38 @@ discretization, or differing OpenMC and Moltres solve methods.
 \end{table}
 
 \paragraph{Reactivity Coefficients}
+Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
+normalized difference between $k_{eff}$ values with and without \glspl{DNP}. 
+Table \ref{tab:ahtr_full_assem_moltres_coeffs} shows that the $\beta{eff}$ values from 
+OpenMC and Moltres show excellent agreement with a discrepancy of 0.83pcm. 
+I calculated the temperature reactivity coefficients using Equation 
+\ref{eq:reactivity-coefficient}.
+Temperature reactivity feedback arises mainly from Doppler broadening of 
+resonance absorption peaks and thermal expansion.
+Table \ref{tab:ahtr_full_assem_moltres_coeffs} also shows that the total temperature 
+coefficients from OpenMC and Moltres have good agreement with a discrepancy of 
+xx pcm/K.
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} assembly's $\beta_{eff}$ values from OpenMC and Moltres 
+    simulations at 948K, and total reactivity coefficient values calculated from 
+    OpenMC and Moltres at 948K and 1100K.
+    The OpenMC simulation has continuous energy and TRISO-level spatial fidelity and
+    Moltres simulation has 4-group energy and spatial homogenization.}
+	\label{tab:ahtr_full_assem_moltres_coeffs}
+    \footnotesize
+    \begin{tabular}{llllll}
+    \hline 
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
+    & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
+    & \textbf{Diff [pcm/K]} \\
+    \hline 
+    OpenMC & No &  653.4 & - &  \Minus xx & - \\ 
+    Moltres & Yes & 652.6 & \Minus0.83 & \Minus xx & \Minus xx\\ 
+    \hline
+    \end{tabular}
+\end{table}
 
 \paragraph{Flux Distribution}
 The $\epsilon_{f,g}$ and $\Sigma_{f,g}$ terms in the Moltres source term (Equation 
