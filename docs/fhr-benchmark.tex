@@ -711,7 +711,7 @@ Temperature reactivity feedback arises mainly from Doppler broadening of
 resonance absorption peaks and thermal expansion.
 Table \ref{tab:ahtr_full_assem_moltres_coeffs} also shows that the total temperature 
 coefficients from OpenMC and Moltres have good agreement with a discrepancy of 
-xx pcm/K.
+0.42 pcm/K.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -728,8 +728,8 @@ xx pcm/K.
     & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
     & \textbf{Diff [pcm/K]} \\
     \hline 
-    OpenMC & No &  653.4 & - &  \Minus xx & - \\ 
-    Moltres & Yes & 652.6 & \Minus0.83 & \Minus xx & \Minus xx\\ 
+    OpenMC & No &  653.4 & - &  \Minus4.47 & - \\ 
+    Moltres & Yes & 652.6 & \Minus0.83 & \Minus4.06 & \Plus0.42\\ 
     \hline
     \end{tabular}
 \end{table}
@@ -830,6 +830,7 @@ geometry file.
     \label{fig:ahtr-full-assem-geo}
 \end{figure}
 
+\pagebreak
 \subsubsection{FHR Benchmark: Mesh Refinement Study}
 I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature model 
 to ensure that the geometry mesh inputs and sufficiently converged. 
@@ -871,6 +872,104 @@ Therefore, I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres
 temperature model. 
 
 \subsection{FHR Benchmark: Temperature Model}
+The Moltres \gls{AHTR} Steady-State Temperature Model is a 2D x-y cross-section 
+model of the \gls{AHTR} assembly. 
+The Moltres temperature model first solves the \gls{AHTR} neutronics and uses that to 
+solve the \gls{AHTR}'s temperature distribution for a defined power.
+The temperature model assumes conductive heat transfer throughout the domain 
+and heat removal by uniform salt flow in the coolant region. 
+These assumptions ignore turbulent effects that would most likely be present. 
+However, an in-depth AHTR Moltres model that includes turbulence modeling is 
+out of scope for this dissertation. 
+Moltres solves the four-group diffusion equations 
+(Equation \ref{eq:moltres-diffusion-equation}) 
+as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
+In the 2D cross-sectional \gls{AHTR} steady-state temperature model, I ignore the 
+time-dependent and velocity-dependent terms from Moltres' temperature governing 
+equation (Equation \ref{eq:moltres-temp}) since it is a steady-state model with
+no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss-bm}: 
+\begin{align}
+    \label{eq:moltres-temp-ss-bm}
+    - \nabla \cdot (k_i \nabla T) &= Q_i
+\intertext{where}
+k_i &= \mbox{thermal conductivity of material i} \nonumber \\
+T &= \mbox{temperature in the model} \nonumber \\
+Q_i &= \mbox{source or sink term in material i} \nonumber
+\end{align} 
+I use insulated temperature boundary conditions.  
+Table \ref{tab:ahtr-thermal-conductivity-bm} shows the thermal conductivity values 
+used for each \gls{AHTR} material. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} materials' thermal conductivities used in Moltres 
+    temperature models, taken from \cite{ramey_methodology_2021}.}
+	\label{tab:ahtr-thermal-conductivity-bm}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \textbf{Material}& \textbf{Thermal Conductivity [$Wcm^{-1}K^{-1}$]} \\ 
+    \hline 
+    \gls{FLiBe} & 0.01 \\
+    Graphite  & 0.15 \\
+    Fuel  & 0.099 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Equation \ref{eq:moltres-source-term-bm} defines the fuel cells' fission source term 
+($Q_f$):
+\begin{align}
+\label{eq:moltres-source-term-bm}
+    Q_f &= \sum_{g=1}^G \epsilon_{f,g}\Sigma_{f,g}\phi_g
+\intertext{where} 
+Q_f &= \mbox{source term } [\frac{MeV}{cm^3s}] \nonumber \\
+G &= \mbox{number of discrete groups, g } [-] \nonumber \\
+\epsilon_{f,g} &= \mbox{heat produced per fission } [MeV] \nonumber \\
+\Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [\frac{1}{cm}] \nonumber \\
+\phi_g &= \mbox{flux of neutrons in group g } [\frac{n}{cm^2s}]\nonumber
+\end{align}
+
+Equation \ref{eq:moltres-heat-removal-bm} defines the heat removal from the AHTR 
+model:
+\begin{align}
+    \label{eq:moltres-heat-removal-bm}
+    Q &= h \cdot A \cdot(T(\vec{r})-T_{ref})
+\intertext{where}
+Q &= \mbox{heat removal rate for 1cm thin slice of the AHTR model [W/cm]} \nonumber \\
+h &= \mbox{heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+A &= \mbox{coolant area } [cm^2] \nonumber \\
+T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
+T_{ref} &= \mbox{reference temperature [K]} \nonumber
+\end{align}
+
+Table \ref{tab:heat-exchanger-constants-bm} shows reference temperature and heat 
+transfer coefficient values for the convective heat transfer process.
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{AHTR} assembly heat transfer constants for Moltres temperature 
+    model.}
+	\label{tab:heat-exchanger-constants-bm}
+    \footnotesize
+    \begin{tabular}{lllll}
+    \hline 
+    \textbf{Geometry} & \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
+    \hline 
+    Assembly & $h_{assem}$ & xx & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-full-assem} \\
+    Both & $T_{ref}$ & 923 & K & AHTR Inlet Temperature \cite{ramey_methodology_2021} \\ 
+    \hline
+    \end{tabular}
+\end{table} 
+
+I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} assembly
+using \ref{eq:calc-htc-full-assem} with the following assumptions: 
+\begin{itemize}
+    \item AHTR models generate constant amount of power, which is all removed by the 
+    coolant
+    \item a linear increase in temperature from inlet to outlet 
+\end{itemize}
+
 
 \subsubsection{FHR Benchmark: Temperature Model Setup}
 
