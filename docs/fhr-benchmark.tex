@@ -881,6 +881,8 @@ and heat removal by uniform salt flow in the coolant region.
 These assumptions ignore turbulent effects that would most likely be present. 
 However, an in-depth AHTR Moltres model that includes turbulence modeling is 
 out of scope for this dissertation. 
+
+\subsubsection{FHR Benchmark: Temperature Model Setup}
 Moltres solves the four-group diffusion equations 
 (Equation \ref{eq:moltres-diffusion-equation}) 
 as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
@@ -952,12 +954,12 @@ transfer coefficient values for the convective heat transfer process.
     model.}
 	\label{tab:heat-exchanger-constants-bm}
     \footnotesize
-    \begin{tabular}{lllll}
+    \begin{tabular}{llll}
     \hline 
-    \textbf{Geometry} & \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
+    \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
-    Assembly & $h_{assem}$ & xx & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-full-assem} \\
-    Both & $T_{ref}$ & 923 & K & AHTR Inlet Temperature \cite{ramey_methodology_2021} \\ 
+    $h_{assem}$ & xx & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-full-assem} \\
+    $T_{ref}$ & 923 & K & AHTR Inlet Temperature \cite{ramey_methodology_2021} \\ 
     \hline
     \end{tabular}
 \end{table} 
@@ -969,9 +971,24 @@ using \ref{eq:calc-htc-full-assem} with the following assumptions:
     coolant
     \item a linear increase in temperature from inlet to outlet 
 \end{itemize}
-
-
-\subsubsection{FHR Benchmark: Temperature Model Setup}
+\begin{align}
+      \label{eq:calc-htc-assem}
+      h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
+      &= \frac{26223 W/cm}{440^3} \div 0.0909 K/cm \nonumber \\
+      &= 654 W cm^{-3}K^{-1} \nonumber 
+\intertext{and}
+\Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
+\intertext{where}
+h_{assem} &= \mbox{assembly's heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
+P_{dz} &= \mbox{power produced in 1cm AHTR assembly $\Delta z$ slice [$W/cm$]}\nonumber \\
+V_{coolant} &= \mbox{coolant volume in AHTR assembly [$cm^3$]} \nonumber \\
+\Delta T &= \mbox{temperature change across 1cm AHTR assembly $\Delta z$ slice [$K$]}\\
+T_{total} &= \mbox{total temperature change from inlet to outlet [$K$]} \nonumber \\
+H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
+\end{align}
+The power produced by the \gls{AHTR} assembly model is calculated based 
+on the \gls{FHR} benchmark model's specific power of 200 $\frac{W}{gU}$ and the FHR 
+benchmark's TRISO packing fractions in a 1cm thick slice of the assembly.
 
 \subsubsection{FHR Benchmark: Temperature Model Results}
 Figure \ref{fig:benchmark-temperature-model} shows ... 
