@@ -872,12 +872,12 @@ Therefore, I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres
 temperature model. 
 
 \subsection{FHR Benchmark: Temperature Model}
-The Moltres \gls{AHTR} Steady-State Temperature Model is a 2D x-y cross-section 
+The Moltres \gls{AHTR} steady-state temperature model is a 2D x-y cross-section 
 model of the \gls{AHTR} assembly. 
 The Moltres temperature model first solves the \gls{AHTR} neutronics and uses that to 
 solve the \gls{AHTR}'s temperature distribution for a defined power.
 The temperature model assumes conductive heat transfer throughout the domain 
-and heat removal by uniform salt flow in the coolant region. 
+and heat removal by uniform salt flow in the coolant regions. 
 These assumptions ignore turbulent effects that would most likely be present. 
 However, an in-depth AHTR Moltres model that includes turbulence modeling is 
 out of scope for this dissertation. 
@@ -972,10 +972,10 @@ using \ref{eq:calc-htc-full-assem} with the following assumptions:
     \item a linear increase in temperature from inlet to outlet 
 \end{itemize}
 \begin{align}
-      \label{eq:calc-htc-assem}
+      \label{eq:calc-htc-full-assem}
       h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
-      &= \frac{26223 W/cm}{440^3} \div 0.0909 K/cm \nonumber \\
-      &= 654 W cm^{-3}K^{-1} \nonumber 
+      &= \frac{26223 W/cm}{471^3} \div 0.0909 K/cm \nonumber \\
+      &= 611 W cm^{-3}K^{-1} \nonumber 
 \intertext{and}
 \Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
 \intertext{where}
@@ -991,7 +991,10 @@ on the \gls{FHR} benchmark model's specific power of 200 $\frac{W}{gU}$ and the 
 benchmark's TRISO packing fractions in a 1cm thick slice of the assembly.
 
 \subsubsection{FHR Benchmark: Temperature Model Results}
-Figure \ref{fig:benchmark-temperature-model} shows ... 
+This section describes the results of the Moltres \gls{AHTR} assembly steady-state 
+temperature model.
+Figure \ref{fig:benchmark-temperature-model} shows the temperature distribution in the 
+\gls{AHTR} assembly.  
 
 % temperature peaks nears the spacers due to extra moderation
 
