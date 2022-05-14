@@ -729,7 +729,7 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
     & \textbf{Diff [pcm/K]} \\
     \hline 
     OpenMC & No &  653.40 & - &  \Minus3.63 & - \\ 
-    Moltres & Yes & 652.57 & \Minus0.84 & \Minus4.06 & \Minus0.42\\ 
+    Moltres & Yes & 652.57 & \Minus0.84 & \Minus4.06 & \Minus0.43\\ 
     \hline
     \end{tabular}
 \end{table}
@@ -995,7 +995,26 @@ This section describes the results of the Moltres \gls{AHTR} assembly steady-sta
 temperature model.
 Figure \ref{fig:benchmark-temperature-model} shows the temperature distribution in the 
 \gls{AHTR} assembly.  
+\begin{figure}[htbp]
+    \centering
+    %\includegraphics[width=\linewidth]{benchmark-temperature-model.png} 
+    \caption{Temperature distribution in the \acrfull{AHTR} assembly.}
+    \label{fig:benchmark-temperature-model}
+\end{figure}
 
 % temperature peaks nears the spacers due to extra moderation
 
 \section{Summary}
+This chapter described the \gls{FHR} benchmark specifications, \gls{AHTR} design,
+and Phase I-A and I-B results obtained by the UIUC team, consisting of myself 
+and my advisors. 
+The benchmark results highlight the \gls{AHTR}'s passive safety behavior with 
+negative temperature coefficients. 
+Results such as a lower $k_{eff}$ for the \gls{AHTR} configuration with 
+higher heavy metal loading demonstrated that increased fuel packing does not always 
+correspond with increased $k_{eff}$ due to self-shielding effects.
+These results hint at the possibility of minimizing fuel required by optimizing 
+for heterogenous fuel distributions within the core. 
+This will be further explored in the later chapters. 
+
+% talk about the multiphysics model. 
