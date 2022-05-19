@@ -996,16 +996,22 @@ Figure \ref{fig:benchmark-temperature-model} shows the 2D temperature distributi
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{benchmark-temperature-model.png} 
-    \caption{Temperature distribution from Moltres in the \acrfull{AHTR} full assembly.}
+    \caption{2D temperature distribution in the \acrfull{AHTR} full assembly generated 
+    by Moltres.}
     \label{fig:benchmark-temperature-model}
 \end{figure}
+The average temperature distribution across the fuel planks are similar at approximately 
+1025K, while the graphite structure has a average temperature of approximately 935K. 
+The \gls{FLiBe} coolant channel (inter-plank, inter-assembly, control rod slot) regions 
+remain at 923K, as defined in the temperature model setup. 
 The temperature peaks at 1062K and occur in the fuel stripes near the spacers. 
 This could be due to the extra moderation provided by the graphite spacers.
 
 \section{Summary}
+\glsresetall
 This chapter described the \gls{FHR} benchmark specifications, \gls{AHTR} design,
-and Phase I-A and I-B results obtained by the UIUC team, consisting of myself 
-and my advisors. 
+Phase I-A and I-B results obtained by the \gls{UIUC} team, and the \gls{FHR} 
+multiphysics model's results.  
 The benchmark results highlight the \gls{AHTR}'s passive safety behavior with 
 negative temperature coefficients. 
 Results such as a lower $k_{eff}$ for the \gls{AHTR} configuration with 
@@ -1014,5 +1020,7 @@ correspond with increased $k_{eff}$ due to self-shielding effects.
 These results hint at the possibility of minimizing fuel required by optimizing 
 for heterogenous fuel distributions within the core. 
 This will be further explored in the later chapters. 
+The multiphysics model demonstrates the temperature distribution in the \gls{AHTR} peaks 
+in the fuel stripes near the spacers. 
 
 % talk about the multiphysics model. 
