@@ -86,7 +86,7 @@ to the original benchmark TRISO distribution.
 All simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
 Facility under the Director's Discretionary Allocation Program 
 \cite{noauthor_argonne_2022}. 
-% discuss compute time amounts for each simulation (table?)
+Section \ref{sec:plank-compute-time} details each optimization simulation's compute time.  
 
 \section{AHTR Plank: Single-Objective Optimization Results}
 
@@ -199,6 +199,7 @@ and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius
 Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
 between total packing fraction and total radius. 
 
+
 \subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
 
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
@@ -220,6 +221,7 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    & total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 60 \\
     & Generations: 10 \\
@@ -287,6 +289,7 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
     & $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
+    & total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 64 \\
     & Generations: 4 \\
@@ -318,6 +321,7 @@ and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius
 Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
 linear correlation between maximum plank temperature and total radius. 
 
+
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor (PPF)}
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
@@ -339,6 +343,7 @@ Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem param
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    & total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 60 \\
     & Generations: 10 \\
@@ -394,6 +399,7 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     & $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
+    & total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 64 \\
     & Generations: 5 \\
@@ -431,6 +437,7 @@ peaking factor is barely impacted by variation in FliBE coolant channel shape co
 to variation in TRISO packing fraction distribution.
 Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
 between total radius and normalized power peaking factor. 
+
 
 \section{AHTR Plank: Two-Objective Optimization Results}
 The previous section's one-objective optimization results inform the simulations that 
@@ -569,10 +576,6 @@ lowest power peaking factor and highest packing fraction (the blue distribution)
 a packing fraction that peaks in the center of the slab and both sides. 
 All reactor models on the pareto front have a relatively flat packing fraction 
 distribution, varying between 0.02 and 0.04. 
-Unlike simulations p-2a and p-2c, both extreme cases do not have similar distributions to their 
-single-objective counterparts. 
-This is due to the relationship between total packing fraction and power peaking factor. 
-%TODO why is this so ... total packing fraction impacts the self shielding effect. 
 
 \subsection{p-2c: Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
 Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem parameters. 
@@ -698,11 +701,24 @@ the final generation that fall on the pareto front.
 Figure \ref{fig:slab-obj-3-3d} demonstrates that \gls{ROLLO} found 14 widely spread 
 solutions in the final generation's Pareto front. 
 Figure \ref{fig:slab-obj-3-distr} demonstrates that the TRISO distributions on the
-Pareto front are mostly flat distributions with maximum packing fraction variation 
-of $\sim0.01$. 
+Pareto front have maximum packing fraction variation of $\sim0.01$. 
+Figure \ref{fig:slab-obj-3-distr-most-minimized} shows the three distributions from 
+Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective. 
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized.png}
+    \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
+    maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
+    Input parameters varied: TRISO distribution. TRISO distribution for the 3 reactor models on the pareto front
+    that most minimized each objective.}
+    \label{fig:slab-obj-3-distr-most-minimized}
+\end{figure}
+
 
 \subsection{p-3b: Variation of $\rho_{TRISO}(\vec{r})$, Total Packing Fraction, and FliBe Channel Shape}
 
 \section{AHTR Plank: Compute Time Summary}
+\label{sec:plank-compute-time}
 
 \section{AHTR Plank Optimization Results Discussion and Significance}
+
+\section{Summary}
