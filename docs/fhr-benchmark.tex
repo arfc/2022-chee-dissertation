@@ -834,14 +834,14 @@ homogenization described in Section \ref{sec:fhr-bm-group-constant}.
 The \gls{AHTR} mesh is then generated from the geometry file using Gmsh 
 \cite{geuzaine_gmsh_2009}.
 I used Gmsh's \textit{refine by splitting} functionality to refine the mesh.
-Figure \ref{fig:ahtr-full-assem-geo} show the \gls{AHTR} assembly's Gmsh rendered 
+Figure \ref{fig:ahtr-full-assem-geo} shows the \gls{AHTR} assembly's Gmsh rendered 
 geometry file.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{ahtr-full-assem-geo.png}
     \caption{\acrfull{AHTR} assembly's Gmsh rendered geometry file. 
-    I meshed the geometry file using Gmsh, and the mesh files are used in the \gls{AHTR} 
-    assembly's Moltres temperature models.}
+    I meshed the geometry file using Gmsh.
+    The mesh files are used in the \gls{AHTR} assembly's Moltres temperature models.}
     \label{fig:ahtr-full-assem-geo}
 \end{figure}
 
@@ -849,8 +849,8 @@ geometry file.
 \subsubsection{FHR Benchmark: Mesh Refinement Study}
 I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature model 
 to ensure that the geometry mesh inputs and sufficiently converged. 
-Table \ref{tab:ahtr-full-assem-mesh-refinement} report the average, maximum, and normalized 
-2-norm temperature difference between refinement steps (Equation 
+Table \ref{tab:ahtr-full-assem-mesh-refinement} reports the average, maximum, and 
+normalized 2-norm temperature difference between refinement steps (Equation 
 \ref{eq:2-norm-tdiff-i-full-assem}):
 \begin{align}
     \label{eq:2-norm-tdiff-i-full-assem}
@@ -881,6 +881,7 @@ Table \ref{tab:ahtr-full-assem-mesh-refinement} report the average, maximum, and
         \hline
     \end{tabular}
 \end{table}
+
 The mesh refinement study shows suitable $||\Delta T_k||_N$ convergence with more 
 refinement steps. 
 Therefore, I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres 
