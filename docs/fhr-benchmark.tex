@@ -648,7 +648,7 @@ homogenization for the OpenMC multigroup calculation for group constant generati
 
 With the above described energy discretization and spatial homogenization, I generated 
 group constants with Moltres using four OpenMC simulations at 948K, 1024K, 1100K, and 
-1200K.
+1200K, with reflective boundary conditions. 
 In the next subsection, I compared the key neutronics parameters for the continuous 
 OpenMC and multigroup Moltres simulations for the \gls{AHTR} assembly at 948K to 
 ensure that the spatial homogenization and energy discretization preserve accuracy. 
@@ -859,10 +859,10 @@ Table \ref{tab:ahtr-full-assem-mesh-refinement} report the average, maximum, and
         & \textbf{Diff [K]} & \textbf{Ave Assembly Temp [K]}
         & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
         \hline 
-        1 & 1041.191& - & 960.762 & - & -\\
-        2 & 1049.453 & \Plus8.262 & 963.028 & \Plus2.266 & 0.321\\
-        3 & 1058.505 & \Plus9.052 & 964.384 & \Plus1.356 & 0.139\\
-        4 & 1063.463 & \Plus4.958 & 965.826 & \Plus1.441 & 0.124\\
+        1 & 1040.931 & - & 960.619 & - & -\\
+        2 & 1048.941 & \Plus8.010 & 962.854 & \Plus2.235 & 0.175\\
+        3 & 1057.403 & \Plus8.463 & 963.948 & \Plus1.093 & 0.067\\
+        4 & 1061.599 & \Plus4.196 & 965.020 & \Plus1.073 & 0.053\\
         \hline
     \end{tabular}
 \end{table}
@@ -958,7 +958,7 @@ transfer coefficient values for the convective heat transfer process.
     \hline 
     \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
-    $h_{assem}$ & xx & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-full-assem} \\
+    $h_{assem}$ & 611 & $\frac{W}{cm \cdot K}$ & Calculated in Eq. \ref{eq:calc-htc-full-assem} \\
     $T_{ref}$ & 923 & K & AHTR Inlet Temperature \cite{ramey_methodology_2021} \\ 
     \hline
     \end{tabular}
@@ -997,12 +997,12 @@ Figure \ref{fig:benchmark-temperature-model} shows the temperature distribution 
 \gls{AHTR} assembly.  
 \begin{figure}[htbp]
     \centering
-    %\includegraphics[width=\linewidth]{benchmark-temperature-model.png} 
-    \caption{Temperature distribution in the \acrfull{AHTR} assembly.}
+    \includegraphics[width=1.1\linewidth]{benchmark-temperature-model.png} 
+    \caption{Temperature distribution from Moltres in the \acrfull{AHTR} full assembly.}
     \label{fig:benchmark-temperature-model}
 \end{figure}
-
-% temperature peaks nears the spacers due to extra moderation
+The temperature peaks at 1062K and occur in the fuel stripes near the spacers. 
+This could be due to the extra moderation provided by the graphite spacers.  
 
 \section{Summary}
 This chapter described the \gls{FHR} benchmark specifications, \gls{AHTR} design,
