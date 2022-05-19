@@ -712,9 +712,41 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
     that most minimized each objective.}
     \label{fig:slab-obj-3-distr-most-minimized}
 \end{figure}
-
+The brown distribution with up-down fuel packing pattern most-minimized total packing fraction. 
+The blue distribution with a mostly flat fuel distribution most-minimized $T_{max}$. 
+The grey distribution with small up-down fuel packing pattern most-minimized normalized 
+power peaking factor. 
 
 \subsection{p-3b: Variation of $\rho_{TRISO}(\vec{r})$, Total Packing Fraction, and FliBe Channel Shape}
+Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-3b Optimization Problem Parameters}
+	\label{tab:simulationp3b}
+    \footnotesize
+    \begin{tabular}{l|p{4cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation p-3b}} \\
+    \hline 
+    \textbf{Objectives} & Minimize PF \\
+    & Minimize $T_{max}$ \\
+    & Minimize PPF \\
+    \hline 
+    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
+    & $0<a<2$ \\
+    & $0<b<\frac{\pi}{2}$ \\
+    & $0<c<2\pi$ \\
+    & $0.05<r_{top}<0.35$ \\
+    & $0.05<r_{bot}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
+    \hline 
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
+    & Generations: 5 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \section{AHTR Plank: Compute Time Summary}
 \label{sec:plank-compute-time}

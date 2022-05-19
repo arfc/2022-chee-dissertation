@@ -1,6 +1,7 @@
 \chapter{Fluoride-Salt-Cooled High-Temperature Reactor Benchmark}
+\glsresetall
 \label{chap:fhr-benchmark}
-\acrfullpl{FHR} use \gls{TRISO} fuel and a low-pressure liquid fluoride-salt coolant.
+\gls{FHR} use \gls{TRISO} fuel and a low-pressure liquid fluoride-salt coolant.
 \gls{FHR} technology combines \gls{FLiBe} coolant from \glspl{MSR} and 
 \gls{TRISO} particles from \glspl{VHTR} to enable a reactor with 
 low operating pressure, large thermal margin, and accident-tolerant 
@@ -620,7 +621,7 @@ I discretized the fuel assembly into 61 \textit{cells}: inter-assembly \gls{FLiB
 graphite structure, control rod slot \gls{FLiBe}, graphite spacers, each diamond shape section's 
 inter-plank \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).
 Figure \ref{fig:assembly_mg} illustrates the \gls{AHTR} assembly's spatial 
-homogenization for the OpenMC multigroup calculation for group constant generation.
+homogenization used for group constant generation.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{assembly_mg.png}
@@ -654,10 +655,8 @@ OpenMC and multigroup Moltres simulations for the \gls{AHTR} assembly at 948K to
 ensure that the spatial homogenization and energy discretization preserve accuracy. 
 
 \subsubsection{FHR Benchmark: Key Neutronics Parameters Verification}
-In this section, I verify that the spatial and energy homogenizations I chose are 
-acceptable by conducting a verification for key neutronics parameters.
-I set up a criticality eigenvalue problem in Moltres and calculate key neutronics 
-parameters using group constants data from OpenMC. 
+In this section, I verify that the spatial homogenization and energy discretization 
+I chose are acceptable by verifying key neutronics parameters.
 I compare the key neutronics parameters between two simulations:
 \begin{enumerate}
     \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity 
@@ -670,7 +669,7 @@ I compare the following key neutronics parameters: effective multiplication fact
 reactivity coefficients, flux distribution, and neutron energy spectrum. 
 
 \paragraph{Effective Multiplication Factor}
-Table \ref{tab:keff_assem_comparison} compares effective multiplication factor 
+Table \ref{tab:keff_assem_comparison} compares $k_{eff}$ 
 for OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
 OpenMC simulation with 4-group energy and spatial homogenization, 
 and Moltres simulation with 4-group energy and spatial homogenization.
@@ -704,14 +703,14 @@ discretization, or differing OpenMC and Moltres solve methods.
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without \glspl{DNP}. 
 Table \ref{tab:ahtr_full_assem_moltres_coeffs} shows that the $\beta{eff}$ values from 
-OpenMC and Moltres show excellent agreement with a discrepancy of 0.83pcm. 
+OpenMC and Moltres show excellent agreement with a discrepancy of 0.84pcm. 
 I calculated the temperature reactivity coefficients using Equation 
 \ref{eq:reactivity-coefficient}.
 Temperature reactivity feedback arises mainly from Doppler broadening of 
 resonance absorption peaks and thermal expansion.
 Table \ref{tab:ahtr_full_assem_moltres_coeffs} also shows that the total temperature 
 coefficients from OpenMC and Moltres have good agreement with a discrepancy of 
-0.42 pcm/K.
+0.43 pcm/K.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -799,6 +798,18 @@ difference between centerline flux values from OpenMC and Moltres models.
     \end{tabular}
 \end{table}
 
+Figure \ref{fig:flux_948K_full_assem} shows that the OpenMC model has good flux 
+agreement for all groups. 
+Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
+between OpenMC and Moltres models' flux values are slight, demonstrating that there is a 
+good overall agreement for each group's flux.
+The large maximum percentage difference in flux values in Group 2 and 3 is attributed to 
+their resonance regions causing large one-off differences at some discretized points.
+The flux neutronics parameter is most important as it contributes to the source term in the 
+Moltres simulation. 
+Thus, these accurate flux comparison results verify the accurate calculation 
+of the temperature distribution in the Moltres \gls{AHTR} full assembly model. 
+
 \paragraph{Neutron Energy Spectrum}
 Figure \ref{fig:neutron_spectrum_948K_full_assem} shows the neutron spectrum of the 
 OpenMC simulation for both 252 and 4 groups and the 4-group Moltres simulation.
@@ -812,6 +823,10 @@ OpenMC simulation for both 252 and 4 groups and the 4-group Moltres simulation.
     \label{fig:neutron_spectrum_948K_full_assem}
 \end{figure}
 There is good agreement between OpenMC and Moltres models 4-group spectrums. 
+
+In summary, Moltres replicated the relevant neutronics parameters with sufficient 
+accuracy using OpenMC's group constant data for the \gls{AHTR} full assembly 
+model. 
 
 \subsection{FHR Benchmark: Moltres Mesh Generation}
 I created an \gls{AHTR} assembly geometry file (\texttt{.geo}) based on the spatial 
