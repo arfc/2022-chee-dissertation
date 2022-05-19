@@ -1,13 +1,12 @@
 \chapter{AHTR Plank Optimization Results}
 \glsresetall
 \label{chap:ahtr-plank-opt-results}
-In this chapter, I report the \gls{AHTR} plank \gls{ROLLO} optimization results. 
-In the previous chapter, I detailed the \gls{AHTR} plank's modeling and \gls{ROLLO} 
-optimization methodology. 
+In this chapter, I report the \gls{AHTR} plank's \gls{ROLLO} optimization results. 
+In the previous chapter, I detailed the methodology for \gls{AHTR} plank modeling and 
+\gls{ROLLO} optimization. 
 Specifically, I described the \gls{AHTR} plank geometry in Section 
-\ref{sec:ahtr-plank-geometry}.
-I described how I will vary the following \gls{AHTR} plank's input parameters in Section
-\ref{sec:input-parameter-modeling}:  
+\ref{sec:ahtr-plank-geometry} and how I will vary the following \gls{AHTR} plank's input 
+parameters in Section \ref{sec:input-parameter-modeling}:  
 \begin{itemize}
     \item \gls{TRISO} particle packing fraction distribution, 
     $\rho_{TRISO}(\vec{r})$
@@ -17,8 +16,8 @@ I described how I will vary the following \gls{AHTR} plank's input parameters in
 I described and verified the \gls{AHTR} plank's OpenMC neutronics and Moltres 
 temperature models in Sections \ref{sec:ahtr-moltres-hom} and 
 \ref{sec:ahtr_model_verification}. 
-I described the optimization objectives and how I calculated them from the OpenMC 
-and Moltres model outputs in Sections \ref{sec:opt-problem} and 
+I described the optimization objectives in Section \ref{sec:opt-problem} and how I 
+calculated them from the OpenMC and Moltres model outputs in Section 
 \ref{sec:ahtr_slab_output}.
 
 The subsequent sections outline the single-objective and multi-objective 
@@ -97,29 +96,29 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Simulation p-1a Optimization Problem Parameters}
+    \caption{Simulation p-1a optimization problem parameters.}
 	\label{tab:simulationp1a}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{5cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1a}} \\
     \hline 
-    \textbf{Objectives} & Minimize PF \\
+    \textbf{Objectives} & Minimize total packing fraction \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.39$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
+    \textbf{Genetic algorithm parameters} & Population size: 60 \\
     & Generations: 10 \\
     \hline
     \end{tabular}
 \end{table}
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
-Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO particle distributions in 
+Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO distributions in 
 the final generation with the most-minimized packing fractions. 
 \begin{figure}[htbp]
     \centering
@@ -130,7 +129,7 @@ the final generation with the most-minimized packing fractions.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-final.png}
-        \caption{TRISO particle distribution for the 5 individuals with the 
+        \caption{TRISO distribution for the 5 individuals with the 
         smallest packing fraction in generation 9.}
         \label{fig:slab-obj-1-pf-final} 
     \end{subfigure}
@@ -158,19 +157,19 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \caption{Simulation p-1d Optimization Problem Parameters}
 	\label{tab:simulationp1d}
     \footnotesize
-    \begin{tabular}{l|p{4cm}}
+    \begin{tabular}{l|p{5cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1d}} \\
     \hline 
-    \textbf{Objectives} & Minimize PF \\
+    \textbf{Objectives} & Minimize total packing fraction\\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.05$ \\
+    \textbf{Input parameter variations} & $0.02<PF<0.05$ \\
     & $0.05<r_{top}<0.35$ \\
     & $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    \textbf{Genetic algorithm parameters} & Population size: 64 \\
     & Generations: 3 \\
     \hline
     \end{tabular}
@@ -216,13 +215,13 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input Parameter variations} & $0<a<2$ \\
+    \textbf{Input parameter variations} & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
+    \textbf{Genetic algorithm parameters} & Population size: 60 \\
     & Generations: 10 \\
     \hline
     \end{tabular}
@@ -240,23 +239,23 @@ distributions in the final generation with the most-minimized $T_{max}$.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-final.png}
-        \caption{TRISO particle distribution for the 5 individuals with the 
+        \caption{TRISO distribution for the 5 individuals with the 
         lowest $T_{max}$ in AHTR plank at generation 9.}
         \label{fig:slab-obj-1-temp-final} 
     \end{subfigure}
     \caption{Simulation p-1b -- ROLLO single-objective optimization to minimize $T_{max}$ 
-    in the plank. Input parameters varied: TRISO particle distribution.}
+    in the plank. Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-1-temp}
 \end{figure}
 The minimum and average plank's $T_{max}$ converged to approximately 
 1125 K. 
 In Figure \ref{fig:slab-obj-1-temp-final}, a mostly flat TRISO 
-particle distribution minimizes $T_{max}$ in the plank, the TRISO particle distribution 
+particle distribution minimizes $T_{max}$ in the plank, the TRISO distribution 
 has two small dips at the one-third and two-third points in the slab (6.62cm and 20.48cm). 
-A fully flat TRISO particle distribution results in a higher $T_{max}$.
+A fully flat TRISO distribution results in a higher $T_{max}$.
 Figure \ref{fig:slab-obj-1-temp-distr} compares the Moltres-generated centerline 
 temperature distribution for the plank with mostly flat (Figure 
-\ref{fig:slab-obj-1-temp-final}) and flat TRISO particle distributions for the same 
+\ref{fig:slab-obj-1-temp-final}) and flat TRISO distributions for the same 
 total packing fraction.
 \begin{figure}[htbp]
     \centering
@@ -265,9 +264,9 @@ total packing fraction.
     TRISO distribution. Both models have a total packing fraction of 0.0979.}
     \label{fig:slab-obj-1-temp-distr}
 \end{figure}
-The AHTR plank with a flat TRISO particle distribution has higher plank temperatures 
+The AHTR plank with a flat TRISO distribution has higher plank temperatures 
 on the left and right sides near the moderator. 
-To combat this temperature peak, ROLLO found a TRISO particle distribution that 
+To combat this temperature peak, ROLLO found a TRISO distribution that 
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
 \subsubsection{Simulation p-1e: Variation of FliBe Channel Shape}
@@ -284,12 +283,12 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
+    \textbf{Input parameter variations} & $0.05<r_{top}<0.35$ \\
     & $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    \textbf{Genetic algorithm parameters} & Population size: 64 \\
     & Generations: 4 \\
     \hline
     \end{tabular}
@@ -335,20 +334,21 @@ Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem param
     \hline 
     \textbf{Objectives} & Minimize PPF \\
     \hline 
-    \textbf{Input Parameter variations} & $0<a<2$ \\
+    \textbf{Input parameter variations} & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 60 \\
+    \textbf{Genetic algorithm parameters} & Population size: 60 \\
     & Generations: 10 \\
     \hline
     \end{tabular}
 \end{table}
 Figure \ref{fig:slab-obj-1-ppf-evol} shows the slab's normalized power peaking 
 factor evolution and Figure \ref{fig:slab-obj-1-ppf-final} shows the five TRISO particle 
-distributions in the final generation with the normalized power peaking factor.
+distributions in the final generation with the most-minimized normalized power peaking 
+factor.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
@@ -359,12 +359,12 @@ distributions in the final generation with the normalized power peaking factor.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-final.png}
-        \caption{TRISO particle distribution for the 5 individuals with the 
+        \caption{TRISO distribution for the 5 individuals with the 
         lowest normalized power peaking factor in AHTR slab at generation 9.}
         \label{fig:slab-obj-1-ppf-final} 
     \end{subfigure}
     \caption{Simulation p-1c -- ROLLO single-objective optimization to minimize normalized power 
-    peaking factor in the slab. Input parameters varied: TRISO particle distribution.}
+    peaking factor in the slab. Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-1-ppf}
 \end{figure}
 In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
@@ -390,12 +390,12 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     \hline 
     \textbf{Objectives} & Minimize PPF \\
     \hline 
-    \textbf{Input Parameter variations} & $0.05<r_{top}<0.35$ \\
+    \textbf{Input parameter variations} & $0.05<r_{top}<0.35$ \\
     & $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.36$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    \textbf{Genetic algorithm parameters} & Population size: 64 \\
     & Generations: 5 \\
     \hline
     \end{tabular}
@@ -435,11 +435,11 @@ between total radius and normalized power peaking factor.
 \section{AHTR Plank: Two-Objective Optimization Results}
 The previous section's one-objective optimization results inform the simulations that 
 are run for two-objective optimization. 
-Since the minimize total packing fraction and minimize normalized power peaking factor 
-objectives are not impacted by variations in coolant channel shape, I do not conduct 
-multi-objective optimization for coolant channel shape variations.  
-
-Table \ref{tab:slab-obj-breakdown} summarizes the two-objective simulations in this 
+Since the variations in coolant channel shape does not impact two out of three objectives: 
+minimize total packing fraction and minimize normalized power peaking factor 
+objectives, I do not conduct two-objective optimization for coolant channel shape 
+variations.  
+Table \ref{tab:slab-obj-breakdown} summarized the two-objective simulations in this 
 section: p-2a, p-2b, and p-2c.
 
 % describe pareto front plots and what they mean. 
@@ -454,29 +454,29 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \caption{Simulation p-2a Optimization Problem Parameters}
 	\label{tab:simulationp2a}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{4cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2a}} \\
     \hline 
     \textbf{Objectives} & Minimize PF \\
     & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
     & Generations: 2 \\
     \hline
     \end{tabular}
 \end{table}
-Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor models' 
-total packing fraction against $T_{max}$, crosses mark the reactor models that fall on the pareto 
-front.
-Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO particle distributions in 
+Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
+models' total packing fraction against $T_{max}$, crosses mark the reactor models that 
+fall on the pareto front.
+Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO distributions in 
 the final generation that fall on the pareto front. 
 \begin{figure}[htbp]
     \centering
@@ -489,26 +489,26 @@ the final generation that fall on the pareto front.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto-distr.png}
-        \caption{TRISO particle distribution for the 6 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 6 reactor models on the pareto front.}
         \label{fig:slab-obj-2-pftemp-pareto-distr} 
     \end{subfigure}
     \caption{Simulation p-2a -- ROLLO two-objective optimization to minimize total packing fraction (PF) and  
     maximum temperature ($T_{max}$) in the plank. Input parameters varied: 
-    TRISO particle distribution.}
+    TRISO distribution.}
     \label{fig:slab-obj-2-pftemp}
 \end{figure}
 In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the lowest 
-total packing fraction and highest maximum slab temperature (the blue distribution) has 
+total packing fraction and highest maximum plank temperature (the blue distribution) has 
 an up-down fuel packing pattern. 
 This distribution is similar to simulation p-1a's most-minimized packing fraction TRISO 
 distribution (Figure \ref{fig:slab-obj-1-pf-final}), but differs as it varies between 
-0.005 and 0.035, instead of 0 and 0.4, due to influences from the mininmize maximum slab 
-temperature objective. 
-In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO particle distribution with the 
-lowest maximum slab temperature and highest total packing fraction (the purple distribution)
-has an almost constant packing fraction of $\sim0.032$ across the slab. 
-This distribution follows a similar flat shape as simulation p-1b's most-minimized maximum 
-plank temperature TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
+0.005 and 0.035, instead of 0 and 0.4, due to influences from the minimize $T_{max}$ 
+objective. 
+In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the 
+lowest $T_{max}$ and highest total packing fraction (the purple distribution)
+has an almost constant packing fraction of $\sim0.032$ across the plank. 
+This distribution follows a similar flat shape as simulation p-1b's most-minimized 
+$T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
 
 \subsection{p-2b: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
 Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
@@ -525,14 +525,14 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     \textbf{Objectives} & Minimize PF \\
     & Minimize PPF \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
     & Generations: 3 \\
     \hline
     \end{tabular}
@@ -540,7 +540,7 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
 Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor models' 
 total packing fraction against normalized power peaking factor, crosses mark the reactor 
 models that fall on the pareto front.
-Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO particle distributions in 
+Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO distributions in 
 the final generation that fall on the pareto front. 
 \begin{figure}[htbp]
     \centering
@@ -553,18 +553,18 @@ the final generation that fall on the pareto front.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-pareto-distr.png}
-        \caption{TRISO particle distribution for the 4 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 4 reactor models on the pareto front.}
         \label{fig:slab-obj-2-pfppf-pareto-distr} 
     \end{subfigure}
     \caption{Simulation p-2b -- ROLLO two-objective optimization to minimize total packing fraction (PF) and  
     normalized power peaking factor (PPF) in the plank. Input parameters varied: 
-    TRISO particle distribution.}
+    TRISO distribution.}
     \label{fig:slab-obj-2-pfppf}
 \end{figure}
-In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO particle distribution with the 
+In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 highest power peaking factor and lowest packing fraction (the orange distribution) has 
 a constant packing fraction of 0.02 across the slab. 
-In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO particle distribution with the 
+In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 lowest power peaking factor and highest packing fraction (the blue distribution), has 
 a packing fraction that peaks in the center of the slab and both sides. 
 All reactor models on the pareto front have a relatively flat packing fraction 
@@ -572,7 +572,7 @@ distribution, varying between 0.02 and 0.04.
 Unlike simulations p-2a and p-2c, both extreme cases do not have similar distributions to their 
 single-objective counterparts. 
 This is due to the relationship between total packing fraction and power peaking factor. 
-% why is this so ... 
+%TODO why is this so ... total packing fraction impacts the self shielding effect. 
 
 \subsection{p-2c: Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
 Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem parameters. 
@@ -589,13 +589,13 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     \textbf{Objectives} & Minimize $T_{max}$ \\
     & Minimize PPF \\
     \hline 
-    \textbf{Input Parameter variations} & $0<a<2$ \\
+    \textbf{Input parameter variations} & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 120 \\
+    \textbf{Genetic algorithm parameters} & Population size: 120 \\
     & Generations: 4 \\
     \hline
     \end{tabular}
@@ -603,7 +603,7 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
 Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's reactor models' 
 maximum plank temperature against normalized power peaking factor, crosses mark the reactor 
 models that fall on the pareto front.
-Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO particle distributions in 
+Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO distributions in 
 the final generation that fall on the pareto front. 
 \begin{figure}[htbp]
     \centering
@@ -616,21 +616,21 @@ the final generation that fall on the pareto front.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto-distr.png}
-        \caption{TRISO particle distribution for the 8 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 8 reactor models on the pareto front.}
         \label{fig:slab-obj-2-tempppf-pareto-distr} 
     \end{subfigure}
     \caption{Simulation p-2c -- ROLLO two-objective optimization to minimize maximum slab temperature 
     ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
-    Input parameters varied: TRISO particle distribution.}
+    Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-2-tempppf}
 \end{figure}
-In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO particle distribution with 
+In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
 the lowest maximum temperature and highest normalized power peaking factor (the orange 
 distribution) has an almost constant packing fraction of $\sim0.10$ across the slab, 
 with a slight up-down pattern. 
 This distribution follows a similar flat shape as simulation p-1b's most-minimized maximum 
 plank temperature TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}).
-In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO particle distribution with 
+In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
 the highest maximum temperature and lowest normalized power peaking factor (the grey 
 distribution) peaks near the sides of the plank, and has a minimum point at the center
 of the plank. 
@@ -659,14 +659,14 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
     & Minimize $T_{max}$ \\
     & Minimize PPF \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
     & Generations: 5 \\
     \hline
     \end{tabular}
@@ -674,7 +674,7 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
 Figure \ref{fig:slab-obj-3-3d} shows a 3D plot of the final generation's reactor models' 
 total packing fraction against maximum plank temperature against normalized power 
 peaking factor, crosses mark the reactor models that fall on the pareto front.
-Figure \ref{fig:slab-obj-3-distr} shows the 14 TRISO particle distributions in 
+Figure \ref{fig:slab-obj-3-distr} shows the 14 TRISO distributions in 
 the final generation that fall on the pareto front. 
 \begin{figure}[htbp]
     \begin{subfigure}{\textwidth}
@@ -687,12 +687,12 @@ the final generation that fall on the pareto front.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr.png}
-        \caption{TRISO particle distribution for the 14 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 14 reactor models on the pareto front.}
         \label{fig:slab-obj-3-distr} 
     \end{subfigure}
     \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
     maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. Input parameters varied: 
-    TRISO particle distribution.}
+    TRISO distribution.}
     \label{fig:slab-obj-3}
 \end{figure}
 Figure \ref{fig:slab-obj-3-3d} demonstrates that \gls{ROLLO} found 14 widely spread 
@@ -702,5 +702,7 @@ Pareto front are mostly flat distributions with maximum packing fraction variati
 of $\sim0.01$. 
 
 \subsection{p-3b: Variation of $\rho_{TRISO}(\vec{r})$, Total Packing Fraction, and FliBe Channel Shape}
+
+\section{AHTR Plank: Compute Time Summary}
 
 \section{AHTR Plank Optimization Results Discussion and Significance}
