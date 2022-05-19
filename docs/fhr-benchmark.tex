@@ -1,10 +1,10 @@
 \chapter{Fluoride-Salt-Cooled High-Temperature Reactor Benchmark}
 \glsresetall
 \label{chap:fhr-benchmark}
-\gls{FHR} use \gls{TRISO} fuel and a low-pressure liquid fluoride-salt coolant.
+\gls{FHR} systems use \gls{TRISO} fuel and a low-pressure liquid fluoride-salt coolant.
 \gls{FHR} technology combines \gls{FLiBe} coolant from \glspl{MSR} and 
 \gls{TRISO} particles from \glspl{VHTR} to enable a reactor with 
-low operating pressure, large thermal margin, and accident-tolerant 
+low operating pressure, a large thermal margin, and accident-tolerant 
 qualities.
 Within the \gls{FHR} reactor class, \glspl{AHTR} have plate-based fuel in a hexagonal 
 fuel assembly. 
@@ -13,14 +13,14 @@ an \gls{AHTR} design description, a review of previous efforts
 towards modeling these designs, and how these efforts led to the \gls{FHR} benchmark
 initiation. 
 
-To address the \gls{AHTR} modeling challenges, described in Chapter 
+To address the \gls{AHTR} modeling challenges described in Chapter 
 \ref{chap:lit-review}, such as multiple heterogeneity and material cross-section 
 data, the \gls{OECD}-\gls{NEA} and \gls{Georgia Tech} initiated the \gls{FHR} 
 benchmark for the \gls{AHTR} design in 2019 \cite{petrovic_benchmark_2021}. 
-\gls{UIUC} participates in the benchmark with the OpenMC Monte Carlo code 
+\gls{UIUC} participates in the \gls{FHR} benchmark with the OpenMC Monte Carlo code 
 \cite{romano_openmc_2013} using the ENDF/B-VII.1 material cross section library 
 \cite{chadwick_endf/b-vii.1_2011}.
-The \gls{UIUC} team consists of myself and my advisors, Professor Kathryn Huff and Dr
+The \gls{UIUC} team consists of myself and my advisors, Professor Kathryn Huff and Dr.
 Madicken Munk. 
 
 The three-phase \gls{FHR} benchmark begins with a single fuel assembly 
@@ -68,16 +68,16 @@ electric power \cite{varma_ahtr_2012}.
     \label{fig:reactor-schematic}
 \end{figure}
 The $10m$-diameter exterior reactor vessel contains an $8m$-diameter 
-reactor core that which in turn contains 252 hexagonal fuel assemblies.
+reactor core that contains 252 hexagonal fuel assemblies.
 
-Each $6m$ high fuel assembly comprises a $5.5m$ active core region, which contains
-\gls{TRISO} particles, and $0.25m$ top and bottom non-fuelled reflector regions.
+Each $6m$ high fuel assembly comprises a $5.5m$ active core region containing
+\gls{TRISO} particles and $0.25m$ top and bottom non-fuelled reflector regions.
 Figure \ref{fig:ahtr}, from Chapter \ref{chap:lit-review}, shows a single 
 hexagonal fuel assembly geometry and the arrangement of all assemblies in the core.
 All dimensions specified are at room temperature. 
-The benchmark's phases I and II use room temperature dimensions while phase III 
+The benchmark's phases I and II use room temperature dimensions, while Phase III 
 will address dimensional changes brought about by temperature expansion. 
-Figure \ref{fig:ahtr-fuel-assembly} shows a detailed 2D view of the 
+Figure \ref{fig:ahtr-fuel-assembly} shows a 2D view of the 
 \gls{AHTR}'s hexagonal fuel assembly. 
 \begin{figure}[htbp]
     \centering
@@ -107,15 +107,15 @@ Figure \ref{fig:ahtr-fuel-assembly} shows a detailed 2D view of the
     \label{fig:ahtr-fuel-assembly}
 \end{figure}
 The hexagonal fuel assembly consists of eighteen fuel-containing graphite planks 
-arranged in three diamond-shaped sectors, with a external channel wrapper and 
+arranged in three diamond-shaped sectors, with an external channel wrapper and 
 structural Y-shape, made of C-C composite with extra notches to hold the fuel 
 planks in place. 
 The diamond-shaped sections have $120^\circ{}$ rotational symmetry with each other 
 \cite{varma_ahtr_2012,ramey_monte_2018,petrovic_benchmark_2021}. 
-Semi-cylindrical graphite spacers attach to the fuel planks with radius equalling to 
+Semi-cylindrical graphite spacers attach to the fuel planks with a radius equalling to 
 coolant channel thickness. 
-\gls{FLiBe} coolant fills the gaps between the fuel planks, and between 
-assemblies (note: FliBe layer around the single assembly). 
+\gls{FLiBe} coolant fills the gaps between the fuel planks and
+assemblies (note: \gls{FLiBe} layer around the single assembly). 
 The Y-shaped control rod slot at the center of the Y-shape structure contains 
 \gls{FLiBe} coolant when the control blade is not in the slot (as seen in 
 Figure \ref{fig:ahtr-fuel-assembly})
@@ -165,8 +165,8 @@ Each fuel stripe contains a graphite matrix filled with a cubic lattice of
 \gls{TRISO} particles with 40\% packing fraction. 
 The lattice is 210 \gls{TRISO} particles wide in the x-direction, four particles 
 deep in the y-direction, and 5936 particles tall in the z-direction. 
-Figure \ref{fig:ahtr-triso} shows the \gls{TRISO} particle's cross section 
-which consists of five layers: oxycarbide fuel kernel, porous carbon buffer, 
+Figure \ref{fig:ahtr-triso} shows the \gls{TRISO} particle's cross section, 
+consisting of five layers: oxycarbide fuel kernel, porous carbon buffer, 
 inner pyrolytic carbon, silicon carbide layer, and the outer pyrolitic carbon. 
 \begin{figure}[htbp]
     \centering
@@ -176,9 +176,9 @@ inner pyrolytic carbon, silicon carbide layer, and the outer pyrolitic carbon.
     \label{fig:ahtr-triso}
 \end{figure}
 
-To control reactivity, the \gls{FHR} benchmark includes \gls{AHTR} configurations
-with burnable poisons and control rods. 
-The burnable poisons consist of europium oxide, $Eu_2O_3$, and have a discrete
+The \gls{FHR} benchmark includes \gls{AHTR} configurations with burnable poisons 
+and control rods to control reactivity. 
+The burnable poisons consist of europium oxide ($Eu_2O_3$) and have a discrete
 or integral (dispersed) option. 
 Figure \ref{fig:discrete-poison} shows the discrete option with z-direction axially 
 stacked small spherical $Eu_2O_3$ particles at five XY locations in each 
@@ -196,12 +196,12 @@ fuel plank.
     \cite{noauthor_fluoride_nodate}.}
     \label{fig:discrete-poison}
 \end{figure}
-The integral options consists of $Eu_2O_3$ homogenously mixed with the graphite 
+The integral options consist of $Eu_2O_3$ homogenously mixed with the graphite 
 fuel plank (including the graphite in fuel stripes matrix and plank ends 
 indented to structural sides, but excluding the graphite in spacers and 
 graphite in TRISO particles).
-The \gls{MHC} control rod inserts into the Y-shaped control rod slot where it 
-displaces the \gls{FLiBe} that occupies the slot 
+The \gls{MHC} control rod inserts into the Y-shaped control rod slot, displacing
+the \gls{FLiBe} that occupies the slot 
 (shown in Figure \ref{fig:ahtr-fuel-assembly}). 
 
 Detailed \gls{AHTR} geometry information can be found in \cite{petrovic_benchmark_2021}.
@@ -209,11 +209,11 @@ Detailed \gls{AHTR} geometry information can be found in \cite{petrovic_benchmar
 \section{FHR Benchmark Phase I Specifications}
 \label{sec:phase1}
 The \gls{FHR} benchmark Phase I consists of three subphases.
-First, a steady-state 2D model (Phase I-A), next depletion of one 2D \gls{FHR} fuel 
+First, the steady-state 2D model (Phase I-A), next, the depletion of one 2D \gls{FHR} fuel 
 assembly (Phase I-B), and finally depletion of one 3D \gls{FHR} fuel assembly 
 (Phase I-C).
-Benchmark organizers have only released Phase I-A and I-B's specifications, thus 
-Phase I-C's specifications will be omitted in this section.
+Benchmark organizers have only released Phase I-A and I-B's specifications. 
+Thus Phase I-C's specifications will be omitted in this section.
 
 The benchmark requires the following results for Phases I-A and I-B:
 \begin{enumerate}[label=(\alph*)]
@@ -352,7 +352,7 @@ For Phase I-B, the benchmark specifies that each participant must produce
 depletion results for three cases: 1B, 4B, and 7B. 
 These are the same as cases 1A, 4A, and 7A (described in Table \ref{tab:phase1a-cases}), 
 but with depletion steps added. 
-The depletions steps are 0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 14, 18, 22, 26, 30, 40, 50, 
+The depletion steps are 0, 0.1, 0.5, 1, 2, 4, 6, 8, 10, 14, 18, 22, 26, 30, 40, 50, 
 60, 70 GWd/tU. 
 Case 7B adds seven more depletion steps: 80, 90, 100, 120, 140, 160 GWd/tU. 
 The benchmark assumes that depletion occurs only in the fuel and burnable poisons 
@@ -369,9 +369,9 @@ that the overall observed agreement is satisfactory.
 In the subsequent sections, I will share the results obtained by \gls{UIUC}. 
 
 \subsection{Results: Phase I-A}
-In a recently submitted \gls{ANS} Mathematics \& Computation (M$\&$C) 2021 conference paper 
-(which I am a co-author on), Petrovic et al. \cite{petrovic_preliminary_2021} compared 
-\gls{FHR} benchmark participants' Phase I-A $k_{eff}$ results.  
+In the \gls{ANS} Mathematics \& Computation (M$\&$C) 2021 conference 
+paper (of which I am a co-author), Petrovic et al. \cite{petrovic_preliminary_2021} 
+compared \gls{FHR} benchmark participants' Phase I-A $k_{eff}$ results.  
 We reported that the standard deviation between participants for each case 
 was in the 231 to 514 pcm range, acceptable and notably close given a blind 
 benchmark, assuring that \gls{UIUC}'s Phase I-A results are acceptable and 
@@ -425,12 +425,12 @@ capture, thus, increasing $k_{eff}$.
 As expected, $k_{eff}$ is lower for Cases 3A, 4AR, and 5A than reference case 
 1A since these cases introduce burnable poisons and control rods to the fuel 
 assembly. 
-Also, as expected, $k_{eff}$ is higher for Case 7A than reference Case 1A, since 
+Also, as expected, $k_{eff}$ is higher for Case 7A than reference Case 1A since 
 it has a higher enrichment. 
 However, Case 6A deviated from expectations with a lower $k_{eff}$ despite an increase 
 in \acrlong{HM} loading. 
 This behavior is due to reduced moderation and worsened fuel utilization brought about 
-by self-shielding, demonstrating that an increase in fuel packing fraction does not 
+by self-shielding, demonstrating that increased fuel packing fraction does not 
 always correspond with an increased $k_{eff}$. 
 
 \subsubsection{Results: Reactivity Coefficients (b)}
@@ -439,10 +439,10 @@ $\beta_{eff}$ increased by 10--20[pcm] for Cases 4A, 4AR, 5A, and 6A compared to
 reference Case 1A due to the introduction of control rods and poisons that 
 shift the average neutron velocity to higher values, resulting in decreased
 thermal fission and increased fast fission \cite{torabi_neutronic_2018}.
-In Table \ref{tab:phase1a-results},most temperature coefficients are negative, 
+In Table \ref{tab:phase1a-results}, most temperature coefficients are negative, 
 exemplifying the \gls{AHTR}'s passive safety behavior. 
 Negative reactivity feedback results in a self-regulating reactor; if the reactor 
-power rises, resulting in temperature increase, the negative reactivity
+power rises, resulting in a temperature increase, the negative reactivity
 reduces power. 
 
 \subsubsection{Results: Fission Source Distribution (c)}
@@ -478,7 +478,7 @@ For Case 3A with an inserted control rod, the fission source is lower in
 the one-fifth stripes closer to the control rod.  
 Case 6A demonstrates a further diminished fission source in the interior 
 stripes due to the higher fuel-to-carbon ratio.
-This is seen in Figure \ref{fig:phase1a-c} in which case 1A and 6A have similar 
+This is seen in Figure \ref{fig:phase1a-c}, in which case 1A and 6A have similar 
 fission distribution trends, but case 6A has a bigger fission source value range. 
 
 \subsubsection{Results: Average Neutron Flux (d)}
@@ -492,7 +492,7 @@ three coarse energy groups.
     each Phase I-A case. Neutron flux uncertainty is on the order of 1e10.}
     \label{fig:phase1a-d}
 \end{figure}
-Most of the cases have the most flux in the intermediate group, followed by 
+Most cases have the most flux in the intermediate group, followed by 
 the thermal group, and the least flux in the fast group.   
 
 \subsubsection{Results: Neutron Flux Distribution (e)}
@@ -510,7 +510,7 @@ Figure \ref{fig:phase1a-e} shows the neutron flux distribution in a 100 $\times$
     \label{fig:phase1a-e}
 \end{figure}
 For all three cases, fast-flux (energy group 1) peaks in the diamond-shaped sectors containing 
-the fuel stripes, whereas thermal flux (energy group 3) peaks outside of the diamond-shaped 
+the fuel stripes, whereas thermal flux (energy group 3) peaks outside the diamond-shaped 
 sectors. 
 This can be attributed to fission occurring at thermal energies in the fuel stripe area. 
 For Case 3A, the thermal and intermediate neutron flux is depressed in the fuel 
@@ -553,9 +553,9 @@ Case 1B is the reference case with $9\%$ fuel enrichment and no \glspl{BP}.
 Case 1B's $k_{eff}$ steadily decreases until it reaches 0.967845 at the final 70 
 GWd/tU burnup. 
 Case 4B includes burnable poisons resulting in a lower initial $k_{eff}$. 
-Its $k_{eff}$ decreases at a slower rate in the beginning due to the presence of 
+Case 4B's $k_{eff}$ decreases at a slower rate in the beginning due to the presence of 
 burnable poisons, which decreases the flux in the core. 
-At approximately 20 GWd/tU, $k_{eff}$ begins decreasing at a faster rate, presumably
+At approximately 20 GWd/tU, $k_{eff}$ begins decreasing faster, presumably
 due to burn-up of the poison material.   
 Case 7B has a $19.75\%$ fuel enrichment, resulting in a higher initial $k_{eff}$. 
 With a higher enrichment, the assembly stays critical till 140 Gwd/tU. 
@@ -563,12 +563,12 @@ With a higher enrichment, the assembly stays critical till 140 Gwd/tU.
 \section{FHR Benchmark Multiphysics Model}
 I used Moltres \cite{lindsay_moltres_2017} to conduct \gls{AHTR} full assembly multiphysics 
 simulations. 
-AHTR Moltres simulations will capture thermal feedback effects, absent from the purely 
+AHTR Moltres simulations will capture thermal feedback effects absent from the purely 
 neutronics OpenMC simulations conducted in the \gls{FHR} benchmark's Phase I-A.
 To run Moltres simulations, the user provides group constant data from a neutron transport 
 solver, such as OpenMC, for the Moltres multigroup neutron diffusion calculations and
 a mesh file representing the reactor geometry. 
-In the next subsections, I will describe the steps required to produce an 
+In the following subsections, I will describe the steps required to produce an 
 \gls{AHTR} temperature model with Moltres:
 \begin{itemize}
     \item OpenMC neutronics model produces group constants data for the Moltres model
@@ -580,8 +580,8 @@ In the next subsections, I will describe the steps required to produce an
 \label{sec:fhr-bm-group-constant}
 Unlike the OpenMC neutronics model from the previous sections, Moltres does not explicitly 
 model each \gls{TRISO} particle. 
-A TRISO-level fidelity mesh file is impractical and will result in an extremely long 
-Moltres simulation runtime. 
+A TRISO-level fidelity mesh file is impractical and results in extremely long Moltres 
+simulation runtimes.
 Instead, Moltres relies on the OpenMC model to generate group constants data
 for the Moltres simulations. 
 Previously, Moltres could only generate group constant data from Serpent 
@@ -639,7 +639,7 @@ homogenization used for group constant generation.
             \end{tabular}}}
     \caption{\acrfull{AHTR} assembly spatially discretized into 
     61 \textit{cells} for OpenMC multigroup calculation to produce group constants 
-    data for Moltres model.
+    data for the Moltres model.
     61 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped graphite structure, control 
     rod slot \gls{FLiBe}, graphite spacers, each diamond shape section's inter-plank 
     \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).
@@ -647,9 +647,10 @@ homogenization used for group constant generation.
     \label{fig:assembly_mg}
 \end{figure}
 
-With the above described energy discretization and spatial homogenization, I generated 
+With the above-described energy discretization and spatial homogenization, I generated 
 group constants with Moltres using four OpenMC simulations at 948K, 1024K, 1100K, and 
-1200K, with reflective boundary conditions. 
+1200K. 
+I used reflective boundary conditions.
 In the next subsection, I compared the key neutronics parameters for the continuous 
 OpenMC and multigroup Moltres simulations for the \gls{AHTR} assembly at 948K to 
 ensure that the spatial homogenization and energy discretization preserve accuracy. 
@@ -675,7 +676,7 @@ OpenMC simulation with 4-group energy and spatial homogenization,
 and Moltres simulation with 4-group energy and spatial homogenization.
 I included results from the homogenized OpenMC simulation to 
 distinguish between differences caused by spatial homogenization and energy 
-discretization, or differing OpenMC and Moltres solve methods. 
+discretization or differing OpenMC and Moltres solve methods. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -727,9 +728,9 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} assembly's $\beta_{eff}$ values from OpenMC and Moltres 
-    simulations at 948K, and total reactivity coefficient values calculated from 
+    simulations at 948K and total reactivity coefficient values calculated from 
     OpenMC and Moltres at 948K and 1100K.
-    The OpenMC simulation has continuous energy and TRISO-level spatial fidelity and
+    The OpenMC simulation has continuous energy and TRISO-level spatial fidelity, and the
     Moltres simulation has 4-group energy and spatial homogenization.}
 	\label{tab:ahtr_full_assem_moltres_coeffs}
     \footnotesize
@@ -813,10 +814,10 @@ difference between centerline flux values from OpenMC and Moltres models.
 Figure \ref{fig:flux_948K_full_assem} shows that the OpenMC model has good flux 
 agreement for all groups. 
 Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
-between OpenMC and Moltres models' flux values are slight, demonstrating that there is a 
+between OpenMC and Moltres models' flux values are slight, demonstrating a 
 good overall agreement for each group's flux.
 The large maximum percentage difference in flux values in Group 2 and 3 is attributed to 
-their resonance regions causing large one-off differences at some discretized points.
+their resonance regions, causing large one-off differences at some discretized points.
 The flux neutronics parameter is most important as it contributes to the source term in the 
 Moltres simulation. 
 Thus, these accurate flux comparison results verify the accurate calculation 
@@ -853,14 +854,14 @@ geometry file.
     \includegraphics[width=\linewidth]{ahtr-full-assem-geo.png}
     \caption{\acrfull{AHTR} assembly's Gmsh rendered geometry file. 
     I meshed the geometry file using Gmsh.
-    The mesh files are used in the \gls{AHTR} assembly's Moltres temperature models.}
+    The mesh file is used in the \gls{AHTR} assembly Moltres temperature model.}
     \label{fig:ahtr-full-assem-geo}
 \end{figure}
 
 \pagebreak
 \subsubsection{FHR Benchmark: Mesh Refinement Study}
-I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature model 
-to ensure that the geometry mesh inputs and sufficiently converged. 
+I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature 
+model to ensure that the geometry mesh inputs are sufficiently converged. 
 Table \ref{tab:ahtr-full-assem-mesh-refinement} reports the average, maximum, and 
 normalized 2-norm temperature difference between refinement steps (Equation 
 \ref{eq:2-norm-tdiff-i-full-assem}):
@@ -994,7 +995,7 @@ transfer coefficient values for the convective heat transfer process.
 \end{table} 
 
 I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} assembly
-using \ref{eq:calc-htc-full-assem} with the following assumptions: 
+using Equation \ref{eq:calc-htc-full-assem} with the following assumptions: 
 \begin{itemize}
     \item AHTR models generate constant amount of power, which is all removed by the 
     coolant
@@ -1030,12 +1031,13 @@ Figure \ref{fig:benchmark-temperature-model} shows the 2D temperature distributi
     \label{fig:benchmark-temperature-model}
 \end{figure}
 The average temperature distribution across the fuel planks are similar at approximately 
-1025K, while the graphite structure has a average temperature of approximately 935K. 
-The \gls{FLiBe} coolant channel (inter-plank, inter-assembly, control rod slot) regions 
-remain at 923K, as defined in the temperature model setup. 
-The temperature peaks at 1062K and occur in the fuel stripes near the spacers. 
+1025K, while the graphite structure has an average temperature of approximately 935K. 
+As defined in the temperature model setup, the \gls{FLiBe} coolant channel 
+(inter-plank, inter-assembly, control rod slot) regions remain at 923K
+The temperature peaks at 1062K, which occur in the fuel stripes near the spacers. 
 This could be due to the extra moderation provided by the graphite spacers.
 
+\pagebreak
 \section{Summary}
 \glsresetall
 This chapter described the \gls{FHR} benchmark specifications, \gls{AHTR} design,
