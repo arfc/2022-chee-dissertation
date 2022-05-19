@@ -83,10 +83,10 @@ The FHR Benchmark's assembly model had a $k_{eff}$ of 1.39, thus, I constrainine
 $k_{eff} \geq 1.39$ to find optimal input parameters that achieve similar performance 
 to the original benchmark TRISO distribution. 
 
-All simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
-Facility under the Director's Discretionary Allocation Program 
-\cite{noauthor_argonne_2022}. 
-Section \ref{sec:plank-compute-time} details each optimization simulation's compute time.  
+Simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and Theta 
+supercomputer at the Argonne Leadership Computing Facility under the Director's 
+Discretionary Allocation Program \cite{noauthor_argonne_2022}. 
+Section \ref{sec:plank-compute-cost} details each optimization simulation's compute time.  
 
 \section{AHTR Plank: Single-Objective Optimization Results}
 
@@ -748,18 +748,52 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     \end{tabular}
 \end{table}
 
-\section{AHTR Plank: Compute Time Summary}
-\label{sec:plank-compute-time}
-All simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
-Facility under the Director's Discretionary Allocation Program 
-\cite{noauthor_argonne_2022}. 
-Each optimization problem takes a different amount of compute time to run due to 
+\section{AHTR Plank: Computational Cost Summary}
+\label{sec:plank-compute-cost}
+Simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and Theta 
+supercomputer at the Argonne Leadership Computing Facility under the Director's 
+Discretionary Allocation Program \cite{noauthor_argonne_2022}. 
+Each optimization problem takes a different amount of node-hours to run due to 
 differences in simulation software, tallies and intermediate steps required. 
 
-Table \ref{tab:plank-compute-time} reports the compute time used for each optimization 
+Table \ref{tab:plank-compute-cost} reports the compute time used for each optimization 
 problem. 
 Table \ref{tab:slab-obj-breakdown} details the simulation parameters. 
-
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Computational cost of \acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
+    plank.}
+	\label{tab:plank-compute-cost}
+    \footnotesize
+    \begin{tabular}{p{1.4cm}|p{1cm}|llll}
+    \hline 
+    \textbf{Num of Objs} & \textbf{Sim} & \textbf{Machine} & \textbf{Compute cost per gen [node-hours]} &\textbf{gens} & \textbf{Total compute cost [node-hours]} \\
+    \hline
+    \multirow{6}{2cm}{1} & p-1a & & & & \\
+    \cline{2-6}
+    & p-1b & & & & \\
+    \cline{2-6}
+    & p-1c & & & & \\
+    \cline{2-6}
+    & p-1d & & & & \\
+    \cline{2-6}
+    & p-1e & & & & \\
+    \cline{2-6}
+    & p-1f & & & & \\
+    \hline
+    \multirow{3}{2cm}{2}& p-2a & & & & \\
+    \cline{2-6}
+    & p-2b & & & & \\
+    \cline{2-6}
+    & p-2c & & & & \\
+    \hline
+    \multirow{2}{2cm}{3}& p-3a & & & & \\
+    \cline{2-6}
+    & p-3b & & & & \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \section{AHTR Plank Optimization Results Discussion and Significance}
 
