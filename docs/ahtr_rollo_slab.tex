@@ -572,6 +572,26 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+Table \ref{tab:p2a-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation p-2a converges by generation 2. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-2a Hypervolume values at each generation.}
+	\label{tab:p2a-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2a}} \\
+    \multicolumn{2}{c}{Reference point: (0.1, 1350)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume value} \\
+    \hline
+    1 & 17.659 \\
+    2 & 17.659 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
 models' total packing fraction against $T_{max}$, crosses mark the reactor models that 
