@@ -109,7 +109,7 @@ grouped by the minimized objective.
 \subsection{Objective: Minimize Total Packing Fraction}
 \subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
 Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem parameters. 
-\begin{table}[H]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1a optimization problem parameters.}
@@ -153,7 +153,7 @@ the final generation with the most-minimized packing fractions.
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} plank model with most-minimized total packing fraction 
-        (corresponds to the blue distribution in the above plot).}
+        (corresponds to the blue bolded distribution in the above plot).}
         \label{fig:slab-obj-1-pf-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1a -- ROLLO single-objective optimization to minimize total 
@@ -177,7 +177,7 @@ with most-minimized total packing fraction.
 
 \subsubsection{Simulation p-1d: Variation of PF and FliBe Channel Shape}
 Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
-\begin{table}[H]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1d Optimization Problem Parameters}
@@ -219,14 +219,14 @@ and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius
         \label{fig:slab-obj-1-pf-final-coolant} 
     \end{subfigure}
     \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize total 
-    packing fraction. Input parameters varied: coolant channel shape 
-    ($r_{top}, r_{bot}$).}
+    packing fraction. Input parameters varied: total packing fraction, and coolant 
+    channel shape ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-pf-coolant}
 \end{figure}
 Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
 between total packing fraction and total radius. 
 
-\subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
+\subsection{Objective: Minimize Maximum Plank Temperature ($T_{max}$)}
 \label{sec:plank-1-obj-temp}
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem parameters. 
@@ -254,6 +254,7 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-temp-evol} shows the plank's $T_{max}$ evolution 
 and Figure \ref{fig:slab-obj-1-temp-final} shows the five TRISO particle 
 distributions in the final generation with the most-minimized $T_{max}$.
@@ -268,8 +269,14 @@ distributions in the final generation with the most-minimized $T_{max}$.
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-final.png}
         \caption{TRISO distribution for the 5 reactor models with the 
-        lowest $T_{max}$ in AHTR plank at generation 9.}
+        lowest $T_{max}$ in AHTR plank at the final generation.}
         \label{fig:slab-obj-1-temp-final} 
+    \end{subfigure}
+    \begin{subfigure}{0.95\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-temp-most-minimized.png}
+        \caption{\gls{AHTR} plank model with most-minimized $T_{max}$
+        (corresponds to the purple bolded distribution in the above plot).}
+        \label{fig:slab-obj-1-temp-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1b -- ROLLO single-objective optimization to minimize $T_{max}$ 
     in the plank. Input parameters varied: TRISO distribution.}
