@@ -407,7 +407,8 @@ Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-Figure \ref{fig:slab-obj-1-ppf-evol} shows the slab's normalized power peaking 
+
+Figure \ref{fig:slab-obj-1-ppf-evol} shows the slab's fuel-normalized power peaking 
 factor evolution and Figure \ref{fig:slab-obj-1-ppf-final} shows the five TRISO particle 
 distributions in the final generation with the most-minimized normalized power peaking 
 factor.
@@ -415,7 +416,7 @@ factor.
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol.png}
-        \caption{Minimum, average, and maximum evolution of normalized power 
+        \caption{Minimum, average, and maximum evolution of fuel-normalized power 
         peaking factor in AHTR slab.}
         \label{fig:slab-obj-1-ppf-evol} 
     \end{subfigure}
@@ -425,8 +426,16 @@ factor.
         lowest normalized power peaking factor in AHTR slab at generation 9.}
         \label{fig:slab-obj-1-ppf-final} 
     \end{subfigure}
-    \caption{Simulation p-1c -- ROLLO single-objective optimization to minimize normalized power 
-    peaking factor in the slab. Input parameters varied: TRISO distribution.}
+    \begin{subfigure}{0.95\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-1-ppf-most-minimized.png}
+        \caption{\gls{AHTR} plank model with most-minimized fuel-normalized power 
+        peaking factor
+        (corresponds to the purple bolded distribution in the above plot).}
+        \label{fig:slab-obj-1-ppf-most-minimized} 
+    \end{subfigure}
+    \caption{Simulation p-1c -- ROLLO single-objective optimization to minimize 
+    fuel-normalized power peaking factor in the plank. 
+    Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-1-ppf}
 \end{figure}
 In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
@@ -435,8 +444,9 @@ center of the plank.
 This distribution is attributed to the self-shielding effects. 
 The edges of the fuel region have higher flux as they are closer to the graphite 
 moderator, whereas the plank's center has a lower flux due to self shielding. 
-Thus, to minimize PPF, \gls{ROLLO} found a plank TRISO distribution that has higher 
-packing fraction at the edges, and a lower packing fraction in the center. 
+Thus, to minimize fuel-normalized power peaking factor, \gls{ROLLO} found a plank 
+\gls{TRISO} distribution that has higher packing fraction at the edges, and a 
+lower packing fraction in the center. 
 
 \subsubsection{Simulation p-1f: Variation of FliBe Channel Shape}
 Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
