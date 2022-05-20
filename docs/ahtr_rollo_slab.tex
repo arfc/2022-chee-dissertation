@@ -86,7 +86,8 @@ to the original benchmark TRISO distribution.
 Simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and Theta 
 supercomputer at the Argonne Leadership Computing Facility under the Director's 
 Discretionary Allocation Program \cite{noauthor_argonne_2022}. 
-Section \ref{sec:plank-compute-cost} details each optimization simulation's compute time.  
+Section \ref{sec:plank-compute-cost} details each optimization simulation's computational 
+cost.  
 
 \section{AHTR Plank: Single-Objective Optimization Results}
 
@@ -318,6 +319,7 @@ and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-temp-coolant}
 \end{figure}
+
 Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
 linear correlation between maximum plank temperature and total radius. 
 Comparison of Figures \ref{fig:slab-obj-1-temp-evol} and 
@@ -466,7 +468,7 @@ should find widely spread solutions in the obtained Pareto front
 \cite{deb_multi-objective_2001}. 
 Thus, I report on the optimal reactor models on the Pareto front for the multi-objective 
 optimization problems in this section and Section \ref{sec:plank-three-obj}. 
-p
+
 \subsection{p-2a: Minimize Total Packing Fraction and Maximum Temperature}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
 \begin{table}[htbp]
@@ -659,6 +661,7 @@ are on the fuel regions' edges instead of the plank's edges.
 The differences between the above cases and their single objective counterparts are due to 
 influences from the other objectives. 
 
+\pagebreak
 \section{AHTR Plank: Three-Objective Optimization Results}
 \label{sec:plank-three-obj}
 
@@ -710,8 +713,8 @@ the final generation that fall on the pareto front.
         \label{fig:slab-obj-3-distr} 
     \end{subfigure}
     \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
-    maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. Input parameters varied: 
-    TRISO distribution.}
+    maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
+    Input parameters varied: Total PF, TRISO distribution.}
     \label{fig:slab-obj-3}
 \end{figure}
 Figure \ref{fig:slab-obj-3-3d} demonstrates that \gls{ROLLO} found 14 widely spread 
@@ -763,6 +766,32 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+Figure \ref{fig:slab-obj-3-3d-all} shows a 3D plot of the final generation's reactor 
+models' total packing fraction against maximum plank temperature against normalized
+power peaking factor, crosses mark the reactor models that fall on the pareto front.
+Figure \ref{fig:slab-obj-3-distr-all} shows the 13 TRISO distributions in 
+the final generation that fall on the pareto front. 
+\begin{figure}[htbp]
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.7\linewidth]{slab-obj-3-3d-all.png}
+        \caption{Plot of final generation's reactor models' total packing fraction against maximum plank 
+        temperature against normalized power peaking factor. Crosses indicate the reactor models on the 
+        pareto front. Cross colors correspond to TRISO distributions in the plot below.}
+        \label{fig:slab-obj-3-3d-all} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-3-distr-all.png}
+        \caption{TRISO distribution for the 13 reactor models on the pareto front.}
+        \label{fig:slab-obj-3-distr-all} 
+    \end{subfigure}
+    \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize total packing fraction, 
+    maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
+    Input parameters varied: Total PF, TRISO distribution, 
+    coolant channel shape $(r_{top}, r_{bot})$.}
+    \label{fig:slab-obj-3-all}
+\end{figure}
+
 
 \pagebreak
 \section{AHTR Plank: Computational Cost Summary}
@@ -773,7 +802,7 @@ Discretionary Allocation Program \cite{noauthor_argonne_2022}.
 Each optimization problem takes a different amount of node-hours to run due to 
 differences in simulation software, tallies and intermediate steps required. 
 
-Table \ref{tab:plank-compute-cost} reports the compute time used for each optimization 
+Table \ref{tab:plank-compute-cost} reports the computational cost for each optimization 
 problem. 
 Table \ref{tab:slab-obj-breakdown} details the simulation parameters. 
 %The BW supercomputer uses 32 nodes 
