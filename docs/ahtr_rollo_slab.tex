@@ -169,6 +169,7 @@ with most-minimized total packing fraction.
     distribution.}
     \label{fig:slab-obj-1-pf}
 \end{figure}
+
 Figure \ref{fig:slab-obj-1-pf-evol} shows that the minimum and average total packing 
 fraction converged very quickly, as expected in this single-objective optimization 
 problem.
@@ -295,11 +296,12 @@ with most-minimized $T_{max}$.
     in the plank. Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-1-temp}
 \end{figure}
+
 Figure \ref{fig:slab-obj-1-temp-evol} shows that the minimum and average plank's 
 $T_{max}$ converged to approximately 1125 K. 
 In Figure \ref{fig:slab-obj-1-temp-final}, a mostly flat TRISO 
 particle distribution minimizes $T_{max}$ in the plank, the TRISO distribution 
-has two small dips at the one-third and two-third points in the slab (6.62cm and 20.48cm). 
+has two small dips at the one-third and two-third points in the plank (6.62cm and 20.48cm). 
 A fully flat \gls{TRISO} distribution results in a higher $T_{max}$.
 Figure \ref{fig:slab-obj-1-temp-distr} compares the Moltres-generated centerline 
 temperature distribution for the plank with mostly flat (Figure 
@@ -365,6 +367,7 @@ and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-temp-coolant}
 \end{figure}
+
 Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
 linear correlation between maximum plank temperature and total radius. 
 Comparison of Figures \ref{fig:slab-obj-1-temp-evol} and 
@@ -407,7 +410,7 @@ Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem param
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-1-ppf-evol} shows the slab's fuel-normalized power peaking 
+Figure \ref{fig:slab-obj-1-ppf-evol} shows the plank's fuel-normalized power peaking 
 factor evolution, Figure \ref{fig:slab-obj-1-ppf-final} shows the five TRISO particle 
 distributions in the final generation with the most-minimized normalized power peaking 
 factor, and Figure \ref{fig:slab-obj-1-ppf-most-minimized} illustrates the \gls{AHTR} 
@@ -423,7 +426,7 @@ plank model with most-minimized fuel-normalized power peaking factor.
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-final.png}
         \caption{TRISO distribution for the 5 reactor models with the 
-        lowest normalized power peaking factor in AHTR slab at the final generation.}
+        lowest normalized power peaking factor in AHTR plank at the final generation.}
         \label{fig:slab-obj-1-ppf-final} 
     \end{subfigure}
     \begin{subfigure}{0.9\textwidth}
@@ -438,6 +441,7 @@ plank model with most-minimized fuel-normalized power peaking factor.
     Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-1-ppf}
 \end{figure}
+
 In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
 PPF peaks near the edges of the fuel region of the plank, and has a minimum point in 
 center of the plank.
@@ -473,7 +477,8 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the slab's normalized power peaking 
+
+Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the plank's normalized power peaking 
 factor evolution and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows a plot of total 
 radius ($r_{top} + r_{bot}$) against normalized power peaking factor. 
 \begin{figure}[htbp!]
@@ -496,12 +501,13 @@ radius ($r_{top} + r_{bot}$) against normalized power peaking factor.
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-ppf-coolant}
 \end{figure}
-Figure \ref{fig:slab-obj-1-ppf-evol-coolant} has the same axis as Figure 
-\ref{fig:slab-obj-1-ppf-evol}, which, demonstrates how variation in TRISO packing fraction 
-distribution impacts normalized power peaking factor. 
-Comparison of the two plots demonstrates that the normalized power
-peaking factor is barely impacted by variation in FliBE coolant channel shape compared 
-to variation in TRISO packing fraction distribution.
+
+Comparison of Figures \ref{fig:slab-obj-1-ppf-evol-coolant} and 
+\ref{fig:slab-obj-1-ppf-evol} show that coolant channel shape variation 
+does not have as high of an impact on PPF as \gls{TRISO} distribution variation:  
+the average PPF due to \gls{TRISO} variation decreased by 0.1 over 10 generations, 
+while average PPF due to coolant channel shape variation only decreased negligibly
+over 10 generations. 
 Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
 between total radius and normalized power peaking factor. 
 
@@ -650,7 +656,7 @@ highest power peaking factor and lowest packing fraction (the orange distributio
 a constant packing fraction of 0.02 across the slab. 
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 lowest power peaking factor and highest packing fraction (the blue distribution), has 
-a packing fraction that peaks in the center of the slab and both sides. 
+a packing fraction that peaks in the center of the plank and both sides. 
 All reactor models on the Pareto front have a relatively flat packing fraction 
 distribution, varying between 0.02 and 0.04. 
 
@@ -700,7 +706,7 @@ the final generation that fall on the Pareto front.
         \caption{TRISO distribution for the 8 reactor models on the Pareto front.}
         \label{fig:slab-obj-2-tempppf-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2c -- ROLLO two-objective optimization to minimize maximum slab temperature 
+    \caption{Simulation p-2c -- ROLLO two-objective optimization to minimize maximum plank temperature 
     ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
     Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-2-tempppf}
@@ -776,7 +782,7 @@ the final generation that fall on the Pareto front.
         \label{fig:slab-obj-3-distr} 
     \end{subfigure}
     \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
-    maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
+    maximum plank temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
     Input parameters varied: Total PF, TRISO distribution.}
     \label{fig:slab-obj-3}
 \end{figure}
@@ -790,7 +796,7 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
 \begin{figure}[htbp!]
     \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized.png}
     \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
-    maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
+    maximum plank temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
     Input parameters varied: TRISO distribution. TRISO distribution for the 3 reactor models on the Pareto front
     that most minimized each objective.}
     \label{fig:slab-obj-3-distr-most-minimized}
@@ -852,7 +858,7 @@ front.
         \label{fig:slab-obj-3-distr-all} 
     \end{subfigure}
     \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize total packing fraction, 
-    maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
+    maximum plank temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
     Input parameters varied: Total PF, TRISO distribution, 
     coolant channel shape $(r_{top}, r_{bot})$.}
     \label{fig:slab-obj-3-all}
@@ -891,7 +897,7 @@ distribution and coolant channel shape for most-minimized cases.
         \label{fig:slab-obj-3-distr-most-minimized-ppf-all}
     \end{subfigure}
     \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize total 
-    packing fraction, maximum slab temperature ($T_{max}$) and normalized power peaking 
+    packing fraction, maximum plank temperature ($T_{max}$) and normalized power peaking 
     factor (PPF) in the plank. 
     Input parameters varied: Total PF, TRISO distribution, and coolant channel shape 
     $(r_{top}, r_{bot})$.}
