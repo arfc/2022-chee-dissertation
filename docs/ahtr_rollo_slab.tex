@@ -4,21 +4,28 @@
 In this chapter, I report the \gls{AHTR} plank's \gls{ROLLO} optimization results. 
 In the previous chapter, I detailed the methodology for \gls{AHTR} plank modeling and 
 \gls{ROLLO} optimization. 
-Specifically, I described the \gls{AHTR} plank geometry in Section 
-\ref{sec:ahtr-plank-geometry} and how I will vary the following \gls{AHTR} plank's input 
-parameters in Section \ref{sec:input-parameter-modeling}:  
+I described the \gls{AHTR} plank geometry in Section \ref{sec:ahtr-plank-geometry}.
+I will vary the following \gls{AHTR} plank input parameters:
 \begin{itemize}
     \item \gls{TRISO} particle packing fraction distribution, 
     $\rho_{TRISO}(\vec{r})$
     \item Total fuel packing fraction
     \item \gls{FLiBe} coolant channel shape 
 \end{itemize} 
+Section \ref{sec:input-parameter-modeling} details about how I will vary the 
+\gls{AHTR} plank's input parameters. 
 I described and verified the \gls{AHTR} plank's OpenMC neutronics and Moltres 
 temperature models in Sections \ref{sec:ahtr-moltres-hom} and 
 \ref{sec:ahtr_model_verification}. 
-I described the optimization objectives in Section \ref{sec:opt-problem} and how I 
-calculated them from the OpenMC and Moltres model outputs in Section 
-\ref{sec:ahtr_slab_output}.
+I will optimize the \gls{AHTR} plank for the following optimization objectives:
+\begin{itemize}
+    \item Minimize total fuel packing fraction (Total PF)
+    \item Minimize maximum plank temperature ($T_{max}$)
+    \item Minimize fuel-normalized power peaking factor (PPF)
+\end{itemize} 
+Section \ref{sec:opt-problem} described the optimization objectives and Section 
+\ref{sec:ahtr_slab_output} described how I calculated them from the OpenMC and Moltres 
+model outputs. 
 
 The subsequent sections outline the single-objective and multi-objective 
 ROLLO optimization simulations for the \gls{AHTR} plank, and their respective results. 
