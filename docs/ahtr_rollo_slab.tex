@@ -109,7 +109,7 @@ grouped by the minimized objective.
 \subsection{Objective: Minimize Total Packing Fraction}
 \subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
 Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem parameters. 
-\begin{table}[H]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1a optimization problem parameters.}
@@ -137,7 +137,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
 Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO distributions in 
 the final generation with the most-minimized packing fractions. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol.png}
@@ -146,7 +146,7 @@ the final generation with the most-minimized packing fractions.
     \end{subfigure}
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-final.png}
-        \caption{TRISO distribution for the 5 individuals with the 
+        \caption{TRISO distribution for the 5 reactor models with the 
         smallest packing fraction in the final generation.}
         \label{fig:slab-obj-1-pf-final} 
     \end{subfigure}
@@ -175,9 +175,9 @@ a lower packing fraction for the same $k_{eff}$.
 Figure \ref{fig:slab-obj-1-pf-most-minimized} illustrates the \gls{AHTR} plank model 
 with most-minimized total packing fraction.
 
-\subsubsection{Simulation p-1d: Variation of FliBe Channel Shape and PF}
+\subsubsection{Simulation p-1d: Variation of PF and FliBe Channel Shape}
 Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1d Optimization Problem Parameters}
@@ -200,10 +200,11 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the total packing fraction evolution 
 and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius 
 ($r_{top} + r_{bot}$) against total packing fraction. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol-coolant.png}
@@ -224,7 +225,6 @@ and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius
 \end{figure}
 Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
 between total packing fraction and total radius. 
-
 
 \subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
 \label{sec:plank-1-obj-temp}
@@ -267,7 +267,7 @@ distributions in the final generation with the most-minimized $T_{max}$.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-final.png}
-        \caption{TRISO distribution for the 5 individuals with the 
+        \caption{TRISO distribution for the 5 reactor models with the 
         lowest $T_{max}$ in AHTR plank at generation 9.}
         \label{fig:slab-obj-1-temp-final} 
     \end{subfigure}
@@ -396,7 +396,7 @@ factor.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-final.png}
-        \caption{TRISO distribution for the 5 individuals with the 
+        \caption{TRISO distribution for the 5 reactor models with the 
         lowest normalized power peaking factor in AHTR slab at generation 9.}
         \label{fig:slab-obj-1-ppf-final} 
     \end{subfigure}
