@@ -4,13 +4,13 @@
 In this chapter, I report the \gls{AHTR} plank's \gls{ROLLO} optimization results. 
 I vary the following \gls{AHTR} plank input parameters:
 \begin{itemize}
-    \item \gls{TRISO} packing fraction distribution
-    \item Total fuel packing fraction 
-    \item \gls{FLiBe} coolant channel shape 
+    \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
+    \item Total fuel packing fraction (Total PF)
+    \item \gls{FLiBe} coolant channel shape
 \end{itemize} 
 And, I optimize the \gls{AHTR} plank for the following optimization objectives:
 \begin{itemize}
-    \item Minimize total fuel packing fraction (Total PF)
+    \item Minimize total fuel packing fraction (PF)
     \item Minimize maximum plank temperature ($T_{max}$)
     \item Minimize fuel-normalized power peaking factor (PPF)
 \end{itemize} 
@@ -104,12 +104,12 @@ optimization results.
 Table \ref{tab:slab-obj-breakdown} summarized the one-objective simulations in this
 section: p-1a, p-1b, p-1c, p-1d, p-1e, and p-1f. 
 In the following subsections, I describe the single-objective optimization results 
-grouped by the minimized ojective. 
+grouped by the minimized objective. 
 
 \subsection{Objective: Minimize Total Packing Fraction}
 \subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
 Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \onehalfspacing
     \caption{Simulation p-1a optimization problem parameters.}
@@ -133,6 +133,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
 Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO distributions in 
 the final generation with the most-minimized packing fractions. 
@@ -154,11 +155,13 @@ the final generation with the most-minimized packing fractions.
     distribution.}
     \label{fig:slab-obj-1-pf}
 \end{figure}
-The minimum and average packing fractions converged very quickly, as expected 
-in this single-objective optimization problem.
+
+Figure \ref{fig:slab-obj-1-pf-evol} shows that the minimum and average total packing 
+fraction converged very quickly, as expected in this single-objective optimization 
+problem.
 By the $9^{th}$ generation, the average, minimum, and maximum packing fraction
 values converged to approximately 0.023. 
-In figure \ref{fig:slab-obj-1-pf-final}, the TRISO particle packing 
+In Figure \ref{fig:slab-obj-1-pf-final}, the TRISO particle packing 
 sine distributions are not exactly the same, but follow a similar pattern of 
 alternating between a higher packing fraction, and a lower packing fraction 
 in the neighboring fuel cell. 
