@@ -202,7 +202,7 @@ between total packing fraction and total radius.
 
 
 \subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
-
+\label{sec:plank-1-obj-temp}
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem parameters. 
 \begin{table}[htbp]
@@ -470,6 +470,7 @@ Thus, I report on the optimal reactor models on the Pareto front for the multi-o
 optimization problems in this section and Section \ref{sec:plank-three-obj}. 
 
 \subsection{p-2a: Minimize Total Packing Fraction and Maximum Temperature}
+\label{sec:p-2a}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
@@ -498,21 +499,21 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
 \end{table}
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
 models' total packing fraction against $T_{max}$, crosses mark the reactor models that 
-fall on the pareto front.
+fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO distributions in 
-the final generation that fall on the pareto front. 
+the final generation that fall on the Pareto front. 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto.png}
         \caption{Plot of final generation's reactor models' total packing fraction against 
-        $T_{max}$. Crosses indicate the reactor models on the pareto front. Cross colors correspond  
+        $T_{max}$. Crosses indicate the reactor models on the Pareto front. Cross colors correspond  
         to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-pftemp-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto-distr.png}
-        \caption{TRISO distribution for the 6 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 6 reactor models on the Pareto front.}
         \label{fig:slab-obj-2-pftemp-pareto-distr} 
     \end{subfigure}
     \caption{Simulation p-2a -- ROLLO two-objective optimization to minimize total packing fraction (PF) and  
@@ -562,21 +563,21 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
 \end{table}
 Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor models' 
 total packing fraction against normalized power peaking factor, crosses mark the reactor 
-models that fall on the pareto front.
+models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO distributions in 
-the final generation that fall on the pareto front. 
+the final generation that fall on the Pareto front. 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-pareto.png}
         \caption{Plot of final generation's reactor models' PF against PPF. 
-        Crosses indicate the reactor models on the pareto front. Cross colors correspond  
+        Crosses indicate the reactor models on the Pareto front. Cross colors correspond  
         to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-pfppf-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-pareto-distr.png}
-        \caption{TRISO distribution for the 4 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 4 reactor models on the Pareto front.}
         \label{fig:slab-obj-2-pfppf-pareto-distr} 
     \end{subfigure}
     \caption{Simulation p-2b -- ROLLO two-objective optimization to minimize total packing fraction (PF) and  
@@ -590,10 +591,11 @@ a constant packing fraction of 0.02 across the slab.
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 lowest power peaking factor and highest packing fraction (the blue distribution), has 
 a packing fraction that peaks in the center of the slab and both sides. 
-All reactor models on the pareto front have a relatively flat packing fraction 
+All reactor models on the Pareto front have a relatively flat packing fraction 
 distribution, varying between 0.02 and 0.04. 
 
 \subsection{p-2c: Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
+\label{sec:p-2c}
 Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
@@ -621,21 +623,21 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
 \end{table}
 Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's reactor models' 
 maximum plank temperature against normalized power peaking factor, crosses mark the reactor 
-models that fall on the pareto front.
+models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO distributions in 
-the final generation that fall on the pareto front. 
+the final generation that fall on the Pareto front. 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto.png}
         \caption{Plot of final generation's reactor models' maximum plank temperature against normalized 
-        power peaking factor. Crosses indicate the reactor models on the pareto front. Cross colors 
+        power peaking factor. Crosses indicate the reactor models on the Pareto front. Cross colors 
         correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-tempppf-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto-distr.png}
-        \caption{TRISO distribution for the 8 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 8 reactor models on the Pareto front.}
         \label{fig:slab-obj-2-tempppf-pareto-distr} 
     \end{subfigure}
     \caption{Simulation p-2c -- ROLLO two-objective optimization to minimize maximum slab temperature 
@@ -696,21 +698,21 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
 
 Figure \ref{fig:slab-obj-3-3d} shows a 3D plot of the final generation's reactor models' 
 total packing fraction against maximum plank temperature against normalized power 
-peaking factor, crosses mark the reactor models that fall on the pareto front.
+peaking factor, crosses mark the reactor models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-3-distr} shows the 14 TRISO distributions in 
-the final generation that fall on the pareto front. 
+the final generation that fall on the Pareto front. 
 \begin{figure}[htbp]
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.7\linewidth]{slab-obj-3-3d.png}
         \caption{Plot of final generation's reactor models' total packing fraction against maximum plank 
         temperature against normalized power peaking factor. Crosses indicate the reactor models on the 
-        pareto front. Cross colors correspond to TRISO distributions in the plot below.}
+        Pareto front. Cross colors correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-3-3d} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr.png}
-        \caption{TRISO distribution for the 14 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 14 reactor models on the Pareto front.}
         \label{fig:slab-obj-3-distr} 
     \end{subfigure}
     \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
@@ -729,7 +731,7 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
     \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized.png}
     \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
     maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
-    Input parameters varied: TRISO distribution. TRISO distribution for the 3 reactor models on the pareto front
+    Input parameters varied: TRISO distribution. TRISO distribution for the 3 reactor models on the Pareto front
     that most minimized each objective.}
     \label{fig:slab-obj-3-distr-most-minimized}
 \end{figure}
@@ -771,9 +773,9 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
 
 Figure \ref{fig:slab-obj-3-3d-all} shows a 3D plot of the final generation's reactor 
 models' total packing fraction against maximum plank temperature against normalized
-power peaking factor, crosses mark the reactor models that fall on the pareto front.
+power peaking factor, crosses mark the reactor models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-3-distr-all} shows the 13 TRISO distributions and their
-total radius $(r_{top}, r_{bot})$ in the final generation that fall on the pareto 
+total radius $(r_{top}, r_{bot})$ in the final generation that fall on the Pareto 
 front. 
 \begin{figure}[htbp]
     \begin{subfigure}{\textwidth}
@@ -781,12 +783,12 @@ front.
         \includegraphics[width=0.7\linewidth]{slab-obj-3-3d-all.png}
         \caption{Plot of final generation's reactor models' total packing fraction against maximum plank 
         temperature against normalized power peaking factor. Crosses indicate the reactor models on the 
-        pareto front. Cross colors correspond to TRISO distributions in the plot below.}
+        Pareto front. Cross colors correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-3-3d-all} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr-all.png}
-        \caption{TRISO distribution for the 13 reactor models on the pareto front.}
+        \caption{TRISO distribution for the 13 reactor models on the Pareto front.}
         \label{fig:slab-obj-3-distr-all} 
     \end{subfigure}
     \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize total packing fraction, 
@@ -806,7 +808,7 @@ distribution and coolant channel shape for most-minimized cases.
 \begin{figure}[htbp]
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized-all.png}
-        \caption{TRISO distribution for the 3 reactor models on the pareto 
+        \caption{TRISO distribution for the 3 reactor models on the Pareto 
         front that most minimized each objective.}
         \label{fig:slab-obj-3-distr-most-minimized-distr-all}
     \end{subfigure}
@@ -841,6 +843,21 @@ The brown distribution with a mostly flat fuel distribution and $r_{tot} = 0.584
 most-minimized $T_{max}$. 
 The blue distribution with small up-down fuel packing pattern and $r_{tot} = 0.193cm$ 
 most-minimized normalized power peaking factor. 
+
+Most of the \gls{TRISO} distributions on the Pareto front have a mostly flat 
+distribution with approximately $\sim0.1cm$ of variation. 
+The flatness is influenced by the minimize $T_{max}$ objective. 
+As observed in previous sections \ref{sec:plank-1-obj-temp}, \ref{sec:p-2a}, and 
+\ref{sec:p-2c}, a flat \gls{TRISO} distribution minimizes $T_{max}$ objective.
+The variations in \gls{TRISO} distributions are influenced by both the minimize 
+total packing fraction and minimize PPF objectives. 
+The minimize total packing fraction objective tries to minimize self shielding effects 
+to enable a higher $k_{eff}$ for lower total PF. 
+The minimize fuel-normalized power peaking factor objective tries to minimize 
+TRISO distribution in areas with higher flux to minimize fuel-normalized power peaking.
+
+Section \ref{sec:plank-discussion} gives further discussion on \gls{ROLLO}'s plank 
+optimization results and significance for reactor designers.
 
 \pagebreak
 \section{AHTR Plank: Computational Cost Summary}
@@ -888,6 +905,7 @@ Table \ref{tab:slab-obj-breakdown} details the simulation parameters.
 \end{table}
 
 \section{AHTR Plank Optimization Results Discussion and Significance}
+\label{sec:plank-discussion}
 \gls{ROLLO} successfully finds widely spread solutions in each of the multi-objective 
 optimization final generation's Pareto front.
 \gls{ROLLO} is a global search of a large design space and helps narrow down possible 
