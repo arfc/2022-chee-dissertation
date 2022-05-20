@@ -759,6 +759,8 @@ differences in simulation software, tallies and intermediate steps required.
 Table \ref{tab:plank-compute-cost} reports the compute time used for each optimization 
 problem. 
 Table \ref{tab:slab-obj-breakdown} details the simulation parameters. 
+%The BW supercomputer uses 32 nodes 
+% Theta specs ... 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -766,26 +768,26 @@ Table \ref{tab:slab-obj-breakdown} details the simulation parameters.
     plank.}
 	\label{tab:plank-compute-cost}
     \footnotesize
-    \begin{tabular}{p{1.4cm}|p{1cm}|lp{4cm}lp{4cm}}
+    \begin{tabular}{p{1.4cm}|p{1cm}lp{4cm}lp{4cm}}
     \hline 
     \textbf{Num of Objs} & \textbf{Sim} & \textbf{Machine} & \textbf{Compute cost per gen [node-hours]} &\textbf{gens} & \textbf{Total compute cost [node-hours]} \\
     \hline
     \multirow{6}{2cm}{1} 
     & p-1a & BW & 23.8 & 10 & 238.6\\
-    & p-1b & & & & \\
+    & p-1b & BW & 95.9 & 10 & 959.6\\
     & p-1c & & & & \\
-    & p-1d & & & & \\
-    & p-1e & & & & \\
-    & p-1f & & & & \\
+    & p-1d & Theta & 49.5 & 3 & 148.7\\
+    & p-1e & Theta & 71.4 & 4 & 285.6\\
+    & p-1f & Theta & 82.7 & 5 & 413.8 \\
     \hline
     \multirow{3}{2cm}{2}
-    & p-2a & & & & \\
-    & p-2b & & & & \\
-    & p-2c & & & & \\
+    & p-2a & Theta & 87.6 & 2 & 175.2\\
+    & p-2b & Theta & & 3 & \\
+    & p-2c & Theta & & & \\
     \hline
     \multirow{2}{2cm}{3}
-    & p-3a & & & & \\
-    & p-3b & & & & \\
+    & p-3a & Theta & & & \\
+    & p-3b & Theta & & & \\
     \hline
     \end{tabular}
 \end{table}
