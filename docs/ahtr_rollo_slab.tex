@@ -139,18 +139,18 @@ Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO distributions in
 the final generation with the most-minimized packing fractions. 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol.png}
         \caption{Minimum, average, and maximum total packing fraction evolution.}
         \label{fig:slab-obj-1-pf-evol} 
     \end{subfigure}
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-final.png}
         \caption{TRISO distribution for the 5 individuals with the 
-        smallest packing fraction in generation 9.}
+        smallest packing fraction in the final generation.}
         \label{fig:slab-obj-1-pf-final} 
     \end{subfigure}
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} plank model with most-minimized total packing fraction 
         (corresponds to the blue distribution in the above plot).}
@@ -164,7 +164,7 @@ the final generation with the most-minimized packing fractions.
 Figure \ref{fig:slab-obj-1-pf-evol} shows that the minimum and average total packing 
 fraction converged very quickly, as expected in this single-objective optimization 
 problem.
-By the $9^{th}$ generation, the average, minimum, and maximum packing fraction
+By the final generation, the average, minimum, and maximum packing fraction
 values converged to approximately 0.023. 
 In Figure \ref{fig:slab-obj-1-pf-final}, the TRISO particle packing 
 sine distributions are not exactly the same, but follow a similar pattern of 
@@ -172,6 +172,8 @@ alternating between a higher packing fraction, and a lower packing fraction
 in the neighboring fuel cell. 
 The up-down fuel packing pattern minimizes self-shielding effects, enabling  
 a lower packing fraction for the same $k_{eff}$. 
+Figure \ref{fig:slab-obj-1-pf-most-minimized} illustrates the \gls{AHTR} plank model 
+with most-minimized total packing fraction.
 
 \subsubsection{Simulation p-1d: Variation of FliBe Channel Shape and PF}
 Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
