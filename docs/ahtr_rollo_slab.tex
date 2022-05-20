@@ -33,7 +33,7 @@ ROLLO optimization simulations for the \gls{AHTR} plank, and their respective re
 \section{ROLLO AHTR Plank Optimization Simulations Overview}
 Table \ref{tab:slab-obj-breakdown} shows the details of each \gls{ROLLO} 
 optimization simulation explored in this chapter.
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
@@ -107,9 +107,15 @@ In the following subsections, I describe the single-objective optimization resul
 grouped by the minimized objective. 
 
 \subsection{Objective: Minimize Total Packing Fraction}
+This section reports results from the minimize total packing fraction single-objective
+optimization simulations: p-1a and p-1d. 
+Simulation p-1a varies \gls{TRISO} packing fraction distribution and total fuel packing 
+fraction, while simulation p-1d varies the total fuel packing fraction and \gls{FLiBe} 
+coolant channel shape. 
+
 \subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
 Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1a optimization problem parameters.}
@@ -137,7 +143,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
 Figure \ref{fig:slab-obj-1-pf-evol} shows the total packing fraction evolution and 
 Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO distributions in 
 the final generation with the most-minimized packing fractions. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol.png}
@@ -177,7 +183,7 @@ with most-minimized total packing fraction.
 
 \subsubsection{Simulation p-1d: Variation of PF and FliBe Channel Shape}
 Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1d Optimization Problem Parameters}
@@ -204,7 +210,7 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
 Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the total packing fraction evolution 
 and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius 
 ($r_{top} + r_{bot}$) against total packing fraction. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol-coolant.png}
@@ -230,7 +236,7 @@ between total packing fraction and total radius.
 \label{sec:plank-1-obj-temp}
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1b Optimization Problem Parameters}
@@ -258,7 +264,7 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
 Figure \ref{fig:slab-obj-1-temp-evol} shows the plank's $T_{max}$ evolution 
 and Figure \ref{fig:slab-obj-1-temp-final} shows the five TRISO particle 
 distributions in the final generation with the most-minimized $T_{max}$.
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-evol.png}
@@ -294,7 +300,7 @@ Figure \ref{fig:slab-obj-1-temp-distr} compares the Moltres-generated centerline
 temperature distribution for the plank with mostly flat (Figure 
 \ref{fig:slab-obj-1-temp-final}) and flat TRISO distributions for the same 
 total packing fraction.
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \includegraphics[width=\linewidth]{slab-obj-1-temp-distr.png}
     \caption{Comparison of Moltres-generated AHTR Plank Temperature Distribution for non-flat and flat
@@ -308,7 +314,7 @@ has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
 \subsubsection{Simulation p-1e: Variation of FliBe Channel Shape}
 Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1e Optimization Problem Parameters}
@@ -331,10 +337,11 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-temp-evol-coolant} shows the plank's $T_{max}$ evolution 
 and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius 
 ($r_{top} + r_{bot}$) against $T_{max}$. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-evol-coolant.png}
@@ -353,13 +360,12 @@ and Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius
     ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-temp-coolant}
 \end{figure}
-
 Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
 linear correlation between maximum plank temperature and total radius. 
 Comparison of Figures \ref{fig:slab-obj-1-temp-evol} and 
 \ref{fig:slab-obj-1-temp-evol-coolant} show that coolant channel shape variation 
-does not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation.  
-The average $T_{max}$ due to \gls{TRISO} variation decreased by 60K over 10 generations, 
+does not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation:  
+the average $T_{max}$ due to \gls{TRISO} variation decreased by 60K over 10 generations, 
 while average $T_{max}$ due to coolant channel shape variation only decreased by 15K
 over 10 generations. 
 
@@ -367,7 +373,7 @@ over 10 generations.
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1c Optimization Problem Parameters}
@@ -395,7 +401,7 @@ Figure \ref{fig:slab-obj-1-ppf-evol} shows the slab's normalized power peaking
 factor evolution and Figure \ref{fig:slab-obj-1-ppf-final} shows the five TRISO particle 
 distributions in the final generation with the most-minimized normalized power peaking 
 factor.
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol.png}
@@ -424,7 +430,7 @@ packing fraction at the edges, and a lower packing fraction in the center.
 
 \subsubsection{Simulation p-1f: Variation of FliBe Channel Shape}
 Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-1f Optimization Problem Parameters}
@@ -450,7 +456,7 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
 Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the slab's normalized power peaking 
 factor evolution and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows a plot of total 
 radius ($r_{top} + r_{bot}$) against normalized power peaking factor. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol-coolant.png}
@@ -506,7 +512,7 @@ optimization problems in this section and Section \ref{sec:plank-three-obj}.
 \subsection{p-2a: Minimize Total Packing Fraction and Maximum Temperature}
 \label{sec:p-2a}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-2a Optimization Problem Parameters}
@@ -536,7 +542,7 @@ models' total packing fraction against $T_{max}$, crosses mark the reactor model
 fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO distributions in 
 the final generation that fall on the Pareto front. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto.png}
@@ -570,7 +576,7 @@ $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
 
 \subsection{p-2b: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
 Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-2b Optimization Problem Parameters}
@@ -600,7 +606,7 @@ total packing fraction against normalized power peaking factor, crosses mark the
 models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO distributions in 
 the final generation that fall on the Pareto front. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-pareto.png}
@@ -631,7 +637,7 @@ distribution, varying between 0.02 and 0.04.
 \subsection{p-2c: Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
 \label{sec:p-2c}
 Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-2c Optimization Problem Parameters}
@@ -660,7 +666,7 @@ maximum plank temperature against normalized power peaking factor, crosses mark 
 models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO distributions in 
 the final generation that fall on the Pareto front. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto.png}
@@ -703,7 +709,7 @@ influences from the other objectives.
 
 \subsection{p-3a: Variation of of $\rho_{TRISO}(\vec{r})$ and Total Packing Fraction}
 Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-3a Optimization Problem Parameters}
@@ -735,7 +741,7 @@ total packing fraction against maximum plank temperature against normalized powe
 peaking factor, crosses mark the reactor models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-3-distr} shows the 14 TRISO distributions in 
 the final generation that fall on the Pareto front. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.7\linewidth]{slab-obj-3-3d.png}
@@ -761,7 +767,7 @@ Figure \ref{fig:slab-obj-3-distr} demonstrates that the TRISO distributions on t
 Pareto front have maximum packing fraction variation of $\sim0.01$. 
 Figure \ref{fig:slab-obj-3-distr-most-minimized} shows the three distributions from 
 Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized.png}
     \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
     maximum slab temperature ($T_{max}$) and normalized power peaking factor (PPF) in the plank. 
@@ -776,7 +782,7 @@ power peaking factor.
 
 \subsection{p-3b: Variation of $\rho_{TRISO}(\vec{r})$, Total Packing Fraction, and FliBe Channel Shape}
 Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem parameters. 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Simulation p-3b Optimization Problem Parameters}
@@ -811,7 +817,7 @@ power peaking factor, crosses mark the reactor models that fall on the Pareto fr
 Figure \ref{fig:slab-obj-3-distr-all} shows the 13 TRISO distributions and their
 total radius $(r_{top}, r_{bot})$ in the final generation that fall on the Pareto 
 front. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.7\linewidth]{slab-obj-3-3d-all.png}
@@ -839,7 +845,7 @@ from Figure \ref{fig:slab-obj-3-distr-all} that most-minimized each objective.
 Figures \ref{fig:slab-obj-3-distr-most-minimized-pf-all}, \ref{fig:slab-obj-3-distr-most-minimized-temp-all}, 
 and \ref{fig:slab-obj-3-distr-most-minimized-ppf-all} show the \gls{AHTR} plank's TRISO 
 distribution and coolant channel shape for most-minimized cases. 
-\begin{figure}[htbp]
+\begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized-all.png}
         \caption{TRISO distribution for the 3 reactor models on the Pareto 
@@ -909,7 +915,7 @@ problem.
 Table \ref{tab:slab-obj-breakdown} details the simulation parameters. 
 %The BW supercomputer uses 32 nodes 
 % Theta specs ... 
-\begin{table}[htbp]
+\begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Computational cost of \acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
