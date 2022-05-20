@@ -179,7 +179,7 @@ In Figure \ref{fig:slab-obj-1-pf-final}, the TRISO particle packing
 sine distributions are not exactly the same, but follow a similar pattern of 
 alternating between a higher packing fraction, and a lower packing fraction 
 in the neighboring fuel cell. 
-The up-down fuel packing pattern minimizes self-shielding effects, enabling  
+The oscillating fuel packing pattern minimizes self-shielding effects, enabling  
 a lower packing fraction for the same $k_{eff}$. 
 
 \subsubsection{Simulation p-1d: Variation of PF and FliBe Channel Shape}
@@ -513,17 +513,17 @@ between total radius and normalized power peaking factor.
 
 \pagebreak
 \section{AHTR Plank: Two-Objective Optimization Results}
-The previous section's one-objective optimization results inform the simulations that 
-are run for multi-objective optimization. 
+In this section, I report the \gls{AHTR} plank's \gls{ROLLO} two-objective 
+optimization results. 
+The previous section's one-objective optimization results inform the multi-objective 
+optimization simulations.
 Since the variations in coolant channel shape does not impact two out of three objectives: 
-minimize total packing fraction and minimize normalized power peaking factor 
+minimize total packing fraction and minimize fuel-normalized power peaking factor 
 objectives, I do not conduct two-objective optimization for coolant channel shape 
 variations.  
 Table \ref{tab:slab-obj-breakdown} summarized the two-objective simulations in this 
 section: p-2a, p-2b, and p-2c.
 
-For the multi-objective optimization problems, the optimal solutions are on the 
-Pareto front. 
 As previously described in Section \ref{sec:opt}, multi-objective optimization returns 
 multiple optimal solutions that meet each objective to varying degrees; this set of 
 solutions is the Pareto front \cite{deb_multi-objective_2001}. 
@@ -535,7 +535,7 @@ should find widely spread solutions in the obtained Pareto front
 Thus, I report on the optimal reactor models on the Pareto front for the multi-objective 
 optimization problems in this section and Section \ref{sec:plank-three-obj}. 
 
-\subsection{p-2a: Minimize Total Packing Fraction and Maximum Temperature}
+\subsection{p-2a: Minimize Total Packing Fraction and Maximum Plank Temperature}
 \label{sec:p-2a}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
 \begin{table}[htbp!]
@@ -563,6 +563,7 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
 models' total packing fraction against $T_{max}$, crosses mark the reactor models that 
 fall on the Pareto front.
@@ -582,6 +583,12 @@ the final generation that fall on the Pareto front.
         \caption{TRISO distribution for the 6 reactor models on the Pareto front.}
         \label{fig:slab-obj-2-pftemp-pareto-distr} 
     \end{subfigure}
+    \begin{subfigure}{0.95\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-pftemp-min-pf.png}
+        \caption{\gls{AHTR} plank model with most-minimized total fuel packing fraction
+        (corresponds to the purple bolded distribution in the above plot).}
+        \label{slab-obj-2-pftemp-min-pf} 
+    \end{subfigure}
     \caption{Simulation p-2a -- ROLLO two-objective optimization to minimize total packing fraction (PF) and  
     maximum temperature ($T_{max}$) in the plank. Input parameters varied: 
     TRISO distribution.}
@@ -589,7 +596,7 @@ the final generation that fall on the Pareto front.
 \end{figure}
 In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the lowest 
 total packing fraction and highest maximum plank temperature (the blue distribution) has 
-an up-down fuel packing pattern. 
+an oscillating fuel packing pattern. 
 This distribution is similar to simulation p-1a's most-minimized packing fraction TRISO 
 distribution (Figure \ref{fig:slab-obj-1-pf-final}), but differs as it varies between 
 0.005 and 0.035, instead of 0 and 0.4, due to influences from the minimize $T_{max}$ 
@@ -599,6 +606,11 @@ lowest $T_{max}$ and highest total packing fraction (the purple distribution)
 has an almost constant packing fraction of $\sim0.032$ across the plank. 
 This distribution follows a similar flat shape as simulation p-1b's most-minimized 
 $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
+
+Thus, the \gls{TRISO} distributions on the Pareto front in Figure 
+\ref{fig:slab-obj-2-pftemp} that minimizes both PF and $T_{max}$ have varying degrees of 
+flatness: the minimize $T_{max}$ objective influences the flatness and the minimize PF 
+objective influences the oscillating pattern. 
 
 \subsection{p-2b: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
 Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
@@ -714,7 +726,7 @@ the final generation that fall on the Pareto front.
 In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
 the lowest maximum temperature and highest normalized power peaking factor (the orange 
 distribution) has an almost constant packing fraction of $\sim0.10$ across the slab, 
-with a slight up-down pattern. 
+with a slight oscillating pattern. 
 This distribution follows a similar flat shape as simulation p-1b's most-minimized maximum 
 plank temperature TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}).
 In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
@@ -801,9 +813,9 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
     that most minimized each objective.}
     \label{fig:slab-obj-3-distr-most-minimized}
 \end{figure}
-The brown distribution with up-down fuel packing pattern most-minimized total packing fraction. 
+The brown distribution with oscillating fuel packing pattern most-minimized total packing fraction. 
 The blue distribution with a mostly flat fuel distribution most-minimized $T_{max}$. 
-The grey distribution with small up-down fuel packing pattern most-minimized normalized 
+The grey distribution with small oscillating fuel packing pattern most-minimized normalized 
 power peaking factor. 
 
 \subsection{p-3b: Variation of $\rho_{TRISO}(\vec{r})$, Total Packing Fraction, and FliBe Channel Shape}
@@ -907,7 +919,7 @@ The green distribution with sloping fuel packing distribution and $r_{tot} = 0.3
 most-minimized total packing fraction. 
 The brown distribution with a mostly flat fuel distribution and $r_{tot} = 0.584cm$ 
 most-minimized $T_{max}$. 
-The blue distribution with small up-down fuel packing pattern and $r_{tot} = 0.193cm$ 
+The blue distribution with small oscillating fuel packing pattern and $r_{tot} = 0.193cm$ 
 most-minimized normalized power peaking factor. 
 
 Most of the \gls{TRISO} distributions on the Pareto front have a mostly flat 
