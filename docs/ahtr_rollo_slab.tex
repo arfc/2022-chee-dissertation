@@ -236,9 +236,8 @@ between total packing fraction and total radius.
 \label{sec:plank-1-obj-temp}
 This section reports results from the minimize maximum plank temperature single-objective
 optimization simulations: p-1b and p-1e. 
-Simulation p-1b varies total fuel packing fraction and \gls{TRISO} packing fraction 
-distribution, while simulation p-1e varies the total fuel packing fraction and 
-\gls{FLiBe} coolant channel shape. 
+Simulation p-1b varies \gls{TRISO} packing fraction distribution, while simulation p-1e 
+varies the \gls{FLiBe} coolant channel shape. 
 
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem parameters. 
@@ -259,7 +258,7 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
-    & total PF = 0.0979\\
+    & Total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 60 \\
     & Generations: 10 \\
@@ -298,6 +297,7 @@ Figure \ref{fig:slab-obj-1-temp-evol} shows that the minimum and average plank's
 $T_{max}$ converged to approximately 1125 K. 
 Figure \ref{fig:slab-obj-1-temp-most-minimized} illustrates the \gls{AHTR} plank model 
 with most-minimized $T_{max}$. 
+
 In Figure \ref{fig:slab-obj-1-temp-final}, a mostly flat TRISO 
 particle distribution minimizes $T_{max}$ in the plank, the TRISO distribution 
 has two small dips at the one-third and two-third points in the slab (6.62cm and 20.48cm). 
@@ -336,7 +336,7 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
     & $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
-    & total PF = 0.0979\\
+    & Total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 64 \\
     & Generations: 4 \\
@@ -376,6 +376,10 @@ while average $T_{max}$ due to coolant channel shape variation only decreased by
 over 10 generations. 
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor (PPF)}
+This section reports results from the minimize fuel-normalized power peaking factor 
+single-objective optimization simulations: p-1c and p-1f. 
+Simulation p-1c varies \gls{TRISO} packing fraction distribution, while simulation p-1f 
+varies the \gls{FLiBe} coolant channel shape. 
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem parameters. 
@@ -396,7 +400,7 @@ Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem param
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
-    & total PF = 0.0979\\
+    & Total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 60 \\
     & Generations: 10 \\
@@ -452,7 +456,7 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     & $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
-    & total PF = 0.0979\\
+    & Total PF = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 64 \\
     & Generations: 5 \\
