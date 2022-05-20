@@ -535,6 +535,15 @@ should find widely spread solutions in the obtained Pareto front
 Thus, I report on the optimal reactor models on the Pareto front for the multi-objective 
 optimization problems in this section and Section \ref{sec:plank-three-obj}. 
 
+To ensure that the multi-objective optimization problems are converged, I report the 
+hypervolume values for each generation. 
+As previously described in Section \ref{sec:binhandkorn}, the hypervolume indicator 
+quantifies the Pareto front's goodness (bigger = better).
+I use a different reference point for each optimization problem. 
+If a multi-objective optimization problem's hypervolume converges earlier than the 
+5 generations I intended to run (determined in Section 
+\ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
+
 \subsection{p-2a: Minimize Total Packing Fraction and Maximum Plank Temperature}
 \label{sec:p-2a}
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
@@ -653,6 +662,9 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+Table \ref{tab:p2b-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation p-2b converges by generation 2, thus, no more 
+
 Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor models' 
 total packing fraction against normalized power peaking factor, crosses mark the reactor 
 models that fall on the Pareto front.
@@ -672,9 +684,9 @@ the final generation that fall on the Pareto front.
         \caption{TRISO distribution for the 4 reactor models on the Pareto front.}
         \label{fig:slab-obj-2-pfppf-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2b -- ROLLO two-objective optimization to minimize total packing fraction (PF) and  
-    normalized power peaking factor (PPF) in the plank. Input parameters varied: 
-    TRISO distribution.}
+    \caption{Simulation p-2b -- ROLLO two-objective optimization to minimize total packing 
+    fraction (PF) and normalized power peaking factor (PPF) in the plank. 
+    Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-2-pfppf}
 \end{figure}
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
