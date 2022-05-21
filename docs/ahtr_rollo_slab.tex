@@ -625,14 +625,14 @@ the final generation that fall on the Pareto front.
         \caption{\gls{AHTR} plank model with most-minimized total fuel packing fraction
         (corresponds to the blue bolded distribution in Figure 
         \ref{fig:slab-obj-2-pftemp-pareto-distr}).}
-        \label{slab-obj-2-pftemp-min-pf} 
+        \label{fig:slab-obj-2-pftemp-min-pf} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-min-temp.png}
         \caption{\gls{AHTR} plank model with most-minimized $T_{max}$
         (corresponds to the purple bolded distribution in Figure 
         \ref{fig:slab-obj-2-pftemp-pareto-distr}).}
-        \label{slab-obj-2-pftemp-min-temp} 
+        \label{fig:slab-obj-2-pftemp-min-temp} 
     \end{subfigure}
     \caption{(contd.) Simulation p-2a -- ROLLO two-objective optimization to minimize total packing fraction 
     (PF) and maximum plank temperature ($T_{max}$). 
@@ -642,7 +642,7 @@ the final generation that fall on the Pareto front.
 In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the
 most-minimized total packing fraction and the highest maximum plank temperature 
 (the blue distribution) has an oscillating fuel packing pattern (also illustrated in 
-Figure \ref{slab-obj-2-pftemp-min-pf}).
+Figure \ref{fig:slab-obj-2-pftemp-min-pf}).
 This distribution is similar to simulation p-1a's most-minimized packing fraction TRISO 
 distribution (Figure \ref{fig:slab-obj-1-pf-final}), but differs as it varies between 
 0.005 and 0.035, instead of 0 and 0.4, due to influences from the minimize $T_{max}$ 
@@ -650,7 +650,7 @@ objective.
 In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the 
 most-minimized $T_{max}$ and highest total packing fraction (the purple distribution)
 has an almost constant packing fraction of $\sim0.032$ across the plank (also 
-illustrated in Figure \ref{slab-obj-2-pftemp-min-temp}). 
+illustrated in Figure \ref{fig:slab-obj-2-pftemp-min-temp}). 
 This distribution follows a similar flat shape as simulation p-1b's most-minimized 
 $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
 
@@ -740,14 +740,14 @@ the final generation that fall on the Pareto front.
         \caption{\gls{AHTR} plank model with most-minimized total fuel packing fraction
         (corresponds to the orange bolded distribution in Figure 
         \ref{fig:slab-obj-2-pfppf-pareto-distr}).}
-        \label{slab-obj-2-pfppf-min-pf} 
+        \label{fig:slab-obj-2-pfppf-min-pf} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-min-ppf.png}
         \caption{\gls{AHTR} plank model with most-minimized fuel-normalized power peaking 
         factor (corresponds to the blue bolded distribution in Figure 
         \ref{fig:slab-obj-2-pfppf-pareto-distr}).}
-        \label{slab-obj-2-pfppf-min-ppf} 
+        \label{fig:slab-obj-2-pfppf-min-ppf} 
     \end{subfigure}
     \caption{(contd.) Simulation p-2b -- ROLLO two-objective optimization to minimize 
     total packing fraction (PF) and normalized power peaking factor (PPF) in the plank. 
@@ -757,11 +757,11 @@ the final generation that fall on the Pareto front.
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 most-minimized total fuel packing fraction and highest power peaking factor 
 (the orange distribution) has a constant packing fraction of 0.02 across the plank
-(also illustrated in Figure \ref{slab-obj-2-pfppf-min-pf}). 
+(also illustrated in Figure \ref{fig:slab-obj-2-pfppf-min-pf}). 
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 most-minimized fuel-normalized power peaking factor and highest total packing fraction 
 (the blue distribution), has a packing fraction that peaks in the center of the plank
-and both sides (also illustrated in Figure \ref{slab-obj-2-pfppf-min-ppf}). 
+and both sides (also illustrated in Figure \ref{fig:slab-obj-2-pfppf-min-ppf}). 
 All reactor models on the Pareto front have a relatively flat packing fraction 
 distribution, varying between 0.02 and 0.04. 
 
@@ -846,14 +846,14 @@ the final generation that fall on the Pareto front.
         \caption{\gls{AHTR} plank model with most-minimized $T_{max}$
         (corresponds to the orange bolded distribution in Figure 
         \ref{fig:slab-obj-2-tempppf-pareto-distr}).}
-        \label{slab-obj-2-tempppf-min-temp} 
+        \label{fig:slab-obj-2-tempppf-min-temp} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-min-ppf.png}
         \caption{\gls{AHTR} plank model with most-minimized fuel-normalized power peaking 
         factor (corresponds to the grey bolded distribution in Figure 
         \ref{fig:slab-obj-2-tempppf-pareto-distr}).}
-        \label{slab-obj-2-tempppf-min-ppf} 
+        \label{fig:slab-obj-2-tempppf-min-ppf} 
     \end{subfigure}
     \caption{(contd.) Simulation p-2c -- ROLLO two-objective optimization to minimize 
     maximum plank temperature ($T_{max}$) and normalized power peaking factor (PPF) 
@@ -873,12 +873,12 @@ most-minimized fuel-normalized power peaking factor and highest maximum plank te
 (the grey distribution) peaks near the sides of the plank, and has a minimum point at 
 the centerof the plank (also illustrated in Figure \ref{fig:slab-obj-2-tempppf-min-ppf}). 
 This distribution is somewhat similar to p-1c's most-minimized PPF TRISO distribution 
-(Figure \ref{fig:slab-obj-1-ppf-final})
-which also has a minimum point at the center of the plank, but differs as its' peaks 
-are on the fuel regions' edges instead of the plank's edges. 
+(Figure \ref{fig:slab-obj-1-ppf-final}) which also has a minimum point at the center 
+of the plank, but differs as its' peaks are on the fuel regions' edges instead of the 
+plank's edges. 
 
-The differences between the above cases and their single objective counterparts are due to 
-influences from the other objectives. 
+The differences between the above cases and their single objective counterparts are 
+due to influences from the other objectives. 
 
 \pagebreak
 \section{AHTR Plank: Three-Objective Optimization Results}
