@@ -736,18 +736,18 @@ the final generation that fall on the Pareto front.
 \begin{figure}[htbp!]
     \ContinuedFloat
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{slab-obj-2-ppf-min-pf.png}
+        \includegraphics[width=\linewidth]{slab-obj-2-pfppf-min-pf.png}
         \caption{\gls{AHTR} plank model with most-minimized total fuel packing fraction
         (corresponds to the orange bolded distribution in Figure 
         \ref{fig:slab-obj-2-pfppf-pareto-distr}).}
-        \label{slab-obj-2-ppf-min-pf} 
+        \label{slab-obj-2-pfppf-min-pf} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{slab-obj-2-ppf-min-ppf.png}
+        \includegraphics[width=\linewidth]{slab-obj-2-pfppf-min-ppf.png}
         \caption{\gls{AHTR} plank model with most-minimized fuel-normalized power peaking 
         factor (corresponds to the blue bolded distribution in Figure 
         \ref{fig:slab-obj-2-pfppf-pareto-distr}).}
-        \label{slab-obj-2-ppf-min-ppf} 
+        \label{slab-obj-2-pfppf-min-ppf} 
     \end{subfigure}
     \caption{(contd.) Simulation p-2b -- ROLLO two-objective optimization to minimize 
     total packing fraction (PF) and normalized power peaking factor (PPF) in the plank. 
@@ -757,11 +757,11 @@ the final generation that fall on the Pareto front.
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 most-minimized total fuel packing fraction and highest power peaking factor 
 (the orange distribution) has a constant packing fraction of 0.02 across the plank
-(also illustrated in Figure \ref{slab-obj-2-ppf-min-pf}). 
+(also illustrated in Figure \ref{slab-obj-2-pfppf-min-pf}). 
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 most-minimized fuel-normalized power peaking factor and highest total packing fraction 
 (the blue distribution), has a packing fraction that peaks in the center of the plank
-and both sides (also illustrated in Figure \ref{slab-obj-2-ppf-min-ppf}). 
+and both sides (also illustrated in Figure \ref{slab-obj-2-pfppf-min-ppf}). 
 All reactor models on the Pareto front have a relatively flat packing fraction 
 distribution, varying between 0.02 and 0.04. 
 
@@ -788,13 +788,36 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 120 \\
-    & Generations: 4 \\
+    & Generations: 3 \\
     \hline
     \end{tabular}
 \end{table}
-Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's reactor models' 
-maximum plank temperature against normalized power peaking factor, crosses mark the reactor 
-models that fall on the Pareto front.
+
+Table \ref{tab:p2c-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation p-2c converges by generation 3. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-2c hypervolume values at each generation.}
+	\label{tab:p2c-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2c}} \\
+    \multicolumn{2}{c}{Reference point: (1300, 1.6)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume value} \\
+    \hline
+    1 & 92.041 \\
+    2 & 92.087\\
+    3 & 92.751 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's 
+reactor models' maximum plank temperature against normalized power peaking factor, 
+crosses mark the reactor models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO distributions in 
 the final generation that fall on the Pareto front. 
 \begin{figure}[htbp!]
@@ -816,6 +839,28 @@ the final generation that fall on the Pareto front.
     Input parameters varied: TRISO distribution.}
     \label{fig:slab-obj-2-tempppf}
 \end{figure}
+\begin{figure}[htbp!]
+    \ContinuedFloat
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-tempppf-min-temp.png}
+        \caption{\gls{AHTR} plank model with most-minimized $T_{max}$
+        (corresponds to the orange bolded distribution in Figure 
+        \ref{fig:slab-obj-2-tempppf-pareto-distr}).}
+        \label{slab-obj-2-tempppf-min-temp} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-2-tempppf-min-ppf.png}
+        \caption{\gls{AHTR} plank model with most-minimized fuel-normalized power peaking 
+        factor (corresponds to the grey bolded distribution in Figure 
+        \ref{fig:slab-obj-2-tempppf-pareto-distr}).}
+        \label{slab-obj-2-pfppf-min-ppf} 
+    \end{subfigure}
+    \caption{(contd.) Simulation p-2c -- ROLLO two-objective optimization to minimize 
+    maximum plank temperature ($T_{max}$) and normalized power peaking factor (PPF) 
+    in the plank. 
+    Input parameters varied: TRISO distribution.}
+\end{figure}
+
 In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
 the lowest maximum temperature and highest normalized power peaking factor (the orange 
 distribution) has an almost constant packing fraction of $\sim0.10$ across the slab, 
