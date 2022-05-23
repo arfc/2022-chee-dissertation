@@ -758,6 +758,8 @@ the final generation that fall on the Pareto front.
     Input parameters varied: TRISO distribution.}
 \end{figure}
 
+All reactor models on Figure \ref{fig:slab-obj-2-pfppf}'s Pareto front have a relatively flat 
+packing fraction distribution, varying between 0.02 and 0.04. 
 In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
 most-minimized total fuel packing fraction and highest power peaking factor 
 (the orange distribution) has a constant packing fraction of 0.02 across the plank
@@ -766,8 +768,17 @@ In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with t
 most-minimized fuel-normalized power peaking factor and highest total packing fraction 
 (the blue distribution), has a packing fraction that peaks in the center of the plank
 and both sides (also illustrated in Figure \ref{fig:slab-obj-2-pfppf-min-ppf}). 
-All reactor models on the Pareto front have a relatively flat packing fraction 
-distribution, varying between 0.02 and 0.04. 
+This distribution differs from simulation p-1c's most-minimized PPF TRISO distribution 
+(Figure \ref{fig:slab-obj-1-ppf-final}) which has a large $\sim 0.06$ variation in
+TRISO distribution with a minimum point in the center of the plank . 
+This difference is due to the different total PF values: simulation p-1c's total PF is 
+0.0979, while the total PF in the blue distribution is 0.029. 
+In Section \ref{sec:p-2b-pf-ppf-study}, I perform a sensitivity analysis of total packing 
+fraction and fuel-normalized power peaking factor to gain a better understand their 
+relationship. 
+
+\subsubsection{Sensitivity Analysis: Total PF and PPF}
+\label{sec:p-2b-pf-ppf-study}
 
 \subsection{p-2c: Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
 \label{sec:p-2c}
@@ -889,6 +900,7 @@ Section \ref{sec:plank-one-obj} are due to influences from the other objectives.
 \label{sec:plank-three-obj}
 
 \subsection{p-3a: Variation of of $\rho_{TRISO}(\vec{r})$ and Total Packing Fraction}
+\label{sec:p-3a}
 Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
@@ -1157,16 +1169,18 @@ cases.
     \label{fig:slab-obj-3-distr-most-minimized-all}
 \end{figure}
 
-In Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}, the TRISO distribution with the
-most-minimized total packing fraction (the pink distribution) has a oscillating fuel 
-packing pattern with approximately $\sim0.2cm$ of variation 
-(also illustrated in Figure \ref{fig:slab-obj-3-all-min-pf}).
-In Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}, the TRISO distribution with the 
-most-minimized $T_{max}$ and fuel-normalized power peaking factor (the red distribution) has 
-a flat TRISO distribution (also illustrated in Figure \ref{fig:slab-obj-3-all-min-tempppf}). 
+In Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}, the \gls{AHTR} plank model 
+with the most-minimized total packing fraction (the pink distribution) has a oscillating fuel 
+packing pattern with approximately $\sim0.2cm$ of variation and total coolant channel radius 
+of 0.399cm (illustrated in Figure \ref{fig:slab-obj-3-all-min-pf}).
+In Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}, the \gls{AHTR} plank model with 
+the most-minimized $T_{max}$ and fuel-normalized power peaking factor (the red distribution) 
+has a flat TRISO distribution and total coolant channel radius of 0.657cm 
+(illustrated in Figure \ref{fig:slab-obj-3-all-min-tempppf}). 
 
-Most of the \gls{TRISO} distributions on the Pareto front have a mostly flat 
-distribution with approximately $\sim0.1cm$ of variation. 
+Similar to simulation p-3a (Section \ref{sec:p-3a}), most of the \gls{TRISO} distributions 
+on the Pareto front have a mostly flat distribution with maximum $\sim0.1cm$ of 
+variation. 
 The flatness is influenced by the minimize $T_{max}$ objective. 
 As observed in previous sections \ref{sec:plank-1-obj-temp}, \ref{sec:p-2a}, and 
 \ref{sec:p-2c}, a flat \gls{TRISO} distribution minimizes $T_{max}$ objective.
