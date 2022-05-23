@@ -41,7 +41,7 @@ optimization problems explored in this chapter.
     \hline 
     \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
-    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF$ & \\
     \cline{2-6}
     & a-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
@@ -78,10 +78,11 @@ I first conducted single objective, single input parameter \gls{ROLLO} optimizat
 to understand the individual impacts of each objective on each input parameter. 
 Their results will inform the multi-objective optimization simulations setup. 
 
-All simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
-Facility under the Director's Discretionary Allocation Program 
-\cite{noauthor_argonne_2022}. 
-% discuss compute time amounts for each simulation (table?)
+Simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and Theta 
+supercomputer at the Argonne Leadership Computing Facility under the Director's 
+Discretionary Allocation Program \cite{noauthor_argonne_2022}. 
+Section \ref{sec:assem-compute-cost} details each optimization simulation's computational 
+cost.  
 
 \section{AHTR One-Third Assembly: Single-Objective Optimization Results}
 
@@ -196,5 +197,8 @@ the final generation with the most minimized PPF.
 \section{AHTR One-Third Assembly: Two-Objective Optimization Results}
 
 \section{AHTR One-Third Assembly: Three-Objective Optimization Results}
+
+\section{AHTR One-Third Assembly: Computational Cost Summary}
+\label{sec:assem-compute-cost}
 
 \section{AHTR One-Third Assembly Optimization Results Discussion and Significance}
