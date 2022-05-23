@@ -1199,22 +1199,24 @@ optimization results and significance for reactor designers.
 \pagebreak
 \section{AHTR Plank: Computational Cost Summary}
 \label{sec:plank-compute-cost}
-Simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and Theta 
-supercomputer at the Argonne Leadership Computing Facility under the Director's 
+Optimization simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and
+the Theta supercomputer at the Argonne Leadership Computing Facility under the Director's 
 Discretionary Allocation Program \cite{noauthor_argonne_2022}. 
 Each optimization problem takes a different amount of node-hours to run due to 
 differences in simulation software, tallies and intermediate steps required. 
 
 Table \ref{tab:plank-compute-cost} reports the computational cost for each optimization 
 problem. 
-Table \ref{tab:slab-obj-breakdown} details the simulation parameters. 
-%The BW supercomputer uses 32 nodes 
-% Theta specs ... 
+Table \ref{tab:slab-obj-breakdown} details the simulation parameters.
+Each BlueWaters compute node has 32 processor cores with a nominal clock speed of 3.2GHz
+\cite{ncsa_about_2017}.
+Each Theta compute node has 64 processor cores with a nominal clock speed of 1.5GHz
+\cite{noauthor_argonne_2022}.  
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Computational cost of \acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
-    plank.}
+    plank. BW: BlueWaters Supercomputer, Theta: Theta supercomputer.}
 	\label{tab:plank-compute-cost}
     \footnotesize
     \begin{tabular}{p{1.4cm}|p{1cm}lp{4cm}lp{4cm}}
