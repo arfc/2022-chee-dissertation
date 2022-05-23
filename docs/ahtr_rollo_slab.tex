@@ -974,25 +974,25 @@ Figure \ref{fig:slab-obj-3-distr-most-minimized} shows the three distributions f
 Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective. 
 \begin{figure}[htbp!]
     \centering
-    \begin{subfigure}{0.9\textwidth}
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized.png}
         \caption{TRISO distribution for the 3 reactor models on the Pareto front
         that most minimized each objective.}
         \label{fig:slab-obj-3-distr-most-minimized}
     \end{subfigure}
-    \begin{subfigure}{0.9\textwidth}
+    \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-min-pf.png}
         \caption{\gls{AHTR} plank model with most-minimized Total PF 
         (corresponds to the purple distribution in the above plot).}
         \label{fig:slab-obj-3-min-pf} 
     \end{subfigure}
-    \begin{subfigure}{0.9\textwidth}
+    \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-min-temp.png}
         \caption{\gls{AHTR} plank model with most-minimized $T_{max}$
         (corresponds to the orange distribution in the above plot).}
         \label{fig:slab-obj-3-min-temp} 
     \end{subfigure}
-    \begin{subfigure}{0.9\textwidth}
+    \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-min-ppf.png}
         \caption{\gls{AHTR} plank model with most-minimized PPF
         (corresponds to the pink distribution in the above plot).}
@@ -1005,29 +1005,27 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
     that most minimized each objective.}
     \label{fig:slab-obj-3-most-minimized}
 \end{figure}
-The purple distribution with oscillating fuel packing pattern most-minimized total 
-packing fraction. 
-The orange distribution with a mostly flat fuel distribution most-minimized $T_{max}$. 
-The pink distribution with small oscillating fuel packing pattern most-minimized 
-fuel-normalized power peaking factor. 
 
-In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the
-most-minimized total packing fraction and the highest maximum plank temperature 
-(the blue distribution) has an oscillating fuel packing pattern (also illustrated in 
-Figure \ref{fig:slab-obj-2-pftemp-min-pf}).
+In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
+most-minimized total packing fraction (the purple distribution) has an oscillating fuel 
+packing pattern (also illustrated in Figure \ref{fig:slab-obj-3-min-pf}).
 This distribution is similar to simulation p-1a's most-minimized packing fraction TRISO 
-distribution (Figure \ref{fig:slab-obj-1-pf-final}), but differs as it varies between 
-0.005 and 0.035, instead of 0 and 0.4, due to influences from the minimize $T_{max}$ 
-objective. 
-In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the 
-most-minimized $T_{max}$ and highest total packing fraction (the purple distribution)
-has an almost constant packing fraction of $\sim0.032$ across the plank (also 
-illustrated in Figure \ref{fig:slab-obj-2-pftemp-min-temp}). 
-This distribution follows a similar flat shape as simulation p-1b's most-minimized 
-$T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
+distribution (Figure \ref{fig:slab-obj-1-pf-final}) with its oscillating fuel pattern. 
+In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the 
+most-minimized $T_{max}$ (the orange distribution) has mostly flat TRISO distribution 
+(also illustrated in Figure \ref{fig:slab-obj-3-min-temp}). 
+This distribution follows a similar distribution as simulation p-1b's most-minimized 
+$T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}): a mostly flat 
+TRISO distribution with two small dips at the one-third and two-third points in the 
+plank.
+In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
+most-minimized fuel-normalized power peaking factor (the pink distribution) has a 
+slightly oscillating fuel packing pattern (also illustrated in Figure 
+\ref{fig:slab-obj-3-min-ppf}).
 
-Most of the \gls{TRISO} distributions on the Pareto front have a mostly flat 
-distribution with approximately $\sim0.1cm$ of variation. 
+Most of the \gls{TRISO} distributions on the Pareto front (Figure 
+\ref{fig:slab-obj-3-distr}) have a mostly flat distribution with approximately 
+$\sim0.1cm$ of variation. 
 The flatness is influenced by the minimize $T_{max}$ objective. 
 As observed in previous sections \ref{sec:plank-1-obj-temp}, \ref{sec:p-2a}, and 
 \ref{sec:p-2c}, a flat \gls{TRISO} distribution minimizes $T_{max}$ objective.
