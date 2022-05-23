@@ -99,6 +99,7 @@ Section \ref{sec:plank-compute-cost} details each optimization simulation's comp
 cost.  
 
 \section{AHTR Plank: Single-Objective Optimization Results}
+\label{sec:plank-one-obj}
 In this section, I report the \gls{AHTR} plank's \gls{ROLLO} single-objective 
 optimization results. 
 Table \ref{tab:slab-obj-breakdown} summarized the one-objective simulations in this
@@ -546,11 +547,12 @@ If a multi-objective optimization problem's hypervolume converges earlier than t
 
 \subsection{p-2a: Minimize Total Packing Fraction and Maximum Plank Temperature}
 \label{sec:p-2a}
-Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters. 
+Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters.
+ 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
-    \caption{Simulation p-2a Optimization Problem Parameters}
+    \caption{Simulation p-2a Optimization Problem Parameters.}
 	\label{tab:simulationp2a}
     \footnotesize
     \begin{tabular}{l|p{4cm}}
@@ -877,8 +879,8 @@ This distribution is somewhat similar to p-1c's most-minimized PPF TRISO distrib
 of the plank, but differs as its' peaks are on the fuel regions' edges instead of the 
 plank's edges. 
 
-The differences between the above cases and their single objective counterparts are 
-due to influences from the other objectives. 
+The differences between the above cases and their single objective counterparts in 
+Section \ref{sec:plank-one-obj} are due to influences from the other objectives. 
 
 \pagebreak
 \section{AHTR Plank: Three-Objective Optimization Results}
@@ -909,6 +911,30 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 128 \\
     & Generations: 5 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Table \ref{tab:p3a-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation p-3a converges by generation 5. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-3a hypervolume values at each generation.}
+	\label{tab:p3a-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation p-3a}} \\
+    \multicolumn{2}{c}{Reference point: (0.06, 1260 ,1.5)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume value} \\
+    \hline
+    1 & 2.392 \\
+    2 & 2.392 \\
+    3 & 2.393 \\
+    4 & 2.442 \\
+    5 & 2.446 \\
     \hline
     \end{tabular}
 \end{table}
@@ -984,6 +1010,30 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 128 \\
     & Generations: 5 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Table \ref{tab:p3b-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation p-3b converges by generation 5. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation p-3b hypervolume values at each generation.}
+	\label{tab:p3b-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation p-3b}} \\
+    \multicolumn{2}{c}{Reference point: (0.06, 1260 ,1.5)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume value} \\
+    \hline
+    1 & 1.985 \\
+    2 & 2.119 \\
+    3 & 2.158 \\
+    4 & 2.251\\
+    5 & 2.262 \\
     \hline
     \end{tabular}
 \end{table}
