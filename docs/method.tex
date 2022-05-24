@@ -225,7 +225,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
     \begin{tikzpicture}[node distance=0.5cm]
         \tikzstyle{every node}=[font=\footnotesize]
         \node (1) [e72block] {\textit{Total PF}};
-        \node (2) [b72block, right=of 1] {PF};
+        \node (2) [b72block, right=of 1] {$PF_{total}$};
         \node (3) [e82block, above=of 2] {Control Variables};
         \node (4) [e72block, below=of 1] {$\rho_{TRISO}(\vec{r})$};
         \node (5) [b72block, right=of 4] {a, b, c, d, e, f};
@@ -239,7 +239,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
         \node (13) [e72block, above=of 12] {Constraints};
         \node (14) [e72block, below=of 12] {Objectives};
         \node (15) [b72block, below=of 14] {PF};
-        \node (16) [b72block, below=of 15] {PPF};
+        \node (16) [b72block, below=of 15] {$PPF_{fuel}$};
         \node (17) [b72block, below=of 16] {$T_{max}$};
         \draw [arrow] (2) -- ([shift={(0cm,0cm)}]2.east) -- ([shift={(0cm,0cm)}]8.west);
         \draw [arrow] (5) -- ([shift={(0cm,0cm)}]5.east) -- ([shift={(0cm,0cm)}]8.west);
@@ -262,7 +262,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
     ROLLO analyzes the OpenMC and Moltres output files to determine constraint and 
     objective values.
     PF: Total packing fraction, $\rho_{TRISO}(\vec{r})$: TRISO packing fraction 
-    distribution, PPF: normalized power peaking factor, $T_{max}$: model's maximum 
+    distribution, $PPF_{fuel}$: normalized power peaking factor, $T_{max}$: model's maximum 
     temperature.} 
     \label{fig:ahtr-model-flow}
 \end{figure}
@@ -771,15 +771,15 @@ For the \gls{AHTR} plank and each fuel plank in the \gls{AHTR} one-third fuel as
 I discretized the fuel cell area of the plank into 10 $\times$ 5 blocks.
 I then use OpenMC to tally the fission energy production rate (\texttt{fission-q-recoverable}
 $[eV/src]$) in each section.
-I did not normalize the score to calculate power since the final PPF value is a 
+I did not normalize the score to calculate power since the final $PPF_{fuel}$ value is a 
 ratio.
 Equation \ref{eq:ppf} calculates the fuel-normalized power peaking factor:
 \begin{align}
     \label{eq:ppf}
-    PPF &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
+    $PPF_{fuel}$ &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
 \intertext{where}
 j &= \mbox{discretized fuel area j} \nonumber \\
-PPF &= \mbox{fuel-normalized power peaking factor} \nonumber \\
+$PPF_{fuel}$ &= \mbox{fuel-normalized power peaking factor} \nonumber \\
 fqr_j &= \mbox{fission-q-recoverable at position j} \nonumber \\
 PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 \end{align}

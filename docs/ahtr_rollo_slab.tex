@@ -12,7 +12,7 @@ And, I optimize the \gls{AHTR} plank for the following optimization objectives:
 \begin{itemize}
     \item Minimize total fuel packing fraction ($PF_{total}$)
     \item Minimize maximum plank temperature ($T_{max}$)
-    \item Minimize fuel-normalized power peaking factor (PPF)
+    \item Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
 \end{itemize} 
 
 In the previous chapter, I detailed the methodology for \gls{AHTR} plank modeling and 
@@ -109,11 +109,12 @@ In this section, I report the \gls{AHTR} plank's \gls{ROLLO} single-objective
 optimization results. 
 Table \ref{tab:slab-obj-breakdown} summarized the one-objective simulations in this
 section: p-1a, p-1b, p-1c, p-1d, p-1e, and p-1f. 
+In the following subsections, I describe the single-objective optimization results 
+grouped by the minimized objective. 
+
 If a single-objective optimization problem's objective converges earlier than the 
 5 generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
-In the following subsections, I describe the single-objective optimization results 
-grouped by the minimized objective. 
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 This section reports results from the minimize total packing fraction single-objective
@@ -149,32 +150,32 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-1-pf-evol} shows the total fuel packing fraction evolution,  
-Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO distributions in 
-the final generation with the most-minimized packing fractions, and 
+Figure \ref{fig:slab-obj-1-pf-evol} shows the $PF_{total}$ evolution,  
+Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO packing fraction distributions 
+in the final generation with the most-minimized $PF_{total}$, and 
 Figure \ref{fig:slab-obj-1-pf-most-minimized} illustrates the \gls{AHTR} plank model 
-with most-minimized total packing fraction.
+with most-minimized $PF_{total}$.
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol.png}
-        \caption{Minimum, average, and maximum total packing fraction evolution.}
+        \caption{Minimum, average, and maximum $PF_{total}$ evolution.}
         \label{fig:slab-obj-1-pf-evol} 
     \end{subfigure}
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-final.png}
-        \caption{TRISO distribution for the 5 reactor models with the 
-        smallest packing fraction in the final generation.}
+        \caption{TRISO packing fraction distribution for the 5 reactor models with the 
+        smallest $PF_{total}$ in the final generation.}
         \label{fig:slab-obj-1-pf-final} 
     \end{subfigure}
     \begin{subfigure}{0.95\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-most-minimized.png}
-        \caption{\gls{AHTR} plank model with most-minimized total packing fraction 
+        \caption{\gls{AHTR} plank model with most-minimized $PF_{total}$ 
         (corresponds to the blue bolded distribution in the above plot).}
         \label{fig:slab-obj-1-pf-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1a -- ROLLO single-objective optimization to minimize total 
-    packing fraction. Input parameters varied: total packing fraction, \gls{TRISO} 
+    packing fraction. Input parameters varied: $PF_{total}$, \gls{TRISO} 
     packing fraction distribution.}
     \label{fig:slab-obj-1-pf}
 \end{figure}
