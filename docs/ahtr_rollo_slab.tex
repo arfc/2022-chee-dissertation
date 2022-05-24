@@ -151,10 +151,10 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
 \end{table}
 
 Figure \ref{fig:slab-obj-1-pf-evol} shows the $PF_{total}$ evolution,  
-Figure \ref{fig:slab-obj-1-pf-final} shows the five $\rho_{TRISO}(\vec{r})$
-in the final generation with the most-minimized $PF_{total}$, and 
-Figure \ref{fig:slab-obj-1-pf-most-minimized} illustrates the \gls{AHTR} plank model 
-with most-minimized $PF_{total}$.
+Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO packing fraction 
+distributions ($\rho_{TRISO}(\vec{r})$) in the final generation with the 
+most-minimized $PF_{total}$, and Figure \ref{fig:slab-obj-1-pf-most-minimized} 
+illustrates the \gls{AHTR} plank model with most-minimized $PF_{total}$.
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.95\textwidth}
@@ -175,8 +175,8 @@ with most-minimized $PF_{total}$.
         \label{fig:slab-obj-1-pf-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1a -- ROLLO single-objective optimization to minimize total 
-    packing fraction. Input parameters varied: total fuel packing fraction 
-    ($PF_{total}$), \gls{TRISO} packing fraction distribution.}
+    fuel packing fraction. Input parameters varied: total fuel packing fraction 
+    ($PF_{total}$), \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:slab-obj-1-pf}
 \end{figure}
 
@@ -204,7 +204,7 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1d}} \\
     \hline 
-    \textbf{Objectives} & Minimize total packing fraction\\
+    \textbf{Objectives} & Minimize $PF_{total}$\\
     \hline 
     \textbf{Input parameter variations} & $0.02<PF_{total}<0.05$ \\
     & $0.05<r_{top}<0.35$ \\
@@ -218,30 +218,30 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the total packing fraction evolution 
+Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the $PF_{total}$ evolution 
 and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius 
-($r_{top} + r_{bot}$) against total packing fraction. 
+($r_{top} + r_{bot}$) against $PF_{total}$. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-evol-coolant.png}
-        \caption{Minimum, average, and maximum total packing fraction evolution.}
+        \caption{Minimum, average, and maximum total $PF_{total}$ evolution.}
         \label{fig:slab-obj-1-pf-evol-coolant} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-final-coolant.png}
-        \caption{Plot of total radius ($r_{top} + r_{bot}$) against total packing 
-        fraction ($PF_{total}$). Red crosses indicate the five reactor models with the 
+        \caption{Plot of total radius ($r_{top} + r_{bot}$) against $PF_{total}$. 
+        Red crosses indicate the five reactor models with the 
         lowest $PF_{total}$.}
         \label{fig:slab-obj-1-pf-final-coolant} 
     \end{subfigure}
-    \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize total 
-    packing fraction. Input parameters varied: total packing fraction, and coolant 
-    channel shape ($r_{top}, r_{bot}$).}
+    \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize 
+    total fuel packing fraction. Input parameters varied: total fuel packing fraction 
+    ($PF_{total}$), and coolant channel shape ($r_{top}, r_{bot}$).}
     \label{fig:slab-obj-1-pf-coolant}
 \end{figure}
 Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
-between total packing fraction and total radius. 
+between $PF_{total}$ and total radius. 
 
 \subsection{Objective: Minimize Maximum Plank Temperature ($T_{max}$)}
 \label{sec:plank-1-obj-temp}
