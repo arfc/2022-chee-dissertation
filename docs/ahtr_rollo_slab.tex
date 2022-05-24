@@ -117,11 +117,11 @@ If a single-objective optimization problem's objective converges earlier than th
 \ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
-This section reports results from the minimize total packing fraction single-objective
-optimization simulations: p-1a and p-1d. 
+This section reports results from the minimize total fuel packing fraction 
+($PF_{total}$) single-objective optimization simulations: p-1a and p-1d. 
 Simulation p-1a varies total fuel packing fraction and \gls{TRISO} packing fraction 
-distribution, while simulation p-1d varies the total fuel packing fraction and 
-coolant channel shape. 
+distribution ($\rho_{TRISO}(\vec{r})$), while simulation p-1d varies the total fuel 
+packing fraction ($PF_{total}$) and coolant channel shape. 
 
 \subsubsection{Simulation p-1a: Variation of $\rho_{TRISO}(\vec{r})$ and $PF_{total}$}
 Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem parameters. 
@@ -245,10 +245,10 @@ between $PF_{total}$ and total radius.
 
 \subsection{Objective: Minimize Maximum Plank Temperature ($T_{max}$)}
 \label{sec:plank-1-obj-temp}
-This section reports results from the minimize maximum plank temperature single-objective
-optimization simulations: p-1b and p-1e. 
-Simulation p-1b varies \gls{TRISO} packing fraction distribution, while simulation p-1e 
-varies the coolant channel shape. 
+This section reports results from the minimize maximum plank temperature 
+($T_{max}$) single-objective optimization simulations: p-1b and p-1e. 
+Simulation p-1b varies \gls{TRISO} packing fraction distribution 
+($\rho_{TRISO}(\vec{r})$), while simulation p-1e varies the coolant channel shape. 
 
 \subsubsection{Simulation p-1b: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem parameters. 
@@ -389,7 +389,7 @@ with most-minimized $T_{max}$.
 \end{figure}
 
 Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
-linear correlation between maximum plank temperature and total radius. 
+linear correlation between the plank's $T_{max}$ and total radius. 
 Comparison of Figures \ref{fig:slab-obj-1-temp-evol} and 
 \ref{fig:slab-obj-1-temp-evol-coolant} show that coolant channel shape variation 
 does not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation:  
@@ -399,9 +399,9 @@ over 10 generations.
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor ($PPF_{fuel}$)}
 This section reports results from the minimize fuel-normalized power peaking factor 
-single-objective optimization simulations: p-1c and p-1f. 
-Simulation p-1c varies \gls{TRISO} packing fraction distribution, while simulation p-1f 
-varies the coolant channel shape. 
+($PPF_{fuel}$) single-objective optimization simulations: p-1c and p-1f. 
+Simulation p-1c varies \gls{TRISO} packing fraction distribution 
+($\rho_{TRISO}(\vec{r})$), while simulation p-1f varies the coolant channel shape. 
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem parameters. 
