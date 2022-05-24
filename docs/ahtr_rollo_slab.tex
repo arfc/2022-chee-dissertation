@@ -688,7 +688,10 @@ that minimizes both $PF_{total}$ and $T_{max}$ have varying degrees of flatness:
 the minimize $T_{max}$ objective influences the flatness and the minimize $PF_{total}$ 
 objective influences the oscillating pattern. 
 
-\subsection{p-2b: Minimize Total Packing Fraction and Normalized Power Peaking Factor}
+\subsection{p-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
+This section reports results from the two-objective optimization simulation p-2b, the 
+objectives minimized are total fuel packing fraction ($PF_{total}$) and fuel-normalized 
+power peaking factor ($PPF_{fuel}$).  
 Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
@@ -700,10 +703,10 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     \hline 
     \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2b}} \\
     \hline 
-    \textbf{Objectives} & Minimize PF \\
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
     & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
@@ -738,11 +741,11 @@ confirming that simulation p-2b converges by generation 3.
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor models' 
-total packing fraction against normalized power peaking factor, crosses mark the reactor 
-models that fall on the Pareto front.
-Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO distributions in 
-the final generation that fall on the Pareto front. 
+Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor 
+models' $PF_{total}$ against $PPF_{fuel}$, crosses mark the reactor models that fall on 
+the Pareto front.
+Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO packing fraction 
+distributions in the final generation that fall on the Pareto front. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
@@ -758,30 +761,33 @@ the final generation that fall on the Pareto front.
         \caption{TRISO distribution for the 4 reactor models on the Pareto front.}
         \label{fig:slab-obj-2-pfppf-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2b -- ROLLO two-objective optimization to minimize total packing 
-    fraction (PF) and normalized power peaking factor (PPF) in the plank. 
-    Input parameters varied: TRISO distribution.}
+    \caption{Simulation p-2b -- ROLLO two-objective optimization to minimize total fuel 
+    packing fraction ($PF_{total}$) and normalized power peaking factor ($PPF_{fuel}$) 
+    in the plank. 
+    Input parameters varied: TRISO packing fraction distribution 
+    ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:slab-obj-2-pfppf}
 \end{figure}
 \begin{figure}[htbp!]
     \ContinuedFloat
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-min-pf.png}
-        \caption{\gls{AHTR} plank model with most-minimized total fuel packing fraction
+        \caption{\gls{AHTR} plank model with most-minimized $PF_{total}$
         (corresponds to the orange bolded distribution in Figure 
         \ref{fig:slab-obj-2-pfppf-pareto-distr}).}
         \label{fig:slab-obj-2-pfppf-min-pf} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pfppf-min-ppf.png}
-        \caption{\gls{AHTR} plank model with most-minimized fuel-normalized power peaking 
-        factor (corresponds to the blue bolded distribution in Figure 
+        \caption{\gls{AHTR} plank model with most-minimized $PPF_{fuel}$
+        (corresponds to the blue bolded distribution in Figure 
         \ref{fig:slab-obj-2-pfppf-pareto-distr}).}
         \label{fig:slab-obj-2-pfppf-min-ppf} 
     \end{subfigure}
     \caption{(contd.) Simulation p-2b -- ROLLO two-objective optimization to minimize 
-    total packing fraction ($PF_{total}$) and normalized power peaking factor ($PPF_{fuel}$) in the plank. 
-    Input parameters varied: TRISO distribution.}
+    total packing fraction ($PF_{total}$) and fuel-normalized power peaking factor 
+    ($PPF_{fuel}$) in the plank. 
+    Input parameters varied: TRISO distribution ($\rho_{TRISO}(\vec{r})$).}
 \end{figure}
 
 All reactor models on Figure \ref{fig:slab-obj-2-pfppf}'s Pareto front have a relatively flat 
