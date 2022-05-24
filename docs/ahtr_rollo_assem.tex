@@ -62,12 +62,12 @@ optimization problems explored in this chapter.
     \cline{2-6}
     & a-1c & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
-    & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC \\
+    & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem Coolant channel shape & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
+    & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem Coolant channel shape & OpenMC, Moltres\\
     \cline{2-6}
-    & a-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
+    & a-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem Coolant channel shape & OpenMC\\
     \hline
     \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & &\tabitem min($T_{max}$) & & \tabitem $PF_{total}$ & \\
@@ -84,7 +84,7 @@ optimization problems explored in this chapter.
     \cline{2-6}
     & a-3b &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF$) & & \tabitem $PF_{total}$ & \\
-    && \tabitem min($T_{max}$) & & \tabitem FLiBe channel shape& \\
+    && \tabitem min($T_{max}$) & & \tabitem Coolant channel shape& \\
     \hline
     \end{tabular}
 \end{table}
@@ -104,6 +104,9 @@ In this section, I report the \gls{AHTR} one-third assembly's \gls{ROLLO}
 single-objective optimization results. 
 Table \ref{tab:assem-obj-breakdown} summarized the one-objective simulations in this
 section: a-1a, a-1b, a-1c, a-1d, a-1e, and a-1f. 
+If a single-objective optimization problem's objective converges earlier than the 
+5 generations I intended to run (determined in Section 
+\ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
 In the following subsections, I describe the single-objective optimization results 
 grouped by the minimized objective. 
 
