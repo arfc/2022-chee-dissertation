@@ -944,10 +944,10 @@ optimization results.
 Table \ref{tab:assem-obj-breakdown} summarized the two-objective simulations in this 
 section: p-3a, and p-3b. 
 
-\subsection{p-3a: Variation of of $\rho_{TRISO}(\vec{r})$ and Total Packing Fraction}
+\subsection{p-3a: Variation of of $\rho_{TRISO}(\vec{r})$ and $PF_{total}$}
 \label{sec:p-3a}
-This section reports results from the three-objective optimization simulation p-3a, the 
-objectives minimized are total fuel packing fraction ($PF_{total}$), maximum plank 
+This section reports results from the three-objective optimization simulation p-3a, all 
+objectives are minimized: total fuel packing fraction ($PF_{total}$), maximum plank 
 temperature ($T_{max}$) and fuel-normalized power peaking factor ($PPF_{fuel}$).  
 Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem parameters. 
 \begin{table}[htbp!]
@@ -960,11 +960,11 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
     \hline 
     \multicolumn{2}{c}{\textbf{Three Objectives: Simulation p-3a}} \\
     \hline 
-    \textbf{Objectives} & Minimize PF \\
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
     & Minimize $T_{max}$ \\
     & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
@@ -1002,9 +1002,9 @@ confirming that simulation p-3a converges by generation 5.
 \end{table}
 
 Figure \ref{fig:slab-obj-3-3d} shows a 3D plot of the final generation's reactor models' 
-total packing fraction against maximum plank temperature against fuel-normalized power 
-peaking factor, crosses mark the reactor models that fall on the Pareto front.
-Figure \ref{fig:slab-obj-3-distr} shows the 14 TRISO distributions in 
+$PF_{total}$ against $T_{max}$ against $PPF_{fuel}$, crosses mark the reactor models 
+that fall on the Pareto front.
+Figure \ref{fig:slab-obj-3-distr} shows the 14 TRISO packing fraction distributions in 
 the final generation that fall on the Pareto front. 
 \begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
