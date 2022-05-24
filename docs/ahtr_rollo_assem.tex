@@ -1,23 +1,26 @@
 \chapter{AHTR One-Third Assembly Optimization Results}
 \glsresetall
 \label{chap:ahtr-assem-opt-results}
-In this chapter, I report the \gls{AHTR} plank's \gls{ROLLO} optimization results. 
-I vary the following \gls{AHTR} plank input parameters:
+In this chapter, I report the \gls{AHTR} one-third assembly's \gls{ROLLO} optimization 
+results. 
+I vary the following \gls{AHTR} one-third assembly input parameters:
 \begin{itemize}
     \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
     \item Total fuel packing fraction (Total PF)
     \item \gls{FLiBe} coolant channel shape
 \end{itemize} 
-And, I optimize the \gls{AHTR} plank for the following optimization objectives:
+And, I optimize the \gls{AHTR} one-third assembly for the following optimization 
+objectives:
 \begin{itemize}
     \item Minimize total fuel packing fraction (PF)
-    \item Minimize maximum plank temperature ($T_{max}$)
+    \item Minimize maximum one-third assembly temperature ($T_{max}$)
     \item Minimize fuel-normalized power peaking factor (PPF)
 \end{itemize} 
  
 In Chapter \ref{chap:method}, I detailed the methodology for \gls{AHTR} one-third 
 assembly modeling and \gls{ROLLO} optimization. 
-Section \ref{sec:ahtr-assem-geometry} describes the \gls{AHTR} plank geometry.
+Section \ref{sec:ahtr-assem-geometry} describes the \gls{AHTR} one-third assembly 
+geometry.
 Section \ref{sec:input-parameter-modeling} details about how I vary the 
 \gls{AHTR} one-third assembly's input parameters. 
 Sections \ref{sec:ahtr-moltres-hom} and \ref{sec:ahtr_model_verification}
@@ -42,7 +45,8 @@ optimization problems explored in this chapter.
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
-    one-third assembly. $PF$: Total Fuel Packing Fraction, $T_{max}$: Maximum Plank Temperature, 
+    one-third assembly. $PF$: Total Fuel Packing Fraction, 
+    $T_{max}$: Maximum one-third assembly Temperature, 
     $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
     \gls{TRISO} particle distribution}
 	\label{tab:assem-obj-breakdown}
@@ -58,27 +62,27 @@ optimization problems explored in this chapter.
     \cline{2-6}
     & a-1c & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
-    & a-1d & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 &\tabitem FLiBe channel shape & OpenMC \\
+    & a-1d & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC \\
     & & & & \tabitem $PF$ & \\
     \cline{2-6}
     & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
     \cline{2-6}
     & a-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
     \hline
-    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & &\tabitem min($T_{max}$) & & \tabitem $PF$ & \\
     \cline{2-6}
-    & a-2b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & a-2b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     & & \tabitem min($PPF$) & & \tabitem $PF$ & \\
     \cline{2-6}
     & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & & \tabitem min($PPF$) & & & \\
     \hline
-    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF$) & & \tabitem $PF$ & \\
     && \tabitem min($T_{max}$) & & & \\
     \cline{2-6}
-    & a-3b &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.39 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & a-3b &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF$) & & \tabitem $PF$ & \\
     && \tabitem min($T_{max}$) & & \tabitem FLiBe channel shape& \\
     \hline
