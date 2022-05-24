@@ -689,6 +689,7 @@ the minimize $T_{max}$ objective influences the flatness and the minimize $PF_{t
 objective influences the oscillating pattern. 
 
 \subsection{p-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
+\label{sec:p-2b}
 This section reports results from the two-objective optimization simulation p-2b, the 
 objectives minimized are total fuel packing fraction ($PF_{total}$) and fuel-normalized 
 power peaking factor ($PPF_{fuel}$).  
@@ -787,7 +788,7 @@ distributions in the final generation that fall on the Pareto front.
     \caption{(contd.) Simulation p-2b -- ROLLO two-objective optimization to minimize 
     total packing fraction ($PF_{total}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the plank. 
-    Input parameters varied: TRISO distribution ($\rho_{TRISO}(\vec{r})$).}
+    Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
 \end{figure}
 
 All reactor models on Figure \ref{fig:slab-obj-2-pfppf}'s Pareto front have a relatively 
@@ -812,8 +813,11 @@ and $PPF_{fuel}$ to gain a better understand their relationship.
 \subsubsection{Relationship Study: $PF_{total}$ and $PPF_{fuel}$}
 \label{sec:p-2b-pf-ppf-study}
 
-\subsection{p-2c: Minimize Maximum Temperature and Fuel-Normalized Power Peaking Factor}
+\subsection{p-2c: Minimize $T_{max}$ and $PPF_{fuel}$}
 \label{sec:p-2c}
+This section reports results from the two-objective optimization simulation p-2c, the 
+objectives minimized are maximum plank temperature ($T_{max}$) and fuel-normalized 
+power peaking factor ($PPF_{fuel}$).  
 Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
@@ -833,6 +837,7 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     & $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    & $PF_{total}$ = 0.0979\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 120 \\
     & Generations: 3 \\
@@ -863,27 +868,30 @@ confirming that simulation p-2c converges by generation 3.
 \end{table}
 
 Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's 
-reactor models' maximum plank temperature against normalized power peaking factor, 
-crosses mark the reactor models that fall on the Pareto front.
+reactor models' $T_{max}$ against $PPF_{fuel}$, crosses mark the reactor models that 
+fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO distributions in 
 the final generation that fall on the Pareto front. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto.png}
-        \caption{Plot of final generation's reactor models' maximum plank temperature against normalized 
-        power peaking factor. Crosses indicate the reactor models on the Pareto front. Cross colors 
-        correspond to TRISO distributions in the plot below.}
+        \caption{Plot of final generation's reactor models' $T_{max}$ against 
+        $PPF_{fuel}$. Crosses indicate the reactor models on the Pareto front.
+        Cross colors correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-tempppf-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-pareto-distr.png}
-        \caption{TRISO distribution for the 8 reactor models on the Pareto front.}
+        \caption{TRISO packing fraction distribution for the 8 reactor models on the 
+        Pareto front.}
         \label{fig:slab-obj-2-tempppf-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2c -- ROLLO two-objective optimization to minimize maximum plank temperature 
-    ($T_{max}$) and normalized power peaking factor ($PPF_{fuel}$) in the plank. 
-    Input parameters varied: TRISO distribution.}
+    \caption{Simulation p-2c -- ROLLO two-objective optimization to minimize maximum 
+    plank temperature ($T_{max}$) and fuel-normalized power peaking factor 
+    ($PPF_{fuel}$) in the plank. 
+    Input parameters varied: TRISO packing fraction distribution 
+    ($\rho_{TRISO}(\vec{r})$). $PF_{total}$ = 0.0979.}
     \label{fig:slab-obj-2-tempppf}
 \end{figure}
 \begin{figure}[htbp!]
@@ -897,15 +905,16 @@ the final generation that fall on the Pareto front.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-tempppf-min-ppf.png}
-        \caption{\gls{AHTR} plank model with most-minimized fuel-normalized power peaking 
-        factor (corresponds to the grey bolded distribution in Figure 
+        \caption{\gls{AHTR} plank model with most-minimized $PPF_{fuel}$
+        (corresponds to the grey bolded distribution in Figure 
         \ref{fig:slab-obj-2-tempppf-pareto-distr}).}
         \label{fig:slab-obj-2-tempppf-min-ppf} 
     \end{subfigure}
     \caption{(contd.) Simulation p-2c -- ROLLO two-objective optimization to minimize 
-    maximum plank temperature ($T_{max}$) and normalized power peaking factor ($PPF_{fuel}$) 
-    in the plank. 
-    Input parameters varied: TRISO distribution.}
+    maximum plank temperature ($T_{max}$) and fuel-normalized power peaking factor 
+    ($PPF_{fuel}$) in the plank. 
+    Input parameters varied: TRISO packing fraction distribution 
+    ($\rho_{TRISO}(\vec{r})$). $PF_{total}$ = 0.0979.}
 \end{figure}
 
 In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
