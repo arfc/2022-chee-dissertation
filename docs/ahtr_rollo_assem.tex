@@ -172,6 +172,35 @@ The TRISO packing fraction peaks in the center of the assembly and is lower at t
 By minimizing the packing fraction at the sides, the assembly minimizes self-shielding effects, 
 enabling a lower packing fraction for the same $k_{eff}$. 
 
+\subsubsection{Simulation a-1d: Variation of $PF_{total}$ and Coolant channel shape}
+Table \ref{tab:simulationa1d} shows simulation a-1d's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-1d Optimization Problem Parameters}
+	\label{tab:simulationa1d}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1d}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
+    \hline 
+    \textbf{Input Parameter variations} & $0.02<PF_{total}<0.04$ \\
+    & $0.05<r_{1}<0.35$ \\
+    & $0.05<r_{2}<0.35$ \\
+    & $0.05<r_{3}<0.35$ \\
+    & $0.05<r_{4}<0.35$ \\
+    & $0.05<r_{5}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
+
 \subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
 \label{sec:assem-1-obj-temp}
 This section reports results from the minimize maximum one-third assembly temperature 
