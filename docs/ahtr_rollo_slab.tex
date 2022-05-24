@@ -539,7 +539,7 @@ between total radius and $PPF_{fuel}$.
 In this section, I report the \gls{AHTR} plank's \gls{ROLLO} two-objective 
 optimization results. 
 The previous section's one-objective optimization results inform the multi-objective 
-optimization simulations.
+optimization simulations in this section and Section \ref{sec:plank-three-obj}.
 Since the variations in coolant channel shape does not impact two out of three objectives: 
 minimize total packing fraction and minimize fuel-normalized power peaking factor 
 objectives, I do not conduct two-objective optimization for coolant channel shape 
@@ -567,10 +567,12 @@ If a multi-objective optimization problem's hypervolume converges earlier than t
 5 generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
 
-\subsection{p-2a: Minimize Total Packing Fraction and Maximum Plank Temperature}
+\subsection{p-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:p-2a}
+This section reports results from the two-objective optimization simulation p-2a, the 
+objectives minimized are total fuel packing fraction ($PF_{total}$) and maximum plank
+temperature ($T_{max}$).  
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters.
- 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -581,10 +583,10 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \hline 
     \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2a}} \\
     \hline 
-    \textbf{Objectives} & Minimize PF \\
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
     & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
@@ -619,7 +621,7 @@ confirming that simulation p-2a converges by generation 2.
 \end{table}
 
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
-models' total packing fraction against $T_{max}$, crosses mark the reactor models that 
+models' $PF_{total}$ against $T_{max}$, crosses mark the reactor models that 
 fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO distributions in 
 the final generation that fall on the Pareto front. 
@@ -627,26 +629,28 @@ the final generation that fall on the Pareto front.
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto.png}
-        \caption{Plot of final generation's reactor models' total packing fraction against 
-        $T_{max}$. Crosses indicate the reactor models on the Pareto front. Cross colors correspond  
-        to TRISO distributions in the plot below.}
+        \caption{Plot of final generation's reactor models' $PF_{total}$ against 
+        $T_{max}$. Crosses indicate the reactor models on the Pareto front. 
+        Cross colors correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-2-pftemp-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-pareto-distr.png}
-        \caption{TRISO distribution for the 6 reactor models on the Pareto front.}
+        \caption{TRISO packing fraction distribution for the 6 reactor models on the 
+        Pareto front.}
         \label{fig:slab-obj-2-pftemp-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2a -- ROLLO two-objective optimization to minimize total packing fraction 
-    (PF) and maximum plank temperature ($T_{max}$). 
-    Input parameters varied: total fuel packing fraction and \gls{TRISO} distribution.}
+    \caption{Simulation p-2a -- ROLLO two-objective optimization to minimize total 
+    fuel packing fraction ($PF_{total}$) and maximum plank temperature ($T_{max}$). 
+    Input parameters varied: total fuel packing fraction ($PF_{total}$) and 
+    \gls{TRISO} distribution ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:slab-obj-2-pftemp}
 \end{figure}
 \begin{figure}[htbp!]
     \ContinuedFloat
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-2-pftemp-min-pf.png}
-        \caption{\gls{AHTR} plank model with most-minimized total fuel packing fraction
+        \caption{\gls{AHTR} plank model with most-minimized $PF_{total}$
         (corresponds to the blue bolded distribution in Figure 
         \ref{fig:slab-obj-2-pftemp-pareto-distr}).}
         \label{fig:slab-obj-2-pftemp-min-pf} 
@@ -658,9 +662,10 @@ the final generation that fall on the Pareto front.
         \ref{fig:slab-obj-2-pftemp-pareto-distr}).}
         \label{fig:slab-obj-2-pftemp-min-temp} 
     \end{subfigure}
-    \caption{(contd.) Simulation p-2a -- ROLLO two-objective optimization to minimize total packing fraction 
-    (PF) and maximum plank temperature ($T_{max}$). 
-    Input parameters varied: total fuel packing fraction and \gls{TRISO} distribution.}
+    \caption{(contd.) Simulation p-2a -- ROLLO two-objective optimization to minimize 
+    total packing fraction ($PF_{total}$) and maximum plank temperature ($T_{max}$). 
+    Input parameters varied: total fuel packing fraction ($PF_{total}$) and 
+    \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
 \end{figure}
 
 In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the
