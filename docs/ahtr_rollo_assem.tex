@@ -1,29 +1,39 @@
 \chapter{AHTR One-Third Assembly Optimization Results}
+\glsresetall
 \label{chap:ahtr-assem-opt-results}
-In this chapter, I report the \gls{AHTR} one-third assembly \gls{ROLLO} 
-optimization results. 
-In Chapter \ref{chap:method}, I detailed the \gls{AHTR} one-third assembly's 
-modeling and \gls{ROLLO} optimization methodology. 
-Specifically, I described the \gls{AHTR} one-third assembly geometry in Section 
-\ref{sec:ahtr-assem-geometry}.
-I described how I will vary the following \gls{AHTR} one-third assembly's input 
-parameters in Section \ref{sec:input-parameter-modeling}:  
+In this chapter, I report the \gls{AHTR} plank's \gls{ROLLO} optimization results. 
+I vary the following \gls{AHTR} plank input parameters:
 \begin{itemize}
-    \item \gls{TRISO} particle packing fraction distribution, 
-    $\rho_{TRISO}(\vec{r})$
-    \item Total fuel packing fraction
-    \item \gls{FLiBe} coolant channel shape 
+    \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
+    \item Total fuel packing fraction (Total PF)
+    \item \gls{FLiBe} coolant channel shape
 \end{itemize} 
-I described and verified the \gls{AHTR} one-third assembly's OpenMC neutronics and 
-Moltres temperature models in Sections \ref{sec:ahtr-moltres-hom} and 
-\ref{sec:ahtr_model_verification}. 
-I described the optimization objectives and how I calculated them from the OpenMC 
-and Moltres model outputs in Sections \ref{sec:opt-problem} and 
-\ref{sec:ahtr_slab_output}.
+And, I optimize the \gls{AHTR} plank for the following optimization objectives:
+\begin{itemize}
+    \item Minimize total fuel packing fraction (PF)
+    \item Minimize maximum plank temperature ($T_{max}$)
+    \item Minimize fuel-normalized power peaking factor (PPF)
+\end{itemize} 
+ 
+In Chapter \ref{chap:method}, I detailed the methodology for \gls{AHTR} one-third 
+assembly modeling and \gls{ROLLO} optimization. 
+Section \ref{sec:ahtr-assem-geometry} describes the \gls{AHTR} plank geometry.
+Section \ref{sec:input-parameter-modeling} details about how I vary the 
+\gls{AHTR} one-third assembly's input parameters. 
+Sections \ref{sec:ahtr-moltres-hom} and \ref{sec:ahtr_model_verification}
+describe and verify the \gls{AHTR} one-third assembly's OpenMC neutronics and Moltres 
+temperature models. 
+Section \ref{sec:opt-problem} describes the optimization objectives and Section 
+\ref{sec:ahtr_slab_output} describes how I calculated them from the OpenMC and Moltres 
+model outputs. 
+Section \ref{sec:hyperparameter-studies} describes the hyperparameter tuning process 
+to select hyperparameters for the single-objective and multi-objective \gls{ROLLO} 
+optimization simulations.
 
-The subsequent sections outline the single-objective and multi-objective 
-ROLLO optimization simulations for the \gls{AHTR} one-third assembly, and their 
-respective results. 
+The subsequent sections outline the \gls{AHTR} one-third assembly's optimization 
+simulations, describe the results of the single-objective and multi-objective 
+\gls{ROLLO} optimization simulations, report each simulation's computational cost, 
+and discuss the results' significance.
 
 \section{ROLLO AHTR One-Third Assembly Optimization Simulations Overview}
 Table \ref{tab:assem-obj-breakdown} shows the details of each \gls{ROLLO} 
