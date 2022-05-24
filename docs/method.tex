@@ -28,7 +28,7 @@ I chose to vary the following \gls{AHTR} parameters:
     \item \gls{TRISO} packing fraction distribution
     ($\rho_{TRISO}(\vec{r})$)
     \item Total fuel packing fraction
-    \item \gls{FLiBe} coolant channel shape 
+    \item Coolant channel shape 
 \end{itemize} 
 The TRISO packing fraction distribution variation enables exploration of how 
 heterogeneous fuel distributions impact reactor performance.
@@ -38,7 +38,7 @@ self-shielding effects.
 Varying total fuel packing fraction and TRISO distribution synergistically enable 
 exploration of how heterogenous TRISO distribution could minimize self-shielding and 
 thus, reduce the fuel required for a reactor design. 
-The \gls{FLiBe} coolant channel shape variation enables exploration of how non-uniform 
+The coolant channel shape variation enables exploration of how non-uniform 
 channel shapes impact reactor performance. 
 
 I selected three key \gls{AHTR} optimization objectives that address contrasting reactor 
@@ -271,7 +271,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
 \label{sec:input-parameter-modeling}
 This section describes how I model the \gls{AHTR} input parameter variations: 
 total fuel packing fraction, \gls{TRISO} packing fraction distribution, 
-and \gls{FLiBe} coolant channel shape. 
+and coolant channel shape. 
 For both the \gls{AHTR} plank and one-third assembly models, the total fuel packing 
 fraction parameter is a single numerical input.
 In the subsequent subsections, I describe how I modeled the other two parameters for 
@@ -388,7 +388,7 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
         distribution in the one-third assembly on the right.}
 \end{figure}
 
-\subsubsection{Input Parameter Modeling: \gls{FLiBe} Coolant Channel Shape}
+\subsubsection{Input Parameter Modeling: Coolant Channel Shape}
 For both the \gls{AHTR} plank and one-third assembly models, I model the variation in 
 coolant channel shape with a sinusoidal-like pattern, using OpenMC's cylinder surfaces
 functionality.
@@ -471,9 +471,9 @@ the OpenMC and Moltres models' workflow.
 \subsubsection{AHTR OpenMC Neutronics Model}
 The OpenMC model template accepts the following input parameters from \gls{ROLLO}: 
 total packing fraction ($PF$), TRISO distribution ($a, b, c, d, e, f$), 
-and \gls{FLiBe} coolant channel shapes ($r_{top}, r_{bot}, r_1, r_2, r_3, r_4, r_5$). 
+and coolant channel shapes ($r_{top}, r_{bot}, r_1, r_2, r_3, r_4, r_5$). 
 The OpenMC model takes the input parameters and generates an \gls{AHTR} model with 
-\gls{TRISO} distribution and \gls{FLiBe} coolant channel shape variation. 
+\gls{TRISO} distribution and coolant channel shape variation. 
 A separate OpenMC output file analyzes the OpenMC model's output and 
 calculates the $k_{eff}$ constraint and the objective value: normalized power 
 peaking factor.
@@ -592,7 +592,7 @@ Section \ref{sec:ahtr_model_verification} reports the verification studies resul
 
 \subsubsection{AHTR Moltres Mesh Generation}
 I wrote Python scripts for the \gls{AHTR} plank and one-third assembly models 
-that accept the \gls{FLiBe} coolant channel shape input parameters 
+that accept the coolant channel shape input parameters 
 ($r_{top}, r_{bot}, r_1, r_2, r_3, r_4, r_5$) and generate a geometry script file 
 (\texttt{.geo}) based on the spatial homogenizations outlined in the previous 
 subsection.
