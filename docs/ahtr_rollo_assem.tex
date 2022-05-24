@@ -6,13 +6,13 @@ results.
 I vary the following \gls{AHTR} one-third assembly input parameters:
 \begin{itemize}
     \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
-    \item Total fuel packing fraction (Total PF)
+    \item Total fuel packing fraction ($PF_{total}$)
     \item \gls{FLiBe} coolant channel shape
 \end{itemize} 
 And, I optimize the \gls{AHTR} one-third assembly for the following optimization 
 objectives:
 \begin{itemize}
-    \item Minimize total fuel packing fraction (PF)
+    \item Minimize total fuel packing fraction ($PF_{total}$)
     \item Minimize maximum one-third assembly temperature ($T_{max}$)
     \item Minimize fuel-normalized power peaking factor (PPF)
 \end{itemize} 
@@ -45,7 +45,7 @@ optimization problems explored in this chapter.
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
-    one-third assembly. $PF$: Total Fuel Packing Fraction, 
+    one-third assembly. $PF_{total}$: Total Fuel Packing Fraction, 
     $T_{max}$: Maximum one-third assembly Temperature, 
     $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
     \gls{TRISO} particle distribution}
@@ -55,35 +55,35 @@ optimization problems explored in this chapter.
     \hline 
     \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
-    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
-    & & & & \tabitem $PF$ & \\
+    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
     & a-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     \cline{2-6}
     & a-1c & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
-    & a-1d & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC \\
-    & & & & \tabitem $PF$ & \\
+    & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC \\
+    & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
     & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC, Moltres\\
     \cline{2-6}
     & a-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem FLiBe channel shape & OpenMC\\
     \hline
-    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    & &\tabitem min($T_{max}$) & & \tabitem $PF$ & \\
+    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & &\tabitem min($T_{max}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-2b & \tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
-    & & \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    & a-2b & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & & \tabitem min($PPF$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
     & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & & \tabitem min($PPF$) & & & \\
     \hline
-    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    && \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    && \tabitem min($PPF$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & & \\
     \cline{2-6}
-    & a-3b &\tabitem min($PF$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    && \tabitem min($PPF$) & & \tabitem $PF$ & \\
+    & a-3b &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    && \tabitem min($PPF$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & \tabitem FLiBe channel shape& \\
     \hline
     \end{tabular}
@@ -101,7 +101,7 @@ cost.
 \section{AHTR One-Third Assembly: Single-Objective Optimization Results}
 
 \subsection{Objective: Minimize Total Packing Fraction}
-\subsubsection{Simulation a-1a: Variation of $\rho_{TRISO}(\vec{r})$ and PF}
+\subsubsection{Simulation a-1a: Variation of $\rho_{TRISO}(\vec{r})$ and $PF_{total}$}
 Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem parameters. 
 \begin{table}[htbp]
     \centering
@@ -113,9 +113,9 @@ Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem param
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1a}} \\
     \hline 
-    \textbf{Objectives} & Minimize PF \\
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
     \hline 
-    \textbf{Input Parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input Parameter variations} & $0.02<PF_{total}<0.04$ \\
     & $0<a<2$, $0<d<2$\\
     & $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
     & $0<c<2\pi$, $0<f<2\pi$\\
@@ -175,7 +175,7 @@ Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem param
     \textbf{Objectives} & Minimize PPF \\
     \hline 
     \textbf{Input Parameter variations}
-    & PF = 0.04 \\
+    & $PF_{total}$ = 0.04 \\
     & $0<a<2$, $0<d<2$\\
     & $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
     & $0<c<2\pi$, $0<f<2\pi$\\
