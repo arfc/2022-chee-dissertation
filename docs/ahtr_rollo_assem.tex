@@ -214,5 +214,50 @@ the final generation with the most minimized PPF.
 
 \section{AHTR One-Third Assembly: Computational Cost Summary}
 \label{sec:assem-compute-cost}
+Optimization simulations are run on the Theta supercomputer at the Argonne Leadership 
+Computing Facility under the Director's Discretionary Allocation Program 
+\cite{noauthor_argonne_2022}. 
+Each Theta compute node has 64 processor cores with a nominal clock speed of 
+1.5GHz \cite{noauthor_argonne_2022}.  
+
+Each optimization simulation takes a different amount of node-hours to run due to 
+differences in simulation software, tallies and intermediate steps required. 
+Table \ref{tab:assem-compute-cost} reports the computational cost for each optimization 
+simulation. 
+Table \ref{tab:assem-obj-breakdown} detailed the simulation parameters.
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Computational cost of \acrfull{ROLLO} simulations for optimizing 
+    \acrfull{AHTR} one-third assembly. BW: BlueWaters Supercomputer, Theta: Theta 
+    supercomputer.}
+	\label{tab:assem-compute-cost}
+    \footnotesize
+    \begin{tabular}{p{1.4cm}|p{1cm}lp{4cm}lp{4cm}}
+    \hline 
+    \textbf{Num of Objs} & \textbf{Sim} & \textbf{Machine} & 
+    \textbf{Compute cost per gen [node-hours]} &\textbf{gens} & 
+    \textbf{Total compute cost [node-hours]} \\
+    \hline
+    \multirow{6}{2cm}{1} 
+    & a-1a & Theta &  &  &  \\
+    & a-1b & Theta &  &  &  \\
+    & a-1c & Theta &  &  &  \\
+    & a-1d & Theta &  &  &  \\
+    & a-1e & Theta &  &  &  \\
+    & a-1f & Theta &  &  &  \\
+    \hline
+    \multirow{3}{2cm}{2}
+    & a-2a & Theta &  &  &  \\
+    & a-2b & Theta &  &  &  \\
+    & a-2c & Theta &  &  &  \\
+    \hline
+    \multirow{2}{2cm}{3}
+    & a-3a & Theta &  &  &  \\
+    & a-3b & Theta &  &  &  \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \section{AHTR One-Third Assembly Optimization Results Discussion and Significance}
+\label{sec:assem-discussion}
