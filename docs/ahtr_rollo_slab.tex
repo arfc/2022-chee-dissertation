@@ -440,7 +440,8 @@ most-minimized $PPF_{fuel}$.
     \centering
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol.png}
-        \caption{Minimum, average, and maximum evolution of AHTR plank's $PPF_{fuel}$.}
+        \caption{Minimum, average, and maximum evolution of $PPF_{fuel}$ in the 
+        AHTR plank.}
         \label{fig:slab-obj-1-ppf-evol} 
     \end{subfigure}
     \begin{subfigure}{0.9\textwidth}
@@ -463,14 +464,14 @@ most-minimized $PPF_{fuel}$.
 \end{figure}
 
 In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
-$PPF_{fuel}$ peaks near the edges of the fuel region of the plank, and has a minimum point in 
-center of the plank.
+$PPF_{fuel}$ peaks near the edges of the fuel region of the plank, and has a minimum 
+point in center of the plank.
 This distribution is attributed to the self-shielding effects. 
 The edges of the fuel region have higher flux as they are closer to the graphite 
 moderator, whereas the plank's center has a lower flux due to self shielding. 
 The TRISO distribution must follow the flux shape to ensure similar fuel depletion 
 rates for different flux regions. 
-Thus, to minimize fuel-normalized power peaking factor, \gls{ROLLO} found a plank 
+Thus, to minimize $PPF_{fuel}$, \gls{ROLLO} found a plank 
 \gls{TRISO} distribution that has higher packing fraction at the edges, and a 
 lower packing fraction in the center. 
 
@@ -500,27 +501,27 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the plank's normalized power peaking 
-factor evolution and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows a plot of total 
-radius ($r_{top} + r_{bot}$) against normalized power peaking factor. 
+Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the plank's $PPF_{fuel}$ evolution 
+and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows a plot of total 
+radius ($r_{top} + r_{bot}$) against $PPF_{fuel}$. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-evol-coolant.png}
-        \caption{Minimum, average, and maximum evolution of normalized power 
-        peaking factor in AHTR plank.}
+        \caption{Minimum, average, and maximum evolution of $PPF_{fuel}$ in the 
+        AHTR plank.}
         \label{fig:slab-obj-1-ppf-evol-coolant} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-final-coolant.png}
-        \caption{Plot of total radius ($r_{top} + r_{bot}$) against normalized 
-        power peaking factor. Red crosses indicate the five reactor models with the 
-        lowest normalized power peaking factor.}
+        \caption{Plot of total radius ($r_{top} + r_{bot}$) against $PPF_{fuel}$. 
+        Red crosses indicate the five reactor models with the lowest $PPF_{fuel}$.}
         \label{fig:slab-obj-1-ppf-final-coolant} 
     \end{subfigure}
-    \caption{Simulation p-1f -- ROLLO single-objective optimization to minimize normalized power 
-    peaking factor in the slab. Input parameters varied: coolant channel shape 
-    ($r_{top}, r_{bot}$). $PF_{total}$ = 0.0979.}
+    \caption{Simulation p-1f -- ROLLO single-objective optimization to minimize 
+    fuel-normalized power peaking factor ($PPF_{fuel}$) in the slab. 
+    Input parameters varied: coolant channel shape ($r_{top}, r_{bot}$). 
+    $PF_{total}$ = 0.0979.}
     \label{fig:slab-obj-1-ppf-coolant}
 \end{figure}
 
@@ -531,7 +532,7 @@ the average $PPF_{fuel}$ due to \gls{TRISO} variation decreased by 0.1 over 10 g
 while average $PPF_{fuel}$ due to coolant channel shape variation only decreased negligibly
 over 10 generations. 
 Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
-between total radius and normalized power peaking factor. 
+between total radius and $PPF_{fuel}$. 
 
 \pagebreak
 \section{AHTR Plank: Two-Objective Optimization Results}
