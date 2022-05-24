@@ -1010,19 +1010,21 @@ the final generation that fall on the Pareto front.
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.7\linewidth]{slab-obj-3-3d.png}
-        \caption{Plot of final generation's reactor models' total packing fraction against maximum plank 
-        temperature against normalized power peaking factor. Crosses indicate the reactor models on the 
+        \caption{Plot of final generation's reactor models' $PF_{total}$ against 
+        $T_{max}$ against $PPF_{fuel}$. Crosses indicate the reactor models on the 
         Pareto front. Cross colors correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-3-3d} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr.png}
-        \caption{TRISO distribution for the 14 reactor models on the Pareto front.}
+        \caption{TRISO packing fraction distribution for the 14 reactor models on the Pareto front.}
         \label{fig:slab-obj-3-distr} 
     \end{subfigure}
-    \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
-    maximum plank temperature ($T_{max}$) and normalized power peaking factor ($PPF_{fuel}$) in the plank. 
-    Input parameters varied: $PF_{total}$, TRISO distribution.}
+    \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize total 
+    fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$) and 
+    fuel-normalized power peaking factor ($PPF_{fuel}$) in the plank. 
+    Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
+    ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:slab-obj-3}
 \end{figure}
 
