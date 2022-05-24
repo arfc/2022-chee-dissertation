@@ -1062,16 +1062,18 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
     \end{subfigure}
     \caption{AHTR models and TRISO distribution for the 3 reactor models on simulation 
     p-3a's Pareto front that most-minimized each objective.
-    Simulation p-3a -- ROLLO three-objective optimization to minimize total packing fraction, 
-    maximum plank temperature ($T_{max}$) and normalized power peaking factor ($PPF_{fuel}$) in the plank. 
-    Input parameters varied: TRISO distribution.}
+    Simulation p-3a -- ROLLO three-objective optimization to minimize total fuel packing 
+    fraction ($PF_{total}$), maximum plank temperature ($T_{max}$) and 
+    normalized power peaking factor ($PPF_{fuel}$) in the plank. 
+    Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
+    ($\rho_{TRISO}(\vec{r})$)}
     \label{fig:slab-obj-3-most-minimized}
 \end{figure}
 
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
-most-minimized total packing fraction (the purple distribution) has an oscillating fuel 
+most-minimized $PF_{total}$ (the purple distribution) has an oscillating fuel 
 packing pattern (also illustrated in Figure \ref{fig:slab-obj-3-min-pf}).
-This distribution is similar to simulation p-1a's most-minimized packing fraction TRISO 
+This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
 distribution (Figure \ref{fig:slab-obj-1-pf-final}) with its oscillating fuel pattern. 
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the 
 most-minimized $T_{max}$ (the orange distribution) has mostly flat TRISO distribution 
@@ -1081,7 +1083,7 @@ $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}): a mostly 
 TRISO distribution with two small dips at the one-third and two-third points in the 
 plank.
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
-most-minimized fuel-normalized power peaking factor (the pink distribution) has a 
+most-minimized $PPF_{fuel}$ (the pink distribution) has a 
 slightly oscillating fuel packing pattern (also illustrated in Figure 
 \ref{fig:slab-obj-3-min-ppf}).
 
