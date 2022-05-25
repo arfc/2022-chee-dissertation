@@ -1200,9 +1200,9 @@ Figure \ref{fig:slab-obj-3-3d-all} demonstrates that \gls{ROLLO} found 13 widely
 solutions in the final generation's Pareto front. 
 Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all} shows the three distributions 
 from Figure \ref{fig:slab-obj-3-distr-all} that most-minimized each objective. 
-Figures \ref{fig:slab-obj-3-all-min-pf} and \ref{fig:slab-obj-3-all-min-tempppf} show 
-the \gls{AHTR} plank's TRISO distribution and coolant channel shape for most-minimized 
-cases. 
+Figures \ref{fig:slab-obj-3-all-min-pf}, \ref{fig:slab-obj-3-all-min-temp}, and 
+\ref{fig:slab-obj-3-all-min-ppf} show the \gls{AHTR} plank's TRISO distribution and 
+coolant channel shape for most-minimized cases. 
 \begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized-all.png}
@@ -1212,32 +1212,38 @@ cases.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-all-min-pf.png}
-        \caption{TRISO distribution and coolant channel shape that most-minimized Total 
-        PF (corresponds to the red distribution in the above plot).}
+        \caption{TRISO distribution and coolant channel shape that most-minimized 
+        $PF_{total}$ (corresponds to the red distribution in the above plot).}
         \label{fig:slab-obj-3-all-min-pf}
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-all-min-tempppf.png}
         \caption{TRISO distribution and coolant channel shape that most minimized 
-        $T_{max}$ and $PPF_{fuel}$ (corresponds to the pink distribution in the above plot).}
-        \label{fig:slab-obj-3-all-min-tempppf}
+        $T_{max}$ (corresponds to the pink distribution in the above plot).}
+        \label{fig:slab-obj-3-all-min-temp}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{slab-obj-3-all-min-tempppf.png}
+        \caption{TRISO distribution and coolant channel shape that most minimized 
+        $PPF_{fuel}$ (corresponds to the pink distribution in the above plot).}
+        \label{fig:slab-obj-3-all-min-ppf}
     \end{subfigure}
     \caption{AHTR models and TRISO distribution for the 3 reactor models on simulation 
-    p-3b's Pareto front that most-minimized each objective.
-    Simulation p-3b -- ROLLO three-objective optimization to minimize total 
-    packing fraction, maximum plank temperature ($T_{max}$) and normalized power peaking 
-    factor ($PPF_{fuel}$) in the plank. 
-    Input parameters varied: $PF_{total}$, TRISO distribution, and coolant channel shape 
-    $(r_{top}, r_{bot})$.}
+    p-3b -- ROLLO three-objective optimization to minimize total 
+    fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$), and 
+    fuel-normalized power peaking factor ($PPF_{fuel}$) in the plank. 
+    Input parameters varied: total fuel packing fraction $PF_{total}$, 
+    TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), 
+    coolant channel shape $(r_{top}, r_{bot})$.}
     \label{fig:slab-obj-3-distr-most-minimized-all}
 \end{figure}
 
 In Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}, the \gls{AHTR} plank model 
-with the most-minimized total packing fraction (the pink distribution) has a oscillating fuel 
+with the most-minimized $PF_{total}$ (the pink distribution) has a oscillating fuel 
 packing pattern with approximately $\sim0.2cm$ of variation and total coolant channel radius 
 of 0.399cm (illustrated in Figure \ref{fig:slab-obj-3-all-min-pf}).
 In Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}, the \gls{AHTR} plank model with 
-the most-minimized $T_{max}$ and fuel-normalized power peaking factor (the red distribution) 
+the most-minimized $T_{max}$ and $PPF_{fuel}$ (the red distribution) 
 has a flat TRISO distribution and total coolant channel radius of 0.657cm 
 (illustrated in Figure \ref{fig:slab-obj-3-all-min-tempppf}). 
 
@@ -1248,7 +1254,7 @@ The flatness is influenced by the minimize $T_{max}$ objective.
 As observed in previous sections \ref{sec:plank-1-obj-temp}, \ref{sec:p-2a}, and 
 \ref{sec:p-2c}, a flat \gls{TRISO} distribution minimizes $T_{max}$ objective.
 The variations in \gls{TRISO} distributions are influenced by both the minimize 
-total packing fraction and minimize $PPF_{fuel}$ objectives. 
+$PF_{total}$ and minimize $PPF_{fuel}$ objectives. 
 The minimize total packing fraction objective tries to minimize self shielding effects 
 to enable a higher $k_{eff}$ for lower total PF. 
 The minimize fuel-normalized power peaking factor objective tries to minimize 
