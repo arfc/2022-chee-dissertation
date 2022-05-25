@@ -1105,12 +1105,14 @@ TRISO fuel in areas with higher flux to minimize fuel-normalized power peaking.
 Section \ref{sec:plank-discussion} further discusses \gls{ROLLO}'s plank 
 optimization results and significance for reactor designers.
 
-\subsection{p-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant channel shape}
-This section reports results from the three-objective optimization simulation p-3b, all 
-objectives are minimized: total fuel packing fraction ($PF_{total}$), maximum plank 
+\subsection{p-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
+Channel Shape}
+This section reports results from the three-objective optimization simulation p-3b, 
+all objectives are minimized: total fuel packing fraction ($PF_{total}$), maximum plank 
 temperature ($T_{max}$) and fuel-normalized power peaking factor ($PPF_{fuel}$).  
 The input parameters varied are total fuel packing fraction ($PF_{total}$), 
-TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), and coolant channel shape.  
+TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), and coolant channel 
+shape.  
 Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
@@ -1122,11 +1124,11 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     \hline 
     \multicolumn{2}{c}{\textbf{Three Objectives: Simulation p-3b}} \\
     \hline 
-    \textbf{Objectives} & Minimize PF \\
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
     & Minimize $T_{max}$ \\
     & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF<0.04$ \\
+    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
     & $0<a<2$ \\
     & $0<b<\frac{\pi}{2}$ \\
     & $0<c<2\pi$ \\
@@ -1166,8 +1168,8 @@ confirming that simulation p-3b converges by generation 5.
 \end{table}
 
 Figure \ref{fig:slab-obj-3-3d-all} shows a 3D plot of the final generation's reactor 
-models' total packing fraction against maximum plank temperature against normalized
-power peaking factor, crosses mark the reactor models that fall on the Pareto front.
+models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$, crosses mark the 
+reactor models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-3-distr-all} shows the 13 TRISO distributions and their
 total radius $(r_{top}, r_{bot})$ in the final generation that fall on the Pareto 
 front. 
@@ -1175,8 +1177,8 @@ front.
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.7\linewidth]{slab-obj-3-3d-all.png}
-        \caption{Plot of final generation's reactor models' total packing fraction against maximum plank 
-        temperature against normalized power peaking factor. Crosses indicate the reactor models on the 
+        \caption{Plot of final generation's reactor models' $PF_{total}$ against 
+        $T_{max}$ against $PPF_{fuel}$. Crosses indicate the reactor models on the 
         Pareto front. Cross colors correspond to TRISO distributions in the plot below.}
         \label{fig:slab-obj-3-3d-all} 
     \end{subfigure}
@@ -1185,9 +1187,11 @@ front.
         \caption{TRISO distribution for the 13 reactor models on the Pareto front.}
         \label{fig:slab-obj-3-distr-all} 
     \end{subfigure}
-    \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize total packing fraction, 
-    maximum plank temperature ($T_{max}$) and normalized power peaking factor ($PPF_{fuel}$) in the plank. 
-    Input parameters varied: $PF_{total}$, TRISO distribution, 
+    \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize total 
+    fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$), and 
+    fuel-normalized power peaking factor ($PPF_{fuel}$) in the plank. 
+    Input parameters varied: total fuel packing fraction $PF_{total}$, 
+    TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), 
     coolant channel shape $(r_{top}, r_{bot})$.}
     \label{fig:slab-obj-3-all}
 \end{figure}
