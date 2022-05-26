@@ -566,7 +566,9 @@ I use a different reference point for each optimization problem.
 If a multi-objective optimization problem's hypervolume converges earlier than the 
 5 generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
-
+However, if the multi-objective optimization problem's hypervolume does not converge by 
+generation 5, I run the problem for a few more generations till satisfactory convergence.
+ 
 \subsection{p-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:p-2a}
 This section reports results from the two-objective optimization simulation p-2a, the 
@@ -1138,13 +1140,13 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 128 \\
-    & Generations: 5 \\
+    & Generations: 8 \\
     \hline
     \end{tabular}
 \end{table}
 
 Table \ref{tab:p3b-hypervolume} shows the hypervolume value at each generation, 
-confirming that simulation p-3b converges by generation 5. 
+confirming that simulation p-3b converges by generation 8. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -1163,6 +1165,9 @@ confirming that simulation p-3b converges by generation 5.
     3 & 2.158 \\
     4 & 2.251\\
     5 & 2.262 \\
+    6 & 2.280 \\
+    7 & 2.310 \\
+    8 & 2.313 \\
     \hline
     \end{tabular}
 \end{table}
@@ -1170,7 +1175,7 @@ confirming that simulation p-3b converges by generation 5.
 Figure \ref{fig:slab-obj-3-3d-all} shows a 3D plot of the final generation's reactor 
 models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$, crosses mark the 
 reactor models that fall on the Pareto front.
-Figure \ref{fig:slab-obj-3-distr-all} shows the 13 TRISO distributions and their
+Figure \ref{fig:slab-obj-3-distr-all} shows the 21 TRISO distributions and their
 total radius $(r_{top}, r_{bot})$ in the final generation that fall on the Pareto 
 front. 
 \begin{figure}[htbp!]
@@ -1184,7 +1189,7 @@ front.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr-all.png}
-        \caption{TRISO distribution for the 13 reactor models on the Pareto front.}
+        \caption{TRISO distribution for the 21 reactor models on the Pareto front.}
         \label{fig:slab-obj-3-distr-all} 
     \end{subfigure}
     \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize total 
@@ -1196,7 +1201,7 @@ front.
     \label{fig:slab-obj-3-all}
 \end{figure}
 
-Figure \ref{fig:slab-obj-3-3d-all} demonstrates that \gls{ROLLO} found 13 widely spread 
+Figure \ref{fig:slab-obj-3-3d-all} demonstrates that \gls{ROLLO} found 21 widely spread 
 solutions in the final generation's Pareto front. 
 Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all} shows the three distributions 
 from Figure \ref{fig:slab-obj-3-distr-all} that most-minimized each objective. 
