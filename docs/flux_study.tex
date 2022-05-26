@@ -12,22 +12,36 @@ flux, and material properties.
 \end{align}
 
 Since microscopic cross section is constant for the same fuel material, we can rearrange 
-Equation \ref{eq:reaction-rate-fission} into Equation \ref{eq:reaction-rate-fission-prop}. 
-The fission reaction rate ($RR_f$) is proportional to fission energy production rate \\
-(\texttt{fission-q-recoverable} $[eV/src]$) used to calculate fuel-normalized power peaking 
-factor ($PPF_{fuel}$). 
-Section \ref{sec:ahtr_slab_output} details how I calculated $PPF_{fuel}$. 
-The atomic number density (N) is proportional to the fuel packing fraction. 
-We can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
-Equation \ref{eq:flux-prop-fqr}
+Equation \ref{eq:reaction-rate-fission} into Equation \ref{eq:reaction-rate-fission-prop}: 
 \begin{align}
     \label{eq:reaction-rate-fission-prop}
     \Phi \propto \frac{RR_f}{N}
+    \intertext{where}
+    \Phi &= \mbox{neutron flux } [neutrons \cdot cm^{-2} \cdot s^{-1}] \nonumber \\
+    RR_f &= \mbox{fission reaction rate } [reactions \cdot cm^{-3} \cdot s^{-1}]\nonumber \\
+    N &= \mbox{atomic number density } [atoms \cdot cm^{-3}] \nonumber
 \end{align}
+In Section \ref{sec:ahtr_slab_output}, I defined $PPF_{fuel}$ as: 
+\begin{align}
+    PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
+\intertext{where}
+j &= \mbox{discretized fuel area j} \nonumber \\
+PPF_{fuel} &= \mbox{fuel-normalized power peaking factor} \nonumber \\
+fqr_j &= \mbox{fission-q-recoverable at position j} \nonumber \\
+PF_j &= \mbox{fuel packing fraction at position j} \nonumber
+\end{align}
+The fission reaction rate ($RR_f$) is proportional to fission energy production rate ($fqr$). 
+The atomic number density (N) is proportional to the fuel packing fraction ($PF$). 
+We can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
+Equation \ref{eq:flux-prop-fqr}:
 \begin{align}
     \label{eq:flux-prop-fqr}
-    \Phi \propto \frac{fqr}{PF}
+    \Phi_j \propto \frac{fqr_j}{PF_j}
+    \intertext{where}
+    \Phi &= \mbox{neutron flux at position j} [neutrons \cdot cm^{-2} \cdot s^{-1}] \nonumber \\
+    fqr_j &= \mbox{fission-q-recoverable at position j} \nonumber \\
+    PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 \end{align}
 
-Therefore, a flatter plank's thermal flux will result in a lower fuel-normalized power peaking 
-factor. 
+Therefore, an overall flatter plank thermal flux will result in a lower fuel-normalized power 
+peaking factor. 
