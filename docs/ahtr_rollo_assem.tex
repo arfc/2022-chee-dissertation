@@ -14,7 +14,7 @@ objectives:
 \begin{itemize}
     \item Minimize total fuel packing fraction ($PF_{total}$)
     \item Minimize maximum one-third assembly temperature ($T_{max}$)
-    \item Minimize fuel-normalized power peaking factor (PPF)
+    \item Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
 \end{itemize} 
  
 In Chapter \ref{chap:method}, I detailed the methodology for \gls{AHTR} one-third 
@@ -47,7 +47,7 @@ optimization problems explored in this chapter.
     \caption{\acrfull{ROLLO} simulations for optimizing \acrfull{AHTR}
     one-third assembly. $PF_{total}$: Total Fuel Packing Fraction, 
     $T_{max}$: Maximum one-third assembly Temperature, 
-    $PPF$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
+    $PPF_{fuel}$: Normalized Power Peaking Factor, $\rho_{TRISO}(\vec{r})$: 
     \gls{TRISO} packing fraction distribution}
 	\label{tab:assem-obj-breakdown}
     \footnotesize
@@ -60,30 +60,30 @@ optimization problems explored in this chapter.
     \cline{2-6}
     & a-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     \cline{2-6}
-    & a-1c & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & a-1c & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
     & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem Coolant channel shape & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
     & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem Coolant channel shape & OpenMC, Moltres\\
     \cline{2-6}
-    & a-1f & \tabitem min($PPF$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem Coolant channel shape & OpenMC\\
+    & a-1f & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff}$ $>$ 1.0 &\tabitem Coolant channel shape & OpenMC\\
     \hline
     \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & &\tabitem min($T_{max}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
     & a-2b & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
-    & & \tabitem min($PPF$) & & \tabitem $PF_{total}$ & \\
+    & & \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
     & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    & & \tabitem min($PPF$) & & & \\
+    & & \tabitem min($PPF_{fuel}$) & & & \\
     \hline
     \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    && \tabitem min($PPF$) & & \tabitem $PF_{total}$ & \\
+    && \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & & \\
     \cline{2-6}
     & a-3b &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
-    && \tabitem min($PPF$) & & \tabitem $PF_{total}$ & \\
+    && \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & \tabitem Coolant channel shape& \\
     \hline
     \end{tabular}
@@ -264,7 +264,7 @@ Figure \ref{fig:assem-obj-1-temp-evol} shows that the minimum and average plank'
 $T_{max}$ converged to approximately 1200 K.
 
 
-\subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor (PPF)}
+\subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor ($PPF_{fuel}$)}
 This section reports results from the minimize fuel-normalized power peaking factor 
 single-objective optimization simulations: a-1c and a-1f. 
 Simulation a-1c varies \gls{TRISO} packing fraction distribution, while simulation a-1f 
@@ -282,7 +282,7 @@ Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem param
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1c}} \\
     \hline 
-    \textbf{Objectives} & Minimize PPF \\
+    \textbf{Objectives} & Minimize $PPF_{fuel}$ \\
     \hline 
     \textbf{Input Parameter variations}
     & $PF_{total}$ = 0.04 \\

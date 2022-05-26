@@ -133,7 +133,7 @@ This distribution is attributed to \gls{ROLLO} trying to flatten thermal flux in
 the plank to minimize fuel-normalized power peaking factor. 
 
 Figure \ref{fig:flux-comparison-0.0979-plank} compares the flux distributions from the 
-Figure \ref{fig:slab-obj-1-ppf-final}'s TRISO distribution and a flat 
+Figure \ref{fig:slab-obj-1-ppf-final}'s TRISO distribution and a constant 
 $PF_{total}$ = 0.0979 TRISO distribution. 
 \begin{figure}[htbp]
     \centering
@@ -142,7 +142,7 @@ $PF_{total}$ = 0.0979 TRISO distribution.
     \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp3.png} 
     \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp4.png} 
     \caption{Flux comparison between Figure \ref{fig:slab-obj-1-ppf-final}'s TRISO 
-    distribution that most-minimized $PPF_{fuel}$ and a flat $PF_{total}$ = 0.0979 
+    distribution that most-minimized $PPF_{fuel}$ and a constant $PF_{total}$ = 0.0979 
     TRISO distribution. 
     \acrfull{AHTR} plank's centerline neutron flux distribution in 4 groups at 948K. 
     Centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
@@ -152,4 +152,8 @@ $PF_{total}$ = 0.0979 TRISO distribution.
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux-comparison-0.0979-plank}
 \end{figure}
+In Energy group 4, there most-minimized $PPF_{fuel}$ flux distribution is flatter than 
+the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a lower $PPF_{fuel}$. 
+The dip in the constant $PF_{total}$ = 0.0979 thermal flux distribution is due to 
+self-shielding effects. 
 
