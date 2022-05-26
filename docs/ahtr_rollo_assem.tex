@@ -444,11 +444,36 @@ confirming that simulation a-2b converges by generation 3.
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor 
+Figure \ref{fig:assem-obj-2-pfppf-pareto} shows a plot of the final generation's reactor 
 models' $PF_{total}$ against $PPF_{fuel}$, crosses mark the reactor models that fall on 
 the Pareto front.
-Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the 22 TRISO packing fraction 
+Figure \ref{fig:assem-obj-2-pfppf-pareto-distr} shows the 22 TRISO packing fraction 
 distributions in the final generation that fall on the Pareto front. 
+Figures \ref{fig:assem-obj-2-pfppf-min-pf} and \ref{fig:assem-obj-2-pfppf-min-ppf} 
+illustrate the \gls{AHTR} one-third assembly models with most-minimized $PF_{total}$ and 
+$PPF_{fuel}$, respectively. 
+\begin{figure}[htbp!]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-2-pfppf-pareto.png}
+        \caption{Plot of final generation's reactor models' $PF_{total}$ against 
+        $PPF_{fuel}$. 
+        Crosses indicate the reactor models on the Pareto front. Cross colors correspond  
+        to TRISO distributions in the plot below.}
+        \label{fig:assem-obj-2-pfppf-pareto} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-2-pfppf-pareto-distr.png}
+        \caption{TRISO distribution for the 22 reactor models on the Pareto front.}
+        \label{fig:assem-obj-2-pfppf-pareto-distr} 
+    \end{subfigure}
+    \caption{Simulation a-2b -- ROLLO two-objective optimization to minimize total fuel 
+    packing fraction ($PF_{total}$) and normalized power peaking factor ($PPF_{fuel}$) 
+    in the \gls{AHTR} one-third assembly. 
+    Input parameters varied: TRISO packing fraction distribution 
+    ($\rho_{TRISO}(\vec{r})$).}
+    \label{fig:assem-obj-2-pfppf}
+\end{figure}
 
 
 \subsection{a-2c: Minimize $T_{max}$ and $PPF_{fuel}$}
