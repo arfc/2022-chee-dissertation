@@ -263,6 +263,34 @@ $T_{max}$.
 Figure \ref{fig:assem-obj-1-temp-evol} shows that the minimum and average plank's 
 $T_{max}$ converged to approximately 1200 K.
 
+\subsubsection{Simulation a-1e: Variation of Coolant channel shape}
+Table \ref{tab:simulationa1e} shows simulation a-1e's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-1e Optimization Problem Parameters}
+	\label{tab:simulationa1e}
+    \footnotesize
+    \begin{tabular}{l|p{4cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1e}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $T_{max}$ \\
+    \hline 
+    \textbf{Input Parameter variations} 
+    & $0.05<r_{1}<0.35$ \\
+    & $0.05<r_{2}<0.35$ \\
+    & $0.05<r_{3}<0.35$ \\
+    & $0.05<r_{4}<0.35$ \\
+    & $0.05<r_{5}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor ($PPF_{fuel}$)}
 This section reports results from the minimize fuel-normalized power peaking factor 
@@ -318,16 +346,113 @@ the final generation with the most minimized PPF.
     \label{fig:assem-obj-1-ppf}
 \end{figure}
 
+\subsubsection{Simulation a-1f: Variation of Coolant channel shape}
+Table \ref{tab:simulationa1f} shows simulation a-1e's optimization problem parameters. 
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-1f Optimization Problem Parameters}
+	\label{tab:simulationa1f}
+    \footnotesize
+    \begin{tabular}{l|p{4cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1f}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $PPF_{fuel}$ \\
+    \hline 
+    \textbf{Input Parameter variations} 
+    & $0.05<r_{1}<0.35$ \\
+    & $0.05<r_{2}<0.35$ \\
+    & $0.05<r_{3}<0.35$ \\
+    & $0.05<r_{4}<0.35$ \\
+    & $0.05<r_{5}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \hline 
+    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
+
 \pagebreak
 \section{AHTR One-Third Assembly: Two-Objective Optimization Results}
 In this section, I report the \gls{AHTR} one-third assembly's \gls{ROLLO} two-objective 
 optimization results. 
 The previous section's one-objective optimization results inform the multi-objective 
-optimization simulations.
+optimization simulations in this section and Section \ref{assem-three-obj}.
+Table \ref{tab:assem-obj-breakdown} summarized the two-objective simulations in this 
+section: a-2a, a-2b, and a-2c.
 
+\subsection{a-2a: Minimize $PF_{total}$ and $T_{max}$}
+\label{sec:a-2a}
+This section reports results from the two-objective optimization simulation a-2a, the 
+objectives minimized are total fuel packing fraction ($PF_{total}$) and maximum plank
+temperature ($T_{max}$).  
+
+\subsection{a-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
+\label{sec:a-2b}
+This section reports results from the two-objective optimization simulation a-2b, the 
+objectives minimized are total fuel packing fraction ($PF_{total}$) and fuel-normalized 
+power peaking factor ($PPF_{fuel}$).  
+Table \ref{tab:simulationa2b} shows simulation a-2b's optimization problem parameters. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-2b Optimization Problem Parameters}
+	\label{tab:simulationa2b}
+    \footnotesize
+    \begin{tabular}{l|p{3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation a-2b}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
+    & Minimize $PPF_{fuel}$ \\
+    \hline 
+    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    & $0<a<2$, $0<d<2$\\
+    & $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
+    & $0<c<2\pi$, $0<f<2\pi$\\
+    \hline
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    \hline 
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Table \ref{tab:a2b-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation a-2b converges by generation 3. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-2b hypervolume values at each generation.}
+	\label{tab:a2b-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation a-2b}} \\
+    \multicolumn{2}{c}{Reference point: (0.1, 1.5)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume value} \\
+    \hline
+    1 & 0.03377 \\
+    2 & 0.03397 \\
+    3 & 0.03401 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection{a-2c: Minimize $T_{max}$ and $PPF_{fuel}$}
+\label{sec:a-2c}
+This section reports results from the two-objective optimization simulation a-2c, the 
+objectives minimized are maximum plank temperature ($T_{max}$) and fuel-normalized 
+power peaking factor ($PPF_{fuel}$).  
 
 \pagebreak
 \section{AHTR One-Third Assembly: Three-Objective Optimization Results}
+\label{assem-three-obj}
 
 \pagebreak
 \section{AHTR One-Third Assembly: Computational Cost Summary}
