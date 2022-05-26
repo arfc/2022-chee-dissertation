@@ -466,7 +466,8 @@ most-minimized $PPF_{fuel}$.
 In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
 $PPF_{fuel}$ peaks near the edges of the fuel region of the plank, and has a minimum 
 point in center of the plank.
-This distribution is attributed to the self-shielding effects. 
+This distribution is attributed to \gls{ROLLO} trying to minimize self-shielding effects
+in the plank. 
 The edges of the fuel region have higher flux as they are closer to the graphite 
 moderator, whereas the plank's center has a lower flux due to self shielding. 
 The TRISO distribution must follow the flux shape to ensure similar fuel depletion 
@@ -568,7 +569,7 @@ If a multi-objective optimization problem's hypervolume converges earlier than t
 \ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
 However, if the multi-objective optimization problem's hypervolume does not converge by 
 generation 5, I run the problem for a few more generations till satisfactory convergence.
- 
+
 \subsection{p-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:p-2a}
 This section reports results from the two-objective optimization simulation p-2a, the 

@@ -1,0 +1,33 @@
+\section{PPF and Flux Study}
+Equation \ref{eq:reaction-rate-fission} shows the relationship between fission reaction rate, 
+flux, and material properties. 
+\begin{align}
+\label{eq:reaction-rate-fission}
+    RR_f &= \Phi \times \sigma_f \times N \\
+\intertext{where}
+    RR_f &= \mbox{fission reaction rate } [reactions \cdot cm^{-3} \cdot s^{-1}]\nonumber \\
+    \Phi &= \mbox{neutron flux } [neutrons \cdot cm^{-2} \cdot s^{-1}] \nonumber \\
+    \sigma_f &= \mbox{microscopic cross section } [cm^2] \nonumber \\
+    N &= \mbox{atomic number density } [atoms \cdot cm^{-3}] \nonumber 
+\end{align}
+
+Since microscopic cross section is constant for the same fuel material, we can rearrange 
+Equation \ref{eq:reaction-rate-fission} into Equation \ref{eq:reaction-rate-fission-prop}. 
+The fission reaction rate ($RR_f$) is proportional to fission energy production rate \\
+(\texttt{fission-q-recoverable} $[eV/src]$) used to calculate fuel-normalized power peaking 
+factor ($PPF_{fuel}$). 
+Section \ref{sec:ahtr_slab_output} details how I calculated $PPF_{fuel}$. 
+The atomic number density (N) is proportional to the fuel packing fraction. 
+We can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
+Equation \ref{eq:flux-prop-fqr}
+\begin{align}
+    \label{eq:reaction-rate-fission-prop}
+    \Phi \propto \frac{RR_f}{N}
+\end{align}
+\begin{align}
+    \label{eq:flux-prop-fqr}
+    \Phi \propto \frac{fqr}{PF}
+\end{align}
+
+Therefore, a flatter plank's thermal flux will result in a lower fuel-normalized power peaking 
+factor. 
