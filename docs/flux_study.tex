@@ -32,7 +32,7 @@ PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 \end{align}
 The fission reaction rate ($RR_f$) is proportional to fission energy production rate ($fqr$). 
 The atomic number density (N) is proportional to the fuel packing fraction ($PF$). 
-We can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
+Thus, we can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
 Equation \ref{eq:flux-prop-fqr}:
 \begin{align}
     \label{eq:flux-prop-fqr}
@@ -43,5 +43,26 @@ Equation \ref{eq:flux-prop-fqr}:
     PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 \end{align}
 
-Therefore, an overall flatter plank thermal flux will result in a lower fuel-normalized power 
+An overall flatter plank thermal flux will result in a lower fuel-normalized power 
 peaking factor. 
+Table \ref{tab:fission-flux} shows the percentage contributions of fission reactions from 
+each energy group. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Percentage fission reaction rate from each energy group for plank model.}
+	\label{tab:fission-flux}
+    \footnotesize
+    \begin{tabular}{llp{4cm}}
+    \hline 
+    \textbf{Energy Group} & \textbf{sBound} & \textbf{Percentage of Total Fission Reactions [\%]} \\
+    \hline
+    1 & $9.1188\times 10^{-3} < E < 2.0000\times 10^1$ & 0.85 \\ 
+    2 & $2.9023\times 10^{-5} < E < 9.1188\times 10^{-3}$ & 4.85 \\
+    3 & $1.8554\times 10^{-6} < E < 2.9023\times 10^{-5}$ & 4.14 \\
+    4 & $1.0000\times 10^{-12} < E < 1.8554\times 10^{-6}$ & 90.14 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
