@@ -391,7 +391,7 @@ distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
     $PF_{total}$ = 0.023 TRISO distribution.}
 	\label{tab:0.023-plank-fission-rate}
     \footnotesize
-    \begin{tabular}{llp{4cm}p{4cm}p{5cm}}
+    \begin{tabular}{llp{4cm}p{2.7cm}p{6cm}}
     \hline
     \textbf{Group} & 
     \textbf{$\%$ of Total} &
@@ -402,10 +402,14 @@ distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
     1 & 0.21 & 0.001260 & 0.001234 & 1.0207 \\
     2 & 1.16 & 0.006653 & 0.006658 & 0.9992 \\
     3 & 1.15 & 0.006566 & 0.006580 & 0.9978 \\
-    4 & 97.44 & 0.556897 & 0.555889 & 1.0018 \\
+    4 & 97.46 & 0.556897 & 0.555889 & 1.0018 \\
     \hline
     \end{tabular}
 \end{table}
+
+In Group 4, most-minimized $PF_{total}$ TRISO distribution has 1.0018x higher  
+\texttt{fission} (total fission reaction rate) than the 
+constant $PF_{total}$ = 0.023 TRISO distribution.
 
 Table \ref{tab:0.023-plank-nu-fission-rate} compares \texttt{nu-fission} (total 
 production of neutrons due to fission) between the most-minimized $PF_{total}$ TRISO 
@@ -418,7 +422,7 @@ distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
     $PF_{total}$ = 0.023 TRISO distribution.}
 	\label{tab:0.023-plank-nu-fission-rate}
     \footnotesize
-    \begin{tabular}{llp{4cm}p{4cm}p{5cm}}
+    \begin{tabular}{llp{4cm}p{2.7cm}p{6cm}}
     \hline
     \textbf{Group} & 
     \textbf{$\%$ of Total} &
@@ -429,10 +433,14 @@ distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
     1 & 0.23 & 0.003275 & 0.003206 & 1.0216 \\
     2 & 1.16 & 0.016198 & 0.016210 & 0.9992 \\
     3 & 1.15 & 0.016000 & 0.016034 & 0.9978 \\
-    4 & 97.44& 1.356992 & 1.354534 & 1.001 \\
+    4 & 97.44& 1.356992 & 1.354534 & 1.0018 \\
     \hline
     \end{tabular}
 \end{table}
 
-Minimize $PF_{total}$ objective is driven by maximizing total fission reaction rate in 
-thermal energy group (Group 4). 
+In Group 4, most-minimized $PF_{total}$ TRISO distribution has 1.0018x higher  
+\texttt{nu-fission} (total production of neutrons due to fission) than the 
+constant $PF_{total}$ = 0.023 TRISO distribution.
+
+Minimize $PF_{total}$ objective is driven by maximizing total nu-fission and fission 
+reaction rates in thermal energy group (Group 4). 
