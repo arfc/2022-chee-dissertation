@@ -1450,12 +1450,14 @@ Equation \ref{eq:flux-prop-fqr}:
 We can further rearrange into Equation \ref{eq:flux-prop-ppf}:
 \begin{align}
     \label{eq:flux-prop-ppf}
-    max(\Phi_j)/ave(\Phi_j) &\propto max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j}) \nonumber \\
+    max(\Phi_j) \div ave(\Phi_j) &\propto max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j}) \nonumber \\
     &\propto PPF_{fuel}
 \end{align}
 
 Therefore, from Equation \ref{eq:flux-prop-ppf}, a flatter flux (smaller 
-$max(\Phi_j)/ave(\Phi_j)$ value) will result in a smaller $PPF_{fuel}$. 
+$max(\Phi_j) \div ave(\Phi_j)$ value) will result in a smaller $PPF_{fuel}$. 
+In the following section, I demonstrate this relationship in simulation p-1c and p-2b's 
+results. 
 
 \subsubsection{Results Analysis}
 \label{sec:plank-discussion-ppf-results}
@@ -1466,7 +1468,19 @@ TRISO distribution with peaks near the edges of the fuel region of the plank and
 minimum point in center of the plank, most-minimized $PPF_{fuel}$. 
 
 I ran a simulation for constant $PF_{total}$ = 0.00979 and compared its 
-flux with the 
+flux to simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution to understand 
+why the latter enabled a lower $PPF_{fuel}$. 
+Figure \ref{fig:triso-0.0979} shows the TRISO distributions for the two compared 
+simulations: Figure \ref{fig:slab-obj-1-ppf}'s most-minimized $PPF_{fuel}$
+TRISO distribution and the constant $PF_{total}$ = 0.0979 TRISO distribution. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{triso-0.0979.png} 
+    \caption{Simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
+    from Figure \ref{fig:slab-obj-1-ppf} and the constant $PF_{total}$ = 0.0979 
+    TRISO distribution.}
+    \label{fig:triso-0.0979}
+\end{figure}
  
 
 \subsection{Discussion: Multi-Objective Optimization}
