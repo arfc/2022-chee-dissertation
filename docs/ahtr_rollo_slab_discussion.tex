@@ -63,6 +63,10 @@ $PF_{total}$ = 0.023 TRISO distribution, explaining why the oscillating TRISO
 distribution enabled a lower packing fraction for the same $k_{eff}$ compared to the 
 constant TRISO distribution. 
 
+\paragraph{Simulation p-1d}
+Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
+between $PF_{total}$ and coolant channel shape. 
+
 \paragraph{Summary}
 Therefore, I conclude that the minimize $PF_{total}$ objective is driven by maximizing 
 the fission reaction rates in the thermal energy group (Group 4). 
@@ -370,6 +374,19 @@ Higher $PF_{total}$ in simulation p-1b means that there is more fuel, resulting 
 higher self-shielding effects. 
 This results in TRISO distribution variation having a stronger effect in neutralizing 
 self-shielding. 
+
+\paragraph{Simulation p-1f}
+In Section \ref{sec:plank-1-obj-ppf}, I conducted single-objective optimization 
+simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) while 
+varying coolant channel shape. 
+Comparison of simulation p-1c and p-1f's results in Figures 
+\ref{fig:slab-obj-1-ppf-evol-coolant} and \ref{fig:slab-obj-1-ppf-evol}
+show that coolant channel shape variation barely has an impact on $PPF_{fuel}$ as 
+\gls{TRISO} distribution variation: the average $PPF_{fuel}$ due to \gls{TRISO} 
+variation decreased by 0.1 over 10 generations, while average $PPF_{fuel}$ due to 
+coolant channel shape variation only decreased negligibly over 10 generations. 
+Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
+between total radius and $PPF_{fuel}$. 
 
 \paragraph{Summary}
 Therefore, I conclude that the minimize $PPF_{fuel}$ objective is driven by flattening 
