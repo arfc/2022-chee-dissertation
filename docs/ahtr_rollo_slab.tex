@@ -31,13 +31,13 @@ to select hyperparameters for the single-objective and multi-objective \gls{ROLL
 optimization simulations.
 
 The subsequent sections outline the \gls{AHTR} plank optimization simulations, describe 
-the results of the single-objective and multi-objective \gls{ROLLO} optimization 
-simulations, report each simulation's computational cost, and discuss the results' 
+the single-objective and multi-objective \gls{ROLLO} optimization simulation results, 
+report each simulation's computational cost, and discuss the results' 
 significance.
 
 \section{ROLLO AHTR Plank Optimization Simulations Overview}
 Table \ref{tab:slab-obj-breakdown} shows the details of each \gls{ROLLO} 
-optimization simulation explored in this chapter.
+optimization simulation conducted in this chapter.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -114,9 +114,12 @@ grouped by the minimized objective.
 
 If a single-objective optimization problem's objective converges earlier than the 
 5 generations I intended to run (determined in Section 
-\ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
+\ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation.
+Section \ref{sec:rollo-convergence} describes how reactor designers use 
+\gls{ROLLO} to determine problem convergence. 
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
+\label{sec:one-obj-pf}
 This section reports results from the minimize total fuel packing fraction 
 ($PF_{total}$) single-objective optimization simulations: p-1a and p-1d. 
 Simulation p-1a varies total fuel packing fraction and \gls{TRISO} packing fraction 
@@ -189,8 +192,8 @@ In Figure \ref{fig:slab-obj-1-pf-final}, the \gls{TRISO} packing fraction
 sine distributions are not exactly the same, but follow a similar pattern of 
 alternating between a higher packing fraction, and a lower packing fraction 
 in the neighboring fuel cell. 
-The oscillating fuel packing pattern minimizes self-shielding effects, enabling  
-a lower packing fraction for the same $k_{eff}$. 
+%The oscillating fuel packing pattern minimizes self-shielding effects, enabling  
+%a lower packing fraction for the same $k_{eff}$. 
 
 \subsubsection{Simulation p-1d: Variation of $PF_{total}$ and Coolant channel shape}
 Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
@@ -1328,6 +1331,92 @@ Table \ref{tab:slab-obj-breakdown} detailed the simulation parameters.
 
 \section{AHTR Plank Optimization Results Discussion and Significance}
 \label{sec:plank-discussion}
+In this section, I conduct a deep-dive to understand the motivating factors for 
+each individual objective, and how their combined effects result in the optimal 
+reactor models found by the three-multi-objective optimization simulations. 
+
+\subsection{Discussion: Minimize $PF_{total}$ Objective}
+\label{sec:plank-discussion-pf}
+In Section \ref{sec:one-obj-pf}, I conducted single-objective optimization 
+simulations to minimize total fuel packing fraction ($PF_{total}$). 
+In simulation p-1a, \gls{ROLLO} found that an \gls{AHTR} plank model with an 
+oscillating fuel packing pattern most-minimized $PF_{total}$ while meeting the 
+$k_{eff} \leq 1.35$ constraint (Figure \ref{fig:slab-obj-1-pf}). 
+
+I ran a simulation for constant $PF_{total}$ = 0.023 and compared its 
+flux and fission reaction rate with the oscillating fuel packing pattern TRISO
+distribution to understand why the oscillating fuel pattern enabled a lower 
+packing fraction. 
+Figure \ref{fig:triso-0.023} shows the TRISO distributions for the two compared 
+simulations: Figure \ref{fig:slab-obj-1-pf}'s most-minimized $PF_{total}$ 
+TRISO distribution (oscillating fuel packing pattern) and the constant 
+$PF_{total}$ = 0.023 TRISO distribution. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=\linewidth]{triso-0.023.png} 
+    \caption{}
+    \label{fig:triso-0.023}
+\end{figure}
+Figure \ref{fig:flux-comparison-0.023-plank} compares the flux distributions from 
+TRISO distributions in Figure \ref{fig:triso-0.023}. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp1.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp2.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp3.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp4.png} 
+    \caption{Flux comparison between Figure \ref{fig:slab-obj-1-pf}'s TRISO 
+    distribution that most-minimized $PF_{total}$ and a constant $PF_{total}$ = 0.023
+    TRISO distribution. 
+    \acrfull{AHTR} plank's centerline neutron flux distribution in 4 groups at 948K. 
+    Centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
+    \label{fig:flux-comparison-0.023-plank}
+\end{figure}
+
+
+Table \ref{tab:0.023-plank-fission-rate} compares the \texttt{fission} 
+(total fission reaction rate) between the most-minimized $PF_{total}$ TRISO 
+distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{\texttt{fission} (total fission reaction rate) comparison 
+    between the most-minimized $PF_{total}$ TRISO distribution and a constant 
+    $PF_{total}$ = 0.023 TRISO distribution.}
+	\label{tab:0.023-plank-fission-rate}
+    \footnotesize
+    \begin{tabular}{llp{4cm}p{2.7cm}p{6cm}}
+    \hline
+    \textbf{Group} & 
+    \textbf{$\%$ of Total} &
+    \textbf{Most-minimized $PF_{total}$ fission} & 
+    \textbf{Flat $PF_{total}$ fission} & 
+    \textbf{sum(most-minimized $PF_{total}$ fission) / sum(flat $PF_{total}$ fission)}\\
+    \hline 
+    1 & 0.21 & 0.001260 & 0.001234 & 1.0207 \\
+    2 & 1.16 & 0.006653 & 0.006658 & 0.9992 \\
+    3 & 1.15 & 0.006566 & 0.006580 & 0.9978 \\
+    4 & 97.46 & 0.556897 & 0.555889 & 1.0018 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+In Group 4, the most-minimized $PF_{total}$ TRISO distribution has 1.0018x higher  
+\texttt{fission} (total fission reaction rate) than the 
+constant $PF_{total}$ = 0.023 TRISO distribution.
+
+Minimize $PF_{total}$ objective is driven by maximizing the fission reaction rates 
+in thermal energy group (Group 4). 
+
+\subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
+\label{sec:plank-discussion-ppf}
+ 
+
+\subsection{Discussion: Multi-Objective Optimization}
 \gls{ROLLO} successfully finds widely spread solutions in each of the multi-objective 
 optimization final generation's Pareto front.
 \gls{ROLLO} is a global search of a large design space and helps narrow down possible 
