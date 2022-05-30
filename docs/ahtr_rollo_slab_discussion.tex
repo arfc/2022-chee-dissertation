@@ -6,6 +6,7 @@ reactor models found by the three-multi-objective optimization simulations.
 
 \subsection{Discussion: Minimize $PF_{total}$ Objective}
 \label{sec:plank-discussion-pf}
+\paragraph{Simulation p-1a}
 In Section \ref{sec:plank-1-obj-pf}, I conducted single-objective optimization 
 simulations to minimize total fuel packing fraction ($PF_{total}$). 
 In simulation p-1a, \gls{ROLLO} found that an \gls{AHTR} plank model with an 
@@ -62,6 +63,7 @@ $PF_{total}$ = 0.023 TRISO distribution, explaining why the oscillating TRISO
 distribution enabled a lower packing fraction for the same $k_{eff}$ compared to the 
 constant TRISO distribution. 
 
+\paragraph{Summary}
 Therefore, I conclude that the minimize $PF_{total}$ objective is driven by maximizing 
 the fission reaction rates in the thermal energy group (Group 4). 
 
@@ -69,7 +71,8 @@ the fission reaction rates in the thermal energy group (Group 4).
 \label{sec:plank-discussion-temp}
 \paragraph{Simulation p-1b}
 In Section \ref{sec:plank-1-obj-temp}, I conducted single-objective optimization 
-simulations to minimize maximum plank temperature ($T_{max}$). 
+simulations to minimize maximum plank temperature ($T_{max}$) while varying TRISO 
+distribution. 
 In simulation p-1b, \gls{ROLLO} found that an \gls{AHTR} plank model with a mostly 
 flat TRISO distribution most-minimized $T_{max}$ 
 (Figure \ref{fig:slab-obj-1-temp-final}).
@@ -92,6 +95,18 @@ on the left and right sides near the moderator.
 To combat this temperature peak, ROLLO found a \gls{TRISO} distribution that 
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
+\paragraph{Simulation p-1e}
+In Section \ref{sec:plank-1-obj-temp}, I conducted single-objective optimization 
+simulations to minimize maximum plank temperature ($T_{max}$) while varying coolant 
+channel shape. 
+In simulation p-1e, \gls{ROLLO} found that there is a negative linear correlation 
+between the plank's $T_{max}$ and total radius. 
+Comparison of simulation p-1b and p-1e's results in 
+Figures \ref{fig:slab-obj-1-temp-evol} and \ref{fig:slab-obj-1-temp-evol-coolant} 
+show that coolant channel shape variation does not have as high of an impact on 
+$T_{max}$ as \gls{TRISO} distribution variation: the average $T_{max}$ due to 
+\gls{TRISO} variation decreased by 60K over 10 generations, while average $T_{max}$ due 
+to coolant channel shape variation only decreased by 15K over 10 generations. 
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:plank-discussion-ppf}
@@ -356,6 +371,7 @@ higher self-shielding effects.
 This results in TRISO distribution variation having a stronger effect in neutralizing 
 self-shielding. 
 
+\paragraph{Summary}
 Therefore, I conclude that the minimize $PPF_{fuel}$ objective is driven by flattening 
 thermal (Group 4) flux. 
 
