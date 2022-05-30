@@ -1091,7 +1091,7 @@ In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with
 most-minimized $PF_{total}$ (the purple distribution) has an oscillating fuel 
 packing pattern (also illustrated in Figure \ref{fig:slab-obj-3-min-pf}).
 This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
-distribution (Figure \ref{fig:slab-obj-1-pf-final}) with its oscillating fuel pattern. 
+distribution (Figure \ref{fig:slab-obj-1-pf-final}) with its oscillating TRISO distribution. 
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the 
 most-minimized $T_{max}$ (the orange distribution) has mostly flat TRISO distribution 
 (also illustrated in Figure \ref{fig:slab-obj-3-min-temp}). 
@@ -1341,11 +1341,11 @@ In Section \ref{sec:one-obj-pf}, I conducted single-objective optimization
 simulations to minimize total fuel packing fraction ($PF_{total}$). 
 In simulation p-1a, \gls{ROLLO} found that an \gls{AHTR} plank model with an 
 oscillating fuel packing pattern most-minimized $PF_{total}$ while meeting the 
-$k_{eff} \leq 1.35$ constraint (Figure \ref{fig:slab-obj-1-pf}). 
+$k_{eff} \geq 1.35$ constraint (Figure \ref{fig:slab-obj-1-pf}). 
 
 I ran a simulation for constant $PF_{total}$ = 0.023 and compared its 
-flux and fission reaction rate with the oscillating fuel packing pattern TRISO
-distribution to understand why the oscillating fuel pattern enabled a lower 
+fission reaction rate with the oscillating fuel packing pattern TRISO
+distribution to understand why the oscillating TRISO distribution enabled a lower 
 packing fraction. 
 Figure \ref{fig:triso-0.023} shows the TRISO distributions for the two compared 
 simulations: Figure \ref{fig:slab-obj-1-pf}'s most-minimized $PF_{total}$ 
@@ -1353,30 +1353,10 @@ TRISO distribution (oscillating fuel packing pattern) and the constant
 $PF_{total}$ = 0.023 TRISO distribution. 
 \begin{figure}[htbp!]
     \centering
-    \includegraphics[width=\linewidth]{triso-0.023.png} 
+    \includegraphics[width=0.9\linewidth]{triso-0.023.png} 
     \caption{}
     \label{fig:triso-0.023}
 \end{figure}
-Figure \ref{fig:flux-comparison-0.023-plank} compares the flux distributions from 
-TRISO distributions in Figure \ref{fig:triso-0.023}. 
-\begin{figure}[htbp!]
-    \centering
-    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp1.png} 
-    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp2.png} 
-    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp3.png} 
-    \includegraphics[width=0.48\linewidth]{flux-comparison-0.023-plank_grp4.png} 
-    \caption{Flux comparison between Figure \ref{fig:slab-obj-1-pf}'s TRISO 
-    distribution that most-minimized $PF_{total}$ and a constant $PF_{total}$ = 0.023
-    TRISO distribution. 
-    \acrfull{AHTR} plank's centerline neutron flux distribution in 4 groups at 948K. 
-    Centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
-    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
-    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
-    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
-    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
-    \label{fig:flux-comparison-0.023-plank}
-\end{figure}
-
 
 Table \ref{tab:0.023-plank-fission-rate} compares the \texttt{fission} 
 (total fission reaction rate) between the most-minimized $PF_{total}$ TRISO 
@@ -1395,22 +1375,27 @@ distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
     \textbf{$\%$ of Total} &
     \textbf{Most-minimized $PF_{total}$ fission} & 
     \textbf{Flat $PF_{total}$ fission} & 
-    \textbf{sum(most-minimized $PF_{total}$ fission) / sum(flat $PF_{total}$ fission)}\\
+    \textbf{$\%$ fission difference}\\
     \hline 
-    1 & 0.21 & 0.001260 & 0.001234 & 1.0207 \\
-    2 & 1.16 & 0.006653 & 0.006658 & 0.9992 \\
-    3 & 1.15 & 0.006566 & 0.006580 & 0.9978 \\
-    4 & 97.46 & 0.556897 & 0.555889 & 1.0018 \\
+    1 & 0.21 & 0.001260 & 0.001234 & \Plus2.07 \\
+    2 & 1.16 & 0.006653 & 0.006658 & \Minus0.07 \\
+    3 & 1.15 & 0.006566 & 0.006580 & \Minus0.21 \\
+    4 & 97.46 & 0.556897 & 0.555889 & \Plus0.18 \\
     \hline
     \end{tabular}
 \end{table}
 
-In Group 4, the most-minimized $PF_{total}$ TRISO distribution has 1.0018x higher  
-\texttt{fission} (total fission reaction rate) than the 
-constant $PF_{total}$ = 0.023 TRISO distribution.
+In Group 4, the most-minimized $PF_{total}$ TRISO distribution has $0.18\%$ higher  
+\texttt{fission} (total fission reaction rate) than the constant 
+$PF_{total}$ = 0.023 TRISO distribution, explaining why the oscillating TRISO 
+distribution enabled a lower packing fraction for the same $k_{eff}$ as the 
+constant TRISO distribution. 
 
-Minimize $PF_{total}$ objective is driven by maximizing the fission reaction rates 
-in thermal energy group (Group 4). 
+Therefore, the minimize $PF_{total}$ objective is driven by maximizing the fission 
+reaction rates in thermal energy group (Group 4). 
+
+\subsection{Discussion: Minimize $T_{max}$ Objective}
+\label{sec:plank-discussion-temp}
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:plank-discussion-ppf}
