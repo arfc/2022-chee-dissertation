@@ -1406,8 +1406,7 @@ In an effort to understand the motivating factors for the minimize $PPF_{fuel}$
 objective, I conduct an equation analysis in Section
 \ref{sec:plank-discussion-ppf-equation} to determine the \gls{AHTR} plank properties 
 that influence $PPF_{fuel}$. 
-In the following Section \ref{sec:plank-discussion-ppf-results}, I demonstrate the 
-relationship derived in Section \ref{sec:plank-discussion-ppf-equation}. 
+I also demonstrate the relationship derived for simulation p-1c and p-2b's results. 
 
 \subsubsection{Equation Analysis}
 \label{sec:plank-discussion-ppf-equation}
@@ -1456,6 +1455,29 @@ We can further rearrange into Equation \ref{eq:flux-prop-ppf}:
 
 Therefore, from Equation \ref{eq:flux-prop-ppf}, a flatter flux (smaller 
 $max(\Phi_j) \div ave(\Phi_j)$ value) will result in a smaller $PPF_{fuel}$. 
+Specifically, flatter Group 4 thermal flux results in a smaller $PPF_{fuel}$
+(see Table \ref{tab:fission-flux}). 
+Table \ref{tab:fission-flux} shows the percentage contributions of fission reactions from 
+each energy group. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Percentage of fission reactions from each energy group for \gls{AHTR} plank model.}
+	\label{tab:fission-flux}
+    \footnotesize
+    \begin{tabular}{llp{4cm}}
+    \hline 
+    \textbf{Energy Group} & \textbf{sBound} & \textbf{Percentage of Total Fission Reactions [\%]} \\
+    \hline
+    1 & $9.1188\times 10^{-3} < E < 2.0000\times 10^1$ & 0.85 \\ 
+    2 & $2.9023\times 10^{-5} < E < 9.1188\times 10^{-3}$ & 4.85 \\
+    3 & $1.8554\times 10^{-6} < E < 2.9023\times 10^{-5}$ & 4.14 \\
+    4 & $1.0000\times 10^{-12} < E < 1.8554\times 10^{-6}$ & 90.14 \\
+    \hline
+    \end{tabular}
+\end{table}
+Most fission reactions are occurring in Energy Group 4. 
+
 In the following section, I demonstrate this relationship in simulation p-1c and p-2b's 
 results. 
 
