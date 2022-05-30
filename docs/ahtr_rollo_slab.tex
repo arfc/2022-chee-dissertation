@@ -1394,8 +1394,8 @@ $PF_{total}$ = 0.023 TRISO distribution, explaining why the oscillating TRISO
 distribution enabled a lower packing fraction for the same $k_{eff}$ compared to the 
 constant TRISO distribution. 
 
-Therefore, the minimize $PF_{total}$ objective is driven by maximizing the fission 
-reaction rates in the thermal energy group (Group 4). 
+Therefore, I conclude that the minimize $PF_{total}$ objective is driven by maximizing 
+the fission reaction rates in the thermal energy group (Group 4). 
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:plank-discussion-temp}
@@ -1528,8 +1528,8 @@ TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux-comparison-0.0979-plank}
 \end{figure}
-In Figure \ref{fig:flux-comparison-0.0979-plank}, the constant distribution's Group 4 flux 
-dips in the center of the plank due to spatial self-shielding effects. 
+In Figure \ref{fig:flux-comparison-0.0979-plank}, the constant distribution's Group 4 
+flux dips in the center of the plank due to spatial self-shielding effects. 
 In the Group 1 flux distribution, there is a peak in fast neutrons born in the plank's 
 center, they are moderated in the graphite matrix and graphite structure 
 (Figure \ref{fig:straightened_plank}). 
@@ -1654,9 +1654,17 @@ $PF_{total}$ = 0.0292 TRISO distribution (both shown in Figure \ref{fig:triso-0.
 In Energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $0.28\%$ flatter 
 than the constant $PF_{total}$ = 0.0292 flux distribution, resulting in a lower 
 $PPF_{fuel}$. 
+In the previous section, simulation p-1c's most-minimized $PPF_{fuel}$ flux 
+distribution is $3.96\%$ flatter than the constant $PF_{total}$ = 0.0979 flux 
+distribution with $\sim 0.07$ variation in TRISO distribution. 
+This contrasts with simulation p-2b's $\sim 0.02$ variation in TRISO distribution. 
+Higher $PF_{total}$ in simulation p-1b means that there is more fuel, resulting in 
+higher self-shielding effects. 
+This results in TRISO distribution variation having a stronger effect in neutralizing 
+self-shielding. 
 
-Therefore, the minimize $PPF_{fuel}$ objective is driven by flattening thermal 
-(Group 4) flux. 
+Therefore, I conclude that the minimize $PPF_{fuel}$ objective is driven by flattening 
+thermal (Group 4) flux. 
 
 \subsection{Discussion: Multi-Objective Optimization}
 \gls{ROLLO} successfully finds widely spread solutions in each of the multi-objective 
