@@ -1358,23 +1358,24 @@ $PF_{total}$ = 0.023 TRISO distribution.
     \label{fig:triso-0.023}
 \end{figure}
 
-Table \ref{tab:0.023-plank-fission-rate} compares the \texttt{fission} 
-(total fission reaction rate) between the most-minimized $PF_{total}$ TRISO 
-distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
+Table \ref{tab:0.023-plank-fission-rate} compares the total fission reaction rate 
+(OpenMC \texttt{fission} tally) between the most-minimized $PF_{total}$ TRISO 
+distribution and a constant $PF_{total}$ = 0.023 TRISO distribution (shown in 
+Figure \ref{fig:triso-0.023}).
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
-    \caption{\texttt{fission} (total fission reaction rate) comparison 
-    between the most-minimized $PF_{total}$ TRISO distribution and a constant 
-    $PF_{total}$ = 0.023 TRISO distribution.}
+    \caption{Total fission reaction rate comparison between the most-minimized 
+    $PF_{total}$ TRISO distribution and a constant $PF_{total}$ = 0.023 TRISO 
+    distribution.}
 	\label{tab:0.023-plank-fission-rate}
     \footnotesize
-    \begin{tabular}{llp{4cm}p{2.7cm}p{6cm}}
+    \begin{tabular}{p{2cm}lp{4cm}p{2.7cm}p{4cm}}
     \hline
-    \textbf{Group} & 
+    \textbf{Energy Group} & 
     \textbf{$\%$ of Total} &
-    \textbf{Most-minimized $PF_{total}$ fission} & 
-    \textbf{Flat $PF_{total}$ fission} & 
+    \textbf{Most-minimized $PF_{total}$ fission [reactions/src]} & 
+    \textbf{Flat $PF_{total}$ fission [reactions/src]} & 
     \textbf{$\%$ fission difference}\\
     \hline 
     1 & 0.21 & 0.001260 & 0.001234 & \Plus2.07 \\
@@ -1384,11 +1385,10 @@ distribution and a constant $PF_{total}$ = 0.023 TRISO distribution.
     \hline
     \end{tabular}
 \end{table}
-
 In Group 4, the most-minimized $PF_{total}$ TRISO distribution has $0.18\%$ higher  
 \texttt{fission} (total fission reaction rate) than the constant 
 $PF_{total}$ = 0.023 TRISO distribution, explaining why the oscillating TRISO 
-distribution enabled a lower packing fraction for the same $k_{eff}$ as the 
+distribution enabled a lower packing fraction for the same $k_{eff}$ compared to the 
 constant TRISO distribution. 
 
 Therefore, the minimize $PF_{total}$ objective is driven by maximizing the fission 
