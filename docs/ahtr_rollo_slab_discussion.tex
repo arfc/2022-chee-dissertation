@@ -6,7 +6,7 @@ reactor models found by the three-multi-objective optimization simulations.
 
 \subsection{Discussion: Minimize $PF_{total}$ Objective}
 \label{sec:plank-discussion-pf}
-In Section \ref{sec:one-obj-pf}, I conducted single-objective optimization 
+In Section \ref{sec:plank-1-obj-pf}, I conducted single-objective optimization 
 simulations to minimize total fuel packing fraction ($PF_{total}$). 
 In simulation p-1a, \gls{ROLLO} found that an \gls{AHTR} plank model with an 
 oscillating fuel packing pattern most-minimized $PF_{total}$ while meeting the 
@@ -67,8 +67,14 @@ the fission reaction rates in the thermal energy group (Group 4).
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:plank-discussion-temp}
+\paragraph{Simulation p-1b}
+In Section \ref{sec:plank-1-obj-temp}, I conducted single-objective optimization 
+simulations to minimize maximum plank temperature ($T_{max}$). 
+In simulation p-1b, \gls{ROLLO} found that an \gls{AHTR} plank model with a mostly 
+flat TRISO distribution most-minimized $T_{max}$ 
+(Figure \ref{fig:slab-obj-1-temp-final}).
 
-A fully flat \gls{TRISO} distribution results in a higher $T_{max}$.
+I found that a fully flat \gls{TRISO} distribution results in a higher $T_{max}$.
 Figure \ref{fig:slab-obj-1-temp-distr} compares the Moltres-generated centerline 
 temperature distribution for the plank with mostly flat (Figure 
 \ref{fig:slab-obj-1-temp-final}) and flat TRISO distributions for the same 
@@ -171,7 +177,7 @@ results.
 \label{sec:plank-discussion-ppf-results}
 
 \paragraph{Simulation p-1c}
-In Section \ref{sec:one-obj-ppf}, I conducted single-objective optimization 
+In Section \ref{sec:plank-1-obj-ppf}, I conducted single-objective optimization 
 simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$). 
 In simulation p-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.0979, an \gls{AHTR} 
 plank model with TRISO distribution that peaks near the edges of the fuel region of 
