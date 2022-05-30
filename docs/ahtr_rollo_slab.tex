@@ -1483,11 +1483,14 @@ results.
 
 \subsubsection{Results Analysis}
 \label{sec:plank-discussion-ppf-results}
+
+\paragraph{Simulation p-1c}
 In Section \ref{sec:one-obj-ppf}, I conducted single-objective optimization 
 simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$). 
 In simulation p-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.0979, an \gls{AHTR} 
 plank model with TRISO distribution that peaks near the edges of the fuel region of 
-the plank and a minimum point in center of the plank, most-minimized $PPF_{fuel}$. 
+the plank and a minimum point in center of the plank with a variation of $\sim0.07$, 
+most-minimized $PPF_{fuel}$. 
 
 I ran a simulation for constant $PF_{total}$ = 0.0979 and compared its 
 flux to simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution to understand 
@@ -1507,7 +1510,7 @@ their $PPF_{fuel}$ values.
 
 Figure \ref{fig:flux-comparison-0.0979-plank} compares the flux distributions between 
 the most-minimized $PPF_{fuel}$ TRISO distribution and a constant $PF_{total}$ = 0.0979 
-TRISO distribution (both shown in Figure \ref{fig:triso-0.023}).
+TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp1.png} 
@@ -1568,6 +1571,56 @@ $PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.
 In Energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $3.96\%$ flatter 
 than the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a lower 
 $PPF_{fuel}$. 
+
+\paragraph{Simulation p-2b}
+In Section \ref{sec:p-2b}, I conducted a two-objective optimization 
+simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) and 
+total fuel packing fraction ($PF_{total}$). 
+In simulation p-2b, the TRISO distribution with the most-minimized $PPF_{fuel}$ 
+has $PF_{total}$ = 0.0029 and a TRISO distribution that peaks in the center of the plank
+and both sides, with a variation of $\sim0.02$.
+This distribution differs from simulation p-1c's most-minimized $PPF_{fuel}$ TRISO 
+distribution (Figure \ref{fig:slab-obj-1-ppf-final}) which has a large $\sim 0.07$ 
+variation in TRISO distribution. 
+
+I ran a simulation for constant $PF_{total}$ = 0.029 and compared its 
+flux to simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution to understand 
+why the latter enabled a lower $PPF_{fuel}$. 
+Figure \ref{fig:triso-0.029} shows the TRISO distributions for the two compared 
+simulations: Figure xx's most-minimized $PPF_{fuel}$
+TRISO distribution and the constant $PF_{total}$ = 0.029 TRISO distribution with 
+their $PPF_{fuel}$ values. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{triso-0.029.png} 
+    \caption{Simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution 
+    from Figure xx and the constant $PF_{total}$ = 0.029 
+    TRISO distribution.}
+    \label{fig:triso-0.029}
+\end{figure}
+
+Figure \ref{fig:flux-comparison-0.0292-plank} compares the flux distributions between 
+simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution and a 
+constant $PF_{total}$ = 0.0292 TRISO distribution (both shown in Figure 
+\ref{fig:triso-0.029}).
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0292-plank_grp1.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0292-plank_grp2.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0292-plank_grp3.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0292-plank_grp4.png} 
+    \caption{Flux comparison between Figure xx's TRISO 
+    distribution that most-minimized $PPF_{fuel}$ and a constant $PF_{total}$ = 0.0292 
+    TRISO distribution. 
+    \acrfull{AHTR} plank's centerline neutron flux distribution in 4 groups at 948K. 
+    Centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
+    \label{fig:flux-comparison-0.0292-plank}
+\end{figure}
+
 
 \subsection{Discussion: Multi-Objective Optimization}
 \gls{ROLLO} successfully finds widely spread solutions in each of the multi-objective 
