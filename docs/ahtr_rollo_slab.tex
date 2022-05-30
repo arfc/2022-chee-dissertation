@@ -192,8 +192,9 @@ In Figure \ref{fig:slab-obj-1-pf-final}, the \gls{TRISO} packing fraction
 sine distributions are not exactly the same, but follow a similar pattern of 
 alternating between a higher packing fraction, and a lower packing fraction 
 in the neighboring fuel cell. 
-%The oscillating fuel packing pattern minimizes self-shielding effects, enabling  
-%a lower packing fraction for the same $k_{eff}$. 
+
+Section \ref{sec:plank-discussion-pf} provides discussion about the motivating factors 
+for the minimize $PF_{total}$ objective. 
 
 \subsubsection{Simulation p-1d: Variation of $PF_{total}$ and Coolant channel shape}
 Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
@@ -470,15 +471,9 @@ most-minimized $PPF_{fuel}$.
 In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
 $PPF_{fuel}$ peaks near the edges of the fuel region of the plank, and has a minimum 
 point in center of the plank.
-%This distribution is attributed to \gls{ROLLO} trying to minimize self-shielding effects
-%in the plank. 
-%The edges of the fuel region have higher flux as they are closer to the graphite 
-%moderator, whereas the plank's center has a lower flux due to self shielding. 
-%The TRISO distribution must follow the flux shape to ensure similar fuel depletion 
-%rates for different flux regions. 
-%Thus, to minimize $PPF_{fuel}$, \gls{ROLLO} found a plank 
-%\gls{TRISO} distribution that has higher packing fraction at the edges, and a 
-%lower packing fraction in the center. 
+
+Section \ref{sec:plank-discussion-ppf} provides discussion about the motivating factors 
+for the minimize $PPF_{fuel}$ objective. 
 
 \subsubsection{Simulation p-1f: Variation of Coolant Channel Shape}
 Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
@@ -532,10 +527,10 @@ radius ($r_{top} + r_{bot}$) against $PPF_{fuel}$.
 
 Comparison of Figures \ref{fig:slab-obj-1-ppf-evol-coolant} and 
 \ref{fig:slab-obj-1-ppf-evol} show that coolant channel shape variation 
-does not have as high of an impact on $PPF_{fuel}$ as \gls{TRISO} distribution variation:  
-the average $PPF_{fuel}$ due to \gls{TRISO} variation decreased by 0.1 over 10 generations, 
-while average $PPF_{fuel}$ due to coolant channel shape variation only decreased negligibly
-over 10 generations. 
+does not have as high of an impact on $PPF_{fuel}$ as \gls{TRISO} distribution 
+variation: the average $PPF_{fuel}$ due to \gls{TRISO} variation decreased by 0.1 
+over 10 generations, while average $PPF_{fuel}$ due to coolant channel shape variation 
+only decreased negligibly over 10 generations. 
 Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
 between total radius and $PPF_{fuel}$. 
 
