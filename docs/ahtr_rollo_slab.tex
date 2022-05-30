@@ -1363,7 +1363,7 @@ $PF_{total}$ = 0.023 TRISO distribution.
 
 Table \ref{tab:0.023-plank-fission-rate} compares the total fission reaction rate 
 (OpenMC \texttt{fission} tally) between the most-minimized $PF_{total}$ TRISO 
-distribution and a constant $PF_{total}$ = 0.023 TRISO distribution (shown in 
+distribution and a constant $PF_{total}$ = 0.023 TRISO distribution (both shown in 
 Figure \ref{fig:triso-0.023}).
 \begin{table}[htbp!]
     \centering
@@ -1507,7 +1507,7 @@ their $PPF_{fuel}$ values.
 
 Figure \ref{fig:flux-comparison-0.0979-plank} compares the flux distributions between 
 the most-minimized $PPF_{fuel}$ TRISO distribution and a constant $PF_{total}$ = 0.0979 
-TRISO distribution (shown in Figure \ref{fig:triso-0.023}).
+TRISO distribution (both shown in Figure \ref{fig:triso-0.023}).
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp1.png} 
@@ -1525,11 +1525,38 @@ TRISO distribution (shown in Figure \ref{fig:triso-0.023}).
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux-comparison-0.0979-plank}
 \end{figure}
-In Energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is 0.96x flatter 
+Table \ref{tab:flux-comparison-0.0979-plank} shows quantified flux comparison 
+between the most-minimized $PPF_{fuel}$ TRISO distribution and a constant 
+$PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.023}).
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Flux value comparison between Figure \ref{fig:slab-obj-1-ppf-final}'s TRISO 
+    distribution that most-minimized $PPF_{fuel}$ and a constant $PF_{total}$ = 0.0979 
+    TRISO distribution. 
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
+	\label{tab:flux-comparison-0.0979-plank}
+    \footnotesize
+    \begin{tabular}{lp{4cm}p{3.5cm}p{4cm}}
+    \hline
+    \textbf{Energy Group} &
+    \textbf{$max(\phi)/min(\phi)$ most-minimized $PPF_{fuel}$ TRISO distribution} & 
+    \textbf{$max(\phi)/min(\phi)$ constant TRISO distribution} & 
+    \textbf{$\%$ difference (most-minimized - constant)}\\
+    \hline 
+    1 & 1.093 & 1.147 & \Minus4.68 \\
+    2 & 1.024 & 1.027 & \Minus0.22\\
+    3 & 1.077 & 1.114 & \Minus3.32 \\
+    4 & 1.071 & 1.115 & \Minus3.96 \\
+    \hline
+    \end{tabular}
+\end{table}
+In Energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is 3.96\% flatter 
 than the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a lower 
 $PPF_{fuel}$. 
-
- 
 
 \subsection{Discussion: Multi-Objective Optimization}
 \gls{ROLLO} successfully finds widely spread solutions in each of the multi-objective 
