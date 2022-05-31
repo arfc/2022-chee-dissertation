@@ -455,6 +455,9 @@ in Section \ref{sec:plank-discussion-pf}.
 In Section \ref{sec:p-2b}'s simulation p-2b, I conducted two-objective 
 optimization simulations to minimize total fuel packing fraction ($PF_{total}$) and 
 fuel-normalized power peaking factor ($PPF_{fuel}$) by varying TRISO distribution. 
+\gls{ROLLO} finds six widely spread reactor model solutions on simulation p-2b's Pareto 
+front. 
+
 In simulation p-2b, \gls{ROLLO} found that a TRISO distribution that peaks in the 
 plank's center and both sides with a $\sim0.02$ variation and $PF_{total}=0.029$, 
 most-minimized $PPF_{fuel}$ (the blue distribution in Figure 
@@ -470,6 +473,9 @@ simulation p-2b and p-1c.
 In Section \ref{sec:p-2c}'s simulation p-2c, I conducted two-objective 
 optimization simulations to minimize maximum plank temperature ($T_{max}$) and 
 fuel-normalized power peaking factor ($PPF_{fuel}$) by varying TRISO distribution. 
+\gls{ROLLO} finds four widely spread reactor model solutions on simulation p-2c's Pareto 
+front. 
+
 In simulation p-2c, \gls{ROLLO} found that a TRISO distribution that has a slight 
 oscillation with $\sim0.01$ variation, most-minimized $T_{max}$ 
 (the orange distribution in Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}). 
@@ -505,10 +511,14 @@ maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor
 \subsubsection{Simulation p-3b}
 
 \subsubsection{Major Takeaways}
-%\gls{ROLLO} is a global search of a large design space and helps narrow down possible 
-%solutions.
-%This informs reactor designers of optimal reactor parameters for their defined objectives.  
-%From here, reactor designers can conduct sensitivity analysis and use high fidelity 
-%models to characterize a smaller section of the design space.
+\gls{ROLLO} is a global search of a large design space and helps narrow down possible 
+solutions.
+This informs reactor designers of optimal reactor models on the Pareto front for their 
+defined objectives.  
+Reactor designers gain an understanding of the spread of reactor models that can 
+meet their defined objectives to varying degrees. 
+From here, reactor designers can determine which objectives are more important and 
+conduct sensitivity analysis and use high fidelity models to characterize a smaller 
+section of the design space.
 
 \section{Summary}
