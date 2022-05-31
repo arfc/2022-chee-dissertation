@@ -542,6 +542,34 @@ In Section \ref{sec:p-3a}'s simulation p-3a, I conducted three-objective
 optimization simulations to minimize total fuel packing fraction ($PF_{total}$), 
 maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$) by varying TRISO distribution.
+\gls{ROLLO} finds 14 widely spread reactor models on simulation p-3a's Pareto 
+front. 
+
+In simulation p-3a, \gls{ROLLO} found that a TRISO distribution that has a few 
+oscillations with $\sim0.01$ variation and  $PF_{total} = 0.025$, 
+most-minimized $PF_{total}$
+(the purple distribution in Figure \ref{fig:slab-obj-3-distr-most-minimized}). 
+This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
+distribution (Figure \ref{fig:slab-obj-1-pf-final}) with an oscillating TRISO 
+distribution.
+In simulation p-3a, \gls{ROLLO} found that a flat TRISO distribution with 
+$PF_{total} = 0.059$ most-minimized $T_{max}$
+(the orange distribution in Figure \ref{fig:slab-obj-3-distr-most-minimized}). 
+This distribution follows a similar flat shape as simulation p-1b's most-minimized 
+$T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}).
+In simulation p-3a, \gls{ROLLO} found that a slightly oscillating TRISO distribution with
+$PF_{total} = 0.025$ most-minimized $T_{max}$
+(the pink distribution in Figure \ref{fig:slab-obj-3-distr-most-minimized}). 
+
+Most of the \gls{TRISO} distributions on the Pareto front (Figure 
+\ref{fig:slab-obj-3-distr}) have a mostly flat distribution with approximately 
+$\sim0.1cm$ of variation. 
+The flatness is influenced by the minimize $T_{max}$ objective. 
+The variations in \gls{TRISO} distributions are influenced by both the minimize 
+total packing fraction and minimize $PPF_{fuel}$ objectives. 
+The minimize $PF_{total}$ objective tries to maximize fission reaction rate
+to enable a higher $k_{eff}$ for lower $PF_{total}$. 
+The $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
 \subsubsection{Simulation p-3b}
 
