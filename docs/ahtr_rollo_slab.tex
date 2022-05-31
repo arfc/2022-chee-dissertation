@@ -134,7 +134,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
     \caption{Simulation p-1a optimization problem parameters.}
 	\label{tab:simulationp1a}
     \footnotesize
-    \begin{tabular}{l|p{5cm}}
+    \begin{tabular}{l|p{4cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1a}} \\
     \hline 
@@ -154,7 +154,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
 \end{table}
 
 Figure \ref{fig:slab-obj-1-pf-evol} shows the $PF_{total}$ evolution,  
-Figure \ref{fig:slab-obj-1-pf-final} shows five TRISO packing fraction 
+Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO packing fraction 
 distributions ($\rho_{TRISO}(\vec{r})$) in the final generation with the 
 most-minimized $PF_{total}$, and Figure \ref{fig:slab-obj-1-pf-most-minimized} 
 illustrates the \gls{AHTR} plank model with most-minimized $PF_{total}$.
@@ -263,15 +263,16 @@ Table \ref{tab:simulationp1b} shows simulation p-1b's optimization problem param
     \caption{Simulation p-1b optimization problem parameters.}
 	\label{tab:simulationp1b}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{4cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1b}} \\
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
+    \textbf{Input parameter variations}     
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     & $PF_{total}$ = 0.0979\\
@@ -320,8 +321,8 @@ distribution minimizes $T_{max}$ in the plank, the TRISO distribution
 has two small dips at the one-third and two-third points in the plank 
 (6.62cm and 20.48cm). 
 
-Section \ref{sec:plank-discussion-temp} provides discussion about the motivating factors 
-for the minimize $T_{max}$ objective. 
+Section \ref{sec:plank-discussion-temp} discusses and explains simulation p-1b's 
+most-minimized $T_{max}$ mostly flat TRISO distribution. 
 
 \subsubsection{Simulation p-1e: Variation of Coolant Channel Shape}
 Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem parameters. 
@@ -331,14 +332,15 @@ Table \ref{tab:simulationp1e} shows simulation p-1e's optimization problem param
     \caption{Simulation p-1e optimization problem parameters.}
 	\label{tab:simulationp1e}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{6.5cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1e}} \\
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.05<r_{top}<0.35$ \\
-    & $0.05<r_{bot}<0.35$ \\
+    \textbf{Input parameter variations} 
+    & coolant channel shape: $0.05<r_{top}<0.35$ \\
+    & coolant channel shape: $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     & $PF_{total}$ = 0.0979\\
