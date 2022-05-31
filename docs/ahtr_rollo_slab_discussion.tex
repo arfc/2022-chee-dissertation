@@ -136,7 +136,7 @@ I also demonstrate the derived relationship in simulation p-1c and p-2b's result
 \subsubsection{Equation Analysis}
 \label{sec:plank-discussion-ppf-equation}
 Equation \ref{eq:reaction-rate-fission} shows the relationship between fission reaction 
-rate, flux, and material properties. 
+rate, flux, and material properties: 
 \begin{align}
 \label{eq:reaction-rate-fission}
     RR_f &= \Phi \times \sigma_f \times N \\
@@ -147,31 +147,32 @@ rate, flux, and material properties.
     N &= \mbox{atomic number density } [atoms \cdot cm^{-3}] \nonumber 
 \end{align}
 
-Since microscopic cross section is constant for the same fuel material, we can rearrange 
+Since microscopic cross section is constant for the same fuel material, I rearrange 
 Equation \ref{eq:reaction-rate-fission} into Equation \ref{eq:reaction-rate-fission-prop}: 
 \begin{align}
     \label{eq:reaction-rate-fission-prop}
     \Phi \propto \frac{RR_f}{N}
 \end{align}
-In Section \ref{sec:ahtr_slab_output}, I defined $PPF_{fuel}$ as: 
+In Section \ref{sec:ahtr_slab_output}, I defined the fuel-normalized power peaking 
+factor ($PPF_{fuel}$) as: 
 \begin{align}
     PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
 \intertext{where}
-j &= \mbox{discretized fuel area j} \nonumber \\
 PPF_{fuel} &= \mbox{fuel-normalized power peaking factor} \nonumber \\
-fqr_j &= \mbox{fission-q-recoverable at position j} \nonumber \\
+j &= \mbox{discretized fuel area j} \nonumber \\
+fqr_j &= \mbox{fission-q-recoverable at position j (OpenMC tally)} \nonumber \\
 PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 \end{align}
 The fission reaction rate ($RR_f$) is proportional to fission energy production rate 
 ($fqr$). 
 The atomic number density (N) is proportional to the fuel packing fraction ($PF$). 
-Thus, we can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
+Thus, I can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
 Equation \ref{eq:flux-prop-fqr}:
 \begin{align}
     \label{eq:flux-prop-fqr}
     \Phi_j \propto \frac{fqr_j}{PF_j}
 \end{align}
-We can further rearrange into Equation \ref{eq:flux-prop-ppf}:
+Finally, I can further rearrange into Equation \ref{eq:flux-prop-ppf}:
 \begin{align}
     \label{eq:flux-prop-ppf}
     max(\Phi_j) \div ave(\Phi_j) &\propto max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j}) \nonumber \\
@@ -180,7 +181,7 @@ We can further rearrange into Equation \ref{eq:flux-prop-ppf}:
 
 Therefore, from Equation \ref{eq:flux-prop-ppf}, a flatter flux (smaller 
 $max(\Phi_j) \div ave(\Phi_j)$ value) will result in a smaller $PPF_{fuel}$. 
-Specifically, flatter Group 4 thermal flux results in a smaller $PPF_{fuel}$
+Specifically, flatter energy group 4 thermal flux results in a smaller $PPF_{fuel}$
 (see Table \ref{tab:fission-flux}). 
 Table \ref{tab:fission-flux} shows the percentage contributions of fission reactions from 
 each energy group. 
@@ -201,10 +202,10 @@ each energy group.
     \hline
     \end{tabular}
 \end{table}
-Most fission reactions are occurring in Energy Group 4. 
+Most fission reactions are occurring in energy group 4. 
 
-In the following section, I demonstrate this relationship in simulation p-1c and p-2b's 
-results. 
+In the following section, I demonstrate Equation \ref{eq:flux-prop-ppf}'s relationship 
+in simulation p-1c and p-2b's results. 
 
 \subsubsection{Results Analysis}
 \label{sec:plank-discussion-ppf-results}
