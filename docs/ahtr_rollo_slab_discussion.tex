@@ -455,7 +455,7 @@ in Section \ref{sec:plank-discussion-pf}.
 In Section \ref{sec:p-2b}'s simulation p-2b, I conducted two-objective 
 optimization simulations to minimize total fuel packing fraction ($PF_{total}$) and 
 fuel-normalized power peaking factor ($PPF_{fuel}$) by varying TRISO distribution. 
-\gls{ROLLO} finds six widely spread reactor model solutions on simulation p-2b's Pareto 
+\gls{ROLLO} finds six widely spread reactor models on simulation p-2b's Pareto 
 front. 
 
 In simulation p-2b, \gls{ROLLO} found that a TRISO distribution that peaks in the 
@@ -473,7 +473,7 @@ simulation p-2b and p-1c.
 In Section \ref{sec:p-2c}'s simulation p-2c, I conducted two-objective 
 optimization simulations to minimize maximum plank temperature ($T_{max}$) and 
 fuel-normalized power peaking factor ($PPF_{fuel}$) by varying TRISO distribution. 
-\gls{ROLLO} finds four widely spread reactor model solutions on simulation p-2c's Pareto 
+\gls{ROLLO} finds four widely spread reactor models on simulation p-2c's Pareto 
 front. 
 
 In simulation p-2c, \gls{ROLLO} found that a TRISO distribution that has a slight 
@@ -481,7 +481,6 @@ oscillation with $\sim0.01$ variation, most-minimized $T_{max}$
 (the orange distribution in Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}). 
 This distribution follows a similar flat shape as simulation p-1b's most-minimized 
 $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}).
-
 In simulation p-2c, \gls{ROLLO} found that a TRISO distribution with peaks near the 
 sides of the plank and a minimum point at the plank's center, most-minimized 
 $PPF_{fuel}$ (the grey distribution in Figure 
@@ -491,14 +490,16 @@ distribution (Figure \ref{fig:slab-obj-1-ppf-final}) which also has a minimum po
 at the center of the plank, but differs as its' peaks are on the fuel regions' edges 
 instead of the plank's edges. 
 
-% comment on the entire pareto front and then the extreme cases. 
+The \gls{TRISO} distributions on the Pareto front in Figure \ref{fig:slab-obj-2-tempppf} 
+that minimize both $T_{max}$ and $PPF_{fuel}$ vary between the two extreme cases: 
+most-minimized $T_{max}$ and most-minimized $PPF_{fuel}$. 
 The minimize $T_{max}$ objective influences the TRISO distribution's flatness as 
 described in Section \ref{sec:plank-discussion-temp}.
 Simulation p-2c holds $PF_{total}$ constant at 0.0979. 
 The minimize $PPF_{fuel}$ objective influences the large TRISO distribution to follow 
-a similar shape to simulation p-1c (also $PF_{total} = 0.0979$) with minimum point in center 
-of the plank with a variation of $\sim0.07$ to flatten thermal flux which minimizes $PPF_{fuel}$
-(described in Section \ref{sec:plank-discussion-ppf}). 
+a similar shape to simulation p-1c (also $PF_{total} = 0.0979$) with minimum point in 
+plank's center with a variation of $\sim0.07$ to flatten thermal flux which 
+minimizes $PPF_{fuel}$ (described in Section \ref{sec:plank-discussion-ppf}). 
 % As mentioned in Section \ref{sec:plank-discussion-ppf}, the minimize(PPF) objectivre 
 % is influenced by PF_Total. 
 
