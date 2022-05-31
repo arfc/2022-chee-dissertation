@@ -458,6 +458,33 @@ fuel-normalized power peaking factor ($PPF_{fuel}$) by varying TRISO distributio
 \gls{ROLLO} finds six widely spread reactor models on simulation p-2b's Pareto 
 front. 
 
+In simulation p-2b, \gls{ROLLO} found that a constant TRISO distribution with 
+$PF_{total} = 0.02$, most-minimized $PF_{total}$ (the orange distribution in Figure 
+\ref{fig:slab-obj-2-pfppf-pareto-distr}). 
+This distribution differs from simulation p-1a's most-minimized $PF_{total}$ oscillating 
+TRISO distribution. 
+Table \ref{tab:0.023-plank-ppf} reports the $PPF_{fuel}$ values for the simulation p-1a's 
+most-minimized $PF_{total}$ ($PF_{total} = 0.023$) oscillating TRISO distribution and 
+a constant $PF_{total} = 0.023$ TRISO distribution (both distributions shown 
+in Figure \ref{fig:triso-0.023}).
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Fuel-normalized power peaking factor ($PPF_{fuel}$) comparison between  
+    simulation p-1a's most-minimized $PF_{total}$ TRISO distribution and a 
+    constant $PF_{total}$ = 0.023 TRISO distribution.}
+	\label{tab:0.023-plank-ppf}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline
+    \textbf{TRISO distribution} & \textbf{$PPF_{fuel}$ [-]} \\
+    \hline 
+    most-minimized $PF_{total}$ & 1.363 \\
+    constant $PF_{total}$ = 0.023 & 1.063 \\
+    \hline
+    \end{tabular}
+\end{table}
+
 In simulation p-2b, \gls{ROLLO} found that a TRISO distribution that peaks in the 
 plank's center and both sides with a $\sim0.02$ variation and $PF_{total}=0.029$, 
 most-minimized $PPF_{fuel}$ (the blue distribution in Figure 
