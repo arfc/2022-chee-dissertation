@@ -427,7 +427,7 @@ by the multi-objective optimization simulations.
 In Section \ref{sec:p-2a}'s simulation p-2a, I conducted two-objective 
 optimization simulations to minimize total fuel packing fraction ($PF_{total}$) and 
 maximum plank temperature ($T_{max}$) by varying TRISO distribution. 
-\gls{ROLLO} finds six widely spread reactor model solutions on simulation p-2a's Pareto 
+\gls{ROLLO} finds six widely spread reactor models on simulation p-2a's Pareto 
 front. 
 
 In simulation p-2a, \gls{ROLLO} found that an oscillating TRISO distribution with 
@@ -437,15 +437,15 @@ This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TR
 distribution (Figure \ref{fig:slab-obj-1-pf-final}), but differs as it varies between 
 0.005 and 0.035, instead of 0 and 0.4, due to influences from the minimize $T_{max}$ 
 objective. 
-
 In simulation p-2a, \gls{ROLLO} found that a constant TRISO distribution 
-with $PF_{total} = 0.032$ most-minimized $T_{max}$ (the purple distribution in 
+with $PF_{total} = 0.032$, most-minimized $T_{max}$ (the purple distribution in 
 Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}).
 This distribution follows a similar flat shape as simulation p-1b's most-minimized 
 $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
 
 The \gls{TRISO} distributions on the Pareto front in Figure \ref{fig:slab-obj-2-pftemp} 
-that minimize both $PF_{total}$ and $T_{max}$ have varying degrees of flatness. 
+that minimize both $PF_{total}$ and $T_{max}$ vary between the two extreme cases: 
+most-minimized $PF_{total}$ and most-minimized $T_{max}$. 
 The minimize $T_{max}$ objective influences the TRISO distribution's flatness as 
 described in Section \ref{sec:plank-discussion-temp}, while 
 the minimize $PF_{total}$ objective influences the oscillating pattern, as described 
@@ -511,14 +511,14 @@ maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor
 \subsubsection{Simulation p-3b}
 
 \subsubsection{Major Takeaways}
-\gls{ROLLO} is a global search of a large design space and helps narrow down possible 
-solutions.
+\gls{ROLLO} conducts a global search of a large design space and helps narrow down 
+possible solutions.
 This informs reactor designers of optimal reactor models on the Pareto front for their 
 defined objectives.  
 Reactor designers gain an understanding of the spread of reactor models that can 
 meet their defined objectives to varying degrees. 
-From here, reactor designers can determine which objectives are more important and 
+From here, reactor designers can determine the importance weight of each objective, then
 conduct sensitivity analysis and use high fidelity models to characterize a smaller 
-section of the design space.
+section of the design space that their interested in.
 
 \section{Summary}
