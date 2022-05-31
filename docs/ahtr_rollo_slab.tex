@@ -470,14 +470,15 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     \caption{Simulation p-1f optimization problem parameters.}
 	\label{tab:simulationp1f}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{6.5cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1f}} \\
     \hline 
     \textbf{Objectives} & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.05<r_{top}<0.35$ \\
-    & $0.05<r_{bot}<0.35$ \\
+    \textbf{Input parameter variations} 
+    & coolant channel shape: $0.05<r_{top}<0.35$ \\
+    & coolant channel shape: $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     & $PF_{total}$ = 0.0979\\
@@ -511,11 +512,8 @@ radius ($r_{top} + r_{bot}$) against $PPF_{fuel}$.
     $PF_{total}$ = 0.0979.}
     \label{fig:slab-obj-1-ppf-coolant}
 \end{figure}
-
-% description? 
-Section \ref{sec:plank-discussion-ppf} provides discussion about the motivating factors 
-for the minimize $PPF_{fuel}$ objective. 
-
+Figure \ref{fig:slab-obj-1-ppf-final-coolant} demonstrates that there is no correlation 
+between $PPF_{fuel}$ and total radius. 
 
 \pagebreak
 \section{AHTR Plank: Two-Objective Optimization Results}
