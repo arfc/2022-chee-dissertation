@@ -426,6 +426,26 @@ by the multi-objective optimization simulations.
 In Section \ref{sec:p-2a}'s simulation p-2a, I conducted two-objective 
 optimization simulations to minimize total fuel packing fraction ($PF_{total}$) and 
 maximum plank temperature ($T_{max}$) by varying TRISO distribution. 
+In simulation p-2a, \gls{ROLLO} found that an oscillating TRISO distribution with 
+$\sim0.15$ variation most-minimized $PF_{total}$ (the blue distribution in 
+Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}). 
+This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
+distribution (Figure \ref{fig:slab-obj-1-pf-final}), but differs as it varies between 
+0.005 and 0.035, instead of 0 and 0.4, due to influences from the minimize $T_{max}$ 
+objective. 
+
+In simulation p-2a, \gls{ROLLO} found that a constant TRISO distribution 
+with $PF_{total} = 0.032$ most-minimized $T_{max}$ (the purple distribution in 
+Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}).
+This distribution follows a similar flat shape as simulation p-1b's most-minimized 
+$T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-final}).
+
+Thus, the \gls{TRISO} distributions on the Pareto front in Figure \ref{fig:slab-obj-2-pftemp} 
+that minimizes both $PF_{total}$ and $T_{max}$ have varying degrees of flatness: 
+the minimize $T_{max}$ objective influences the flatness and the minimize $PF_{total}$ 
+objective influences the oscillating pattern. 
+
+\paragraph{Summary}
 
 \subsubsection{Simulation p-2b}
 
