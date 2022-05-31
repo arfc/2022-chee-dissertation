@@ -76,12 +76,13 @@ The minimize $PF_{total}$ objective is driven by maximizing the fission reaction
 in the thermal energy group (Group 4). 
 The minimize $PF_{total}$ objective has correlations with the following input parameters: 
 $PF_{total}$ and TRISO packing fraction distribution. 
+The objective has no correlation with coolant channel shape input parameter. 
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:plank-discussion-temp}
 \paragraph{Simulation p-1b}
-In Section \ref{sec:plank-1-obj-temp}, I conducted single-objective optimization 
-simulations to minimize maximum plank temperature ($T_{max}$) while varying TRISO 
+For simulation p-1b, I conducted single-objective optimization 
+simulations to minimize maximum plank temperature ($T_{max}$) by varying TRISO 
 distribution. 
 In simulation p-1b, \gls{ROLLO} found that an \gls{AHTR} plank model with a mostly 
 flat TRISO distribution most-minimized $T_{max}$ 
@@ -91,7 +92,7 @@ I found that a fully flat \gls{TRISO} distribution results in a higher $T_{max}$
 Figure \ref{fig:slab-obj-1-temp-distr} compares the Moltres-generated centerline 
 temperature distribution for the plank with mostly flat (Figure 
 \ref{fig:slab-obj-1-temp-final}) and flat TRISO distributions for the same 
-total packing fraction.
+$PF_{total}$ = 0.0979. 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=\linewidth]{slab-obj-1-temp-distr.png}
@@ -106,8 +107,8 @@ To combat this temperature peak, ROLLO found a \gls{TRISO} distribution that
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
 \paragraph{Simulation p-1e}
-In Section \ref{sec:plank-1-obj-temp}, I conducted single-objective optimization 
-simulations to minimize maximum plank temperature ($T_{max}$) while varying coolant 
+For simulation p-1e, I conducted single-objective optimization 
+simulations to minimize maximum plank temperature ($T_{max}$) by varying coolant 
 channel shape. 
 In simulation p-1e, \gls{ROLLO} found that there is a negative linear correlation 
 between the plank's $T_{max}$ and total radius. 
@@ -119,6 +120,7 @@ $T_{max}$ as \gls{TRISO} distribution variation: the average $T_{max}$ due to
 to coolant channel shape variation only decreased by 15K over 10 generations. 
 
 \paragraph{Summary}
+The minimize $T_{max}$ objective is driven by... 
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:plank-discussion-ppf}
