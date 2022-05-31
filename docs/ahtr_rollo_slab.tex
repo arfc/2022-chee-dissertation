@@ -677,7 +677,7 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     \caption{Simulation p-2b optimization problem parameters.}
 	\label{tab:simulationp2b}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{4cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2b}} \\
     \hline 
@@ -685,9 +685,9 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     & Minimize $PPF_{fuel}$ \\
     \hline 
     \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
-    & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
@@ -796,16 +796,17 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     \caption{Simulation p-2c optimization problem parameters.}
 	\label{tab:simulationp2c}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{4cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Two Objectives: Simulation p-2c}} \\
     \hline 
     \textbf{Objectives} & Minimize $T_{max}$ \\
     & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
+    \textbf{Input parameter variations} 
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     & $PF_{total}$ = 0.0979\\
@@ -934,9 +935,9 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
     & Minimize $PPF_{fuel}$ \\
     \hline 
     \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
-    & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
@@ -1005,7 +1006,7 @@ Figure \ref{fig:slab-obj-3-distr-most-minimized} shows the three distributions f
 Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective. 
 \begin{figure}[htbp!]
     \centering
-    \begin{subfigure}{0.9\textwidth}
+    \begin{subfigure}{0.85\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-3-distr-most-minimized.png}
         \caption{TRISO distribution for the 3 reactor models on the Pareto front
         that most minimized each objective.}
@@ -1067,7 +1068,7 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     \caption{Simulation p-3b optimization problem parameters.}
 	\label{tab:simulationp3b}
     \footnotesize
-    \begin{tabular}{l|p{4cm}}
+    \begin{tabular}{l|p{6.5cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Three Objectives: Simulation p-3b}} \\
     \hline 
@@ -1076,11 +1077,11 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     & Minimize $PPF_{fuel}$ \\
     \hline 
     \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
-    & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
-    & $0.05<r_{top}<0.35$ \\
-    & $0.05<r_{bot}<0.35$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
+    & coolant channel shape: $0.05<r_{top}<0.35$ \\
+    & coolant channel shape: $0.05<r_{bot}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
