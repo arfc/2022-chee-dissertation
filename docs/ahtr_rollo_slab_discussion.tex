@@ -211,8 +211,9 @@ in simulation p-1c and p-2b's results.
 \label{sec:plank-discussion-ppf-results}
 
 \paragraph{Simulation p-1c}
-In Section \ref{sec:plank-1-obj-ppf}, I conducted single-objective optimization 
-simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$). 
+For simulation p-1c, I conducted single-objective optimization 
+simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) by varying 
+TRISO distribution. 
 In simulation p-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.0979, an \gls{AHTR} 
 plank model with TRISO distribution that peaks near the edges of the fuel region of 
 the plank and a minimum point in center of the plank with a variation of $\sim0.07$, 
@@ -221,10 +222,10 @@ most-minimized $PPF_{fuel}$.
 I ran a simulation for constant $PF_{total}$ = 0.0979 and compared its 
 flux to simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution to understand 
 why the latter enabled a lower $PPF_{fuel}$. 
-Figure \ref{fig:triso-0.0979} shows the TRISO distributions for the two compared 
-simulations: Figure \ref{fig:slab-obj-1-ppf}'s most-minimized $PPF_{fuel}$
-TRISO distribution and the constant $PF_{total}$ = 0.0979 TRISO distribution with 
-their $PPF_{fuel}$ values. 
+Figure \ref{fig:triso-0.0979} shows the TRISO distributions with their $PPF_{fuel}$ 
+values for the two compared simulations: Figure \ref{fig:slab-obj-1-ppf}'s 
+most-minimized $PPF_{fuel}$ TRISO distribution and the constant $PF_{total}$ = 0.0979 
+TRISO distribution. 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.9\linewidth]{triso-0.0979.png} 
@@ -235,7 +236,7 @@ their $PPF_{fuel}$ values.
 \end{figure}
 
 Figure \ref{fig:flux-comparison-0.0979-plank} compares the flux distributions between 
-the most-minimized $PPF_{fuel}$ TRISO distribution and a constant $PF_{total}$ = 0.0979 
+the most-minimized $PPF_{fuel}$ TRISO distribution and the constant $PF_{total}$ = 0.0979 
 TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
 \begin{figure}[htbp!]
     \centering
@@ -254,6 +255,7 @@ TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux-comparison-0.0979-plank}
 \end{figure}
+
 In Figure \ref{fig:flux-comparison-0.0979-plank}, the constant distribution's Group 4 
 flux dips in the center of the plank due to spatial self-shielding effects. 
 In the Group 1 flux distribution, there is a peak in fast neutrons born in the plank's 
@@ -262,10 +264,12 @@ center, they are moderated in the graphite matrix and graphite structure
 The self-shielding neutrons are more likely absorbed at the plank's sides, near 
 the pure graphite structure moderating regions. 
 The outer sides of the plank geometrically shield the plank's center from neutron 
-flux, leading to a relatively lower thermal flux in the plank's center. 
+flux, leading to a relatively lower group 4 thermal flux in the plank's center for 
+the constant distribution. 
 
-Table \ref{tab:flux-comparison-0.0979-plank} shows quantified flux comparison 
-between simulation p-1b's most-minimized $PPF_{fuel}$ TRISO distribution and a constant 
+Table \ref{tab:flux-comparison-0.0979-plank} quantifies the flux comparison 
+from Figure \ref{fig:flux-comparison-0.0979-plank} between simulation p-1c's 
+most-minimized $PPF_{fuel}$ TRISO distribution and the constant 
 $PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
 \begin{table}[htbp!]
     \centering
@@ -299,12 +303,12 @@ than the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a lower
 $PPF_{fuel}$. 
 
 \paragraph{Simulation p-2b}
-In Section \ref{sec:p-2b}, I conducted simulation p-2b which is a two-objective 
-optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) 
-and total fuel packing fraction ($PF_{total}$). 
-In simulation p-2b, the TRISO distribution with the most-minimized $PPF_{fuel}$ 
-has $PF_{total}$ = 0.0029 and a TRISO distribution that peaks in the center of the plank
-and both sides, with a variation of $\sim0.02$.
+For simulation p-2b, I conducted two-objective optimization 
+simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) and total 
+fuel packing fraction ($PF_{total}$) by varying TRISO distribution. 
+In simulation p-2b, ROLLO found that the TRISO distribution with the most-minimized 
+$PPF_{fuel}$ has $PF_{total}$ = 0.0029 and a TRISO distribution that peaks in the 
+center of the plank and both sides, with a variation of $\sim0.02$.
 This distribution differs from simulation p-1c's most-minimized $PPF_{fuel}$ TRISO 
 distribution (Figure \ref{fig:slab-obj-1-ppf-final}) which has a large $\sim 0.07$ 
 variation in TRISO distribution. 
@@ -312,10 +316,10 @@ variation in TRISO distribution.
 I ran a simulation for constant $PF_{total}$ = 0.029 and compared its 
 flux to simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution to understand 
 why the latter enabled a lower $PPF_{fuel}$. 
-Figure \ref{fig:triso-0.0292} shows the TRISO distributions for the two compared 
+Figure \ref{fig:triso-0.0292} shows the TRISO distributions with 
+their $PPF_{fuel}$ values for the two compared 
 simulations: Figure \ref{fig:slab-obj-2-pfppf}'s most-minimized $PPF_{fuel}$
-TRISO distribution and the constant $PF_{total}$ = 0.029 TRISO distribution with 
-their $PPF_{fuel}$ values. 
+TRISO distribution and the constant $PF_{total}$ = 0.029 TRISO distribution.. 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.9\linewidth]{triso-0.029.png} 
@@ -326,7 +330,7 @@ their $PPF_{fuel}$ values.
 \end{figure}
 
 Figure \ref{fig:flux-comparison-0.0292-plank} compares the flux distributions between 
-simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution and a 
+simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution and the
 constant $PF_{total}$ = 0.0292 TRISO distribution (both shown in Figure 
 \ref{fig:triso-0.0292}).
 \begin{figure}[htbp!]
@@ -347,8 +351,9 @@ constant $PF_{total}$ = 0.0292 TRISO distribution (both shown in Figure
     \label{fig:flux-comparison-0.0292-plank}
 \end{figure}
 
-Table \ref{tab:flux-comparison-0.0292-plank} shows quantified flux comparison 
-between simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution and a constant 
+Table \ref{tab:flux-comparison-0.0292-plank} quantifies the flux comparison 
+from Figure \ref{fig:flux-comparison-0.0292-plank} between simulation p-2b's 
+most-minimized $PPF_{fuel}$ TRISO distribution and the constant 
 $PF_{total}$ = 0.0292 TRISO distribution (both shown in Figure \ref{fig:triso-0.0292}).
 \begin{table}[htbp!]
     \centering
@@ -377,22 +382,22 @@ $PF_{total}$ = 0.0292 TRISO distribution (both shown in Figure \ref{fig:triso-0.
     \end{tabular}
 \end{table}
 
-In Energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $0.28\%$ flatter 
+In energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $0.28\%$ flatter 
 than the constant $PF_{total}$ = 0.0292 flux distribution, resulting in a lower 
 $PPF_{fuel}$. 
 In the previous section, simulation p-1c's most-minimized $PPF_{fuel}$ flux 
 distribution is $3.96\%$ flatter than the constant $PF_{total}$ = 0.0979 flux 
 distribution with $\sim 0.07$ variation in TRISO distribution. 
 This contrasts with simulation p-2b's $\sim 0.02$ variation in TRISO distribution. 
-Higher $PF_{total}$ in simulation p-1b means that there is more fuel, resulting in 
-higher self-shielding effects. 
+Higher $PF_{total}$ in simulation p-1c means that there is more fuel, resulting in 
+more self-shielding effects. 
 This results in TRISO distribution variation having a stronger effect in neutralizing 
 self-shielding. 
 
 \paragraph{Simulation p-1f}
-In Section \ref{sec:plank-1-obj-ppf}, I conducted single-objective optimization 
-simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) while 
-varying coolant channel shape. 
+For simulation p-1f, I conducted single-objective optimization 
+simulations to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) by varying 
+coolant channel shape.
 Comparison of simulation p-1c and p-1f's results in Figures 
 \ref{fig:slab-obj-1-ppf-evol-coolant} and \ref{fig:slab-obj-1-ppf-evol}
 show that coolant channel shape variation barely has an impact on $PPF_{fuel}$ as 
@@ -403,8 +408,10 @@ Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correl
 between total radius and $PPF_{fuel}$. 
 
 \paragraph{Summary}
-Therefore, I conclude that the minimize $PPF_{fuel}$ objective is driven by flattening 
-thermal (Group 4) flux. 
+The minimize $PPF_{fuel}$ objective is driven by flattening thermal (Group 4) flux. 
+The minimize $PPF_{fuel}$ objective has correlations with the following input parameters: 
+$PF_{total}$ and TRISO packing fraction distribution. 
+The objective has no correlation with coolant channel shape input parameter.
 
 \subsection{Discussion: Multi-Objective Optimization}
 \gls{ROLLO} successfully finds widely spread solutions in each of the multi-objective 
