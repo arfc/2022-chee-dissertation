@@ -141,9 +141,9 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
     \textbf{Objectives} & Minimize $PF_{total}$ \\
     \hline 
     \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
-    & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.35$\\ 
     \hline 
@@ -154,7 +154,7 @@ Table \ref{tab:simulationp1a} shows simulation p-1a's optimization problem param
 \end{table}
 
 Figure \ref{fig:slab-obj-1-pf-evol} shows the $PF_{total}$ evolution,  
-Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO packing fraction 
+Figure \ref{fig:slab-obj-1-pf-final} shows five TRISO packing fraction 
 distributions ($\rho_{TRISO}(\vec{r})$) in the final generation with the 
 most-minimized $PF_{total}$, and Figure \ref{fig:slab-obj-1-pf-most-minimized} 
 illustrates the \gls{AHTR} plank model with most-minimized $PF_{total}$.
@@ -171,14 +171,15 @@ illustrates the \gls{AHTR} plank model with most-minimized $PF_{total}$.
         smallest $PF_{total}$ in the final generation.}
         \label{fig:slab-obj-1-pf-final} 
     \end{subfigure}
-    \begin{subfigure}{0.95\textwidth}
+    \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} plank model with most-minimized $PF_{total}$ 
         (corresponds to the blue bolded distribution in the above plot).}
         \label{fig:slab-obj-1-pf-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1a -- ROLLO single-objective optimization to minimize total 
-    fuel packing fraction. Input parameters varied: total fuel packing fraction 
+    fuel packing fraction ($PF_{total}$). 
+    Input parameters varied: total fuel packing fraction 
     ($PF_{total}$), \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:slab-obj-1-pf}
 \end{figure}
