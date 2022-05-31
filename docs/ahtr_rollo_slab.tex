@@ -402,15 +402,16 @@ Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem param
     \caption{Simulation p-1c optimization problem parameters.}
 	\label{tab:simulationp1c}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{4cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation p-1c}} \\
     \hline 
     \textbf{Objectives} & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0<a<2$ \\
-    & $0<b<\frac{\pi}{2}$ \\
-    & $0<c<2\pi$ \\
+    \textbf{Input parameter variations}
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     & $PF_{total}$ = 0.0979\\
@@ -457,9 +458,9 @@ most-minimized $PPF_{fuel}$.
 In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
 $PPF_{fuel}$ peaks near the edges of the fuel region of the plank, and has a minimum 
 point in center of the plank.
-
-Section \ref{sec:plank-discussion-ppf} provides discussion about the motivating factors 
-for the minimize $PPF_{fuel}$ objective. 
+Section \ref{sec:plank-discussion-ppf} discusses the motivating factors for the minimize 
+$PPF_{fuel}$ objective, and explains simulation p-1c's most-minimized $PPF_{fuel}$ 
+TRISO distribution. 
 
 \subsubsection{Simulation p-1f: Variation of Coolant Channel Shape}
 Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
