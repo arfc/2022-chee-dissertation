@@ -111,7 +111,7 @@ In Section \ref{sec:plank-1-obj-temp}'s simulation p-1e, I conducted single-obje
 optimization simulations to minimize maximum plank temperature ($T_{max}$) by varying 
 coolant channel shape. 
 In simulation p-1e, \gls{ROLLO} found that there is a negative linear correlation 
-between the plank's $T_{max}$ and total radius. 
+between the plank's $T_{max}$ and total radius ($r_{tot}$). 
 Comparison of simulation p-1b and p-1e's results in 
 Figures \ref{fig:slab-obj-1-temp-evol} and \ref{fig:slab-obj-1-temp-evol-coolant} 
 show that coolant channel shape variation does not have as high of an impact on 
@@ -122,6 +122,8 @@ to coolant channel shape variation only decreased by 15K over 10 generations.
 \paragraph{Summary}
 The minimize $T_{max}$ objective has correlations with all the input parameters: 
 $PF_{total}$, TRISO packing fraction distribution, and coolant channel shape. 
+The minimize $T_{max}$ objective is driven by minimizing plank's maximum temperature 
+by flattening TRISO distribution and maximizing $r_{tot}$. 
 The results from simulation p-1b and p-1e suggest that the objective is more heavily 
 influenced by the TRISO distribution than the coolant channel shape. 
 
