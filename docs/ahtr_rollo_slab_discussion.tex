@@ -2,7 +2,7 @@
 \label{sec:plank-discussion}
 In this section, I conduct a deep-dive to understand the motivating factors for 
 each individual objective, and how their combined effects result in the optimal 
-reactor models found by the three-multi-objective optimization simulations. 
+reactor models found by the multi-objective optimization simulations. 
 
 \subsection{Discussion: Minimize $PF_{total}$ Objective}
 \label{sec:plank-discussion-pf}
@@ -633,17 +633,20 @@ to enable a higher $k_{eff}$ for lower $PF_{total}$, and
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
 \subsection{Major Takeaways}
-I conducted \gls{AHTR} plank optimization with three objectives: minimize total 
-fuel packing fraction ($PF_{total}$), minimize maximum plank temperature ($T_{max}$), 
-and minimize fuel-normalized power peaking factor ($PPF_{fuel}$). 
+In this section, I conducted investigations to understand the motivating factors for 
+each individual objective, and how their combined effects result in the optimal 
+reactor models found by the multi-objective optimization simulations. 
+
 The minimize $T_{max}$ is driven by minimizing plank's maximum temperature and flattens 
 TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to achieve the goal. 
 
-The minimize $PF_{total}$ objective is driven by maximizing the fission reaction rate 
-and influences the TRISO disribution to achieve the goal. 
+The minimize $PF_{total}$ objective is driven by maximizing the plank's total fission 
+reaction rate and influences the TRISO disribution to achieve the goal. 
 The minimize $PF_{total}$ objective has no correlation with the coolant channel shape. 
 
-The minimize $PPF_{fuel}$ objective is driven by 
+The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
+distribution and influences $PF_{total}$ and TRISO disribution to achieve the goal. 
+The minimize $PPF_{fuel}$ objective has no correlation with the coolant channel shape. 
 
 %The effects of the driving forces behind each objective ... 
 
