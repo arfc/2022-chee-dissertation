@@ -916,14 +916,15 @@ Sections \ref{sec:plank-discussion-multi} discusses and explain simulation p-2c'
 \label{sec:plank-three-obj}
 In this section, I report the \gls{AHTR} one-third assembly's \gls{ROLLO} three-objective 
 optimization results. 
-Table \ref{tab:assem-obj-breakdown} summarized the two-objective simulations in this 
+Table \ref{tab:assem-obj-breakdown} summarized the three-objective simulations in this 
 section: p-3a, and p-3b. 
 
 \subsection{p-3a: Variation of of $PF_{total}$ and $\rho_{TRISO}(\vec{r})$}
 \label{sec:p-3a}
-This section reports results from the three-objective optimization simulation p-3a, all 
-objectives are minimized: total fuel packing fraction ($PF_{total}$), maximum plank 
-temperature ($T_{max}$) and fuel-normalized power peaking factor ($PPF_{fuel}$).  
+This section reports results from the three-objective optimization simulation p-3a, 
+in which all objectives are minimized: total fuel packing fraction ($PF_{total}$), 
+maximum plank temperature ($T_{max}$) and fuel-normalized power peaking factor 
+($PPF_{fuel}$).  
 The input parameters varied are total fuel packing fraction ($PF_{total}$) and 
 TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$). 
 Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem parameters. 
@@ -1006,9 +1007,7 @@ the final generation that fall on the Pareto front.
 \end{figure}
 
 Figure \ref{fig:slab-obj-3-3d} demonstrates that \gls{ROLLO} found 14 widely spread 
-solutions in the final generation's Pareto front. 
-Figure \ref{fig:slab-obj-3-distr} demonstrates that the TRISO distributions on the
-Pareto front have approximately $\sim0.1$ of variation. 
+solutions in the final generation's Pareto front.  
 Figure \ref{fig:slab-obj-3-distr-most-minimized} shows the three distributions from 
 Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective. 
 \begin{figure}[htbp!]
@@ -1049,14 +1048,15 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
 
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
 most-minimized $PF_{total}$ (the purple distribution) has an oscillating TRISO 
-distribution (also illustrated in Figure \ref{fig:slab-obj-3-min-pf}).
+distribution with $\sim0.01$ variation and $PF_{total} = 0.02$ 
+(also illustrated in Figure \ref{fig:slab-obj-3-min-pf}).
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the 
 most-minimized $T_{max}$ (the orange distribution) has mostly flat TRISO distribution 
-(also illustrated in Figure \ref{fig:slab-obj-3-min-temp}). 
+and $PF_{total} = 0.059$ (also illustrated in Figure \ref{fig:slab-obj-3-min-temp}). 
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
 most-minimized $PPF_{fuel}$ (the pink distribution) has a 
-slightly oscillating TRISO distribution (also illustrated in Figure 
-\ref{fig:slab-obj-3-min-ppf}).
+slightly oscillating TRISO distribution and $PF_{total} = 0.025$ 
+(also illustrated in Figure \ref{fig:slab-obj-3-min-ppf}).
 Section \ref{sec:plank-discussion-multi} discusses and explains simulation p-3a's results.
 
 \subsection{p-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
