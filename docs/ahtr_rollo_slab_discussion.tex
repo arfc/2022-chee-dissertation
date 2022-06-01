@@ -7,8 +7,8 @@ reactor models found by the multi-objective optimization simulations.
 \subsection{Discussion: Minimize $PF_{total}$ Objective}
 \label{sec:plank-discussion-pf}
 \paragraph{Simulation p-1a}
-In Section \ref{sec:plank-1-obj-pf}'s simulation p-1a, I conducted single-objective 
-optimization simulations to minimize total fuel packing fraction ($PF_{total}$) by 
+In Section \ref{sec:plank-1-obj-pf}'s simulation p-1a, I conducted a single-objective 
+optimization simulation to minimize total fuel packing fraction ($PF_{total}$) by 
 varying $PF_{total}$ and TRISO distribution. 
 In simulation p-1a, \gls{ROLLO} found that an \gls{AHTR} plank model with a
 $PF_{total}$ = 0.023 and oscillating TRISO distribution most-minimized 
@@ -64,8 +64,8 @@ distribution enabled a lower packing fraction for the same $k_{eff}$ compared to
 constant TRISO distribution. 
 
 \paragraph{Simulation p-1d}
-In Section \ref{sec:plank-1-obj-pf}'s simulation p-1d, I conducted single-objective 
-optimization simulations to minimize total fuel packing fraction ($PF_{total}$) by 
+In Section \ref{sec:plank-1-obj-pf}'s simulation p-1d, I conducted a single-objective 
+optimization simulation to minimize total fuel packing fraction ($PF_{total}$) by 
 varying $PF_{total}$ and coolant channel shape. 
 In simulation p-1a, \gls{ROLLO} found that there is no correlation 
 between $PF_{total}$ and coolant channel shape (demonstrated in Figure 
@@ -81,8 +81,8 @@ The objective has no correlation with coolant channel shape input parameter.
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:plank-discussion-temp}
 \paragraph{Simulation p-1b}
-In Section \ref{sec:plank-1-obj-temp}'s simulation p-1b, I conducted single-objective 
-optimization simulations to minimize maximum plank temperature ($T_{max}$) by varying 
+In Section \ref{sec:plank-1-obj-temp}'s simulation p-1b, I conducted a single-objective 
+optimization simulation to minimize maximum plank temperature ($T_{max}$) by varying 
 TRISO distribution. 
 In simulation p-1b, \gls{ROLLO} found that an \gls{AHTR} plank model with a mostly 
 flat TRISO distribution most-minimized $T_{max}$ 
@@ -107,11 +107,12 @@ To combat this temperature peak, ROLLO found a \gls{TRISO} distribution that
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
 \paragraph{Simulation p-1e}
-In Section \ref{sec:plank-1-obj-temp}'s simulation p-1e, I conducted single-objective 
-optimization simulations to minimize maximum plank temperature ($T_{max}$) by varying 
+In Section \ref{sec:plank-1-obj-temp}'s simulation p-1e, I conducted a single-objective 
+optimization simulation to minimize maximum plank temperature ($T_{max}$) by varying 
 coolant channel shape. 
 In simulation p-1e, \gls{ROLLO} found that there is a negative linear correlation 
-between the plank's $T_{max}$ and total radius ($r_{tot}$). 
+between the plank's $T_{max}$ and total radius ($r_{tot}$), shown in 
+Figure \ref{fig:slab-obj-1-temp-final-coolant}. 
 Comparison of simulation p-1b and p-1e's results in 
 Figures \ref{fig:slab-obj-1-temp-evol} and \ref{fig:slab-obj-1-temp-evol-coolant} 
 show that coolant channel shape variation does not have as high of an impact on 
@@ -120,20 +121,20 @@ $T_{max}$ as \gls{TRISO} distribution variation: the average $T_{max}$ due to
 to coolant channel shape variation only decreased by 15K over 10 generations. 
 
 \paragraph{Summary}
+The minimize $T_{max}$ objective is driven by minimizing plank's maximum temperature; 
+and flattens TRISO distribution and maximizes coolant channel shape's 
+$r_{tot}$ to achieve the objective. 
 The minimize $T_{max}$ objective has correlations with all the input parameters: 
 $PF_{total}$, TRISO packing fraction distribution, and coolant channel shape. 
-The minimize $T_{max}$ objective is driven by minimizing plank's maximum temperature 
-by flattening TRISO distribution and maximizing $r_{tot}$. 
 The results from simulation p-1b and p-1e suggest that the objective is more heavily 
 influenced by the TRISO distribution than the coolant channel shape. 
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:plank-discussion-ppf}
 In an effort to understand the driving factors for the minimize $PPF_{fuel}$ 
-objective, I conduct an equation analysis in Section
-\ref{sec:plank-discussion-ppf-equation} to determine the \gls{AHTR} plank properties 
+objective, I conduct an equation analysis to determine the \gls{AHTR} plank properties 
 that influence $PPF_{fuel}$. 
-I also demonstrate the derived relationship in simulation p-1c and p-2b's results. 
+I then demonstrate the derived relationship in simulation p-1c and p-2b's results. 
 
 \subsubsection{Equation Analysis}
 \label{sec:plank-discussion-ppf-equation}
