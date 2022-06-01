@@ -455,7 +455,7 @@ in Section \ref{sec:plank-discussion-pf}.
 In Section \ref{sec:p-2b}'s simulation p-2b, I conducted two-objective 
 optimization simulations to minimize total fuel packing fraction ($PF_{total}$) and 
 fuel-normalized power peaking factor ($PPF_{fuel}$) by varying TRISO distribution. 
-\gls{ROLLO} finds six widely spread reactor models on simulation p-2b's Pareto 
+\gls{ROLLO} finds four widely spread reactor models on simulation p-2b's Pareto 
 front. 
 
 In simulation p-2b, \gls{ROLLO} found that a constant TRISO distribution with 
@@ -463,7 +463,7 @@ $PF_{total} = 0.02$, most-minimized $PF_{total}$ (the orange distribution in Fig
 \ref{fig:slab-obj-2-pfppf-pareto-distr}). 
 This distribution differs from simulation p-1a's most-minimized $PF_{total}$ oscillating 
 TRISO distribution. 
-Table \ref{tab:0.023-plank-ppf} reports the $PPF_{fuel}$ values for the simulation p-1a's 
+Table \ref{tab:0.023-plank-ppf} reports the $PPF_{fuel}$ values for simulation p-1a's 
 most-minimized $PF_{total}$ ($PF_{total} = 0.023$) oscillating TRISO distribution and 
 a constant $PF_{total} = 0.023$ TRISO distribution (both distributions shown 
 in Figure \ref{fig:triso-0.023}).
@@ -479,11 +479,12 @@ in Figure \ref{fig:triso-0.023}).
     \hline
     \textbf{TRISO distribution} & \textbf{$PPF_{fuel}$ [-]} \\
     \hline 
-    most-minimized $PF_{total}$ & 1.363 \\
-    constant $PF_{total}$ = 0.023 & 1.063 \\
+    Most-minimized $PF_{total}$ & 1.363 \\
+    Constant $PF_{total}$ = 0.023 & 1.063 \\
     \hline
     \end{tabular}
 \end{table}
+
 Simulation p-1a's most-minimized $PF_{total}$ oscillating TRISO distribution has a high 
 $PPF_{fuel}$.
 The influences from the minimize $PPF_{fuel}$ objective explains why for simulation p-2b, 
@@ -500,6 +501,13 @@ variation in TRISO distribution with a minimum point in the center of the plank.
 Section \ref{sec:plank-discussion-ppf-results} discussed the reasoning for the 
 difference between the most-minimized $PPF_{fuel}$ TRISO distributions in 
 simulation p-2b and p-1c. 
+
+Unlike simulations p-2a and p-2c, simulation p-2b's extreme most-minimized $PF_{total}$ 
+and most-minimized $PPF_{fuel}$ do not follow similar results as their single-objective 
+counterparts.  
+The results from simulation p-2b suggests that $PF_{total}$ and $PPF_{fuel}$
+have a relationship with each other resulting in unexpected TRISO distributions based 
+on the value of $PF_{total}$. 
 
 \subsubsection{Simulation p-2c}
 In Section \ref{sec:p-2c}'s simulation p-2c, I conducted two-objective 
