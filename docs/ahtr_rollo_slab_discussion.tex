@@ -72,8 +72,8 @@ between $PF_{total}$ and coolant channel shape (demonstrated in Figure
 \ref{fig:slab-obj-1-pf-final-coolant}). 
 
 \paragraph{Summary}
-The minimize $PF_{total}$ objective is driven by maximizing the fission reaction rates 
-in the thermal energy group (Group 4). 
+The minimize $PF_{total}$ objective is driven by maximizing the total fission reaction 
+rates in the thermal energy group (Group 4). 
 The minimize $PF_{total}$ objective has correlations with the following input parameters: 
 $PF_{total}$ and TRISO packing fraction distribution. 
 The objective has no correlation with coolant channel shape input parameter. 
@@ -410,7 +410,8 @@ Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correl
 between total radius and $PPF_{fuel}$. 
 
 \paragraph{Summary}
-The minimize $PPF_{fuel}$ objective is driven by flattening thermal (Group 4) flux. 
+The minimize $PPF_{fuel}$ objective is driven by flattening thermal (Group 4) flux 
+distribution. 
 The minimize $PPF_{fuel}$ objective has correlations with the following input parameters: 
 $PF_{total}$ and TRISO packing fraction distribution. 
 The objective has no correlation with coolant channel shape input parameter.
@@ -508,8 +509,10 @@ Unlike simulations p-2a and p-2c, simulation p-2b's extreme most-minimized $PF_{
 and most-minimized $PPF_{fuel}$ do not follow similar results as their single-objective 
 counterparts.  
 The results from simulation p-2b and investigations in Section 
-\ref{sec:plank-discussion-ppf-results} suggest that $PF_{total}$ and $PPF_{fuel}$
-have a relationship with each other resulting in unexpected TRISO distributions based 
+\ref{sec:plank-discussion-ppf-results} suggest that the minimize $PF_{total}$ 
+objective's driving force maximize total fission reaction rate and 
+minimize $PPF_{fuel}$ objective's driving force flattening thermal flux distribution 
+influence each other resulting in unexpected TRISO distributions based 
 on the value of $PF_{total}$. 
 
 \subsubsection{Simulation p-2c}
@@ -639,14 +642,18 @@ reactor models found by the multi-objective optimization simulations.
 
 The minimize $T_{max}$ is driven by minimizing plank's maximum temperature and flattens 
 TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to achieve the goal. 
-
 The minimize $PF_{total}$ objective is driven by maximizing the plank's total fission 
 reaction rate and influences the TRISO disribution to achieve the goal. 
 The minimize $PF_{total}$ objective has no correlation with the coolant channel shape. 
-
 The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
 distribution and influences $PF_{total}$ and TRISO disribution to achieve the goal. 
 The minimize $PPF_{fuel}$ objective has no correlation with the coolant channel shape. 
+The results from simulation p-2b and investigations in Section 
+\ref{sec:plank-discussion-ppf-results} suggest that the minimize $PF_{total}$ 
+objective's driving force maximize total fission reaction rate and 
+minimize $PPF_{fuel}$ objective's driving force flattening thermal flux distribution 
+influence each other resulting in unexpected TRISO distributions based 
+on the value of $PF_{total}$. 
 
 %The effects of the driving forces behind each objective ... 
 
