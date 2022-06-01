@@ -522,8 +522,8 @@ optimization results.
 The previous section's one-objective optimization results inform the multi-objective 
 optimization simulations in this section and Section \ref{sec:plank-three-obj}.
 Since the variations in coolant channel shape only impacts one objective: 
-minimize plank temperature, I do not conduct two-objective optimization for coolant 
-channel shape variations.  
+minimize plank's maximum temperature ($T_{max}$), I do not conduct two-objective 
+optimization for coolant channel shape variations.  
 Table \ref{tab:slab-obj-breakdown} summarized the two-objective simulations in this 
 section: p-2a, p-2b, and p-2c.
 
@@ -653,8 +653,11 @@ $T_{max}$, respectively.
     \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
 \end{figure}
 
-In Figure \ref{fig:slab-obj-2-pftemp-min-pf}, \gls{ROLLO} finds six widely spread 
+In Figure \ref{fig:slab-obj-2-pftemp-pareto}, \gls{ROLLO} finds six widely spread 
 reactor model solutions on simulation p-2a's Pareto front. 
+The \gls{TRISO} distributions on the Pareto front that minimize both $PF_{total}$ and 
+$T_{max}$ vary between the two extreme cases: 
+most-minimized $PF_{total}$ and most-minimized $T_{max}$. 
 In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the
 most-minimized $PF_{total}$ and the highest $T_{max}$ (the blue distribution) has an 
 oscillating TRISO distribution (also illustrated in Figure 
