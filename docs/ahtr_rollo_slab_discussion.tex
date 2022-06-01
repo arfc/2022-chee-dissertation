@@ -636,18 +636,19 @@ to enable a higher $k_{eff}$ for lower $PF_{total}$, and
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
 \subsection{Discussion: Major Takeaways}
-In this section, I conducted investigations to understand the motivating factors for 
-each individual objective, and how their combined effects result in the optimal 
-reactor models found by the multi-objective optimization simulations. 
+In Section \ref{sec:plank-discussion}, I conducted investigations to understand the 
+motivating factors for each individual objective, and how their combined effects 
+result in the optimal reactor models found by the multi-objective optimization 
+simulations. 
 
 The minimize $T_{max}$ is driven by minimizing plank's maximum temperature and flattens 
 TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to achieve the goal. 
 The minimize $PF_{total}$ objective is driven by maximizing the plank's total fission 
 reaction rate and influences the TRISO disribution to achieve the goal. 
-The minimize $PF_{total}$ objective has no correlation with the coolant channel shape. 
 The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
 distribution and influences $PF_{total}$ and TRISO disribution to achieve the goal. 
-The minimize $PPF_{fuel}$ objective has no correlation with the coolant channel shape. 
+Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
+with the coolant channel shape. 
 The results from simulation p-2b and investigations in Section 
 \ref{sec:plank-discussion-ppf-results} suggest that the minimize $PF_{total}$ 
 objective's driving force maximize total fission reaction rate and 
@@ -655,7 +656,8 @@ minimize $PPF_{fuel}$ objective's driving force flattening thermal flux distribu
 influence each other resulting in unexpected TRISO distributions based 
 on the value of $PF_{total}$. 
 
-%The effects of the driving forces behind each objective ... 
+All these effects and influences come together in each multi-objective optimization 
+simulation to give a set of optimal reactor models on a Pareto front. 
 
 \section{Summary}
 
