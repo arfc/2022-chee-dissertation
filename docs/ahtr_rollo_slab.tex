@@ -522,7 +522,7 @@ This section reports the \gls{AHTR} plank's \gls{ROLLO} two-objective
 optimization results. 
 The previous section's one-objective optimization results inform the multi-objective 
 optimization simulations in this section and Section \ref{sec:plank-three-obj}.
-Since the variations in coolant channel shape only impacts one objective: 
+Since the variations in coolant channel shape only impact one objective: 
 minimize plank's maximum temperature ($T_{max}$), I do not conduct two-objective 
 optimization for coolant channel shape variations.  
 Table \ref{tab:slab-obj-breakdown} summarized the two-objective simulations in this 
@@ -545,21 +545,21 @@ As previously described in Section \ref{sec:binhandkorn}, the hypervolume indica
 quantifies the Pareto front's goodness (bigger = better).
 I use a different reference point for each optimization problem. 
 If a multi-objective optimization problem's hypervolume converges earlier than the 
-5 generations I intended to run (determined in Section 
-\ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation. 
+five generations I intended to run (determined in Section 
+\ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
 However, if the multi-objective optimization problem's hypervolume does not converge by 
 generation 5, I run the problem for a few more generations till satisfactory convergence.
 
 \subsection{p-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:p-2a}
-This section reports results from the two-objective optimization simulation p-2a, the 
+This section reports results from the two-objective optimization simulation p-2a; the 
 objectives minimized are total fuel packing fraction ($PF_{total}$) and maximum plank
 temperature ($T_{max}$).  
 Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
-    \caption{Simulation p-2a optimization problem parameters..}
+    \caption{Simulation p-2a optimization problem parameters.}
 	\label{tab:simulationp2a}
     \footnotesize
     \begin{tabular}{l|p{4cm}}
@@ -604,7 +604,7 @@ confirming that simulation p-2a converges by generation 2.
 \end{table}
 
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
-models' $PF_{total}$ against $T_{max}$, crosses mark the reactor models that 
+models' $PF_{total}$ against $T_{max}$; crosses mark the reactor models that 
 fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} shows the six TRISO distributions in 
 the final generation that fall on the Pareto front.
@@ -724,7 +724,7 @@ confirming that simulation p-2b converges by generation 3.
 \end{table}
 
 Figure \ref{fig:slab-obj-2-pfppf-pareto} shows a plot of the final generation's reactor 
-models' $PF_{total}$ against $PPF_{fuel}$, crosses mark the reactor models that fall on 
+models' $PF_{total}$ against $PPF_{fuel}$; crosses mark the reactor models that fall on 
 the Pareto front.
 Figure \ref{fig:slab-obj-2-pfppf-pareto-distr} shows the four TRISO packing fraction 
 distributions in the final generation that fall on the Pareto front. 
@@ -844,7 +844,7 @@ confirming that simulation p-2c converges by generation 3.
 \end{table}
 
 Figure \ref{fig:slab-obj-2-tempppf-pareto} shows a plot of the final generation's 
-reactor models' $T_{max}$ against $PPF_{fuel}$, crosses mark the reactor models that 
+reactor models' $T_{max}$ against $PPF_{fuel}$; crosses mark the reactor models that 
 fall on the Pareto front.
 Figure \ref{fig:slab-obj-2-tempppf-pareto-distr} shows the eight TRISO distributions in 
 the final generation that fall on the Pareto front. 
@@ -981,7 +981,7 @@ confirming that simulation p-3a converges by generation 5.
 \end{table}
 
 Figure \ref{fig:slab-obj-3-3d} shows a 3D plot of the final generation's reactor models' 
-$PF_{total}$ against $T_{max}$ against $PPF_{fuel}$, crosses mark the reactor models 
+$PF_{total}$ against $T_{max}$ against $PPF_{fuel}$; crosses mark the reactor models 
 that fall on the Pareto front.
 Figure \ref{fig:slab-obj-3-distr} shows the 14 TRISO packing fraction distributions in 
 the final generation that fall on the Pareto front. 
@@ -1127,7 +1127,7 @@ confirming that simulation p-3b converges by generation 8.
 \end{table}
 
 Figure \ref{fig:slab-obj-3-3d-all} shows a 3D plot of the final generation's reactor 
-models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$, crosses mark the 
+models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$; crosses mark the 
 reactor models that fall on the Pareto front.
 Figure \ref{fig:slab-obj-3-distr-all} shows the 21 TRISO distributions and their
 total radius $(r_{top}, r_{bot})$ in the final generation that fall on the Pareto 
