@@ -641,8 +641,9 @@ motivating factors for each individual objective, and how their combined effects
 result in the optimal reactor models found by the multi-objective optimization 
 simulations. 
 
-The minimize $T_{max}$ is driven by minimizing plank's maximum temperature and flattens 
-TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to achieve the objective. 
+The minimize $T_{max}$ objective is driven by minimizing plank's maximum temperature; 
+and flattens TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to 
+achieve the objective. 
 The minimize $PF_{total}$ objective is driven by maximizing the plank's total fission 
 reaction rate and influences the TRISO disribution to achieve the objective. 
 The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
@@ -672,7 +673,7 @@ Reactor designers gain an understanding of the spread of reactor models that can
 meet their defined objectives to varying degrees. 
 From here, reactor designers can determine the importance weight of each objective, then
 conduct sensitivity analysis and use high fidelity models to characterize a smaller 
-section of the design space that their interested in.
+section of the design space that they are interested in.
 
 \pagebreak
 \section{Summary}
@@ -689,9 +690,9 @@ p-1a, p-1b, p-1c, p-1d, p-1e, p-1f; and Sections \ref{sec:plank-discussion-pf},
 \ref{sec:plank-discussion-temp}, and \ref{sec:plank-discussion-ppf} discussions    
 I characterized each objective's driving factors and relationship with each input 
 parameter. 
-I found that the minimize $T_{max}$ is driven by minimizing plank's maximum temperature; 
-and flattens TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to 
-achieve the objective. 
+I found that the minimize $T_{max}$ objective is driven by minimizing plank's maximum 
+temperature; and flattens TRISO distribution and maximizes coolant channel shape's 
+$r_{tot}$ to achieve the objective. 
 The minimize $PF_{total}$ objective is driven by maximizing the plank's total fission 
 reaction rate and influences the TRISO disribution to achieve the objective. 
 The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
@@ -704,12 +705,23 @@ optimization simulations: p-2a, p-2b, p-2c, p-3a, and p-3b; and Section
 \ref{sec:plank-discussion-multi} I further analyzed how the objectives' combined effects 
 resulted in the optimal reactor models found by each multi-objective optimization 
 simulation. 
+All the multi-objective optimization simulations successfully found a wide spread of 
+reactor models on a Pareto front that meets each objective to varying degrees. 
+In the multi-objective optimization simulations, the minimize $T_{max}$ objective continues 
+to influence the flattening of the TRISO distribution and maximizing of the coolant 
+channel shape's $r_{tot}$ to achieve the objective. 
 The results from simulation p-2b and investigations in Section 
 \ref{sec:plank-discussion-ppf-results} suggest that the minimize $PF_{total}$ 
 objective's driving force maximize total fission reaction rate and 
 minimize $PPF_{fuel}$ objective's driving force flattening thermal flux distribution 
 influence each other resulting in unexpected TRISO distributions based 
 on the value of $PF_{total}$. 
+
+Simulation p-3b's multi-objective optimization shows the result of minimizing all 
+three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
+all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
+Figure \ref{fig:slab-obj-3-all} shows the 21 widely spread reactor models on simulation 
+p-3b's Pareto front. 
 
 By characterizing each objective's main driving forces for the \gls{AHTR} plank model ...  
 
