@@ -665,16 +665,6 @@ all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel 
 Figure \ref{fig:slab-obj-3-all} shows the 21 widely spread reactor models on simulation 
 p-3b's Pareto front. 
 
-For these optimization problems, \gls{ROLLO} conducted a global search of the large 
-design space helping narrow down possible solutions.
-The widely spread reactor models on the Pareto front informs reactor designers of 
-optimal reactor models for their defined objectives.  
-Reactor designers gain an understanding of the spread of reactor models that can 
-meet their defined objectives to varying degrees. 
-From here, reactor designers can determine the importance weight of each objective, then
-conduct sensitivity analysis and use high fidelity models to characterize a smaller 
-section of the design space that they are interested in.
-
 \pagebreak
 \section{Summary}
 \glsresetall
@@ -716,28 +706,32 @@ objective's driving force maximize total fission reaction rate and
 minimize $PPF_{fuel}$ objective's driving force flattening thermal flux distribution 
 influence each other resulting in unexpected TRISO distributions based 
 on the value of $PF_{total}$. 
-
 Simulation p-3b's multi-objective optimization shows the result of minimizing all 
 three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
 all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
 Figure \ref{fig:slab-obj-3-all} shows the 21 widely spread reactor models on simulation 
-p-3b's Pareto front. 
-Simulation p-3b's results show the set of reactor models that meet the three objectives 
-to varying degrees. 
+p-3b's Pareto front that meet the three objectives to varying degrees. 
 
 This chapter demonstrated \gls{ROLLO}'s success in conducting multi-objective 
 optimization, a global search of the large reactor design space, to find optimal reactor 
-models on the Pareto front that satisfy the problem's objectives. 
-Reactor designers can utilize \gls{ROLLO} to narrow down the search space for reactor 
-models to meet any number of objectives and input parameters. 
+models on the Pareto front that satisfy all the objectives. 
+Reactor designers can utilize \gls{ROLLO} for multi-objective optimization problems with 
+any number of objectives and arbitrary input parameters, to narrow down the search space 
+to find reactor models that meet their desired requirements. 
 The results from the multi-objective optimizations help reactor designers gain a clearer 
 understanding of the reactor models' parameters that meet their defined objectives to 
 varying degrees.
 From there, reactor designers can determine the importance of each objective for 
 their purposes, then conduct sensitivity analysis and use higher fidelity models to 
-further characterize a smaller section of the design space that they are interested in.
+further study a smaller section of the optimal design space that they are 
+interested in.
 
-By characterizing each objective's main driving forces for the \gls{AHTR} plank model ...  
+This chapter successfully determined and explained the driving factors behind 
+each objective and their relationship with one another.  
+Characterizations of each objective on a simple \gls{AHTR} plank model provides 
+insights for the next chapter in which I conduct multi-objective optimization for 
+a more complex \gls{AHTR} one-third assembly model. 
+%By characterizing each objective's main driving forces for the \gls{AHTR} plank model ...  
 % talk about how characterizing helps with one-third assem
 
 % influencing factors for each objective 
