@@ -579,22 +579,22 @@ The flatness is influenced by the minimize $T_{max}$ objective.
 The variations in \gls{TRISO} distributions are influenced by both the minimize 
 total packing fraction and minimize $PPF_{fuel}$ objectives. 
 However, as mentioned previously, the $PF_{total}$ and $PPF_{fuel}$ relationship
-results in unexpected TRISO distributions based on the value of $PF_{total}$. 
+results in unexpected TRISO distributions at different $PF_{total}$ values. 
 The minimize $PF_{total}$ objective tries to maximize fission reaction rate
 to enable a higher $k_{eff}$ for lower $PF_{total}$, and 
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
 \subsubsection{Simulation p-3b}
-In Section \ref{sec:p-3b}'s simulation p-3b, I conducted three-objective 
-optimization simulations to minimize total fuel packing fraction ($PF_{total}$), 
+In Section \ref{sec:p-3b}'s simulation p-3b, I conducted a three-objective 
+optimization simulation to minimize total fuel packing fraction ($PF_{total}$), 
 maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$) by varying $PF_{total}$, TRISO distribution, and coolant channel shape.
 \gls{ROLLO} found 21 widely spread reactor models on simulation p-3b's Pareto 
 front. 
 
-In simulation p-3b, \gls{ROLLO} found that a TRISO distribution that has a 
-constant TRISO distribution, $PF_{total} = 0.034$, and $r_{tot}=0.657cm$ most-minimized 
-$T_{max}$ (the dark green distribution in Figure 
+In simulation p-3b, \gls{ROLLO} found that the reactor model with the most-minimized 
+$T_{max}$ has a constant TRISO distribution, $PF_{total} = 0.034$, and $r_{tot}=0.657cm$ 
+(the dark green distribution in Figure 
 \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
 This distribution follows a similar flat shape as simulation p-1b's most-minimized 
 $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}) and has a large 
@@ -602,9 +602,9 @@ $r_{top}$ and $r_{bot}$ due to the negative correlation between $T_{max}$ and $r
 found in simulation p-1e (Sections \ref{sec:plank-1-obj-temp} and 
 \ref{sec:plank-discussion-temp}). 
 
-In simulation p-3b, \gls{ROLLO} found that a TRISO distribution that has an 
-oscillating TRISO distribution with $\sim0.01$ variation, $PF_{total} = 0.026$, and 
-$r_{tot}=0.505cm$ most-minimized $PF_{total}$
+In simulation p-3b, \gls{ROLLO} found that the reactor model with the most-minimized 
+$PF_{total}$ has an oscillating TRISO distribution with $\sim0.01$ variation, 
+$PF_{total} = 0.026$, and $r_{tot}=0.505cm$
 (the pink distribution in Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
 This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
 distribution (Figure \ref{fig:slab-obj-1-pf-final}) with an oscillating TRISO 
@@ -618,7 +618,7 @@ $PPF_{fuel}$ (the light green distribution in Figure
 \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
 The constant TRISO distribution is unexpected for the most-minimized $PPF_{fuel}$ result. 
 However, as mentioned before the $PF_{total}$ and $PPF_{fuel}$ relationship
-results in unexpected TRISO distributions based on the value of $PF_{total}$. 
+results in unexpected TRISO distributions at different $PF_{total}$ values. 
 
 Similar to simulation p-3a, most of the \gls{TRISO} distributions on simulation 
 p-3b's Pareto front (Figure \ref{fig:slab-obj-3-distr-all}) have a mostly flat 
@@ -628,7 +628,7 @@ The TRISO distribution's flatness is influenced by the minimize $T_{max}$ object
 The variations in \gls{TRISO} distributions are influenced by both the minimize 
 total packing fraction and minimize $PPF_{fuel}$ objectives. 
 However, as mentioned previously, the $PF_{total}$ and $PPF_{fuel}$ relationship
-results in unexpected TRISO distributions based on the value of $PF_{total}$. 
+results in unexpected TRISO distributions at different $PF_{total}$ values. 
 The minimize $PF_{total}$ objective tries to maximize fission reaction rate
 to enable a higher $k_{eff}$ for lower $PF_{total}$, and 
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
