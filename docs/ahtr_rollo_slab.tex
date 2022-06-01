@@ -91,11 +91,11 @@ Their results will inform the multi-objective optimization simulations setup.
 
 The $k_{eff}$ constraint value is 1.35 and 1.0 for optimization problems that do
 and do not minimize total packing fraction, respectively. 
-$k_{eff}$ is strongly correlated with total packing fraction. 
+$k_{eff}$ strongly correlates with total packing fraction. 
 The \gls{AHTR} plank with the same packing fraction as the \gls{FHR} Benchmark's assembly 
-model had a $k_{eff}$ of 1.35, thus, I constrainined $k_{eff} \geq 1.35$ to find optimal 
-input parameters that achieve similar performance to the original benchmark \gls{TRISO} 
-distribution. 
+model had a $k_{eff}$ of 1.35. 
+Thus, I constrainined $k_{eff} \geq 1.35$ to find optimal input parameters that achieve 
+similar performance to the original benchmark \gls{TRISO} distribution. 
 
 Simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and Theta 
 supercomputer at the Argonne Leadership Computing Facility under the Director's 
@@ -105,7 +105,7 @@ cost.
 
 \section{AHTR Plank: Single-Objective Optimization Results}
 \label{sec:plank-one-obj}
-In this section, I report the \gls{AHTR} plank's \gls{ROLLO} single-objective 
+This section report the \gls{AHTR} plank's \gls{ROLLO} single-objective 
 optimization results. 
 Table \ref{tab:slab-obj-breakdown} summarized the one-objective simulations in this
 section: p-1a, p-1b, p-1c, p-1d, p-1e, and p-1f. 
@@ -113,16 +113,16 @@ In the following subsections, I describe the single-objective optimization resul
 grouped by the minimized objective. 
 
 If a single-objective optimization problem's objective converges earlier than the 
-5 generations I intended to run (determined in Section 
-\ref{sec:multi-obj-hyperparameters}), I stop running the simulation at that generation.
+five generations I intended to run (determined in Section 
+\ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation.
 Section \ref{sec:rollo-convergence} describes how reactor designers use 
 \gls{ROLLO} to determine problem convergence. 
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 \label{sec:plank-1-obj-pf}
-This section reports results from the minimize total fuel packing fraction 
-($PF_{total}$) single-objective optimization simulations: p-1a and p-1d. 
-Simulation p-1a varies total fuel packing fraction ($PF_{total}$) and \gls{TRISO} 
+This section reports the minimize total fuel packing fraction 
+($PF_{total}$) single-objective optimization simulation results: p-1a and p-1d. 
+Simulation p-1a varies the total fuel packing fraction ($PF_{total}$) and \gls{TRISO} 
 packing fraction distribution ($\rho_{TRISO}(\vec{r})$), while simulation p-1d varies 
 the total fuel packing fraction ($PF_{total}$) and coolant channel shape. 
 
@@ -157,7 +157,7 @@ Figure \ref{fig:slab-obj-1-pf-evol} shows the $PF_{total}$ evolution,
 Figure \ref{fig:slab-obj-1-pf-final} shows the five TRISO packing fraction 
 distributions ($\rho_{TRISO}(\vec{r})$) in the final generation with the 
 most-minimized $PF_{total}$, and Figure \ref{fig:slab-obj-1-pf-most-minimized} 
-illustrates the \gls{AHTR} plank model with most-minimized $PF_{total}$.
+illustrates the \gls{AHTR} plank model with the most-minimized $PF_{total}$.
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.9\textwidth}
@@ -167,7 +167,7 @@ illustrates the \gls{AHTR} plank model with most-minimized $PF_{total}$.
     \end{subfigure}
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-final.png}
-        \caption{TRISO packing fraction distribution for the 5 reactor models with the 
+        \caption{TRISO packing fraction distribution for the five reactor models with the 
         smallest $PF_{total}$ in the final generation.}
         \label{fig:slab-obj-1-pf-final} 
     \end{subfigure}
@@ -185,16 +185,16 @@ illustrates the \gls{AHTR} plank model with most-minimized $PF_{total}$.
 \end{figure}
 
 Figure \ref{fig:slab-obj-1-pf-evol} shows that the minimum and average $PF_{total}$ 
-converged very quickly, as expected in this single-objective optimization 
+converged quickly, as expected in this single-objective optimization 
 problem.
 By the final generation, the average, minimum, and maximum $PF_{total}$
 values converged to approximately 0.023. 
 In Figure \ref{fig:slab-obj-1-pf-final}, the \gls{TRISO} packing fraction
-sine distributions are not exactly the same, but follow a similar oscillating 
+sine distributions are not the same but follow a similar oscillating 
 TRISO distribution pattern. 
 
 Section \ref{sec:plank-discussion-pf} discusses the motivating factors for the minimize 
-$PF_{total}$ objective, and explains simulation p-1a's most-minimized $PF_{total}$ 
+$PF_{total}$ objective and explains simulation p-1a's most-minimized $PF_{total}$ 
 oscillating TRISO distribution. 
 
 \subsubsection{Simulation p-1d: Variation of $PF_{total}$ and Coolant channel shape}
@@ -223,8 +223,8 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the $PF_{total}$ evolution 
-and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of total radius 
+Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the $PF_{total}$ evolution, 
+and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of the total radius 
 ($r_{top} + r_{bot}$) against $PF_{total}$. 
 \begin{figure}[htbp!]
     \centering
@@ -250,8 +250,8 @@ between $PF_{total}$ and total radius.
 
 \subsection{Objective: Minimize Maximum Plank Temperature ($T_{max}$)}
 \label{sec:plank-1-obj-temp}
-This section reports results from the minimize maximum plank temperature 
-($T_{max}$) single-objective optimization simulations: p-1b and p-1e. 
+This section reports the minimize maximum plank temperature ($T_{max}$) 
+single-objective optimization simulation results: p-1b and p-1e. 
 Simulation p-1b varies \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), while simulation p-1e varies the coolant channel shape. 
 
@@ -298,7 +298,7 @@ with most-minimized $T_{max}$.
     \end{subfigure}
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-final.png}
-        \caption{TRISO distribution for the 5 reactor models with the 
+        \caption{TRISO distribution for the five reactor models with the 
         lowest AHTR plank $T_{max}$ at the final generation.}
         \label{fig:slab-obj-1-temp-final} 
     \end{subfigure}
@@ -317,7 +317,7 @@ with most-minimized $T_{max}$.
 Figure \ref{fig:slab-obj-1-temp-evol} shows that the minimum and average plank's 
 $T_{max}$ converged to approximately 1125 K. 
 In Figure \ref{fig:slab-obj-1-temp-final}, a mostly flat TRISO
-distribution minimizes $T_{max}$ in the plank, the TRISO distribution 
+distribution minimizes $T_{max}$ in the plank; the TRISO distribution 
 has two small dips at the one-third and two-third points in the plank 
 (6.62cm and 20.48cm). 
 
@@ -355,7 +355,7 @@ Figure \ref{fig:slab-obj-1-temp-evol-coolant} shows the plank's $T_{max}$ evolut
 Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of total radius 
 ($r_{top} + r_{bot}$) against $T_{max}$, and Figure 
 \ref{fig:slab-obj-1-temp-most-minimized-coolant} illustrates the \gls{AHTR} plank model 
-with most-minimized $T_{max}$. 
+with the most-minimized $T_{max}$. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
@@ -382,15 +382,15 @@ with most-minimized $T_{max}$.
     \label{fig:slab-obj-1-temp-coolant}
 \end{figure}
 
-Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates that there is a negative 
+Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates a negative 
 linear correlation between the plank's $T_{max}$ and total radius. 
 Section \ref{sec:plank-discussion-temp} discusses and explains the relationship between 
 $T_{max}$ and coolant channel shape. 
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor ($PPF_{fuel}$)}
 \label{sec:plank-1-obj-ppf}
-This section reports results from the minimize fuel-normalized power peaking factor 
-($PPF_{fuel}$) single-objective optimization simulations: p-1c and p-1f. 
+This section reports the minimize fuel-normalized power peaking factor 
+($PPF_{fuel}$) single-objective optimization simulation results: p-1c and p-1f. 
 Simulation p-1c varies \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), while simulation p-1f varies the coolant channel shape. 
 
@@ -426,7 +426,7 @@ Figure \ref{fig:slab-obj-1-ppf-evol} shows the plank's $PPF_{fuel}$ evolution,
 Figure \ref{fig:slab-obj-1-ppf-final} shows the five \gls{TRISO} 
 packing fraction distributions ($\rho_{TRISO}(\vec{r})$) in the final generation 
 with the most-minimized $PPF_{fuel}$, and Figure 
-\ref{fig:slab-obj-1-ppf-most-minimized} illustrates the \gls{AHTR} plank model with 
+\ref{fig:slab-obj-1-ppf-most-minimized} illustrates the \gls{AHTR} plank model with the
 most-minimized $PPF_{fuel}$. 
 \begin{figure}[htbp!]
     \centering
@@ -438,8 +438,8 @@ most-minimized $PPF_{fuel}$.
     \end{subfigure}
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-final.png}
-        \caption{TRISO distribution for the 5 reactor models with the 
-        lowest $PPF_{fuel}$ in AHTR plank at the final generation.}
+        \caption{TRISO distribution for the five reactor models with the 
+        lowest $PPF_{fuel}$ in the AHTR plank at the final generation.}
         \label{fig:slab-obj-1-ppf-final} 
     \end{subfigure}
     \begin{subfigure}{0.9\textwidth}
@@ -455,11 +455,11 @@ most-minimized $PPF_{fuel}$.
     \label{fig:slab-obj-1-ppf}
 \end{figure}
 
-In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution that best minimizes 
-$PPF_{fuel}$ peaks near the edges of the fuel region of the plank, and has a minimum 
-point in center of the plank.
+In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution with the most-minimized 
+$PPF_{fuel}$ peaks near the edges of the fuel region of the plank and has a minimum 
+point at the plank's center.
 Section \ref{sec:plank-discussion-ppf} discusses the motivating factors for the minimize 
-$PPF_{fuel}$ objective, and explains simulation p-1c's most-minimized $PPF_{fuel}$ 
+$PPF_{fuel}$ objective and explains simulation p-1c's most-minimized $PPF_{fuel}$ 
 TRISO distribution. 
 
 \subsubsection{Simulation p-1f: Variation of Coolant Channel Shape}
@@ -489,8 +489,8 @@ Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem param
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the plank's $PPF_{fuel}$ evolution 
-and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows a plot of total 
+Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the plank's $PPF_{fuel}$ evolution, 
+and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows a plot of the total 
 radius ($r_{top} + r_{bot}$) against $PPF_{fuel}$. 
 \begin{figure}[htbp!]
     \centering
@@ -518,7 +518,7 @@ between $PPF_{fuel}$ and total radius.
 \pagebreak
 \section{AHTR Plank: Two-Objective Optimization Results}
 \label{sec:plank-two-obj}
-In this section, I report the \gls{AHTR} plank's \gls{ROLLO} two-objective 
+This section reports the \gls{AHTR} plank's \gls{ROLLO} two-objective 
 optimization results. 
 The previous section's one-objective optimization results inform the multi-objective 
 optimization simulations in this section and Section \ref{sec:plank-three-obj}.
