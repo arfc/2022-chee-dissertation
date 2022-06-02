@@ -457,9 +457,9 @@ most-minimized $PPF_{fuel}$.
     \label{fig:slab-obj-1-ppf}
 \end{figure}
 
-In Figure \ref{fig:slab-obj-1-ppf-final}, the TRISO distribution with the most-minimized 
-$PPF_{fuel}$ peaks near the edges of the fuel region of the plank and has a minimum 
-point at the plank's center.
+In Figure \ref{fig:slab-obj-1-ppf-final}, the plank model with the most-minimized 
+$PPF_{fuel}$ has a TRISO distribution that peaks near the edges of the fuel region and 
+has a minimum point at the plank's center.
 Section \ref{sec:plank-discussion-ppf} discusses the motivating factors for the minimize 
 $PPF_{fuel}$ objective and explains simulation p-1c's most-minimized $PPF_{fuel}$ 
 TRISO distribution. 
@@ -660,13 +660,13 @@ reactor model solutions on simulation p-2a's Pareto front.
 These \gls{TRISO} distributions on the Pareto front that minimize both $PF_{total}$ and 
 $T_{max}$ vary between the two extreme cases: 
 most-minimized $PF_{total}$ and most-minimized $T_{max}$. 
-In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the
+In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the plank model with the
 most-minimized $PF_{total}$ and the highest $T_{max}$ (the blue distribution) has an 
 oscillating TRISO distribution (also illustrated in Figure 
 \ref{fig:slab-obj-2-pftemp-min-pf}).
-In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the TRISO distribution with the 
+In Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}, the plank model with the 
 most-minimized $T_{max}$ and highest $PF_{total}$ (the purple distribution)
-has an almost constant packing fraction of $\sim0.032$ across the plank (also 
+has an almost constant TRISO distribution of $PF_{total}=0.032$ across the plank (also 
 illustrated in Figure \ref{fig:slab-obj-2-pftemp-min-temp}). 
 Section \ref{sec:plank-discussion-multi} discusses and explains simulation p-2a's results.
 
@@ -778,13 +778,13 @@ $PPF_{fuel}$, respectively.
 
 All reactor models on Figure \ref{fig:slab-obj-2-pfppf}'s Pareto front have a relatively 
 flat TRISO packing fraction distribution, varying between 0.02 and 0.04. 
-In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
+In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the plank model with the 
 most-minimized $PF_{total}$ and highest $PPF_{fuel}$
-(the orange distribution) has a constant packing fraction of 0.02 across the plank
-(also illustrated in Figure \ref{fig:slab-obj-2-pfppf-min-pf}). 
-In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the TRISO distribution with the 
+(the orange distribution) has a constant TRISO distribution of $PF_{total}=0.02$ 
+across the plank (also illustrated in Figure \ref{fig:slab-obj-2-pfppf-min-pf}). 
+In Figure \ref{fig:slab-obj-2-pfppf-pareto-distr}, the plank model with the 
 most-minimized $PPF_{fuel}$ and highest $PF_{total}$
-(the blue distribution) has a packing fraction that peaks in the center of the plank
+(the blue distribution) has a TRISO distribution that peaks in the center of the plank
 and on both sides (also illustrated in Figure \ref{fig:slab-obj-2-pfppf-min-ppf}). 
 Sections \ref{sec:plank-discussion-multi} and \ref{sec:plank-discussion-ppf-results} 
 discuss and explain simulation p-2b's results.
@@ -902,15 +902,15 @@ reactor model solutions on simulation p-2c's Pareto front.
 These \gls{TRISO} distributions on the Pareto front that minimize both $T_{max}$ 
 and $PPF_{fuel}$ vary between the two extreme cases: 
 most-minimized $T_{max}$ and most-minimized $PPF_{fuel}$.
-In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
+In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the plank model with 
 the most-minimized $T_{max}$ and highest $PPF_{fuel}$ (the orange distribution) 
-has an almost constant packing fraction of $\sim0.0979$ across the plank, with a 
-slight oscillating pattern (also illustrated in Figure 
+has an almost constant TRISO distribution of $PF_{total}=0.0979$ across the plank, 
+with a slight oscillating pattern (also illustrated in Figure 
 \ref{fig:slab-obj-2-tempppf-min-temp}).
-In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the TRISO distribution with 
-most-minimized $PPF_{fuel}$ and highest $T_{max}$
-(the grey distribution) peaks near the sides of the plank and has a minimum point at 
-the center of the plank (also illustrated in Figure \ref{fig:slab-obj-2-tempppf-min-ppf}). 
+In Figure \ref{fig:slab-obj-2-tempppf-pareto-distr}, the plank model with 
+most-minimized $PPF_{fuel}$ and highest $T_{max}$ (the grey distribution) has a TRISO 
+distribution that peaks near plank's sides and has a minimum point at the
+plank's center (also illustrated in Figure \ref{fig:slab-obj-2-tempppf-min-ppf}). 
 Sections \ref{sec:plank-discussion-multi} discusses and explains simulation p-2c's 
 results.
 
@@ -1012,6 +1012,9 @@ Figure \ref{fig:slab-obj-3-3d} demonstrates that \gls{ROLLO} found 14 widely spr
 solutions in the final generation's Pareto front.  
 Figure \ref{fig:slab-obj-3-distr-most-minimized} shows the three distributions from 
 Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective. 
+Figures \ref{fig:slab-obj-3-min-pf}, \ref{fig:slab-obj-3-min-temp}, and 
+\ref{fig:slab-obj-3-min-ppf} show the \gls{AHTR} plank's TRISO distribution and 
+coolant channel shape for most-minimized cases. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.85\textwidth}
@@ -1048,14 +1051,14 @@ Figure \ref{fig:slab-obj-3-distr} that most-minimized each objective.
     \label{fig:slab-obj-3-most-minimized}
 \end{figure}
 
-In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
+In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the plank model with the
 most-minimized $PF_{total}$ (the purple distribution) has an oscillating TRISO 
 distribution with $\sim0.01$ variation and $PF_{total} = 0.02$ 
 (also illustrated in Figure \ref{fig:slab-obj-3-min-pf}).
-In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the 
+In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the plank model with the 
 most-minimized $T_{max}$ (the orange distribution) has a mostly flat TRISO distribution 
 and $PF_{total} = 0.059$ (also illustrated in Figure \ref{fig:slab-obj-3-min-temp}). 
-In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the TRISO distribution with the
+In Figure \ref{fig:slab-obj-3-distr-most-minimized}, the plank model with the
 most-minimized $PPF_{fuel}$ (the pink distribution) has a 
 slightly oscillating TRISO distribution and $PF_{total} = 0.025$ 
 (also illustrated in Figure \ref{fig:slab-obj-3-min-ppf}).
@@ -1213,7 +1216,6 @@ TRISO distribution, $PF_{total} = 0.036$, and $r_{tot}=0.307cm$
 Section \ref{sec:plank-discussion-multi} discusses and explains simulation p-3b's 
 results.
 
-\pagebreak
 \section{AHTR Plank: Computational Cost Summary}
 \label{sec:plank-compute-cost}
 Optimization simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and
