@@ -680,7 +680,7 @@ fuel-normalized power peaking factor ($PPF_{fuel}$).
 
 In Section \ref{sec:plank-one-obj}'s six single-objective optimization simulations: 
 p-1a, p-1b, p-1c, p-1d, p-1e, p-1f; and Sections \ref{sec:plank-discussion-pf}, 
-\ref{sec:plank-discussion-temp}, and \ref{sec:plank-discussion-ppf} discussions    
+\ref{sec:plank-discussion-temp}, and \ref{sec:plank-discussion-ppf} discussions,    
 I characterized each objective's driving factors and relationship with each input 
 parameter. 
 I determined that the minimize $T_{max}$ objective is driven by minimizing plank's maximum 
@@ -702,13 +702,13 @@ All the multi-objective optimization simulations successfully found a wide sprea
 reactor models on a Pareto front that meets each objective to varying degrees. 
 In the multi-objective optimization simulations, the minimize $T_{max}$ objective 
 continued to influence the flattening of the TRISO distribution and maximizing of the 
-coolant channel shape's $r_{tot}$ to achieve the objective. 
+coolant channel shape ($r_{bot}$ and $r_{top}$) to achieve the objective. 
 The results from simulation p-2b and investigations in Section 
 \ref{sec:plank-discussion-ppf-results} suggested that the minimize $PF_{total}$ 
 objective's driving factor maximize total fission reaction rate and 
 minimize $PPF_{fuel}$ objective's driving factor flattening thermal flux distribution 
-influence each other resulting in unexpected TRISO distributions based 
-on the value of $PF_{total}$. 
+influence each other resulting in unexpected TRISO distributions at different 
+$PF_{total}$ values. 
 Simulation p-3b's multi-objective optimization shows the result of minimizing all 
 three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
 all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
@@ -721,16 +721,16 @@ models on the Pareto front that satisfy all the objectives.
 Reactor designers can utilize \gls{ROLLO} for multi-objective optimization problems with 
 any number of objectives and arbitrary input parameters, to narrow down the search space 
 to find reactor models that meet their desired requirements. 
-The results from the multi-objective optimizations help reactor designers gain a clearer 
-understanding of the reactor models' parameters that meet their defined objectives to 
-varying degrees.
+The results from \gls{ROLLO}'s multi-objective optimizations help reactor designers 
+gain a clearer understanding of the reactor models' parameters that meet their defined 
+objectives to varying degrees.
 From there, reactor designers can determine the importance of each objective for 
 their purposes, then conduct sensitivity analysis and use higher fidelity models to 
 further study a smaller section of the optimal design space that they are 
 interested in.
 
 This chapter successfully determined and explained the driving factors behind 
-each objective and their relationship with one another.  
-Characterizations of each objective on a simple \gls{AHTR} plank model provides 
+each reactor optimization objective and their relationship with one another.  
+Characterizations of each objective for a simple \gls{AHTR} plank model provides 
 insights for the next chapter in which I conduct multi-objective optimization for 
 the more complex \gls{AHTR} one-third assembly model. 
