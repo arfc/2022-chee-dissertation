@@ -3,7 +3,7 @@
 \label{chap:method}
 In this chapter, I describe the modeling and optimization methodology of the 
 \gls{AHTR} optimization for non-conventional geometries and parameters
-conducted using \gls{ROLLO}.
+conducted using the \gls{ROLLO}.
 The optimization tool should enable the placement of fuel, moderation, and coolant 
 material in any possible location, within physical limits, to wholly explore the 
 design space enabled by additive manufacturing. 
@@ -459,10 +459,10 @@ The Moltres model relies on group constant data produced by the OpenMC model.
 The OpenMC and Moltres models' workflow:  
 \begin{enumerate}
 \item OpenMC neutronics model
-\item OpenMC neutronics model produces group constants data for the Moltres 
+\item OpenMC neutronics model produces group constant data for the Moltres 
 model
 \item Moltres model mesh generation 
-\item Moltres temperature model accepts group constants data and mesh
+\item Moltres temperature model accepts group constant data and mesh
 \end{enumerate}
 In the subsequent subsections, I describe details and assumptions for each step of 
 the OpenMC and Moltres models' workflow.
@@ -487,7 +487,7 @@ Unlike the OpenMC model, Moltres does not explicitly model each \gls{TRISO}
 particle. 
 This is because a TRISO-level fidelity mesh file is impractical and results in
 extremely long runtimes. 
-Instead, Moltres relies on the OpenMC model to generate group constants data for the 
+Instead, Moltres relies on the OpenMC model to generate group constant data for the 
 Moltres' multigroup neutron diffusion calculations. 
 Previously, Moltres could only generate group constant data from Serpent 
 \cite{leppanen_serpent_2014} or SCALE \cite{bucholz_scale:_1982} output files. 
@@ -788,7 +788,7 @@ PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 In this section, I conduct \gls{AHTR} Moltres model verification for key neutronics 
 parameters.
 I set up a criticality eigenvalue problem in Moltres and calculated key neutronics 
-parameters using group constants data from OpenMC. 
+parameters using group constant data from OpenMC. 
 For both the \gls{AHTR} plank and one-third assembly models, I compare the key neutronics 
 parameters between two simulations:
 \begin{enumerate}
