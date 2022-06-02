@@ -170,13 +170,14 @@ PF_j &= \mbox{fuel packing fraction at position j} \nonumber
 The fission reaction rate ($RR_f$) is proportional to fission energy production rate 
 ($fqr$). 
 The atomic number density (N) is proportional to the fuel packing fraction ($PF$). 
-Thus, I can further rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
+Thus, I can rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
 Equation \ref{eq:flux-prop-fqr}:
 \begin{align}
     \label{eq:flux-prop-fqr}
     \Phi_j \propto \frac{fqr_j}{PF_j}
 \end{align}
-Finally, I can further rearrange into Equation \ref{eq:flux-prop-ppf}:
+Finally, I can further rearrange Equation \ref{eq:flux-prop-fqr} into 
+Equation \ref{eq:flux-prop-ppf}:
 \begin{align}
     \label{eq:flux-prop-ppf}
     max(\Phi_j) \div ave(\Phi_j) &\propto max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j}) \nonumber \\
@@ -220,13 +221,13 @@ optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{
 by varying TRISO distribution. 
 In simulation p-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.0979, an \gls{AHTR} 
 plank model with TRISO distribution that peaks near the edges of the fuel region of 
-the plank and a minimum point in center of the plank with a variation of $\sim0.07$, 
-most-minimized $PPF_{fuel}$. 
+the plank and a minimum point in plank's center with a variation of $\sim0.07$, 
+most-minimized $PPF_{fuel}$ (Figure \ref{fig:slab-obj-1-ppf}). 
 
 I ran a simulation for constant $PF_{total}$ = 0.0979 and compared its 
 flux to simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution to understand 
 why the latter enabled a lower $PPF_{fuel}$. 
-Figure \ref{fig:triso-0.0979} shows the TRISO distributions with their $PPF_{fuel}$ 
+Figure \ref{fig:triso-0.0979} shows the TRISO distributions and the $PPF_{fuel}$ 
 values for the two compared simulations: Figure \ref{fig:slab-obj-1-ppf}'s 
 most-minimized $PPF_{fuel}$ TRISO distribution and the constant $PF_{total}$ = 0.0979 
 TRISO distribution. 
