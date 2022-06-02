@@ -32,13 +32,13 @@ optimization simulations.
 
 The subsequent sections outline the \gls{AHTR} plank optimization simulations, describe 
 the single-objective and multi-objective \gls{ROLLO} optimization simulation results, 
-report each simulation's computational cost, and discusses the results.
+reports each simulation's computational cost, and discusses their results.
 
 The \texttt{plank-optimization} directory in the \texttt{arfc/2022-chee-dissertation} 
 Github repository contains this chapter's results \cite{chee_dissertation_2021}. 
 
 \section{ROLLO AHTR Plank Optimization Simulations Overview}
-Table \ref{tab:slab-obj-breakdown} shows the details of each \gls{ROLLO} 
+Table \ref{tab:slab-obj-breakdown} summarizes the details of each \gls{ROLLO} 
 optimization simulation conducted in this chapter.
 \begin{table}[htbp!]
     \centering
@@ -86,10 +86,9 @@ optimization simulation conducted in this chapter.
     \hline
     \end{tabular}
 \end{table}
-
 I first conducted single objective, single input parameter \gls{ROLLO} optimizations to 
 understand the individual impacts of each objective on each input parameter. 
-Their results will inform the multi-objective optimization simulations setup. 
+Their results inform the multi-objective optimization simulations setup. 
 
 The $k_{eff}$ constraint value is 1.35 and 1.0 for optimization problems that do
 and do not minimize total packing fraction, respectively. 
@@ -117,7 +116,9 @@ grouped by the minimized objective.
 If a single-objective optimization problem's objective converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation.
-Section \ref{sec:rollo-convergence} describes how reactor designers use 
+However, if the problem's objective does not converge by generation 5, I run the 
+problem for a few more generations till satisfactory convergence.
+Section \ref{sec:rollo-convergence} describes how reactor designers can use 
 \gls{ROLLO} to determine problem convergence. 
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
