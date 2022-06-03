@@ -397,10 +397,10 @@ Figures \ref{fig:a-1e-r2}, \ref{fig:a-1e-r3} and \ref{fig:a-1e-r4} demonstrate t
 there is no correlation between $T_{max}$ with $r_2$, $r_3$, and $r_4$. 
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor ($PPF_{fuel}$)}
-This section reports results from the minimize fuel-normalized power peaking factor 
-single-objective optimization simulations: a-1c and a-1f. 
-Simulation a-1c varies \gls{TRISO} packing fraction distribution, while simulation a-1f 
-varies the coolant channel shape. 
+This section reports the minimize fuel-normalized power peaking factor 
+($PPF_{fuel}$) single-objective optimization simulation results: a-1c and a-1f. 
+Simulation a-1c varies \gls{TRISO} packing fraction distribution 
+($\rho_{TRISO}(\vec{r})$), while simulation a-1f varies the coolant channel shape.
 
 \subsubsection{Simulation a-1c: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem parameters. 
@@ -410,45 +410,58 @@ Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem param
     \caption{Simulation a-1c Optimization Problem Parameters}
 	\label{tab:simulationa1c}
     \footnotesize
-    \begin{tabular}{l|p{4cm}}
+    \begin{tabular}{l|p{5.3cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1c}} \\
     \hline 
     \textbf{Objectives} & Minimize $PPF_{fuel}$ \\
     \hline 
     \textbf{Input Parameter variations}
-    & $PF_{total}$ = 0.04 \\
-    & $0<a<2$, $0<d<2$\\
-    & $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
-    & $0<c<2\pi$, $0<f<2\pi$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$, $0<d<2$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    & $PF_{total}$ = 0.04 \\
     \hline 
     \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
     & Generations: 3 \\
     \hline
     \end{tabular}
 \end{table}
-Figure \ref{fig:assem-obj-1-ppf-evol} shows the normalized power peaking factor evolution 
-and Figure \ref{fig:assem-obj-1-ppf-final} shows the four TRISO packing fraction distributions in 
-the final generation with the most minimized PPF. 
+
+Figure \ref{fig:assem-obj-1-ppf-evol} shows the one-third assembly's $PPF_{fuel}$ 
+evolution. 
+Figure \ref{fig:assem-obj-1-ppf-final} shows the four TRISO packing fraction 
+distributions in the final generation with the most minimized $PPF_{fuel}$. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{assem-obj-1-ppf-evol.png}
-        \caption{Minimum, average, and maximum normalied power peaking factor evolution.}
+        \caption{Minimum, average, and maximum evolution of $PPF_{fuel}$ in the 
+        AHTR one-third assembly.}
         \label{fig:assem-obj-1-ppf-evol} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{assem-obj-1-ppf-final.png}
-        \caption{TRISO packing fraction distribution for the 4 individuals with the 
-        smallest normalized power peaking factor in generation 3.}
+        \caption{TRISO distribution for the four reactor models with the 
+        lowest $PPF_{fuel}$ in the AHTR one-third assembly at the final generation.}
         \label{fig:assem-obj-1-ppf-final} 
     \end{subfigure}
-    \caption{ROLLO single-objective optimization to minimize total packing fraction. 
-    Input parameters varied: total packing fraction, TRISO packing fraction distribution.}
+    \caption{Simulation a-1c -- ROLLO single-objective optimization to minimize 
+    AHTR one-third assembly's fuel-normalized power peaking factor ($PPF_{fuel}$). 
+    Input parameters varied: TRISO distribution ($\rho_{TRISO}(\vec{r})$).
+    $PF_{total}$ = 0.04.}
     \label{fig:assem-obj-1-ppf}
 \end{figure}
+
+Figure \ref{fig:assem-obj-1-ppf-evol} shows that the minimum, average, and maximum 
+one-third assembly's $T_{max}$ converged to approximately 1.07.
+In Figure \ref{fig:assem-obj-1-ppf-final}, the four TRISO packing fraction distributions 
+in the final generation that most-minimized $PPF_{fuel}$ are the same with 
+$PPF_{fuel} = 1.0795$.
+Their TRISO distributions are somewhat constant with a small peak at 
+$(x,y) = (11.8cm, 10.0cm)$. 
 
 \subsubsection{Simulation a-1f: Variation of Coolant channel shape}
 Table \ref{tab:simulationa1f} shows simulation a-1f's optimization problem parameters. 
