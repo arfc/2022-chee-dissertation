@@ -208,6 +208,42 @@ Table \ref{tab:simulationa1d} shows simulation a-1d's optimization problem param
     \end{tabular}
 \end{table}
 
+Figure \ref{fig:a-1d} shows the plots of each radius value against $PF_{total}$. 
+\begin{figure}[htbp!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1d-r1.png}
+        \caption{Plot of $PF_{total}$ against $r_1$.}
+        \label{fig:a-1d-r1} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1d-r2.png}
+        \caption{Plot of $PF_{total}$ against $r_2$.}
+        \label{fig:a-1d-r2} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1d-r3.png}
+        \caption{Plot of $PF_{total}$ against $r_3$.}
+        \label{fig:a-1d-r3} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1d-r4.png}
+        \caption{Plot of $PF_{total}$ against $r_4$.}
+        \label{fig:a-1d-r4} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1d-r5.png}
+        \caption{Plot of $PF_{total}$ against $r_5$.}
+        \label{fig:a-1d-r5} 
+    \end{subfigure}
+    \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize 
+    total fuel packing fraction($PF_{total}$). 
+    Red crosses indicate the five reactor models with the lowest $PF_{total}$.
+    Input parameters varied: total fuel packing fraction 
+    ($PF_{total}$), and coolant channel shape ($r_1, r_2, r_3, r_4, r_5$).}
+    \label{fig:a-1d}
+\end{figure}
+
 \subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
 \label{sec:assem-1-obj-temp}
 This section reports results from the minimize maximum one-third assembly temperature 
