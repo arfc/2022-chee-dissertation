@@ -245,6 +245,7 @@ $r_1, r_2, r_3, r_4,$ and $r_5$ values against $PF_{total}$.
     ($PF_{total}$), and coolant channel shape ($r_1, r_2, r_3, r_4, r_5$).}
     \label{fig:a-1d}
 \end{figure}
+
 Figure \ref{fig:a-1d} demonstrates that there is no correlation between $PF_{total}$ 
 and coolant channel shape's $r_1, r_2, r_3, r_4,$ and $r_5$. 
 
@@ -274,9 +275,9 @@ Table \ref{tab:simulationa1b} shows simulation a-1b's optimization problem param
     & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
     \hline
-    \textbf{Constraints} & $k_{eff} > 1.0$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
     & Generations: 3 \\
     \hline
     \end{tabular}
@@ -306,6 +307,9 @@ $T_{max}$.
 
 Figure \ref{fig:assem-obj-1-temp-evol} shows that the minimum and average plank's 
 $T_{max}$ converged to approximately 1200 K.
+In Figure \ref{fig:assem-obj-1-temp-final}, the four TRISO packing fraction distributions 
+in the final generation that most-minimized $T_{max}$ are the same with a constant 
+TRISO distribution across the one-third assembly.
 
 \subsubsection{Simulation a-1e: Variation of Coolant channel shape}
 Table \ref{tab:simulationa1e} shows simulation a-1e's optimization problem parameters. 
