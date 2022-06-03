@@ -151,6 +151,8 @@ Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem param
 Figure \ref{fig:assem-obj-1-pf-evol} shows the total packing fraction evolution and 
 Figure \ref{fig:assem-obj-1-pf-final} shows the four TRISO packing fraction distributions in 
 the final generation with the most minimized packing fractions. 
+Figure \ref{fig:assem-obj-1-pf-most-minimized} illustrates the \gls{AHTR} one-third 
+assembly model with the most-minimized $PF_{total}$.
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
@@ -160,7 +162,7 @@ the final generation with the most minimized packing fractions.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{assem-obj-1-pf-final.png}
-        \caption{TRISO packing fraction distribution for the five reactor models with the 
+        \caption{TRISO packing fraction distribution for the four reactor models with the 
         smallest $PF_{total}$ in the final generation.}
         \label{fig:assem-obj-1-pf-final} 
     \end{subfigure}
@@ -169,6 +171,19 @@ the final generation with the most minimized packing fractions.
     Input parameters varied: total fuel packing fraction 
     ($PF_{total}$), \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:assem-obj-1-pf}
+\end{figure}
+\begin{figure}[htbp!]
+    \ContinuedFloat
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-1-pf-most-minimized.png}
+        \caption{\gls{AHTR} one-third assembly model with the most-minimized $PF_{total}$.}
+        \label{fig:assem-obj-1-pf-most-minimized} 
+    \end{subfigure}
+    \caption{(contd.) Simulation a-1a -- ROLLO single-objective optimization to minimize total 
+    fuel packing fraction ($PF_{total}$) in \gls{AHTR} one-third assembly. 
+    Input parameters varied: total fuel packing fraction 
+    ($PF_{total}$), \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
 \end{figure}
 
 Figure \ref{fig:assem-obj-1-pf-evol} shows that the minimum and average $PF_{total}$ 
