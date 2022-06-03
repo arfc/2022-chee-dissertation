@@ -239,7 +239,8 @@ $r_1, r_2, r_3, r_4,$ and $r_5$ values against $PF_{total}$.
     \end{subfigure}
     \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize 
     total fuel packing fraction($PF_{total}$). 
-    Plots of  $PF_{total}$ against coolant channel shape input parameters. 
+    Plots of simulation p-1d final generation's reactor models $PF_{total}$ against 
+    coolant channel shape input parameters. 
     Red crosses indicate the five reactor models with the lowest $PF_{total}$.
     Input parameters varied: total fuel packing fraction 
     ($PF_{total}$), and coolant channel shape ($r_1, r_2, r_3, r_4, r_5$).}
@@ -341,6 +342,45 @@ Table \ref{tab:simulationa1e} shows simulation a-1e's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+
+Figure \ref{fig:a-1e} shows the plots of coolant channel shape's 
+$r_1, r_2, r_3, r_4,$ and $r_5$ values against $T_{max}$. 
+\begin{figure}[htbp!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1e-r1.png}
+        \caption{Plot of $PF_{total}$ against $r_1$.}
+        \label{fig:a-1e-r1} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1e-r2.png}
+        \caption{Plot of $PF_{total}$ against $r_2$.}
+        \label{fig:a-1e-r2} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1e-r3.png}
+        \caption{Plot of $PF_{total}$ against $r_3$.}
+        \label{fig:a-1e-r3} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1e-r4.png}
+        \caption{Plot of $PF_{total}$ against $r_4$.}
+        \label{fig:a-1e-r4} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{a-1e-r5.png}
+        \caption{Plot of $PF_{total}$ against $r_5$.}
+        \label{fig:a-1e-r5} 
+    \end{subfigure}
+    \caption{Simulation p-1d -- ROLLO single-objective optimization to minimize 
+    total fuel packing fraction($PF_{total}$). 
+    Plots of simulation p-1d final generation's reactor models $PF_{total}$ against 
+    coolant channel shape input parameters. 
+    Red crosses indicate the five reactor models with the lowest $PF_{total}$.
+    Input parameters varied: total fuel packing fraction 
+    ($PF_{total}$), and coolant channel shape ($r_1, r_2, r_3, r_4, r_5$).}
+    \label{fig:a-1e}
+\end{figure}
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor ($PPF_{fuel}$)}
 This section reports results from the minimize fuel-normalized power peaking factor 
