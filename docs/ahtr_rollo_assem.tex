@@ -471,23 +471,24 @@ Table \ref{tab:simulationa1f} shows simulation a-1f's optimization problem param
     \caption{Simulation a-1f Optimization Problem Parameters}
 	\label{tab:simulationa1f}
     \footnotesize
-    \begin{tabular}{l|p{4cm}}
+    \begin{tabular}{l|p{6cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Single Objective: Simulation a-1f}} \\
     \hline 
     \textbf{Objectives} & Minimize $PPF_{fuel}$ \\
     \hline 
     \textbf{Input Parameter variations} 
-    & $0.05<r_{1}<0.35$ \\
-    & $0.05<r_{2}<0.35$ \\
-    & $0.05<r_{3}<0.35$ \\
-    & $0.05<r_{4}<0.35$ \\
-    & $0.05<r_{5}<0.35$ \\
+    & coolant channel shape: $0.05<r_{1}<0.35$ \\
+    & coolant channel shape: $0.05<r_{2}<0.35$ \\
+    & coolant channel shape: $0.05<r_{3}<0.35$ \\
+    & coolant channel shape: $0.05<r_{4}<0.35$ \\
+    & coolant channel shape: $0.05<r_{5}<0.35$ \\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    & $PF_{total}$ = 0.04 \\
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
-    & Generations: 3 \\
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
+    & Generations: 2 \\
     \hline
     \end{tabular}
 \end{table}
