@@ -566,6 +566,32 @@ section: a-2a, a-2b, and a-2c.
 This section reports results from the two-objective optimization simulation a-2a, the 
 objectives minimized are total fuel packing fraction ($PF_{total}$) and maximum plank
 temperature ($T_{max}$).  
+Table \ref{tab:simulationa2a} shows simulation a-2a's optimization problem parameters. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-2a Optimization Problem Parameters}
+	\label{tab:simulationa2a}
+    \footnotesize
+    \begin{tabular}{l|p{5.3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation a-2a}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
+    & Minimize $T_{max}$ \\
+    \hline 
+    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$, $0<d<2$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
+    \hline
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    \hline 
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \subsection{a-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
 \label{sec:a-2b}
@@ -579,7 +605,7 @@ Table \ref{tab:simulationa2b} shows simulation a-2b's optimization problem param
     \caption{Simulation a-2b Optimization Problem Parameters}
 	\label{tab:simulationa2b}
     \footnotesize
-    \begin{tabular}{l|p{3cm}}
+    \begin{tabular}{l|p{5.3cm}}
     \hline 
     \multicolumn{2}{c}{\textbf{Two Objectives: Simulation a-2b}} \\
     \hline 
@@ -587,9 +613,9 @@ Table \ref{tab:simulationa2b} shows simulation a-2b's optimization problem param
     & Minimize $PPF_{fuel}$ \\
     \hline 
     \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
-    & $0<a<2$, $0<d<2$\\
-    & $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
-    & $0<c<2\pi$, $0<f<2\pi$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$, $0<d<2$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     \hline 
@@ -692,6 +718,33 @@ $PPF_{fuel}$, respectively.
 This section reports results from the two-objective optimization simulation a-2c, the 
 objectives minimized are maximum one-third assembly temperature ($T_{max}$) and 
 fuel-normalized power peaking factor ($PPF_{fuel}$).  
+Table \ref{tab:simulationa2c} shows simulation a-2c's optimization problem parameters. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-2c Optimization Problem Parameters}
+	\label{tab:simulationa2c}
+    \footnotesize
+    \begin{tabular}{l|p{5.3cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Two Objectives: Simulation a-2c}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $T_{max}$ \\
+    & Minimize $PPF_{fuel}$ \\
+    \hline 
+    \textbf{Input parameter variations}
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$, $0<d<2$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
+    \hline
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
+    & $PF_{total} = 0.04$\\
+    \hline 
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
+    & Generations: 3 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \pagebreak
 \section{AHTR One-Third Assembly: Three-Objective Optimization Results}
