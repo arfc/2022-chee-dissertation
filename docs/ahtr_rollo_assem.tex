@@ -812,6 +812,136 @@ optimization results.
 Table \ref{tab:assem-obj-breakdown} summarized the three-objective simulations in this 
 section: a-3a, and a-3b. 
 
+\subsection{a-3a: Variation of $PF_{total}$ and $\rho_{TRISO}(\vec{r})$}
+\label{sec:a-3a}
+This section reports results from the three-objective optimization simulation a-3a, 
+with all objectives minimized: total fuel packing fraction ($PF_{total}$), 
+maximum one-third assembly temperature ($T_{max}$), and fuel-normalized power peaking 
+factor ($PPF_{fuel}$).  
+The input parameters varied are total fuel packing fraction ($PF_{total}$) and 
+TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$). 
+Table \ref{tab:simulationa3a} shows simulation a-3a's optimization problem parameters. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-3a optimization problem parameters.}
+	\label{tab:simulationa3a}
+    \footnotesize
+    \begin{tabular}{l|p{4cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation a-3a}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
+    & Minimize $T_{max}$ \\
+    & Minimize $PPF_{fuel}$ \\
+    \hline 
+    \textbf{Input parameter variations} & $0.05<PF_{total}<0.07$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$, $0<d<2$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
+    \hline
+    \textbf{Constraints} & $k_{eff} \geq 1.38$\\ 
+    \hline 
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
+    & Generations: xx \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Table \ref{tab:a3a-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation a-3a converges by generation xx. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-3a hypervolume values at each generation.}
+	\label{tab:a3a-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation a-3a}} \\
+    \multicolumn{2}{c}{Reference point: (0.06, 1260 ,1.5)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume [-]} \\
+    \hline
+    1 & xx \\
+    2 & xx \\
+    3 & xx \\
+    4 & xx \\
+    5 & xx \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection{a-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
+Channel Shape}
+\label{sec:a-3b}
+This section reports results from the three-objective optimization simulation a-3b, 
+with all objectives minimized: total fuel packing fraction ($PF_{total}$), maximum 
+one-third assembly temperature ($T_{max}$), and fuel-normalized power peaking factor 
+($PPF_{fuel}$).  
+The input parameters varied are total fuel packing fraction ($PF_{total}$), 
+TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), and coolant channel 
+shape.  
+Table \ref{tab:simulationa3b} shows simulation a-3b's optimization problem parameters. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-3b optimization problem parameters.}
+	\label{tab:simulationa3b}
+    \footnotesize
+    \begin{tabular}{l|p{6.5cm}}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation a-3b}} \\
+    \hline 
+    \textbf{Objectives} & Minimize $PF_{total}$ \\
+    & Minimize $T_{max}$ \\
+    & Minimize $PPF_{fuel}$ \\
+    \hline 
+    \textbf{Input parameter variations} & $0.05<PF_{total}<0.07$ \\
+    & $\rho_{TRISO}(\vec{r})$: $0<a<2$, $0<d<2$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$, $0<e<\frac{\pi}{2}$\\
+    & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
+    & coolant channel shape: $0.05<r_{1}<0.35$ \\
+    & coolant channel shape: $0.05<r_{2}<0.35$ \\
+    & coolant channel shape: $0.05<r_{3}<0.35$ \\
+    & coolant channel shape: $0.05<r_{4}<0.35$ \\
+    & coolant channel shape: $0.05<r_{5}<0.35$ \\
+    \hline
+    \textbf{Constraints} & $k_{eff} \geq 1.38$\\ 
+    \hline 
+    \textbf{Genetic algorithm parameters} & Population size: 128 \\
+    & Generations: xx \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Table \ref{tab:a3b-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation a-3b converges by generation xx. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-3b hypervolume values at each generation.}
+	\label{tab:a3b-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation a-3b}} \\
+    \multicolumn{2}{c}{Reference point: (0.06, 1260 ,1.5)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume [-]} \\
+    \hline
+    1 & xx \\
+    2 & xx \\
+    3 & xx \\
+    4 & xx \\
+    5 & xx \\
+    6 & xx \\
+    7 & xx \\
+    8 & xx \\
+    \hline
+    \end{tabular}
+\end{table}
+
 \pagebreak
 \section{AHTR One-Third Assembly: Computational Cost Summary}
 \label{sec:assem-compute-cost}
