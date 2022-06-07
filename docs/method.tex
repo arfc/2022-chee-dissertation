@@ -21,15 +21,13 @@ optimization problems.
 
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
-In an effort toward optimizing the \gls{AHTR} design for non-conventional geometries 
-and parameters.
 I chose to vary the following \gls{AHTR} parameters: 
 \begin{itemize}
-    \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
+    \item \gls{TRISO} fuel packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
     \item Total fuel packing fraction ($PF_{total}$)
     \item Coolant channel shape
 \end{itemize} 
-The TRISO packing fraction distribution variation enables exploration of how 
+Varying the TRISO fuel packing fraction distribution allows us to explore how 
 heterogeneous fuel distributions impact reactor performance.
 In Section \ref{sec:fhr-benchmark-keff}, the \gls{FHR} benchmark results demonstrated 
 that increased fuel packing does not always correspond with increased $k_{eff}$ due to 
@@ -66,7 +64,7 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \end{tabular}
 \end{table}
 
-To optimize the described objectives, I will vary the described parameters in the
+To optimize the objectives, I will vary the parameters in the
 \gls{AHTR} plank and one-third assembly models. 
 The optimization results for the \gls{AHTR} plank and one-third assembly models are 
 reported in Chapters \ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results}, 
@@ -83,8 +81,8 @@ outlined in Chapter \ref{chap:fhr-benchmark} (see Figure \ref{fig:ahtr-fuel-asse
 The main differences occur in the fuel plank region. 
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices within
 two fuel stripes in the fuel plank region. 
-For the optimization problems, I discretized each plank into ten cells with random 
-TRISO packing and an individually controlled packing fraction. 
+I discretized each plank into ten cells with random TRISO packing and an individually 
+controlled packing fraction. 
 Thus, the \gls{AHTR} plank has ten fuel cells, and the \gls{AHTR} one-third assembly 
 has 60 fuel cells.  
 The subsequent subsections describe each geometry in further detail.
@@ -98,7 +96,7 @@ I modified the fuel plank to be straightened with perpendicular sides instead
 of slanted as in Figure \ref{fig:ahtr-fuel-plank} for ease of modeling. 
 The one-third assembly optimization uses the original slanted \gls{AHTR} planks. 
 Figure \ref{fig:straightened_plank} illustrates the straightened fuel plank with 
-ten fuel cells with random \gls{TRISO} packing.
+ten fuel cells with random \gls{TRISO} packing in each cell.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.85\linewidth]{straightened_plank.png}
@@ -145,7 +143,7 @@ with and without the outer layer \gls{TRISO} homogenization.
     \footnotesize
     \begin{tabular}{llc}
     \hline 
-    \textbf{TRISO Homogenization}& \textbf{$k_{eff}$} & \textbf{Simulation time [s]}  \\
+    \textbf{TRISO Homogenization}& \textbf{$k_{eff}$ [-]} & \textbf{Simulation Time [s]}  \\
     \hline 
     None & $1.38548 \pm 0.00124$ & 233\\ 
     Four outer layers & $1.38625 \pm 0.00109$ & 168\\ 
@@ -185,8 +183,8 @@ fuel cells with random \gls{TRISO} packing.
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}
     \end{subfigure}
-    \caption{\acrfull{AHTR} one-third assembly with ten fuel cells in each graphite 
-    plank with random TRISO packing, graphite structure, and \gls{FLiBe} coolant. 
+    \caption{\acrfull{AHTR} one-third assembly with ten randomly packed fuel cells 
+    in each graphite plank, graphite structure, and \gls{FLiBe} coolant. 
     Original \gls{FHR} benchmark fuel assembly with fuel 
     stripes can be seen in Figure \ref{fig:ahtr-fuel-assembly}.}
     \label{fig:ahtr_assembly}
