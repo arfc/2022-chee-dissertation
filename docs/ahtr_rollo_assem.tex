@@ -440,10 +440,10 @@ Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem param
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.38$\\ 
-    & $PF_{total}$ = 0.04 \\
+    & $PF_{total}$ = 0.06 \\
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
-    & Generations: 3 \\
+    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    & Generations: 2 \\
     \hline
     \end{tabular}
 \end{table}
@@ -469,17 +469,17 @@ distributions in the final generation with the most minimized $PPF_{fuel}$.
     \caption{Simulation a-1c -- ROLLO single-objective optimization to minimize 
     AHTR one-third assembly's fuel-normalized power peaking factor ($PPF_{fuel}$). 
     Input parameters varied: TRISO distribution ($\rho_{TRISO}(\vec{r})$).
-    $PF_{total}$ = 0.04.}
+    $PF_{total}$ = 0.06.}
     \label{fig:assem-obj-1-ppf}
 \end{figure}
 
-Figure \ref{fig:assem-obj-1-ppf-evol} shows that the minimum, average, and maximum 
-one-third assembly's $T_{max}$ converged to approximately 1.07.
-In Figure \ref{fig:assem-obj-1-ppf-final}, the four TRISO packing fraction distributions 
-in the final generation that most-minimized $PPF_{fuel}$ are the same with 
-$PPF_{fuel} = 1.0795$.
-Their TRISO distributions are somewhat constant with a small peak at 
-$(x,y) = (11.8cm, 10.0cm)$. 
+Figure \ref{fig:assem-obj-1-ppf-evol} shows that the minimum and average 
+one-third assembly's $T_{max}$ converged to approximately 1.1.
+Figure \ref{fig:assem-obj-1-ppf-final} shows the four unique TRISO packing fraction 
+distributions in the final generation that most-minimized $PPF_{fuel}$.
+The most-minimized TRISO distribution has a $PPF_{fuel} = 1.0872$ and have an 
+oscillating TRISO distribution along the x-axis with peaks on the x-axis at the 8.2cm, 
+14.3cm, and 22.5cm. 
 
 \subsubsection{Simulation a-1f: Variation of Coolant channel shape}
 Table \ref{tab:simulationa1f} shows simulation a-1f's optimization problem parameters. 

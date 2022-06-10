@@ -48,30 +48,59 @@ The objective has no correlation with coolant channel shape input parameter.
 In Section \ref{sec:assem-1-obj-ppf}'s simulation a-1c, I conducted a single-objective 
 optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) 
 by varying TRISO distribution. 
-In simulation a-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.06, an \gls{AHTR} 
-one-third assembly model with TRISO distribution xx. 
+In simulation a-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.06, the reactor model 
+with the most-minimized $PPF_{fuel}$ has a $PPF_{fuel} = 1.0872$ and an oscillating 
+TRISO distribution along the x-axis with peaks on the x-axis at the 7.8cm, 
+15.9cm, and 22.0cm. 
 
-Section \ref{sec:assem-discussion-pf} concluded that for the \gls{AHTR} one-third 
-assembly model, the minimize $PPF_{fuel}$ objective is driven by flattening thermal 
+Section \ref{sec:assem-discussion-pf} concluded that for the \gls{AHTR} plank 
+model, the minimize $PPF_{fuel}$ objective is driven by flattening thermal 
 (Group 4) flux distribution. 
-I compare the flux distributions for the most-minimized $PPF_{fuel}$ reactor model and 
-the maximum $PPF_{fuel}$ reactor model in the final generation of simulation a-1c. 
-Figure \ref{fig:a-1c-ppf-triso-comparison} shows the TRISO distributions and the $PPF_{fuel}$ 
-values for the two compared simulations: simulation p-1c's (Figure 
-\ref{fig:slab-obj-1-ppf}) most-minimized $PPF_{fuel}$ TRISO distribution and 
-the maximum $PPF_{fuel}$ TRISO distribution. 
-%\begin{figure}[htbp!]
-%    \centering
-%    \includegraphics[width=0.9\linewidth]{a-1c-ppf-triso-comparison-most-minimized.png} 
-%    \includegraphics[width=0.9\linewidth]{a-1c-ppf-triso-comparison-least-minimized.png} 
-%    \caption{Simulation a-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
-%    from Figure \ref{fig:slab-obj-1-ppf} and the maximum $PPF_{fuel}$ TRISO distribution.}
-%    \label{fig:a-1c-ppf-triso-comparison}
-%\end{figure}
+I compare the flux distributions for the most-minimized $PPF_{fuel}$ reactor model with 
+$PPF_{fuel} = 1.0872$ and the reactor model in the final generation of simulation a-1c
+with the highest $PPF_{fuel} = 1.2431$. 
+Figure \ref{fig:a-1c-ppf-triso-comparison} shows the TRISO distributions for the 
+compared reactor models. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.49\linewidth]{a-1c-ppf-triso-comparison-most-minimized.png} 
+    \includegraphics[width=0.49\linewidth]{a-1c-ppf-triso-comparison-least-minimized.png} 
+    \caption{Simulation a-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
+    from Figure \ref{fig:assem-obj-1-ppf} (left) and the highest $PPF_{fuel}$ TRISO distribution (right).}
+    \label{fig:a-1c-ppf-triso-comparison}
+\end{figure}
 
+Table \ref{tab:a-1c-flux-comparison} quantifies the flux differences between the compared
+reactor models. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Flux value comparison between the two reactor models in Figure 
+    \ref{fig:a-1c-ppf-triso-comparison}: simulation a-1c's most-minimized $PPF_{fuel}$ reactor model 
+    with $PPF_{fuel} = 1.0872$ and simulation a-1c's reactor model with the highest 
+    $PPF_{fuel} = 1.2431$
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
+	\label{tab:a-1c-flux-comparison}
+    \footnotesize
+    \begin{tabular}{lp{4cm}p{3.3cm}p{4cm}}
+    \hline
+    \textbf{Energy Group} &
+    \textbf{$max(\phi)/min(\phi)$ Most-minimized $PPF_{fuel}$ TRISO Distribution} & 
+    \textbf{$max(\phi)/min(\phi)$ Constant TRISO Distribution} & 
+    \textbf{$\%$ Difference}\\
+    \hline 
+    1 & 1.825 & 2.608 & \Minus30.00 \\
+    2 & 1.341 & 1.386 & \Minus3.18 \\
+    3 & 1.302 & 1.334 & \Minus2.43 \\
+    4 & 1.319 & 1.331 & \Minus0.85 \\
+    \hline
+    \end{tabular}
+\end{table}
 
 \paragraph{Simulation a-2b}
-
 
 \subsection{Discussion: Multi-Objective Optimization}
 \label{sec:assem-discussion-multi}
