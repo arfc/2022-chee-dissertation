@@ -16,13 +16,12 @@ In Section \ref{sec:assem-1-obj-pf}'s simulation a-1a, I conducted a single-obje
 optimization simulation to minimize the one-third assembly's total fuel packing fraction 
 ($PF_{total}$) by varying $PF_{total}$ and TRISO distribution. 
 In simulation a-1a, \gls{ROLLO} found that an \gls{AHTR} one-third assembly model with 
-the most-minimized $PF_{total}$ has $PF_{total}= 0.017$ and a TRISO distribution that peaks 
-in the one-third assembly's center. 
+the most-minimized $PF_{total}$ has $PF_{total}= xx$ and a TRISO distribution xx 
 
 Section \ref{sec:plank-discussion-pf} concluded that for the \gls{AHTR} plank model, 
 the minimize $PF_{total}$ objective is driven by maximizing the total fission reaction 
 rates. 
-I ran a simulation for constant $PF_{total}$ = 0.017 TRISO distribution and compared its 
+I ran a simulation for constant $PF_{total}$ = xx TRISO distribution and compared its 
 fission reaction rate with the center-peaking TRISO distribution. 
 
 \paragraph{Simulation p-1d}
@@ -34,12 +33,31 @@ between $PF_{total}$ and coolant channel shape (demonstrated in Figure
 \ref{fig:a-1d}). 
 
 \paragraph{Summary}
+I verified that the minimize $PF_{total}$ objective for the \gls{AHTR} one-third assembly 
+model is also driven by maximizing the total fission reaction rates. 
+The minimize $PF_{total}$ objective has correlations with the following input parameters: 
+$PF_{total}$ and TRISO packing fraction distribution. 
+The objective has no correlation with coolant channel shape input parameter. 
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:assem-discussion-temp}
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:assem-discussion-ppf}
+\paragraph{Simulation a-1c}
+In Section \ref{sec:assem-1-obj-ppf}'s simulation a-1c, I conducted a single-objective 
+optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) 
+by varying TRISO distribution. 
+In simulation a-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.06, an \gls{AHTR} 
+one-third assembly model with TRISO distribution xx. 
+
+Section \ref{sec:assem-discussion-pf} concluded that for the \gls{AHTR} one-third 
+assembly model, the minimize $PPF_{fuel}$ objective is driven by flattening thermal 
+(Group 4) flux distribution. 
+I compare the flux distributions for the most-minimized $PPF_{fuel}$ reactor model and 
+the maximum $PPF_{fuel}$ reactor model in the final generation of simulation a-1c. 
+
+\paragraph{Simulation a-2b}
 
 
 \subsection{Discussion: Multi-Objective Optimization}
