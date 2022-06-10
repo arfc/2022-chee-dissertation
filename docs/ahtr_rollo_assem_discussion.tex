@@ -28,7 +28,7 @@ fission reaction rate with the center-peaking TRISO distribution.
 In Section \ref{sec:assem-1-obj-pf}'s simulation a-1d, I conducted a single-objective 
 optimization simulation to minimize total fuel packing fraction ($PF_{total}$) by 
 varying $PF_{total}$ and coolant channel shape. 
-In simulation a-1a, \gls{ROLLO} found that there is no correlation 
+In simulation a-1d, \gls{ROLLO} found that there is no correlation 
 between $PF_{total}$ and coolant channel shape (demonstrated in Figure 
 \ref{fig:a-1d}). 
 
@@ -89,7 +89,7 @@ reactor models.
     \hline
     \textbf{Energy Group} &
     \textbf{$max(\phi)/min(\phi)$ Most-minimized $PPF_{fuel}$ TRISO Distribution} & 
-    \textbf{$max(\phi)/min(\phi)$ Constant TRISO Distribution} & 
+    \textbf{$max(\phi)/min(\phi)$ Highest $PPF_{fuel}$ TRISO Distribution} & 
     \textbf{$\%$ Difference}\\
     \hline 
     1 & 1.825 & 2.608 & \Minus30.00 \\
@@ -101,6 +101,16 @@ reactor models.
 \end{table}
 
 \paragraph{Simulation a-2b}
+
+\paragraph{Simulation p-1f}
+In Section \ref{sec:assem-1-obj-ppf}'s simulation a-1f, I conducted a single-objective 
+optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) by 
+varying coolant channel shape. 
+In simulation a-1f, \gls{ROLLO} found that there is no correlation 
+between $PPF_{fuel}$ and coolant channel shape (demonstrated in Figure 
+\ref{fig:a-1f}). 
+
+\paragraph{Summary}
 
 \subsection{Discussion: Multi-Objective Optimization}
 \label{sec:assem-discussion-multi}
