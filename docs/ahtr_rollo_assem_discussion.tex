@@ -36,6 +36,8 @@ and the constant $PF_{total} = 0.0559$.
     constant $PF_{total} = 0.0559$ TRISO distribution (right).}
     \label{fig:assem-0.0559-comparison}
 \end{figure}
+The reactor model with the most-minimized $PF_{total}$ has $k_{eff}=1.3802$ and 
+the reactor model with constant TRISO distribution has $k_{eff}=1.3736$.
 
 Table \ref{tab:a-1a-fission-comparison} compares the total fission reaction rate 
 (OpenMC's \texttt{fission} tally) between the most-minimized $PF_{total}$ TRISO 
@@ -68,10 +70,10 @@ $96.63\%$ of fission reactions occur in energy group 4.
 In energy group 4, the most-minimized $PF_{total}$ TRISO distribution has $0.63\%$ higher  
 \texttt{fission} (total fission reaction rate) than the constant 
 $PF_{total} = 0.0559$ TRISO distribution, explaining why the oscillating TRISO 
-distribution enabled a lower packing fraction for the same $k_{eff}$ compared to the 
+distribution enabled a 650pcm higher $k_{eff}$ for the same $PF_{total}$ compared to the 
 constant TRISO distribution. 
 
-\paragraph{Simulation p-1d}
+\paragraph{Simulation a-1d}
 In Section \ref{sec:assem-1-obj-pf}'s simulation a-1d, I conducted a single-objective 
 optimization simulation to minimize total fuel packing fraction ($PF_{total}$) by 
 varying $PF_{total}$ and coolant channel shape. 
