@@ -377,10 +377,10 @@ Table \ref{tab:simulationa1e} shows simulation a-1e's optimization problem param
     & coolant channel shape: $0.05<r_{4}<0.35$ \\
     & coolant channel shape: $0.05<r_{5}<0.35$ \\
     \hline
-    \textbf{Constraints} & $k_{eff} \geq 1.38$\\ 
+    \textbf{Constraints} & $k_{eff} \geq 1.0$\\ 
     & $PF_{total} = 0.04 $\\ 
     \hline 
-    \textbf{Genetic Algorithm Parameters} & Population size: 128 \\
+    \textbf{Genetic Algorithm Parameters} & Population size: 64 \\
     & Generations: 3 \\
     \hline
     \end{tabular}
@@ -436,6 +436,7 @@ Figures \ref{fig:a-1e-r1} and \ref{fig:a-1e-r5} demonstrate negative linear corr
 between the one-third assembly's $T_{max}$ with $r_1$ and $r_5$. 
 Figures \ref{fig:a-1e-r2}, \ref{fig:a-1e-r3} and \ref{fig:a-1e-r4} demonstrate that 
 there is no correlation between $T_{max}$ with $r_2$, $r_3$, and $r_4$. 
+% TODO rerun with higher PF and larger generations 
 
 \subsection{Objective: Minimize Fuel-Normalized Power Peaking Factor ($PPF_{fuel}$)}
 \label{sec:assem-1-obj-ppf}
@@ -471,6 +472,8 @@ Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+I used $PF_{total} = 0.06$ because it is approximately the $PF_{total}$ that enabled 
+
 
 Figure \ref{fig:assem-obj-1-ppf-evol} shows the one-third assembly's $PPF_{fuel}$ 
 evolution. 
