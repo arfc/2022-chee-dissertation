@@ -472,17 +472,18 @@ Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-The TRISO distribution is varied using sine distributions.  
-If the simulation used the FHR benchmark equivalent $PF_{total} = 0.153$, 
-at certain sine distributions, some fuel cells will have $PF > 0.3$. 
+The TRISO distribution is varied using sine distributions; if the simulation used 
+the FHR benchmark equivalent $PF_{total} = 0.153$, at certain sine distributions, 
+some fuel cells will have $PF > 0.3$. 
 OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
 resulting in long runtimes. 
 Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
-$PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid $PF > 0.3$ occurences. 
+$PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
+$PF > 0.3$ occurences. 
 
 Figure \ref{fig:assem-obj-1-ppf-evol} shows the one-third assembly's $PPF_{fuel}$ 
 evolution. 
-Figure \ref{fig:assem-obj-1-ppf-final} shows the four TRISO packing fraction 
+Figure \ref{fig:assem-obj-1-ppf-final} shows the four unique TRISO packing fraction 
 distributions in the final generation with the most minimized $PPF_{fuel}$. 
 \begin{figure}[htbp!]
     \centering
@@ -494,7 +495,7 @@ distributions in the final generation with the most minimized $PPF_{fuel}$.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{assem-obj-1-ppf-final.png}
-        \caption{TRISO distribution for the four reactor models with the 
+        \caption{TRISO distribution for the four unique reactor models with the 
         lowest $PPF_{fuel}$ in the AHTR one-third assembly at the final generation.}
         \label{fig:assem-obj-1-ppf-final} 
     \end{subfigure}
@@ -503,6 +504,22 @@ distributions in the final generation with the most minimized $PPF_{fuel}$.
     Input parameters varied: TRISO distribution ($\rho_{TRISO}(\vec{r})$).
     $PF_{total}$ = 0.06.}
     \label{fig:assem-obj-1-ppf}
+\end{figure}
+\begin{figure}[htbp!]
+    \ContinuedFloat
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=0.7\linewidth]{assem-obj-1-ppf-most-minimized.png}
+        \caption{\gls{AHTR} one-third assembly model with the most-minimized 
+        $PPF_{fuel}$, corresponding to the the first TRISO distribution in Figure 
+        \ref{fig:assem-obj-1-ppf-final}. The reactor model has $PPF_{fuel}=1.0872$
+        and $k_{eff}=1.385$.}
+        \label{fig:assem-obj-1-ppf-most-minimized} 
+    \end{subfigure}
+    \caption{Simulation a-1c -- ROLLO single-objective optimization to minimize 
+    AHTR one-third assembly's fuel-normalized power peaking factor ($PPF_{fuel}$). 
+    Input parameters varied: TRISO distribution ($\rho_{TRISO}(\vec{r})$).
+    $PF_{total}$ = 0.06.}
 \end{figure}
 
 Figure \ref{fig:assem-obj-1-ppf-evol} shows that the minimum and average 
