@@ -162,7 +162,7 @@ assembly model with the most-minimized $PF_{total}$.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{assem-obj-1-pf-final.png}
-        \caption{TRISO packing fraction distribution for the four reactor models with the 
+        \caption{TRISO packing fraction distribution for four unique reactor models with the 
         smallest $PF_{total}$ in the final generation.}
         \label{fig:assem-obj-1-pf-final} 
     \end{subfigure}
@@ -175,8 +175,8 @@ assembly model with the most-minimized $PF_{total}$.
 \begin{figure}[htbp!]
     \ContinuedFloat
     \centering
-    \begin{subfigure}{0.7\textwidth}
-        \includegraphics[width=\linewidth]{assem-obj-1-pf-most-minimized.png}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=0.7\linewidth]{assem-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} one-third assembly model with the most-minimized 
         $PF_{total}$, corresponding to the the first TRISO distribution in Figure 
         \ref{fig:assem-obj-1-pf-final}. The reactor model has $PF_{total}=0.0559$
@@ -193,10 +193,14 @@ Figure \ref{fig:assem-obj-1-pf-evol} shows that the minimum and average $PF_{tot
 converged quickly, as expected in this single-objective optimization problem.
 By the final generation, the average and minimum $PF_{total}$
 values converged to approximately 0.057. 
-In Figure \ref{fig:assem-obj-1-pf-final}, the four TRISO packing fraction distributions 
-in the final generation that most-minimized $PF_{total}$ are the same.
-The TRISO packing fraction peaks in the center of the one-third assembly and is 
-lower at the sides. 
+In Figure \ref{fig:assem-obj-1-pf-final}, the four unique TRISO packing fraction distributions 
+in the final generation that most-minimized $PF_{total}$ have various oscillating TRISO 
+distribution patterns. 
+The one-third assembly model with the most-minimized $PF_{total}$ has a $PF_{total} =0.0559$
+and an oscillating TRISO distribution along the x-axis with peaks on the x-axis on the even 
+fuel cell columns (at 8.2cm, 12.3cm, 16.4cm, 20.5cm, and 24.5cm). 
+The 2nd and 5th row have the largest variation of $\sim0.10$ and the middle 3rd and 4th rows 
+have the smallest variation of $\sim0.06$.
 
 \subsubsection{Simulation a-1d: Variation of $PF_{total}$ and Coolant channel shape}
 Table \ref{tab:simulationa1d} shows simulation a-1d's optimization problem parameters. 
