@@ -670,6 +670,34 @@ confirming that simulation a-2a converges by generation 3.
     \end{tabular}
 \end{table}
 
+Figure \ref{fig:assem-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
+models' $PF_{total}$ against $T_{max}$, crosses mark the reactor models that fall on 
+the Pareto front.
+Figure \ref{fig:assem-obj-2-pftemp-pareto-distr} shows the 13 TRISO packing fraction 
+distributions in the final generation that fall on the Pareto front. 
+\begin{figure}[htbp!]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-2-pftemp-pareto.png}
+        \caption{Plot of final generation's reactor models' $PF_{total}$ against 
+        $T_{max}$. 
+        Crosses indicate the reactor models on the Pareto front. Annotated numbers 
+        on each cross correspond to TRISO distributions in the plot below.}
+        \label{fig:assem-obj-2-pftemp-pareto} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-2-pftemp-pareto-distr.png}
+        \caption{TRISO distribution for the 13 reactor models on the Pareto front.
+        Numbered reactor models correspond to numbered crosses in the plot above. }
+        \label{fig:assem-obj-2-pftemp-pareto-distr} 
+    \end{subfigure}
+    \caption{Simulation a-2a -- ROLLO two-objective optimization to minimize total fuel 
+    packing fraction ($PF_{total}$) and one-third assembly's maximum temperature ($T_{max}$). 
+    Input parameters varied: total fuel packing fraction ($PF_{total}$) and TRISO 
+    packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
+    \label{fig:assem-obj-2-pftemp}
+\end{figure}
+
 \subsection{a-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
 \label{sec:a-2b}
 This section reports results from the two-objective optimization simulation a-2b, the 
@@ -864,7 +892,7 @@ distributions in the final generation that fall on the Pareto front.
         \label{fig:assem-obj-2-tempppf-pareto-distr} 
     \end{subfigure}
     \caption{Simulation a-2c -- ROLLO two-objective optimization to minimize 
-    one-third assembly's maximum temperature ($T_{max}$) and normalized power peaking factor 
+    one-third assembly's maximum temperature ($T_{max}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the \gls{AHTR} one-third assembly. 
     Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:assem-obj-2-tempppf}
