@@ -230,7 +230,34 @@ fuel-normalized power peaking factor ($PPF_{fuel}$) in a one-third assembly mode
 by varying TRISO distribution. 
 In simulation a-2b, ROLLO found 6 reactor models on the Pareto Front (Figure 
 \ref{fig:assem-obj-2-pfppf-pareto}). 
-The rector model that 
+Table \ref{tab:a-2b-comparison-reactors} shows the $PF_{total}$, $PPF_{fuel}$, and TRISO 
+packing fraction distribution variance for the following reactor models on Figure 
+\ref{fig:assem-obj-2-pfppf-pareto}'s Pareto Front: reactor model 5 that 
+minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent, reactor model 3 with 
+most-minimized $PF_{total}$, and reactor model 1 with most-minimized $PPF_{fuel}$. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Flux value comparison between the two reactor models in Figure 
+    \ref{fig:a-1c-ppf-triso-comparison}: simulation a-1c's most-minimized $PPF_{fuel}$ reactor model 
+    with $PPF_{fuel} = 1.0872$ and simulation a-1c's reactor model with the highest 
+    $PPF_{fuel} = 1.2431$.
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
+	\label{tab:a-2b-comparison-reactors}
+    \footnotesize
+    \begin{tabular}{llll}
+    \hline
+    & Reactor Model & \textbf{$PF_{total}$} & \textbf{$PPF_{fuel}$} & TRISO distribution variance \\
+    \hline 
+    \textbf{Most Minimized Both} & 5 & 0.0583 & 1.1127 & 0.00044 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
 
 \subsubsection{Simulation a-2c}
 
