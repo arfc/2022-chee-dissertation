@@ -812,16 +812,16 @@ Table \ref{tab:simulationa2c} shows simulation a-2c's optimization problem param
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$, $0<f<2\pi$\\
     \hline
     \textbf{Constraints} & $k_{eff} \geq 1.38$\\ 
-    & $PF_{total} = 0.04$\\
+    & $PF_{total} = 0.06$\\
     \hline 
     \textbf{Genetic algorithm parameters} & Population size: 128 \\
-    & Generations: 3 \\
+    & Generations: 2 \\
     \hline
     \end{tabular}
 \end{table}
 
 Table \ref{tab:a2c-hypervolume} shows the hypervolume value at each generation, 
-confirming that simulation a-2c converges by generation xx. 
+confirming that simulation a-2c converges by generation 2. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -831,16 +831,43 @@ confirming that simulation a-2c converges by generation xx.
     \begin{tabular}{ll}
     \hline 
     \multicolumn{2}{c}{\textbf{Two Objectives: Simulation a-2c}} \\
-    \multicolumn{2}{c}{Reference point: (xx, xx)} \\
+    \multicolumn{2}{c}{Reference point: (1700, 1.5)} \\
     \hline 
     \textbf{Generation} & \textbf{Hypervolume [-]} \\
     \hline
-    1 & xx \\
-    2 & xx \\
-    3 & xx \\
+    1 & 210.685 \\
+    2 & 210.685 \\
     \hline
     \end{tabular}
 \end{table}
+
+Figure \ref{fig:assem-obj-2-tempppf-pareto} shows a plot of the final generation's reactor 
+models' $T_{max}$ against $PPF_{fuel}$, crosses mark the reactor models that fall on 
+the Pareto front.
+Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} shows the 1 TRISO packing fraction 
+distributions in the final generation that fall on the Pareto front. 
+\begin{figure}[htbp!]
+    \centering
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-2-tempppf-pareto.png}
+        \caption{Plot of final generation's reactor models' $T_{max}$ against 
+        $PPF_{fuel}$. 
+        Crosses indicate the reactor models on the Pareto front. Annotated numbers 
+        on each cross correspond to TRISO distributions in the plot below.}
+        \label{fig:assem-obj-2-tempppf-pareto} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-2-tempppf-pareto-distr.png}
+        \caption{TRISO distribution for the 1 reactor models on the Pareto front.
+        Numbered reactor models correspond to numbered crosses in the plot above. }
+        \label{fig:assem-obj-2-tempppf-pareto-distr} 
+    \end{subfigure}
+    \caption{Simulation a-2c -- ROLLO two-objective optimization to minimize 
+    one-third assembly's maximum temperature ($T_{max}$) and normalized power peaking factor 
+    ($PPF_{fuel}$) in the \gls{AHTR} one-third assembly. 
+    Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
+    \label{fig:assem-obj-2-tempppf}
+\end{figure}
 
 \pagebreak
 \section{AHTR One-Third Assembly: Three-Objective Optimization Results}
