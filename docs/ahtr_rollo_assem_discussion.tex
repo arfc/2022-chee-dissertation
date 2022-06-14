@@ -236,7 +236,13 @@ for 3 reactors models on Figure \ref{fig:assem-obj-2-pfppf-pareto}'s Pareto Fron
 reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent, 
 reactor model 3 with most-minimized $PF_{total}$, and reactor model 1 with most-minimized 
 $PPF_{fuel}$. 
-
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=\linewidth]{a-2b-comparison-reactors.png}  
+    \caption{Simulation a-2b's most-minimized $PPF_{fuel}$ TRISO distribution 
+    from Figure \ref{fig:assem-obj-1-ppf} (left) and the highest $PPF_{fuel}$ TRISO distribution (right).}
+    \label{fig:a-2b-comparison-reactors}
+\end{figure}
 
 Table \ref{tab:a-2b-comparison-reactors} shows the $PF_{total}$, $PPF_{fuel}$, TRISO 
 packing fraction distribution variance, total fission reaction rate, and thermal flux 
@@ -254,13 +260,15 @@ flatness for the three reactor models.
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
 	\label{tab:a-2b-comparison-reactors}
     \footnotesize
-    \begin{tabular}{p{3cm}p{1.5cm}llp{3cm}p{3cm}p{3cm}}
+    \begin{tabular}{p{3cm}p{1.5cm}llp{2.5cm}p{2.5cm}p{2.5cm}}
     \hline
-    & \textbf{Reactor Model} & \textbf{$PF_{total}$} & \textbf{$PPF_{fuel}$} & \textbf{TRISO distribution variance} & \textbf{Fission Reaction Rate} & $max(\phi_4)/min(\phi_4)$\\
+    & \textbf{Reactor Model} & \textbf{$PF_{total}$} & \textbf{$PPF_{fuel}$} 
+    & \textbf{TRISO distr variance} & \textbf{Fission Reaction Rate} 
+    & $max(\phi_4)/min(\phi_4)$\\
     \hline 
-    \textbf{Most Minimized Both} & 5 & 0.0583 & 1.1127 & 0.00044 & & \\
-    \textbf{Most Minimized $PF_{total}$} & 3 & 0.0575 & 1.2056 & 0.00105 & & \\
-    \textbf{Most Minimized $PPF_{fuel}$} & 1 & 0.0599 & 1.0906 & 0.00018 & & \\
+    \textbf{Most Minimized Both} & 5 & 0.0583 & 1.1127 & 0.00044 & 0.5472 & 1.2897\\
+    \textbf{Most Minimized $PF_{total}$} & 3 & 0.0575 & 1.2056 & 0.00105 & 0.5476 & 1.2949\\
+    \textbf{Most Minimized $PPF_{fuel}$} & 1 & 0.0599 & 1.0906 & 0.00018 & 0.5478 & 1.2851\\
     \hline
     \end{tabular}
 \end{table}
