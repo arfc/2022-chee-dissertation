@@ -857,7 +857,8 @@ distributions in the final generation that fall on the Pareto front.
         \label{fig:assem-obj-2-tempppf-pareto} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{assem-obj-2-tempppf-pareto-distr.png}
+        \centering
+        \includegraphics[width=0.8\linewidth]{assem-obj-2-tempppf-pareto-distr.png}
         \caption{TRISO distribution for the 1 reactor models on the Pareto front.
         Numbered reactor models correspond to numbered crosses in the plot above. }
         \label{fig:assem-obj-2-tempppf-pareto-distr} 
@@ -869,8 +870,17 @@ distributions in the final generation that fall on the Pareto front.
     \label{fig:assem-obj-2-tempppf}
 \end{figure}
 
-% Temp and PPF objectives are not contrasting, so only one reactor model is found on the 
-% pareto front. 
+Figure \ref{fig:assem-obj-2-tempppf-pareto} shows that the minimize $T_{max}$ and minimize 
+$PPF_{fuel}$ objectives are noncontradictory, resulting in a single reactor model on the 
+Pareto Front. 
+The TRISO distribution shown in Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} best 
+minimizes both $T_{max}$ and $PPF_{fuel}$. 
+The reactor model has an oscillating TRISO distribution along the both the x-axis and y-axis 
+with a higher variance along the y-axis compared to the x-axis. 
+The maximum x-axis packing fractions occur at 22.5cm, and the average x-axis variation is 
+$\sim0.003$. 
+The maximum y-axis packing fractions occurs at 3.5cm, 10.0cm, and 16.5cm, and the average
+y-axis variation is $\sim0.006$.
 
 \pagebreak
 \section{AHTR One-Third Assembly: Three-Objective Optimization Results}
