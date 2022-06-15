@@ -393,17 +393,38 @@ Table \ref{tab:simulationa1e} shows simulation a-1e's optimization problem param
 \end{table}
 
 Figure \ref{fig:a-1e-evol} shows the plank's $T_{max}$ evolution.
+Figure \ref{fig:assem-obj-1-temp-most-minimized-coolant} illustrates the \gls{AHTR} 
+one-third assembly model with the most-minimized $T_{max}$. 
 Figures \ref{fig:a-1e-r1}, \ref{fig:a-1e-r2}, \ref{fig:a-1e-r3}, \ref{fig:a-1e-r4}, 
 and \ref{fig:a-1e-r5} show the plots of coolant channel shape's 
 $r_1, r_2, r_3, r_4,$ and $r_5$ values against $T_{max}$. 
 \begin{figure}[htbp!]
-    \centering
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{\textwidth}
+        \centering
         \includegraphics[width=\linewidth]{a-1e-evol.png}
         \caption{Minimum, average, and maximum evolution of AHTR one-third assembly's 
         $T_{max}$.}
         \label{fig:a-1e-evol} 
     \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{assem-obj-1-temp-most-minimized-coolant.png}
+        \caption{\gls{AHTR} one-third assembly model with the most-minimized $T_{max}$. 
+        The reactor model's $T_{max} = 1158.39K$, $r_1 = 0.33cm$, $r_{2} = 0.19cm$,
+        $r_3 = 0.22cm$, $r_{4} = 0.21cm$, and $r_{5} = 0.32cm$.}
+        \label{fig:assem-obj-1-temp-most-minimized-coolant} 
+    \end{subfigure}
+    \caption{Simulation a-1e -- ROLLO single-objective optimization to minimize 
+    maximum one-third assembly temperature ($T_{max}$). 
+    Plots of final generation's reactor models $T_{max}$ against 
+    coolant channel shape input parameters. 
+    Red crosses indicate the five reactor models with the lowest $T_{max}$.
+    Input parameters varied: coolant channel shape ($r_1, r_2, r_3, r_4, r_5$).}
+    \label{fig:a-1e}
+\end{figure}
+\begin{figure}[htbp!]
+    \ContinuedFloat
+    \centering
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\linewidth]{a-1e-r1.png}
         \caption{Plot of $PF_{total}$ against $r_1$.}
@@ -435,7 +456,6 @@ $r_1, r_2, r_3, r_4,$ and $r_5$ values against $T_{max}$.
     coolant channel shape input parameters. 
     Red crosses indicate the five reactor models with the lowest $T_{max}$.
     Input parameters varied: coolant channel shape ($r_1, r_2, r_3, r_4, r_5$).}
-    \label{fig:a-1e}
 \end{figure}
 
 Figures \ref{fig:a-1e-r1} and \ref{fig:a-1e-r5} demonstrate negative linear correlations 
