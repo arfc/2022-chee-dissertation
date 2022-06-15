@@ -559,9 +559,9 @@ one-third assembly's $T_{max}$ converged to approximately 1.1.
 In Figure \ref{fig:assem-obj-1-ppf-final}, the most-minimized TRISO distribution has 
 a $PPF_{fuel} = 1.0872$ and an oscillating TRISO distribution along the x-axis and a 
 packing fraction standard deviation of $0.017$ across the one-third assembly. 
-Along the x-axis, the distribution peaks of $PF=\sim0.08$ at the 2nd, 5th, and 9th fuel 
-cell columns (at 8.2cm, 14.3cm, and 22.5cm) and has minimum points of $PF=\sim0.035$
-at the 4th and 7th fuel cell columns (at 12.3cm and 18.4cm). 
+Along the x-axis, the distribution peaks at the 2nd, 5th, and 9th fuel 
+cell columns (at 8.2cm, 14.3cm, and 22.5cm) with $PF=\sim0.08$ and has minimum points
+at the 4th and 7th fuel cell columns (at 12.3cm and 18.4cm) with $PF=\sim0.035$. 
 
 \subsubsection{Simulation a-1f: Variation of Coolant channel shape}
 Table \ref{tab:simulationa1f} shows simulation a-1f's optimization problem parameters. 
@@ -732,14 +732,28 @@ minimize $T_{max}$ are contrasting objectives.
 
 In Figure \ref{fig:assem-obj-2-pftemp}, the one-third assembly model with the 
 most-minimized $PF_{total}$ and highest $T_{max}$ is reactor models 3 and 4. 
-Both models have an ... 
+Both models have an oscillating TRISO distribution along the both the 
+x-axis and y-axis, and a packing fraction standard deviation of $0.066$ across the 
+one-third assembly. 
+Along the x-axis, the distribution peaks at the even fuel cell columns (at 8.2cm,  
+and 12.3cm, 14.3cm, 16.4cm, 18.4cm, 20.5cm, 22.5cm, and 24.5cm) and has 
+minimum points at the odd fuel cell columns (at 6.2cm, 10.3cm, 14.3cm, 18.4cm,
+and 22.5cm).
+The even fuel cell columns have a $\sim0.18$ y-axis variation. 
 
 In Figure \ref{fig:assem-obj-2-pftemp}, the one-third assembly model with the 
 most-minimized $T_{max}$ and highest $PF_{total}$ is reactor model 9. 
+Reactor model 9 has an almost constant TRISO packing fraction distribution. 
+% maybe do a zoom in with a different scale. to compare to a-1b. 
 
 The one-third assembly model that visually from the Pareto Front (Figure 
 \ref{fig:assem-obj-2-pftemp-pareto}) minimizes both $PF_{total}$ and $T_{max}$ 
 to an equal extent is reactor model 13. 
+Reactor model 13 has an oscillating TRISO distribution along the y-axis and 
+a packing fraction standard deviation of $0.066$ across the one-third assembly. 
+Along the y-axis, the distribution peaks at the 2nd, 3rd, 5th, and 6th rows 
+(at 6.8cm, 10.0cm, 16.5cm, and 19.8cm) with $PF=\sim0.07$ and has minimum points at 
+the 1st and 4th rows (at 3.5cm and 13.3cm) with $PF=\sim0.03$. 
 
 \subsection{a-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
 \label{sec:a-2b}
