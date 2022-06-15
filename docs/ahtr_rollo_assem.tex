@@ -147,6 +147,15 @@ Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem param
     \hline
     \end{tabular}
 \end{table}
+The TRISO distribution is varied using sine distributions; if the simulation used 
+the FHR benchmark equivalent $PF_{total} = 0.153$, at certain sine distributions, 
+some fuel cells will have $PF > 0.3$. 
+OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
+resulting in long runtimes. 
+Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
+$PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
+$PF > 0.3$ occurences. 
+% this TRISO PF Total is also applied to a-1c, a-1e, a-1f, a-2c. 
 
 Figure \ref{fig:assem-obj-1-pf-evol} shows the $PF_{total}$ evolution.
 Figure \ref{fig:assem-obj-1-pf-final} shows four unique TRISO packing fraction distributions 
@@ -501,14 +510,6 @@ Table \ref{tab:simulationa1c} shows simulation a-1c's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-The TRISO distribution is varied using sine distributions; if the simulation used 
-the FHR benchmark equivalent $PF_{total} = 0.153$, at certain sine distributions, 
-some fuel cells will have $PF > 0.3$. 
-OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
-resulting in long runtimes. 
-Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
-$PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
-$PF > 0.3$ occurences. 
 
 Figure \ref{fig:assem-obj-1-ppf-evol} shows the one-third assembly's $PPF_{fuel}$ 
 evolution. 
@@ -556,10 +557,11 @@ assembly model with the most-minimized $PPF_{fuel}$.
 Figure \ref{fig:assem-obj-1-ppf-evol} shows that the minimum and average 
 one-third assembly's $T_{max}$ converged to approximately 1.1.
 In Figure \ref{fig:assem-obj-1-ppf-final}, the most-minimized TRISO distribution has 
-a $PPF_{fuel} = 1.0872$ and an oscillating TRISO distribution along the x-axis with 
-peaks of $\sim0.08$ on the x-axis at the 8.2cm, 14.3cm, and 22.5cm, and minimums of 
-$\sim0.04$ on the x-axis at 12.3cm and 18.4cm. 
-Each row's packing fraction variation is $\sim0.05$.
+a $PPF_{fuel} = 1.0872$ and an oscillating TRISO distribution along the x-axis and a 
+packing fraction standard deviation of $0.017$ across the one-third assembly. 
+Along the x-axis, the distribution peaks of $PF=\sim0.08$ at the 2nd, 5th, and 9th fuel 
+cell columns (at 8.2cm, 14.3cm, and 22.5cm) and has minimum points of $PF=\sim0.035$
+at the 4th and 7th fuel cell columns (at 12.3cm and 18.4cm). 
 
 \subsubsection{Simulation a-1f: Variation of Coolant channel shape}
 Table \ref{tab:simulationa1f} shows simulation a-1f's optimization problem parameters. 
