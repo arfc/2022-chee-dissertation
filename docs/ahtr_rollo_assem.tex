@@ -92,6 +92,8 @@ I first conducted single objective, single input parameter \gls{ROLLO} optimizat
 to understand the individual impacts of each objective on each input parameter. 
 Their results will inform the multi-objective optimization simulations setup. 
 % TODO: update the keff constraint in table
+% explain why some simulations use keff > 1.0 and that I didn't rerun because 
+% I expect the same correlation results. 
 
 Simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
 Facility under the Director's Discretionary Allocation Program 
@@ -319,15 +321,18 @@ Table \ref{tab:simulationa1b} shows simulation a-1b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-The TRISO distribution is varied using sine distributions; if the simulation used 
-the FHR benchmark equivalent $PF_{total} = 0.153$, at certain sine distributions, 
-some fuel cells will have $PF > 0.3$. 
+
+The TRISO distribution is varied based on sine distributions, as described 
+in Section \ref{sec:input-parameter-modeling}. 
+If the simulation used the FHR benchmark equivalent $PF_{total} = 0.153$, at
+certain sine distributions, some fuel cells will have $PF > 0.3$. 
 OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
 resulting in long runtimes. 
 Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
 $PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
 $PF > 0.3$ occurences. 
-% this TRISO PF Total is also applied to a-1c, a-1e, a-1f, a-2c. 
+I use $PF_{total} = 0.06$ for all optimization simulations that do not vary 
+$PF_{total}$: a-1c, a-1e, a-1f, a-2c. 
 
 Figure \ref{fig:assem-obj-1-temp-evol} shows the one-third assembly's $T_{max}$ 
 evolution. 
