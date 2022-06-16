@@ -116,15 +116,15 @@ one-third assembly model with the most-minimized $T_{max}$ (Figure
 \begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.95\linewidth]{a-1e-temp-distribution-2d.png}
+        \includegraphics[width=\linewidth]{a-1e-temp-distribution-2d.png}
         \caption{2D temperature distribution.}
         \label{fig:a-1e-temp-distribution-2d} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.95\linewidth]{a-1e-temp-distribution-centerline.png}
-        \caption{Centerline temperature. Centerline is the white line in Figure 
-        \ref{fig:ahtr-assem-verification}.}
+        \includegraphics[width=\linewidth]{a-1e-temp-distribution-centerline.png}
+        \caption{Centerline temperature. AHTR assembly's centerline is the white line 
+        in Figure \ref{fig:ahtr-assem-verification}.}
         \label{fig:a-1e-temp-distribution-centerline} 
     \end{subfigure}
     \caption{Simulation a-1e's most-minimized $T_{max}$ reactor model's temperature 
@@ -145,6 +145,11 @@ will be most important to minimizing maximum one-third assembly temperature.
 \paragraph{Summary}
 I verified that the minimize $T_{max}$ objective for the \gls{AHTR} one-third assembly 
 model also flattens TRISO distribution. 
+For the one-third assembly, the FLiBe channels (corresponding to $r_1, r_2, r_3, r_4, 
+r_5$) closest to the temperature peaks will be most important to minimizing maximum o
+ne-third assembly temperature, and thus, will show a negative correlation with $T_{max}$. 
+The minimize $T_{max}$ objective has correlations with all the input parameters: 
+$PF_{total}$, TRISO packing fraction distribution, and coolant channel shape. 
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:assem-discussion-ppf}
