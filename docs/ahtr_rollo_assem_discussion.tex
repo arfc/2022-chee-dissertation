@@ -92,7 +92,6 @@ The objective has no correlation with coolant channel shape input parameter.
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:assem-discussion-temp}
-
 \paragraph{Simulation a-1b}
 In Section \ref{sec:assem-1-obj-temp}'s simulation a-1b, I conducted a single-objective 
 optimization simulation to minimize the one-third assembly's maximum temperature 
@@ -143,13 +142,12 @@ channels (corresponding to $r_1, r_2, r_3, r_4, r_5$) closest to the temperature
 will be most important to minimizing maximum one-third assembly temperature. 
 
 \paragraph{Summary}
-I verified that the minimize $T_{max}$ objective for the \gls{AHTR} one-third assembly 
-model also flattens TRISO distribution. 
+I verified that similar to the \gls{AHTR} plank model, the one-third assembly's 
+minimize $T_{max}$ objective also flattens TRISO distribution. 
 For the one-third assembly, the FLiBe channels (corresponding to $r_1, r_2, r_3, r_4, 
-r_5$) closest to the temperature peaks will be most important to minimizing maximum o
-ne-third assembly temperature, and thus, will show a negative correlation with $T_{max}$. 
-The minimize $T_{max}$ objective has correlations with all the input parameters: 
-$PF_{total}$, TRISO packing fraction distribution, and coolant channel shape. 
+r_5$) closest to the temperature peaks will be most important to minimizing maximum
+one-third assembly temperature, and thus, will show a negative correlation with 
+$T_{max}$. 
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:assem-discussion-ppf}
@@ -158,9 +156,9 @@ In Section \ref{sec:assem-1-obj-ppf}'s simulation a-1c, I conducted a single-obj
 optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) 
 by varying TRISO distribution. 
 In simulation a-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.06, the reactor model 
-with the most-minimized $PPF_{fuel}$ has a $PPF_{fuel} = 1.0872$ and an oscillating 
-TRISO distribution along the x-axis with peaks on the x-axis at the 7.8cm, 
-15.9cm, and 22.0cm; and each row has a packing fraction variation of $\sim0.05$.
+with the most-minimized $PPF_{fuel}$ has a $PPF_{fuel} = 1.0872$, an oscillating 
+TRISO distribution along the x-axis, and a packing fraction standard deviation of 
+$0.017$ across the one-third assembly. 
 
 Section \ref{sec:assem-discussion-pf} concluded that for the \gls{AHTR} plank 
 model, the minimize $PPF_{fuel}$ objective is driven by flattening thermal 
@@ -175,12 +173,13 @@ compared reactor models.
     \includegraphics[width=0.49\linewidth]{a-1c-ppf-triso-comparison-most-minimized.png} 
     \includegraphics[width=0.49\linewidth]{a-1c-ppf-triso-comparison-least-minimized.png} 
     \caption{Simulation a-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
-    from Figure \ref{fig:assem-obj-1-ppf} (left) and the highest $PPF_{fuel}$ TRISO distribution (right).}
+    from Figure \ref{fig:assem-obj-1-ppf} (left) and the highest $PPF_{fuel}$ TRISO 
+    distribution (right).}
     \label{fig:a-1c-ppf-triso-comparison}
 \end{figure}
 
-Figure \ref{fig:a-1c-flux-comparison} compares the flux distributions between 
-simulation a-1c's most-minimized $PPF_{fuel}$ TRISO distribution and highest 
+Figure \ref{fig:a-1c-flux-comparison} compares the 4 energy group flux distributions 
+between simulation a-1c's most-minimized $PPF_{fuel}$ TRISO distribution and highest 
 $PPF_{fuel}$ TRISO distribution (both distributions shown in Figure 
 \ref{fig:a-1c-ppf-triso-comparison}). 
 \begin{figure}[htbp!]
@@ -204,13 +203,23 @@ $PPF_{fuel}$ TRISO distribution (both distributions shown in Figure
     \label{fig:a-1c-flux-comparison}
 \end{figure}
 
-% comment
+In Figure \ref{fig:a-1c-flux-comparison}, the reactor model with the highest 
+$PPF_{fuel} = 1.2431$ Group 4 flux dips in the center of the one-third assembly 
+due to spatial self-shielding effects. 
+In the highest $PPF_{fuel} = 1.2431$ reactor model's Group 1 flux, there is a peak in 
+fast neutrons born in the one-third assembly's center, the fast neutrons are moderated 
+in the graphite matrix and graphite structure (Figure \ref{fig:straightened_plank}). 
+The self-shielding neutrons are more likely absorbed at the plank's sides, near 
+the pure graphite structure moderating regions. 
+The outer sides of the plank geometrically shield the plank's center from neutron 
+flux, leading to a relatively lower group 4 thermal flux in the plank's center for 
+the constant TRISO distribution. 
 
-Table \ref{tab:a-1c-flux-comparison} quantifies the total flux differences per energy group 
-between the compared reactor models. 
+Table \ref{tab:a-1c-flux-comparison} quantifies the total flux differences per energy 
+group between the compared reactor models. 
 The flux values were tallied for each energy group within the one-third assembly model 
 using a 100 x 100 mesh. 
-% describe max and min phi, and the difference calculation. 
+% TODO: describe max and min phi, and the difference calculation. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
