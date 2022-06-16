@@ -304,10 +304,24 @@ TRISO distribution along the both the x-axis and y-axis.
 
 In simulation a-2a, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $T_{max}$ objective, reactor model 9 (Figure 
-\ref{fig:assem-obj-2-pftemp-pareto-distr}), has an almost constant TRISO distribution. 
+\ref{fig:assem-obj-2-pftemp-pareto-distr}), has an almost constant TRISO distribution.
+Figure \ref{fig:a-2a-temp-triso-comparison} compares simulation a-2a's reactor model 9 
+and simulation a-1b's most-minimized $T_{max}$ reactor model.  
+% TODO: update these figs 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.49\linewidth]{a-2a-pf-most-minimized.png} 
+    \includegraphics[width=0.49\linewidth]{assem-0.0559-most-minimized.png} 
+    \caption{Simulation a-2a's most-minimized $T_{max}$ TRISO distribution 
+    from Figure \ref{fig:assem-obj-2-pftemp} (left) and simulation a-1b's 
+    most-minimized $T_{max}$ TRISO distribution from Figure 
+    \ref{fig:assem-obj-1-temp} (right).}
+    \label{fig:a-2a-temp-triso-comparison}
+\end{figure}
 This distribution is similar to simulation a-1b's most-minimized $T_{max}$ TRISO 
 distribution  (Figure \ref{fig:assem-obj-1-temp-final}) which also has a mostly 
 flat TRISO distribution. 
+% TODO: explain the scaling and why it doesnt look flat... 
  
 The \gls{TRISO} distributions on the Pareto front in Figure \ref{fig:assem-obj-2-pftemp} 
 minimize both $PF_{total}$ and $T_{max}$, they vary between the two extreme cases: 
