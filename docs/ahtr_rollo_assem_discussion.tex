@@ -337,7 +337,6 @@ from both objectives.
     to an equal extent (see Pareto Front in Figure \ref{fig:assem-obj-2-pftemp}).}
     \label{fig:a-2a-balanced-reactor-model}
 \end{figure}
-% description
 Similar to simulation p-2a in Section \ref{sec:plank-discussion-multi}, 
 the minimize $T_{max}$ objective influences the TRISO distribution's flatness as 
 described in Section \ref{sec:assem-discussion-temp}, while 
@@ -374,7 +373,13 @@ and simulation a-1a's most-minimized $PF_{total}$ reactor model have similarly l
 packing fraction standard deviation of $0.032$ and $0.04$ for simulations a-2b and 
 a-1a, respectively. 
 However, they do not follow the same TRISO distribution pattern. 
-% explain this with the weird r/s between PF and PPF. 
+Section \ref{sec:plank-discussion-ppf} described that in the \gls{AHTR} plank model, 
+the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives influence each other
+resulting in unexpected TRISO distributions at different $PF_{total}$ values.
+This explains why unlike simulation a-2a, simulation a-2b's extreme most-minimized 
+$PF_{total}$ and most-minimized $PPF_{fuel}$ do not follow similar TRISO distribution 
+patterns as their single-objective counterparts.
+% i conduct further investigations later... 
 
 In simulation a-2b, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $PPF_{fuel}$ objective, reactor models 1 (Figure 
