@@ -447,26 +447,28 @@ and thermal flux flatness for the three reactor models.
     5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.}
 	\label{tab:a-2b-comparison-reactors}
     \footnotesize
-    \begin{tabular}{p{3cm}p{1.5cm}p{2.3cm}lp{2.5cm}l}
+    \begin{tabular}{p{3cm}p{1.5cm}p{2.3cm}p{4cm}p{2.5cm}l}
     \hline
     \textbf{Most Minimized Param} & \textbf{Reactor Model} 
     & \textbf{Fission Rxn Rate} & \textbf{$\%$ Diff}
     & $max(\phi_4)/min(\phi_4)$ & \textbf{$\%$ Diff}\\
     \hline 
-    \textbf{Both} & 5 & 0.5472 & - & 1.2897 & -\\
+    Both & 5 & 0.5472 & - & 1.2897 & -\\
     \textbf{$PF_{total}$} & 3 & 0.5476 & \Plus0.07 & 1.2949 & \Plus0.40\\
     \textbf{$PPF_{fuel}$} & 1 & 0.5478 & \Plus0.12 & 1.2851 & \Minus0.35\\
     \hline
     \end{tabular}
 \end{table}
 
-The most minimized $PF_{fuel}$ reactor model 1 has the highest fission reaction rate, 
-followed by the most minimized $PF_{fuel}$ reactor model 3, and then reactor model 5 that 
-minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.
+The most minimized $PPF_{fuel}$ reactor model 1 has the highest fission reaction rate, 
+followed by the most minimized $PF_{total}$ reactor model 3, and then reactor model 5 
+that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.
+Reactor model 1 has the highest fisson reaction rate since it has the highest 
+$PF_{total}$.
 Reactor model 3 has a higher fission reaction rate compared to reactor model 5 despite 
 reactor model 3 having a lower $PF_{total}$.
 Reactor model 3's oscillating TRISO distribution enables a higher fission reaction rate, 
-and thus, 240pcm higher $k_{eff}$ for a lower $PF_{total}$ compared to reactor model 5. 
+and thus, a 240pcm higher $k_{eff}$ for a lower $PF_{total}$ compared to reactor model 5. 
 
 The most minimized $PPF_{fuel}$ reactor model 1 has the flattest thermal flux, followed by 
 reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent, and 
