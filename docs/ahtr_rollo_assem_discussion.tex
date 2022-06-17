@@ -423,19 +423,20 @@ reactor model 1 with most-minimized $PPF_{fuel}$, reactor model 3 with most-mini
 $PF_{total}$, and reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an 
 equal extent.
 Figure \ref{fig:a-2b-comparison-reactors} shows the TRISO packing fraction distribution 
-for 3 reactors models.
+for the 3 reactors models.
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=\linewidth]{a-2b-comparison-reactors.png}  
-    \caption{TRISO distributions for 3 reactor models on Simulation a-2b's Pareto Front (Figure 
-    \ref{fig:assem-obj-2-pfppf-pareto}): reactor model 1 with most-minimized $PPF_{fuel}$ (left), 
-    reactor model 3 with most-minimized $PF_{total}$ (middle), and reactor model 5 that 
-    minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent (right).}
+    \caption{TRISO distributions for 3 reactor models on Simulation a-2b's Pareto Front 
+    (Figure \ref{fig:assem-obj-2-pfppf-pareto}): reactor model 1 with most-minimized 
+    $PPF_{fuel}$ (left), reactor model 3 with most-minimized $PF_{total}$ (middle), 
+    and reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal 
+    extent (right).}
     \label{fig:a-2b-comparison-reactors}
 \end{figure}
 
 Table \ref{tab:a-2b-comparison-reactors} shows the $PF_{total}$, $PPF_{fuel}$, TRISO 
-packing fraction distribution variance, total fission reaction rate, and thermal flux 
+packing fraction standard deviation, total fission reaction rate, and thermal flux 
 flatness for the three reactor models. 
 \begin{table}[htbp!]
     \centering
@@ -450,24 +451,23 @@ flatness for the three reactor models.
     \begin{tabular}{p{3cm}p{1.5cm}p{2.5cm}p{2.5cm}lp{2.5cm}l}
     \hline
     & \textbf{Reactor Model} 
-    & \textbf{TRISO distr variance} & \textbf{Fission Reaction Rate} & \textbf{$\%$ Diff}
+    \textbf{Most Minimized Param}& \textbf{TRISO distr variance} & \textbf{Fission Reaction Rate} & \textbf{$\%$ Diff}
     & $max(\phi_4)/min(\phi_4)$ & \textbf{$\%$ Diff}\\
     \hline 
-    \textbf{Most Minimized Both} & 5 & 0.00044 & 0.5472 & - & 1.2897 &\\
-    \textbf{Most Minimized $PF_{total}$} & 3 & 0.00105 & 0.5476 & \Plus0.07 & 1.2949 & \Plus0.40\\
-    \textbf{Most Minimized $PPF_{fuel}$} & 1 & 0.00018 & 0.5478 & \Plus0.12 & 1.2851 & \Minus0.35\\
+    \textbf{Both} & 5 & 0.003 & 0.5472 & - & 1.2897 &\\
+    \textbf{$PF_{total}$} & 3 & 0.024 & 0.5476 & \Plus0.07 & 1.2949 & \Plus0.40\\
+    \textbf{$PPF_{fuel}$} & 1 & 0.003 & 0.5478 & \Plus0.12 & 1.2851 & \Minus0.35\\
     \hline
     \end{tabular}
 \end{table}
 
-The most minimized $PPF_{fuel}$ reactor model 1 has the highest fission reaction rate, 
-followed by the most minimized $PF_{fuel}$ reactor model 3, and reactor model 5 that 
+The most minimized $PF_{fuel}$ reactor model 1 has the highest fission reaction rate, 
+followed by the most minimized $PF_{fuel}$ reactor model 3, and then reactor model 5 that 
 minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.
-Reactor model 3 has a higher fission reaction rate compared to reactor model 5 despite having 
-a lower $PF_{total}$.
-This is due to reactor model 3's oscillating TRISO distribution, which enables
-a higher fission reaction rate, and thus, 240pcm higher $k_{eff}$ for a lower $PF_{total}$
-compared to reactor model 5. 
+Reactor model 3 has a higher fission reaction rate compared to reactor model 5 despite 
+reactor model 3 having a lower $PF_{total}$.
+Reactor model 3's oscillating TRISO distribution enables a higher fission reaction rate, 
+and thus, 240pcm higher $k_{eff}$ for a lower $PF_{total}$ compared to reactor model 5. 
 
 The most minimized $PPF_{fuel}$ reactor model 1 has the flattest thermal flux, followed by 
 reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent, and 
@@ -475,8 +475,8 @@ then the most minimized $PF_{fuel}$ reactor model 3.
 Section \ref{sec:assem-discussion-ppf} verified that the \gls{AHTR} one-third assembly model's 
 minimize $PPF_{fuel}$ objective is also driven by flattening thermal (Group 4) flux 
 distribution. 
-Therefore, explaining why most minimized $PPF_{fuel}$ reactor model 1 has the flattest 
-thermal flux distribution. 
+Therefore, explaining why the most minimized $PPF_{fuel}$ reactor model 1 has the 
+flattest thermal flux distribution. 
 
 % comment on how the high TRISO variance results in less flat flux. constrasting objectives
 
