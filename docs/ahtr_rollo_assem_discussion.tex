@@ -404,20 +404,23 @@ However, they do not follow the same TRISO distribution pattern, this could be
 attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
 TRISO distributions at different $PF_{total}$ values, as mentioned previously. 
 
-% reactor model 5... 
-
 To better understand the driving factors for the reactor models on simulation a-2b's 
 Pareto Front, I do a deep dive into the driving factors for the minimize $PF_{total}$ 
 and minimize $PPF_{fuel}$ objectives. 
 
-\paragraph{Deep Dive}
-% say what the driving factors are ... 
-
-Figure \ref{fig:a-2b-comparison-reactors} shows the TRISO packing fraction distribution 
-for 3 reactors models on Figure \ref{fig:assem-obj-2-pfppf-pareto}'s Pareto Front: 
+\paragraph{Driving Factor Quantification}
+Chapter \ref{chap:ahtr-plank-opt-results} concluded that the minimize $PF_{total}$ 
+objective is driven by maximizing the plank's total fission reaction rate and 
+the minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
+distribution. 
+This section compares the total fission reaction rate and thermal flux flattness for 
+3 reactors models on Figure \ref{fig:assem-obj-2-pfppf-pareto}'s Pareto Front: 
 reactor model 1 with most-minimized $PPF_{fuel}$, reactor model 3 with most-minimized 
 $PF_{total}$, and reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an 
 equal extent.
+
+Figure \ref{fig:a-2b-comparison-reactors} shows the TRISO packing fraction distribution 
+for 3 reactors models.
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=\linewidth]{a-2b-comparison-reactors.png}  
