@@ -221,9 +221,10 @@ $PPF_{fuel} = 1.2431$ Group 4 flux dips in the center of the one-third assembly
 due to spatial self-shielding effects. 
 In the highest $PPF_{fuel} = 1.2431$ reactor model's Group 1 flux, there is a peak in 
 fast neutrons born in the one-third assembly's center, the fast neutrons are moderated 
-in the graphite matrix and graphite structure (Figure \ref{fig:ahtr_assembly}). 
-The self-shielding neutrons are more likely absorbed at the one-third assembly's outer 
-pure graphite structure moderating regions. 
+in the graphite matrix and graphite structure (\gls{AHTR} one-third assembly 
+geometry: Figure \ref{fig:ahtr_assembly}). 
+The self-shielding neutrons are more likely absorbed at the fuel regions nearer to 
+the outer pure graphite structure moderating regions. 
 The outer areas of the one-third assembly geometrically shield the one-third assembly's 
 center from neutron flux, leading to a relatively lower group 4 thermal flux in the 
 center for the highest $PPF_{fuel} = 1.2431$ reactor model.
@@ -262,8 +263,9 @@ using a 100 x 100 mesh.
 \end{table}
 
 In energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $0.85\%$ flatter 
-than the reactor model with the highest $PPF_{fuel} = 1.2431$ (as shown by Equation 
-\ref{eq:flux-prop-ppf}). 
+than the reactor model with the highest $PPF_{fuel} = 1.2431$.
+This verifies the relationship shown in Equation \ref{eq:flux-prop-ppf}: 
+$max(\Phi_j) \div ave(\Phi_j) \propto PPF_{fuel}$. 
 These results verify that similar to the \gls{AHTR} plank model, the \gls{AHTR} one-third 
 assembly model's minimize $PPF_{fuel}$ objective is also driven by flattening thermal 
 (Group 4) flux distribution. 
