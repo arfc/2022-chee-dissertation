@@ -1119,8 +1119,48 @@ the final generation that fall on the Pareto front.
 
 Figure \ref{fig:assem-obj-3} demonstrates that \gls{ROLLO} found 26 reactor models on 
 simulation a-3a final generation's Pareto front. 
-Figure \ref{fig:slab-obj-3-distr-most-minimized} shows the three distributions on the 
+Figure \ref{fig:assem-obj-3-distr-most-minimized} shows the three reactor models on the 
 Pareto front that most-minimized each objective. 
+Reactor model 24 most-minimized $PF_{total}$, reactor model 4 most-minimized $T_{max}$, 
+and reactor model 1 most-minimized $PPF_{fuel}$. 
+\begin{figure}[htbp!]
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{assem-obj-3-distr-most-minimized.png}
+        \caption{TRISO distributions for the reactor models on the Pareto front
+        that most-minimized each objective.}
+        \label{fig:assem-obj-3-distr-most-minimized}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.4\linewidth]{assem-obj-3-min-pf.png}
+        \caption{\gls{AHTR} plank model with the most-minimized $PF_{total}$ 
+        (reactor model 24).}
+        \label{fig:assem-obj-3-min-pf} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.4\linewidth]{assem-obj-3-min-temp.png}
+        \caption{\gls{AHTR} plank model with the most-minimized $T_{max}$
+        (reactor model 4).}
+        \label{fig:assem-obj-3-min-temp} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.4\linewidth]{assem-obj-3-min-ppf.png}
+        \caption{\gls{AHTR} plank model with the most-minimized $PPF_{fuel}$
+        (reactor model 1).}
+        \label{fig:assem-obj-3-min-ppf} 
+    \end{subfigure}
+    \caption{AHTR one-third assembly models and TRISO distributions for the 3 reactor 
+    models on simulation a-3a's Pareto front that most-minimized each objective.
+    Simulation a-3a -- ROLLO three-objective optimization to minimize total fuel packing 
+    fraction ($PF_{total}$), maximum plank temperature ($T_{max}$) and 
+    normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
+    Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
+    ($\rho_{TRISO}(\vec{r})$)}
+    \label{fig:assem-obj-3-distr-most-minimized}
+\end{figure}
 
 
 \subsection{a-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
