@@ -558,7 +558,7 @@ simulation a-1a's most-minimized $PF_{total}$ reactor model.
     \includegraphics[width=0.49\linewidth]{a-3a-pf-most-minimized.png} 
     \includegraphics[width=0.49\linewidth]{assem-0.0559-most-minimized.png} 
     \caption{Simulation a-3a's most-minimized $PF_{total}$ TRISO distribution 
-    from Figure \ref{fig:xx} (left) and simulation a-1a's 
+    from Figure \ref{fig:assem-obj-3-most-minimized} (left) and simulation a-1a's 
     most-minimized $PF_{total}$ TRISO distribution from Figure 
     \ref{fig:assem-obj-1-pf} (right).}
     \label{fig:a-3a-pf-triso-comparison}
@@ -566,7 +566,30 @@ simulation a-1a's most-minimized $PF_{total}$ reactor model.
 Figure \ref{fig:a-3a-pf-triso-comparison} shows that simulation a-3a's reactor model 30 
 and simulation a-1a's most-minimized $PF_{total}$ reactor model have similarly large 
 packing fraction standard deviation of $0.052$ and $0.04$, respectively. 
-However, they do not follow the same TRISO distribution pattern. 
+However, they do not follow the same TRISO distribution pattern, this could be 
+attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
+TRISO distributions at different $PF_{total}$ values, as mentioned previously. 
+
+In simulation a-3a, \gls{ROLLO} found that the one-third assembly model with the 
+most-minimized $T_{max}$ objective, reactor model xx (Figure 
+\ref{fig:assem-obj-3-most-minimized-distr}), has an almost constant TRISO distribution.
+Figure \ref{fig:a-3a-temp-triso-comparison} compares simulation a-3a's most-minimized 
+$T_{max}$ reactor model xx and simulation a-1b's most-minimized $T_{max}$ reactor model. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.49\linewidth]{a-3a-temp-most-minimized.png} 
+    \includegraphics[width=0.49\linewidth]{a-1b-temp-most-minimized.png} 
+    \caption{Simulation a-3a's most-minimized $T_{max}$ TRISO distribution 
+    from Figure \ref{fig:assem-obj-3-most-minimized-distr} (left) and simulation a-1b's 
+    most-minimized $T_{max}$ TRISO distribution from Figure 
+    \ref{fig:assem-obj-1-temp} (right).}
+    \label{fig:a-3a-temp-triso-comparison}
+\end{figure}
+Figure \ref{fig:a-3a-temp-triso-comparison} shows that simulation a-2a's most-minimized 
+$T_{max}$ reactor model and simulation a-1b's most-minimized $T_{max}$ reactor model 
+have similar almost constant TRISO distributions with packing fraction standard 
+deviations of $0.003$ and $0.0009$, respectively.
+However, they have different $PF_{total}$ values. 
 
 
 
