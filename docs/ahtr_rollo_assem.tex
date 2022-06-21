@@ -1134,7 +1134,12 @@ Reactor model 24 most-minimized $PF_{total}$, reactor model 4 most-minimized $T_
 all three objectives. 
 \begin{figure}[htbp!]
     \centering
+    \begin{subfigure}{\textwidth}
+    \centering
     \includegraphics[width=\linewidth]{assem-obj-3-distr-most-minimized.png}
+    \caption{TRISO distributions.}
+    \label{fig:assem-obj-3-most-minimized-distr}
+    \end{subfigure}
     \caption{AHTR one-third assembly models and TRISO distributions for the 3 reactor 
     models on simulation a-3a's Pareto front that most-minimized each objective, and 
     1 reactor model that equally minimized all three objectives.
@@ -1161,12 +1166,20 @@ all three objectives.
         (reactor model 4).}
         \label{fig:assem-obj-3-min-temp} 
     \end{subfigure}
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.49\linewidth]{assem-obj-3-min-ppf.png}
+        \includegraphics[width=\linewidth]{assem-obj-3-min-ppf.png}
         \caption{\gls{AHTR} plank model with the most-minimized $PPF_{fuel}$
         (reactor model 1).}
         \label{fig:assem-obj-3-min-ppf} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        % update this
+        \includegraphics[width=\linewidth]{assem-obj-3-min-ppf.png}
+        \caption{\gls{AHTR} plank model with the most-minimized $PPF_{fuel}$
+        (reactor model 1).}
+        \label{fig:assem-obj-3-min-all} 
     \end{subfigure}
     \caption{(contd.) Simulation a-3a -- ROLLO three-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$),
