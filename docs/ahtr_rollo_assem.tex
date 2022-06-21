@@ -999,6 +999,8 @@ models' $T_{max}$ against $PPF_{fuel}$, crosses mark the reactor models that fal
 the Pareto front.
 Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} shows the 1 TRISO packing fraction 
 distribution in the final generation that falls on the Pareto front. 
+Figure \ref{fig:assem-obj-2-tempppf-min-temp} illustrates the 1 \gls{AHTR} one-third 
+assembly model on the Pareto front. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
@@ -1009,18 +1011,31 @@ distribution in the final generation that falls on the Pareto front.
         on each cross correspond to TRISO distributions in the plot below.}
         \label{fig:assem-obj-2-tempppf-pareto} 
     \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \includegraphics[width=0.7\linewidth]{a-2c-most-minimized.png}
-        \caption{TRISO distribution for the 1 reactor models on the Pareto front.
-        Numbered reactor models correspond to numbered crosses in the plot above. }
-        \label{fig:assem-obj-2-tempppf-pareto-distr} 
-    \end{subfigure}
     \caption{Simulation a-2c -- ROLLO two-objective optimization to minimize 
     one-third assembly's maximum temperature ($T_{max}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the \gls{AHTR} one-third assembly. 
     Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:assem-obj-2-tempppf}
+\end{figure}
+\begin{figure}[htbp!]
+    \ContinuedFloat
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.7\linewidth]{a-2c-most-minimized.png}
+        \caption{TRISO distribution for the 1 reactor model on the Pareto front.
+        Numbered reactor models correspond to numbered crosses in the plot above. }
+        \label{fig:assem-obj-2-tempppf-pareto-distr} 
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{assem-obj-2-tempppf-min-both.png}
+        \caption{\gls{AHTR} one-third assembly model with the most-minimized $T_{max}$ and 
+        $PPF_{fuel}$ (corresponds to the TRISO distribution in the above plot).}
+        \label{fig:assem-obj-2-tempppf-min-ppf} 
+    \end{subfigure}
+    \caption{(contd.) Simulation a-2c -- ROLLO two-objective optimization to minimize 
+    one-third assembly's maximum temperature ($T_{max}$) and fuel-normalized power peaking factor 
+    ($PPF_{fuel}$) in the \gls{AHTR} one-third assembly. 
+    Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
 \end{figure}
 
 Figure \ref{fig:assem-obj-2-tempppf-pareto} shows that minimize $T_{max}$ and minimize 
