@@ -696,8 +696,7 @@ Figure \ref{fig:a-3b-temp-triso-comparison} shows that simulation a-3b's most-mi
 $T_{max}$ reactor model and simulation a-1b's most-minimized $T_{max}$ reactor model 
 have similar almost constant TRISO distributions with packing fraction standard 
 deviations of $0.001$ and $0.0009$, respectively.
-However, they have different $PF_{total}$ values, and simulation a-3b's most-minimized 
-$T_{max}$'s TRISO distribution is not as flat as simulation a-1b. 
+However, they have different $PF_{total}$ values.
 
 In simulation a-3b, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $PPF_{fuel}$ objective, reactor model 4 (Figure 
@@ -722,6 +721,30 @@ packing fraction standard deviation of  $0.005$ and $0.017$, respectively.
 However, they do not follow the same TRISO distribution pattern, this could be 
 attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
 TRISO distributions at different $PF_{total}$ values, as mentioned previously.
+
+% equally minimized
+
+Figure \ref{fig:a-3b-centerline-temp} shows the one-third assembly centerline 
+temperatures for four reactors on simulation a-3b's Pareto front: reactor model 11 
+with most-minimized $PF_{total}$, reactor model 1 with most-minimized $T_{max}$, 
+reactor model 4 with most-minimized $PPF_{fuel}$, and reactor model 3 with equally 
+minimized three objectives. 
+\begin{figure}[htbp!]
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{a-3b-centerline-temp.png}
+        \caption{Centerline temperature. AHTR assembly's centerline is the white line 
+        in Figure \ref{fig:ahtr-assem-verification}.}
+        \label{fig:a-3b-centerline-temp} 
+    \end{subfigure}
+    \caption{Simulation a-3b's one-third assembly reactor models' temperature 
+    distribution. Reactor models are on simulation a-3b's Pareto front: 
+    reactor model 11 with most-minimized $PF_{total}$, 
+    reactor model 1 with most-minimized $T_{max}$, 
+    reactor model 4 with most-minimized $PPF_{fuel}$, and 
+    reactor model 3 with equally minimized three objectives. }
+    \label{fig:a-3b-temp-distribution}
+\end{figure}
 
 % coolant channel shape doesn't matter as much as TRISO distribution for temperature. 
 
