@@ -699,6 +699,31 @@ deviations of $0.001$ and $0.0009$, respectively.
 However, they have different $PF_{total}$ values, and simulation a-3b's most-minimized 
 $T_{max}$'s TRISO distribution is not as flat as simulation a-1b. 
 
+In simulation a-3b, \gls{ROLLO} found that the one-third assembly model with the 
+most-minimized $PPF_{fuel}$ objective, reactor model 4 (Figure 
+\ref{fig:assem-obj-3-all-most-minimized-distr}) has a slightly oscillating TRISO 
+distribution along the y-axis.
+Figure \ref{fig:a-3a-ppf-triso-comparison} compares simulation a-3b's most-minimized 
+$PPF_{fuel}$ reactor model 4 and simulation a-1c's most-minimized $PPF_{fuel}$ reactor 
+model. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.49\linewidth]{a-3b-ppf-most-minimized.png} 
+    \includegraphics[width=0.49\linewidth]{a-1c-ppf-triso-comparison-most-minimized.png} 
+    \caption{Simulation a-3b's most-minimized $PPF_{fuel}$ TRISO distribution 
+    from Figure \ref{fig:assem-obj-3-all-most-minimized-distr} (left) and simulation 
+    a-1c's most-minimized $PPF_{fuel}$ TRISO distribution from Figure 
+    \ref{fig:assem-obj-1-ppf} (right).}
+    \label{fig:a-3b-ppf-triso-comparison}
+\end{figure}
+Figure \ref{fig:a-3b-ppf-triso-comparison} shows that simulation a-3b's reactor model 4 
+and simulation a-1a's most-minimized $PPF_{fuel}$ reactor model have similarly small 
+packing fraction standard deviation of  $0.005$ and $0.017$, respectively. 
+However, they do not follow the same TRISO distribution pattern, this could be 
+attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
+TRISO distributions at different $PF_{total}$ values, as mentioned previously.
+
+% coolant channel shape doesn't matter as much as TRISO distribution for temperature. 
 
 \subsection{Discussion: Major Takeaways}
 
