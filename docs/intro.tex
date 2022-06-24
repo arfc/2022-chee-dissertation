@@ -1,4 +1,5 @@
 \chapter{Introduction}
+\glsresetall
 \label{sec:intro}
 
 Increased global surface temperatures, sea levels, and severe weather events 
@@ -41,3 +42,36 @@ fuel rods, spheres as fuel pebbles, and axis-aligned coolant channels
 Fabricating reactor core component using additive manufacturing can further optimize 
 and improve core geometries to enhance reactor performance and safety at lower costs 
 \cite{bergeron_early_2018}.
+
+Reactor optimization for arbitrary geometries enabled by additive manufacturing is a 
+new concept, and few research demonstrations have been done to explore the large 
+new design space. 
+Previous efforts include Sobes et al. \cite{sobes_artificial_2020} using genetic 
+algorithms to find minimum volume geometric configurations for the TCR reactor. 
+This study represented arbitrary geometry variations using right cylinders. 
+Also, See et al. \cite{see_design_2022} optimized the TCR's outlet plenum design 
+by varying inlet channel positioning and outer wall shape.  
+The expanded design space associated with an arbitrary reactor geometry increases 
+the time for reactor designers to thoroughly explore and find optimal geometries. 
+Instead, we can leverage \gls{AI} optimization methods, such as evolutionary algorithms, 
+to rapidly explore the large design space to find global optimal designs. 
+\gls{AI} does not replace the human reactor designer but shifts the human designer's 
+focus away from conjecturing suitable geometries to defining design criteria to 
+find optimal designs \cite{sobes_artificial_2020}. 
+Thus, when the human designer changes the reactor criteria, the AI model will quickly 
+adapt and produce new global optimal designs to fit the new criteria.
+
+Thoroughly exploring the design space enabled by additive manufacturing should allow 
+the placement of fuel, moderation, and coolant material in any possible location 
+within physical limits. 
+In this dissertation, I will explore the large design space while acknowledging that 
+this work is only an intermediate step towards developing a truly arbitrary 
+geometry expression. 
+I applied evolutionary algorithm optimization to vary the fuel distribution and coolant 
+channel shape in a \gls{FHR}. 
+I chose to minimize three reactor key performance metrics: total fuel amount, maximum 
+fuel temperature, and fuel-normalized power peaking factor. 
+I used the ROLLO tool \cite{chee_rollo_2021} to drive the evolutionary algorithm 
+optimization process, and used OpenMC \cite{romano_openmc:_2015} and Moltres 
+\cite{lindsay_introduction_2018} software to model the reactor's neutronics and 
+thermal-hydraulics, respectively.  
