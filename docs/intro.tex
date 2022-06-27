@@ -164,16 +164,19 @@ Chapter 3 describes the \gls{FHR} benchmark specifications and the \gls{UIUC} te
 results.
 The \gls{OECD}-\gls{NEA} and \gls{Georgia Tech} initiated the \gls{FHR} 
 benchmark for the \gls{AHTR} design in 2019 \cite{petrovic_benchmark_2021} 
-to address \gls{AHTR} modeling challenges such as multiple heterogeneity and 
+to address the \gls{AHTR} modeling challenges such as multiple heterogeneity and 
 material cross-section data. 
 \gls{UIUC} participates in the \gls{FHR} benchmark with the OpenMC Monte Carlo code 
-\cite{romano_openmc_2013} using the ENDF/B-VII.1 material cross section library 
+\cite{romano_openmc_2013} with the ENDF/B-VII.1 material cross section library 
 \cite{chadwick_endf/b-vii.1_2011}.
 The \gls{UIUC} team consists of myself and my advisors, Professor Kathryn Huff and Dr.
 Madicken Munk. 
-The results presented are for Phases I-A and I-B which model a steady-state and 
+The results presented are for Phases I-A and I-B which model steady-state and 
 depletion in a 2D \gls{AHTR}, and preliminary multiphysics simulation results. 
 
 Chapter 4 describes the \gls{ROLLO} tool designed for this dissertation. 
 \gls{ROLLO} is a Python package that applies evolutionary algorithm 
 techniques to optimize nuclear reactor design. 
+\gls{ROLLO} provides a general genetic algorithm framework, sets up 
+parallelization for the user, and promotes usability with an input file 
+that only exposes mandatory parameters.
