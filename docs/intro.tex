@@ -172,7 +172,7 @@ material cross-section data.
 The \gls{UIUC} team consists of myself and my advisors, Professor Kathryn Huff and Dr.
 Madicken Munk. 
 The results presented are for Phases I-A and I-B which model steady-state and 
-depletion in a 2D \gls{AHTR}, and preliminary multiphysics simulation results. 
+depletion in a 2D \gls{AHTR}, and multiphysics simulation results. 
 
 Chapter 4 describes the \acrfull{ROLLO} tool designed for this dissertation. 
 \gls{ROLLO} is a Python package that applies evolutionary algorithm 
@@ -188,3 +188,16 @@ I designed  \gls{ROLLO} to be effective, flexible, open-source, parallel,
 reproducible, and usable. 
 \gls{ROLLO} is nuclear code-agnostic and does not have dependencies on any 
 nuclear software, and is hosted on Github \cite{chee_rollo_2021}. 
+
+Chapter 5 describes the modeling and optimization methodology of the 
+\gls{AHTR} plank and one-third assembly optimization for non-conventional 
+geometries and parameters conducted using the \gls{ROLLO} software.
+I defined and described the \gls{AHTR} input parameters varied for the optimization 
+problems: \gls{TRISO} packing distribution, total fuel packing fraction, and 
+coolant channel shape.
+I defined and motivated the key optimization objectives: minimizing fuel amount,
+maximizing heat transfer, and minimizing power peaking.
+I described the \gls{AHTR} plank and one-third assembly geometries and  
+detailed their modeling workflow: the \gls{AHTR} input parameter variations, 
+the OpenMC neutronics model, the Moltres temperature model, and 
+the output constraint and objective value calculations. 
