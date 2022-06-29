@@ -863,6 +863,40 @@ all three objectives.
     \label{fig:assem-obj-3-all-256-most-minimized}
 \end{figure}
 
+Figure \ref{fig:a-3b-256-centerline-temp} shows the one-third assembly centerline 
+temperatures for three reactors on simulation a-3b's Pareto front: reactor model xx 
+with most-minimized $PF_{total}$, reactor model xx with most-minimized $T_{max}$, and
+reactor model xx with most-minimized $PPF_{fuel}$.
+$r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 18cm, 
+15cm, 12cm, 8cm, and 6cm, respectively.  
+\begin{figure}[htbp!]
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{a-3b-256-centerline-temp.png}
+        \caption{Centerline temperature. AHTR assembly's centerline is the white line 
+        in Figure \ref{fig:ahtr-assem-verification}.}
+        \label{fig:a-3b-256-centerline-temp} 
+    \end{subfigure}
+    \caption{Simulation a-3b-256's one-third assembly reactor models' temperature 
+    distribution. Reactor models are on simulation a-3b-256's Pareto front: 
+    reactor model xx with most-minimized $PF_{total}$, 
+    reactor model xx with most-minimized $T_{max}$, and
+    reactor model xx with most-minimized $PPF_{fuel}$.
+    $r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 18cm, 
+    15cm, 12cm, 8cm, and 6cm, respectively.  }
+    \label{fig:a-3b-256-temp-distribution}
+\end{figure}
+
+For the three reactor models, $T_{max}$ is lower than simulation a-3b's equivalent 
+reactor models (Figure \ref{fig:a-3b-centerline-temp}). 
+This suggests the larger population size enabled \gls{ROLLO} to explore more reactor 
+model variation, and find even more optimal reactor models that further minimized 
+$T_{max}$. 
+
+%However, simulation a-3b=256's final generations hypervolume is smaller than a-3b. 
+% suggest that use ROLLO to find TRISO distribution then add coolant channel shape 
+% high r values based on the temperature distribution... 
+
 \pagebreak
 \subsection{Discussion: Major Takeaways}
 In Section \ref{sec:assem-discussion}, I conducted investigations to understand the 
