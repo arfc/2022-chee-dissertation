@@ -202,23 +202,21 @@ I describe the \gls{AHTR} geometries, outline the \gls{AHTR} modeling workflow,
 verify the \gls{AHTR} models, and describe the process of tuning \gls{ROLLO}'s 
 hyperparameters for the optimization problems.
 
-Chapter \ref{chap:ahtr-plank-opt-results} reports the \gls{AHTR} plank's \gls{ROLLO} 
-optimization results. 
-I vary the following \gls{AHTR} plank input parameters: \gls{TRISO} packing fraction 
-distribution ($\rho_{TRISO}(\vec{r})$), total fuel packing fraction ($PF_{total}$), and 
-coolant channel shape; in an effort to minimize the following objectives: total 
-fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$), and 
-fuel-normalized power peaking factor ($PPF_{fuel}$). 
-I conduct six single objective, single input parameter \gls{ROLLO} optimizations to 
-understand the individual impacts of each objective on each input parameter, 
-and to inform the multi-objective optimization simulations setup. 
+Chapter \ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results} 
+report the \gls{AHTR} plank and one-third assembly \gls{ROLLO} optimization results, 
+respectively. 
+I vary the following \gls{AHTR} plank and one-third assembly input parameters: 
+\gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$), total fuel 
+packing fraction ($PF_{total}$), and coolant channel shape; in an effort to minimize 
+the following objectives: total fuel packing fraction ($PF_{total}$), maximum 
+temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$). 
+For each \gls{AHTR} geometry, I conduct six single objective, single input parameter 
+\gls{ROLLO} optimizations to understand the individual impacts of each objective on 
+each input parameter, and to inform the multi-objective optimization simulations setup. 
 I conduct three two-objective \gls{ROLLO} optimizations and two three-objective 
 \gls{ROLLO} optimizations for different number of input parameters. 
 I then conclude with an investigation to understand the driving factors for each 
 individual objective, and how their combined effects result in the optimal reactor 
 models found by the multi-objective optimization simulations. 
-
-Chapter \ref{chap:ahtr-assem-opt-results} reports the \gls{AHTR} one-third assembly's 
-\gls{ROLLO} optimization results. 
 
 Finally, Chapter \ref{chap:concl} 
