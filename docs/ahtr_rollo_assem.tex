@@ -654,6 +654,28 @@ optimization simulations in this section and Section \ref{sec:assem-three-obj}.
 Table \ref{tab:assem-obj-breakdown} summarized the two-objective simulations: 
 a-2a, a-2b, and a-2c.
 
+As previously described in Section \ref{sec:opt}, multi-objective optimization returns 
+multiple optimal solutions that meet each objective to varying degrees; this set of 
+solutions is the Pareto front \cite{deb_multi-objective_2001}. 
+For each solution in the Pareto front, none of the objective functions can be 
+improved without degrading another objective.
+An ideal optimization method for a multi-objective problem like reactor design 
+optimization should find widely spread solutions in the obtained Pareto front 
+\cite{deb_multi-objective_2001}. 
+Thus, I report on the optimal reactor models on the Pareto front for the multi-objective 
+optimization problems in this section and Section \ref{sec:assem-three-obj}. 
+
+To ensure that the multi-objective optimization problems are converged, I report the 
+hypervolume values for each generation. 
+As previously described in Section \ref{sec:binhandkorn}, the hypervolume indicator 
+quantifies the Pareto front's goodness (bigger = better).
+I use a different reference point for each optimization problem. 
+If a multi-objective optimization problem's hypervolume converges earlier than the 
+five generations I intended to run (determined in Section 
+\ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
+However, if the multi-objective optimization problem's hypervolume does not converge by 
+generation 5, I run the problem for a few more generations till satisfactory convergence.
+
 \subsection{a-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:a-2a}
 This section reports results from the two-objective optimization simulation a-2a, the 
