@@ -9,32 +9,14 @@ I vary the following \gls{AHTR} one-third assembly input parameters:
     \item Total fuel packing fraction ($PF_{total}$)
     \item \gls{FLiBe} coolant channel shape
 \end{itemize} 
-And, I optimize the \gls{AHTR} one-third assembly for the three optimization 
-objectives. 
-Table \ref{tab:assem-motivation} outlines the objectives, how I quantified them, and
-the motivation.
-\begin{table}[htbp]
-    \centering
-    \onehalfspacing
-    \caption{\acrfull{ROLLO} \acrfull{AHTR} optimization problem objectives with 
-    their quantification descriptions and motivation.}
-	\label{tab:assem-motivation}
-    \footnotesize
-    \begin{tabular}{p{4.5cm}|p{5cm}p{5cm}}
-    \hline 
-    \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
-    \hline
-    \textbf{Minimize fuel amount} & Minimize total fuel packing fraction 
-    & Cost savings, Non-proliferation \\ 
-    \hline
-    \textbf{Maximize heat transfer} & Minimize maximum temperature 
-    & Enable the system to perform at a higher power with minimized thermal stress \\
-    \hline
-    \textbf{Minimize power peaking} & Minimize power peaking factor normalized by fuel distribution 
-    & Efficient fuel utilization, longer core life, safety\\
-    \hline
-    \end{tabular}
-\end{table}
+And, I optimize the \gls{AHTR} one-third assembly for the following optimization 
+objectives:
+\begin{itemize}
+    \item Minimize total fuel packing fraction ($PF_{total}$)
+    \item Minimize maximum one-third assembly temperature ($T_{max}$)
+    \item Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
+\end{itemize} 
+Table \ref{tab:objectives} outlined these objectives and the motivation.
  
 In Chapter \ref{chap:method}, I detailed the methodology for \gls{AHTR} one-third 
 assembly modeling and \gls{ROLLO} optimization. 
