@@ -35,9 +35,9 @@ to select hyperparameters for the single-objective and multi-objective \gls{ROLL
 optimization simulations.
 
 The subsequent sections outline the \gls{AHTR} one-third assembly's optimization 
-simulations, describe the results of the single-objective and multi-objective 
-\gls{ROLLO} optimization simulations, report each simulation's computational cost, 
-and discuss the results' significance.
+simulations, describe the single-objective and multi-objective \gls{ROLLO} optimization 
+simulations' results, report each simulation's computational cost, and discuss the 
+results' significance.
 
 \section{ROLLO AHTR One-Third Assembly Optimization Simulations Overview}
 Table \ref{tab:assem-obj-breakdown} shows the details of each \gls{ROLLO} 
@@ -52,38 +52,38 @@ optimization problems explored in this chapter.
     \gls{TRISO} packing fraction distribution}
 	\label{tab:assem-obj-breakdown}
     \footnotesize
-    \begin{tabular}{p{1.4cm}|p{1cm}|llll}
+    \begin{tabular}{p{1.4cm}|p{1cm}|lllp{3cm}}
     \hline 
-    \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Coupled Nuclear Software} \\
     \hline
-    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.38 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.38 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & a-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     \cline{2-6}
-    & a-1c & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff}$ $>$ 1.38 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & a-1c & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
-    & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.38 &\tabitem Coolant channel shape & OpenMC \\
+    & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem Coolant channel shape & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.38 &\tabitem Coolant channel shape & OpenMC, Moltres\\
+    & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem Coolant channel shape & OpenMC, Moltres\\
     \cline{2-6}
-    & a-1f & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff}$ $>$ 1.38 &\tabitem Coolant channel shape & OpenMC\\
+    & a-1f & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem Coolant channel shape & OpenMC\\
     \hline
-    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.38 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & &\tabitem min($T_{max}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-2b & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.38 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & a-2b & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     & & \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $>$ 1.38 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & & \tabitem min($PPF_{fuel}$) & & & \\
     \hline
-    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.38 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & & \\
     \cline{2-6}
-    & a-3b &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $>$ 1.38 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & a-3b &\tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     && \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & \tabitem Coolant channel shape& \\
     \hline
