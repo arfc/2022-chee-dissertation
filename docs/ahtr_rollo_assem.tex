@@ -140,6 +140,20 @@ Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem param
     \end{tabular}
 \end{table}
 
+The one-third assembly's TRISO distribution is varied based on sine distributions, 
+as described in Section \ref{sec:input-parameter-modeling}. 
+If the simulation used the FHR benchmark equivalent $PF_{total} = 0.153$, at
+certain sine distributions, some fuel cells will have $PF > 0.3$. 
+OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
+resulting in long runtimes. 
+Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
+$PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
+$PF > 0.3$ occurences. 
+I use $PF_{total} = 0.06$ for all optimization simulations that do not vary 
+$PF_{total}$: a-1b, a-1c, a-1e, a-1f, and a-2c. 
+And I vary $PF_{total}$ between $0.05$ and $0.07$ for all optimization simulations 
+that do vary $PF_{total}$: a-1a, a-1d, a-2a, a-2b, a-3a, and a-3b.
+
 Figure \ref{fig:assem-obj-1-pf-evol} shows the $PF_{total}$ evolution.
 Figure \ref{fig:assem-obj-1-pf-final} shows four unique TRISO packing fraction 
 distributions in the final generation with the most-minimized $PF_{total}$. 
@@ -313,18 +327,6 @@ Table \ref{tab:simulationa1b} shows simulation a-1b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
-The TRISO distribution is varied based on sine distributions, as described 
-in Section \ref{sec:input-parameter-modeling}. 
-If the simulation used the FHR benchmark equivalent $PF_{total} = 0.153$, at
-certain sine distributions, some fuel cells will have $PF > 0.3$. 
-OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
-resulting in long runtimes. 
-Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
-$PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
-$PF > 0.3$ occurences. 
-I use $PF_{total} = 0.06$ for all optimization simulations that do not vary 
-$PF_{total}$: a-1c, a-1e, a-1f, a-2c. 
 
 Figure \ref{fig:assem-obj-1-temp-evol} shows the one-third assembly's $T_{max}$ 
 evolution. 
