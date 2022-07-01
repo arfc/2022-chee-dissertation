@@ -486,13 +486,14 @@ that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.
 Reactor model 1 has the highest fisson reaction rate since it has the highest 
 $PF_{total}$.
 Reactor model 11 has a slightly higher fission reaction rate compared to reactor model 5 
-and $k_{eff}$ values within error of each other despite reactor model 11 having a lower 
-$PF_{total}$ ($PF_{total, 11}=0.0566$ vs. $PF_{total, 5}=0.0591$).
-Reactor model 11's oscillating TRISO distribution enables a comparable $k_{eff}$, 
-for a lower $PF_{total}$ compared to reactor model 5 because 
-the minimize $PF_{total}$ objective is driven by maximizing the total fission 
-reaction rates to find a reactor model with a lower $PF_{total}$ that meets $k_{eff}$ 
-constraints. 
+and they have $k_{eff}$ values within error of each other despite reactor model 11 
+having a lower $PF_{total}$ ($PF_{total, 11}=0.0566$ vs. $PF_{total, 5}=0.0591$).
+Section \ref{sec:assem-discussion-pf} verified that the \gls{AHTR} one-third assembly 
+model's minimize $PF_{total}$ objective is driven by maximizing total fission reaction 
+rate.
+Therefore, reactor model 11's oscillating TRISO distribution enables a lower 
+$PF_{total}$ for the same $k_{eff}$ as reactor model 5 since both reactor models 
+have comparable total fission reaction rates. 
 
 The most minimized $PPF_{fuel}$ reactor model 1 has the flattest thermal flux, followed by 
 reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent, and 
