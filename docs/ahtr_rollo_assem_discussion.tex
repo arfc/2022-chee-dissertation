@@ -721,7 +721,7 @@ model.
     \label{fig:a-3b-ppf-triso-comparison}
 \end{figure}
 Figure \ref{fig:a-3b-ppf-triso-comparison} shows that simulation a-3b's reactor model 4 
-and simulation a-1a's most-minimized $PPF_{fuel}$ reactor model have similarly small 
+and simulation a-1a's most-minimized $PPF_{fuel}$ reactor models both have small 
 packing fraction standard deviation of  $0.005$ and $0.017$, respectively. 
 However, they do not follow the same TRISO distribution pattern, this could be 
 attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
@@ -738,7 +738,16 @@ influences from all objectives.
     Figure \ref{fig:assem-obj-3-all-2d}).}
 \label{fig:a-3b-balanced-reactor-model}
 \end{figure}
-% comment?
+Similar to simulation a-3a, all the reactor models on simulation a-3b's Pareto front 
+(Figure \ref{fig:assem-obj-3-all-2d}), the TRISO distribution flatness is influenced 
+by the minimize $T_{max}$ objective. 
+The variations in \gls{TRISO} distributions are influenced by both the minimize 
+$PF_{total}$ and minimize $PPF_{fuel}$ objectives. 
+However, as mentioned previously, the $PF_{total}$ and $PPF_{fuel}$ relationship
+results in unexpected TRISO distributions at different $PF_{total}$ values. 
+The minimize $PF_{total}$ objective tries to maximize fission reaction rate
+to enable a higher $k_{eff}$ for a lower $PF_{total}$, and 
+the $PPF_{fuel}$ objective tries to flatten thermal flux.
 
 Figure \ref{fig:a-3b-centerline-temp} shows the one-third assembly centerline 
 temperatures for three reactors on simulation a-3b's Pareto front: reactor model 11 
