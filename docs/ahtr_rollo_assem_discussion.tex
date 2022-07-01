@@ -341,8 +341,8 @@ deviations of $0.004$ and $0.0009$, respectively.
 However, they have different $PF_{total}$ values, and simulation a-2a's most-minimized 
 $T_{max}$'s TRISO distribution is not as flat as simulation a-1b. 
 
-Figure \ref{fig:a-2a-balanced-reactor-model} shows reactor model 13 which 
-minimized both $PF_{total}$ and $T_{max}$ to an equal extent by balancing influences 
+Figure \ref{fig:a-2a-balanced-reactor-model} shows reactor model 13, which 
+minimized $PF_{total}$ and $T_{max}$ to an equal extent by balancing influences 
 from both objectives. 
 \begin{figure}[htbp!]
     \centering
@@ -352,9 +352,9 @@ from both objectives.
     \label{fig:a-2a-balanced-reactor-model}
 \end{figure}
 The \gls{TRISO} distributions on simulation a-2a's Pareto front in Figure 
-\ref{fig:assem-obj-2-pftemp} minimize both $PF_{total}$ and $T_{max}$, and vary
+\ref{fig:assem-obj-2-pftemp} minimize both $PF_{total}$ and $T_{max}$ and vary
 between the two extreme cases: most-minimized $PF_{total}$ and most-minimized $T_{max}$. 
-The minimize $T_{max}$ objective influences the TRISO distribution's flatness as 
+The minimize $T_{max}$ objective influences the TRISO distribution's flatness, as 
 described in Section \ref{sec:assem-discussion-temp}, while 
 the minimize $PF_{total}$ objective influences the oscillating pattern, as described 
 in Section \ref{sec:assem-discussion-pf}.
@@ -391,14 +391,14 @@ However, they do not follow the same TRISO distribution pattern.
 Section \ref{sec:plank-discussion-ppf} described that in the \gls{AHTR} plank model, 
 the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives influence each other
 resulting in unexpected TRISO distributions at different $PF_{total}$ values.
-This same effect also applies to the one-third assembly model, explaining why unlike 
+This same effect also applies to the one-third assembly model, explaining why, unlike 
 simulation a-2a, simulation a-2b's extreme most-minimized $PF_{total}$ and 
 most-minimized $PPF_{fuel}$ do not follow similar TRISO distribution patterns as their 
 single-objective counterparts.
 
 In simulation a-2b, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $PPF_{fuel}$ objective, reactor model 1 (Figure 
-\ref{fig:assem-obj-2-pfppf-pareto-distr}) has a TRISO distribution that oscillates
+\ref{fig:assem-obj-2-pfppf-pareto-distr}), has a TRISO distribution that oscillates
 along the y-axis and oscillates slightly along the x-axis. 
 Figure \ref{fig:a-2b-pf-triso-comparison} compares simulation a-2b's most-minimized 
 $PPF_{fuel}$ reactor model 1 and simulation a-1c's most-minimized $PPF_{fuel}$ reactor 
@@ -416,26 +416,26 @@ model.
 Figure \ref{fig:a-2b-ppf-triso-comparison} shows that simulation a-2b's reactor model 1 
 and simulation a-1a's most-minimized $PPF_{fuel}$ reactor model have similarly small 
 packing fraction standard deviation of $0.013$ and $0.017$, respectively. 
-However, they do not follow the same TRISO distribution pattern, this is
+However, they do not follow the same TRISO distribution pattern; this is
 attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
 TRISO distributions at different $PF_{total}$ values, as mentioned previously. 
 The relationship between the \gls{AHTR}'s $PF_{total}$ and $PPF_{fuel}$ 
 merits future work of further sensitivity analysis. 
 
-To better understand the reactor models on simulation a-2b's Pareto Front, I do a 
+To better understand the reactor models on simulation a-2b's Pareto Front, I
 deep dive into the driving factors for the minimize $PF_{total}$ and minimize 
 $PPF_{fuel}$ objectives. 
 
 \paragraph{Driving Factor Quantification}
 Sections \ref{sec:assem-discussion-pf} and \ref{sec:assem-discussion-ppf} 
-verified that similar to the \gls{AHTR} plank, the \gls{AHTR} one-third assembly's 
+verified that, similar to the \gls{AHTR} plank, the \gls{AHTR} one-third assembly's 
 minimize $PF_{total}$ objective is driven by maximizing total fission reaction 
 rates, and the minimize $PPF_{fuel}$ objective is driven by flattening the thermal flux 
 distribution. 
 This section compares the total fission reaction rate and thermal flux flatness for 
 3 reactors models on simulation a-2b's Pareto Front (Figure 
 \ref{fig:assem-obj-2-pfppf-pareto}): reactor model 11 with most-minimized $PF_{total}$, 
-reactor model 1 with most-minimized $PPF_{fuel}$, and reactor model 5 that minimizes 
+reactor model 1 with most-minimized $PPF_{fuel}$, and reactor model 5 which minimizes 
 both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.
 Figure \ref{fig:a-2b-comparison-reactors} shows the TRISO packing fraction distribution 
 for the 3 reactors models.
@@ -447,7 +447,7 @@ for the 3 reactors models.
     \caption{TRISO distributions for 3 reactor models on Simulation a-2b's Pareto Front 
     (Figure \ref{fig:assem-obj-2-pfppf-pareto}): reactor model 11 with most-minimized 
     $PF_{total}$ (top left), reactor model 1 with most-minimized $PPF_{fuel}$ (top right), 
-    and reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal 
+    and reactor model 5 which minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal 
     extent (bottom).}
     \label{fig:a-2b-comparison-reactors}
 \end{figure}
@@ -462,7 +462,7 @@ and thermal flux flatness for the three reactor models.
     for 3 reactor models on simulation a-2b's Pareto Front (Figure 
     \ref{fig:assem-obj-2-pfppf-pareto}): reactor model 1 with most-minimized 
     $PPF_{fuel}$, reactor model 11 with most-minimized $PF_{total}$, and reactor model 
-    5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.}
+    5 which minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.}
 	\label{tab:a-2b-comparison-reactors}
     \footnotesize
     \begin{tabular}{p{3cm}p{1.5cm}p{2.3cm}lp{2.5cm}l}
@@ -480,10 +480,10 @@ and thermal flux flatness for the three reactor models.
 
 The most minimized $PPF_{fuel}$ reactor model 1 has the highest fission reaction rate, 
 followed by the most minimized $PF_{total}$ reactor model 11, and then reactor model 5 
-that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.
-Reactor model 1 has the highest fisson reaction rate since it has the highest 
+which minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent.
+Reactor model 1 has the highest fission reaction rate since it has the highest 
 $PF_{total}$.
-Reactor model 11 has a slightly higher fission reaction rate compared to reactor model 5 
+Reactor model 11 has a slightly higher fission reaction rate than reactor model 5, 
 and they have $k_{eff}$ values within error of each other despite reactor model 11 
 having a lower $PF_{total}$ ($PF_{total, 11}=0.0566$ vs. $PF_{total, 5}=0.0591$).
 Section \ref{sec:assem-discussion-pf} verified that the \gls{AHTR} one-third assembly 
@@ -494,7 +494,7 @@ $PF_{total}$ for the same $k_{eff}$ as reactor model 5 since both reactor models
 have comparable total fission reaction rates. 
 
 The most minimized $PPF_{fuel}$ reactor model 1 has the flattest thermal flux, followed by 
-reactor model 5 that minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent, and 
+reactor model 5 which minimizes both $PF_{total}$ and $PPF_{fuel}$ to an equal extent, and 
 then the most minimized $PF_{fuel}$ reactor model 11. 
 Section \ref{sec:assem-discussion-ppf} verified that the \gls{AHTR} one-third assembly 
 model's minimize $PPF_{fuel}$ objective is driven by flattening thermal (Group 4) flux 
