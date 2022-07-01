@@ -913,42 +913,6 @@ to explore more reactor model variation, and find even more optimal reactor mode
 that further minimized $T_{max}$. 
 
 \pagebreak
-\subsection{Discussion: Major Takeaways}
-In Section \ref{sec:assem-discussion}, I conducted investigations to verify if 
-the \gls{AHTR} one-third assembly model's reactor optimization objective driving 
-factors are the same as the \gls{AHTR} plank model (Section \ref{sec:plank-discussion}). 
-I also analyzed how the reactor optimization objectives combined effects result in the 
-optimal reactor models found by the multi-objective optimization simulations. 
-
-I verified that all of the one-third assembly objectives follow the same driving 
-factors as the \gls{AHTR} plank optimization objectives (Chapter 
-\ref{chap:ahtr-plank-opt-results}).
-The minimize $T_{max}$ objective is driven by minimizing one-third assembly's 
-maximum temperature; it flattens TRISO distribution and maximizes the radius values 
-for the FLiBe channels closest to the temperature peaks.
-The minimize $PF_{total}$ objective is driven by maximizing the one-third assembly's 
-total fission reaction rate and influences oscillations in the TRISO disribution to 
-achieve the objective. 
-The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
-distribution and influences $PF_{total}$ and oscillations in the TRISO disribution 
-to achieve the objective. 
-Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
-with the coolant channel shape. 
-Similar to the \gls{AHTR} plank (Section \ref{sec:plank-discussion}), the results 
-from simulation a-2b suggest that the minimize $PF_{total}$ objective's driving factor 
-maximize total fission reaction rate and minimize $PPF_{fuel}$ objective's driving factor 
-flattening thermal flux distribution influence each other resulting in unexpected TRISO 
-distributions at different $PF_{total}$ values. 
-
-All these driving factors and influences come together in each multi-objective 
-optimization simulation to give a set of optimal reactor models on a Pareto front. 
-Simulation a-3b-256's multi-objective optimization shows the result of minimizing all 
-three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
-all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
-Figure \ref{fig:assem-obj-3-all-256} shows the 38 widely spread out reactor models on 
-simulation a-3b-256 final generation's Pareto front. 
-
-\pagebreak
 \section{Summary}
 \glsresetall
 This chapter described the \gls{AHTR} one-third assembly's \gls{ROLLO} optimization 
@@ -959,7 +923,7 @@ packing fraction distribution ($\rho_{TRISO}(\vec{r})$), total fuel packing frac
 objectives: $PF_{total}$, maximum temperature ($T_{max}$), and fuel-normalized power 
 peaking factor ($PPF_{fuel}$) in the one-third assembly. 
 
-In Section \ref{sec:assem-one-obj}'s six single-objective optimization simulations: 
+In Section \ref{sec:assem-one-obj}'s single-objective optimization simulations: 
 a-1a, a-1b, a-1c, a-1d, a-1e, a-1f; and Sections \ref{sec:assem-discussion-pf}, 
 \ref{sec:assem-discussion-temp}, and \ref{sec:assem-discussion-ppf} discussions,    
 I verified that each of the one-third assembly objective follows the same driving 
@@ -979,13 +943,13 @@ disribution to achieve the objective.
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
 with the coolant channel shape. 
 
-In Sections \ref{sec:assem-two-obj} and \ref{sec:assem-three-obj}'s five multi-objective 
-optimization simulations: a-2a, a-2b, a-2c, a-3a, and a-3b; and Section 
+In Sections \ref{sec:assem-two-obj} and \ref{sec:assem-three-obj}'s multi-objective 
+optimization simulations: a-2a, a-2b, a-2c, a-3a, a-3b, and a-3b-256; and Section 
 \ref{sec:assem-discussion-multi}'s discussions, I further analyzed how the objectives' 
 combined effects resulted in the optimal reactor models found by each multi-objective 
 optimization simulation. 
 All the multi-objective optimization simulations successfully found a wide spread of 
-reactor models on a Pareto front that meets each objective to varying degrees. 
+reactor models on their Pareto fronts that meets each objective to varying degrees. 
 In the multi-objective optimization simulations, the minimize $T_{max}$ objective 
 continued to influence the flattening of the TRISO distribution and maximizing of 
 the FLiBe channels radius values ($r_1, r_2, r_3, r_4, r_5$) that are close 
