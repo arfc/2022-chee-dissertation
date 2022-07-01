@@ -89,8 +89,7 @@ between $PF_{total}$ and coolant channel shape (demonstrated in Figure
 \paragraph{Summary}
 I verified that the minimize $PF_{total}$ objective for the \gls{AHTR} one-third 
 assembly model is also driven by maximizing the total fission reaction rates. 
-The minimize $PF_{total}$ objective influences the TRISO packing fraction 
-distribution to have an oscillating pattern. 
+The minimize $PF_{total}$ objective influences oscillations in the TRISO disribution.
 The objective has no correlation with coolant channel shape input parameter. 
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
@@ -276,8 +275,8 @@ between $PPF_{fuel}$ and coolant channel shape (demonstrated in Figure
 \paragraph{Summary}
 I verified that the minimize $PPF_{fuel}$ objective for the \gls{AHTR} one-third assembly 
 model is also driven by flattening thermal (Group 4) flux distribution. 
-The minimize $PPF_{fuel}$ objective influences the TRISO packing fraction 
-distribution to have an oscillating pattern. 
+The minimize $PPF_{fuel}$ objective influences $PF_{total}$ and oscillations in the 
+TRISO disribution.
 The objective has no correlation with coolant channel shape input parameter.
 
 \subsection{Discussion: Multi-Objective Optimization}
@@ -918,19 +917,21 @@ that further minimized $T_{max}$.
 In Section \ref{sec:assem-discussion}, I conducted investigations to verify if 
 the \gls{AHTR} one-third assembly model's reactor optimization objective driving 
 factors are the same as the \gls{AHTR} plank model (Section \ref{sec:plank-discussion}). 
-I also analyze how the reactor optimization objectives combined effects result in the 
+I also analyzed how the reactor optimization objectives combined effects result in the 
 optimal reactor models found by the multi-objective optimization simulations. 
 
 I verified that all of the one-third assembly objectives follow the same driving 
 factors as the \gls{AHTR} plank optimization objectives (Chapter 
 \ref{chap:ahtr-plank-opt-results}).
 The minimize $T_{max}$ objective is driven by minimizing one-third assembly's 
-maximum temperature; and flattens TRISO distribution and maximizes the radius values 
+maximum temperature; it flattens TRISO distribution and maximizes the radius values 
 for the FLiBe channels closest to the temperature peaks.
 The minimize $PF_{total}$ objective is driven by maximizing the one-third assembly's 
-total fission reaction rate and influences the TRISO disribution to achieve the objective. 
+total fission reaction rate and influences oscillations in the TRISO disribution to 
+achieve the objective. 
 The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
-distribution and influences $PF_{total}$ and TRISO disribution to achieve the objective. 
+distribution and influences $PF_{total}$ and oscillations in the TRISO disribution 
+to achieve the objective. 
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
 with the coolant channel shape. 
 Similar to the \gls{AHTR} plank (Section \ref{sec:plank-discussion}), the results 
