@@ -1,7 +1,7 @@
 \chapter{AHTR One-Third Assembly Optimization Results}
 \glsresetall
 \label{chap:ahtr-assem-opt-results}
-In this chapter, I report the \gls{AHTR} one-third assembly's \gls{ROLLO} optimization 
+This chapter reports the \gls{AHTR} one-third assembly's \gls{ROLLO} optimization 
 results. 
 I vary the following \gls{AHTR} one-third assembly input parameters:
 \begin{itemize}
@@ -28,8 +28,8 @@ simulations' results, report each simulation's computational cost, and discuss t
 results' significance.
 
 \section{ROLLO AHTR One-Third Assembly Optimization Simulations Overview}
-Table \ref{tab:assem-obj-breakdown} shows the details of the \gls{ROLLO} 
-optimization problems explored in this chapter.
+Table \ref{tab:assem-obj-breakdown} details the \gls{ROLLO} optimization problems 
+explored in this chapter.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -79,10 +79,7 @@ optimization problems explored in this chapter.
 \end{table}
 I first conducted single objective, single input parameter \gls{ROLLO} optimizations 
 to understand the individual impacts of each objective on each input parameter. 
-Their results will inform the multi-objective optimization simulations setup. 
-% TODO: update the keff constraint in table
-% explain why some simulations use keff > 1.0 and that I didn't rerun because 
-% I expect the same correlation results. 
+Their results will inform the multi-objective optimization simulation setup. 
 
 Simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
 Facility under the Director's Discretionary Allocation Program 
@@ -100,7 +97,7 @@ In the following subsections, I describe the single-objective optimization resul
 grouped by the minimized objective. 
 
 If a single-objective optimization problem's objective converges earlier than the 
-5 generations I intended to run (determined in Section 
+five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
 Section \ref{sec:rollo-convergence} described how reactor designers use 
 \gls{ROLLO} to determine problem convergence. 
@@ -143,16 +140,16 @@ Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem param
 The one-third assembly's TRISO distribution is varied based on sine distributions, 
 as described in Section \ref{sec:input-parameter-modeling}. 
 If the simulation used the FHR benchmark equivalent $PF_{total} = 0.153$, at
-certain sine distributions, some fuel cells will have $PF > 0.3$. 
+certain sine distributions, some fuel cells would have $PF > 0.3$. 
 OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
 resulting in long runtimes. 
 Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
 $PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
-$PF > 0.3$ occurences. 
+$PF > 0.3$ occurrences. 
 I use $PF_{total} = 0.06$ for all optimization simulations that do not vary 
 $PF_{total}$: a-1b, a-1c, a-1e, a-1f, and a-2c. 
-And I vary $PF_{total}$ between $0.05$ and $0.07$ for all optimization simulations 
-that do vary $PF_{total}$: a-1a, a-1d, a-2a, a-2b, a-3a, and a-3b.
+I vary $PF_{total}$ between $0.05$ and $0.07$ for all optimization simulations 
+that vary $PF_{total}$: a-1a, a-1d, a-2a, a-2b, a-3a, and a-3b.
 
 Figure \ref{fig:assem-obj-1-pf-evol} shows the $PF_{total}$ evolution.
 Figure \ref{fig:assem-obj-1-pf-final} shows four unique TRISO packing fraction 
@@ -185,7 +182,7 @@ assembly model with the most-minimized $PF_{total}$.
         \centering
         \includegraphics[width=0.7\linewidth]{assem-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} one-third assembly model with the most-minimized 
-        $PF_{total}$, corresponding to the the first TRISO distribution in Figure 
+        $PF_{total}$, corresponding to the first TRISO distribution in Figure 
         \ref{fig:assem-obj-1-pf-final}. The reactor model has $PF_{total}=0.0559$
         and $k_{eff}=1.3802$.}
         \label{fig:assem-obj-1-pf-most-minimized} 
@@ -360,7 +357,7 @@ assembly model with the most-minimized $T_{max}$.
         \centering
         \includegraphics[width=0.7\linewidth]{assem-obj-1-temp-most-minimized.png}
         \caption{\gls{AHTR} one-third assembly model with the most-minimized 
-        $T_{max}$, corresponding to the the first TRISO distribution in Figure 
+        $T_{max}$, corresponding to the first TRISO distribution in Figure 
         \ref{fig:assem-obj-1-temp-final}. The reactor model has $T_{max}=1180.29$K
         and $k_{eff}=1.3046$.}
         \label{fig:assem-obj-1-temp-most-minimized} 
@@ -552,7 +549,7 @@ assembly model with the most-minimized $PPF_{fuel}$.
         \centering
         \includegraphics[width=0.7\linewidth]{assem-obj-1-ppf-most-minimized.png}
         \caption{\gls{AHTR} one-third assembly model with the most-minimized 
-        $PPF_{fuel}$, corresponding to the the first TRISO distribution in Figure 
+        $PPF_{fuel}$, corresponding to the first TRISO distribution in Figure 
         \ref{fig:assem-obj-1-ppf-final}. The reactor model has $PPF_{fuel}=1.0872$
         and $k_{eff}=1.385$.}
         \label{fig:assem-obj-1-ppf-most-minimized} 
