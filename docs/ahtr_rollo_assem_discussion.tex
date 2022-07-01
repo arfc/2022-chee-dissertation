@@ -87,10 +87,10 @@ between $PF_{total}$ and coolant channel shape (demonstrated in Figure
 \ref{fig:a-1d}). 
 
 \paragraph{Summary}
-I verified that the minimize $PF_{total}$ objective for the \gls{AHTR} one-third assembly 
-model is also driven by maximizing the total fission reaction rates. 
-The minimize $PF_{total}$ objective has correlations with the following input parameters: 
-$PF_{total}$ and TRISO packing fraction distribution. 
+I verified that the minimize $PF_{total}$ objective for the \gls{AHTR} one-third 
+assembly model is also driven by maximizing the total fission reaction rates. 
+The minimize $PF_{total}$ objective influences the TRISO packing fraction 
+distribution to have an oscillating pattern. 
 The objective has no correlation with coolant channel shape input parameter. 
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
@@ -276,8 +276,8 @@ between $PPF_{fuel}$ and coolant channel shape (demonstrated in Figure
 \paragraph{Summary}
 I verified that the minimize $PPF_{fuel}$ objective for the \gls{AHTR} one-third assembly 
 model is also driven by flattening thermal (Group 4) flux distribution. 
-The minimize $PPF_{fuel}$ objective has correlations with the following input parameters: 
-$PF_{total}$ and TRISO packing fraction distribution. 
+The minimize $PPF_{fuel}$ objective influences $PF_{total}$ and TRISO packing fraction 
+distribution to have an oscillating pattern. 
 The objective has no correlation with coolant channel shape input parameter.
 
 \subsection{Discussion: Multi-Objective Optimization}
@@ -541,6 +541,10 @@ $PPF_{fuel}=1.104$.
 Therefore, influences from the minimize $T_{max}$ objective, results in the single 
 reactor model on simulation a-2c's Pareto Front to have a TRISO distribution more 
 similar to simulation a-1b's most-minimized $T_{max}$ reactor model. 
+The minimize $T_{max}$ objective influences the TRISO distribution's flatness as 
+described in Section \ref{sec:assem-discussion-temp}, while 
+the minimize $PPF_{fuel}$ objective influences the oscillating pattern, as described 
+in Section \ref{sec:assem-discussion-ppf}.
 
 \subsubsection{Simulation a-3a}
 In Section \ref{sec:a-3a}'s simulation a-3a, I conducted a three-objective 
