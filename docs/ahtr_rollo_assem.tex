@@ -949,8 +949,8 @@ results.
 
 \subsection{a-2c: Minimize $T_{max}$ and $PPF_{fuel}$}
 \label{sec:a-2c}
-This section reports results from the two-objective optimization simulation a-2c; the 
-objectives minimized are maximum temperature ($T_{max}$) and fuel-normalized power 
+This section reports results from the two-objective optimization simulation a-2c; 
+minimized objectives are maximum temperature ($T_{max}$) and fuel-normalized power 
 peaking factor ($PPF_{fuel}$) in the one-third assembly.  
 Table \ref{tab:simulationa2c} shows simulation a-2c's optimization problem parameters. 
 \begin{table}[htbp!]
@@ -1051,9 +1051,9 @@ $PPF_{fuel}$ are non-contrasting objectives, resulting in a single reactor model
 Pareto Front. 
 Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} shows the TRISO distribution that best 
 minimizes both $T_{max}$ and $PPF_{fuel}$. 
-The reactor model has a TRISO distribution oscillates along the y-axis and oscillates 
-slightly on the x-axis, and a packing fraction standard deviation of $0.033$ across 
-the one-third assembly. 
+The reactor model has a TRISO distribution that oscillates along the y-axis and 
+slightly on the x-axis, and a packing fraction standard deviation of $0.033$ 
+across the one-third assembly. 
 Along the y-axis, the distribution peaks at the odd rows (at 3.5cm, 10.0cm, and 16.5cm) 
 with $PF\approx0.06$ and has minimum points at the even rows (at 6.8cm, 13.3cm, and 
 19.8cm) with $PF\approx0.055$.
@@ -1065,7 +1065,7 @@ results.
 This section reports the \gls{AHTR} one-third assembly's \gls{ROLLO} three-objective 
 optimization results. 
 Table \ref{tab:assem-obj-breakdown} summarized the three-objective simulations in this 
-section: a-3a, and a-3b. 
+section: a-3a and a-3b. 
 
 \subsection{a-3a: Variation of $PF_{total}$ and $\rho_{TRISO}(\vec{r})$}
 \label{sec:a-3a}
@@ -1139,7 +1139,7 @@ the final generation that fall on the Pareto front.
         \caption{Plot of final generation's reactor models' $PF_{total}$ against 
         $T_{max}$ against $PPF_{fuel}$ as a color dimension. 
         Crosses indicate the reactor models on the 
-        Pareto front. Cross numbering correspond to TRISO distributions in Figure 
+        Pareto front. Cross numbering corresponds to TRISO distributions in Figure 
         \ref{fig:assem-obj-3-distr}.}
         \label{fig:assem-obj-3-2d} 
     \end{subfigure}
@@ -1170,11 +1170,11 @@ the final generation that fall on the Pareto front.
 Figure \ref{fig:assem-obj-3} demonstrates that \gls{ROLLO} found 32 reactor models on 
 simulation a-3a final generation's Pareto front. 
 Figure \ref{fig:assem-obj-3-most-minimized} shows three reactor models on the 
-Pareto front that most-minimized each objective, and one reactor model on the 
+Pareto front that most minimized each objective and one reactor model on the 
 Pareto front that equally minimized all three objectives. 
 I selected the equally minimized reactor model by visually studying Figure 
-\ref{fig:assem-obj-3} and selecting a reactor model that is close to the origin 
-and has a light yellow color dimension. 
+\ref{fig:assem-obj-3} and selecting a reactor model close to the origin 
+with a light yellow color dimension. 
 Reactor model 30 most-minimized $PF_{total}$, reactor model 3 most-minimized $T_{max}$, 
 reactor model 1 most-minimized $PPF_{fuel}$, and reactor model 22 equally minimized 
 all three objectives. 
@@ -1187,7 +1187,7 @@ all three objectives.
     \label{fig:assem-obj-3-most-minimized-distr}
     \end{subfigure}
     \caption{AHTR one-third assembly models and TRISO distributions for the three reactor 
-    models on simulation a-3a's Pareto front that most-minimized each objective, and 
+    models on simulation a-3a's Pareto front that most minimized each objective, and 
     one reactor model that equally minimized all three objectives.
     Simulation a-3a -- ROLLO three-objective optimization to minimize total fuel packing 
     fraction ($PF_{total}$), maximum temperature ($T_{max}$) and 
@@ -1253,7 +1253,7 @@ the most-minimized $PF_{total}$ is reactor model 30 (also illustrated in Figure
 Reactor model 30 has an oscillating TRISO distribution along the 
 x-axis and y-axis, and a packing fraction standard deviation of $0.052$ across the 
 one-third assembly. 
-Along the y-axis, the distributions peaks at the even fuel cell rows (at 6.8cm, 
+Along the y-axis, the distribution peaks at the even fuel cell rows (at 6.8cm, 
 13.3cm, and 19.8cm) and has minimum points at the odd fuel cell rows (at 3.5cm, 
 10.0cm, and 16.5cm). 
 The even fuel cell rows have a $\sim0.14$ x-axis variation with peaks of 
@@ -1284,7 +1284,7 @@ $PF\approx0.1$.
 In Figure \ref{fig:assem-obj-3-most-minimized-distr}, the one-third assembly model that 
 equally minimized all three objectives is reactor model 22 (also illustrated in Figure 
 \ref{fig:assem-obj-3-min-all}).
-Reactor model 22 has an oscillating TRISO distribution along x-axis, and a packing 
+Reactor model 22 has an oscillating TRISO distribution along x-axis and a packing 
 fraction standard deviation of $0.015$ across the one-third assembly. 
 Along the x-axis, the distribution peaks at the 2nd, 9th, and 10th fuel cell columns 
 (at 8.2cm, 22.5cm, and 24.5cm) with $PF\approx0.07$.
@@ -1405,11 +1405,11 @@ in the final generation that fall on the Pareto front.
 Figure \ref{fig:assem-obj-3-all} demonstrates that \gls{ROLLO} found 12 reactor models 
 on simulation a-3b final generation's Pareto front. 
 Figure \ref{fig:assem-obj-3-all-most-minimized} shows three reactor models on the 
-Pareto front that most-minimized each objective, and one reactor model on the 
+Pareto front that most minimized each objective and one reactor model on the 
 Pareto front that equally minimized all three objectives. 
 I selected the equally minimized reactor model by visually studying Figure 
-\ref{fig:assem-obj-3-all} and selecting a reactor model that is close to the origin 
-and has a light yellow color dimension. 
+\ref{fig:assem-obj-3-all} and selecting a reactor model close to the origin 
+with a light yellow color dimension. 
 Reactor model 11 most-minimized $PF_{total}$, reactor model 1 most-minimized $T_{max}$, 
 reactor model 4 most-minimized $PPF_{fuel}$, and reactor model 2 equally minimized 
 all three objectives. 
@@ -1422,7 +1422,7 @@ all three objectives.
     \label{fig:assem-obj-3-all-most-minimized-distr}
     \end{subfigure}
     \caption{AHTR one-third assembly models and TRISO distributions for the 3 reactor 
-    models on simulation a-3b's Pareto front that most-minimized each objective, and 
+    models on simulation a-3b's Pareto front that most minimized each objective, and 
     1 reactor model that equally minimized all three objectives.
     Simulation a-3b -- ROLLO three-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), 
@@ -1488,7 +1488,7 @@ all three objectives.
 In Figure \ref{fig:assem-obj-3-all-most-minimized-distr}, the one-third assembly model 
 with the most-minimized $PF_{total}$ is reactor model 11 (also illustrated in Figure 
 \ref{fig:assem-obj-3-all-min-pf}). 
-Reactor model 11's TRISO distribution oscillates along the x-axis and slightly 
+Reactor model 11's TRISO distribution oscillates along the x-axis, slightly 
 oscillates along the y-axis, and has a packing fraction standard deviation of 
 $0.044$ across the one-third assembly. 
 Along the x-axis, the distribution peaks at the 2nd and 9th fuel cell columns 
@@ -1534,8 +1534,8 @@ Computing Facility under the Director's Discretionary Allocation Program
 Each Theta compute node has 64 processor cores with a nominal clock speed of 
 1.5GHz \cite{noauthor_argonne_2022}.  
 
-Each optimization simulation takes a different amount of node-hours to run due to 
-differences in simulation software, tallies and intermediate steps required. 
+Each optimization simulation takes a different amount of node-hours due to 
+differences in simulation software, tallies, and intermediate steps required. 
 Table \ref{tab:assem-compute-cost} reports the computational cost for each optimization 
 simulation. 
 Table \ref{tab:assem-obj-breakdown} detailed the simulation parameters.

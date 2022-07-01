@@ -4,7 +4,7 @@ Chapter \ref{chap:ahtr-plank-opt-results} characterized the \gls{AHTR} plank mod
 reactor optimization objectives' driving factors and their relationship with 
 one another. 
 This section utilizes the previous \gls{AHTR} plank characterizations and conducts 
-a deep-dive to verify if the same driving factors apply to the \gls{AHTR} one-third 
+a deep dive to verify if the same driving factors apply to the \gls{AHTR} one-third 
 assembly model's optimization objectives. 
 I also analyze how their combined effects result in the optimal reactor models found by 
 the multi-objective optimization simulations. 
@@ -17,7 +17,7 @@ optimization simulation to minimize the one-third assembly's total fuel packing 
 ($PF_{total}$) by varying $PF_{total}$ and TRISO distribution. 
 \gls{ROLLO} found that an \gls{AHTR} one-third assembly model with 
 the most-minimized $PF_{total}$ has a $PF_{total}= 0.0559$ and an oscillating TRISO 
-distribution along the both the x-axis and y-axis, and a packing fraction standard 
+distribution along the x-axis and y-axis, and a packing fraction standard 
 deviation of $0.04$ across the one-third assembly (Figure \ref{fig:assem-obj-1-pf-final}).
 
 Section \ref{sec:plank-discussion-pf} concluded that for the \gls{AHTR} plank model, 
@@ -38,7 +38,7 @@ $PF_{total}$ and the constant $PF_{total} = 0.0559$.
     constant $PF_{total} = 0.0559$ TRISO distribution (right).}
     \label{fig:assem-0.0559-comparison}
 \end{figure}
-The reactor model with the most-minimized $PF_{total}$ has $k_{eff}=1.3802$ and 
+The reactor model with the most-minimized $PF_{total}$ has $k_{eff}=1.3802$, and 
 the reactor model with constant TRISO distribution has $k_{eff}=1.3736$.
 
 Table \ref{tab:a-1a-fission-comparison} compares the total fission reaction rate 
@@ -72,25 +72,25 @@ Figure \ref{fig:assem-0.0559-comparison}).
 \end{table}
 The most-minimized $PF_{total}$ TRISO distribution has $0.65\%$ higher  
 total fission reaction rate than the constant $PF_{total} = 0.0559$ TRISO distribution. 
-For the same $PF_{total}$, the oscillating TRISO distribution enabled a 
-660pcm higher in $k_{eff}$ compared to the constant TRISO distribution. 
-Therefore, the minimize $PF_{total}$ objective is driven by maximizing the total fission 
-reaction rates to find a reactor model with a lower $PF_{total}$ that meets $k_{eff}$ 
+For the same $PF_{total}$, the oscillating TRISO distribution enabled
+660pcm higher $k_{eff}$ than the constant TRISO distribution. 
+The minimize $PF_{total}$ objective is driven by maximizing the total fission 
+reaction rates to find a reactor model with lower $PF_{total}$ that meets $k_{eff}$ 
 constraints. 
 
 \paragraph{Simulation a-1d}
 In Section \ref{sec:assem-1-obj-pf}'s simulation a-1d, I conducted a single-objective 
 optimization simulation to minimize total fuel packing fraction ($PF_{total}$) by 
 varying $PF_{total}$ and coolant channel shape. 
-In simulation a-1d, \gls{ROLLO} found that there is no correlation 
+In simulation a-1d, \gls{ROLLO} found no correlation 
 between $PF_{total}$ and coolant channel shape (demonstrated in Figure 
 \ref{fig:a-1d}). 
 
 \paragraph{Summary}
 I verified that the minimize $PF_{total}$ objective for the \gls{AHTR} one-third 
 assembly model is also driven by maximizing the total fission reaction rates. 
-The minimize $PF_{total}$ objective influences oscillations in the TRISO disribution.
-The objective has no correlation with coolant channel shape input parameter. 
+The minimize $PF_{total}$ objective influences oscillations in the TRISO distribution.
+The objective does not correlate with the coolant channel shape.
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:assem-discussion-temp}
@@ -106,7 +106,7 @@ TRISO distribution (Figure \ref{fig:assem-obj-1-temp-final}).
 In Section \ref{sec:assem-1-obj-temp}'s simulation a-1e, I conducted a single-objective 
 optimization simulation to minimize the one-third assembly's maximum temperature 
 ($T_{max}$) by varying coolant channel shape. 
-In simulation a-1e, \gls{ROLLO} found that there is a negative linear correlation 
+In simulation a-1e, \gls{ROLLO} found a negative linear correlation 
 between the one-third assembly's $T_{max}$ and $r_1$ and $r_5$, but no correlation with 
 $r_2$, $r_3$, and $r_4$, shown in Figure \ref{fig:a-1e}. 
 
@@ -133,13 +133,13 @@ one-third assembly model with the most-minimized $T_{max}$ (Figure
     \label{fig:a-1e-temp-distribution}
 \end{figure}
 Figure \ref{fig:a-1e-temp-distribution} demonstrates that for simulation a-1e's 
-most-minimized $T_{max}$ reactor model, the temperature peaks in top and bottom 
+most-minimized $T_{max}$ reactor model, the temperature peaks in the top and bottom 
 graphite planks. 
 $r_1$ and $r_5$ control the coolant channel shape of the \gls{FLiBe} channels closest 
 to the top and bottom graphite planks. 
 This explains why \gls{ROLLO} found a negative linear correlation 
 between the one-third assembly's $T_{max}$ and $r_1$ and $r_5$. 
-To minimize maximum one-third assembly temperature, \gls{ROLLO} maximized
+To minimize the maximum one-third assembly temperature, \gls{ROLLO} maximized
 $r_1$ and $r_5$ to enable enhanced cooling in the top and bottom graphite planks. 
 Thus, depending on the temperature distribution in a one-third assembly, the \gls{FLiBe} 
 channels (corresponding to $r_1, r_2, r_3, r_4, r_5$) closest to the temperature peaks 
@@ -154,14 +154,14 @@ $T_{max}$ due to coolant channel shape variation only decreased by $\sim10K$ ove
 3 generations. 
 
 \paragraph{Summary}
-I verified that similar to the \gls{AHTR} plank model, a flatter TRISO distribution 
+I verified that, similar to the \gls{AHTR} plank model, a flatter TRISO distribution 
 minimizes the one-third assembly's $T_{max}$. 
 For the one-third assembly, the FLiBe channels (corresponding to $r_1, r_2, r_3, r_4, 
 r_5$) closest to the temperature peaks will be most important to minimizing maximum
-one-third assembly temperature, and thus, will show a negative correlation with 
+one-third assembly temperature and thus, will show a negative correlation with 
 $T_{max}$. 
-The results from simulation a-1b and a-1e suggest that the minimize $T_{max}$ objective 
-is more influenced by the TRISO distribution than the coolant channel shape. 
+Simulation a-1b and a-1e suggest that TRISO distribution influences the minimize 
+$T_{max}$ objective more than the coolant channel shape.
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:assem-discussion-ppf}
@@ -219,16 +219,16 @@ In Figure \ref{fig:a-1c-flux-comparison}, the reactor model with the highest
 $PPF_{fuel} = 1.2431$'s Group 4 flux dips in the center of the one-third assembly 
 due to spatial self-shielding effects. 
 In the highest $PPF_{fuel} = 1.2431$ reactor model's Group 1 flux, there is a peak in 
-fast neutrons born in the one-third assembly's center, the fast neutrons are moderated 
-in the graphite matrix and graphite structure (\gls{AHTR} one-third assembly 
-geometry: Figure \ref{fig:ahtr_assembly}). 
-The moderated neutrons are more likely absorbed at the fuel regions nearer to 
+fast neutrons born in the one-third assembly's center. 
+The fast neutrons are moderated in the graphite matrix and graphite structure 
+(\gls{AHTR} one-third assembly geometry: Figure \ref{fig:ahtr_assembly}). 
+The moderated neutrons are more likely absorbed in the fuel regions nearer to 
 the outer pure graphite structure moderating regions. 
 
 Table \ref{tab:a-1c-flux-comparison} quantifies the total flux differences per energy 
-group between the compared reactor models. 
-The flux values were tallied for each energy group within the one-third assembly model 
-using a 100 x 100 mesh. 
+group between the reactor models. 
+I used a 100 x 100 mesh to tally the flux values for each energy group within the 
+one-third assembly model.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -259,7 +259,7 @@ using a 100 x 100 mesh.
 
 In energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $0.85\%$ flatter 
 than the reactor model with the highest $PPF_{fuel} = 1.2431$.
-These results verify that similar to the \gls{AHTR} plank model, the \gls{AHTR} one-third 
+These results verify that, similar to the \gls{AHTR} plank model, the \gls{AHTR} one-third 
 assembly model's minimize $PPF_{fuel}$ objective is also driven by flattening thermal 
 (Group 4) flux distribution since $max(\Phi_j) \div ave(\Phi_j) \propto PPF_{fuel}$
 (Equation \ref{eq:flux-prop-ppf}). 
@@ -268,20 +268,19 @@ assembly model's minimize $PPF_{fuel}$ objective is also driven by flattening th
 In Section \ref{sec:assem-1-obj-ppf}'s simulation a-1f, I conducted a single-objective 
 optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) by 
 varying coolant channel shape. 
-In simulation a-1f, \gls{ROLLO} found that there is no correlation 
-between $PPF_{fuel}$ and coolant channel shape (demonstrated in Figure 
-\ref{fig:a-1f}). 
+In simulation a-1f, \gls{ROLLO} found no correlation between $PPF_{fuel}$ and coolant 
+channel shape (demonstrated in Figure \ref{fig:a-1f}). 
 
 \paragraph{Summary}
 I verified that the minimize $PPF_{fuel}$ objective for the \gls{AHTR} one-third assembly 
 model is also driven by flattening thermal (Group 4) flux distribution. 
 The minimize $PPF_{fuel}$ objective influences $PF_{total}$ and oscillations in the 
-TRISO disribution.
-The objective has no correlation with coolant channel shape input parameter.
+TRISO distribution.
+The objective does not correlate with the coolant channel shape.
 
 \subsection{Discussion: Multi-Objective Optimization}
 \label{sec:assem-discussion-multi}
-\gls{ROLLO} successfully found widely spread out reactor model solutions in each of the 
+\gls{ROLLO} successfully found widely spread out reactor model solutions in each  
 multi-objective optimization simulation's final generation Pareto fronts.
 In this section, I explain how the driving factors and phenomena observed in 
 the previous single-objective discussions (Sections 
@@ -300,7 +299,7 @@ In simulation a-2a, ROLLO found 13 reactor models on the Pareto Front (Figure
 In simulation a-2a, \gls{ROLLO} found that the one-third assembly models with the 
 most-minimized $PF_{total}$ objective are reactor models 3 and 4 (Figure 
 \ref{fig:assem-obj-2-pftemp-pareto-distr}). 
-Both reactor models have an oscillating TRISO distribution along the both the x-axis 
+Both reactor models have an oscillating TRISO distribution along the x-axis 
 and y-axis. 
 Figure \ref{fig:a-2a-pf-triso-comparison} compares simulation a-2a's most-minimized 
 $PF_{total}$ reactor model 3 and simulation a-1a's most-minimized $PF_{total}$ reactor 
@@ -316,8 +315,8 @@ model.
     \label{fig:a-2a-pf-triso-comparison}
 \end{figure}
 Figure \ref{fig:a-2a-pf-triso-comparison} shows that simulation a-2a's most-minimized 
-$PF_{total}$ reactor model and simulation a-1a's most-minimized $PF_{total}$ reactor 
-model have similar distributions with peaks on the even fuel cell columns, but at 
+$PF_{total}$ reactor model, and simulation a-1a's most-minimized $PF_{total}$ reactor 
+model have similar distributions with peaks on the even fuel cell columns but at 
 different amplitudes. 
 
 In simulation a-2a, \gls{ROLLO} found that the one-third assembly model with the 
@@ -336,7 +335,7 @@ $T_{max}$ reactor model 9 and simulation a-1b's most-minimized $T_{max}$ reactor
     \label{fig:a-2a-temp-triso-comparison}
 \end{figure}
 Figure \ref{fig:a-2a-temp-triso-comparison} shows that simulation a-2a's most-minimized 
-$T_{max}$ reactor model and simulation a-1b's most-minimized $T_{max}$ reactor model 
+$T_{max}$ reactor model, and simulation a-1b's most-minimized $T_{max}$ reactor model 
 have similar almost constant TRISO distributions with packing fraction standard 
 deviations of $0.004$ and $0.0009$, respectively.
 However, they have different $PF_{total}$ values, and simulation a-2a's most-minimized 
@@ -372,7 +371,7 @@ In simulation a-2b's final generation, ROLLO found 12 reactor models on the Pare
 In simulation a-2b, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $PF_{total}$ objective, reactor model 3 (Figure 
 \ref{fig:assem-obj-2-pfppf-pareto-distr}), has an oscillating TRISO distribution 
-along the both the x-axis and y-axis. 
+along the x-axis and y-axis. 
 Figure \ref{fig:a-2b-pf-triso-comparison} compares simulation a-2b's reactor model 3 and 
 simulation a-1a's most-minimized $PF_{total}$ reactor model. 
 \begin{figure}[htbp!]
@@ -557,7 +556,7 @@ front (Figure \ref{fig:assem-obj-3-2d}).
 In simulation a-3a, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $PF_{total}$ objective, reactor model 30 (Figure 
 \ref{fig:assem-obj-3-most-minimized-distr}), has an oscillating TRISO distribution 
-along the both the x-axis and y-axis. 
+along the x-axis and y-axis. 
 Figure \ref{fig:a-3a-pf-triso-comparison} compares simulation a-3a's reactor model 30 and 
 simulation a-1a's most-minimized $PF_{total}$ reactor model. 
 \begin{figure}[htbp!]
@@ -593,7 +592,7 @@ $T_{max}$ reactor model 3 and simulation a-1b's most-minimized $T_{max}$ reactor
     \label{fig:a-3a-temp-triso-comparison}
 \end{figure}
 Figure \ref{fig:a-3a-temp-triso-comparison} shows that simulation a-3a's most-minimized 
-$T_{max}$ reactor model and simulation a-1b's most-minimized $T_{max}$ reactor model 
+$T_{max}$ reactor model, and simulation a-1b's most-minimized $T_{max}$ reactor model 
 have similar almost constant TRISO distributions with packing fraction standard 
 deviations of $0.003$ and $0.0009$, respectively.
 However, they have different $PF_{total}$ values, and simulation a-3a's most-minimized 
@@ -602,7 +601,7 @@ $T_{max}$'s TRISO distribution is not as flat as simulation a-1b.
 In simulation a-3a, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $PPF_{fuel}$ objective, reactor model 1 (Figure 
 \ref{fig:assem-obj-3-most-minimized-distr}) has an oscillating TRISO distribution 
-along the both the x-axis and y-axis.
+along the x-axis and y-axis.
 Figure \ref{fig:a-3a-ppf-triso-comparison} compares simulation a-3a's most-minimized 
 $PPF_{fuel}$ reactor model 1 and simulation a-1c's most-minimized $PPF_{fuel}$ reactor 
 model. 
@@ -697,7 +696,7 @@ $T_{max}$ reactor model 1 and simulation a-1b's most-minimized $T_{max}$ reactor
     \label{fig:a-3b-temp-triso-comparison}
 \end{figure}
 Figure \ref{fig:a-3b-temp-triso-comparison} shows that simulation a-3b's most-minimized 
-$T_{max}$ reactor model and simulation a-1b's most-minimized $T_{max}$ reactor model 
+$T_{max}$ reactor model, and simulation a-1b's most-minimized $T_{max}$ reactor model 
 have similar almost constant TRISO distributions with packing fraction standard 
 deviations of $0.001$ and $0.0009$, respectively.
 However, they have different $PF_{total}$ values.
@@ -985,11 +984,11 @@ I determined that \gls{ROLLO} flattens TRISO distribution and maximizes the cool
 channel shape's radius values ($r_1, r_2, r_3, r_4, r_5$) that are close to the 
 reactor model's temperature peak to achieve the minimize $T_{max}$ objective. 
 The minimize $PF_{total}$ objective is driven by maximizing the one-third assembly's 
-total fission reaction rate and influences oscillations in the TRISO disribution to 
+total fission reaction rate and influences oscillations in the TRISO distribution to 
 achieve the objective. 
 The minimize $PPF_{fuel}$ objective is driven by flattening the one-third assembly's 
 thermal flux distribution and influences $PF_{total}$ and oscillations in the TRISO 
-disribution to achieve the objective. 
+distribution to achieve the objective. 
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
 with the coolant channel shape. 
 
