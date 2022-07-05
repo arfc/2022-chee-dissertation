@@ -772,11 +772,11 @@ $r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 
 Section \ref{sec:assem-discussion-temp} concluded that the one-third assembly's FLiBe 
 channels (corresponding to $r_1, r_2, r_3, r_4, r_5$) closest to the temperature peaks 
 are most important to minimizing $T_{max}$. 
-However, coolant channel shape variation 
-does not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation: 
-the average $T_{max}$ due to \gls{TRISO} variation decreased by $\sim150K$ over 3 
-generations, while average $T_{max}$ due to coolant channel shape variation only 
-decreased by $\sim10K$ over 3 generations. 
+However, coolant channel shape variation does not have as high of an impact on 
+$T_{max}$ as \gls{TRISO} distribution variation: the average $T_{max}$ due to 
+\gls{TRISO} variation decreased by $\sim150K$ over 3 generations, while average 
+$T_{max}$ due to coolant channel shape variation only decreased by $\sim10K$ over 
+3 generations. 
 Sections \ref{sec:assem-discussion-pf}, \ref{sec:assem-discussion-temp}, and 
 \ref{sec:assem-discussion-ppf} also concluded that only coolant channel shape only 
 correlates with the minimize $T_{max}$ objective. 
@@ -788,15 +788,15 @@ graphite plank (at 3.52cm) and has $r_5 = 0.13cm$, and reactor model 4 with most
 minimized $PPF_{fuel}$ peaks in the 1st graphite plank (at 3.52cm) and has 
 $r_5 = 0.15cm$. 
 All their radius values are unexpectedly small. 
-This could be due to coolant channel shape not having a high impact on $T_{max}$ compared 
-to TRISO distribution; thus, \gls{ROLLO} was more influenced by TRISO distribution when 
-searching for optimal reactor models. 
+This could be due to the coolant channel shape not having a high impact on $T_{max}$ 
+compared to TRISO distribution; thus, \gls{ROLLO} was more influenced by TRISO 
+distribution when searching for optimal reactor models. 
 This paired with simulation a-3b's 128 individuals per generation possibly being  
 too small to explore reactor models with 12 input parameters. 
 Simulation a-3b has 12 input parameters which is higher than all the other optimization 
 simulations, which have 7 or fewer input parameters. 
-A larger population size will enable \gls{ROLLO} to explore more reactor model variation, 
-and potentially find even more optimal reactor models. 
+Larger population size will enable \gls{ROLLO} to explore more reactor model 
+variations and potentially find even more optimal reactor models. 
 To better explore simulation a-3b's design space, I re-run simulation a-3b with 
 256 individuals per generation. 
 
@@ -851,11 +851,11 @@ distributions in the final generation that fall on the Pareto front.
 Figure \ref{fig:assem-obj-3-all-256} demonstrates that \gls{ROLLO} found 38 reactor 
 models on simulation a-3b-256 final generation's Pareto front. 
 Figure \ref{fig:assem-obj-3-all-256-most-minimized} shows three reactor models on the 
-Pareto front that most-minimized each objective, and one reactor model on the 
+Pareto front that most minimized each objective and one reactor model on the 
 Pareto front that equally minimized all three objectives. 
 I selected the equally minimized reactor model by visually studying Figure 
-\ref{fig:assem-obj-3-all-256} and selecting a reactor model that is close to the origin 
-and has a light yellow color dimension. 
+\ref{fig:assem-obj-3-all-256} and selecting a reactor model close to the origin 
+with a light yellow color dimension. 
 Reactor model 36 most-minimized $PF_{total}$, reactor model 4 most-minimized $T_{max}$, 
 reactor model 17 most-minimized $PPF_{fuel}$, and reactor model 11 equally minimized 
 all three objectives. 
@@ -955,11 +955,11 @@ $r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 
 \end{figure}
 Figure \ref{fig:a-3b-256-centerline-temp} shows that all three reactor models 
 peak in the 1st graphite plank (at 3.52cm) with $r_1$ values of $\sim0.23cm$. 
-The larger radius values closer to temperature peaks enables lower $T_{max}$ values, 
+The larger radius values closer to temperature peaks enables lower $T_{max}$ values
 in simulation a-3b-256 compared to simulation a-3b's equivalent reactor models 
 (Figure \ref{fig:a-3b-centerline-temp}). 
 This suggests that simulation a-3b-256's larger population size enabled \gls{ROLLO} 
-to explore more reactor model variation, and find even more optimal reactor models 
+to explore more reactor model variations and find even more optimal reactor models 
 that further minimized $T_{max}$. 
 
 \pagebreak
@@ -969,7 +969,7 @@ This chapter described the \gls{AHTR} one-third assembly's \gls{ROLLO} optimizat
 results. 
 I varied the following \gls{AHTR} one-third assembly input parameters: \gls{TRISO} 
 packing fraction distribution ($\rho_{TRISO}(\vec{r})$), total fuel packing fraction 
-($PF_{total}$), and coolant channel shape; in an effort to minimize the following 
+($PF_{total}$), and coolant channel shape; to minimize the following 
 objectives: $PF_{total}$, maximum temperature ($T_{max}$), and fuel-normalized power 
 peaking factor ($PPF_{fuel}$) in the one-third assembly. 
 
@@ -989,21 +989,21 @@ achieve the objective.
 The minimize $PPF_{fuel}$ objective is driven by flattening the one-third assembly's 
 thermal flux distribution and influences $PF_{total}$ and oscillations in the TRISO 
 distribution to achieve the objective. 
-Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
+Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives do not correlate
 with the coolant channel shape. 
 
 In Sections \ref{sec:assem-two-obj} and \ref{sec:assem-three-obj}'s multi-objective 
-optimization simulations: a-2a, a-2b, a-2c, a-3a, a-3b, and a-3b-256; and Section 
-\ref{sec:assem-discussion-multi}'s discussions, I further analyzed how the objectives' 
-combined effects resulted in the optimal reactor models found by each multi-objective 
-optimization simulation. 
-All the multi-objective optimization simulations successfully found a wide spread of 
-reactor models on their Pareto fronts that meets each objective to varying degrees. 
+optimization simulations: a-2a, a-2b, a-2c, a-3a, a-3b, a-3b-256; and the accompanying 
+discussion in Section \ref{sec:assem-discussion-multi}, I further 
+analyzed how the objectives' combined effects resulted in the optimal reactor models 
+found by each multi-objective optimization simulation. 
+The multi-objective optimization simulations successfully found a wide spread of 
+reactor models on their Pareto fronts that meet each objective to varying degrees. 
 In the multi-objective optimization simulations, the minimize $T_{max}$ objective 
 continued to influence the flattening of the TRISO distribution and maximizing of 
 the coolant channel shape's radius values ($r_1, r_2, r_3, r_4, r_5$) that are close 
 to the reactor model's temperature peak. 
-The results from simulation a-2b suggested that the minimize $PF_{total}$ 
+Simulation a-2b results suggested that the minimize $PF_{total}$ 
 objective's driving factor maximize total fission reaction rate and 
 minimize $PPF_{fuel}$ objective's driving factor flattening thermal flux distribution 
 influence each other resulting in unexpected TRISO distributions at different 
@@ -1013,15 +1013,18 @@ Simulation a-3b-256's multi-objective optimization shows the result of minimizin
 three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
 all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
 Figure \ref{fig:assem-obj-3-all-256} shows the 38 reactor models on simulation 
-a-3b-256's Pareto front that meet the three objectives to varying degrees. 
-The reactor models on the Pareto Front have different TRISO distributions and coolant
-channel shapes, depending on the extent each objective is minimized. 
+a-3b-256's Pareto front that meet all three objectives. 
+These reactor models on the Pareto Front have different TRISO distributions and coolant
+channel shapes, depending on the extent each objective is minimized due to the nature 
+of multi-objective optimization that results in a tradeoff between objectives. 
 These results demonstrate \gls{ROLLO}'s success in conducting a multi-objective global 
-search of the large \gls{AHTR} design space, to find optimal reactor models that satisfy 
+search of the large \gls{AHTR} design space to find optimal reactor models that satisfy 
 all the objectives. 
+\gls{ROLLO} also provides the reactor designer with a sense of how sensitive 
+each input parameter is in relation to the objectives. 
 Once the \gls{ROLLO} search is complete, reactor designers have access to the narrower 
-reactor design space that meets their defined objectives. 
+reactor design space that meets their defined objectives and gain a better intuition of 
+the model's reactor physics. 
 From there, reactor designers can determine the importance of each objective for 
 their purposes, then conduct sensitivity analysis and use higher fidelity models to 
-further study a smaller section of the optimal design space that they are 
-interested in.
+further study a smaller section of the optimal design space. 
