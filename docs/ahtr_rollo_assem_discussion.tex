@@ -991,6 +991,8 @@ thermal flux distribution and influences $PF_{total}$ and oscillations in the TR
 distribution to achieve the objective. 
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives do not correlate
 with the coolant channel shape. 
+Simulation a-1b and a-1e results demonstrated that coolant channel shape variation does 
+not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation.
 
 In Sections \ref{sec:assem-two-obj} and \ref{sec:assem-three-obj}'s multi-objective 
 optimization simulations: a-2a, a-2b, a-2c, a-3a, a-3b, a-3b-256; and the accompanying 
@@ -1014,17 +1016,18 @@ three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while vary
 all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
 Figure \ref{fig:assem-obj-3-all-256} shows the 38 reactor models on simulation 
 a-3b-256's Pareto front that meet all three objectives. 
-These reactor models on the Pareto Front have different TRISO distributions and coolant
-channel shapes, depending on the extent each objective is minimized due to the nature 
-of multi-objective optimization that results in a tradeoff between objectives. 
+The reactor models on the Pareto Front have different $PF_{total}$, TRISO distributions 
+and coolant channel shapes, depending on the extent each objective is minimized due 
+to the nature of multi-objective optimization that results in a tradeoff between 
+objectives. 
 These results demonstrate \gls{ROLLO}'s success in conducting a multi-objective global 
 search of the large \gls{AHTR} design space to find optimal reactor models that satisfy 
 all the objectives. 
-\gls{ROLLO} also provides the reactor designer with a sense of how sensitive 
+\gls{ROLLO} also gives the reactor designer a sense of how sensitive 
 each input parameter is in relation to the objectives. 
-Once the \gls{ROLLO} search is complete, reactor designers have access to the narrower 
-reactor design space that meets their defined objectives and gain a better intuition of 
-the model's reactor physics. 
+Once the \gls{ROLLO} search is complete, reactor designers gain a better intuition of 
+the model's reactor physics and can view the narrower reactor design space that meets 
+their defined objectives. 
 From there, reactor designers can determine the importance of each objective for 
 their purposes, then conduct sensitivity analysis and use higher fidelity models to 
-further study a smaller section of the optimal design space. 
+study the optimal design space further.
