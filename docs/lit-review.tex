@@ -717,8 +717,12 @@ instrumentation plane.
     \label{fig:see3}
 \end{figure}
 
-Reactor optimization for arbitrary parameters is a new concept, and only a few 
-research demonstrations have begun exploring the large new design space. 
+Reactor optimization for arbitrary parameters is a new concept within the reactor 
+optimization field and only a few research demonstrations have begun exploring the 
+large new design space.
+Other fields that require 3D object optimization such as architecture and engineering 
+parts manufacturing are further along than the nuclear reactor optimization industry, 
+and have coined this type of optimization as generative design. 
 As additive manufacturing technology advances and the \gls{TCR} program 
 demonstrates the first 3D printed operational reactor, more reactor designers 
 will begin to explore the huge design space enabled by 3D printing. 
@@ -733,19 +737,21 @@ geometry expression.
 \section{Evolutionary Algorithms} 
 \label{sec:ea}
 The expanded design space associated with an arbitrary reactor geometry increases 
-the time required for reactor designers to thoroughly explore and find optimal geometries.
-Instead, reactor designers can leverage \gls{AI} optimization methods, such as evolutionary 
-algorithms, to rapidly explore the large design space to find global optimal 
-designs. 
+the time required for reactor designers to thoroughly explore and find optimal 
+geometries.
+Instead, reactor designers can leverage \gls{AI} optimization methods, such as 
+evolutionary algorithms, to rapidly explore the large design space to find global 
+optimal designs. 
 \gls{AI} does not replace the human reactor designer, but shifts the human 
 designer's focus away from conjecturing suitable geometries to defining design 
 criteria to find optimal designs \cite{sobes_artificial_2020}. 
 Thus, when the human designer changes the reactor criteria, the \gls{AI} 
 model will quickly adapt and produce new global optimal designs to fit the new 
 criteria.  
-In this dissertation, I utilize the evolutionary algorithm optimization method as 
-it has proven to find globally optimal solutions robustly and can take 
-advantage of parallel systems. 
+This optimization method is also known as generative design. 
+In this dissertation, I utilize the evolutionary algorithm optimization method 
+for generative reactor design as evolutionary algorithms have proven to find globally 
+optimal solutions robustly and can take advantage of parallel systems. 
 
 Evolutionary algorithms create a population of individual solutions inspired 
 by biological evolution and induce goals by using a `fitness function' to 
