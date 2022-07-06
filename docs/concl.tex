@@ -84,7 +84,7 @@ optimization for the more complex \gls{AHTR} one-third assembly model.
 
 Chapter \ref{chap:ahtr-assem-opt-results} reported the \gls{AHTR} one-third assembly's
 \gls{ROLLO} optimization results.
-I verified that each of the one-third assembly objective follows the same driving 
+I verified that the one-third assembly objectives follows the same driving 
 factors as the \gls{AHTR} plank optimization objectives. 
 The results demonstrated that the minimize $PF_{total}$ objective's driving factor 
 maximize total fission reaction rate and minimize $PPF_{fuel}$ objective's driving 
@@ -128,6 +128,23 @@ their defined objectives.
 % first steps towards true generative design. 
 
 \section{Future Work}
+%Future work towards generative design of the \gls{AHTR} model, 
+This dissertation's generative design optimization of the \gls{AHTR} model used sine 
+distribution variations to govern the \gls{TRISO} packing fraction distribution, and  
+varied cylinder radius' to generate varying sinusoidal-like pattern coolant channel 
+shapes. 
+Chapters \ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results} 
+demonstrated that the coolant channel shape variation did not have as high of an impact 
+on $T_{max}$ as \gls{TRISO} distribution variation.
+These variations are only one way to represent the \gls{AHTR} geometry, there are many 
+other possible ways to represent the geometry that might give \gls{ROLLO} more freedom 
+to generate other designs. 
+
+%Future work for ROLLO... 
+
+
+%Future work for generative design tools... 
+
 % characterize hyperparameter space better for FHR assem multi obj 
 
 % further exploration of the AHTR arbitrary geometry design space. Represent as pixels? 
@@ -136,3 +153,5 @@ their defined objectives.
 
 % first talk about how this model can be further developed 
 % next talk about the potenial for the bigger picture of integrated generative design tools 
+
+% acknowledge limitations
