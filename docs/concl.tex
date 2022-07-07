@@ -10,9 +10,9 @@ could drastically reduce fabrication costs, deployment timelines, and improve re
 safety. 
 Fully benefitting from the new ability to 3D print reactor components, requires further 
 research into reactor generative design optimization. 
-This dissertation explores this new design space by designing and applying the flexible 
-and open-source \gls{ROLLO} tool to optimize the \gls{AHTR} for non-conventional 
-geometries and parameters. 
+This dissertation explores the new design space enabled by additive manufacturing 
+by designing and applying the flexible and open-source \gls{ROLLO} tool to optimize 
+the \gls{AHTR} for non-conventional geometries and parameters. 
 I successfully explored the \gls{AHTR}'s arbitrary geometry design space by completing 
 these three dissertation objectives: 
 \begin{enumerate}
@@ -20,8 +20,8 @@ these three dissertation objectives:
     through neutronics and thermal-hydraulics modeling by participating in the 
     \gls{OECD} \gls{NEA} \gls{FHR} benchmark.
     \item I developed the open-source \gls{ROLLO} tool that enables generative reactor 
-    design evolutionary algorithm optimization for non-conventional reactor geometries 
-    and fuel distributions.
+    design using evolutionary algorithm optimization for non-conventional reactor 
+    geometries and fuel distributions.
     \item I applied \gls{ROLLO} to conduct generative \gls{AHTR} design.
     \gls{ROLLO} generated \gls{AHTR} designs with varying fuel amounts, fuel 
     distributions, and coolant channel shapes that optimize for three key reactor 
@@ -44,7 +44,7 @@ multiphysics model results. The temperature distribution peaks in the fuel strip
 the spacers, highlighting to reactor designers that spacer material and location in the 
 \gls{AHTR} geometry impact temperature peaks.  
 
-Chapter \ref{chap:rollo} described the \gls{ROLLO} optimization tool developed for this 
+Chapter \ref{chap:rollo} described the \gls{ROLLO} tool developed for this 
 dissertation. 
 \gls{ROLLO} is a Python package that applies evolutionary algorithm 
 optimization techniques to generate nuclear reactor designs that meet user-defined 
@@ -58,8 +58,8 @@ hosted on Github \cite{chee_rollo_2021}.
 
 % add more description to contextualize more so that the conclusion can stand on its own
 Chapter \ref{chap:method} described the modeling and optimization methodology of the 
-\gls{AHTR} plank and one-third assembly optimization for non-conventional 
-geometries and parameters conducted using the \gls{ROLLO} software.
+\gls{AHTR} plank and one-third assembly optimization conducted using the \gls{ROLLO} 
+software.
 I varied the following \gls{AHTR} plank and one-third assembly input parameters: 
 \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$), total fuel 
 packing fraction ($PF_{total}$), and coolant channel shape; in an effort to minimize 
@@ -110,6 +110,8 @@ demonstrated \gls{ROLLO}'s success in conducting multi-objective generative reac
 design optimization. 
 \gls{ROLLO} conducted a global search of the large reactor design space, and successfully 
 generated optimal reactor models on the Pareto front that satisfy all the objectives. 
+\gls{ROLLO} also gave the reactor designer a sense of how sensitive 
+each input parameter is in relation to the objectives. 
 Once the \gls{ROLLO} search is complete, reactor designers gain a better intuition of 
 the model's reactor physics and can view the narrower reactor design space that meets 
 their defined objectives. 
