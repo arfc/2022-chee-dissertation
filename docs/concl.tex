@@ -3,12 +3,12 @@
 \label{chap:concl}
 
 Additive manufacturing of reactor core components removes the geometric constraints
-required by conventional manufacturing such as slabs as fuel planks, cylinders as 
+required by conventional manufacturing, such as slabs as fuel planks, cylinders as 
 fuel rods, etc. 
 Wide-spread adoption of additive manufacturing methods in the nuclear industry 
-could drastically reduce fabrication costs, deployment timelines, and improve reactor 
-safety. 
-Fully benefitting from the new ability to 3D print reactor components, requires further 
+could drastically reduce fabrication costs and deployment timelines and improve 
+reactor safety. 
+Fully benefitting from the new ability to 3D print reactor components requires further 
 research into reactor generative design optimization. 
 This dissertation explores the new design space enabled by additive manufacturing 
 by designing and applying the flexible and open-source \gls{ROLLO} tool to optimize 
@@ -33,14 +33,14 @@ addressed objective 2, and chapters \ref{chap:method}, \ref{chap:ahtr-plank-opt-
 and \ref{chap:ahtr-assem-opt-results} addressed objective 3. 
 
 Chapter \ref{chap:fhr-benchmark} reported the \gls{FHR} benchmark Phase I-A and I-B 
-results, which highlighted the \gls{AHTR}'s passive safety behavior with 
+results, highlighting the \gls{AHTR}'s passive safety behavior with 
 negative temperature coefficients. 
 Comparison of $k_{eff}$ results between the reference case and the \gls{AHTR} 
 configuration with high heavy metal loading demonstrated that increased fuel 
 packing does not always correspond with increased $k_{eff}$ due to self-shielding 
 effects.
-Chapter \ref{chap:fhr-benchmark} also reported the \gls{AHTR} full assembly 
-multiphysics model results. The temperature distribution peaks in the fuel stripes near 
+Chapter \ref{chap:fhr-benchmark} also reported the results of the \gls{AHTR} full 
+assembly multiphysics model. The temperature distribution peaked in the fuel stripes near 
 the spacers, highlighting to reactor designers that spacer material and location in the 
 \gls{AHTR} geometry impact temperature peaks.  
 
@@ -68,8 +68,8 @@ temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$)
 
 Chapter \ref{chap:ahtr-plank-opt-results} reported the \gls{AHTR} plank's 
 \gls{ROLLO} optimization results.
-From the results, I characterized each objective's driving factors and relationship 
-with each input parameter. 
+I characterized each objective's driving factors and relationship 
+with each input parameter from the results. 
 I determined that the minimize $PF_{total}$ objective is driven by maximizing the plank's 
 total fission reaction rate and influences oscillations in the TRISO distribution to 
 achieve the objective. 
@@ -106,33 +106,32 @@ objectives.
 These results demonstrate that generative design provides the reactor designer with a 
 set of equally good reactor models. 
 From this point, it is up to the reactor designer to determine the importance of each 
-objective for their purposes, then possibly conduct further sensitivity analysis and 
-use higher fidelity models to study the optimal design space further, before selecting 
-the final reactor model to use.
+objective for their purposes, then conduct further sensitivity analysis and 
+use higher fidelity models to study the optimal design space before selecting 
+the final reactor model.
 
 Chapters \ref{chap:ahtr-plank-opt-results} and \ref{chap:ahtr-assem-opt-results} 
 demonstrated \gls{ROLLO}'s success in conducting multi-objective generative reactor 
 design optimization. 
-\gls{ROLLO} conducted a global search of the large reactor design space, and successfully 
+\gls{ROLLO} conducted a global search of the large reactor design space and successfully 
 generated optimal reactor models on the Pareto front that satisfy all the objectives. 
-\gls{ROLLO} also gave a sense of how sensitive each input parameter is in relation to 
+\gls{ROLLO} also showed how sensitive each input parameter is in relation to 
 the objectives. 
 Once the \gls{ROLLO} search is complete, reactor designers gain a better intuition of 
 the model's reactor physics and can view the narrower reactor design space that meets 
-their defined objectives. 
-\gls{ROLLO} can be easily applied to any perceivable reactor model.  
+their defined objectives.   
 
 \section{Future Work}
 This dissertation's generative design optimization of the \gls{AHTR} model used sine 
-distribution variations to govern the \gls{TRISO} packing fraction distribution, and  
+distribution variations to govern the \gls{TRISO} packing fraction distribution and  
 varied cylinder radius' to generate varying sinusoidal-like pattern coolant channel 
 shapes. 
 These input parameter variations are only one way to represent the \gls{AHTR} 
-geometry, there are many other possible ways to represent the geometry that might 
-give \gls{ROLLO} more freedom to explore a larger design space and generate more 
-optimized designs. 
-For further generative design optimization of the \gls{AHTR}, future reactor designers 
-could consider topology optimization to further optimize coolant channel shape. 
+geometry. 
+There are many other ways to represent the geometry that might give \gls{ROLLO} more 
+freedom to explore a larger design space and generate more optimized designs. 
+Future reactor designers could consider topology optimization to optimize coolant 
+channel shape further.
 The major limitation is the computational cost of modeling fluid flow in complex 
 coolant channel designs. 
 
@@ -142,9 +141,9 @@ generative reactor design optimization.
 arbitrary input parameters. 
 As additive manufacturing technology advances and the \gls{TCR} program 
 demonstrates the first 3D printed operational reactor, more reactor designers 
-will begin to explore the huge design space enabled by 3D printing. 
+will begin to explore the vast design space enabled by 3D printing. 
 Future work includes utilizing \gls{ROLLO} to optimize other reactor types. 
 By designing the \gls{ROLLO} tool and demonstrating its success in further optimization 
-the \gls{AHTR} beyond classical input parameters, this dissertation contributes to the 
-improvement of reactor technology to ensure that nuclear energy continues to provide 
+of the \gls{AHTR} beyond classical input parameters, this dissertation contributes to 
+improving reactor technology to ensure that nuclear energy continues to provide 
 low-carbon electricity worldwide.
