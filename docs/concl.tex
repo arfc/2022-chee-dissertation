@@ -22,7 +22,7 @@ these three dissertation objectives:
     \item I developed the open-source \gls{ROLLO} tool that enables generative reactor 
     design using evolutionary algorithm optimization for non-conventional reactor 
     geometries and fuel distributions.
-    \item I applied \gls{ROLLO} to conduct generative \gls{AHTR} design.
+    \item I applied \gls{ROLLO} to conduct generative \gls{AHTR} design optimization.
     \gls{ROLLO} generated \gls{AHTR} designs with varying fuel amounts, fuel 
     distributions, and coolant channel shapes that optimize for three key reactor 
     performance metrics: minimize total fuel amount, maximize heat transfer, and 
@@ -33,7 +33,7 @@ addressed objective 2, and chapters \ref{chap:method}, \ref{chap:ahtr-plank-opt-
 and \ref{chap:ahtr-assem-opt-results} addressed objective 3. 
 
 Chapter \ref{chap:fhr-benchmark} reported the \gls{FHR} benchmark Phase I-A and I-B 
-results, highlighting the \gls{AHTR}'s passive safety behavior with 
+results, demonstrating the \gls{AHTR}'s passive safety behavior with 
 negative temperature coefficients. 
 Comparison of $k_{eff}$ results between the reference case and the \gls{AHTR} 
 configuration with high heavy metal loading demonstrated that increased fuel 
@@ -80,7 +80,7 @@ I determined that the minimize $T_{max}$ objective flattens TRISO distribution a
 maximizes coolant channel shape's radius values to achieve the objective.
 Characterizations of each objective for the simple \gls{AHTR} plank model provided 
 insights for Chapter \ref{chap:ahtr-assem-opt-results}'s multi-objective 
-optimization for the more complex \gls{AHTR} one-third assembly model. 
+optimization of the complex \gls{AHTR} one-third assembly model. 
 
 Chapter \ref{chap:ahtr-assem-opt-results} reported the \gls{AHTR} one-third assembly's
 \gls{ROLLO} optimization results.
@@ -104,7 +104,8 @@ and coolant channel shapes, depending on the extent each objective is minimized 
 to the nature of multi-objective optimization that results in a tradeoff between 
 objectives. 
 These results demonstrate that \gls{ROLLO}'s generative design optimization process 
-provides the reactor designer with a set of equally good reactor models.
+provides the reactor designer with a set of equally good reactor models that minimize 
+all objectives.
 From this point, it is up to the reactor designer to determine the importance of each 
 objective for their purposes, then conduct further sensitivity analysis and 
 use higher fidelity models to study the optimal design space before selecting 
@@ -121,14 +122,16 @@ Once the \gls{ROLLO} search is complete, reactor designers gain a better intuiti
 the model's reactor physics and can view the narrower reactor design space that meets 
 their defined objectives.   
 
-Through participation in the \gls{FHR} benchmark, this dissertation contributes to 
+Through participation in the \gls{FHR} benchmark, this dissertation contributed to 
 deepening our understanding of the promising \gls{AHTR} technology. 
 By designing the \gls{ROLLO} tool and demonstrating \gls{ROLLO}'s success in 
 optimization of the \gls{AHTR} beyond classical input parameters, this dissertation 
-contributes to optimization tool development for reactors of the future. 
-
+contributed to optimization tool development for reactors of the future. 
 
 \section{Future Work}
+% fhr benchmark 
+
+
 This dissertation's generative design optimization of the \gls{AHTR} model used sine 
 distribution variations to govern the \gls{TRISO} packing fraction distribution and  
 varied cylinder radius' to generate varying sinusoidal-like pattern coolant channel 
