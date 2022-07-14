@@ -111,8 +111,9 @@ Therefore, a computation framework that gives the user the capability to build
 custom evolutionary algorithms is ideal for this project.
 
 Many evolutionary algorithm computation packages exist: 
-\gls{DEAP} \cite{fortin_deap_2012}, inspyred \cite{garrett_inspyred_2014}, 
-Pyevolve \cite{perone_pyevolve_2009}, and OpenBEAGLE \cite{gagne_open_2002}.
+\gls{DEAP} \cite{fortin_deap_2012}, Pymoo \cite{blank_pymoo_2020}, inspyred 
+\cite{garrett_inspyred_2014}, Pyevolve \cite{perone_pyevolve_2009}, and 
+OpenBEAGLE \cite{gagne_open_2002}.
 \gls{DEAP} is the newest package and places a high value on code 
 compactness and clarity \cite{fortin_deap_2012}. 
 \gls{DEAP} is the only framework that allows the user to prototype evolutionary 
@@ -227,11 +228,10 @@ for multiobjective optimization.
 There are four sections that the user must define: \\ \texttt{control\_variables}, 
 \texttt{evaluators}, \texttt{constraints}, and \texttt{algorithm}. 
 Figure \ref{fig:rollo-input} shows an example \gls{ROLLO} input file. 
-In this simulation, \gls{ROLLO} uses a genetic algorithm with user-defined 
+In this example, \gls{ROLLO} uses a genetic algorithm with user-defined 
 hyperparameters to minimize the \texttt{output1} parameter.
 The OpenMC evaluator accepts input parameters: \texttt{variable1} and 
 \texttt{variable2}, and calculates the \texttt{output1} parameter.
-\texttt{variable1} and \texttt{variable2}. 
 \begin{figure}[htbp]
     \begin{minted}[
         frame=lines,
