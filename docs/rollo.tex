@@ -447,9 +447,7 @@ ROLLO's \texttt{algorithm} input file section.
     \cline{2-5}
     & \texttt{generations} & int & number of generations & -\\
     \hline
-    \multirow{9}{1.8cm}{Optional Parameters} 
-    & \texttt{weight} & list of floats & each weight corresponds to a variable in \texttt{optimized\_variable} & \scriptsize{[1.0]*len(objective)}\\
-    \cline{2-5}
+    \multirow{15}{1.8cm}{Optional Parameters} 
     & \texttt{parallel} & string & options include: \textit{none}, \textit{multiprocessing}, \textit{job\_control} & \textit{none} \\
     \cline{2-5}
     & \texttt{keep\_files} & string & options include: \textit{none}, \textit{only\_final}, \textit{all} & \textit{all} \\
@@ -468,7 +466,7 @@ ROLLO's \texttt{algorithm} input file section.
     \end{table}
 The hyperparameter default values are selected based on hyperparameter studies conducted 
 for a single objective \gls{FHR} optimization. 
-Section \ref{sec:hyperparameter-studies} describe the hyperparameter studies. 
+Section \ref{sec:hyperparameter-studies} describes the hyperparameter studies. 
 
 As mentioned previously in Section \ref{sec:genetic_alg}, it is important to 
 select genetic algorithm hyperparameters that balance the extent of exploration 
