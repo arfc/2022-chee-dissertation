@@ -13,10 +13,9 @@ geometries and parameters conducted using the \gls{ROLLO} software.
 %space. 
 %The work done for this dissertation is only an intermediate step towards developing 
 %a truly arbitrary geometry expression. 
-The subsequent sections define the optimization problem definitions, describe the 
+The subsequent sections define the optimization problem, describe the 
 \gls{AHTR} geometries, outline the \gls{AHTR} modeling workflow, verify the \gls{AHTR} 
-models, and describe the process of tuning \gls{ROLLO}'s hyperparameters for the 
-optimization problems.
+models, and describe the process of tuning \gls{ROLLO}'s hyperparameters. 
 
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
@@ -26,12 +25,12 @@ I chose to vary the following \gls{AHTR} parameters:
     \item Total fuel packing fraction ($PF_{total}$)
     \item Coolant channel shape
 \end{itemize} 
-Varying the TRISO fuel packing fraction distribution allows us to explore how 
+Varying the \gls{TRISO} fuel packing fraction distribution allows us to explore how 
 heterogeneous fuel distributions impact reactor performance.
 In Section \ref{sec:fhr-benchmark-keff}, the \gls{FHR} benchmark results demonstrated 
 that increased fuel packing does not always correspond with increased $k_{eff}$ due to 
 self-shielding effects. 
-Varying total fuel packing fraction and TRISO distribution synergistically enable 
+Varying total fuel packing fraction and TRISO distribution enable synergistic
 exploration of how heterogenous TRISO distribution could minimize self-shielding and 
 thus, reduce the fuel required for a reactor design. 
 The coolant channel shape variation enables exploration of how non-uniform 
