@@ -621,6 +621,7 @@ domain type to compute multigroup cross sections for different \textit{cells}.
 I discretized the fuel assembly into 61 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped 
 graphite structure, control rod slot \gls{FLiBe}, graphite spacers, each diamond shape section's 
 inter-plank \gls{FLiBe} (3), each graphite plank (18), and each fuel stripe (36).
+I used reflective boundary conditions.
 Figure \ref{fig:assembly_mg} illustrates the \gls{AHTR} assembly's spatial 
 homogenization used for group constant generation.
 \begin{figure}[htbp]
@@ -651,7 +652,9 @@ homogenization used for group constant generation.
 With the above-described energy discretization and spatial homogenization, I generated 
 group constants with Moltres using four OpenMC simulations at 948K, 1024K, 1100K, and 
 1200K. 
-I used reflective boundary conditions.
+The OpenMC simulations are run with 80 active cycles, 20 inactive cycles, and 8000 
+particles resulting in an uncertainty of $\sim 150pcm$.
+
 In the next subsection, I compare the key neutronics parameters for the continuous 
 OpenMC and multigroup Moltres simulations for the \gls{AHTR} assembly at 948K to 
 ensure that the spatial homogenization and energy discretization preserve accuracy. 
