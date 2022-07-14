@@ -312,6 +312,7 @@ Table \ref{tab:phase1a-cases} describes each case.
     \onehalfspacing
     \caption{Description of the \acrlong{FHR} benchmark Phase I-A cases 
     \cite{noauthor_fluoride_nodate}.}
+    \footnotesize
 	\label{tab:phase1a-cases}
     \begin{tabular}{p{0.05\textwidth}p{0.9\textwidth}}
     \hline 
@@ -453,7 +454,7 @@ discretized by one-fifth fuel stripe.
     \includegraphics[width=0.49\linewidth]{p1a_c1a_c.png} 
     \includegraphics[width=0.49\linewidth]{p1a_c3a_c.png} 
     \includegraphics[width=0.49\linewidth]{p1a_c6a_c.png} 
-    \caption{\gls{UIUC} \gls{FHR} benchmark results: Normalized Fission Source 
+    \caption{\gls{UIUC} \gls{FHR} benchmark results: normalized Fission Source 
     Distribution [-] per one-fifth fuel stripe for \acrlong{FHR} Benchmark's Phase I-A 
     Case 1A (top left), Case 3A (top right), and Case 6A (bottom).}
     \label{fig:phase1a-c}
@@ -487,7 +488,7 @@ three coarse energy groups.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{phase1a-d-flux.png} 
-    \caption{\gls{UIUC} \gls{FHR} benchmark results: Neutron flux, 
+    \caption{\gls{UIUC} \gls{FHR} benchmark results: neutron flux, 
     averaged over the whole model, tabulated in three coarse energy groups for 
     each Phase I-A case. Neutron flux uncertainty is on the order of 1e10.}
     \label{fig:phase1a-d}
@@ -568,7 +569,7 @@ neutronics OpenMC simulations conducted in the \gls{FHR} benchmark's Phase I-A.
 To run Moltres simulations, the user provides group constant data from a neutron transport 
 solver, such as OpenMC, for the Moltres multigroup neutron diffusion calculations and
 a mesh file representing the reactor geometry. 
-In the following subsections, I will describe the steps required to produce an 
+In the following subsections, I will describe the steps conducted to produce the 
 \gls{AHTR} temperature model with Moltres:
 \begin{itemize}
     \item OpenMC neutronics model produces group constants data for the Moltres model
@@ -651,7 +652,7 @@ With the above-described energy discretization and spatial homogenization, I gen
 group constants with Moltres using four OpenMC simulations at 948K, 1024K, 1100K, and 
 1200K. 
 I used reflective boundary conditions.
-In the next subsection, I compared the key neutronics parameters for the continuous 
+In the next subsection, I compare the key neutronics parameters for the continuous 
 OpenMC and multigroup Moltres simulations for the \gls{AHTR} assembly at 948K to 
 ensure that the spatial homogenization and energy discretization preserve accuracy. 
 
@@ -690,8 +691,8 @@ discretization or differing OpenMC and Moltres solve methods.
     \footnotesize
     \begin{tabular}{lllcc}
     \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Difference [pcm]}  
-    & \textbf{Normalized Difference [pcm]}\\
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
+    & \textbf{Normalized Diff [pcm]}\\
     \hline 
     OpenMC & No & $1.39850 \pm 0.00126$ & - & -\\ 
     OpenMC & Yes & $1.398373 \pm 0.00115$ & \Minus13 & \Minus9\\ 
@@ -732,8 +733,8 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
     OpenMC and Moltres at 948K and 1100K.
     The OpenMC simulation has continuous energy and TRISO-level spatial fidelity, and the
     Moltres simulation has 4-group energy and spatial homogenization.}
-	\label{tab:ahtr_full_assem_moltres_coeffs}
     \footnotesize
+	\label{tab:ahtr_full_assem_moltres_coeffs}
     \begin{tabular}{llllll}
     \hline 
     \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
