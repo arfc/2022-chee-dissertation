@@ -29,8 +29,7 @@ that only exposes mandatory parameters.
 and usable. 
 I briefly summarize how \gls{ROLLO} achieves these goals:  
 \begin{itemize}
-    \item Effective: \gls{ROLLO} is well documented, tested, and 
-    version-controlled on Github \cite{chee_rollo_2021}.
+    \item Effective: \gls{ROLLO} is well documented and tested.
     \item Flexible: This dissertation uses \gls{ROLLO} to 
     explore arbitrary reactor geometries and heterogeneous fuel distributions. 
     However, future users might want to utilize \gls{ROLLO} 
@@ -38,8 +37,10 @@ I briefly summarize how \gls{ROLLO} achieves these goals:
     framework accordingly. The user can vary any imaginable parameter 
     because \gls{ROLLO} uses a templating method to edit the input file of the 
     coupled software.
-    \item Open-source: \gls{ROLLO} utilizes a well-documented, open-source 
-    evolutionary algorithm Python package to drive the optimization process.
+    \item Open-source: \gls{ROLLO} is version-controlled on Github 
+    \cite{chee_rollo_2021}. \gls{ROLLO} also utilizes the well-documented, open-source 
+    \gls{DEAP} \cite{fortin_deap_2012} to drive the evolutionary algorithm 
+    optimization process.
     \item Parallel: Users have the option to run \gls{ROLLO} in parallel.
     \item Reproducible: Data from every \gls{ROLLO} run saves into a unique, pickled 
     file (pickle is a Python module that serializes Python objects).
