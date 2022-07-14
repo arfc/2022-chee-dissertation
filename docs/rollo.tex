@@ -320,19 +320,20 @@ in the \gls{ROLLO} \texttt{evaluators}' input file section.
     \multirow{9}{2cm}{Mandatory Parameters} & \texttt{order} & int 
     & evaluator's operational order compared to other evaluators (indexed by 0) \\
     \cline{2-4}
-    & \texttt{inputs} & list of strings & control variables placed in the input script template \\
+    & \texttt{inputs} & list of strings & control variables to be placed in the input 
+    script template \\
     \cline{2-4}
-    & \texttt{input\_script} & list of strings (2-element) & first element: executable to run input script, 
-    second element: input script template's name \\
+    & \texttt{input\_script} & list of strings (2-element) & 1st element: executable to 
+    run input script, 2nd element: input script template \\
     \cline{2-4}
     & \texttt{outputs} & list of strings & output variables that the evaluator will return to the genetic algorithm \\
     \hline
-    \multirow{4}{2cm}{Optional Parameters} & \texttt{execute} & list of 2-element lists &
-    enables the user to run other executables or files beyond the input and output scripts. first element: executable to run file, 
-    second element: file to run \\
+    \multirow{4}{2cm}{Optional Parameters} & \texttt{execute} & enables users to run other 
+    executables or files beyond the input and output scripts. 1st element: executable to 
+    run file, 2nd element: file to run \\
     \cline{2-4}
-    & \texttt{output\_script} & list of strings (2-element) & first element: executable to run output script, 
-    second element: output script's name \\
+    & \texttt{output\_script} & list of strings (2-element) & 1st element: executable to 
+    run output script, 2nd element: output script template \\
     \hline 
     \end{tabular}
     \end{table}
