@@ -607,7 +607,7 @@ Next, the \textbf{\textit{Executor}} initializes an \textbf{\textit{Algorithm}}
 object that accepts the initialized \gls{DEAP} toolbox and \textbf{\textit{Constraints}} 
 object. 
 Finally, the \textbf{\textit{Executor}} class uses a method in the 
-\textbf{\textit{Algorithm}} object to run a general genetic algorithm. 
+\textbf{\textit{Algorithm}} object to run the general genetic algorithm. 
 The \textbf{\textit{Executor}} class uses the hyperparameters from the \gls{DEAP} 
 toolbox, applies constraints defined in the \textbf{\textit{Constraints}} object, 
 and calculates objective functions using the evaluation function created by the 
@@ -646,8 +646,8 @@ restart the code from the most recent population and continue the simulation.
 \subsection{ROLLO Parallelization}
 \label{sec:rollo_parallel}
 \gls{ROLLO} has a serial run mode and two modes for parallelization. 
-The serial run mode utilizes a map() function to run the nuclear software for each 
-reactor model.
+The serial mode runs each reactor model in each generation serially and utilizes a 
+map() function to run the nuclear software for each reactor model.
 The map function accepts a function and iterable and returns a map object of the results 
 by applying the function to each item of the iterable. 
 In \gls{ROLLO}, the \textbf{\textit{Evaluation}} class generates the function 
