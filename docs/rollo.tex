@@ -815,22 +815,25 @@ minimizing the radius while constraining the problem to have $k_{eff} >= 1.0$.
         linenos
         ]{json}
         {"control_variables": {
-                "radius": {"min": 1.0, "max": 8.0}},
+                "radius": {"min": 1.0, "max": 8.0}
+            },
             "evaluators": {
                 "openmc": {
-                    "order": 0, 
-                    "inputs": ["radius"],
+                    "order": 0,
                     "input_script": ["python", "critical_sphere.py"],
+                    "inputs": ["radius"],
                     "outputs": ["keff", "radius"],
-                    "output_script": ["python", "calculate_keff.py"]
-                    "keep_files": false}},
+                    "output_script": ["python", "get_sphere_keff.py"]
+                }
+            },
             "constraints": {"keff": {"operator": [">="], "constrained_val": [1.0]}},
             "algorithm": {
                 "parallel": "multiprocessing",
+                "keep_files": "none",
                 "objective": ["min"],
                 "optimized_variable": ["radius"],
-                "pop_size": 60, 
-                "generations": 10,
+                "pop_size": 80,
+                "generations": 10
             }}
     \end{minted}
     \caption{\acrfull{ROLLO} JSON input file for finding the minimum radius for 
@@ -891,12 +894,12 @@ each generation.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
-    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{verification-radius.png}} 
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{radius-convergence.png}} 
     \caption{Minimum, average, and maximum radius values evolution.}
     \label{fig:verification-radius}
     \end{subfigure}
     \begin{subfigure}{\textwidth}
-        \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{verification-keff.png}}
+        \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{keff-convergence.png}}
         \caption{Minimum, average, and maximum $k_{eff}$ values evolution.}
         \label{fig:verification-keff}
     \end{subfigure}
