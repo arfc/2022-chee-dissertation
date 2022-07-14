@@ -751,8 +751,6 @@ I added an integration test to \gls{ROLLO} that checks that a default \gls{ROLLO
 simulation will find the Ackley function's global minimum point. 
 If \gls{ROLLO} performed sub-optimally, it would return one of the Ackley 
 function's many local minimums. 
-\gls{ROLLO} successfully finds the global minimum point and thus passes the 
-integration test. 
 
 \subsection{Binh and Korn Function}
 \label{sec:binhandkorn}
@@ -797,8 +795,9 @@ find a hypervolume comparable to the ideal Pareto front when minimizing the
 Binh and Korn function. 
 
 \subsection{Pu-239 Critical Bare Sphere}
-To ensure \gls{ROLLO}-OpenMC coupling works, I run a verification problem:
-finding the critical radius for a $^{239}Pu$ bare sphere. 
+I run a neutronics verification problem: finding the critical radius for a $^{239}Pu$ 
+bare sphere, to ensure successful coupling between \gls{ROLLO} and reactor neutronics 
+modeling software, OpenMC \cite{romano_openmc:_2015}. 
 The solution to this problem is well studied and available \cite{blanchard_updated_1999}. 
 Blanchard et al reported that with MCNP4b code and ENDF/B-VI data library, the 
 critical mass of a Pu239 bare sphere is 10.00 kg which corresponds to a diameter 
