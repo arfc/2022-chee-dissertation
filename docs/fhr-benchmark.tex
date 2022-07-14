@@ -867,13 +867,14 @@ geometry file.
 I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature 
 model to ensure that the geometry mesh inputs are sufficiently converged. 
 Table \ref{tab:ahtr-full-assem-mesh-refinement} reports the average, maximum, and 
-normalized 2-norm temperature difference between refinement steps (Equation 
-\ref{eq:2-norm-tdiff-i-full-assem}):
+normalized 2-norm of discretized temperature difference between refinement steps 
+(Equation \ref{eq:2-norm-tdiff-i-full-assem}):
 \begin{align}
     \label{eq:2-norm-tdiff-i-full-assem}
     ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 }\\
 \intertext{where}
-    ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps } [K]\nonumber \\
+    ||\Delta T_k||_N &= \mbox{normalized 2-norm discretized temperature difference 
+    between refinement steps } [K]\nonumber \\
     N &= \mbox{total number of discretized points} \nonumber \\
     k &= \mbox{refinement step} \nonumber \\
     T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
@@ -1008,7 +1009,7 @@ using Equation \ref{eq:calc-htc-full-assem} with the following assumptions:
 \begin{align}
       \label{eq:calc-htc-full-assem}
       h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
-      &= \frac{26223 W/cm}{471^3} \div 0.0909 K/cm \nonumber \\
+      &= \frac{26223 W/cm}{471cm^3} \div 0.0909 K/cm \nonumber \\
       &= 611 W cm^{-3}K^{-1} \nonumber 
 \intertext{and}
 \Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
@@ -1037,7 +1038,7 @@ Figure \ref{fig:benchmark-temperature-model} shows the 2D temperature distributi
 The average temperature distribution across the fuel planks are similar at approximately 
 1025K, while the graphite structure has an average temperature of approximately 935K. 
 As defined in the temperature model setup, the \gls{FLiBe} coolant channel 
-(inter-plank, inter-assembly, control rod slot) regions remain at 923K
+(inter-plank, inter-assembly, control rod slot) regions remain at 923K.
 The temperature peaks at 1062K, which occur in the fuel stripes near the spacers. 
 This could be due to the extra moderation provided by the graphite spacers.
 This highlights the significance of the spacers' material composition and location in 
