@@ -756,22 +756,21 @@ optimization problem objectives (described in Table \ref{tab:objectives}):
 total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), and 
 fuel-normalized power peaking factor ($PPF_{fuel}$).  
 
-\gls{ROLLO} will automatically return the total fuel packing fraction output parameter 
+\gls{ROLLO} will automatically return the $PF_{total}$ output parameter 
 since it is also an input parameter.  
-In the Moltres AHTR model, I defined a post processor object to return the 
-maximum temperature in the plank. 
-The fuel-normalized power peaking factor output parameter takes into account 
-fuel amount variations across the model.
-For the \gls{AHTR} plank and each fuel plank in the \gls{AHTR} one-third fuel assembly, 
+In the Moltres AHTR model, I defined a post processor object to return $T_{max}$. 
+The $PPF_{fuel}$ output parameter takes into account fuel amount variations across 
+the model.
+For the \gls{AHTR} plank, and each fuel plank in the \gls{AHTR} one-third fuel assembly, 
 I discretized the fuel cell area of the plank into 10 $\times$ 5 blocks.
-I then use OpenMC to tally the fission energy production rate (\texttt{fission-q-recoverable}
-$[eV/src]$) in each section.
+I then use OpenMC to tally the fission energy production rate 
+(\texttt{fission-q-recoverable} $[eV src^{-1}]$) in each section.
 I did not normalize the score to calculate power since the final $PPF_{fuel}$ value is a 
 ratio.
 Equation \ref{eq:ppf} calculates the fuel-normalized power peaking factor:
 \begin{align}
     \label{eq:ppf}
-    PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
+    PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div avg(\frac{fqr_j}{PF_j})
 \intertext{where}
 j &= \mbox{discretized fuel area j} \nonumber \\
 PPF_{fuel} &= \mbox{fuel-normalized power peaking factor} \nonumber \\
