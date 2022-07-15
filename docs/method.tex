@@ -289,7 +289,7 @@ x-direction:
     \intertext{where}
     PF(x) &= \mbox{packing fraction distribution across ten cells } [-] \nonumber \\ 
     a &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
-    b &= \mbox{angular frequency, rate of change of the function argument } [radians cm^{-1}] \nonumber \\
+    b &= \mbox{angular frequency, rate of change of the function argument } [radians \cdot cm^{-1}] \nonumber \\
     c &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
     x &= \mbox{midpoint value for each cell } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
@@ -297,14 +297,14 @@ x-direction:
 Figure \ref{fig:straightened_plank} depicts the ten fuel cells.
 The sine distribution's coefficients, \textit{a b c}, are the control variables 
 \gls{ROLLO} utilizes to manipulate the plank's TRISO packing fraction distribution.
-Thus, \gls{ROLLO} will vary \textit{a, b, c} variables to find an optimal TRISO particle 
-sine distribution. 
+Thus, \gls{ROLLO} will vary the \textit{a, b, c} variables to find an optimal 
+TRISO particle sine distribution. 
 The normalization factor is based on the defined total packing fraction.
 
 An \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
 distribution of $PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right) 
-\cdot NF$, results in the following packing fractions for the ten cells: 0.103, 0.120, 
-0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
+\cdot NF$, results in the following packing fractions for the ten cells, respectively: 
+0.103, 0.120, 0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
 Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
 the packing fraction at the respective midpoints, and displays the plank's x-y 
 axis view with the packing fraction varying based on this sine distribution. 
@@ -328,7 +328,7 @@ for the 10 x 6 fuel cells:
     \intertext{where}
     PF(x, y) &= \mbox{packing fraction distribution across 60 cells } [-] \nonumber \\ 
     a, d &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
-    b, e &= \mbox{angular frequency, rate of change of the function argument } [\frac{radians}{cm}] \nonumber \\
+    b, e &= \mbox{angular frequency, rate of change of the function argument } [radians \cdot cm^{-1}] \nonumber \\
     c, f &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
     x &= \mbox{midpoint value for each x-direction fuel cell } [cm]\nonumber \\
     y &= \mbox{midpoint value for each fuel plank } [cm]\nonumber \\
@@ -336,7 +336,7 @@ for the 10 x 6 fuel cells:
 \end{align}
 Figure \ref{fig:ahtr_assembly} depicts the 10 x 6 fuel cells.
 The sine distribution's coefficients, \textit{a b c d e f}, are the control variables 
-\gls{ROLLO} utilizes to control the TRISO packing fraction distribution in the 
+\gls{ROLLO} utilizes to manipulate the TRISO packing fraction distribution in the 
 one-third assembly.
 Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal TRISO 
 distribution. 
@@ -374,13 +374,14 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
         distribution across 10 x 6 cells based on the sine distributions: $PF(x, y) = 
         \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
         \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$. 
-        The packing fraction values on the left correspond to the TRISO 
-        distribution in the one-third assembly on the right.}
+        Figure \ref{fig:ahtr-assem-triso-distr-squares}'s packing fraction values 
+        correspond to Figure \ref{fig:ahtr-assem-triso-distr}'s  TRISO distribution in 
+        the one-third assembly.}
 \end{figure}
 
 \subsubsection{Input Parameter Modeling: Coolant Channel Shape}
-For both the \gls{AHTR} plank and one-third assembly models, I model the variation in 
-coolant channel shape with a sinusoidal-like pattern, using OpenMC's cylinder surfaces
+For both the \gls{AHTR} plank and one-third assembly models, I simulate the variation in 
+coolant channel shape with a sinusoidal pattern using OpenMC's cylinder surfaces
 functionality.
 By varying the cylinders' radius, the coolant channel shapes' depth and frequency 
 mimic a sinusoidal pattern.
@@ -1515,7 +1516,7 @@ with the highest final generation $\overline{k_{eff}}$.
     $\overline{k_{eff}}$ [-] & 1.39876 &1.40155&1.40118&1.39906&1.40165\\ 
     $k_{eff max}$ [-] & 1.40954 &1.40440&1.40365&1.40590&1.40519\\ 
     a [-] & 1.993&1.998&1.999&1.997&1.989\\
-    b [$\frac{radians}{cm}$] & 0.057&0.367&0.320&0.339&0.354\\ 
+    b [$radians \cdot cm^{-1}$] & 0.057&0.367&0.320&0.339&0.354\\ 
     c [radians] & 3.571&3.022&3.615&3.053&3.143\\
     \hline
     \textbf{Hyperparameter}& &&&&\\
