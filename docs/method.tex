@@ -640,9 +640,9 @@ no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}:
     \label{eq:moltres-temp-ss}
     - \nabla \cdot (k_i \nabla T) &= Q_i
 \intertext{where}
-k_i &= \mbox{thermal conductivity of material i} \nonumber \\
-T &= \mbox{temperature in the model [K]} \nonumber \\
-Q_i &= \mbox{source or sink term in material i} \nonumber
+k_i &= \mbox{thermal conductivity of material i } [W \cdot cm^{-1} \cdot K^{-1}] \nonumber \\
+T &= \mbox{temperature in the model } [K] \nonumber \\
+Q_i &= \mbox{source or sink term in material i } [W \cdot cm^{-2}] \nonumber
 \end{align} 
 I use insulated temperature boundary conditions.  
 Table \ref{tab:ahtr-thermal-conductivity} shows the thermal conductivity values 
@@ -671,11 +671,11 @@ Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source ter
 \label{eq:moltres-source-term}
     Q_f &= \sum_{g=1}^G \epsilon_{f,g}\Sigma_{f,g}\phi_g
 \intertext{where} 
-Q_f &= \mbox{source term } [\frac{MeV}{cm^3s}] \nonumber \\
+Q_f &= \mbox{source term } [MeV \cdot cm^{-3} \cdot s^{-1}] \nonumber \\
 G &= \mbox{number of discrete groups, g } [-] \nonumber \\
 \epsilon_{f,g} &= \mbox{heat produced per fission } [MeV] \nonumber \\
-\Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [\frac{1}{cm}] \nonumber \\
-\phi_g &= \mbox{flux of neutrons in group g } [\frac{n}{cm^2s}]\nonumber
+\Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [cm^{-1}] \nonumber \\
+\phi_g &= \mbox{flux of neutrons in group g } [n \cdot cm^{-2} \cdot s^{-1}]\nonumber
 \end{align}
 
 Equation \ref{eq:moltres-heat-removal} defines the heat removal from the AHTR 
