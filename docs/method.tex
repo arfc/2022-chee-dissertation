@@ -109,8 +109,8 @@ ten fuel cells with random \gls{TRISO} packing in each cell.
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
 
             \end{tabular}}}
@@ -176,8 +176,8 @@ fuel cells with random \gls{TRISO} packing.
         \vspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}
     \end{subfigure}
@@ -363,8 +363,8 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
         \caption{TRISO distribution in one-third assembly model.}
@@ -400,8 +400,8 @@ shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} Coolant\\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
     \caption{\acrfull{AHTR} plank with coolant channel shape variation, $r_{top} 
@@ -431,8 +431,8 @@ inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1,
         \resizebox{1.2\textwidth}{!}{
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}}
     \end{subfigure}
@@ -812,12 +812,12 @@ fidelity.
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} Coolant\\
-            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure) \\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
         \end{tabular}}}
     \caption{\acrfull{AHTR} plank geometry and packing fraction distribution used for 
-    \gls{AHTR} plank's key neutronics parameters verification. 
+    the \gls{AHTR} plank's key neutronics parameters verification. 
     The white line corresponds to the centerline where flux distribution is measured. }  
     \label{fig:ahtr-plank-verification}
 \end{figure}
@@ -833,7 +833,7 @@ discretization, or differing OpenMC and Moltres solve methods.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} plank's $k_{eff}$ values from the OpenMC simulation with 
+    \caption{The \acrfull{AHTR} plank's $k_{eff}$ values from the OpenMC simulation with 
     continuous energy and TRISO-level spatial fidelity, OpenMC simulation with 4-group 
     energy and spatial homogenization, and Moltres simulation with 4-group energy and 
     spatial homogenization. All simulations are at 948K.
@@ -843,8 +843,8 @@ discretization, or differing OpenMC and Moltres solve methods.
     \footnotesize
     \begin{tabular}{lllcc}
     \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Difference [pcm]}  
-    & \textbf{Normalized Difference [pcm]}\\
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
+    & \textbf{Normalized Diff [pcm]}\\
     \hline 
     OpenMC & No & $1.41402 \pm 0.00140$ & - & -\\ 
     OpenMC & Yes & $1.41473 \pm 0.00098$ & \Plus71 & \Plus50\\ 
@@ -876,11 +876,11 @@ Temperature reactivity feedback arises mainly from Doppler broadening of
 resonance absorption peaks and thermal expansion.
 Table \ref{tab:ahtr_plank_moltres_coeffs} also shows that the total temperature 
 coefficients from OpenMC and Moltres have good agreement with a discrepancy of 
-0.23 pcm/K.
+0.23 $pcm \cdot K^{-1}$.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{AHTR Fuel Plank's $\beta_{eff}$ values from OpenMC and Moltres simulations 
+    \caption{AHTR fuel plank's $\beta_{eff}$ values from OpenMC and Moltres simulations 
     at 948K, and total reactivity coefficient values calculated from OpenMC and Moltres 
     at 948K and 1100K.
     The OpenMC simulation has continuous energy and TRISO-level spatial fidelity and
@@ -890,8 +890,8 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
     \begin{tabular}{llllll}
     \hline 
     \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
-    & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
-    & \textbf{Diff [pcm/K]} \\
+    & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [$pcm \cdot K^{-1}$]} 
+    & \textbf{Diff [$pcm \cdot K^{-1}$]} \\
     \hline 
     OpenMC & No &  654.31 & - &  \Minus4.26 & - \\ 
     Moltres & Yes & 654.28 & \Minus0.03 & \Minus4.49 & \Minus0.23\\ 
@@ -937,9 +937,9 @@ centerline flux values from OpenMC and Moltres models.
     ||\Delta \phi||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(\frac{\phi_{moltres, i} - \phi_{openmc, i}}{\phi_{openmc, i}}\times100)^2} \\
 \intertext{where}
     ||\Delta \phi||_N &= \mbox{normalized 2-norm flux percentage difference between Moltres and OpenMC } [\%] \nonumber \\
-    N &= \mbox{total number of discretized points} \nonumber \\
-    \phi_{moltres} &= \mbox{Moltres model's centerline flux } [\frac{n}{cm^2s}] \nonumber \\
-    \phi_{openmc} &= \mbox{OpenMC model's centerline flux } [\frac{n}{cm^2s}] \nonumber 
+    N &= \mbox{total number of discretized points } [\#] \nonumber \\
+    \phi_{moltres} &= \mbox{Moltres model's centerline flux } [n \cdot cm^{-2}s^{-1}] \nonumber \\
+    \phi_{openmc} &= \mbox{OpenMC model's centerline flux } [n \cdot cm^{-2}s^{-1}] \nonumber 
 \end{align} 
 \begin{table}[htbp]
     \centering
@@ -954,7 +954,7 @@ centerline flux values from OpenMC and Moltres models.
     \footnotesize
     \begin{tabular}{lll}
     \hline 
-    \textbf{Energy Group}& \textbf{2-norm difference [$\%$]}& \textbf{Max difference [$\%$]} \\
+    \textbf{Energy Group}& \textbf{2-norm Diff [$\%$]}& \textbf{Max Diff [$\%$]} \\
     \hline 
     1 & 0.28 & \Minus4.90 \\
     2 & 0.39 & \Plus5.17 \\
@@ -967,10 +967,11 @@ centerline flux values from OpenMC and Moltres models.
 Figure \ref{fig:flux_948K} shows that the OpenMC model has higher flux in Group 1 and 
 lower flux in Group 2 and 4 compared to the Moltres model. 
 Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
-between OpenMC and Moltres models' flux values are slight, demonstrating that there is a 
-good overall agreement for each group's flux. 
-The flux neutronics parameter is most important as it contributes to the source term in the 
-Moltres simulation. Thus, these accurate flux comparison results verify the accurate calculation 
+between OpenMC and Moltres models' flux values are slight, demonstrating that there is 
+a good overall agreement for each group's flux. 
+The flux neutronics parameter is the most important neutronics parameter as it 
+contributes to the source term in the Moltres simulation. 
+Thus, these accurate flux comparison results verify the accurate calculation 
 of the temperature distribution in the Moltres \gls{AHTR} plank model. 
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
@@ -981,7 +982,7 @@ simulation for both 252 and 4 groups and the 4-group Moltres simulation.
     \includegraphics[width=\linewidth]{neutron_spectrum_948K.png}
     \caption{\acrfull{AHTR} plank's neutron spectrum. Spectrums include 252 
     and 4 group spectrums from OpenMC simulation with continuous energy and 
-    TRISO-level spatial fidelity and 4 group spectrum from Moltres simulation with 
+    TRISO-level spatial fidelity and 4-group spectrum from Moltres simulation with 
     4-group energy and spatial homogenization.}  
     \label{fig:neutron_spectrum_948K}
 \end{figure}
@@ -1015,7 +1016,7 @@ model with TRISO-level fidelity.
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
             \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Structure)\\
-            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
             \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
             \end{tabular}}
     \end{subfigure}
@@ -1048,8 +1049,8 @@ discretization, or differing OpenMC and Moltres solve methods.
     \footnotesize
     \begin{tabular}{lllcc}
     \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Difference [pcm]}  
-    & \textbf{Normalized Difference [pcm]}\\
+    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
+    & \textbf{Normalized Diff [pcm]}\\
     \hline 
     OpenMC & No & $1.41657 \pm 0.00131$ & - & -\\ 
     OpenMC & Yes & $ 1.41670 \pm 0.00116$ & \Plus13 & \Plus9\\ 
@@ -1086,16 +1087,17 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
     \centering
     \onehalfspacing
     \caption{AHTR one-third assembly's $\beta_{eff}$ values from OpenMC and Moltres at 948K, and 
-    total reactivity coefficient values calculated from OpenMC and Moltres at 948K and 1100K.
-    The OpenMC simulation has continuous energy and TRISO-level spatial fidelity and
-    Moltres simulation has 4-group energy and spatial homogenization.}
+    total reactivity coefficient values calculated from OpenMC and Moltres at 948K and 1100K, 
+    respectively.
+    The OpenMC simulation has continuous energy and TRISO-level spatial fidelity.
+    The Moltres simulation has 4-group energy and spatial homogenization.}
 	\label{tab:ahtr_assem_moltres_coeffs}
     \footnotesize
     \begin{tabular}{llllll}
     \hline 
     \textbf{Software}& \textbf{Homogenized?}& \textbf{$\beta_{eff}$ [pcm]} 
-    & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [pcm/K]} 
-    & \textbf{Diff [pcm/K]} \\
+    & \textbf{Diff [pcm]} & \textbf{Total $\frac{\Delta \rho}{\Delta T}$ [$pcm \cdot K^{-1}$]} 
+    & \textbf{Diff [$pcm \cdot K^{-1}$]} \\
     \hline 
     OpenMC & No &  652.3 & - &  \Minus3.64 & - \\ 
     Moltres & Yes & 651.5 & \Minus0.8 & \Minus3.44 & \Plus0.2\\ 
@@ -1105,8 +1107,8 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
 
 \subsubsection{AHTR One-Third Assembly: Flux Distribution}
 The $\epsilon_{f,g}$ and $\Sigma_{f,g}$ terms in the Moltres source term (Equation 
-\ref{eq:moltres-source-term}) are provided to Moltres through 
-the group constants generated by neutronics software, OpenMC.
+\ref{eq:moltres-source-term}) are provided through the group constants generated 
+by OpenMC.
 Thus, differences in the source term between OpenMC and Moltres are dependent on 
 the flux. 
 Comparison of flux distributions produced by Moltres and OpenMC are key to 
