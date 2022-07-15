@@ -244,13 +244,13 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
         \draw [arrow] (11) -- ([shift={(0cm,0cm)}]11.east) -- ([shift={(0cm,0cm)}]17.west);
     \end{tikzpicture}
     \caption{\acrfull{AHTR} modeling workflow in \acrfull{ROLLO} optimization. The entire 
-    workflow falls within the 'evaluate population' orange blocks in ROLLO's evolutionary 
+    workflow falls within the `evaluate population' orange blocks in ROLLO's evolutionary 
     algorithm optimization process depicted in Figure \ref{fig:genetic_alg_nuclear}. 
     For each reactor model in the optimization process, the modeling workflow begins 
     with ROLLO selecting the control variables. 
-    ROLLO inserts control parameters into templated OpenMC and Moltres input files. 
-    The OpenMC and Moltres models are run. 
-    ROLLO analyzes the OpenMC and Moltres output files to determine constraint and 
+    ROLLO inserts control variables and runs the templated OpenMC and Moltres 
+    input files. 
+    ROLLO analyzes the OpenMC and Moltres output files to determine the constraint and 
     objective values.
     PF: Total packing fraction, $\rho_{TRISO}(\vec{r})$: TRISO packing fraction 
     distribution, $PPF_{fuel}$: normalized power peaking factor, $T_{max}$: model's maximum 
@@ -289,18 +289,17 @@ x-direction:
     \intertext{where}
     PF(x) &= \mbox{packing fraction distribution across ten cells } [-] \nonumber \\ 
     a &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
-    b &= \mbox{angular frequency, rate of change of the function argument } [\frac{radians}{cm}] \nonumber \\
+    b &= \mbox{angular frequency, rate of change of the function argument } [radians cm^{-1}] \nonumber \\
     c &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
     x &= \mbox{midpoint value for each cell } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
 Figure \ref{fig:straightened_plank} depicts the ten fuel cells.
 The sine distribution's coefficients, \textit{a b c}, are the control variables 
-\gls{ROLLO} utilizes to control the plank's TRISO packing fraction distribution.
-Thus, \gls{ROLLO} will vary $a, b, c$ variables to find an optimal TRISO particle 
+\gls{ROLLO} utilizes to manipulate the plank's TRISO packing fraction distribution.
+Thus, \gls{ROLLO} will vary \textit{a, b, c} variables to find an optimal TRISO particle 
 sine distribution. 
-The normalization factor normalizes the \gls{TRISO} distribution based on the 
-defined total packing fraction.
+The normalization factor is based on the defined total packing fraction.
 
 An \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
 distribution of $PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right) 
