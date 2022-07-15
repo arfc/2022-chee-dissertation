@@ -1126,8 +1126,8 @@ the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}).
     \caption{\acrfull{AHTR} one-third assembly's centerline neutron flux distribution 
     in 4 groups at 948K. 
     Centerline is the white line in Figure \ref{fig:ahtr-assem-verification}.
-    Comparison is between OpenMC simulation with continuous energy 
-    and TRISO-level spatial fidelity and Moltres simulation with 4-group energy and 
+    The comparison is between the OpenMC simulation with continuous energy 
+    and TRISO-level spatial fidelity and the Moltres simulation with 4-group energy and 
     spatial homogenization.
     Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
     Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
@@ -1141,17 +1141,17 @@ centerline flux values from OpenMC and Moltres models.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} one-third assembly's centerline normalized 2-norm of flux percentage 
-    difference and maximum flux percentage difference. 
+    \caption{\acrfull{AHTR} one-third assembly's centerline 2-norm 
+    flux percentage difference and maximum flux percentage difference. 
     Centerline is the white line in Figure \ref{fig:ahtr-assem-verification}.
     The difference values are calculated from comparison between the OpenMC simulation with 
-    continuous energy and TRISO-level spatial fidelity and Moltres simulation with 4-group energy 
+    continuous energy and TRISO-level spatial fidelity and the Moltres simulation with 4-group energy 
     and spatial homogenization.}
 	\label{tab:ahtr-assem-verification-flux}
     \footnotesize
     \begin{tabular}{lll}
     \hline 
-    \textbf{Energy Group}& \textbf{2-norm difference [$\%$]}& \textbf{Max difference [$\%$]} \\
+    \textbf{Energy Group}& \textbf{2-norm Diff [$\%$]}& \textbf{Max Diff [$\%$]} \\
     \hline 
     1 & 0.15 & \Minus5.36 \\
     2 & 0.29 & \Plus7.13 \\
@@ -1205,21 +1205,21 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
     ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 }\\
 \intertext{where}
     ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps } [K] \nonumber \\
-    N &= \mbox{total number of discretized points} \nonumber \\
-    k &= \mbox{refinement step} \nonumber \\
+    N &= \mbox{total number of discretized points} [\#] \nonumber \\
+    k &= \mbox{refinement step} [-] \nonumber \\
     T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
     T &= \mbox{temperatures from current refinement step } [K]\nonumber 
 \end{align} 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} plank's Moltres temperature model's mesh refinement study.}
+    \caption{\acrfull{AHTR} plank's Moltres temperature model mesh refinement study.}
 	\label{tab:ahtr-plank-mesh-refinement}
     \scriptsize
     \begin{tabular}{lp{3.2cm}lp{3.2cm}ll}
         \hline 
         \textbf{Refinement} & \textbf{Max Plank Temp [K]} 
-        & \textbf{Diff [K]} & \textbf{Ave Plank Temp [K]}
+        & \textbf{Diff [K]} & \textbf{Avg Plank Temp [K]}
         & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
         \hline 
         1 & 1126.219 & - & 1011.209 & - & - \\
@@ -1231,14 +1231,14 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} one-third assembly's Moltres temperature model's mesh 
+    \caption{\acrfull{AHTR} one-third assembly's Moltres temperature model mesh 
     refinement study.}
 	\label{tab:ahtr-assem-mesh-refinement}
     \scriptsize
     \begin{tabular}{lp{3.2cm}lp{3.1cm}ll}
     \hline 
     \textbf{Refinement} & \textbf{Max One-Third Assembly Temp [K]} 
-    & \textbf{Diff [K]} & \textbf{Ave One-Third Assembly Temp [K]}
+    & \textbf{Diff [K]} & \textbf{Avg One-Third Assembly Temp [K]}
     & \textbf{Diff [K]} & $||\Delta T_k||_N$ [K]\\ 
     \hline 
     1 & 1185.436 & - & 995.963 & - & - \\
@@ -1307,8 +1307,8 @@ The centerlines for the \gls{AHTR} plank and one-third models are depicted in Fi
     \scriptsize
     \begin{tabular}{p{2.5cm}p{2cm}p{2.4cm}p{2cm}p{2.4cm}p{2cm}}
     \hline 
-    \textbf{Group Constant Data Temps [K]}& \textbf{Ave Plank Temp [K]}& 
-    \textbf{Ave Plank Temp Diff [K]}& \textbf{Max Plank Temp [K]} & 
+    \textbf{Group Constant Data Temps [K]}& \textbf{Avg Plank Temp [K]}& 
+    \textbf{Avg Plank Temp Diff [K]}& \textbf{Max Plank Temp [K]} & 
     \textbf{Max Plank Temp Diff [K]} & $||\Delta T||_N$ \\ 
     \hline 
     All  & 1019.965 &  -     & 1128.306 & -      & -    \\
@@ -1338,7 +1338,7 @@ generate the group constant data for the Moltres temperature models.
     \scriptsize
     \begin{tabular}{p{2.5cm}p{2.5cm}p{2cm}p{2.5cm}p{2cm}p{2cm}}
     \hline 
-    \textbf{Group Constant Data Temps [K]}& \textbf{Ave One-Third Assembly Temp [K]}& 
+    \textbf{Group Constant Data Temps [K]}& \textbf{Avg One-Third Assembly Temp [K]}& 
     \textbf{Diff [K]}& \textbf{Max One-Third Assembly Temp [K]} & 
     \textbf{Diff [K]} & $||\Delta T||_N$ \\ 
     \hline 
