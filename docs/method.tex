@@ -376,7 +376,7 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
         \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$. 
         Figure \ref{fig:ahtr-assem-triso-distr-squares}'s packing fraction values 
         correspond to Figure \ref{fig:ahtr-assem-triso-distr}'s  TRISO distribution in 
-        the one-third assembly.}
+        the one-third assembly model.}
 \end{figure}
 
 \subsubsection{Input Parameter Modeling: Coolant Channel Shape}
@@ -450,7 +450,7 @@ the OpenMC neutronics and Moltres temperature models.
 The Moltres model relies on group constant data produced by the OpenMC model. 
 The OpenMC and Moltres models' workflow:  
 \begin{enumerate}
-\item OpenMC neutronics model
+\item OpenMC neutronics model calculates $k_{eff}$ and $PPF_{fuel}$
 \item OpenMC neutronics model produces group constant data for the Moltres 
 model
 \item Moltres model mesh generation 
