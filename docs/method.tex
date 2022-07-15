@@ -739,7 +739,7 @@ T_{total} &= \mbox{total temperature change from inlet to outlet } [K] \nonumber
 H &= \mbox{AHTR height from inlet to outlet } [cm] \nonumber 
 \end{align}
 The power produced by the \gls{AHTR} plank and one-third models are calculated based 
-on the \gls{FHR} benchmark model's specific power of 200 $\frac{W}{gU}$ and the FHR 
+on the \gls{FHR} benchmark model's specific power of 200 $W gU^{-1}$ and the FHR 
 benchmark's TRISO packing fractions in the plank and one-third assembly.
 
 In the \gls{ROLLO} optimization simulations, I vary the \gls{FLiBe} coolant channel 
@@ -753,8 +753,8 @@ for all the AHTR Moltres temperature models of varying coolant channel shapes.
 \label{sec:ahtr_slab_output}
 This section describes how I tallied the AHTR model outputs for the ROLLO 
 optimization problem objectives (described in Table \ref{tab:objectives}):
-total fuel packing fraction, the maximum temperature in the slab, and 
-fuel-normalized power peaking factor.  
+total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), and 
+fuel-normalized power peaking factor ($PPF_{fuel}$).  
 
 \gls{ROLLO} will automatically return the total fuel packing fraction output parameter 
 since it is also an input parameter.  
