@@ -450,11 +450,13 @@ the OpenMC neutronics and Moltres temperature models.
 The Moltres model relies on group constant data produced by the OpenMC model. 
 The OpenMC and Moltres models' workflow:  
 \begin{enumerate}
-\item OpenMC neutronics model calculates $k_{eff}$ and $PPF_{fuel}$
+\item OpenMC neutronics model calculates $k_{eff}$ and fuel-normalized 
+power peaking factor ($PPF_{fuel}$) objective value
 \item OpenMC neutronics model produces group constant data for the Moltres 
 model
 \item Moltres model mesh generation 
-\item Moltres temperature model accepts group constant data and mesh
+\item Moltres temperature model accepts group constant data and mesh and calculates 
+      the maximum temperature ($T_{max}$) objective value
 \end{enumerate}
 In the subsequent subsections, I describe details and assumptions for each step of 
 the OpenMC and Moltres models' workflow.
