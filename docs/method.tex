@@ -131,13 +131,15 @@ porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the
 outer pyrolytic carbon. 
 The \gls{TRISO} particle dimensions remain the same.
 Table \ref{tab:keff_triso} reports OpenMC's $k_{eff}$ for the straightened \gls{AHTR} configuration 
-with and without the outer layer \gls{TRISO} homogenization.
+with and without the four outer layers \gls{TRISO} homogenization.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{Straightened \acrfull{AHTR} fuel plank $k_{eff}$ for the case with 
     no \gls{TRISO} homogenization and case with homogenization of the four outer 
-    layers. Both simulations were run on one BlueWaters XE Node.}
+    layers. Both simulations were run on one BlueWaters supercomputer XE Node 
+    \cite{ncsa_about_2017} using OpenMC \cite{romano_openmc:_2015} with 80 active 
+    cycles, 20 inactive cycles, and 8000 particles.}
 	\label{tab:keff_triso}
     \footnotesize
     \begin{tabular}{llc}
