@@ -1399,8 +1399,8 @@ I randomly sampled population size and used Equation \ref{eq:pop_gen} to calcula
 the number of generations: 
 \begin{align}
     \label{eq:pop_gen}
-    gens &= \frac{evals}{pop\_size} 
-         &= \frac{600}{pop\_size} 
+    gens &= \frac{evals}{pop\_size} \\
+         &= \frac{600}{pop\_size} \nonumber 
     \intertext{where}
     gens &= \mbox{no. of generations} \nonumber \\
     evals &= \mbox{no. of evaluations} \nonumber \\
@@ -1514,10 +1514,12 @@ of individual OpenMC simulations.
 Each OpenMC simulation takes approximately 13 minutes to run on a single BlueWaters 
 XE node. 
 With approximately 600 OpenMC evaluations per \gls{ROLLO} simulation, one
-\gls{ROLLO} simulation takes about 130 BlueWaters node hours. 
+\gls{ROLLO} simulation takes about 130 BlueWaters node-hours. 
 The hyperparameter search ran 40 \gls{ROLLO} simulations, thus using approximately
-5200 node hours.
+5200 node-hours.
 
+I define the best-performing hyperparameter set as the experiment that produces 
+the highest $\overline{k_{eff}}$ in its final generation. 
 Table \ref{tab:topfive} shows the hyperparameters for the five experiments 
 with the highest final generation $\overline{k_{eff}}$.
 \begin{table}[htbp]
@@ -1553,10 +1555,8 @@ with the highest final generation $\overline{k_{eff}}$.
     \hline
     \end{tabular}}
 \end{table}
-I define the best-performing hyperparameter set as the experiment that produces 
-the highest $\overline{k_{eff}}$ in its final generation. 
 \textit{Fine Search 2}'s experiment 39 produces the best performing 
-hyperparameter set, with $max(k_{eff}) = 1.40519$. 
+hyperparameter set, with $\overline{k_{eff}} = 1.40165ß$. 
 Therefore, for single-objective ROLLO optimization simulations in this dissertation, 
 I use the hyperparameter set from experiment 39. 
 
@@ -1574,7 +1574,7 @@ operator that works well for multi-objective optimization.
 Next, I varied each of the following parameters individually and compared their 
 hypervolume values: population size/generations, mutation probability, and mating 
 probability.
-Section \ref{sec:binhandkorn} describes that the hypervolume indicator quantifies 
+Section \ref{sec:binhandkorn} described that the hypervolume indicator quantifies 
 the multi-objective optimization's Pareto front's goodness (bigger = better). 
 
 Figure \ref{fig:hypervolume-comparison} shows boxplots comparing hypervolumes 
