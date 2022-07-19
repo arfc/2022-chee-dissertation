@@ -781,10 +781,10 @@ Equation \ref{eq:ppf} calculates the fuel-normalized power peaking factor:
     \label{eq:ppf}
     PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div avg(\frac{fqr_j}{PF_j})
 \intertext{where}
-j &= \mbox{discretized fuel area j } [-] \nonumber \\
 PPF_{fuel} &= \mbox{fuel-normalized power peaking factor } [-] \nonumber \\
+j &= \mbox{discretized fuel area j } [-] \nonumber \\
 fqr_j &= \mbox{fission-q-recoverable at position j } [eV src^{-1}] \nonumber \\
-PF_j &= \mbox{fuel packing fraction at position j } [eV src^{-1}] \nonumber
+PF_j &= \mbox{fuel packing fraction at position j } [-] \nonumber
 \end{align}
 
 \section{AHTR Moltres Model Verification}
@@ -808,9 +808,9 @@ energy and spatially homogenized Moltres simulation.
 This section compares the following key neutronics parameters: effective 
 multiplication factor, reactivity coefficients, flux distribution, and neutron energy 
 spectrum for the \gls{AHTR} plank model. 
-For this verification study, I used an \gls{AHTR} plank model with a 0.0979 total packing 
-fraction and packing fraction distribution of 
-$PF(x) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
+For this verification study, I used an \gls{AHTR} plank model with a 
+$PF_{total} = 0.0979$ and 
+$\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
 Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with TRISO-level 
 fidelity.
  \begin{figure}[htbp]
@@ -827,6 +827,8 @@ fidelity.
         \end{tabular}}}
     \caption{\acrfull{AHTR} plank geometry and packing fraction distribution used for 
     the \gls{AHTR} plank's key neutronics parameters verification. 
+    $PF_{total} = 0.0979$ and 
+    $\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
     The white line corresponds to the centerline where flux distribution is measured. }  
     \label{fig:ahtr-plank-verification}
 \end{figure}
