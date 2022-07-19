@@ -8,32 +8,22 @@ I vary the following \gls{AHTR} plank input parameters:
     \item Total fuel packing fraction ($PF_{total}$)
     \item Coolant channel shape
 \end{itemize} 
-And, I optimize the \gls{AHTR} plank for the following optimization objectives:
+Section \ref{sec:input-parameter-modeling} detailed how I vary these 
+\gls{AHTR} one-third assembly's input parameters. 
+I optimize the \gls{AHTR} plank for the following objectives:
 \begin{itemize}
     \item Minimize total fuel packing fraction ($PF_{total}$)
     \item Minimize maximum plank temperature ($T_{max}$)
     \item Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
 \end{itemize} 
-
-In the previous chapter, I detailed the methodology for \gls{AHTR} plank modeling and 
-\gls{ROLLO} optimization. 
-Section \ref{sec:ahtr-plank-geometry} described the \gls{AHTR} plank geometry.
-Section \ref{sec:input-parameter-modeling} detailed how I vary the 
-\gls{AHTR} plank's input parameters. 
-Sections \ref{sec:ahtr-moltres-hom} and \ref{sec:ahtr_model_verification}
-described and verified the \gls{AHTR} plank's OpenMC neutronics and Moltres 
-temperature models. 
-Section \ref{sec:opt-problem} describeed the optimization objectives and Section 
-\ref{sec:ahtr_slab_output} described how I calculated them from the OpenMC and Moltres 
-model outputs. 
-Section \ref{sec:hyperparameter-studies} described the hyperparameter tuning process 
-to select hyperparameters for the single-objective and multi-objective \gls{ROLLO} 
-optimization simulations.
+Table \ref{tab:objectives} outlined these objectives and their motivation.
+Chapter \ref{chap:method} detailed the methodology for \gls{AHTR} plank modeling 
+and \gls{ROLLO} optimization. 
 
 The subsequent sections outline the \gls{AHTR} plank optimization simulations, 
 describe the single-objective and multi-objective \gls{ROLLO} optimization simulation 
-results, report their computational cost, and discuss their results.
-
+results, report each simulation's computational cost, and discuss the 
+results' significance.
 The \texttt{plank-optimization} directory in the \texttt{arfc/2022-chee-dissertation} 
 Github repository contains this chapter's results \cite{chee_dissertation_2021}. 
 
@@ -44,9 +34,10 @@ optimization simulation conducted in this chapter.
     \centering
     \onehalfspacing
     \caption{\gls{ROLLO} simulations for optimizing \gls{AHTR}
-    plank. $PF_{total}$: Total fuel packing fraction, $T_{max}$: Maximum plank temperature, 
-    $PPF_{fuel}$: Fuel-normalized power peaking factor, $\rho_{TRISO}(\vec{r})$: 
-    \gls{TRISO} particle distribution}
+    plank. $PF_{total}$: Total fuel packing fraction; 
+    $T_{max}$: Maximum plank temperature;
+    $PPF_{fuel}$: Fuel-normalized power peaking factor; 
+    $\rho_{TRISO}(\vec{r})$: \gls{TRISO} particle distribution.}
 	\label{tab:slab-obj-breakdown}
     \footnotesize
     \begin{tabular}{p{1cm}|p{1cm}|llll}
@@ -56,9 +47,9 @@ optimization simulation conducted in this chapter.
     \multirow{7}{2cm}{1} & p-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $\geq$ 1.35 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & p-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $\geq$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & p-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $\geq$ 1.00 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     \cline{2-6}
-    & p-1c & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff}$ $\geq$ 1.0 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & p-1c & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff}$ $\geq$ 1.00 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     \cline{2-6}
     & p-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $\geq$ 1.35 &\tabitem Coolant channel shape & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
@@ -73,7 +64,7 @@ optimization simulation conducted in this chapter.
     & p-2b & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $\geq$ 1.35 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
     & & \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & p-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $\geq$ 1.0 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & p-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff}$ $\geq$ 1.00 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
     & & \tabitem min($PPF_{fuel}$) & & & \\
     \hline
     \multirow{6}{2cm}{3}& p-3a &\tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $\geq$ 1.35 & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
@@ -90,7 +81,7 @@ I first conducted single objective, single input parameter \gls{ROLLO} optimizat
 understand the individual impacts of each objective on each input parameter. 
 Their results inform the multi-objective optimization simulations setup. 
 
-The $k_{eff}$ constraint value is 1.35 and 1.0 for optimization problems that do
+The $k_{eff}$ constraint values are 1.35 and 1.0 for optimization problems that do
 and do not minimize total packing fraction, respectively. 
 $k_{eff}$ strongly correlates with total packing fraction. 
 The \gls{AHTR} plank with the same packing fraction as the \gls{FHR} Benchmark's assembly 
