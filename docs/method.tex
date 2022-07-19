@@ -681,9 +681,9 @@ Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source ter
 \label{eq:moltres-source-term}
     Q_f &= \sum_{g=1}^G \epsilon_{f,g}\Sigma_{f,g}\phi_g
 \intertext{where} 
-Q_f &= \mbox{source term } [MeVcm^{-3}s^{-1}] \nonumber \\
+Q_f &= \mbox{source term } [Wcm^{-3}] \nonumber \\
 G &= \mbox{number of discrete groups, g } [-] \nonumber \\
-\epsilon_{f,g} &= \mbox{heat produced per fission } [MeV] \nonumber \\
+\epsilon_{f,g} &= \mbox{heat produced per fission } [J] \nonumber \\
 \Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [cm^{-1}] \nonumber \\
 \phi_g &= \mbox{flux of neutrons in group g } [n \cdot cm^{-2} s^{-1}]\nonumber
 \end{align}
@@ -694,7 +694,7 @@ models:
     \label{eq:moltres-heat-removal}
     Q &= h \cdot A \cdot(T(\vec{r})-T_{ref})
 \intertext{where}
-Q &= \mbox{heat removal rate for 1cm thin slice of the AHTR model } [W cm^{-2}] \nonumber \\
+Q &= \mbox{heat removal rate for 1cm thin slice of the AHTR model } [W] \nonumber \\
 h &= \mbox{heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
 A &= \mbox{coolant area } [cm^2] \nonumber \\
 T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
