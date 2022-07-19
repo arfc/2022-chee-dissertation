@@ -297,18 +297,19 @@ x-direction:
     a &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
     b &= \mbox{angular frequency, rate of change of the function argument } [radians \cdot cm^{-1}] \nonumber \\
     c &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
-    x &= \mbox{midpoint value for each cell } [cm]\nonumber \\
+    x &= \mbox{midpoint x-value for each cell } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
-Figure \ref{fig:straightened_plank} depicts the ten fuel cells.
+Figure \ref{fig:straightened_plank} depicted the ten fuel cells.
 The sine distribution's coefficients, \textit{a b c}, are the control variables 
-\gls{ROLLO} utilizes to manipulate the plank's TRISO packing fraction distribution.
+\gls{ROLLO} utilizes to manipulate the plank's $\rho_{TRISO}(\vec{x})$.
 Thus, \gls{ROLLO} will vary the \textit{a, b, c} variables to find an optimal 
-TRISO particle sine distribution. 
+$\rho_{TRISO}(\vec{x})$ that minimizes objectives. 
 The normalization factor is based on the defined total packing fraction.
 
 An \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
-distribution of $PF(x) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right) 
+distribution of 
+$\rho_{TRISO}(\vec{x}) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right) 
 \cdot NF$, results in the following packing fractions for the ten cells, respectively: 
 0.103, 0.120, 0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
 Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
