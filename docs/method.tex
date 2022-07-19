@@ -1273,9 +1273,9 @@ mesh sizes that are larger than each Theta node's memory size.
 During ROLLO optimization, each new reactor model results in the creation of 
 a new Moltres temperature model. 
 Correspondingly, a new set of group constant data needs to be created. 
-Group constant data with multiple temperatures requires running multiple neutronics 
-simulations at the various temperatures, thus, increasing the total compute time 
-required for each new reactor model. 
+Group constant data with multiple temperatures requires running multiple OpenMC 
+neutronics simulations at the various temperatures, thus, increasing the total 
+compute time required for each new reactor model. 
 
 This section explores the effects of using multiple temperature group 
 constant data compared to single temperature group constant data.
@@ -1287,17 +1287,18 @@ OpenMC \gls{AHTR} models at the specified temperatures generate the group consta
 Tables \ref{tab:moltres-group-constant-temps} and 
 \ref{tab:moltres-group-constant-temps-assem}
 show the average and maximum temperature reported by the \gls{AHTR} plank and one-third 
-assembly Moltres models and their differences compared to the model with group constant data 
-with all four temperatures. 
+assembly Moltres models using group constant data from one temperature and their 
+differences compared to the model with group constant data with all four temperatures. 
 Both tables also show the normalized 2-norm of the centerline temperature difference 
-between the \gls{AHTR} model with all four temperatures and the \gls{AHTR} models with single 
-temperatures (Equation \ref{eq:2-norm-tdiff-all}):
+between the \gls{AHTR} models with single temperatures and the \gls{AHTR} model with all four 
+temperature (Equation \ref{eq:2-norm-tdiff-all}):
 \begin{align}
     \label{eq:2-norm-tdiff-all}
     ||\Delta T||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{all, i} - T_{i})^2} \\
 \intertext{where}
     ||\Delta T||_N &= \mbox{normalized 2-norm temperature difference } [K]\nonumber \\
     N &= \mbox{total number of discretized points } [\#] \nonumber \\
+    i &= \mbox{discretized point } [-] \nonumber \\
     T_{all} &= \mbox{temperatures from model with group constant data at all four temperatures } [K] \nonumber \\
     T &= \mbox{temperatures from model with group constant data at one temperature } [K] \nonumber 
 \end{align}
