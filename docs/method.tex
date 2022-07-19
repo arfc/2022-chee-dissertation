@@ -1329,8 +1329,9 @@ The centerlines for the \gls{AHTR} plank and one-third models are depicted in Fi
     \hline
     \end{tabular}
 \end{table}
-The temperature differences between the \gls{AHTR} plank model with all four temperatures 
-and the \gls{AHTR} plank models' with each single temperature are not significant. 
+The temperature differences between the \gls{AHTR} plank model using group constants at 
+all four temperatures and the \gls{AHTR} plank models' using group stants at each 
+single temperature are not significant. 
 The 948K single temperature group constant data has the lowest 2-norm difference 
 ($||\Delta T||_N$). 
 Thus, I use a 948K in the \gls{AHTR} plank OpenMC neutronics model to 
@@ -1360,12 +1361,13 @@ generate the group constant data for the Moltres temperature models.
     \hline
     \end{tabular}
 \end{table}
-The temperature differences between the \gls{AHTR} one-third assembly model with all four 
-temperatures and the \gls{AHTR} plank models with each single temperature are small ($<1K$). 
+The temperature differences between the \gls{AHTR} one-third assembly model using group 
+constants at all four temperatures and the \gls{AHTR} plank models using group 
+constants at a single temperature are small ($<1K$). 
 The 1024K single temperature group constant data has the lowest 2-norm difference 
 ($||\Delta T||_N$). 
-Thus, I use 1024K in the \gls{AHTR} one-third assembly OpenMC neutronics model to generate 
-the group constant data for the Moltres temperature models.
+Thus, I use 1024K in the \gls{AHTR} one-third assembly OpenMC neutronics model to 
+generate the group constant data for the Moltres temperature models.
 
 \section{ROLLO Hyperparameter Tuning}
 \label{sec:hyperparameter-studies}
@@ -1375,7 +1377,6 @@ A good hyperparameter set guides the optimization process by
 balancing exploitation and exploration to find an optimal solution quickly 
 and accurately. 
 Finding a good hyperparameter set requires a trial-and-error process. 
-
 The subsequent subsections describe the hyperparameter search I conducted for 
 single-objective and multi-objective optimization. 
 
