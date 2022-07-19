@@ -214,6 +214,7 @@ and constraint values calculations.
 The \gls{AHTR} modeling workflow described in this section falls within the 
 nuclear software evaluation orange blocks in Figure 
 \ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
+Each \gls{AHTR} modeling workflow models a single reactor model. 
 Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow. 
 \begin{figure}[htbp]
     \centering
@@ -265,23 +266,24 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
 \subsection{Input Parameter Modeling}
 \label{sec:input-parameter-modeling}
 This section describes how I model the \gls{AHTR} input parameter variations: 
-total fuel packing fraction, \gls{TRISO} packing fraction distribution, 
-and coolant channel shape. 
-For both the \gls{AHTR} plank and one-third assembly models, the total fuel packing 
-fraction parameter is a single numerical input.
+total fuel packing fraction ($PF_{total}$), \gls{TRISO} packing fraction distribution
+($\rho_{TRISO}(\vec{r})$), and coolant channel shape. 
+For both the \gls{AHTR} plank and one-third assembly models, the $PF_{total}$ parameter 
+is a single numerical input.
 In the subsequent subsections, I describe how I modeled the other two parameters for 
 the \gls{AHTR} plank and one-third assembly models. 
 
-\subsubsection{Input Parameter Modeling: TRISO packing fraction distribution}
+\subsubsection{Input Parameter Modeling: TRISO packing fraction distribution 
+($\rho_{TRISO}(\vec{r})$)}
 I utilize sine distributions for both the \gls{AHTR} plank and one-third assembly 
-models to govern the \gls{TRISO} packing fraction distribution.
+models to govern the $\rho_{TRISO}(\vec{r})$.
 Based on the sine distributions, the model calculates each fuel cell's packing 
 fraction, then uses OpenMC's \texttt{pack\_spheres} function to randomly disperse 
 the packing fraction in each fuel cell. 
-For the \gls{AHTR} plank, one sine distribution governs the \gls{TRISO} packing 
-fraction distribution across the \gls{AHTR} plank's x-direction. 
-For the \gls{AHTR} one-third assembly, two sine distributions govern the \gls{TRISO} 
-packing fraction distribution across each fuel plank's x-direction and the 
+For the \gls{AHTR} plank, one sine distribution governs the $\rho_{TRISO}(\vec{x})$ 
+across the \gls{AHTR} plank's x-direction. 
+For the \gls{AHTR} one-third assembly, two sine distributions govern the 
+$\rho_{TRISO}(\vec{x, y})$ across each fuel plank's x-direction and the 
 assembly's y-direction, respectively. 
 
 For the \gls{AHTR} plank, Equation \ref{eq:plank-sine}'s sine distribution governs 
