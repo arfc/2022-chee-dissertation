@@ -1216,9 +1216,10 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
 \intertext{where}
     ||\Delta T_k||_N &= \mbox{normalized 2-norm temperature difference between refinement steps } [K] \nonumber \\
     N &= \mbox{total number of discretized points } [\#] \nonumber \\
+    i &= \mbox{discretized point } [-] \nonumber \\
     k &= \mbox{refinement step } [-] \nonumber \\
     T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
-    T &= \mbox{temperatures from current refinement step } [K]\nonumber 
+    T_k &= \mbox{temperatures from current refinement step } [K]\nonumber 
 \end{align} 
 \begin{table}[htbp]
     \centering
@@ -1253,19 +1254,17 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
     \hline 
     1 & 1185.436 & - & 995.963 & - & - \\
     2 & 1186.045 & \Plus0.609 & 1001.751 & \Plus5.788 & 0.703\\
-    3 & 1185.994 & \Minus0.051 & 1003.625 & \Plus1.874 & 0.200\\ 
-    4 & 1187.658 & \Plus1.664 & 1004.708 & \Plus1.083 & 0.102\\
+    3 & 1185.994 & \Minus0.051 & 1003.625 & \Plus1.874 & 0.200\\
     \hline
     \end{tabular}
 \end{table}
 
 Both \gls{AHTR} plank and one-third assembly show suitable $||\Delta T_k||_N$ 
 convergence with more refinement steps. 
-I used x3 mesh refinement for all \gls{AHTR} plank Moltres temperature models and 
-x4 mesh refinement for all \gls{AHTR} one-third assembly Moltres temperature 
-models. 
+I used x3 mesh refinement for all \gls{AHTR} plank and one-third assembly Moltres 
+temperature models. 
 Further refinement is unfeasible due to the large mesh size. 
-I am using the Theta supercomputer \cite{noauthor_thetathetagpu_nodate} for the 
+I used the Theta supercomputer \cite{noauthor_thetathetagpu_nodate} for the 
 optimization work.
 Each supercomputer node saves the entire mesh file, further refinement results in 
 mesh sizes that are larger than each Theta node's memory size. 
