@@ -304,7 +304,7 @@ Figure \ref{fig:straightened_plank} depicted the ten fuel cells.
 The sine distribution's coefficients, \textit{a b c}, are the control variables 
 \gls{ROLLO} utilizes to manipulate the plank's $\rho_{TRISO}(\vec{x})$.
 Thus, \gls{ROLLO} will vary the \textit{a, b, c} variables to find an optimal 
-$\rho_{TRISO}(\vec{x})$ that minimizes objectives. 
+$\rho_{TRISO}(\vec{x})$ that optimizes objectives. 
 The normalization factor is based on the defined total packing fraction.
 
 An \gls{AHTR} plank with a 0.0979 total packing fraction, and packing fraction 
@@ -318,9 +318,9 @@ axis view with the packing fraction varying based on this sine distribution.
 \begin{figure}[htbp]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=\linewidth]{triso_distribution_sine.png}} 
-    \caption{Above: Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} particle 
-    distribution across ten cells based on the sine distribution. 
-    Below: $PF(x) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
+    \caption{Above: Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} 
+    particle distribution across ten cells based on the sine distribution. 
+    Below: $\rho_{TRISO}(\vec{x}) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
     sine distribution with red points indicating the packing fraction at each cell.}
     \label{fig:triso_distribution}
 \end{figure}
@@ -330,7 +330,7 @@ distributions govern \gls{TRISO} packing fraction distributions in the x and y d
 for the 10 x 6 fuel cells:
 \begin{align}
     \label{assem-sine}
-    PF(x, y) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
+    \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
     \cdot \left(d\cdot sin(e\cdot y + f) + 2\right) \cdot NF \\
     \intertext{where}
     PF(x, y) &= \mbox{packing fraction distribution across 60 cells } [-] \nonumber \\ 
