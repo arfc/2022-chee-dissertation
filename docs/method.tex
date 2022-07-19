@@ -730,19 +730,19 @@ using Equation \ref{eq:calc-htc-plank}, \ref{eq:calc-htc-assem} with the followi
 \begin{align}
     \label{eq:calc-htc-plank}
     h_{plank} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
-      &= \frac{1456 W cm^{-1}}{23.1cm \times 0.35cm \times 1cm \times 2} \div 0.0909 K cm^{-1} \nonumber \\
-      &= 990 W cm^{-3}K^{-1} \nonumber \\
+      &= \frac{1456 W}{23.1cm \times 0.35cm \times 2} \div 0.0909 K \nonumber \\
+      &= 990 W cm^{-2}K^{-1} \nonumber \\
       \label{eq:calc-htc-assem}
       h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
-      &= \frac{8741 W cm^{-1}}{157cm^3} \div 0.0909 K cm^{-1} \nonumber \\
-      &= 611 W cm^{-3}K^{-1} \nonumber 
+      &= \frac{8741 W}{157cm^2} \div 0.0909 K \nonumber \\
+      &= 611 W cm^{-1}K^{-1} \nonumber 
 \intertext{and}
-\Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K cm^{-1}
+\Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} \times 1cm = 0.0909 K
 \intertext{where}
-h_{plank} &= \mbox{plank's heat transfer coefficient } [W cm^{-3} K^{-1}] \nonumber \\
-h_{assem} &= \mbox{one-third assembly's heat transfer coefficient } [W cm^{-3} K^{-1}] \nonumber \\
-P_{dz} &= \mbox{power produced in 1cm AHTR plank/one-third assem $\Delta z$ slice } [W cm^{-1}] \nonumber \\
-V_{coolant} &= \mbox{coolant volume in AHTR plank/one-third assem } [cm^3] \nonumber \\
+h_{plank} &= \mbox{plank's heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
+h_{assem} &= \mbox{one-third assembly's heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
+P_{dz} &= \mbox{power produced in 1cm AHTR plank/one-third assem $\Delta z$ slice } [W] \nonumber \\
+A_{coolant} &= \mbox{coolant area in AHTR plank/one-third assem } [cm^2] \nonumber \\
 \Delta T &= \mbox{temperature change across 1cm AHTR $\Delta z$ slice } [K] \\
 T_{total} &= \mbox{total temperature change from inlet to outlet } [K] \nonumber \\
 H &= \mbox{AHTR height from inlet to outlet } [cm] \nonumber 
