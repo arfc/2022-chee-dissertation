@@ -39,14 +39,21 @@
 \begin{frame}
     \frametitle{AHTR Temperature Model}
     \begin{block}{Spatial Homogenization}
-        Fuel slab discretization into 13 cells: FLiBe, left graphite, right graphite, 
-        and ten fuel cells (each cell has a different packing fraction)
+        Fuel slab discretization into 61 cells: inter-assembly FLiBe, Y-shaped graphite 
+        structure, control rod slot FLiBe, graphite spacers, each diamond shape 
+        section's inter-plank FLiBe (3), each graphite plank (18), and each
+        fuel stripe (36)
     \end{block}
     \begin{figure}[]
-        \includegraphics[width=0.5\linewidth]{../docs/figures/assembly_mg.png}
+        \begin{minipage}[c]{0.6\textwidth}
+            \centering
+            \includegraphics[width=0.5\linewidth]{../docs/figures/assembly_mg.png}
+        \end{minipage}\hfill
+        \begin{minipage}[c]{0.4\textwidth}
         \caption{\acrfull{AHTR} assembly spatially discretized into 61 \textit{cells} 
         for OpenMC multigroup calculation to produce group constants data for the 
         Moltres model.}
+    \end{minipage}
     \end{figure}
 
 \end{frame}
