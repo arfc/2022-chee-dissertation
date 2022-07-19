@@ -333,7 +333,7 @@ for the 10 x 6 fuel cells:
     \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
     \cdot \left(d\cdot sin(e\cdot y + f) + 2\right) \cdot NF \\
     \intertext{where}
-    PF(x, y) &= \mbox{packing fraction distribution across 60 cells } [-] \nonumber \\ 
+    \rho_{TRISO}(\vec{x}, \vec{y}) &= \mbox{TRISO packing fraction distribution across 60 cells } [-] \nonumber \\ 
     a, d &= \mbox{amplitude, peak deviation of the function from zero } [-] \nonumber \\
     b, e &= \mbox{angular frequency, rate of change of the function argument } [radians \cdot cm^{-1}] \nonumber \\
     c, f &= \mbox{phase, the position in its cycle the oscillation is at t = 0 } [radians]\nonumber \\
@@ -343,12 +343,11 @@ for the 10 x 6 fuel cells:
 \end{align}
 Figure \ref{fig:ahtr_assembly} depicts the 10 x 6 fuel cells.
 The sine distribution's coefficients, \textit{a b c d e f}, are the control variables 
-\gls{ROLLO} utilizes to manipulate the TRISO packing fraction distribution in the 
+\gls{ROLLO} utilizes to manipulate the $\rho_{TRISO}(\vec{x}, \vec{y})$ in the 
 one-third assembly.
-Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal TRISO 
-distribution. 
-The normalization factor normalizes the \gls{TRISO} distribution based on the 
-defined total packing fraction.
+Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal 
+$\rho_{TRISO}(\vec{x}, \vec{y})$ that optimizes objectives.
+The normalization factor is based on the defined total packing fraction.
 
 An \gls{AHTR} one-third assembly with a 0.1 total packing fraction and packing 
 fraction distribution of $PF(x, y) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
