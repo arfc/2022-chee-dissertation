@@ -630,20 +630,20 @@ model of the \gls{AHTR} plank and one-third assembly.
 The plank and one-third assembly spatially homogenized geometries are depicted in
 Figure \ref{fig:straightened_slab_mg} and Figure 
 \ref{fig:fhr_onethird_assem_homogenization}.  
-Both Moltres temperature models first solve the \gls{AHTR} neutronics and use the outputs 
-to solve the \gls{AHTR}'s temperature distribution for a defined power.
-The temperature model assumes conductive heat transfer throughout the domain 
+Both Moltres temperature models first solve the \gls{AHTR} neutronics and use the 
+outputs to solve the \gls{AHTR}'s temperature distribution for a defined power.
+The temperature models assume conductive heat transfer throughout the domain 
 and heat removal by uniform salt flow in the coolant region. 
 These assumptions ignore turbulent effects that would most likely be present. 
-However, an in-depth \gls{AHTR} Moltres model that includes turbulence modeling is 
+However, in-depth \gls{AHTR} Moltres models that includes turbulence modeling is 
 out of scope for this dissertation. 
 
 Moltres solves the 4-group diffusion equations 
 (Equation \ref{eq:moltres-diffusion-equation}) 
 as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
-In the 2D cross-sectional \gls{AHTR} steady-state temperature model, I ignore the 
+In the 2D cross-sectional \gls{AHTR} steady-state temperature models, I ignore the 
 time-dependent and velocity-dependent terms from Moltres' temperature governing 
-equation (Equation \ref{eq:moltres-temp}) since it is a steady-state model with
+equation (Equation \ref{eq:moltres-temp}) since they are steady-state models with
 no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}: 
 \begin{align}
     \label{eq:moltres-temp-ss}
