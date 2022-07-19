@@ -471,7 +471,9 @@ the OpenMC and Moltres models' workflow.
 The OpenMC model template generates an \gls{AHTR} model from the following \gls{ROLLO} 
 input parameters: 
 total fuel packing fraction ($PF_{total}$), TRISO distribution ($a, b, c, d, e, f$), 
-and coolant channel shapes ($r_{top}, r_{bot}, r_1, r_2, r_3, r_4, r_5$). 
+and coolant channel shapes ($r_{top}, r_{bot}, r_1, r_2, r_3, r_4, r_5$).
+The OpenMC simulations are run with 80 active cycles, 20 inactive cycles, and 8000 
+particles resulting in an uncertainty of $\sim 150pcm$.
 A separate OpenMC output file analyzes the OpenMC model's output and 
 calculates the $k_{eff}$ constraint and the normalized power 
 peaking factor ($PPF{fuel}$) objective value.
