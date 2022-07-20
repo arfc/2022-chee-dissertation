@@ -171,11 +171,14 @@
 \begin{frame}
     \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
     I verify that the spatial homogenization and energy discretization I chose are 
-    acceptable. I comparing key neutronics parameters (KNP) between OpenMC continuous 
-    simulation and Moltres spatially and energy homogenized simulation.
-    KNP: $k_{eff}$, reactivity coefficients, flux distribution, and neutron energy 
+    acceptable. I comparing key neutronics parameters (KNPs) between: 
+    \begin{itemize} 
+        \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity
+        \item Moltres simulation with 4-group energy and spatial homogenization
+    \end{itemize}
+    KNPs: $k_{eff}$, reactivity coefficients, flux distribution, and neutron energy 
     spectrum. 
-    \begin{block}{Effective Multiplication Factor}
+    \begin{block}{$k_{eff}$}
         \begin{table}
             \includegraphics[width=0.85\linewidth]{figures/benchmark-keff.png}
         \end{table}
@@ -187,7 +190,20 @@
     \end{block}
 \end{frame}
 
-% Key neutronics parameter verification? 
+\begin{frame}
+    \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{figure}[]
+                \centering
+                \includegraphics[width=\linewidth]{figures/benchmark-flux.png} 
+                \caption{xx}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.4\textwidth} 
+        \end{column}
+        \end{columns}
+\end{frame}
 
 \subsection{AHTR Temperature Model Results}
 \begin{frame}
