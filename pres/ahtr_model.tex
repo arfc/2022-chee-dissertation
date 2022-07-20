@@ -176,11 +176,10 @@
         \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity
         \item Moltres simulation with 4-group energy and spatial homogenization
     \end{itemize}
-    KNPs: $k_{eff}$, reactivity coefficients, flux distribution, and neutron energy 
-    spectrum. 
+    KNPs: $k_{eff}$, reactivity coefficients, flux distribution, and neutron spectrum. 
     \begin{block}{$k_{eff}$}
         \begin{table}
-            \caption{Effective multiplication factor comparison.}
+            \caption{ $k_{eff}$ comparison.}
             \includegraphics[width=0.85\linewidth]{figures/benchmark-keff.png}
         \end{table}
     \end{block}
@@ -193,25 +192,21 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
-    \begin{block}{Flux Distribution}
+    \frametitle{AHTR Temp Model Flux Verification}
     \begin{figure}[]
         \centering
-        \includegraphics[width=0.75\linewidth]{figures/benchmark-flux.png} 
+        \includegraphics[width=0.8\linewidth]{figures/benchmark-flux.png} 
         \caption{4-group flux distribution comparison.}
     \end{figure}
-    \end{block}
 \end{frame}
 
 \begin{frame}
-    \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
-        \begin{block}{Neutron Energy Spectrum}
+    \frametitle{AHTR Temp Model Neutron Spectrum Verification}
             \begin{figure}[]
                 \centering
                 \includegraphics[width=0.7\linewidth]{figures/benchmark-spectrum.png} 
                 \caption{Neutron Energy Spectrum Comparison.}
             \end{figure}
-            \end{block}
         Moltres replicated the relevant neutronics parameters with sufficient accuracy
         using OpenMC's group constant data for the AHTR full assembly model.
 \end{frame}
