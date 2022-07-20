@@ -826,7 +826,8 @@ minimizing the radius while constraining the problem to have $k_{eff} >= 1.0$.
                     "output_script": ["python", "get_sphere_keff.py"]
                 }
             },
-            "constraints": {"keff": {"operator": [">="], "constrained_val": [1.0]}},
+            "constraints": {"keff": {"operator": [">="], 
+                            "constrained_val": [1.0]}},
             "algorithm": {
                 "parallel": "multiprocessing",
                 "keep_files": "none",
