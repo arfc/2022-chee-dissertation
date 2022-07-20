@@ -153,10 +153,10 @@
 
 \begin{frame}
     \frametitle{AHTR Temperature Model Spatial Homogenization}
-        Fuel assembly discretization into 61 cells: inter-assembly FLiBe, Y-shaped graphite 
-        structure, control rod slot FLiBe, graphite spacers, each diamond shape 
-        section's inter-plank FLiBe (3), each graphite plank (18), and each
-        fuel stripe (36)
+        \textbf{Fuel assembly 61 cell discretization}: inter-assembly FLiBe, 
+        Y-shaped graphite structure, control rod slot FLiBe, graphite spacers, 
+        each diamond shape section's inter-plank FLiBe (3), each graphite plank (18), 
+        and each fuel stripe (36)
     \begin{figure}[]
         \begin{minipage}[c]{0.75\textwidth}
             \centering
@@ -170,13 +170,13 @@
 
 \begin{frame}
     \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
-    I verify that the spatial homogenization and energy discretization I chose are 
-    acceptable. I comparing key neutronics parameters (KNPs) between: 
+    I \textbf{verify acceptable spatial homogenization and energy discretization} by 
+    comparing key neutronics parameters (KNPs) between: 
     \begin{itemize} 
         \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity
         \item Moltres simulation with 4-group energy and spatial homogenization
     \end{itemize}
-    KNPs: $k_{eff}$, reactivity coefficients, flux distribution, and neutron spectrum. 
+    \textbf{KNPs}: $k_{eff}$, reactivity coefficients, flux distribution, and neutron spectrum. 
         \begin{table}
             \caption{ $k_{eff}$ comparison.}
             \includegraphics[width=0.85\linewidth]{figures/benchmark-keff.png}
