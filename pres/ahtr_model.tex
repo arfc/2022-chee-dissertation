@@ -114,12 +114,10 @@
             from the purely neutronics OpenMC simulations
         \end{itemize}
     \end{block}
-
-    \begin{block}{Steps to produce Moltres AHTR Temperature Model}
+    \begin{block}{Assumptions}
         \begin{itemize}
-          \item OpenMC neutronics model produces group constants data for the Moltres model
-          \item Moltres model mesh generation
-          \item Moltres temperature model accepts group constants data and mesh
+            \item Conductive heat transfer 
+            \item Heat removal by uniform salt flow in coolant regions
         \end{itemize}
     \end{block}
 
@@ -127,6 +125,13 @@
 
 \begin{frame}
     \frametitle{AHTR Temperature Model}
+    \begin{block}{Steps to produce Moltres AHTR Temperature Model}
+        \begin{itemize}
+          \item OpenMC neutronics model produces group constants data for the Moltres model
+          \item Moltres model mesh generation
+          \item Moltres temperature model accepts group constants data and mesh
+        \end{itemize}
+    \end{block}
     \begin{block}{Energy Homogenization}
         \begin{table}[]
             \centering

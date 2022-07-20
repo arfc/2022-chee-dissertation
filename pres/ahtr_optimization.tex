@@ -36,8 +36,43 @@
 \end{frame}
 
 \subsection{ROLLO Verification}
-% verification? 
+\begin{frame}
+    \frametitle{ROLLO Successfully Verified with Pu-239 Critical Bare Sphere}
+    \begin{columns}
+        \begin{column}{0.5\textwidth} 
+            \begin{block}{ROLLO Optimization Parameters}
+                Control Variables: $1.0 \leq$ radius $ \leq 8.0$ 
+                Constraint: $k_{eff} \geq 1.0$
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \includegraphics[width=0.9\linewidth]{figures/radius-convergence-pres.png} 
+                \caption{Results for each generation for \gls{ROLLO}'s genetic algorithm 
+                optimization to the find the critical radius of a  $^{239}Pu$ bare sphere.}
+            \end{figure}
+        \end{column}
+        \end{columns}
+\end{frame}
+
 \subsection{Optimization Methodology}
-% methodology for optimization... 
+\begin{frame}
+    \frametitle{AHTR Optimization Problem Definitions}
+    \begin{block}{Varied Input Parameters}
+        \begin{itemize}
+            \item TRISO fuel packing fraction fraction distribution 
+            \item Total fuel packing fraction 
+            \item Coolant channel shape 
+        \end{itemize}
+    \end{block}
+    \begin{block}{AHTR Optimization Objectives}
+        \begin{figure}
+            \includegraphics[width=0.9\linewidth]{figures/ahtr-opt-obj.png} 
+            \caption{Optimization problem objectives.}
+        \end{figure}
+    \end{block}
+\end{frame}
+
 \subsection{AHTR Plank Optimization Results}
+
 \subsection{AHTR One-Third Assembly Optimization Results}
