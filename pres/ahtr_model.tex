@@ -112,6 +112,7 @@
             full assembly multiphysics simulations 
             \item AHTR Moltres simulations captures thermal feedback effects, absent
             from the purely neutronics OpenMC simulations
+            \item I model the steady-state temperature of a 2D x-y AHTR cross-section
         \end{itemize}
     \end{block}
     \begin{block}{Assumptions}
@@ -125,11 +126,14 @@
 
 \begin{frame}
     \frametitle{AHTR Temperature Model}
+    For successful AHTR Moltres simulation, I must establish suitable spatial and
+    energy homogenization that preserves accuracy while maintaining an acceptable
+    runtime
     \begin{block}{Steps to produce Moltres AHTR Temperature Model}
         \begin{itemize}
-          \item OpenMC neutronics model produces group constants data for the Moltres model
-          \item Moltres model mesh generation
-          \item Moltres temperature model accepts group constants data and mesh
+          \item OpenMC neutronics model produces group constants for the Moltres model
+          \item Mesh generation
+          \item Moltres temperature model accepts group constants and mesh
         \end{itemize}
     \end{block}
     \begin{block}{Energy Homogenization}
