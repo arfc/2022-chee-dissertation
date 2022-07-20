@@ -32,29 +32,28 @@
         \centering
         \begin{figure}
             \includegraphics[width=\linewidth]{figures/rollo-flow.png} 
-            \caption{ROLLO Genetic Algorithm Flow.}
+            \caption{ROLLO Pu-239 Critical Bare Sphere Input File.}
         \end{figure}
     \end{minipage}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ROLLO Pu-239 Critical Bare Sphere Input File}
+    \begin{figure}
+        \includegraphics[width=0.8\linewidth]{figures/rollo-verify-file.png} 
+        \caption{ROLLO Genetic Algorithm Flow.}
+    \end{figure}
+    % add jinja templating... 
 \end{frame}
 
 \subsection{ROLLO Verification}
 \begin{frame}
     \frametitle{ROLLO Successfully Verified with Pu-239 Critical Bare Sphere}
-    \begin{columns}
-        \begin{column}{0.5\textwidth} 
-            \begin{block}{ROLLO Optimization Parameters}
-                Control Variables: $1.0 \leq$ radius $ \leq 8.0$ 
-                Constraint: $k_{eff} \geq 1.0$
-            \end{block}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{figure}
-                \includegraphics[width=0.9\linewidth]{figures/radius-convergence-pres.png} 
-                \caption{Results for each generation for \gls{ROLLO}'s genetic algorithm 
-                optimization to the find the critical radius of a  $^{239}Pu$ bare sphere.}
-            \end{figure}
-        \end{column}
-        \end{columns}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{../docs/figures/radius-convergence.png} 
+        \caption{Results for each generation for \gls{ROLLO}'s genetic algorithm 
+        optimization to the find the critical radius of a  $^{239}Pu$ bare sphere.}
+    \end{figure}
 \end{frame}
 
 \subsection{Optimization Methodology}
