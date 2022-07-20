@@ -125,7 +125,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{AHTR Temperature Model}
+    \frametitle{AHTR Temperature Model Setup}
     For successful AHTR Moltres simulation, I must establish suitable spatial and
     energy homogenization that preserves accuracy while maintaining an acceptable
     runtime
@@ -169,7 +169,22 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{AHTR Temperature Model Key Neutronics Parameter Verification}
+    \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
+    I verify that the spatial homogenization and energy discretization I chose are 
+    acceptable. I comparing key neutronics parameters (KNP) between OpenMC continuous 
+    simulation and Moltres spatially and energy homogenized simulation.
+    KNP: $k_{eff}$, reactivity coefficients, flux distribution, and neutron energy 
+    spectrum. 
+    \begin{block}{Effective Multiplication Factor}
+        \begin{table}
+            \includegraphics[width=0.85\linewidth]{figures/benchmark-keff.png}
+        \end{table}
+    \end{block}
+    \begin{block}{Reactivity Coefficients}
+        \begin{table}
+            \includegraphics[width=0.85\linewidth]{figures/benchmark-coeff.png}
+        \end{table}
+    \end{block}
 \end{frame}
 
 % Key neutronics parameter verification? 
