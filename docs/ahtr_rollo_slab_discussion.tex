@@ -42,13 +42,13 @@ Figure \ref{fig:triso-0.023}).
     distribution.Both distributions shown in Figure \ref{fig:triso-0.023}.}
 	\label{tab:0.023-plank-fission-rate}
     \footnotesize
-    \begin{tabular}{p{1.5cm}lp{3.7cm}p{4cm}p{2.5cm}}
+    \begin{tabular}{p{1.5cm}lp{3.7cm}p{3.7cm}p{2.8cm}}
     \hline
     \textbf{Energy Group} & 
     \textbf{$\%$ of Total} &
     \textbf{Most-minimized $PF_{total}$ Fission \newline [reactions/src]} & 
     \textbf{Flat $PF_{total}$ Fission [reactions/src]} & 
-    \textbf{$\%$ Fission \newline Difference}\\
+    \textbf{$\%$ Fission \newline Diff}\\
     \hline 
     1 & 00.21 & 0.001260 & 0.001234 & \Plus2.07 \\
     2 & 01.16 & 0.006653 & 0.006658 & \Minus0.07 \\
@@ -377,7 +377,7 @@ $PF_{total}$ = 0.0292 TRISO distribution (both shown in Figure \ref{fig:triso-0.
     \textbf{Energy Group} &
     \textbf{$max(\phi)/min(\phi)$ Most-minimized $PPF_{fuel}$ TRISO Distribution} & 
     \textbf{$max(\phi)/min(\phi)$ Constant TRISO Distribution} & 
-    \textbf{$\%$ Difference (Mostminimized - Constant)}\\
+    \textbf{$\%$ Diff}\\
     \hline 
     1 & 1.137 & 1.152 & \Minus1.31 \\
     2 & 1.025 & 1.020 & \Plus0.49 \\
@@ -396,16 +396,16 @@ has $\sim 0.07$ TRISO variation and its flux distribution is $3.96\%$ flatter th
 the constant $PF_{total}$ = 0.0979 flux distribution.  
 Higher $PF_{total}$ in simulation p-1c means that there is more fuel, resulting in 
 more self-shielding effects. 
-This results in TRISO distribution variation having a stronger effect in neutralizing 
+This results in the TRISO distribution variation having a stronger effect in neutralizing 
 self-shielding. 
 
 \paragraph{Simulation p-1f}
 In Section \ref{sec:plank-1-obj-ppf}'s simulation p-1f, I conducted a single-objective 
-optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) 
-by varying coolant channel shape.
+optimization simulation to minimize the fuel-normalized power peaking factor ($PPF_{fuel}$) 
+by varying the coolant channel shape.
 Comparison of simulation p-1c and p-1f's results in Figures 
 \ref{fig:slab-obj-1-ppf-evol-coolant} and \ref{fig:slab-obj-1-ppf-evol}
-show that coolant channel shape variation barely has an impact on $PPF_{fuel}$ as 
+show that the coolant channel shape variation barely has an impact on $PPF_{fuel}$ as 
 \gls{TRISO} distribution variation: the average $PPF_{fuel}$ due to \gls{TRISO} 
 variation decreased by 0.1 over 10 generations, while average $PPF_{fuel}$ due to 
 coolant channel shape variation only decreased negligibly over 10 generations. 
@@ -417,7 +417,7 @@ The minimize $PPF_{fuel}$ objective is driven by flattening thermal (Group 4) fl
 distribution. 
 The minimize $PPF_{fuel}$ objective has correlations with the following input parameters: 
 $PF_{total}$ and TRISO packing fraction distribution. 
-The objective has no correlation with coolant channel shape input parameter.
+The objective has no correlation with the coolant channel shape input parameter.
 
 \subsection{Discussion: Multi-Objective Optimization}
 \label{sec:plank-discussion-multi}
@@ -431,9 +431,9 @@ by the multi-objective optimization simulations.
 
 \subsubsection{Simulation p-2a}
 In Section \ref{sec:p-2a}'s simulation p-2a, I conducted a two-objective 
-optimization simulation to minimize total fuel packing fraction ($PF_{total}$) and 
+optimization simulation to minimize the total fuel packing fraction ($PF_{total}$) and 
 maximum plank temperature ($T_{max}$) by varying total fuel 
-packing fraction ($PF_{total}$) and TRISO distribution. 
+packing fraction ($PF_{total}$) and the TRISO distribution. 
 \gls{ROLLO} found six widely spread reactor models on simulation p-2a's Pareto 
 front (Figure \ref{fig:slab-obj-2-pftemp}). 
 
