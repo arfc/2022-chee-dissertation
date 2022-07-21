@@ -1,4 +1,24 @@
-\subsection{Key Neutronics Parameters Verification}
+\subsection{AHTR Moltres Temperature Model}
+\begin{frame}
+    \frametitle{AHTR Temperature Model}
+    \begin{block}{AHTR Temperature Model}
+        \begin{itemize}
+            \item I used the open-source MSR simulation tool, Moltres, to conduct AHTR
+            full assembly multiphysics simulations 
+            \item AHTR Moltres simulations captures thermal feedback effects, absent
+            from the purely neutronics OpenMC simulations
+            \item I model the steady-state temperature of a 2D x-y AHTR cross-section
+        \end{itemize}
+    \end{block}
+    \begin{block}{Assumptions}
+        \begin{itemize}
+            \item Conductive heat transfer 
+            \item Heat removal by uniform salt flow in coolant regions
+        \end{itemize}
+    \end{block}
+
+\end{frame}
+
 \begin{frame}
     \frametitle{AHTR Temperature Model Setup}
     For successful AHTR Moltres simulation, I must establish suitable spatial and
@@ -39,6 +59,7 @@
     \end{figure}
 \end{frame}
 
+\subsection{Key Neutronics Parameters Verification}
 \begin{frame}
     \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
     I \textbf{verify acceptable spatial homogenization and energy discretization} by 
