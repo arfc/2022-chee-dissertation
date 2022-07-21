@@ -75,16 +75,16 @@ between the $PF_{total}$ and the coolant channel shape (demonstrated in Figure
 \paragraph{Summary}
 The minimize $PF_{total}$ objective is driven by maximizing the total fission reaction 
 rates. 
-The minimize $PF_{total}$ objective has correlations with the following input parameters: 
-$PF_{total}$ and TRISO packing fraction distribution. 
-The objective has no correlation with coolant channel shape input parameter. 
+The minimize $PF_{total}$ objective has correlations with the  
+$PF_{total}$ and TRISO packing fraction distribution input parameters. 
+The objective has no correlation with the coolant channel shape input parameter. 
 
 \subsection{Discussion: Minimize $T_{max}$ Objective}
 \label{sec:plank-discussion-temp}
 \paragraph{Simulation p-1b}
 In Section \ref{sec:plank-1-obj-temp}'s simulation p-1b, I conducted a single-objective 
-optimization simulation to minimize maximum plank temperature ($T_{max}$) by varying 
-TRISO distribution. 
+optimization simulation to minimize the maximum plank temperature ($T_{max}$) by varying 
+the TRISO distribution. 
 In simulation p-1b, \gls{ROLLO} found that an \gls{AHTR} plank model with a mostly 
 flat TRISO distribution most-minimized $T_{max}$ 
 (Figure \ref{fig:slab-obj-1-temp-final}).
@@ -109,21 +109,21 @@ has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
 
 \paragraph{Simulation p-1e}
 In Section \ref{sec:plank-1-obj-temp}'s simulation p-1e, I conducted a single-objective 
-optimization simulation to minimize maximum plank temperature ($T_{max}$) by varying 
-coolant channel shape. 
+optimization simulation to minimize the maximum plank temperature ($T_{max}$) by varying 
+the coolant channel shape. 
 In simulation p-1e, \gls{ROLLO} found that there is a negative linear correlation 
-between the plank's $T_{max}$ and total radius ($r_{tot}$), shown in 
+between the plank's $T_{max}$ and total radius ($r_{tot} = r_{bot} + r_{top}$), shown in 
 Figure \ref{fig:slab-obj-1-temp-final-coolant}. 
 Comparison of simulation p-1b and p-1e's results in 
 Figures \ref{fig:slab-obj-1-temp-evol} and \ref{fig:slab-obj-1-temp-evol-coolant} 
-show that coolant channel shape variation does not have as high of an impact on 
+shows that the coolant channel shape variation does not have as high of an impact on 
 $T_{max}$ as \gls{TRISO} distribution variation: the average $T_{max}$ due to 
 \gls{TRISO} variation decreased by 60K over 10 generations, while average $T_{max}$ due 
-to coolant channel shape variation only decreased by 15K over 10 generations. 
+to the coolant channel shape variation only decreased by 15K over 10 generations. 
 
 \paragraph{Summary}
 The minimize $T_{max}$ objective is driven by minimizing the plank's maximum temperature; 
-and flattens TRISO distribution and maximizes coolant channel shape's 
+and flattens the TRISO distribution and maximizes the coolant channel shape's 
 $r_{bot}$ and $r_{top}$ to achieve the objective. 
 The minimize $T_{max}$ objective has correlations with all the input parameters: 
 $PF_{total}$, TRISO packing fraction distribution, and coolant channel shape. 
@@ -132,9 +132,8 @@ is more influenced by the TRISO distribution than the coolant channel shape.
 
 \subsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 \label{sec:plank-discussion-ppf}
-In an effort to understand the driving factors for the minimize $PPF_{fuel}$ 
-objective, I conduct an equation analysis to determine the \gls{AHTR} plank properties 
-that influence $PPF_{fuel}$. 
+I conduct an equation analysis to determine the \gls{AHTR} plank properties 
+that influence the $PPF_{fuel}$ objective. 
 I then demonstrate the derived relationship in simulation p-1c and p-2b's results. 
 
 \subsubsection{Equation Analysis}
@@ -217,10 +216,10 @@ in simulation p-1c and p-2b's results.
 
 \paragraph{Simulation p-1c}
 In Section \ref{sec:plank-1-obj-ppf}'s simulation p-1c, I conducted a single-objective 
-optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) 
+optimization simulation to minimize the fuel-normalized power peaking factor ($PPF_{fuel}$) 
 by varying TRISO distribution. 
 In simulation p-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.0979, an \gls{AHTR} 
-plank model with TRISO distribution that peaks near the edges of the fuel region of 
+plank model with the TRISO distribution that peaks near the edges of the fuel region of 
 the plank and a minimum point in plank's center with a variation of $\sim0.07$, 
 most-minimized $PPF_{fuel}$ (Figure \ref{fig:slab-obj-1-ppf}). 
 
@@ -253,10 +252,10 @@ TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
     distribution that most-minimized $PPF_{fuel}$ and a constant $PF_{total}$ = 0.0979 
     TRISO distribution. 
     \gls{AHTR} plank's centerline neutron flux distribution in 4 groups at 948K. 
-    Centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
-    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
-    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
-    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    The centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV;
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
     \label{fig:flux-comparison-0.0979-plank}
 \end{figure}
@@ -282,9 +281,9 @@ $PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.
     \caption{Flux value comparison between Figure \ref{fig:slab-obj-1-ppf-final}'s TRISO 
     distribution that most-minimized $PPF_{fuel}$ and a constant $PF_{total}$ = 0.0979 
     TRISO distribution. 
-    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV, 
-    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV,
-    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV,
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV;
     Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
 	\label{tab:flux-comparison-0.0979-plank}
     \footnotesize
@@ -293,7 +292,7 @@ $PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.
     \textbf{Energy Group} &
     \textbf{$max(\phi)/min(\phi)$ Most-minimized $PPF_{fuel}$ TRISO Distribution} & 
     \textbf{$max(\phi)/min(\phi)$ Constant TRISO Distribution} & 
-    \textbf{$\%$ Difference (Mostminimized - Constant)}\\
+    \textbf{$\%$ Diff}\\
     \hline 
     1 & 1.093 & 1.147 & \Minus4.68 \\
     2 & 1.024 & 1.027 & \Minus0.22\\
@@ -309,8 +308,8 @@ $PPF_{fuel}$ (as shown by Equation \ref{eq:flux-prop-ppf}).
 
 \paragraph{Simulation p-2b}
 In Section \ref{sec:p-2b}'s simulation p-2b, I conducted a two-objective 
-optimization simulation to minimize fuel-normalized power peaking factor ($PPF_{fuel}$) 
-and total fuel packing fraction ($PF_{total}$) by varying TRISO distribution. 
+optimization simulation to minimize the fuel-normalized power peaking factor ($PPF_{fuel}$) 
+and the total fuel packing fraction ($PF_{total}$) by varying the TRISO distribution. 
 In simulation p-2b, ROLLO found that the TRISO distribution with the most-minimized 
 $PPF_{fuel}$ has $PF_{total}$ = 0.029 and a TRISO distribution that peaks in the 
 center of the plank and both sides with a variation of $\sim0.02$ 
@@ -324,7 +323,7 @@ flux to simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution to unde
 why the latter enabled a lower $PPF_{fuel}$. 
 Figure \ref{fig:triso-0.0292} shows the TRISO distributions with 
 their $PPF_{fuel}$ values for the two compared 
-simulations: Simulation p-2b's (Figure \ref{fig:slab-obj-2-pfppf}) most-minimized 
+simulations: simulation p-2b's (Figure \ref{fig:slab-obj-2-pfppf}) most-minimized 
 $PPF_{fuel}$ TRISO distribution and the constant $PF_{total}$ = 0.029 TRISO distribution.
 \begin{figure}[htbp!]
     \centering
