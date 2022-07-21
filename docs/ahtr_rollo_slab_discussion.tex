@@ -593,7 +593,7 @@ the $PPF_{fuel}$ objective tries to flatten thermal flux.
 
 \subsubsection{Simulation p-3b}
 In Section \ref{sec:p-3b}'s simulation p-3b, I conducted a three-objective 
-optimization simulation to minimize total fuel packing fraction ($PF_{total}$), 
+optimization simulation to minimize the total fuel packing fraction ($PF_{total}$), 
 maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$) by varying $PF_{total}$, TRISO distribution, and coolant channel shape.
 \gls{ROLLO} found 21 widely spread reactor models on simulation p-3b's Pareto 
@@ -601,7 +601,7 @@ front (Figure \ref{fig:slab-obj-3-all}).
 
 In simulation p-3b, \gls{ROLLO} found that the plank model with the most-minimized 
 $T_{max}$ has a constant TRISO distribution, $PF_{total} = 0.034$, and $r_{tot}=0.657cm$ 
-(the dark green distribution in Figure 
+(reactor model 3 with the green dashed distribution in Figure 
 \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
 This distribution follows a similar flat shape as simulation p-1b's most-minimized 
 $T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}) and has large 
@@ -612,20 +612,20 @@ and $r_{tot}$ determined in simulation p-1e (Sections \ref{sec:plank-1-obj-temp}
 In simulation p-3b, \gls{ROLLO} found that the plank model with the most-minimized 
 $PF_{total}$ has an oscillating TRISO distribution with $\sim0.01$ variation,
 $PF_{total} = 0.026$, and $r_{tot}=0.505cm$
-(the pink distribution in Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
+(reactor model 21 with the blue dashed distribution in Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
 This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
 distribution (Figure \ref{fig:slab-obj-1-pf-final}) with an oscillating TRISO 
 distribution.
 
 In simulation p-3b, \gls{ROLLO} found that the plank model with the most-minimized 
 $PPF_{fuel}$ has a constant TRISO distribution, $PF_{total} = 0.036$, and 
-$r_{tot}=0.307cm$ (the light green distribution in Figure 
+$r_{tot}=0.307cm$ (reactor model 12 with the orange dashdot distribution in Figure 
 \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
 The constant TRISO distribution is unexpected for the most-minimized $PPF_{fuel}$ result. 
 However, as mentioned before the $PF_{total}$ and $PPF_{fuel}$ relationship
 results in unexpected TRISO distributions at different $PF_{total}$ values. 
 Simulation p-1d and p-1f concluded that there was no correlation between $PF_{total}$ 
-and $PPF_{fuel}$ with coolant channel shape, thus, the large $r_{bot}$ and $r_{top}$ 
+and $PPF_{fuel}$ with the coolant channel shape, thus, the large $r_{bot}$ and $r_{top}$ 
 values are only influenced by the minimize $T_{max}$ objective. 
 
 Similar to simulation p-3a, most of the \gls{TRISO} distributions on simulation 
