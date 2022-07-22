@@ -36,14 +36,25 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Geometry}
-    \begin{figure}
-        \includegraphics[width=0.49\linewidth]{../docs/figures/ahtr_assembly.png} 
-        \caption{AHTR One-Third Assembly.}
-    \end{figure}
-    \begin{figure}
-        \includegraphics[width=0.49\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
-        \caption{AHTR One-Third Assembly.}
-    \end{figure}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \includegraphics[width=\linewidth]{../docs/figures/ahtr_assembly.png} 
+                \caption{AHTR One-Third Assembly.}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth} 
+            \begin{figure}
+                \includegraphics[width=\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
+                \caption{AHTR One-Third Assembly.}
+            \end{figure}
+        \end{column}
+        \end{columns}
+    Two sine distributions govern TRISO packing fraction distribution: 
+    \begin{align}
+        \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
+    \cdot \left(d\cdot sin(e\cdot y + f) + 2\right) \cdot NF \nonumber
+    \end{align}
 \end{frame}
 
 \begin{frame}
