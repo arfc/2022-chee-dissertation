@@ -85,12 +85,36 @@ The geometries are adapted from the \gls{FHR} benchmark's \gls{AHTR} design,
 outlined in Chapter \ref{chap:fhr-benchmark} (see Figure \ref{fig:ahtr-fuel-assembly}).
 The main differences occur in the fuel plank region. 
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices 
-within two fuel stripes in the fuel plank region. 
+within two fuel stripes in the fuel plank region, shown in Figure 
+\ref{fig:ahtr-fuel-plank-2}. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{ahtr-fuel-plank.png} 
+    \resizebox{0.4\textwidth}{!}{
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (Fuel Structure)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (Fuel Plank) \\
+            \textcolor{fhrgreen}{$\blacksquare$} & Graphite (Fuel Stripe) \\
+            \textcolor{fhryellow}{$\blacksquare$} & TRISO particle \\
+            \textcolor{fhrpink}{$\blacksquare$} & Graphite (Spacer) \\
+            \end{tabular}}}
+            \hspace{0.5cm}
+            \begin{tikzpicture}
+                \draw[ thick,-latex] (0,0) -- (1.3,0) node[anchor=south west] {$x$};
+                \draw[ thick,-latex] (0,0) -- (0,1.3) node[anchor=south west] {$y$};
+                \draw[ thick,-latex] (0,0) -- (1.3,1.3) node[anchor=south west] {$z$};
+               \tkzText[above](-0.5,1){}
+               \end{tikzpicture} 
+    \caption{\acrfull{AHTR}'s fuel plank, with the magnification of 
+    a spacer and segment of the fuel stripe with embedded \gls{TRISO} particles.}
+    \label{fig:ahtr-fuel-plank-2}
+\end{figure}
 For the \gls{AHTR} plank and \gls{AHTR} one-third assembly optimization geometries, 
 I discretized each plank into ten cells with random TRISO packing and an individually 
 controlled packing fraction. 
 Thus, the \gls{AHTR} plank has ten fuel cells, and the \gls{AHTR} one-third assembly 
-has 60 fuel cells.  
+has 60 fuel cells (10 cells for 6 planks).  
 The subsequent subsections describe each geometry in further detail.
 I also omit the graphite spacers. 
 
@@ -129,8 +153,8 @@ ten fuel cells with random \gls{TRISO} packing in each cell.
     \ref{fig:ahtr-fuel-assembly} and \ref{fig:ahtr-fuel-plank}.}
     \label{fig:straightened_plank}
 \end{figure}
-The plank has $27.1 \times 3.25 \times 1.85\ cm^3$ dimensions with reflective 
-boundary conditions.
+The plank has $27.1 \times 3.25 \times 1.85\ cm^3$ in the x, y, and z dimensions,
+respectively, and reflective boundary conditions.
 
 I used the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
 except that I homogenized each \gls{TRISO} particle's four outer layers: 
