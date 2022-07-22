@@ -1,7 +1,7 @@
 \chapter{AHTR Modeling and Optimization Methodology}
 \glsresetall
 \label{chap:method}
-In this chapter, I describe the modeling and optimization methodology of the 
+In this chapter, I describe the modeling methodology of the 
 \gls{AHTR} plank and one-third assembly optimization for non-conventional 
 geometries and parameters conducted using the \gls{ROLLO} software.
 %The optimization tool should enable the placement of fuel, moderation, and coolant 
@@ -13,16 +13,22 @@ geometries and parameters conducted using the \gls{ROLLO} software.
 %space. 
 %The work done for this dissertation is only an intermediate step towards developing 
 %a truly arbitrary geometry expression. 
-The subsequent sections define the optimization problem, describe the 
-\gls{AHTR} geometries, outline the \gls{AHTR} modeling workflow, verify the \gls{AHTR} 
-models, and describe the process of tuning \gls{ROLLO}'s hyperparameters. 
+The subsequent sections define the optimization problem (Section \ref{opt-problem}), 
+describe the \gls{AHTR} geometries (Section \ref{sec:ahtr-geometry}), 
+outline the \gls{AHTR} modeling workflow (Section \ref{sec:ahtr-model-workflow}), 
+verify the \gls{AHTR} models (Section \ref{sec:ahtr_model_verification}), 
+and describe the process of tuning \gls{ROLLO}'s hyperparameters (Section 
+\ref{sec:hyperparameter-studies}). 
 
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
+In an effort toward optimizing the \gls{AHTR} design for non-conventional geometries 
+and parameters. Because this design has double heterogenity, I varied two aspects of 
+the fuel density in the system. 
 I chose to vary the following \gls{AHTR} parameters: 
 \begin{itemize}
-    \item \gls{TRISO} fuel packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
-    \item Total fuel packing fraction ($PF_{total}$)
+    \item \gls{TRISO} fuel packing fraction distribution ($\rho_{TRISO}(\vec{r})$),
+    \item Total fuel packing fraction ($PF_{total}$), and 
     \item Coolant channel shape
 \end{itemize} 
 Varying the \gls{TRISO} fuel packing fraction distribution allows us to explore how 
@@ -72,6 +78,7 @@ The \gls{AHTR} plank optimization is a preliminary study to inform the more comp
 In the next section, I will describe both geometries. 
 
 \section{AHTR Geometry for Optimization Problem}
+\label{sec:ahtr-geometry}
 I apply the optimization process to the \gls{AHTR} plank and \gls{AHTR} one-third
 assembly geometries.
 The geometries are adapted from the \gls{FHR} benchmark's \gls{AHTR} design,
@@ -196,6 +203,7 @@ uses the \gls{TRISO} particle outer four-layer
 homogenization described in Section \ref{sec:ahtr-plank-geometry}.
 
 \section{AHTR Model Workflow}
+\label{sec:ahtr-model-workflow}
 In a \gls{ROLLO} input file, I define control variables that the genetic algorithm 
 uses to vary the \gls{AHTR} parameters described in Section \ref{sec:opt-problem}.
 The control variables are input into the nuclear software templates to model different 
