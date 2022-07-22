@@ -10,7 +10,7 @@ design space enabled by additive manufacturing.
 As exploring the design space of non-conventional geometries and parameters on 
 reactors has been applied in very limited circumstances (previous attempts described 
 in Section \ref{sec:lit-review-reactor-arbitrary}), this dissertation must 
-systematically explore and then constrain the large design space. 
+systematically explore and constrain the large design space. 
 As this work is a proof of concept, this dissertation is only an intermediate step 
 towards developing a truly arbitrary geometry expression. 
 
@@ -24,9 +24,7 @@ and describe the process of tuning \gls{ROLLO}'s hyperparameters (Section
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
 In an effort toward optimizing the \gls{AHTR} design for non-conventional geometries 
-and parameters. 
-Because this design has double heterogenity, I varied two aspects of 
-the fuel density in the system. 
+and parameters, 
 I chose to vary the following \gls{AHTR} parameters: 
 \begin{itemize}
     \item \gls{TRISO} fuel packing fraction distribution ($\rho_{TRISO}(\vec{r})$),
@@ -38,11 +36,11 @@ heterogeneous fuel distributions impact reactor performance.
 In Section \ref{sec:fhr-benchmark-keff}, the \gls{FHR} benchmark results demonstrated 
 that increased fuel packing does not always correspond with increased $k_{eff}$ due to 
 self-shielding effects. 
-Varying total fuel packing fraction and TRISO distribution enable synergistic
+Varying total fuel packing fraction and TRISO distribution enables synergistic
 exploration of how heterogenous TRISO distribution could minimize self-shielding and 
 thus, reduce the fuel required for a reactor design. 
 The coolant channel shape variation enables exploration of how non-uniform 
-channel shapes impact reactor performance. 
+channel shapes impacts heat transfer. 
 
 I selected three key \gls{AHTR} optimization objectives that address contrasting reactor 
 core qualities. 
