@@ -26,7 +26,7 @@
     \begin{align}
         \rho_{TRISO}(\vec{x}) &= \left(\textbf{a}\cdot sin(\textbf{b}\cdot x + \textbf{c}) + 2\right) \cdot NF \nonumber
     \end{align}
-    \textbf{$r_{top}$} and $r_{bot}$ control coolant channel shape: 
+    $r_{top}$ and $r_{bot}$ control coolant channel shape: 
     \begin{figure}
         \includegraphics[width=\linewidth]{../docs/figures/coolant-channel-shape.png} 
         \caption{AHTR Plank with coolant channel shape variation, $r_{top}$ = 0.2cm and 
@@ -36,25 +36,29 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Geometry}
+    \vspace{-0.5cm}
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \begin{figure}
                 \includegraphics[width=\linewidth]{../docs/figures/ahtr_assembly.png} 
-                \caption{AHTR One-Third Assembly.}
+                \caption{AHTR one-third assembly with ten randomly packed fuel cells in 
+                each graphite plank.}
             \end{figure}
         \end{column}
         \begin{column}{0.5\textwidth} 
             \begin{figure}
                 \includegraphics[width=\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
-                \caption{AHTR One-Third Assembly.}
+                \caption{AHTR one-third assembly with coolant channel shape variation, 
+                $r_1, r_2, r_3, r_4, r_5$ = 0.3cm, 0.2cm, 0.1cm, 0.2cm, 0.3cm.}
             \end{figure}
         \end{column}
         \end{columns}
     Two sine distributions govern TRISO packing fraction distribution: 
     \begin{align}
-        \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(a\cdot sin(b\cdot x + c) + 2\right) 
-    \cdot \left(d\cdot sin(e\cdot y + f) + 2\right) \cdot NF \nonumber
+        \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(\textbf{a}\cdot sin(\textbf{b}\cdot x + \textbf{c}) + 2\right) 
+    \cdot \left(\textbf{d}\cdot sin(\textbf{e}\cdot y + \textbf{f}) + 2\right) \cdot NF \nonumber
     \end{align}
+    $r_1, r_2, r_3, r_4, r_5$ control coolant channel shape.
 \end{frame}
 
 \begin{frame}
