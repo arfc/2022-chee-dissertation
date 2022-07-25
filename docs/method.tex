@@ -703,9 +703,12 @@ Moltres solves the 4-group diffusion equations
 as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
 In the 2D cross-sectional \gls{AHTR} steady-state temperature models, I ignore the 
 time-dependent and velocity-dependent terms from Moltres' temperature governing 
-equation (Equation \ref{eq:moltres-temp}) since they are steady-state models with
-no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}: 
+equation, shown in Equation \ref{eq:moltres-temp-2}, since they are steady-state models 
+with no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}. 
 \begin{align}
+    \label{eq:moltres-temp-2}
+    \rho c_{p} \frac{\partial T}{\partial t} &= - \rho c_p \vec{u}
+    \cdot \nabla T + \nabla \cdot \left(k \nabla T \right) + Q_f
     \label{eq:moltres-temp-ss}
     - \nabla \cdot (k_i \nabla T) &= Q_i
 \intertext{where}
