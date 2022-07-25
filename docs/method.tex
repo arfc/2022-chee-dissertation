@@ -358,13 +358,12 @@ axis view with the packing fraction varying based on this sine distribution.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{triso_distribution_sine.png}
+        \includegraphics[width=0.8\linewidth]{triso_distribution_sine.png}
         \caption{TRISO packing fraction distribution values.}
         \label{fig:ahtr-plank-triso-distr-squares} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \includegraphics[width=0.8\linewidth]{triso_distribution_plank.png}
-        \raggedleft
         \resizebox{0.3\textwidth}{!}{
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
@@ -415,13 +414,14 @@ distribution shown in Figure \ref{fig:ahtr-assem-triso-distr-squares}, which
 corresponds to the one-third assembly with varying TRISO distribution in its fuel 
 cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}. 
 \begin{figure}[htbp]
-    \centering
     \begin{subfigure}{0.49\textwidth}
+        \centering
         \includegraphics[width=\linewidth]{ahtr-assem-triso-distr-squares.png}
         \caption{TRISO packing fraction distribution values.}
         \label{fig:ahtr-assem-triso-distr-squares} 
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
+        \centering
         \includegraphics[width=\linewidth]{ahtr-assem-triso-distr.png}
         \raggedleft
         \resizebox{0.5\textwidth}{!}{
@@ -449,10 +449,13 @@ cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}.
 For both the \gls{AHTR} plank and one-third assembly models, I simulate the variation in 
 coolant channel shape with a sinusoidal pattern using OpenMC's cylinder surfaces
 functionality.
-By varying the cylinders' radius, the coolant channel shapes' depth and frequency 
+By varying the cylinders' radii, the coolant channel shapes' depth and frequency 
 mimic a sinusoidal pattern.
 I vary the \gls{FLiBe} coolant channel shape while holding the total coolant volume 
 constant. 
+Holding the coolant volume constant throughout the coolant channel 
+optimization process enables the use of the same heat transfer coefficient ($h$)
+for all the \gls{AHTR} Moltres temperature models of varying coolant channel shapes.  
 
 For the \gls{AHTR} plank, $r_{top}$ and $r_{bot}$ variables control the coolant channel 
 shape on the top and bottom \gls{FLiBe} channels. 
