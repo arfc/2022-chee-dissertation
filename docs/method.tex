@@ -799,12 +799,12 @@ following assumptions:
     \label{eq:calc-htc-plank}
     h_{plank} &= \frac{P_{dz}}{V_{coolant} \cdot \Delta T} \\
       &= \frac{1456\ W}{(23.1\ cm \times 0.35\ cm \times 2) \cdot 0.0909\ K} \nonumber \\
-      &= 990\ W cm^{-2}K^{-1} \nonumber \\
-\intertext{and for the one-third assembly: 
+      &= 990 W cm^{-2}K^{-1} \nonumber \\
+\intertext{and for the one-third assembly: }
       \label{eq:calc-htc-assem}
-      h_{assem} &= \frac{P_{dz}}{V_{coolant} \cdot \Delta T} \\
-      &= \frac{8741\ W}{157\ cm^2 \cdot 0.0909\ K} \nonumber \\
-      &= 611\ W cm^{-1}K^{-1} \nonumber 
+      h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
+      &= \frac{8741 W}{157cm^2} \div 0.0909 K \nonumber \\
+      &= 611 W cm^{-1}K^{-1} \nonumber 
 \intertext{The relevant parameters for each equation are: }
 h_{plank} &= \mbox{plank's heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
 h_{assem} &= \mbox{one-third assembly's heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
@@ -817,6 +817,8 @@ H &= \mbox{AHTR height from inlet to outlet } [cm] \nonumber
 The power produced by the \gls{AHTR} plank and one-third models are calculated based 
 on the \gls{FHR} benchmark model's specific power of 200 $W gU^{-1}$ and the FHR 
 benchmark's TRISO packing fractions in the plank and one-third assembly.
+During the optimization simulations in which I vary the $PF_{total}$, I assume power 
+remains constant. 
 
 In the \gls{ROLLO} optimization simulations, I vary the \gls{FLiBe} coolant channel 
 shape. 
