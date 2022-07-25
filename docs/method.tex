@@ -503,7 +503,8 @@ inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1,
 \end{figure}
 Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
 channel shapes for the \gls{AHTR} one-third assembly model.
-I did not vary the shape of the one-third assembly's top and bottom coolant channels. 
+I did not vary the shape of the one-third assembly's top and bottom coolant channels, 
+since they have half of the thickness of the inner coolant channels.  
 $r_1, r_2, r_3, r_4, r_5$ are sufficient to show the effect of changing the 
 coolant channel shape.
 
@@ -512,7 +513,7 @@ coolant channel shape.
 The input parameters outlined in the previous section are inputs for 
 the OpenMC neutronics and Moltres temperature models. 
 The Moltres model relies on group constant data produced by the OpenMC model. 
-The OpenMC and Moltres models' workflow:  
+The workflow used in this process are: 
 \begin{enumerate}
 \item OpenMC neutronics model calculates $k_{eff}$ and fuel-normalized 
 power peaking factor ($PPF_{fuel}$) objective value
