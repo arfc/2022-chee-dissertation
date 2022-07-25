@@ -793,23 +793,24 @@ following assumptions:
     \item a linear increase in temperature from inlet to outlet 
 \end{itemize}
 \begin{align}
-\intertext{For the plank, h is calculated by: }
+\intertext{The linear temperature change is given by:}
+    \Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} \times 1cm = 0.0909 K
+\intertext{For the plank, $h$ is calculated by: }
     \label{eq:calc-htc-plank}
     h_{plank} &= \frac{P_{dz}}{V_{coolant} \cdot \Delta T} \\
-      &= \frac{1456 W}{23.1cm \times 0.35cm \times 2} \div 0.0909 K \nonumber \\
+      &= \frac{1456\ W}{(23.1\ cm \times 0.35\ cm \times 2) \cdot 0.0909\ K} \nonumber \\
       &= 990 W cm^{-2}K^{-1} \nonumber \\
+\intertext{and for the assembly: }
       \label{eq:calc-htc-assem}
       h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
       &= \frac{8741 W}{157cm^2} \div 0.0909 K \nonumber \\
       &= 611 W cm^{-1}K^{-1} \nonumber 
-\intertext{and}
-\Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} \times 1cm = 0.0909 K
-\intertext{where}
+\intertext{The relevant parameters for each equation are: }
 h_{plank} &= \mbox{plank's heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
 h_{assem} &= \mbox{one-third assembly's heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
 P_{dz} &= \mbox{power produced in 1cm AHTR plank/one-third assem $\Delta z$ slice } [W] \nonumber \\
 A_{coolant} &= \mbox{coolant area in AHTR plank/one-third assem } [cm^2] \nonumber \\
-\Delta T &= \mbox{temperature change across 1cm AHTR $\Delta z$ slice } [K] \\
+\Delta T &= \mbox{temperature change across 1cm AHTR $\Delta z$ slice } [K] \nonumber \\
 T_{total} &= \mbox{total temperature change from inlet to outlet } [K] \nonumber \\
 H &= \mbox{AHTR height from inlet to outlet } [cm] \nonumber 
 \end{align}
