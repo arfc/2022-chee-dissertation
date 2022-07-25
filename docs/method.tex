@@ -830,14 +830,14 @@ for all the \gls{AHTR} Moltres temperature models of varying coolant channel sha
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
 This section describes how I tallied the \gls{AHTR} model outputs for the ROLLO 
-optimization problem objectives (described in Table \ref{tab:objectives}):
-total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), and 
-fuel-normalized power peaking factor ($PPF_{fuel}$).  
+optimization problem objectives (described in Table \ref{tab:objectives})l that is, 
+the total fuel packing fraction ($PF_{total}$), the maximum temperature ($T_{max}$), and 
+the fuel-normalized power peaking factor ($PPF_{fuel}$).  
 
 \gls{ROLLO} will automatically return the $PF_{total}$ output parameter 
 since it is also an input parameter.  
 In the Moltres \gls{AHTR} model, I defined a post processor object to return $T_{max}$. 
-The $PPF_{fuel}$ output parameter takes into account fuel amount variations across 
+The $PPF_{fuel}$ output parameter takes into account fuel density variations across 
 the model.
 For the \gls{AHTR} plank, and each fuel plank in the \gls{AHTR} one-third fuel assembly, 
 I discretized the fuel cell area of the plank into 10 $\times$ 5 blocks.
