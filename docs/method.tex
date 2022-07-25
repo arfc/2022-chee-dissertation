@@ -305,8 +305,10 @@ the \gls{AHTR} plank and one-third assembly models.
 ($\rho_{TRISO}(\vec{r})$)}
 I utilize sine distributions for both the \gls{AHTR} plank and one-third assembly 
 models to govern the $\rho_{TRISO}(\vec{r})$.
-Based on the sine distributions, the model calculates each fuel cell's packing 
-fraction, then uses OpenMC's \texttt{pack\_spheres} function to randomly disperse 
+First, I impose an overall sine distribution to represent fuel packing in the model. 
+The model calculates each fuel cell's packing fraction based on the midpoint 
+x-value of the sine distribution in the cell. 
+Then, I use OpenMC's \texttt{pack\_spheres} function to randomly disperse 
 the packing fraction in each fuel cell. 
 For the \gls{AHTR} plank, one sine distribution governs the $\rho_{TRISO}(\vec{x})$ 
 across the \gls{AHTR} plank's x-direction. 
@@ -314,9 +316,9 @@ For the \gls{AHTR} one-third assembly, two sine distributions govern the
 $\rho_{TRISO}(\vec{x}, \vec{y})$ across each fuel plank's x-direction and the 
 assembly's y-direction, respectively. 
 
-For the \gls{AHTR} plank, Equation \ref{eq:plank-sine}'s sine distribution governs 
-the \gls{TRISO} packing fraction distribution across the ten fuel cells in the 
-x-direction:
+For the \gls{AHTR} plank, the sine distribution that governs the \gls{TRISO} packing 
+fraction distribution across the ten fuel cells in the x-direction is given by 
+Equation \ref{eq:plank-sine}.
 \begin{align}
     \label{eq:plank-sine}
     \rho_{TRISO}(\vec{x}) &= \left(a\cdot sin(b\cdot x + c) + 2\right) \cdot NF\\
