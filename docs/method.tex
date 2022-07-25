@@ -1298,11 +1298,14 @@ model.
 I performed mesh refinement studies on the \gls{AHTR} plank and one-third assembly 
 Moltres temperature models to ensure that their geometry mesh inputs are sufficiently 
 converged. 
+% TODO: how do you know when they are converged? What criteria? What happens if they 
+% are not converged? 
 Tables \ref{tab:ahtr-plank-mesh-refinement} and \ref{tab:ahtr-assem-mesh-refinement}
 show the mesh refinement study results for the \gls{AHTR} plank and one-third 
 assembly.
 The mesh refinement studies report the average, maximum, and normalized 2-norm 
-temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i}):
+temperature difference between refinement steps. 
+The 2-norm calculation is defined by Equation \ref{eq:2-norm-tdiff-i}. 
 \begin{align}
     \label{eq:2-norm-tdiff-i}
     ||\Delta T_k||_N &= \frac{1}{N}\sqrt{\sum_{i=1}^N(T_{k-1, i} - T_{k, i})^2 }\\
@@ -1314,6 +1317,8 @@ temperature difference between refinement steps (Equation \ref{eq:2-norm-tdiff-i
     T_{k-1} &= \mbox{temperatures from previous refinement step } [K]\nonumber \\
     T_k &= \mbox{temperatures from current refinement step } [K]\nonumber 
 \end{align} 
+I used 100 discretized points (N) to calculate $||\Delta T_k||_N$ for all refinement 
+steps.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -1361,6 +1366,8 @@ I used the Theta supercomputer \cite{noauthor_thetathetagpu_nodate} for the
 optimization work.
 Each supercomputer node saves the entire mesh file, further refinement results in 
 mesh sizes that are larger than each Theta node's memory size. 
+% TODO: So does this mean you aren't converged or that future work needs to split the 
+% problem somehow... How do we know this is good enough? 
 
 \subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
 During ROLLO optimization, each new reactor model results in the creation of 
@@ -1369,14 +1376,16 @@ Correspondingly, a new set of group constant data needs to be created.
 Group constant data with multiple temperatures requires running multiple OpenMC 
 neutronics simulations at the various temperatures, thus, increasing the total 
 compute time required for each new reactor model. 
-
 This section explores the effects of using multiple temperature group 
 constant data compared to single temperature group constant data.
 I set up Moltres \gls{AHTR} steady-state temperature models for the plank and one-third 
 assembly with group constant data at each and all the of following temperatures: 948, 
 1024, 1100, and 1200K. 
-OpenMC \gls{AHTR} models at the specified temperatures generate the group constant data.
+The OpenMC \gls{AHTR} models then are modified to use the specified temperatures 
+to generate group constant data.
 
+% TODO: make sure to note here how OpenMC treats temperature for XS. Why do you 
+% expect to see differences? Does Temp interpolation of resonances matter here? 
 Tables \ref{tab:moltres-group-constant-temps} and 
 \ref{tab:moltres-group-constant-temps-assem}
 show the average and maximum temperature reported by the \gls{AHTR} plank and one-third 
@@ -1395,8 +1404,9 @@ temperature (Equation \ref{eq:2-norm-tdiff-all}):
     T_{all} &= \mbox{temperatures from model with group constant data at all four temperatures } [K] \nonumber \\
     T &= \mbox{temperatures from model with group constant data at one temperature } [K] \nonumber 
 \end{align}
-The centerlines for the \gls{AHTR} plank and one-third models are depicted in Figures 
-\ref{fig:ahtr-plank-verification} and \ref{fig:ahtr-assem-verification}, respectively. 
+The centerlines where the temperature (T) is measured in the model for the \gls{AHTR} 
+plank and one-third models are depicted in Figures \ref{fig:ahtr-plank-verification} 
+and \ref{fig:ahtr-assem-verification}, respectively. 
 
 \begin{table}[htbp]
     \centering
@@ -1423,11 +1433,14 @@ The centerlines for the \gls{AHTR} plank and one-third models are depicted in Fi
     \end{tabular}
 \end{table}
 The temperature differences between the \gls{AHTR} plank model using group constants at 
-all four temperatures and the \gls{AHTR} plank models' using group stants at each 
+all four temperatures and the \gls{AHTR} plank models' using group constants at each 
 single temperature are not significant. 
+Since all the single temperature group constant data in Table 
+\ref{tab:moltres-group-constant-temps} have non-significant temperature differences, 
+any of them could be used for the Moltres temperature models.
 The 948K single temperature group constant data has the lowest 2-norm difference 
 ($||\Delta T||_N$). 
-Thus, I use a 948K in the \gls{AHTR} plank OpenMC neutronics model to 
+Thus, I chose to use a 948K in the \gls{AHTR} plank OpenMC neutronics model to 
 generate the group constant data for the Moltres temperature models.
 
 \begin{table}[htbp]
@@ -1461,15 +1474,20 @@ The 1024K single temperature group constant data has the lowest 2-norm differenc
 ($||\Delta T||_N$). 
 Thus, I use 1024K in the \gls{AHTR} one-third assembly OpenMC neutronics model to 
 generate the group constant data for the Moltres temperature models.
+% TODO: What do these small differences mean for modeling more generally? That is, 
+%do XS need to be regenerated frequently? OR can you use the same ones often. 
 
 \section{ROLLO Hyperparameter Tuning}
 \label{sec:hyperparameter-studies}
+Recall from Chapter \ref{chap:lit-review} that I discussed how genetic algorithms 
+require a good hyperparameter set that guides the optimization process by 
+balancing exploitation and exploration to find an optimal solution quickly 
+and accurately \cite{deb_multi-objective_2001}. 
+Finding a good hyperparameter set requires a trial-and-error process 
+\cite{deb_multi-objective_2001}. 
+
 In a \gls{ROLLO} input file, the user defines hyperparameters for the genetic 
 algorithm.
-A good hyperparameter set guides the optimization process by 
-balancing exploitation and exploration to find an optimal solution quickly 
-and accurately. 
-Finding a good hyperparameter set requires a trial-and-error process. 
 The subsequent subsections describe the hyperparameter search I conducted for 
 single-objective and multi-objective optimization. 
 
