@@ -330,6 +330,7 @@ Equation \ref{eq:plank-sine}.
     x &= \mbox{midpoint x-value for each cell } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
+Appendix xx describes the normalization factor's calculation. 
 Figure \ref{fig:straightened_plank} depicted the ten fuel cells.
 The sine distribution's coefficients, \textit{a b c}, are the independent variables 
 \gls{ROLLO} utilizes to manipulate the plank's $\rho_{TRISO}(\vec{x})$.
@@ -352,6 +353,37 @@ axis view with the packing fraction varying based on this sine distribution.
     Below: $\rho_{TRISO}(\vec{x}) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
     sine distribution with red points indicating the packing fraction at each cell.}
     \label{fig:triso_distribution}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{triso_distribution_sine.png}
+        \caption{TRISO packing fraction distribution values.}
+        \label{fig:ahtr-plank-triso-distr-squares} 
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{triso_distribution_plank.png}
+        \raggedleft
+        \resizebox{0.5\textwidth}{!}{
+        \hspace{1cm}
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure) \\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+        \end{tabular}}}
+        \caption{TRISO distribution in plank model.}
+        \label{fig:ahtr-plank-triso-distr} 
+    \end{subfigure}
+    \caption{Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} particle 
+        distribution across 10 x 6 cells based on the sine distributions: 
+        $\rho_{TRISO}(\vec{x}, \vec{y}) = 
+        \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
+        \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$. 
+        Figure \ref{fig:ahtr-plank-triso-distr-squares}'s packing fraction values 
+        correspond to Figure \ref{fig:ahtr-plank-triso-distr}'s  TRISO distribution in 
+        the plank model.}
 \end{figure}
 
 For the \gls{AHTR} one-third assembly, Equation \ref{assem-sine}'s two sine 
