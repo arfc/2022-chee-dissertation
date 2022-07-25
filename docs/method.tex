@@ -817,7 +817,7 @@ H &= \mbox{AHTR height from inlet to outlet } [cm] \nonumber
 The power produced by the \gls{AHTR} plank and one-third models are calculated based 
 on the \gls{FHR} benchmark model's specific power of 200 $W gU^{-1}$ and the FHR 
 benchmark's TRISO packing fractions in the plank and one-third assembly.
-During the optimization simulations in which I vary the $PF_{total}$, I assume power 
+During the optimization simulations in which I vary the $PF_{total}$, I assume that power 
 remains constant. 
 
 In the \gls{ROLLO} optimization simulations, I vary the \gls{FLiBe} coolant channel 
@@ -830,7 +830,7 @@ for all the \gls{AHTR} Moltres temperature models of varying coolant channel sha
 \subsection{Output Parameter Calculation}
 \label{sec:ahtr_slab_output}
 This section describes how I tallied the \gls{AHTR} model outputs for the ROLLO 
-optimization problem objectives (described in Table \ref{tab:objectives})l that is, 
+optimization problem objectives (described in Table \ref{tab:objectives}); that is, 
 the total fuel packing fraction ($PF_{total}$), the maximum temperature ($T_{max}$), and 
 the fuel-normalized power peaking factor ($PPF_{fuel}$).  
 
@@ -842,10 +842,11 @@ the model.
 For the \gls{AHTR} plank, and each fuel plank in the \gls{AHTR} one-third fuel assembly, 
 I discretized the fuel cell area of the plank into 10 $\times$ 5 blocks.
 I then use OpenMC to tally the fission energy production rate 
-(\texttt{fission-q-recoverable} $[eV src^{-1}]$) in each section.
-I did not normalize the score to calculate power since the final $PPF_{fuel}$ value is a 
-ratio.
-Equation \ref{eq:ppf} calculates the fuel-normalized power peaking factor:
+(\texttt{fission-q-recoverable}) in each section. 
+\texttt{fission-q-recoverable}'s units are eV per source particle.
+Because the final $PPF_{fuel}$ is a ratio, I did not normalize the score to calculate 
+power.
+The fuel-normalized power peaking factor is given by Equation \ref{eq:ppf}: 
 \begin{align}
     \label{eq:ppf}
     PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div avg(\frac{fqr_j}{PF_j})
