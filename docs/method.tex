@@ -159,9 +159,9 @@ respectively, and reflective boundary conditions.
 
 I used the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
 except that I homogenized each \gls{TRISO} particle's four outer layers (porous carbon 
-buffer, inner pyrolytic carbon, silicon carbide layer, and the outer pyrolytic carbon ) 
+buffer, inner pyrolytic carbon, silicon carbide layer, and the outer pyrolytic carbon) 
 into a single layer. 
-The \gls{TRISO} particle dimensions remain the same.
+The \gls{TRISO} kernel and outer radius dimensions remain the same.
 Table \ref{tab:keff_triso} reports OpenMC's $k_{eff}$ for the straightened \gls{AHTR} configuration 
 with and without the four outer layers \gls{TRISO} homogenization.
 \begin{table}[htbp]
@@ -183,10 +183,10 @@ with and without the four outer layers \gls{TRISO} homogenization.
     \hline
     \end{tabular}
 \end{table}
-
 The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
 speed-up without compromising accuracy with $k_{eff}$ values within each 
 other's uncertainty.
+As a result, the homogenized models are used for all subsequent optimization efforts. 
 
 \subsection{AHTR One-Third Assembly Geometry}
 \label{sec:ahtr-assem-geometry}
