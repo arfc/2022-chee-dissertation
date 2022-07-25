@@ -914,15 +914,15 @@ and the Moltres simulation with 4-group energy and spatial homogenization.
 I included results from the homogenized OpenMC simulation to 
 distinguish between differences caused by spatial homogenization and energy 
 discretization, or differing OpenMC and Moltres solve methods. 
+The normalized difference is the pcm difference normalized by OpenMC non-homogenized 
+model's $k_{eff}$.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{The \acrfull{AHTR} plank's $k_{eff}$ values from the OpenMC simulation with 
     continuous energy and TRISO-level spatial fidelity, the OpenMC simulation with 4-group 
     energy and spatial homogenization, and the Moltres simulation with 4-group energy and 
-    spatial homogenization. All simulations are at 948K.
-    The normalized difference is the pcm difference normalized by OpenMC non-homogenized 
-    model's $k_{eff}$.}
+    spatial homogenization. All simulations are at 948K.}
 	\label{tab:keff_ahtr_moltres}
     \footnotesize
     \begin{tabular}{lllcc}
@@ -937,7 +937,8 @@ discretization, or differing OpenMC and Moltres solve methods.
     \end{tabular}
 \end{table}
 
-The 50pcm $k_{eff}$ difference between continuous and homogenized OpenMC simulations 
+The 50pcm $k_{eff}$ difference, that can be observed in Table 
+\ref{tab:keff_ahtr_moltres}, between continuous and homogenized OpenMC simulations 
 is within uncertainty, showing that the selected spatial homogenizations
 and energy discretizations are acceptable. 
 However, there is a 502 pcm difference in the Moltres simulation's $k_{eff}$.
