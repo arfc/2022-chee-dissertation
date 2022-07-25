@@ -703,7 +703,7 @@ Moltres solves the 4-group diffusion equations
 as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
 In the 2D cross-sectional \gls{AHTR} steady-state temperature models, I ignore the 
 time-dependent and velocity-dependent terms from Moltres' temperature governing 
-equation, shown in Equation \ref{eq:moltres-temp-2}, since they are steady-state models 
+equation, shown in Equation \ref{eq:moltres-temp-2}, as they are steady-state models 
 with no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}. 
 \begin{align}
     \label{eq:moltres-temp-2}
@@ -726,7 +726,7 @@ used for each \gls{AHTR} material.
     temperature models, taken from \cite{ramey_methodology_2021}.}
 	\label{tab:ahtr-thermal-conductivity}
     \footnotesize
-    \begin{tabular}{ll}
+    \begin{tabular}{lc}
     \hline 
     \textbf{Material}& \textbf{Thermal Conductivity} \\
     & [$Wcm^{-1}K^{-1}$] \\ 
@@ -746,7 +746,7 @@ Equation \ref{eq:moltres-source-term} defines the fuel cells' fission source ter
 \intertext{where} 
 Q_f &= \mbox{source term } [Wcm^{-3}] \nonumber \\
 G &= \mbox{number of discrete groups, g } [-] \nonumber \\
-\epsilon_{f,g} &= \mbox{heat produced per fission } [J] \nonumber \\
+\epsilon_{f,g} &= \mbox{heat produced per fission in group g} [J] \nonumber \\
 \Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [cm^{-1}] \nonumber \\
 \phi_g &= \mbox{flux of neutrons in group g } [n \cdot cm^{-2} s^{-1}]\nonumber
 \end{align}
