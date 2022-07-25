@@ -861,7 +861,7 @@ PF_j &= \mbox{fuel packing fraction at position j } [-] \nonumber
 \label{sec:ahtr_model_verification}
 In this section, I conduct \gls{AHTR} Moltres model verification for key neutronics 
 parameters.
-I set up a criticality eigenvalue problem in Moltres and calculated key neutronics 
+I set up a criticality eigenvalue problem in Moltres and calculate key neutronics 
 parameters using group constant data from OpenMC. 
 For both the \gls{AHTR} plank and one-third assembly models, I compare the key neutronics 
 parameters between two simulations:
@@ -875,10 +875,13 @@ energy and spatially homogenized Moltres simulation.
 
 \subsection{AHTR Plank: Key Neutronics Parameters Verification}
 \label{sec:plank-knp}
-This section compares the following key neutronics parameters: effective 
+This section verifies Moltres' ability to reproduce key neutronics parameters 
+using group constant data from OpenMC, which is essential for accurate neutronics 
+calculations in the subsequent multiphysics simulations.
+I compare the following key neutronics parameters: effective 
 multiplication factor, reactivity coefficients, flux distribution, and neutron energy 
 spectrum for the \gls{AHTR} plank model. 
-For this verification study, I used an \gls{AHTR} plank model with a 
+For this verification study, I selected to use an \gls{AHTR} plank model with a 
 $PF_{total} = 0.0979$ and 
 $\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
 Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with TRISO-level 
