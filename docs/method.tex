@@ -347,15 +347,25 @@ the packing fraction at the respective midpoints, and displays the plank's x-y
 axis view with the packing fraction varying based on this sine distribution. 
 \begin{figure}[htbp]
     \centering
+    \makebox[\textwidth][c]{\includegraphics[width=\linewidth]{triso_distribution_sine.png}} 
+    \caption{Above: Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} 
+    particle distribution across ten cells based on the sine distribution. 
+    Below: $\rho_{TRISO}(\vec{x}) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$ 
+    sine distribution with red points indicating the packing fraction at each cell.}
+    \label{fig:triso_distribution}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{triso_distribution_sine.png}
         \caption{TRISO packing fraction distribution values.}
         \label{fig:ahtr-plank-triso-distr-squares} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{triso_distribution_plank.png}
+        \includegraphics[width=0.8\linewidth]{triso_distribution_plank.png}
         \raggedleft
-        \resizebox{0.5\textwidth}{!}{
+        \resizebox{0.3\textwidth}{!}{
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
@@ -367,10 +377,8 @@ axis view with the packing fraction varying based on this sine distribution.
         \label{fig:ahtr-plank-triso-distr} 
     \end{subfigure}
     \caption{Straightened \acrfull{AHTR} fuel plank with varying \gls{TRISO} particle 
-        distribution across 10 x 6 cells based on the sine distributions: 
-        $\rho_{TRISO}(\vec{x}, \vec{y}) = 
-        \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
-        \left(0.7\cdot sin(1.5\cdot y + 2) + 2\right) \cdot NF$. 
+        distribution across 10 cells based on the sine distribution: 
+        $\rho_{TRISO}(\vec{x}) = (0.5\ sin(\frac{\pi}{3}x + \pi) + 2)  \times NF$.
         Figure \ref{fig:ahtr-plank-triso-distr-squares}'s packing fraction values 
         correspond to Figure \ref{fig:ahtr-plank-triso-distr}'s  TRISO distribution in 
         the plank model.}
