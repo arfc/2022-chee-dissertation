@@ -28,8 +28,8 @@ and parameters,
 I chose to vary the following \gls{AHTR} parameters: 
 \begin{itemize}
     \item \gls{TRISO} fuel packing fraction distribution ($\rho_{TRISO}(\vec{r})$),
-    \item Total fuel packing fraction ($PF_{total}$), and 
-    \item Coolant channel shape
+    \item total fuel packing fraction ($PF_{total}$), and 
+    \item coolant channel shape.
 \end{itemize} 
 Varying the \gls{TRISO} fuel packing fraction distribution allows us to explore how 
 heterogeneous fuel distributions impact reactor performance.
@@ -89,7 +89,7 @@ within two fuel stripes in the fuel plank region, shown in Figure
 \ref{fig:ahtr-fuel-plank-2}. 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{ahtr-fuel-plank.png} 
+    \includegraphics[width=0.9\linewidth]{ahtr-fuel-plank.png} 
     \resizebox{0.3\textwidth}{!}{
         \fbox{\begin{tabular}{ll}
             \textcolor{fhrblue}{$\blacksquare$} & FLiBe \\
@@ -106,7 +106,7 @@ within two fuel stripes in the fuel plank region, shown in Figure
                 \draw[ thick,-latex] (0,0) -- (1.3,1.3) node[anchor=south west] {$z$};
                \tkzText[above](-0.5,1){}
                \end{tikzpicture} 
-    \caption{\gls{FHR} benchmark's \acrfull{AHTR} design's fuel plank, with the 
+    \caption{\acrfull{FHR} benchmark's \acrfull{AHTR} design's fuel plank, with the 
     magnification of a spacer and segment of the fuel stripe with embedded 
     \gls{TRISO} particles.}
     \label{fig:ahtr-fuel-plank-2}
@@ -158,9 +158,9 @@ The plank has $27.1 \times 3.25 \times 1.85\ cm^3$ in the x, y, and z dimensions
 respectively, and reflective boundary conditions.
 
 I used the same materials as in the \gls{FHR} benchmark (Chapter \ref{chap:fhr-benchmark}), 
-except that I homogenized each \gls{TRISO} particle's four outer layers: 
-porous carbon buffer, inner pyrolytic carbon, silicon carbide layer, and the 
-outer pyrolytic carbon. 
+except that I homogenized each \gls{TRISO} particle's four outer layers (porous carbon 
+buffer, inner pyrolytic carbon, silicon carbide layer, and the outer pyrolytic carbon ) 
+into a single layer. 
 The \gls{TRISO} particle dimensions remain the same.
 Table \ref{tab:keff_triso} reports OpenMC's $k_{eff}$ for the straightened \gls{AHTR} configuration 
 with and without the four outer layers \gls{TRISO} homogenization.
