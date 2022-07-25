@@ -761,7 +761,7 @@ models:
 Q &= \mbox{heat removal rate for 1cm thin slice of the AHTR model } [W] \nonumber \\
 h &= \mbox{heat transfer coefficient } [W cm^{-2} K^{-1}] \nonumber \\
 A &= \mbox{coolant area } [cm^2] \nonumber \\
-T(\vec{r}) &= \mbox{temperature at point $\vec{r}$ [K]} \nonumber \\
+T(r) &= \mbox{temperature at point r [K]} \nonumber \\
 T_{ref} &= \mbox{reference temperature [K]} \nonumber
 \end{align}
 
@@ -775,7 +775,7 @@ transfer coefficient values for the convective heat transfer process.
     \footnotesize
     \begin{tabular}{lllll}
     \hline 
-    \textbf{Geometry} & \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
+    \textbf{Model} & \textbf{Constant}& \textbf{Value}& \textbf{Units} & \textbf{Notes} \\
     \hline 
     Plank & $h_{plank}$ & 990 & $W cm^{-2} K^{-1}$ & Calculated in Eq. \ref{eq:calc-htc-plank} \\
     One-Third Assembly & $h_{assem}$ & 611 & $W cm^{-2} K^{-1}$ & Calculated in Eq. \ref{eq:calc-htc-assem} \\
@@ -784,11 +784,12 @@ transfer coefficient values for the convective heat transfer process.
     \end{tabular}
 \end{table} 
 
-I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} plank and one-third assembly
-using Equation \ref{eq:calc-htc-plank}, \ref{eq:calc-htc-assem} with the following assumptions: 
+I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} plank and one-third 
+assembly using Equation \ref{eq:calc-htc-plank}, \ref{eq:calc-htc-assem} with the 
+following assumptions: 
 \begin{itemize}
-    \item \gls{AHTR} models generate constant amount of power, which is all removed by the 
-    coolant
+    \item the \gls{AHTR} modeled generates a constant amount of power, which is all 
+    removed by the coolant
     \item a linear increase in temperature from inlet to outlet 
 \end{itemize}
 \begin{align}
