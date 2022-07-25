@@ -250,13 +250,10 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
     \centering
     \begin{tikzpicture}[node distance=0.5cm]
         \tikzstyle{every node}=[font=\footnotesize]
-        \node (1) [e72block] {\textit{Total PF}};
         \node (2) [g72block, right=of 1] {$PF_{total}$};
         \node (3) [e82block, above=of 2] {Independent Variables};
-        \node (4) [e72block, below=of 1] {$\rho_{TRISO}(\vec{r})$};
-        \node (5) [g72block, right=of 4] {a, b, c, d, e, f};
-        \node (6) [e72block, below=of 4] {\textit{Coolant Channel Shape}};
-        \node (7) [g72block, right=of 6] {$r_{top}$, $r_{bot}$, $r_i$};
+        \node (5) [g72block, right=of 4] {$\rho_{TRISO}(\vec{r})$};
+        \node (7) [g72block, right=of 6] {\textit{Coolant Channel Shape}};
         \node (8) [p72block, right=of 2, xshift=0.8cm, yshift=0.5cm] {OpenMC Model};
         \node (9) [e92block, above=of 8] {Nuclear Software Models};
         \node (10) [p72block, right=of 5, xshift=0.8cm] {Group Constants};
