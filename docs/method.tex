@@ -1479,13 +1479,12 @@ generate the group constant data for the Moltres temperature models.
 
 \section{ROLLO Hyperparameter Tuning}
 \label{sec:hyperparameter-studies}
-Recall from Chapter \ref{chap:lit-review} that I discussed how genetic algorithms 
+Recall from Chapter \ref{chap:lit-review}, I discussed how genetic algorithms 
 require a good hyperparameter set that guides the optimization process by 
 balancing exploitation and exploration to find an optimal solution quickly 
 and accurately \cite{deb_multi-objective_2001}. 
 Finding a good hyperparameter set requires a trial-and-error process 
 \cite{deb_multi-objective_2001}. 
-
 In a \gls{ROLLO} input file, the user defines hyperparameters for the genetic 
 algorithm.
 The subsequent subsections describe the hyperparameter search I conducted for 
@@ -1686,7 +1685,8 @@ Next, I varied each of the following parameters individually and compared their
 hypervolume values: population size/generations, mutation probability, and mating 
 probability.
 Section \ref{sec:binhandkorn} described that the hypervolume indicator quantifies 
-the multi-objective optimization's Pareto front's goodness (bigger = better). 
+how well the multi-objective optimization's Pareto front covers the 
+multi-objective domain (bigger = better). 
 
 Figure \ref{fig:hypervolume-comparison} shows boxplots comparing hypervolumes 
 for various hyperparameters. 
@@ -1752,6 +1752,10 @@ multi-objective optimization based on the hyperparameter search.
     \hline
     \end{tabular}
 \end{table}
+
+% TODO: your explanation about compute time is good here, but you might want to 
+% comment on how different results for hyperparmateres might be with OpenMC 
+% in this multi-obj domain. 
 
 \section{Summary}
 \glsresetall
