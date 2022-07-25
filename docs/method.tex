@@ -544,8 +544,8 @@ constraint value.
 \label{sec:ahtr-moltres-group-constant-gen}
 Unlike the OpenMC model, Moltres does not explicitly model each \gls{TRISO}
 particle. 
-This is because a TRISO-level fidelity mesh file is impractical and results in
-extremely long runtimes. 
+This is because a TRISO-level fidelity mesh file is impractical for this simulation 
+and results in intractable runtimes. 
 Instead, Moltres relies on the OpenMC model to generate group constant data for the 
 Moltres' multigroup neutron diffusion calculations. 
 Previously, Moltres could only generate group constant data from Serpent 
@@ -553,9 +553,15 @@ Previously, Moltres could only generate group constant data from Serpent
 I implemented functionality in Moltres for group constant data generation with 
 OpenMC \cite{lindsay_moltres_2017}. 
 
-To enable successful Moltres \gls{AHTR} temperature model simulations, I established 
-suitable spatial and energy homogenization for group constant generation. 
-These homogenizations preserve accuracy while maintaining an acceptable runtime.
+To enable successful Moltres \gls{AHTR} temperature model simulations, I must 
+establish suitable spatial and energy homogenization for group constant generation. 
+These homogenizations must preserve accuracy while maintaining an acceptable runtime.
+I compared the key neutronics parameters for the continuous OpenMC and multigroup 
+Moltres simulations (that utilized OpenMC generated group constants) for both the 
+\gls{AHTR} plank and one-third assembly to ensure that the selected spatial and energy 
+homogenizations preserve accuracy.
+Section \ref{sec:ahtr_model_verification} reports the verification study's results.
+
 For both the \gls{AHTR} plank and one-third assembly models, I used eight precursor 
 groups and a 4-group energy structure derived by Gentry et al. 
 \cite{gentry_development_2016} for \gls{AHTR} geometries. 
@@ -582,11 +588,11 @@ Table \ref{tab:energy_structures} defines the 4-group energy boundaries.
 \end{table}
 
 For spatial homogenization of the straightened \gls{AHTR} plank and 
-one-third assembly, I used OpenMC's \textit{cell} domain type to compute 
-multigroup cross sections for different \textit{cells}. 
-For the \gls{AHTR} plank, I discretized the plank into 13 \textit{cells}:
-FLiBe, left graphite, right graphite, and ten fuel cells (each cell has a different 
-packing fraction).
+one-third assembly, I used OpenMC's cell domain type to compute 
+multigroup cross sections for different cells. 
+For the \gls{AHTR} plank, I discretized the plank into 13 cells:
+FLiBe, left graphite, right graphite, and ten fuel cells (where each cell has a 
+different packing fraction and thus a different material definition).
 Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} plank's spatial 
 homogenization for the OpenMC multigroup calculation for Moltres group constant 
 generation. 
