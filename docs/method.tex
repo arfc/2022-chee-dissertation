@@ -708,7 +708,7 @@ with no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss}.
 \begin{align}
     \label{eq:moltres-temp-2}
     \rho c_{p} \frac{\partial T}{\partial t} &= - \rho c_p \vec{u}
-    \cdot \nabla T + \nabla \cdot \left(k \nabla T \right) + Q_f
+    \cdot \nabla T + \nabla \cdot \left(k_i \nabla T \right) + Q_f \\
     \label{eq:moltres-temp-ss}
     - \nabla \cdot (k_i \nabla T) &= Q_i
 \intertext{where}
@@ -716,7 +716,8 @@ k_i &= \mbox{thermal conductivity of material i } [Wcm^{-1}K^{-1}] \nonumber \\
 T &= \mbox{temperature in the model } [K] \nonumber \\
 Q_i &= \mbox{source or sink term in material i } [W cm^{-2}] \nonumber
 \end{align} 
-I use insulated temperature boundary conditions.  
+I use insulated temperature boundary conditions, which mimics an insulator at the 
+boundary.
 Table \ref{tab:ahtr-thermal-conductivity} shows the thermal conductivity values 
 used for each \gls{AHTR} material. 
 \begin{table}[htbp]
