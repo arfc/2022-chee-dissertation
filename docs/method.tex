@@ -228,9 +228,10 @@ homogenization described in Section \ref{sec:ahtr-plank-geometry}.
 The \gls{ROLLO} software drives the evolutionary algorithm optimization process, 
 depicted in Figure \ref{fig:genetic_alg_nuclear}.
 In a \gls{ROLLO} input file, I define control variables that the genetic algorithm 
-uses to vary the \gls{AHTR} parameters described in Section \ref{sec:opt-problem}.
+uses to vary.
 The control variables are input into the nuclear software templates to model different 
-\gls{AHTR} geometries.
+\gls{AHTR} geometries, and they control the \gls{AHTR} parameters described in 
+Section \ref{sec:opt-problem}.
 The nuclear software will then run the \gls{AHTR} models and calculate the optimization 
 objective and constraint values. 
 In this work, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s neutronics 
