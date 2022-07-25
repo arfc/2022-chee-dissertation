@@ -907,7 +907,10 @@ fidelity.
 \end{figure}
 
 \subsubsection{AHTR Plank: Effective Multiplication Factor}
-Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor 
+The absolute value of $k_{eff}$ impacts the final steady-state temperature of the
+reactor \cite{park_advancement_2020}. 
+%TODO: ask SM
+Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor ($k_{eff}$)
 for the OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
 the OpenMC simulation with 4-group energy and spatial homogenization, 
 and the Moltres simulation with 4-group energy and spatial homogenization.
@@ -939,8 +942,9 @@ model's $k_{eff}$.
 
 The 50pcm $k_{eff}$ difference, that can be observed in Table 
 \ref{tab:keff_ahtr_moltres}, between continuous and homogenized OpenMC simulations 
-is within uncertainty, showing that the selected spatial homogenizations
-and energy discretizations are acceptable. 
+is within uncertainty.  
+This shows that the selected spatial homogenizations and energy discretizations 
+are acceptable. 
 However, there is a 502 pcm difference in the Moltres simulation's $k_{eff}$.
 A possible reason is that the neutron diffusion method used in Moltres does not 
 approximate this reactor geometry as well. 
@@ -949,9 +953,16 @@ The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the dif
 coefficient, resulting in poor approximations. 
 The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
 neutronics modeling but for \gls{AHTR} plank temperature modeling. 
+%TODO: ask SM
+% does keff diff affect temperature...? 
 
 \subsubsection{AHTR Plank: Reactivity Coefficients}
-Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
+The delayed neutron fraction, $\beta$, and reactivity coefficients, $\alpha$ are 
+indicators of transient reactor behabiour in an accident transient. 
+$\beta$ primarily affects the magnitude of the initial change in power and the 
+time delay towards the new equilibrium power, while $\alpha$ affects the 
+magnitude of change in reactor power and temperature \cite{park_advancement_2020}. 
+Moltres' delayed neutron fraction, $\beta_{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without \glspl{DNP}. 
 Table \ref{tab:ahtr_plank_moltres_coeffs} shows that the $\beta{eff}$ values from 
 OpenMC and Moltres show excellent agreement with a discrepancy of 0.03pcm. 
