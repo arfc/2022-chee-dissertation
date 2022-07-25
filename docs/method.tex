@@ -518,9 +518,9 @@ The workflow used in this process are:
 \item Run transport on OpenMC neutronics model to calculate $k_{eff}$ and fuel-normalized 
 power peaking factor ($PPF_{fuel}$) objective value
 \item Produce group constant data for the Moltres model with the OpenMC neutronics model
-\item Moltres model mesh generation 
-\item Moltres temperature model accepts group constant data and mesh and calculates 
-      the maximum temperature ($T_{max}$) objective value
+\item Generate mesh for Moltres model
+\item Run Moltres temperature model (accepts group constant data and mesh) to calculate 
+maximum temperature ($T_{max}$) objective value
 \end{enumerate}
 In the subsequent subsections, I describe details and assumptions for each step of 
 the OpenMC and Moltres models' workflow.
