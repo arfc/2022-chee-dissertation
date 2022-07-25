@@ -227,11 +227,10 @@ homogenization described in Section \ref{sec:ahtr-plank-geometry}.
 \label{sec:ahtr-model-workflow}
 The \gls{ROLLO} software drives the evolutionary algorithm optimization process, 
 depicted in Figure \ref{fig:genetic_alg_nuclear}.
-In a \gls{ROLLO} input file, I define control variables that the genetic algorithm 
-uses to vary.
-The control variables are input into the nuclear software templates to model different 
-\gls{AHTR} geometries, and they control the \gls{AHTR} parameters described in 
-Section \ref{sec:opt-problem}.
+In a \gls{ROLLO} input file, I define independent variables that the genetic algorithm 
+uses to vary the \gls{AHTR} parameters described in Section \ref{sec:opt-problem}.
+The independent variables are input into the nuclear software templates to model different 
+\gls{AHTR} geometries.
 The nuclear software will then run the \gls{AHTR} models and calculate the optimization 
 objective and constraint values. 
 In this work, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s neutronics 
@@ -253,7 +252,7 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
         \tikzstyle{every node}=[font=\footnotesize]
         \node (1) [e72block] {\textit{Total PF}};
         \node (2) [g72block, right=of 1] {$PF_{total}$};
-        \node (3) [e82block, above=of 2] {Control Variables};
+        \node (3) [e82block, above=of 2] {Independent Variables};
         \node (4) [e72block, below=of 1] {$\rho_{TRISO}(\vec{r})$};
         \node (5) [g72block, right=of 4] {a, b, c, d, e, f};
         \node (6) [e72block, below=of 4] {\textit{Coolant Channel Shape}};
@@ -283,8 +282,8 @@ Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow.
     workflow falls within the `evaluate population' orange blocks in ROLLO's evolutionary 
     algorithm optimization process depicted in Figure \ref{fig:genetic_alg_nuclear}. 
     For each reactor model in the optimization process, the modeling workflow begins 
-    with ROLLO selecting the control variables. 
-    ROLLO inserts control variables and runs the templated OpenMC and Moltres 
+    with ROLLO selecting the independent variables. 
+    ROLLO inserts independent variables and runs the templated OpenMC and Moltres 
     input files. 
     ROLLO analyzes the OpenMC and Moltres output files to determine the constraint and 
     objective values.
@@ -332,7 +331,7 @@ x-direction:
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
 Figure \ref{fig:straightened_plank} depicted the ten fuel cells.
-The sine distribution's coefficients, \textit{a b c}, are the control variables 
+The sine distribution's coefficients, \textit{a b c}, are the independent variables 
 \gls{ROLLO} utilizes to manipulate the plank's $\rho_{TRISO}(\vec{x})$.
 Thus, \gls{ROLLO} will vary the \textit{a, b, c} variables to find an optimal 
 $\rho_{TRISO}(\vec{x})$ that optimizes objectives. 
@@ -372,7 +371,7 @@ for the 10 x 6 fuel cells:
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
 Figure \ref{fig:ahtr_assembly} depicts the 10 x 6 fuel cells.
-The sine distribution's coefficients, \textit{a b c d e f}, are the control variables 
+The sine distribution's coefficients, \textit{a b c d e f}, are the independent variables 
 \gls{ROLLO} utilizes to manipulate the $\rho_{TRISO}(\vec{x}, \vec{y})$ in the 
 one-third assembly.
 Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal 
@@ -1517,7 +1516,7 @@ I determined these new hyperparameter bounds based on these reasons:
     correlate with $\overline{k_{eff}}$ values. 
 \end{itemize}
 Figure \ref{fig:input_hyperparameters_sens} shows the relationship between 
-hyperparameter values and $a$, $b$, $c$ control parameters, final generation 
+hyperparameter values and $a$, $b$, $c$ independent variables, final generation 
 $k_{eff max}$, and final generation $\overline{k_{eff}}$. 
 The coarse experiments' scatter points are $50\%$ transparent, while the fine 
 experiments' scatter points are opaque. 
@@ -1525,8 +1524,8 @@ experiments' scatter points are opaque.
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{input_hyperparameters_sens.png}} 
     \caption{ \acrfull{ROLLO} hyperparameter search results for all 40 experiments 
-    (coarse and fine). I plot the hyperparameters against: the \textit{a, b, c} control 
-    parameters, each experiment's final generation $k_{eff max}$, and the final generation 
+    (coarse and fine). I plot the hyperparameters against: the \textit{a, b, c} independent 
+    variables, each experiment's final generation $k_{eff max}$, and the final generation 
     $\overline{k_{eff}}$ with a third color dimension representing each experiment's final 
     population's $\overline{k_{eff}}$ (color bar representing the $k_{eff}$ values 
     provided on the right side of the figure). Coarse experiments' (0 to 24) scatter points 
@@ -1557,7 +1556,7 @@ with the highest final generation $\overline{k_{eff}}$.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Control parameters, $k_{eff}$ results, and hyperparameter values for 
+    \caption{Independent variables, $k_{eff}$ results, and hyperparameter values for 
     the five hyperparameter search experiments with the highest final generation 
     $\overline{k_{eff}}$.}
 	\label{tab:topfive}
@@ -1566,7 +1565,7 @@ with the highest final generation $\overline{k_{eff}}$.
     \hline 
     & \multicolumn{5}{c}{\textbf{Experiment No.}} \\
     \cline{2-6}
-    \textbf{Control/Output Parameters} & \textbf{6} & \textbf{15} & \textbf{24} & \textbf{36} & \textbf{39}\\
+    \textbf{Independent/Output Variables} & \textbf{6} & \textbf{15} & \textbf{24} & \textbf{36} & \textbf{39}\\
     \hline 
     $\overline{k_{eff}}$ [-] & 1.39876 &1.40155&1.40118&1.39906&1.40165\\ 
     $k_{eff max}$ [-] & 1.40954 &1.40440&1.40365&1.40590&1.40519\\ 
