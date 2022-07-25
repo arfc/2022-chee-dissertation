@@ -1280,9 +1280,12 @@ between OpenMC and Moltres models' flux values are slight, demonstrating that th
 good overall agreement for each group's flux.
 The large maximum percentage difference in flux values in Group 2 and 3 is attributed to 
 their resonance regions causing large one-off differences at some discretized points.
+% TODO: why can't we see the 11% diff in the plots. add explanation. 
 The flux neutronics parameter is most important as it contributes to the source term in the 
 Moltres simulation. Thus, these accurate flux comparison results verify the accurate calculation 
 of the temperature distribution in the Moltres \gls{AHTR} one-third assembly model. 
+% TODO: are these accurate? Say how much those 11% differences may affect the source 
+%term. connect it for readers. 
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
 Figure \ref{fig:assem_neutron_spectrum_948K} shows the one-third assembly's neutron 
@@ -1297,11 +1300,12 @@ simulation.
     simulation with 4-group energy and spatial homogenization.}  
     \label{fig:assem_neutron_spectrum_948K}
 \end{figure}
-There is good agreement between OpenMC and Moltres models 4-group spectrums. 
+There is good agreement between OpenMC and Moltres models' 4-group spectrums. 
 
 In summary, Moltres replicated the relevant neutronics parameters with sufficient 
 accuracy using OpenMC's group constant data for the \gls{AHTR} one-third assembly 
 model. 
+% TODO: Comment on differences here and why they are negligible. 
 
 \subsection{AHTR Plank and One-Third Assembly: Mesh Refinement Studies}
 I performed mesh refinement studies on the \gls{AHTR} plank and one-third assembly 
