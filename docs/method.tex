@@ -354,8 +354,8 @@ axis view with the packing fraction varying based on this sine distribution.
     \end{subfigure}
     \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.9\linewidth]{triso_distribution_plank.png}
-        \raggedleft
+        \includegraphics[width=\linewidth]{triso_distribution_plank.png}
+        \raggedright
         \resizebox{0.3\textwidth}{!}{
         \hspace{1cm}
         \fbox{\begin{tabular}{ll}
@@ -449,7 +449,7 @@ Holding the coolant volume constant throughout the coolant channel
 optimization process enables the use of the same heat transfer coefficient ($h$)
 for all the \gls{AHTR} Moltres temperature models of varying coolant channel shapes.  
 
-For the \gls{AHTR} plank, $r_{top}$ and $r_{bot}$ variables control the coolant channel 
+For the \gls{AHTR} plank, the $r_{top}$ and $r_{bot}$ variables control the coolant channel 
 shape on the top and bottom \gls{FLiBe} channels. 
 Figure \ref{fig:coolant-channel-shape} shows the \gls{AHTR} plank's coolant channel 
 shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
@@ -470,7 +470,7 @@ shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
     \label{fig:coolant-channel-shape}
 \end{figure}
 Thus, \gls{ROLLO} will vary $r_{top}$ and $r_{bot}$ to find optimal coolant 
-channel shapes for the \gls{AHTR} plank model.
+channel shapes that optimizes objectives.
 
 For the \gls{AHTR} one-third assembly, $r_1, r_2, r_3, r_4, r_5$ variables control the
 coolant channel shape in the inter-plank \gls{FLiBe}. 
@@ -503,6 +503,9 @@ inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1,
 \end{figure}
 Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
 channel shapes for the \gls{AHTR} one-third assembly model.
+I did not vary the shape of the one-third assembly's top and bottom coolant channels. 
+$r_1, r_2, r_3, r_4, r_5$ are sufficient to show the effect of changing the 
+coolant channel shape.
 
 \subsection{AHTR OpenMC and Moltres Models}
 \label{sec:ahtr-moltres-hom}
