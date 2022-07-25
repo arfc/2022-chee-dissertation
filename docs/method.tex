@@ -793,8 +793,9 @@ following assumptions:
     \item a linear increase in temperature from inlet to outlet 
 \end{itemize}
 \begin{align}
+\intertext{For the plank, h is calculated by: }
     \label{eq:calc-htc-plank}
-    h_{plank} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
+    h_{plank} &= \frac{P_{dz}}{V_{coolant} \cdot \Delta T} \\
       &= \frac{1456 W}{23.1cm \times 0.35cm \times 2} \div 0.0909 K \nonumber \\
       &= 990 W cm^{-2}K^{-1} \nonumber \\
       \label{eq:calc-htc-assem}
