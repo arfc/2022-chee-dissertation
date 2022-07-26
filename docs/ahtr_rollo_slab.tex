@@ -28,7 +28,7 @@ Table \ref{tab:objectives-2} outlines these objectives and their motivation.
     \hline 
     \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
     \hline
-    \textbf{Minimize fuel amount} & Minimize total fuel packing fraction 
+    \textbf{Minimize fuel amount} & Minimize total fuel packing \newline fraction 
     & Cost savings, Non-proliferation \\ 
     \hline
     \textbf{Maximize heat transfer} & Minimize maximum temperature 
@@ -57,14 +57,18 @@ chapter's results \cite{chee_dissertation_2021}.
 In this chapter, I conducted single objective, single input parameter 
 \gls{ROLLO} optimizations to understand the individual impacts of each objective on 
 each input parameter for the \gls{AHTR} plank model. 
-Their results inform the multi-objective optimization simulations setup. 
+Their results are then used to inform the multi-objective optimization simulations setup. 
 Table \ref{tab:slab-obj-breakdown} summarizes the details of each \gls{ROLLO} 
 optimization simulation conducted in this chapter.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
-    \caption{\gls{ROLLO} simulations for optimizing \gls{AHTR}
-    plank. $PF_{total}$: Total fuel packing fraction; 
+    \caption{\gls{ROLLO} simulations for optimizing \gls{AHTR} plank. 
+    There are six single objective optimization simulations (p-1a to p-1f) that are 
+    used to understand the individual impacts of each objective on each input parameter. 
+    Their results are then used to inform the multi-objective optimization simulations 
+    (p-2a, p-2b, p-2c, p-3a, p-3b) setup.
+    $PF_{total}$: Total fuel packing fraction; 
     $T_{max}$: Maximum plank temperature;
     $PPF_{fuel}$: Fuel-normalized power peaking factor; 
     $\rho_{TRISO}(\vec{r})$: \gls{TRISO} particle distribution.}
@@ -72,7 +76,7 @@ optimization simulation conducted in this chapter.
     \footnotesize
     \begin{tabular}{p{1cm}|p{1cm}|llll}
     \hline 
-    \textbf{Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \textbf{Objs [\#]} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
     \multirow{7}{2cm}{1} & p-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff}$ $\geq$ 1.35 &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
