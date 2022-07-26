@@ -152,6 +152,8 @@ Section \ref{sec:rollo-convergence} described how reactor designers can use
 \label{sec:plank-1-obj-pf}
 This section describes the single-objective optimization simulations, p-1a and p-1d, 
 results for the minimize total fuel packing fraction ($PF_{total}$) objective. 
+The minimize $PF_{total}$ objective is important because a reactor that uses less fuel
+with similar performance enables cost savings. % TODO am i sure?  
 Simulation p-1a varies the total fuel packing fraction ($PF_{total}$) and \gls{TRISO} 
 packing fraction distribution ($\rho_{TRISO}(\vec{r})$), while simulation p-1d varies 
 the total fuel packing fraction ($PF_{total}$) and coolant channel shape. 
@@ -289,6 +291,9 @@ between $PF_{total}$ and total radius.
 \label{sec:plank-1-obj-temp}
 This section reports the minimize maximum plank temperature ($T_{max}$) 
 single-objective optimization simulation results: p-1b and p-1e. 
+The minimize $T_{max}$ objective is important because a reactor that has a lower 
+peak tempeature at a specific power enables the system to perform at a higher 
+power at lower thermal stress. % TODO am i sure?  
 Simulation p-1b varies the \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), while simulation p-1e varies the coolant channel shape. 
 
@@ -344,7 +349,8 @@ with the most-minimized $T_{max}$.
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-temp-most-minimized.png}
         \caption{\gls{AHTR} plank model with the most-minimized $T_{max}$
-        (corresponds to the purple densely dashed distribution in the above plot).}
+        (corresponds to the purple densely dashed distribution in Figure 
+        \ref{fig:slab-obj-1-temp-final}).}
         \label{fig:slab-obj-1-temp-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1b -- ROLLO single-objective optimization to minimize 
@@ -434,6 +440,9 @@ $T_{max}$ and coolant channel shape.
 \label{sec:plank-1-obj-ppf}
 This section reports the minimize fuel-normalized power peaking factor 
 ($PPF_{fuel}$) single-objective optimization simulation results: p-1c and p-1f. 
+The minimize $PPF_{fuel}$ objective is important because a reactor that has a lower 
+fuel-normalized power peaking factor will have more even and efficient fuel utilization. 
+% TODO am i sure? 
 Simulation p-1c varies the \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), while simulation p-1f varies the coolant channel shape. 
 
@@ -488,7 +497,8 @@ with the most-minimized $PPF_{fuel}$.
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-ppf-most-minimized.png}
         \caption{\gls{AHTR} plank model with the most-minimized $PPF_{fuel}$
-        (corresponds to the purple densely dashed distribution in the above plot).}
+        (corresponds to the purple densely dashed distribution in Figure 
+        \ref{fig:slab-obj-1-ppf-final}).}
         \label{fig:slab-obj-1-ppf-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1c -- ROLLO single-objective optimization to minimize 
