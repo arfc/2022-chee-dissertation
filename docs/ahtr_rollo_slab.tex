@@ -113,15 +113,16 @@ optimization simulation conducted in this chapter.
 \end{table}
 
 $k_{eff}$ strongly correlates with total fuel packing fraction ($PF_{total}$). 
-The \gls{AHTR} plank with the same $PF_{total}$ as the \gls{FHR} Benchmark's 
+The \gls{AHTR} plank with the same $PF_{total}$ as the \gls{FHR} benchmark's 
 assembly model had a $k_{eff}$ of 1.35. 
 For optimization simulations that vary $PF_{total}$, I constrained $k_{eff} \geq 1.35$ 
 to find optimal input parameters that achieve similar performance to the original 
 benchmark \gls{TRISO} distribution. 
 For the optimization simulations that do not vary $PF_{total}$, I use 
-$PF_{total} = 0.0979$ ... 
-Thus, the $k_{eff}$ constraint values used are 1.35 and 1.0 for optimization simulations 
-that do and do not vary total packing fraction, respectively. 
+$PF_{total} = 0.0979$, which corresponds to the \gls{FHR} benchmark's $PF_{total}$, 
+and constrained $k_{eff} \geq 1.00$. 
+Thus, the $k_{eff}$ constraint values used are $1.35$ and $1.00$ for optimization 
+simulations that do and do not vary total packing fraction, respectively. 
 
 Simulations are run on the BlueWaters supercomputer \cite{ncsa_about_2017} and Theta 
 supercomputer at the Argonne Leadership Computing Facility under the Director's 
