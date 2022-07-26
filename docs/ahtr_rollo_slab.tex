@@ -134,16 +134,17 @@ cost of each optimization simulation.
 \label{sec:plank-one-obj}
 This section reports the \gls{AHTR} plank's \gls{ROLLO} single-objective 
 optimization results. 
-Table \ref{tab:slab-obj-breakdown} summarized the one-objective simulations in this
-section: p-1a, p-1b, p-1c, p-1d, p-1e, and p-1f. 
-In the following subsections, I describe the single-objective optimization results 
+Table \ref{tab:slab-obj-breakdown} summarizes the parameters for the single-objective 
+simulations that are presented in this section: p-1a, p-1b, p-1c, p-1d, p-1e, and p-1f. 
+In the following subsections, I describe each single-objective simulation result 
 grouped by the minimized objective. 
 
 If a single-objective optimization problem's objective converges earlier than the 
 five generations I intended to run (determined in Section 
-\ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation.
+\ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation to 
+save computational resources as the solution will not change.
 However, if the problem's objective does not converge by generation 5, I run the 
-problem for a few more generations till satisfactory convergence.
+problem for a few more generations until satisfactory convergence is reached.
 Section \ref{sec:rollo-convergence} described how reactor designers can use 
 \gls{ROLLO} to determine problem convergence. 
 
