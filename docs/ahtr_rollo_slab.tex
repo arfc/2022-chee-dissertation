@@ -4,17 +4,16 @@
 In this chapter, I report the \gls{AHTR} plank's \gls{ROLLO} optimization results. 
 I vary the following \gls{AHTR} plank input parameters:
 \begin{itemize}
-    \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
-    \item Total fuel packing fraction ($PF_{total}$)
-    \item Coolant channel shape
+    \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$),
+    \item total fuel packing fraction ($PF_{total}$), and 
+    \item coolant channel shape
 \end{itemize} 
-Section \ref{sec:input-parameter-modeling} detailed how I vary these 
-\gls{AHTR} one-third assembly's input parameters. 
+
 I optimize the \gls{AHTR} plank for the following objectives:
 \begin{itemize}
-    \item Minimize total fuel packing fraction ($PF_{total}$)
-    \item Minimize maximum plank temperature ($T_{max}$)
-    \item Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
+    \item minimize total fuel packing fraction ($PF_{total}$), 
+    \item minimize maximum plank temperature ($T_{max}$), and
+    \item minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
 \end{itemize} 
 Table \ref{tab:objectives-2} outlines these objectives and their motivation.
 \begin{table}[htbp]
@@ -48,11 +47,16 @@ The subsequent sections outline the \gls{AHTR} plank optimization simulations
 \ref{sec:plank-three-obj}) \gls{ROLLO} optimization simulation results, 
 report each simulation's computational cost (Section \ref{sec:plank-compute-cost}), 
 and discuss the results' significance (Section \ref{sec:plank-discussion}).
-The \texttt{plank-optimization} directory in the \texttt{arfc/2022-chee-dissertation} 
-Github repository contains this chapter's results \cite{chee_dissertation_2021}. 
+The \texttt{plank-optimization} directory in the \\ \texttt{arfc/2022-chee-dissertation} 
+Github repository contains the data and analysis associated with this 
+chapter's results \cite{chee_dissertation_2021}. 
 
 \section{ROLLO AHTR Plank Optimization Simulations Overview}
 \label{sec:plank-overview}
+In this chapter, I conducted single objective, single input parameter 
+\gls{ROLLO} optimizations to understand the individual impacts of each objective on 
+each input parameter for the \gls{AHTR} plank model. 
+Their results inform the multi-objective optimization simulations setup. 
 Table \ref{tab:slab-obj-breakdown} summarizes the details of each \gls{ROLLO} 
 optimization simulation conducted in this chapter.
 \begin{table}[htbp!]
@@ -102,9 +106,6 @@ optimization simulation conducted in this chapter.
     \hline
     \end{tabular}
 \end{table}
-I first conducted single objective, single input parameter \gls{ROLLO} optimizations to 
-understand the individual impacts of each objective on each input parameter. 
-Their results inform the multi-objective optimization simulations setup. 
 
 The $k_{eff}$ constraint values are 1.35 and 1.0 for optimization problems that do
 and do not minimize total packing fraction, respectively. 
