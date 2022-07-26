@@ -150,7 +150,7 @@ Section \ref{sec:rollo-convergence} described how reactor designers can use
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 \label{sec:plank-1-obj-pf}
-This section describes the single-objective optimization p-1a and p-1d simulations 
+This section describes the single-objective optimization simulations, p-1a and p-1d, 
 results for the minimize total fuel packing fraction ($PF_{total}$) objective. 
 Simulation p-1a varies the total fuel packing fraction ($PF_{total}$) and \gls{TRISO} 
 packing fraction distribution ($\rho_{TRISO}(\vec{r})$), while simulation p-1d varies 
@@ -204,7 +204,8 @@ illustrates the \gls{AHTR} plank model with the most-minimized $PF_{total}$.
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\linewidth]{slab-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} plank model with the most-minimized $PF_{total}$ 
-        (corresponds to the blue solid distribution in the above plot).}
+        (corresponds to the blue solid distribution in Figure 
+        \ref{fig:slab-obj-1-pf-final} ).}
         \label{fig:slab-obj-1-pf-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1a -- ROLLO single-objective optimization to minimize the 
@@ -213,12 +214,10 @@ illustrates the \gls{AHTR} plank model with the most-minimized $PF_{total}$.
     ($PF_{total}$), \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:slab-obj-1-pf}
 \end{figure}
-
 Figure \ref{fig:slab-obj-1-pf-evol} shows that the minimum and average $PF_{total}$ 
-converged quickly, as expected in this single-objective optimization 
-problem.
-By the final generation, the average, minimum, and maximum $PF_{total}$
-values converged to approximately 0.023. 
+converged quickly.
+By the final generation, the average $PF_{total}$ values for all reactor models 
+in the generation converged to approximately 0.023. 
 In Figure \ref{fig:slab-obj-1-pf-final}, the \gls{TRISO} packing fraction
 distributions are not the same but follow a similar oscillating 
 TRISO distribution pattern. 
@@ -240,7 +239,7 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \hline 
     \textbf{Objectives} & Minimize $PF_{total}$\\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF_{total}<0.05$ \\
+    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
     & Coolant channel shape: $0.05<r_{top}<0.35$ \\
     & Coolant channel shape: $0.05<r_{bot}<0.35$ \\
     \hline
