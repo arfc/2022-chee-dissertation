@@ -171,7 +171,7 @@ simulation p-1a.
     \hline 
     \textbf{Objectives} & Minimize $PF_{total}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    \textbf{Input parameter variations} & $0.02 \leq PF_{total} \leq 0.04$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
@@ -205,7 +205,7 @@ illustrates the \gls{AHTR} plank model with the most-minimized $PF_{total}$.
         \includegraphics[width=\linewidth]{slab-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} plank model with the most-minimized $PF_{total}$ 
         (corresponds to the blue solid distribution in Figure 
-        \ref{fig:slab-obj-1-pf-final} ).}
+        \ref{fig:slab-obj-1-pf-final}).}
         \label{fig:slab-obj-1-pf-most-minimized} 
     \end{subfigure}
     \caption{Simulation p-1a -- ROLLO single-objective optimization to minimize the 
@@ -216,8 +216,8 @@ illustrates the \gls{AHTR} plank model with the most-minimized $PF_{total}$.
 \end{figure}
 Figure \ref{fig:slab-obj-1-pf-evol} shows that the minimum and average $PF_{total}$ 
 converged quickly.
-By the final generation, the average $PF_{total}$ values for all reactor models 
-in the generation converged to approximately 0.023. 
+The final generation's average $PF_{total}$ values for all reactor models 
+converged to approximately 0.023. 
 In Figure \ref{fig:slab-obj-1-pf-final}, the \gls{TRISO} packing fraction
 distributions are not the same but follow a similar oscillating 
 TRISO distribution pattern. 
@@ -227,7 +227,8 @@ another, Section \ref{sec:plank-discussion-pf} discusses the driving factors for
  $PF_{total}$ oscillating TRISO distribution. 
 
 \subsubsection{Simulation p-1d: Variation of $PF_{total}$ and Coolant channel shape}
-Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem parameters. 
+Table \ref{tab:simulationp1d} summarizes the optimization problem parameters for 
+simulation p-1d.  
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -240,7 +241,7 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \hline 
     \textbf{Objectives} & Minimize $PF_{total}$\\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    \textbf{Input parameter variations} & $0.02 \leq PF_{total} \leq 0.04$ \\
     & Coolant channel shape: $0.05<r_{top}<0.35$ \\
     & Coolant channel shape: $0.05<r_{bot}<0.35$ \\
     \hline
@@ -251,9 +252,9 @@ Table \ref{tab:simulationp1d} shows simulation p-1d's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
-Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the $PF_{total}$ evolution, 
-and Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of the total radius 
+Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the $PF_{total}$ evolution converges 
+over three generations.  
+Figure \ref{fig:slab-obj-1-pf-final-coolant} shows a plot of the total radius 
 ($r_{top} + r_{bot}$) against $PF_{total}$. 
 \begin{figure}[htbp!]
     \centering
@@ -599,7 +600,7 @@ Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem param
     \textbf{Objectives} & Minimize $PF_{total}$ \\
     & Minimize $T_{max}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    \textbf{Input parameter variations} & $0.02 \leq PF_{total} \leq 0.04$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
@@ -721,7 +722,7 @@ Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem param
     \textbf{Objectives} & Minimize $PF_{total}$ \\
     & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    \textbf{Input parameter variations} & $0.02 \leq PF_{total} \leq 0.04$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
@@ -977,7 +978,7 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
     & Minimize $T_{max}$ \\
     & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    \textbf{Input parameter variations} & $0.02 \leq PF_{total} \leq 0.04$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
@@ -1129,7 +1130,7 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     & Minimize $T_{max}$ \\
     & Minimize $PPF_{fuel}$ \\
     \hline 
-    \textbf{Input parameter variations} & $0.02<PF_{total}<0.04$ \\
+    \textbf{Input parameter variations} & $0.02 \leq PF_{total} \leq 0.04$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<a<2$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<b<\frac{\pi}{2}$ \\
     & $\rho_{TRISO}(\vec{r})$: $0<c<2\pi$ \\
