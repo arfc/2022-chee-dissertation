@@ -735,7 +735,7 @@ Equation \ref{eq:reaction-rate-fission} into Equation \ref{eq:reaction-rate-fiss
 In Section \ref{sec:ahtr_slab_output}, I defined the fuel-normalized power peaking 
 factor ($PPF_{fuel}$) as: 
 \begin{align}
-    PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
+    PPF_{fuel} &= \frac{max(\frac{fqr_j}{PF_j})}{ave(\frac{fqr_j}{PF_j})}
 \intertext{where}
 PPF_{fuel} &= \mbox{fuel-normalized power peaking factor} \nonumber \\
 j &= \mbox{discretized fuel area j} \nonumber \\
@@ -755,7 +755,7 @@ Finally, I can further rearrange Equation \ref{eq:flux-prop-fqr} into
 Equation \ref{eq:flux-prop-ppf}:
 \begin{align}
     \label{eq:flux-prop-ppf}
-    \frac{max(\Phi_j)}{ave(\Phi_j)} &\propto \frac{\frac{fqr_j}{PF_j}}{ave(\frac{fqr_j}{PF_j})} \nonumber \\
+    \frac{max(\Phi_j)}{ave(\Phi_j)} &\propto \frac{max(\frac{fqr_j}{PF_j})}{ave(\frac{fqr_j}{PF_j})} \nonumber \\
     max(\Phi_j) \div ave(\Phi_j) &\propto max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j}) \nonumber \\
     &\propto PPF_{fuel}
 \end{align}
