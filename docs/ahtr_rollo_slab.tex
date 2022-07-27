@@ -631,8 +631,8 @@ Figure \ref{fig:triso-0.023}).
     \end{tabular}
 \end{table}
 The most-minimized $PF_{total}$ TRISO distribution has $0.18\%$ higher total fission 
-reaction rate than the constant $PF_{total}$ = 0.023 TRISO distribution, 
-explaining why the oscillating TRISO distribution enabled a lower packing fraction 
+reaction rate than the constant $PF_{total}$ = 0.023 TRISO distribution, explaining 
+why the oscillating TRISO distribution enabled a lower packing fraction 
 for the same $k_{eff}$ compared to the constant TRISO distribution. 
 
 \paragraph{Simulation p-1d}
@@ -644,8 +644,8 @@ between the $PF_{total}$ and the coolant channel shape (demonstrated in Figure
 \ref{fig:slab-obj-1-pf-final-coolant}). 
 
 \paragraph{Summary}
-The minimize $PF_{total}$ objective is driven by maximizing the total fission reaction 
-rates. 
+The minimize $PF_{total}$ objective is driven by maximizing the total fission 
+reaction rates. 
 The minimize $PF_{total}$ objective has correlations with the  
 $PF_{total}$ and TRISO packing fraction distribution input parameters. 
 The objective has no correlation with the coolant channel shape input parameter. 
@@ -659,7 +659,7 @@ In simulation p-1b, \gls{ROLLO} found that an \gls{AHTR} plank model with a most
 flat TRISO distribution most-minimized $T_{max}$ 
 (Figure \ref{fig:slab-obj-1-temp-final}).
 
-I found that a fully flat \gls{TRISO} distribution results in a higher $T_{max}$.
+I found that a fully flat \gls{TRISO} distribution results in a $1.83 K$ higher $T_{max}$.
 Figure \ref{fig:slab-obj-1-temp-distr} compares the Moltres-generated centerline 
 temperature distribution for the plank with mostly flat (Figure 
 \ref{fig:slab-obj-1-temp-final}) and flat TRISO distributions for the same 
@@ -676,13 +676,16 @@ The \gls{AHTR} plank with a flat \gls{TRISO} distribution has higher plank tempe
 on the left and right sides near the moderator. 
 To combat this temperature peak, ROLLO found a \gls{TRISO} distribution that 
 has a slight dip near the moderator regions, resulting in a lower $T_{max}$.
+However, the peak temperature discrepancy between the mostly flat and fully flat 
+TRISO distributions is very small. 
+Thus, the minimize $T_{max}$ objective mainly flattens the TRISO distribution.
 
 \paragraph{Simulation p-1e}
 In Section \ref{sec:plank-1-obj-temp}'s simulation p-1e, I conducted a single-objective 
 optimization simulation to minimize the maximum plank temperature ($T_{max}$) by varying 
 the coolant channel shape. 
 In simulation p-1e, \gls{ROLLO} found that there is a negative linear correlation 
-between the plank's $T_{max}$ and total radius ($r_{tot} = r_{bot} + r_{top}$), shown in 
+between the plank's $T_{max}$, and $r_{bot}$ and $r_{top}$, shown in 
 Figure \ref{fig:slab-obj-1-temp-final-coolant}. 
 Comparison of simulation p-1b and p-1e's results in 
 Figures \ref{fig:slab-obj-1-temp-evol} and \ref{fig:slab-obj-1-temp-evol-coolant} 
