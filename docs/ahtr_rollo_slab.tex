@@ -879,22 +879,23 @@ $PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.
 In energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $3.96\%$ 
 flatter than the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a 
 lower $PPF_{fuel}$ (as shown by Equation \ref{eq:flux-prop-ppf}). 
-Therefore, for the same  $PF_{total}$, a TRISO distribution that flattens thermal 
-flux distribution results in a lower fuel-normalized power peaking factor, which 
-is beneficial for fuel utilization. 
+Therefore, for the same $PF_{total}$, a TRISO distribution that flattens thermal 
+flux distribution results in a lower fuel-normalized power peaking factor ($PPF_{fuel}$), 
+which is beneficial for fuel utilization. 
 
 \paragraph{Simulation p-1f}
 In Section \ref{sec:plank-1-obj-ppf}'s simulation p-1f, I conducted a single-objective 
 optimization simulation to minimize the fuel-normalized power peaking factor ($PPF_{fuel}$) 
 by varying the coolant channel shape.
 Comparison of simulation p-1c and p-1f's results in Figures 
-\ref{fig:slab-obj-1-ppf-evol-coolant} and \ref{fig:slab-obj-1-ppf-evol}
+\ref{fig:slab-obj-1-ppf-evol} and \ref{fig:slab-obj-1-ppf-evol-coolant} 
 show that the coolant channel shape variation has minimal impact on $PPF_{fuel}$ as 
-\gls{TRISO} distribution variation: the average $PPF_{fuel}$ due to \gls{TRISO} 
-variation decreased by 0.1 over 10 generations, while average $PPF_{fuel}$ due to 
-coolant channel shape variation only decreased negligibly over 10 generations. 
-Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
-between total radius and $PPF_{fuel}$. 
+compared to \gls{TRISO} distribution variation: the average $PPF_{fuel}$ due 
+to \gls{TRISO} variation decreased by 0.1 over 10 generations, while average 
+$PPF_{fuel}$ due to coolant channel shape variation decreased 0.003 over 
+4 generations. 
+Figure \ref{fig:slab-obj-1-ppf-final-coolant} illustratively reinforces that there is 
+no correlation between total radius and $PPF_{fuel}$. 
 
 \paragraph{Summary}
 The minimize $PPF_{fuel}$ objective is driven by flattening thermal (Group 4) flux 
@@ -904,7 +905,17 @@ $PF_{total}$ and TRISO packing fraction distribution.
 The objective has no correlation with the coolant channel shape input parameter.
 
 \subsection{AHTR Plank: Single-Objective Optimization Major Takeaways}
-
+In Section \ref{sec:plank-one-obj}, I conduct an in-depth examination to understand 
+and compare the driving factors for each individual objective. 
+The minimize $T_{max}$ objective is driven by minimizing plank's maximum temperature; 
+and flattens TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to 
+achieve the objective. 
+The minimize $PF_{total}$ objective is driven by maximizing the plank's total fission 
+reaction rate and influences the TRISO disribution to achieve the objective. 
+The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
+distribution and influences $PF_{total}$ and TRISO disribution to achieve the objective. 
+Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
+with the coolant channel shape. 
 
 \section{AHTR Plank: Two-Objective Optimization Results}
 \label{sec:plank-two-obj}
