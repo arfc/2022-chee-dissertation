@@ -137,7 +137,7 @@ This section reports the \gls{AHTR} plank's \gls{ROLLO} single-objective
 optimization results. 
 Table \ref{tab:slab-obj-breakdown} summarizes the parameters for the single-objective 
 simulations that are presented in this section: p-1a, p-1b, p-1c, p-1d, p-1e, and p-1f. 
-In the following subsections, I describe each single-objective simulation result 
+In the following subsections, I describe the single-objective simulation results 
 grouped by the minimized objective (Sections \ref{sec:plank-1-obj-pf}, 
 \ref{sec:plank-1-obj-temp}, and \ref{sec:plank-1-obj-ppf}), and provide discussion 
 about the single-objective simulations results (Section 
@@ -154,10 +154,11 @@ Section \ref{sec:rollo-convergence} described how reactor designers can use
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 \label{sec:plank-1-obj-pf}
-This section describes the single-objective optimization simulations, p-1a and p-1d, 
-results for the minimize total fuel packing fraction ($PF_{total}$) objective. 
+This section describes the single-objective p-1a and p-1d optimization simulation
+results. 
+Both simulations minimize the total fuel packing fraction ($PF_{total}$) objective. 
 The minimize $PF_{total}$ objective is important because a reactor that uses less fuel
-with similar performance enables cost savings. % TODO am i sure?  
+with similar performance enables cost savings. 
 Simulation p-1a varies the total fuel packing fraction ($PF_{total}$) and \gls{TRISO} 
 packing fraction distribution ($\rho_{TRISO}(\vec{r})$), while simulation p-1d varies 
 the total fuel packing fraction ($PF_{total}$) and coolant channel shape. 
@@ -222,14 +223,14 @@ illustrates the \gls{AHTR} plank model with the most-minimized $PF_{total}$.
     \label{fig:slab-obj-1-pf}
 \end{figure}
 Figure \ref{fig:slab-obj-1-pf-evol} shows that the minimum and average $PF_{total}$ 
-converged quickly.
+converged quickly. 
 The final generation's average $PF_{total}$ values for all reactor models 
 converged to approximately 0.023. 
 In Figure \ref{fig:slab-obj-1-pf-final}, the \gls{TRISO} packing fraction
 distributions are not the same but follow a similar oscillating 
 TRISO distribution pattern. 
 Because it is more productive to compare all of the single objective results to one 
-another, Section \ref{sec:plank-discussion-pf} discusses the driving factors for
+another, Section \ref{sec:plank-discussion-single} discusses the driving factors for
 the minimize $PF_{total}$ objective and explains simulation p-1a's most-minimized 
 $PF_{total}$ oscillating TRISO distribution. 
 
