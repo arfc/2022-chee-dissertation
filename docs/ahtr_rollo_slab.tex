@@ -764,14 +764,15 @@ $\frac{max(\Phi_j)}{ave(\Phi_j)}$ value) will result in a smaller $PPF_{fuel}$.
 Specifically, flatter energy group 4 thermal flux results in a smaller $PPF_{fuel}$
 (see Table \ref{tab:fission-flux}). 
 Table \ref{tab:fission-flux} shows the percentage contributions of fission reactions from 
-each energy group. 
+each energy group from the constant $PF_{total}$ = 0.0979 TRISO distribution 
+shown in Figure \ref{fig:triso-0.0979}. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
     \caption{Percentage of fission reactions from each energy group for \gls{AHTR} plank model.}
 	\label{tab:fission-flux}
     \footnotesize
-    \begin{tabular}{llp{4cm}}
+    \begin{tabular}{llc}
     \hline 
     \textbf{Energy Group} & \textbf{Energy Bounds [MeV]} & \textbf{\% of Total Fission \newline Reactions} \\
     \hline
@@ -785,7 +786,7 @@ each energy group.
 Most fission reactions are occurring in energy group 4. 
 
 In the following section, I demonstrate Equation \ref{eq:flux-prop-ppf}'s relationship 
-in simulation p-1c and p-2b's results. 
+in simulation p-1c results. 
 
 \paragraph{Simulation p-1c}
 In Section \ref{sec:plank-1-obj-ppf}'s simulation p-1c, I conducted a single-objective 
@@ -840,9 +841,9 @@ born in the plank's center, the fast neutrons are moderated in the graphite matr
 and graphite structure (Figure \ref{fig:straightened_plank}). 
 The self-shielding neutrons are more likely absorbed at the fuel regions at the 
 plank's sides, near the pure graphite structure moderating regions. 
-The outer sides of the plank geometrically shield the plank's center from neutron 
-flux, leading to a relatively lower group 4 thermal flux in the plank's center for 
-the constant TRISO distribution. 
+The outer sides of the plank absorb these neutrons and geometrically shield the 
+plank's center from neutron flux, leading to a relatively lower group 4 thermal 
+flux in the plank's center for the constant TRISO distribution. 
 
 Table \ref{tab:flux-comparison-0.0979-plank} quantifies the flux comparison 
 from Figure \ref{fig:flux-comparison-0.0979-plank} between simulation p-1c's 
@@ -878,6 +879,7 @@ $PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.
 In energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $3.96\%$ flatter 
 than the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a lower 
 $PPF_{fuel}$ (as shown by Equation \ref{eq:flux-prop-ppf}). 
+% TODO: major takeaway 
 
 \paragraph{Simulation p-1f}
 In Section \ref{sec:plank-1-obj-ppf}'s simulation p-1f, I conducted a single-objective 
