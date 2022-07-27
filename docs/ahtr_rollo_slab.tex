@@ -916,8 +916,8 @@ distribution and influences $PF_{total}$ and TRISO disribution to achieve the ob
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
 with the coolant channel shape. 
 
-Since the variations in coolant channel shape only impact one objective, 
-the minimize plank's maximum temperature ($T_{max}$), I do not conduct two-objective 
+Since the variations in coolant channel shape only impact the minimize plank's maximum 
+temperature ($T_{max}$) objective, I do not conduct two-objective 
 optimization for coolant channel shape variations.  
 
 \section{AHTR Plank: Two-Objective Optimization Results}
@@ -925,12 +925,15 @@ optimization for coolant channel shape variations.
 This section reports the \gls{AHTR} plank's \gls{ROLLO} two-objective optimization 
 results. 
 The previous section's single-objective optimization results inform the multi-objective 
-optimization simulations in this section and Section \ref{sec:plank-three-obj}.
+optimization simulations in this section.
 Section \ref{sec:plank-one-obj} concluded that coolant channel shape variations 
 only correlate with the minimize $T_{max}$ objective, thus, I do not conduct 
 two-objective optimization for coolant channel shape variations.
-Table \ref{tab:slab-obj-breakdown} summarized the two-objective simulations in this 
-section: p-2a, p-2b, and p-2c.
+I conduct two-objective optimizations for varying total fuel packing 
+fraction ($PF_{total}$) and \gls{TRISO} packing fraction distribution 
+($\rho_{TRISO}(\vec{r})$). 
+Section \ref{sec:plank-overview}'s Table \ref{tab:slab-obj-breakdown} summarized 
+the two-objective simulations in this section: p-2a, p-2b, and p-2c.
 
 As previously described in Section \ref{sec:opt}, multi-objective optimization returns 
 multiple optimal solutions that meet each objective to varying degrees; this set of 
@@ -942,6 +945,7 @@ optimization, should find widely spread solutions in the obtained Pareto front
 \cite{deb_multi-objective_2001}. 
 Thus, I report the optimal reactor models on the Pareto front for the multi-objective 
 optimization problems in this section and Section \ref{sec:plank-three-obj}. 
+Several optimal solutions will be highlighted in the Pareto Front figures. 
 
 To ensure that the multi-objective optimization problems are converged, I report the 
 hypervolume values for each generation. 
