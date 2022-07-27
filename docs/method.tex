@@ -68,6 +68,8 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \end{tabular}
 \end{table}
 % TODO: Motivation (talk to Madicken)
+% minimize thermal stress in the fuel. Lowering max temp, means gradient is smaller, at 
+% the same power
 
 To optimize the objectives, I will vary the parameters in the \gls{AHTR} plank and 
 one-third assembly models. 
@@ -1403,6 +1405,10 @@ mesh sizes that are larger than each Theta node's memory size.
 % high bar... 
 
 \subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
+% make this a little clearer... 
+% moltres does its own interpolation based on the group constants from OpenMC. 
+% i'm doing this to verify but I don't expect it to matter... worth checking to see the 
+% effect. 
 During ROLLO optimization, each new reactor model results in the creation of 
 a new Moltres temperature model. 
 Correspondingly, a new set of group constant data needs to be created. 
