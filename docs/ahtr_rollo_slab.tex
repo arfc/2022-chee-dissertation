@@ -273,9 +273,9 @@ against $PF_{total}$.
         \label{fig:slab-obj-1-pf-evol-coolant} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{slab-obj-1-pf-final-coolant-rtop.png}
-        \includegraphics[width=\linewidth]{slab-obj-1-pf-final-coolant-rbot.png}
-        \caption{Plot of total radius ($r_{top} + r_{bot}$) against $PF_{total}$. 
+        \includegraphics[width=0.49\linewidth]{slab-obj-1-pf-final-coolant-rtop.png}
+        \includegraphics[width=0.49\linewidth]{slab-obj-1-pf-final-coolant-rbot.png}
+        \caption{Plots of$r_{top}$ and $r_{bot}$ against $PF_{total}$. 
         Red crosses indicate the five reactor models with the lowest $PF_{total}$.
         The five reactor models with the lowest $PF_{total}$ are the same, thus 
         their crosses overlap.}
@@ -288,15 +288,15 @@ against $PF_{total}$.
     \label{fig:slab-obj-1-pf-coolant}
 \end{figure}
 Figure \ref{fig:slab-obj-1-pf-final-coolant} demonstrates that there is no correlation 
-between $PF_{total}$ and total radius. 
+between $PF_{total}$, and $r_{top}$ and $r_{bot}$.
 
 \subsection{Objective: Minimize Maximum Plank Temperature ($T_{max}$)}
 \label{sec:plank-1-obj-temp}
-This section reports the minimize maximum plank temperature ($T_{max}$) 
-single-objective optimization simulation results: p-1b and p-1e. 
+This section describes the single-objective p-1b and p-1e optimization simulation
+results. 
+Both simulations minimize the maximum plank temperature ($T_{max}$) objective. 
 The minimize $T_{max}$ objective is important because a reactor that has a lower 
-peak tempeature at a specific power enables the system to perform at a higher 
-power at lower thermal stress. % TODO am i sure?  
+peak tempeature minimizes thermal stresses in the fuel. 
 Simulation p-1b varies the \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), while simulation p-1e varies the coolant channel shape. 
 
@@ -328,7 +328,6 @@ simulation p-1b.
     \hline
     \end{tabular}
 \end{table}
-
 Figure \ref{fig:slab-obj-1-temp-evol} shows the plank's $T_{max}$ evolution. 
 Figure \ref{fig:slab-obj-1-temp-final} shows the five \gls{TRISO} packing fraction
 distributions ($\rho_{TRISO}(\vec{r})$) with the most-minimized $T_{max}$ from the 
@@ -361,7 +360,6 @@ with the most-minimized $T_{max}$.
     packing fraction distribution ($\rho_{TRISO}(\vec{r})$). $PF_{total}$ = 0.0979.}
     \label{fig:slab-obj-1-temp}
 \end{figure}
-
 Figure \ref{fig:slab-obj-1-temp-evol} shows that the minimum and average plank's 
 $T_{max}$ converged to approximately 1125 K. 
 In Figure \ref{fig:slab-obj-1-temp-final}, a mostly flat TRISO
@@ -369,7 +367,7 @@ distribution minimizes $T_{max}$ in the plank; the TRISO distribution
 has two small dips at the one-third and two-third points in the plank 
 (6.62cm and 20.48cm). 
 Because it is more productive to compare all of the single objective results to one 
-another, Section \ref{sec:plank-discussion-temp} discusses and explains simulation 
+another, Section \ref{sec:plank-discussion-single} discusses and explains simulation 
 p-1b's most-minimized $T_{max}$ mostly flat TRISO distribution with a packing fraction 
 standard deviation of $0.0015$. 
 
@@ -400,7 +398,6 @@ simulation p-1e.
     \hline
     \end{tabular}
 \end{table}
-
 Figure \ref{fig:slab-obj-1-temp-evol-coolant} shows the plank's $T_{max}$ evolution.
 Figure \ref{fig:slab-obj-1-temp-final-coolant} shows a plot of the total radius 
 ($r_{top} + r_{bot}$) against $T_{max}$.
@@ -415,9 +412,10 @@ plank model with the most-minimized $T_{max}$.
         \label{fig:slab-obj-1-temp-evol-coolant} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
-        \includegraphics[width=\linewidth]{slab-obj-1-temp-final-coolant.png}
-        \caption{Plot of total radius ($r_{top} + r_{bot}$) against plank's 
-        $T_{max}$. Red crosses indicate the five reactor models with the 
+        \includegraphics[width=0.49\linewidth]{slab-obj-1-temp-final-coolant-rtop.png}
+        \includegraphics[width=0.49\linewidth]{slab-obj-1-temp-final-coolant-rbot.png}
+        \caption{Plots of $r_{top}$ and $r_{bot}$ against $T_{max}$. 
+        Red crosses indicate the five reactor models with the 
         lowest $T_{max}$.
         Some of the five reactor models with the lowest $T_{max}$ are the same, thus 
         their crosses overlap.}
@@ -435,7 +433,6 @@ plank model with the most-minimized $T_{max}$.
     TRISO distribution.}
     \label{fig:slab-obj-1-temp-coolant}
 \end{figure}
-
 Figure \ref{fig:slab-obj-1-temp-final-coolant} demonstrates a negative 
 linear correlation between the plank's $T_{max}$ and total radius. 
 Section \ref{sec:plank-discussion-temp} discusses and explains the relationship between 
