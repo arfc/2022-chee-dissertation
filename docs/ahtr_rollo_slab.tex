@@ -699,6 +699,196 @@ $PF_{total}$, TRISO packing fraction distribution, and coolant channel shape.
 The results from simulation p-1b and p-1e suggest that the minimize $T_{max}$ objective 
 is more influenced by the TRISO distribution than the coolant channel shape. 
 
+\subsubsection{Discussion: Minimize $PPF_{fuel}$ Objective}
+I conduct an equation analysis to determine the \gls{AHTR} plank properties 
+that influence the $PPF_{fuel}$ objective. 
+I then demonstrate the derived relationship in simulation p-1c and p-2b's results.
+
+\paragraph{Equation Analysis}
+Equation \ref{eq:reaction-rate-fission} shows the relationship between fission reaction 
+rate, flux, and material properties: 
+\begin{align}
+\label{eq:reaction-rate-fission}
+    RR_f &= \Phi \times \sigma_f \times N \\
+\intertext{where}
+    RR_f &= \mbox{fission reaction rate } [reactions \cdot cm^{-3} \cdot s^{-1}] \nonumber \\
+    \Phi &= \mbox{neutron flux } [neutrons \cdot cm^{-2} \cdot s^{-1}] \nonumber \\
+    \sigma_f &= \mbox{microscopic cross section } [cm^2] \nonumber \\
+    N &= \mbox{atomic number density } [atoms \cdot cm^{-3}] \nonumber 
+\end{align}
+
+Since microscopic cross section is constant for the same fuel material, I rearrange 
+Equation \ref{eq:reaction-rate-fission} into Equation \ref{eq:reaction-rate-fission-prop}: 
+\begin{align}
+    \label{eq:reaction-rate-fission-prop}
+    \Phi \propto \frac{RR_f}{N}
+\end{align}
+In Section \ref{sec:ahtr_slab_output}, I defined the fuel-normalized power peaking 
+factor ($PPF_{fuel}$) as: 
+\begin{align}
+    PPF_{fuel} &= max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j})
+\intertext{where}
+PPF_{fuel} &= \mbox{fuel-normalized power peaking factor} \nonumber \\
+j &= \mbox{discretized fuel area j} \nonumber \\
+fqr_j &= \mbox{fission-q-recoverable at position j (OpenMC tally)} \nonumber \\
+PF_j &= \mbox{fuel packing fraction at position j} \nonumber
+\end{align}
+The fission reaction rate ($RR_f$) is proportional to fission energy production rate 
+($fqr$). 
+The atomic number density (N) is proportional to the fuel packing fraction ($PF$). 
+Thus, I can rearrange Equation \ref{eq:reaction-rate-fission-prop} into 
+Equation \ref{eq:flux-prop-fqr}:
+\begin{align}
+    \label{eq:flux-prop-fqr}
+    \Phi_j \propto \frac{fqr_j}{PF_j}
+\end{align}
+Finally, I can further rearrange Equation \ref{eq:flux-prop-fqr} into 
+Equation \ref{eq:flux-prop-ppf}:
+\begin{align}
+    \label{eq:flux-prop-ppf}
+    max(\Phi_j) \div ave(\Phi_j) &\propto max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j}) \nonumber \\
+    &\propto PPF_{fuel}
+\end{align}
+
+Therefore, from Equation \ref{eq:flux-prop-ppf}, a flatter flux (smaller 
+$max(\Phi_j) \div ave(\Phi_j)$ value) will result in a smaller $PPF_{fuel}$. 
+Specifically, flatter energy group 4 thermal flux results in a smaller $PPF_{fuel}$
+(see Table \ref{tab:fission-flux}). 
+Table \ref{tab:fission-flux} shows the percentage contributions of fission reactions from 
+each energy group. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Percentage of fission reactions from each energy group for \gls{AHTR} plank model.}
+	\label{tab:fission-flux}
+    \footnotesize
+    \begin{tabular}{llp{4cm}}
+    \hline 
+    \textbf{Energy Group} & \textbf{Energy Bounds [MeV]} & \textbf{\% of Total Fission \newline Reactions} \\
+    \hline
+    1 & $9.1188\times 10^{-3} < E < 2.0000\times 10^1$ & 0.85 \\ 
+    2 & $2.9023\times 10^{-5} < E < 9.1188\times 10^{-3}$ & 4.85 \\
+    3 & $1.8554\times 10^{-6} < E < 2.9023\times 10^{-5}$ & 4.14 \\
+    4 & $1.0000\times 10^{-12} < E < 1.8554\times 10^{-6}$ & 90.14 \\
+    \hline
+    \end{tabular}
+\end{table}
+Most fission reactions are occurring in energy group 4. 
+
+In the following section, I demonstrate Equation \ref{eq:flux-prop-ppf}'s relationship 
+in simulation p-1c and p-2b's results. 
+
+\paragraph{Simulation p-1c}
+In Section \ref{sec:plank-1-obj-ppf}'s simulation p-1c, I conducted a single-objective 
+optimization simulation to minimize the fuel-normalized power peaking factor ($PPF_{fuel}$) 
+by varying TRISO distribution. 
+In simulation p-1c, \gls{ROLLO} found that for $PF_{total}$ = 0.0979, an \gls{AHTR} 
+plank model with the TRISO distribution that peaks near the edges of the fuel region of 
+the plank and a minimum point in plank's center with a variation of $\sim0.07$, 
+most-minimized $PPF_{fuel}$ (Figure \ref{fig:slab-obj-1-ppf}). 
+
+I ran a simulation for constant $PF_{total}$ = 0.0979 and compared its 
+flux to simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution to understand 
+why the latter enabled a lower $PPF_{fuel}$. 
+Figure \ref{fig:triso-0.0979} shows the TRISO distributions and the $PPF_{fuel}$ 
+values for the two compared simulations: simulation p-1c's (Figure 
+\ref{fig:slab-obj-1-ppf}) most-minimized $PPF_{fuel}$ TRISO distribution and 
+the constant $PF_{total}$ = 0.0979 TRISO distribution. 
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{triso-0.0979.png} 
+    \caption{Simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
+    from Figure \ref{fig:slab-obj-1-ppf} and the constant $PF_{total}$ = 0.0979 
+    TRISO distribution.}
+    \label{fig:triso-0.0979}
+\end{figure}
+
+Figure \ref{fig:flux-comparison-0.0979-plank} compares the flux distributions between 
+the most-minimized $PPF_{fuel}$ TRISO distribution and the constant $PF_{total}$ = 0.0979 
+TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp1.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp2.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp3.png} 
+    \includegraphics[width=0.48\linewidth]{flux-comparison-0.0979-plank_grp4.png} 
+    \caption{Flux comparison between Figure \ref{fig:slab-obj-1-ppf-final}'s TRISO 
+    distribution that most-minimized $PPF_{fuel}$ and a constant $PF_{total}$ = 0.0979 
+    TRISO distribution. 
+    \gls{AHTR} plank's centerline neutron flux distribution in 4 groups at 948K. 
+    The centerline is the white line in Figure \ref{fig:ahtr-plank-verification}.
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV;
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
+    \label{fig:flux-comparison-0.0979-plank}
+\end{figure}
+
+In Figure \ref{fig:flux-comparison-0.0979-plank}, the constant TRISO distribution's 
+Group 4 flux dips in the center of the plank due to spatial self-shielding effects. 
+In the constant TRISO distribution's Group 1 flux, there is a peak in fast neutrons
+born in the plank's center, the fast neutrons are moderated in the graphite matrix 
+and graphite structure (Figure \ref{fig:straightened_plank}). 
+The self-shielding neutrons are more likely absorbed at the fuel regions at the 
+plank's sides, near the pure graphite structure moderating regions. 
+The outer sides of the plank geometrically shield the plank's center from neutron 
+flux, leading to a relatively lower group 4 thermal flux in the plank's center for 
+the constant TRISO distribution. 
+
+Table \ref{tab:flux-comparison-0.0979-plank} quantifies the flux comparison 
+from Figure \ref{fig:flux-comparison-0.0979-plank} between simulation p-1c's 
+most-minimized $PPF_{fuel}$ TRISO distribution and the constant 
+$PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.0979}).
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Flux value comparison between Figure \ref{fig:slab-obj-1-ppf-final}'s TRISO 
+    distribution that most-minimized $PPF_{fuel}$ and a constant $PF_{total}$ = 0.0979 
+    TRISO distribution. 
+    Energy Group 1: E $> 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 2: $2.9023 \times 10^{-5} < E < 9.1188 \times 10^{-3}$ MeV;
+    Energy Group 3:  $1.8556 \times 10^{-5} < E < 2.9023 \times 10^{-5}$ MeV;
+    Energy Group 4:  $1.0 \times 10^{-12} < E < 1.8554 \times 10^{-6}$ MeV.}
+	\label{tab:flux-comparison-0.0979-plank}
+    \footnotesize
+    \begin{tabular}{lp{4.2cm}p{3.3cm}p{4cm}}
+    \hline
+    \textbf{Energy Group} &
+    \textbf{$max(\phi)/min(\phi)$ \newline Most-minimized $PPF_{fuel}$ \newline TRISO Distribution} & 
+    \textbf{$max(\phi)/min(\phi)$ \newline Constant TRISO \newline Distribution} & 
+    \textbf{$\%$ Diff}\\
+    \hline 
+    1 & 1.093 & 1.147 & \Minus4.68 \\
+    2 & 1.024 & 1.027 & \Minus0.22\\
+    3 & 1.077 & 1.114 & \Minus3.32 \\
+    4 & 1.071 & 1.115 & \Minus3.96 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+In energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $3.96\%$ flatter 
+than the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a lower 
+$PPF_{fuel}$ (as shown by Equation \ref{eq:flux-prop-ppf}). 
+
+\paragraph{Simulation p-1f}
+In Section \ref{sec:plank-1-obj-ppf}'s simulation p-1f, I conducted a single-objective 
+optimization simulation to minimize the fuel-normalized power peaking factor ($PPF_{fuel}$) 
+by varying the coolant channel shape.
+Comparison of simulation p-1c and p-1f's results in Figures 
+\ref{fig:slab-obj-1-ppf-evol-coolant} and \ref{fig:slab-obj-1-ppf-evol}
+show that the coolant channel shape variation barely has an impact on $PPF_{fuel}$ as 
+\gls{TRISO} distribution variation: the average $PPF_{fuel}$ due to \gls{TRISO} 
+variation decreased by 0.1 over 10 generations, while average $PPF_{fuel}$ due to 
+coolant channel shape variation only decreased negligibly over 10 generations. 
+Figure \ref{fig:slab-obj-1-ppf-final-coolant} reiterates that there is no correlation 
+between total radius and $PPF_{fuel}$. 
+
+\paragraph{Summary}
+The minimize $PPF_{fuel}$ objective is driven by flattening thermal (Group 4) flux 
+distribution. 
+The minimize $PPF_{fuel}$ objective has correlations with the following input parameters: 
+$PF_{total}$ and TRISO packing fraction distribution. 
+The objective has no correlation with the coolant channel shape input parameter.
 
 \subsection{AHTR Plank: Single-Objective Optimization Major Takeaways}
 
