@@ -951,8 +951,10 @@ To ensure that the multi-objective optimization problems are converged, I report
 hypervolume values for each generation. 
 As previously described in Section \ref{sec:binhandkorn}, the hypervolume indicator 
 quantifies the Pareto front's goodness (bigger = better).
-I use a different reference point for each optimization problem. 
-% what is reference point... 
+I use a different reference point for each optimization problem.
+Section \ref{sec:binhandkorn} describes how the reference point value and 
+the Pareto front's reactor models objective values are used to calculate the 
+hypervolume. 
 If a multi-objective optimization problem's hypervolume converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
@@ -1326,6 +1328,10 @@ a minimum point at the plank's center (also illustrated in Figure
 \ref{fig:slab-obj-2-tempppf-min-ppf}). 
 Sections \ref{sec:plank-discussion-ppf-results} and \ref{sec:plank-discussion-multi} 
 discuss and explain simulation p-2c's results.
+
+\subsection{AHTR Plank: Two-Objective Optimization Discussion}
+
+\subsection{AHTR Plank: Two-Objective Optimization Major Takeaways}
 
 \section{AHTR Plank: Three-Objective Optimization Results}
 \label{sec:plank-three-obj}
