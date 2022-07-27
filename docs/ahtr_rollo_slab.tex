@@ -907,9 +907,8 @@ The objective has no correlation with the coolant channel shape input parameter.
 \subsection{AHTR Plank: Single-Objective Optimization Major Takeaways}
 Section \ref{sec:plank-one-obj} conducted an in-depth examination to understand 
 and compare the driving factors for each individual objective. 
-The minimize $T_{max}$ objective is driven by minimizing plank's maximum temperature; 
-and flattens TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to 
-achieve the objective. 
+The minimize $T_{max}$ objective flattens TRISO distribution and maximizes coolant 
+channel shape's $r_{top}$ and $r_{bot}$ to achieve the objective. 
 The minimize $PF_{total}$ objective is driven by maximizing the plank's total fission 
 reaction rate and influences the TRISO disribution to achieve the objective. 
 The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal flux
@@ -923,13 +922,13 @@ optimization for coolant channel shape variations.
 
 \section{AHTR Plank: Two-Objective Optimization Results}
 \label{sec:plank-two-obj}
-This section reports the \gls{AHTR} plank's \gls{ROLLO} two-objective 
-optimization results. 
+This section reports the \gls{AHTR} plank's \gls{ROLLO} two-objective optimization 
+results. 
 The previous section's single-objective optimization results inform the multi-objective 
 optimization simulations in this section and Section \ref{sec:plank-three-obj}.
 Section \ref{sec:plank-one-obj} concluded that coolant channel shape variations 
-only correlate with the minimize $T_{max}$ objective, I do not conduct two-objective 
-optimization for coolant channel shape variations.  
+only correlate with the minimize $T_{max}$ objective, thus, I do not conduct 
+two-objective optimization for coolant channel shape variations.
 Table \ref{tab:slab-obj-breakdown} summarized the two-objective simulations in this 
 section: p-2a, p-2b, and p-2c.
 
