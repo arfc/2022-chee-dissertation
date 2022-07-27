@@ -688,16 +688,19 @@ In simulation p-1e, \gls{ROLLO} found that there is a negative linear correlatio
 between the plank's $T_{max}$, and $r_{bot}$ and $r_{top}$, shown in 
 Figure \ref{fig:slab-obj-1-temp-final-coolant}. 
 Comparison of simulation p-1b and p-1e's results in 
-Figures \ref{fig:slab-obj-1-temp-evol} and \ref{fig:slab-obj-1-temp-evol-coolant} 
-shows that the coolant channel shape variation does not have as high of an impact on 
-$T_{max}$ as \gls{TRISO} distribution variation: the average $T_{max}$ due to 
-\gls{TRISO} variation decreased by 60K over 10 generations, while average $T_{max}$ due 
-to the coolant channel shape variation only decreased by 15K over 10 generations. 
+Figures \ref{fig:slab-obj-1-temp-evol} and \ref{fig:slab-obj-1-temp-evol-coolant} show 
+that the average $T_{max}$ due to \gls{TRISO} variation decreased by 60K over 
+10 generations, while average $T_{max}$ due to the coolant channel shape variation 
+only decreased by 15K over 10 generations. 
+This demonstrates that during the genetic algorithm optimization process, 
+variations in the coolant channel shape only minimize $T_{max}$ by 15K, while
+variations in the TRISO distribution minimizes $T_{max}$ by 60K, thus, having a higher 
+impact on the $T_{max}$ value compared to coolant channel variation. 
+% How do these relative importances inform future design choices. 
 
 \paragraph{Summary}
-The minimize $T_{max}$ objective is driven by minimizing the plank's maximum temperature; 
-and flattens the TRISO distribution and maximizes the coolant channel shape's 
-$r_{bot}$ and $r_{top}$ to achieve the objective. 
+The minimize $T_{max}$ objective flattens the TRISO distribution and maximizes the 
+coolant channel shape's $r_{bot}$ and $r_{top}$ to achieve the objective. 
 The minimize $T_{max}$ objective has correlations with all the input parameters: 
 $PF_{total}$, TRISO packing fraction distribution, and coolant channel shape. 
 The results from simulation p-1b and p-1e suggest that the minimize $T_{max}$ objective 
