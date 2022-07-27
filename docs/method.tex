@@ -908,8 +908,8 @@ fidelity.
 
 \subsubsection{AHTR Plank: Effective Multiplication Factor}
 % TODO: why start w keff, lead your readers,,, 
-The absolute value of $k_{eff}$ impacts the final steady-state temperature of the
-reactor \cite{park_advancement_2020}. 
+%The absolute value of $k_{eff}$ impacts the final steady-state temperature of the
+%reactor \cite{park_advancement_2020}. 
 %TODO: ask SM
 Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor ($k_{eff}$)
 for the OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
@@ -940,6 +940,7 @@ model's $k_{eff}$.
     \hline
     \end{tabular}
 \end{table}
+% instead of difference, report reactivity difference... 
 
 The 50pcm $k_{eff}$ difference, that can be observed in Table 
 \ref{tab:keff_ahtr_moltres}, between continuous and homogenized OpenMC simulations 
@@ -961,11 +962,10 @@ neutronics modeling but for \gls{AHTR} plank temperature modeling.
 
 \subsubsection{AHTR Plank: Reactivity Coefficients}
 % TODO: add intro... why compare these? What do you want to learn by doing this? 
-The delayed neutron fraction, $\beta$, and reactivity coefficients, $\alpha$ are 
-indicators of transient reactor behavior in an accident transient. 
-$\beta$ primarily affects the magnitude of the initial change in power and the 
-time delay towards the new equilibrium power, while $\alpha$ affects the 
-magnitude of change in reactor power and temperature \cite{park_advancement_2020}.
+% reactivity coefficients: accurately capture temperature reactivity feedback 
+% The effect of temperature reactivity feedback on the flux when the temperature 
+% varies with space as opposed to uniform temperature distributions in the 
+% openmc models. 
 %TODO: ask SM
 Moltres' delayed neutron fraction, $\beta_{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without \glspl{DNP}. 
@@ -1079,6 +1079,7 @@ Thus, these flux comparison results verify the accurate calculation
 of the temperature distribution in the Moltres \gls{AHTR} plank model. 
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
+% verifying the Moltres model is accurate 
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron energy spectrum of the OpenMC 
 simulation for both 252 and 4 groups and the 4-group Moltres simulation.
  \begin{figure}[htbp]
@@ -1094,7 +1095,13 @@ There is good agreement between OpenMC and Moltres with their 4-group spectrums.
 
 In summary, Moltres replicated the relevant neutronics parameters with sufficient 
 accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
-% TODO: If you expect any deviations, state them here and say why/why not. 
+% TODO: If you expect any deviations, state them here and say why/why not.
+% primarily from using neutron diffusion instead of neutron transport methods 
+% flux not being reproduced in small regions which are less than a few mean free 
+% path if neutrons, near material interfaces. 
+% Even though the keff differ, the Beta eff values agree and so the Moltres model 
+% can capture 
+% baseline is off, but the relative values are accurate. The  
 
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
 I compare the following key neutronics parameters: effective multiplication factor, 
