@@ -711,7 +711,7 @@ is more influenced by the TRISO distribution than the coolant channel shape.
 \subsubsection{Discussion: Minimize $PPF_{fuel}$ Objective}
 I conduct an equation analysis to determine the \gls{AHTR} plank properties 
 that influence the $PPF_{fuel}$ objective. 
-I then demonstrate the derived relationship in simulation p-1c and p-2b's results.
+I then demonstrate the derived relationship in simulation p-1c results.
 
 \paragraph{Equation Analysis}
 Equation \ref{eq:reaction-rate-fission} shows the relationship between fission reaction 
@@ -755,6 +755,7 @@ Finally, I can further rearrange Equation \ref{eq:flux-prop-fqr} into
 Equation \ref{eq:flux-prop-ppf}:
 \begin{align}
     \label{eq:flux-prop-ppf}
+    \frac{max(\Phi_j)}{ave(\Phi_j)} &\propto \frac{\frac{fqr_j}{PF_j}}{ave(\frac{fqr_j}{PF_j})} \nonumber \\
     max(\Phi_j) \div ave(\Phi_j) &\propto max(\frac{fqr_j}{PF_j}) \div ave(\frac{fqr_j}{PF_j}) \nonumber \\
     &\propto PPF_{fuel}
 \end{align}
