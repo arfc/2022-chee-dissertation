@@ -905,7 +905,7 @@ $PF_{total}$ and TRISO packing fraction distribution.
 The objective has no correlation with the coolant channel shape input parameter.
 
 \subsection{AHTR Plank: Single-Objective Optimization Major Takeaways}
-In Section \ref{sec:plank-one-obj}, I conduct an in-depth examination to understand 
+Section \ref{sec:plank-one-obj} conducted an in-depth examination to understand 
 and compare the driving factors for each individual objective. 
 The minimize $T_{max}$ objective is driven by minimizing plank's maximum temperature; 
 and flattens TRISO distribution and maximizes coolant channel shape's $r_{tot}$ to 
@@ -916,6 +916,10 @@ The minimize $PPF_{fuel}$ objective is driven by flattening the plank's thermal 
 distribution and influences $PF_{total}$ and TRISO disribution to achieve the objective. 
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
 with the coolant channel shape. 
+
+Since the variations in coolant channel shape only impact one objective, 
+the minimize plank's maximum temperature ($T_{max}$), I do not conduct two-objective 
+optimization for coolant channel shape variations.  
 
 \section{AHTR Plank: Two-Objective Optimization Results}
 \label{sec:plank-two-obj}
