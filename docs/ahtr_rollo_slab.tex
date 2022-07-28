@@ -458,7 +458,7 @@ Simulation p-1c varies the \gls{TRISO} packing fraction distribution
 ($\rho_{TRISO}(\vec{r})$), while simulation p-1f varies the coolant channel shape. 
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
-Table \ref{tab:simulationp1c} shows simulation p-1c's optimization problem parameters. 
+Table \ref{tab:simulationp1c} summarizes simulation p-1c's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -528,7 +528,7 @@ $PPF_{fuel}$ objective and explains simulation p-1c's most-minimized $PPF_{fuel}
 TRISO distribution. 
 
 \subsubsection{Simulation p-1f: Variation of Coolant Channel Shape}
-Table \ref{tab:simulationp1f} shows simulation p-1f's optimization problem parameters. 
+Table \ref{tab:simulationp1f} summarizes simulation p-1f's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -994,7 +994,7 @@ temperature ($T_{max}$).
 Combining the minimize $PF_{total}$ and $T_{max}$ objectives enables us to observe if 
 their driving factors result in any synergistic effects on the $PF_{total}$ and 
 $\rho_{TRISO}(\vec{r})$ input parameter variation. 
-Table \ref{tab:simulationp2a} shows simulation p-2a's optimization problem parameters.
+Table \ref{tab:simulationp2a} summarizes simulation p-2a's optimization problem parameters.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -1118,7 +1118,7 @@ power peaking factor ($PPF_{fuel}$).
 Combining the minimize $PF_{total}$ and $PPF_{fuel}$ objectives enables us to observe if 
 their driving factors result in any synergistic effects on the $PF_{total}$ and 
 $\rho_{TRISO}(\vec{r})$ input parameter variation. 
-Table \ref{tab:simulationp2b} shows simulation p-2b's optimization problem parameters. 
+Table \ref{tab:simulationp2b} summarizes simulation p-2b's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -1242,7 +1242,7 @@ power peaking factor ($PPF_{fuel}$).
 Combining the minimize $T_{max}$ and $PPF_{fuel}$ objectives enables us to observe if 
 their driving factors result in any synergistic effects on the
 $\rho_{TRISO}(\vec{r})$ input parameter variation. 
-Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem parameters. 
+Table \ref{tab:simulationp2c} summarizes simulation p-2c's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -1596,7 +1596,7 @@ maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor
 ($PPF_{fuel}$).  
 The input parameters varied are total fuel packing fraction ($PF_{total}$) and 
 TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$). 
-Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem parameters. 
+Table \ref{tab:simulationp3a} summarizes simulation p-3a's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -1623,7 +1623,6 @@ Table \ref{tab:simulationp3a} shows simulation p-3a's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
 Table \ref{tab:p3a-hypervolume} shows each generation's hypervolume value, 
 confirming that simulation p-3a is sufficiently converged by generation 5. 
 \begin{table}[htbp!]
@@ -1678,6 +1677,7 @@ the final generation that fall on the Pareto front.
     ($\rho_{TRISO}(\vec{r})$).}
     \label{fig:slab-obj-3}
 \end{figure}
+% TODO: comment on 3 clumps of distributions
 
 Figure \ref{fig:slab-obj-3-3d} demonstrates that \gls{ROLLO} found 14 widely spread 
 solutions in the final generation's Pareto front.  
@@ -1742,13 +1742,15 @@ Section \ref{sec:plank-discussion-multi} discusses and explains simulation p-3a'
 \subsection{p-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
 Channel Shape}
 \label{sec:p-3b}
+% TODO: Remind readers of the dimensionality and what this means! 
 This section reports results from the three-objective optimization simulation p-3b, 
 with all objectives minimized: total fuel packing fraction ($PF_{total}$), maximum plank 
 temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$).  
 The input parameters varied are total fuel packing fraction ($PF_{total}$), 
 TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), and coolant channel 
 shape.  
-Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem parameters. 
+Table \ref{tab:simulationp3b} summarizes simulation p-3b's optimization problem 
+parameters. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -1777,7 +1779,6 @@ Table \ref{tab:simulationp3b} shows simulation p-3b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
 Table \ref{tab:p3b-hypervolume} shows each generation's hypervolume value, 
 confirming that simulation p-3b is sufficiently converged by generation 8. 
 \begin{table}[htbp!]
@@ -1804,6 +1805,8 @@ confirming that simulation p-3b is sufficiently converged by generation 8.
     \hline
     \end{tabular}
 \end{table}
+% TODO: this is more gens than before. Maybe a comment on that and # generations 
+% and problem difficulty
 
 Figure \ref{fig:slab-obj-3-3d-all} shows a plot of the final generation's reactor 
 models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$; 
