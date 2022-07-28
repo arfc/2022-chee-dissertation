@@ -1269,7 +1269,15 @@ Table \ref{tab:simulationp2c} shows simulation p-2c's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-% TODO: comment why this isn't in the range max of the previous section of 0.02 to 0.04
+Unlike simulations p-2a and p-2b, I did not vary $PF_{total}$ and held it constant at 
+0.0979. 
+Section \ref{sec:plank-overview} described that for the optimization simulations which 
+do not vary $PF_{total}$, I use $PF_{total} = 0.0979$, which corresponds to the 
+\gls{FHR} benchmark's $PF_{total}$.  
+This $PF_{total}$ is higher than the $PF_{total}$ variation utilized in simulation p-2a 
+and p-2b of 0.02 to 0.04. 
+I chose to use a lower range for $PF_{total}$ variations, I observed that the TRISO 
+spatial variation enabled comparable $k_{eff}$ values with lower $PF_{total}$ values. 
 
 Table \ref{tab:p2c-hypervolume} shows each generation's hypervolume value, 
 confirming that simulation p-2c is sufficiently converged by generation 3. 
