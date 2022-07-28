@@ -58,7 +58,6 @@ setting up parallelization.
 \gls{ROLLO} is effective, flexible, open-source, parallel, reproducible, usable, and 
 hosted on Github \cite{chee_rollo_2021}. 
 
-% add more description to contextualize more so that the conclusion can stand on its own
 Chapter \ref{chap:method} described the modeling and optimization methodology of the 
 \gls{AHTR} plank and one-third assembly optimization conducted using the \gls{ROLLO} 
 software.
@@ -80,9 +79,16 @@ thermal flux distribution and influences $PF_{total}$ and oscillations in the TR
 distribution to achieve the objective.
 I determined that the minimize $T_{max}$ objective flattens TRISO distribution and 
 maximizes coolant channel shape's radius values to achieve the objective.
+The results from the multi-objective optimization simulations suggested that 
+the minimize $PF_{total}$ objective's driving factor maximize total fission reaction
+rate and minimize $PPF_{fuel}$ objective's driving factor flattening thermal flux 
+distribution influence each other resulting in unexpected TRISO distributions at 
+different $PF_{total}$ values. 
 Characterizations of each objective for the simple \gls{AHTR} plank model provided 
 insights for Chapter \ref{chap:ahtr-assem-opt-results}'s multi-objective 
 optimization of the complex \gls{AHTR} one-third assembly model. 
+% TODO: add a few sentences on key takeaways here too! Comment on anything surprising 
+% that you found. 
 
 Chapter \ref{chap:ahtr-assem-opt-results} reported the \gls{AHTR} one-third assembly's
 \gls{ROLLO} optimization results.
