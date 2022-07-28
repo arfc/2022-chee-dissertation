@@ -958,14 +958,17 @@ the Pareto front's reactor models objective values are used to calculate the
 hypervolume. 
 The hypervolume is converging if the difference between generations' hypervolume values 
 are getting smaller. 
+
 For a single generation with 64 reactor models, OpenMC and Moltres software must be 
 run for each reactor model, resulting in high computational cost. 
-For each optimization simulation, I must balance convergence and computational cost. 
-Therefore, the convergence criteria is ... %TODO hypervolume must get larger, and if there is a 
-% small difference between hypervolume values in consecutive generations, 
-% means its probably almost converged. However, I am balancing computational cost and 
-% convergence... 
-
+For each optimization simulation, I must balance convergence and computational cost.
+\gls{ROLLO}'s purpose is to help the human reactor designer narrow down reactor design 
+the search space. 
+Section \ref{sec:rollo-convergence} describes that the reactor designer should 
+plot the Pareto front and observe the hypervolume values to evaluate if they are 
+confident about the final solution set.  
+Thus, I determine if convergence criteria is met by evaluating if the difference 
+between generations' hypervolume values are getting smaller. 
 If a multi-objective optimization problem's hypervolume converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
