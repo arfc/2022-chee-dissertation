@@ -1481,15 +1481,15 @@ $PPF_{fuel}$ TRISO distribution (blue solid distribution) which has a
 large $\sim 0.07$ TRISO spatial variation and a minimum point in the center of the 
 plank.
 
-I ran a simulation for simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
-with $PF_{total}$ = 0.029 and compared its flux to simulation p-2b's most-minimized 
-$PPF_{fuel}$ TRISO distribution to understand why the latter enabled a lower 
-$PPF_{fuel}$. 
+I ran a simulation that used simulation p-2b's $PF_{total}$ = 0.029 and 
+simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution. 
+I compared its flux to simulation p-2b's most-minimized $PPF_{fuel}$ TRISO 
+distribution. 
 Figure \ref{fig:triso-0.0292} shows the TRISO distributions with 
 their $PPF_{fuel}$ values for the two compared 
 simulations: simulation p-2b's (Figure \ref{fig:slab-obj-2-pfppf}) most-minimized 
 $PPF_{fuel}$ TRISO distribution and simulation p-1c's most-minimized $PPF_{fuel}$ 
-TRISO distribution with $PF_{total}$ = 0.029
+TRISO distribution with $PF_{total}$ = 0.029. 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.9\linewidth]{triso-0.029.png} 
@@ -1503,7 +1503,7 @@ simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution has a lower
 $PPF_{fuel}$ than the simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
 shape. 
 This explains why \gls{ROLLO} found that the plank model that most-minimized 
-$PPF_{fuel}$ has a TRISO distribution with smaller oscillations. 
+$PPF_{fuel}$ has a TRISO distribution with smaller spatial variations. 
 
 Unlike simulations p-2a and p-2c, simulation p-2b's extreme most-minimized $PF_{total}$ 
 and most-minimized $PPF_{fuel}$ do not follow similar results as their single-objective 
@@ -1527,14 +1527,14 @@ front.
 Figure \ref{fig:p-2c-temp-triso-comparison} compares the TRISO distribution's of 
 simulation p-2c's most-minimized $T_{max}$ reactor model and simulation p-1b's 
 most-minimized $T_{max}$ reactor model. 
-%\begin{figure}[htbp!]
-%    \centering
-    %\includegraphics[width=0.9\linewidth]{p-2c-p-1b-temp-most-minimized-comparison.png} 
-%    \caption{Simulation p-2c's most-minimized $T_{max}$ TRISO distribution (blue 
-%    solid distribution) and simulation p-1b's most-minimized $T_{max}$ TRISO 
-%    distribution (orange dotted distribution).}
-%    \label{fig:p-2c-temp-triso-comparison}
-%\end{figure}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{p-2c-p-1b-temp-most-minimized-comparison.png} 
+    \caption{Simulation p-2c's most-minimized $T_{max}$ TRISO distribution (blue 
+    solid distribution) and simulation p-1b's most-minimized $T_{max}$ TRISO 
+    distribution (orange dotted distribution).}
+    \label{fig:p-2c-temp-triso-comparison}
+\end{figure}
 Figure \ref{fig:p-2c-temp-triso-comparison} shows that simulation p-2c and 
 p-1b AHTR plank models' that most-minimized $T_{max}$ objective have 
 similar oscillating TRISO distributions... 
