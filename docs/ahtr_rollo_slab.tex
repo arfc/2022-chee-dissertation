@@ -1806,6 +1806,99 @@ constant TRISO distribution of $PF_{total} = 0.036$ and $r_{tot}=0.307cm$
 Section \ref{sec:plank-discussion-multi} discusses and explains simulation p-3b's 
 results.
 
+\subsection{AHTR Plank: Three-Objective Optimization Discussion}
+
+\subsubsection{Simulation p-3a}
+In Section \ref{sec:p-3a}'s simulation p-3a, I conducted a three-objective 
+optimization simulation to minimize total fuel packing fraction ($PF_{total}$), 
+maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
+($PPF_{fuel}$) by varying $PF_{total}$ and TRISO distribution.
+\gls{ROLLO} found 14 widely spread reactor models on simulation p-3a's Pareto 
+front (Figure \ref{fig:slab-obj-3}). 
+
+In simulation p-3a, \gls{ROLLO} found that the plank model with the most-minimized 
+$T_{max}$ has a constant TRISO distribution with $PF_{total} = 0.059$
+(reactor model 2 with the orange dotted distribution in Figure 
+\ref{fig:slab-obj-3-distr-most-minimized}). 
+This distribution follows a similar flat shape as simulation p-1b's most-minimized 
+$T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}).
+In simulation p-3a, \gls{ROLLO} found that the plank model with the most-minimized 
+$PF_{total}$ has an oscillating TRISO distribution with $PF_{total} = 0.02$
+(reactor model 5 with purple dashed distribution in Figure 
+\ref{fig:slab-obj-3-distr-most-minimized}). 
+This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
+distribution (Figure \ref{fig:slab-obj-1-pf-final}) with an oscillating TRISO 
+distribution.
+In simulation p-3a, \gls{ROLLO} found that the plank model with the most-minimized 
+$PPF_{fuel}$ has a slightly oscillating TRISO distribution with $PF_{total} = 0.025$ 
+(reactor model with pink solid distribution in Figure 
+\ref{fig:slab-obj-3-distr-most-minimized}). 
+
+Most of the \gls{TRISO} distributions on the Pareto front (Figure 
+\ref{fig:slab-obj-3-distr}) have a mostly flat distribution with approximately 
+$\sim0.01$ of variation. 
+The flatness is influenced by the minimize $T_{max}$ objective. 
+The variations in \gls{TRISO} distributions are influenced by both the minimize 
+$PF_{total}$ and minimize $PPF_{fuel}$ objectives. 
+However, as mentioned previously, the $PF_{total}$ and $PPF_{fuel}$ relationship
+results in unexpected TRISO distributions at different $PF_{total}$ values. 
+The minimize $PF_{total}$ objective tries to maximize fission reaction rate
+to enable a higher $k_{eff}$ for a lower $PF_{total}$, and 
+the $PPF_{fuel}$ objective tries to flatten thermal flux. 
+
+\subsubsection{Simulation p-3b}
+In Section \ref{sec:p-3b}'s simulation p-3b, I conducted a three-objective 
+optimization simulation to minimize the total fuel packing fraction ($PF_{total}$), 
+maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
+($PPF_{fuel}$) by varying $PF_{total}$, TRISO distribution, and coolant channel shape.
+\gls{ROLLO} found 21 widely spread reactor models on simulation p-3b's Pareto 
+front (Figure \ref{fig:slab-obj-3-all}). 
+
+In simulation p-3b, \gls{ROLLO} found that the plank model with the most-minimized 
+$T_{max}$ has a constant TRISO distribution, $PF_{total} = 0.034$, and $r_{tot}=0.657cm$ 
+(reactor model 3 with the green dashed distribution in Figure 
+\ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
+This distribution follows a similar flat shape as simulation p-1b's most-minimized 
+$T_{max}$ TRISO distribution (Figure \ref{fig:slab-obj-1-temp-distr}) and has large 
+$r_{top}$ and $r_{bot}$ values due to the negative correlation between $T_{max}$ 
+and $r_{tot}$ determined in simulation p-1e (Sections \ref{sec:plank-1-obj-temp} and 
+\ref{sec:plank-discussion-temp}). 
+
+In simulation p-3b, \gls{ROLLO} found that the plank model with the most-minimized 
+$PF_{total}$ has an oscillating TRISO distribution with $\sim0.01$ variation,
+$PF_{total} = 0.026$, and $r_{tot}=0.505cm$
+(reactor model 21 with the blue dashed distribution in Figure \ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
+This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
+distribution (Figure \ref{fig:slab-obj-1-pf-final}) with an oscillating TRISO 
+distribution.
+
+In simulation p-3b, \gls{ROLLO} found that the plank model with the most-minimized 
+$PPF_{fuel}$ has a constant TRISO distribution, $PF_{total} = 0.036$, and 
+$r_{tot}=0.307cm$ (reactor model 12 with the orange dashdot distribution in Figure 
+\ref{fig:slab-obj-3-distr-most-minimized-distr-all}).
+The constant TRISO distribution is unexpected for the most-minimized $PPF_{fuel}$ result. 
+However, as mentioned before the $PF_{total}$ and $PPF_{fuel}$ relationship
+results in unexpected TRISO distributions at different $PF_{total}$ values. 
+Simulation p-1d and p-1f concluded that there was no correlation between $PF_{total}$ 
+and $PPF_{fuel}$ with the coolant channel shape, thus, the large $r_{bot}$ and $r_{top}$ 
+values are only influenced by the minimize $T_{max}$ objective. 
+
+Similar to simulation p-3a, most of the \gls{TRISO} distributions on simulation 
+p-3b's Pareto front (Figure \ref{fig:slab-obj-3-distr-all}) have a mostly flat 
+distribution with approximately $\sim0.01cm$ of variation. 
+Most of the Pareto front's $r_{tot}$ values are large due to the minimize $T_{max}$ 
+objective. 
+The TRISO distribution's flatness is influenced by the minimize $T_{max}$ objective. 
+The variations in \gls{TRISO} distributions are influenced by both the minimize 
+total packing fraction and minimize $PPF_{fuel}$ objectives. 
+However, as mentioned previously, the $PF_{total}$ and $PPF_{fuel}$ relationship
+results in unexpected TRISO distributions at different $PF_{total}$ values. 
+The minimize $PF_{total}$ objective tries to maximize fission reaction rate
+to enable a higher $k_{eff}$ for lower $PF_{total}$, and 
+the $PPF_{fuel}$ objective tries to flatten thermal flux. 
+
+\subsection{AHTR Plank: Three-Objective Optimization Major Takeaways}
+
 \section{AHTR Plank: Computational Cost Summary}
 \label{sec:plank-compute-cost}
 The optimization simulations for this work were run on the BlueWaters supercomputer 
