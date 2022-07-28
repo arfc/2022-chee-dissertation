@@ -1371,26 +1371,24 @@ packing fraction ($PF_{total}$) and the TRISO distribution.
 \gls{ROLLO} found six widely spread reactor models on simulation p-2a's Pareto 
 front (Figure \ref{fig:slab-obj-2-pftemp}). 
 
-In simulation p-2a, \gls{ROLLO} found that the plank model with the 
-most-minimized $PF_{total}$ objective has an oscillating TRISO distribution with 
-$\sim0.015$ variation and $PF_{total}=0.02$
-(the blue solid distribution in Figure \ref{fig:slab-obj-2-pftemp-pareto-distr}). 
-This distribution is similar to simulation p-1a's most-minimized $PF_{total}$ TRISO 
-distribution (Figure \ref{fig:slab-obj-1-pf-final}), but differs as it varies between 
-0.005 and 0.035, instead of 0 and 0.4, due to influences from the minimize $T_{max}$ 
-objective.
 Figure \ref{fig:p-2a-pf-triso-comparison} compares the TRISO distribution's of 
 simulation p-2a's most-minimized $PF_{total}$ reactor model and simulation p-1a's 
 most-minimized $PF_{total}$ reactor model. 
 \begin{figure}[htbp!]
     \centering
-    \includegraphics[width=0.49\linewidth]{p-2a-p-1a-pf-most-minimized-comparison.png} 
-    \caption{Simulation p-2a's most-minimized $PF_{total}$ TRISO distribution 
-    from Figure \ref{fig:slab-obj-2-pftemp-pareto-distr} and simulation p-1a's 
-    most-minimized $PF_{total}$ TRISO distribution from Figure 
-    \ref{fig:slab-obj-1-pf-final}.}
+    \includegraphics[width=\linewidth]{p-2a-p-1a-pf-most-minimized-comparison.png} 
+    \caption{Simulation p-2a's most-minimized $PF_{total}$ TRISO distribution (blue 
+    solid distribution) and simulation p-1a's most-minimized $PF_{total}$ TRISO 
+    distribution (orange dotted distribution).}
     \label{fig:p-2a-pf-triso-comparison}
 \end{figure}
+Figure \ref{fig:p-2a-pf-triso-comparison} shows that simulation p-2a and 
+p-1a AHTR plank models' that most-minimized $PF_{total}$ objective have 
+similar oscillating TRISO distributions. 
+Their differences lie in the TRISO distribution ranges, simulation p-2a's 
+distribution varies between 0.005 and 0.035, while simulation p-1a's 
+distribution varies between 0 and 0.4, due to influences from the minimize $T_{max}$ 
+objective, which influences the flattening of the TRISO distribution. 
 
 In simulation p-2a, \gls{ROLLO} found that the plank model with the most-minimized 
 $T_{max}$ objective has a constant TRISO distribution with $PF_{total} = 0.032$
