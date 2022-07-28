@@ -956,6 +956,10 @@ I use a different reference point for each optimization problem.
 Section \ref{sec:binhandkorn} described how the reference point value and 
 the Pareto front's reactor models objective values are used to calculate the 
 hypervolume. 
+\gls{ROLLO}'s purpose is to help the human reactor designer narrow down reactor design 
+the search space. 
+For a single generation with 64 reactor models, OpenMC and Moltres software must be 
+run for each reactor model, resulting in high computational cost.  
 The convergence criteria is ... %TODO hypervolume must get larger, and if there is a 
 % small difference between hypervolume values in consecutive generations, 
 % means its probably almost converged. However, I am balancing computational cost and 
