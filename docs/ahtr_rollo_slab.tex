@@ -1550,26 +1550,19 @@ most-minimized $PPF_{fuel}$ reactor model.
     distribution (orange dotted distribution).}
     \label{fig:p-2c-ppf-triso-comparison}
 \end{figure}
+% add temps, need to run 1c with Moltres.. 
+Figure \ref{fig:p-2c-ppf-triso-comparison} shows that simulation p-2c and 
+p-1c AHTR plank models' that most-minimized $PPF_{fuel}$ objective have 
+somewhat similar TRISO distributions with peaks near the sides of the plank and a 
+minimum point at the plank's center. 
 
-In simulation p-2c, \gls{ROLLO} found that the plank model with the most-minimized 
-$PPF_{fuel}$ has a TRISO distribution with peaks near the sides of the plank and a 
-minimum point at the plank's center (the grey dotdash distribution in Figure 
-\ref{fig:slab-obj-2-tempppf-pareto-distr}). 
-This distribution is somewhat similar to p-1c's most-minimized $PPF_{fuel}$ TRISO 
-distribution (Figure \ref{fig:slab-obj-1-ppf-final}) which also has a minimum point 
-at the center of the plank, but differs as its peaks are on the fuel regions' edges 
-instead of the plank's edges. 
-
-The \gls{TRISO} distributions on the Pareto front in Figure \ref{fig:slab-obj-2-tempppf} 
-minimize both $T_{max}$ and $PPF_{fuel}$, they vary between the two extreme cases: 
-most-minimized $T_{max}$ and most-minimized $PPF_{fuel}$. 
-The minimize $T_{max}$ objective influences the TRISO distribution's flatness as 
-described in Section \ref{sec:plank-discussion-temp}.
-Simulation p-2c holds $PF_{total}$ constant at 0.0979. 
-The minimize $PPF_{fuel}$ objective influences the TRISO distribution to follow 
-a similar shape to simulation p-1c (also $PF_{total} = 0.0979$) with a minimum point in 
-plank's center and a TRISO variation of $\sim0.07$ to flatten thermal flux, as 
-described in Section \ref{sec:plank-discussion-ppf}. 
+The \gls{TRISO} distributions on simulation p-2c's Pareto front in Figure 
+\ref{fig:slab-obj-2-tempppf} minimize both $T_{max}$ and $PPF_{fuel}$, they vary 
+between the two extreme cases: most-minimized $T_{max}$ and most-minimized 
+$PPF_{fuel}$. 
+The minimize $T_{max}$ objective influences the TRISO distribution's flatness, while 
+the minimize $PPF_{fuel}$ objective influences the oscillating pattern.
+Section \ref{sec:plank-discussion-single} described both influences in detail. 
 
 \subsection{AHTR Plank: Two-Objective Optimization Major Takeaways}
 The results from simulation p-2b and investigations in Section 
