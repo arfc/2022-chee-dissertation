@@ -1930,7 +1930,7 @@ $PPF_{fuel}$ has a slightly oscillating TRISO distribution with $PF_{total} = 0.
 
 Most of the \gls{TRISO} distributions on the Pareto front (Figure 
 \ref{fig:slab-obj-3-distr}) have a mostly flat distribution with approximately 
-$\sim0.01$ of variation. 
+$\sim0.01$ of TRISO spatial variation. 
 The flatness is influenced by the minimize $T_{max}$ objective. 
 The variations in \gls{TRISO} distributions are influenced by both the minimize 
 $PF_{total}$ and minimize $PPF_{fuel}$ objectives. 
@@ -1992,6 +1992,14 @@ to enable a higher $k_{eff}$ for lower $PF_{total}$, and
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
 \subsection{AHTR Plank: Three-Objective Optimization Major Takeaways}
+All the driving factors and influences from each objective come together in 
+each three-objective optimization simulation to give a set of optimal reactor models 
+on a Pareto front. 
+Simulation p-3b's multi-objective optimization shows the result of minimizing all 
+three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
+all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
+Figure \ref{fig:slab-obj-3-all} shows the 21 widely spread reactor models on simulation 
+p-3b's Pareto front. 
 
 \section{AHTR Plank: Computational Cost Summary}
 \label{sec:plank-compute-cost}
