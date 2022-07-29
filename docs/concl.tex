@@ -39,8 +39,8 @@ A comparison of $k_{eff}$ results between the reference case and the \gls{AHTR}
 configuration with high heavy metal loading demonstrated that increased fuel 
 packing does not always correspond with increased $k_{eff}$ due to self-shielding 
 effects.
-Chapter \ref{chap:fhr-benchmark} also reported the results of the \gls{AHTR} full 
-assembly temperature model. 
+Chapter \ref{chap:fhr-benchmark} also reported the \gls{AHTR} full assembly temperature 
+model results. 
 The temperature distribution peaked in the fuel stripes near the spacers, 
 highlighting to reactor designers that spacer material and location in the 
 \gls{AHTR} geometry impact temperature peaks.  
@@ -64,7 +64,7 @@ Chapter \ref{chap:method} described the modeling and optimization methodology of
 software.
 I varied the following \gls{AHTR} plank and one-third assembly input parameters: 
 \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$), total fuel 
-packing fraction ($PF_{total}$), and coolant channel shape; in an effort to minimize 
+packing fraction ($PF_{total}$), and coolant channel shape; to minimize 
 the following objectives: total fuel packing fraction ($PF_{total}$), maximum 
 temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$). 
 
@@ -80,12 +80,12 @@ thermal flux distribution and influences $PF_{total}$ and oscillations in the TR
 distribution to achieve the objective.
 I determined that the minimize $T_{max}$ objective flattens TRISO distribution and 
 maximizes coolant channel shape's radius values to achieve the objective.
-The results from the multi-objective optimization simulations showed that 
+The multi-objective optimization simulation results showed that 
 the minimize $PF_{total}$ and $PPF_{fuel}$ driving factors influence each other 
 resulting in unexpected TRISO distributions at different $PF_{total}$ values. 
 Further optimization of the \gls{AHTR} design will benefit from awareness 
 of the relationship between the objectives. 
-The objective characterizations for the simple \gls{AHTR} plank model provide insights 
+The objectives' characterizations for the simple \gls{AHTR} plank model provide insights 
 to better understand Chapter \ref{chap:ahtr-assem-opt-results}'s multi-objective 
 optimization of the complex \gls{AHTR} one-third assembly model.   
 
@@ -98,10 +98,10 @@ the minimize $PF_{total}$ and $PPF_{fuel}$ driving factors influence each other
 resulting in unexpected TRISO distributions at different $PF_{total}$ values. 
 The results also demonstrated that the coolant channel shape variation did 
 not have as high of an impact on $T_{max}$ as the \gls{TRISO} distribution variation.
-% TODO: how to say actual name?
-Simulation a-3b-256's multi-objective optimization showed the result of minimizing all 
-three objectives ($PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
-all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
+All the single objective optimizations led to the one-third assembly multi-objective 
+optimization that minimized all three objectives ($PF_{total}$, $T_{max}$, and 
+$PPF_{fuel}$) while varying all the input parameters ($PF_{total}$, TRISO distribution, 
+and coolant channel shape), also known as simulation a-3b-256.
 Figure \ref{fig:assem-obj-3-all-256} showed the 38 reactor models on simulation 
 a-3b-256's Pareto front that met all three objectives. 
 The reactor models on the Pareto Front have different $PF_{total}$, TRISO distributions, 
@@ -188,5 +188,5 @@ will begin to explore the vast design space enabled by 3D printing.
 \gls{ROLLO} can be easily used to optimize any reactor type. 
 Future work includes utilizing \gls{ROLLO} to vary more reactor types for arbitrary
 geometries and parameters, and to optimize for objectives that address the many faceted 
-multiphysics interactions and feedbacks present in nuclear reactors. 
+multiphysics interactions and feedbacks present in the reactors. 
 %This will enable further optimization and improvement of reactor geometries.
