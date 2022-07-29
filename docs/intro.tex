@@ -88,10 +88,10 @@ by varying inlet channel positioning and outer wall shape.
 The expanded design space associated with an arbitrary reactor geometry increases 
 the time for reactor designers to find optimal geometries. 
 Instead, we can leverage \gls{AI} optimization methods, such as evolutionary algorithms, 
-to rapidly explore the large design space to find global optimal designs. 
+to rapidly explore the large design space for global optimal designs. 
 \gls{AI} does not replace the human reactor designer but shifts the human designer's 
-focus away from conjecturing suitable geometries to defining design criteria to 
-find optimal designs and evaluating their relative strengths \cite{sobes_artificial_2020}. 
+focus away from conjecturing suitable geometries to defining the design criteria of 
+optimal designs and evaluating their relative strengths \cite{sobes_artificial_2020}. 
 Thus, when the human designer changes the reactor criteria, the AI model will quickly 
 adapt and produce new global optimal designs to fit the new criteria.
 
@@ -148,7 +148,7 @@ This dissertation's content is shaped by the following three objectives:
 \end{enumerate}
 Chapter \ref{chap:fhr-benchmark} addresses objective 1, chapter \ref{chap:rollo} 
 addresses objective 2, and chapters \ref{chap:method}, \ref{chap:ahtr-plank-opt-results}, 
-and \ref{chap:ahtr-assem-opt-results} addresses objective 3. 
+and \ref{chap:ahtr-assem-opt-results} address objective 3. 
 
 Chapter \ref{chap:lit-review} presents a literature review that organizes and 
 reports on previous work pertinent to all three objectives. 
@@ -178,9 +178,9 @@ material cross-section data.
 \cite{chadwick_endf/b-vii.1_2011}.
 The \gls{UIUC} team consists of myself and my advisors, Professor Kathryn Huff, 
 and Dr. Madicken Munk. 
-The 2D \gls{AHTR} full assembly results presented are the benchmark's 
-Phases I-A and I-B results, which model steady-state and depletion, and the 
-temperature model results. 
+The 2D \gls{AHTR} full assembly presented results are from the benchmark's 
+Phases I-A and I-B, which model steady-state and depletion, and the temperature model 
+results. 
 I will use this analysis to underscore the complex modeling and simulation needed to 
 adequately model this design. 
 
@@ -198,7 +198,7 @@ that only exposes mandatory parameters.
 I designed  \gls{ROLLO} to be effective, flexible, accessible, parallel, 
 reproducible, and usable. 
 \gls{ROLLO} is nuclear code-agnostic with no dependencies on  
-nuclear software, and is hosted on Github \cite{chee_rollo_2021}. 
+nuclear software and is hosted on Github \cite{chee_rollo_2021}. 
 
 Chapter \ref{chap:method} describes the modeling and optimization methodology of the 
 \gls{AHTR} plank and one-third assembly optimization for non-conventional 
@@ -218,7 +218,7 @@ report the \gls{AHTR} plank and one-third assembly \gls{ROLLO} optimization resu
 respectively. 
 I vary the following \gls{AHTR} plank and one-third assembly input parameters: 
 \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$), total fuel 
-packing fraction ($PF_{total}$), and coolant channel shape; in an effort to minimize 
+packing fraction ($PF_{total}$), and coolant channel shape; to minimize 
 the following objectives: total fuel packing fraction ($PF_{total}$), maximum 
 temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$). 
 For each \gls{AHTR} geometry, I conduct six single objective, single input parameter 
