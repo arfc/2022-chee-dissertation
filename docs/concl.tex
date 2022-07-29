@@ -136,6 +136,15 @@ This dissertation demonstrated results for the \gls{FHR} benchmark's Phases I-A 
 The \gls{FHR} benchmark is an ongoing project, thus, future work includes further 
 contribution to the benchmark's Phases I-C, II, and III. 
 
+This dissertation demonstrated \gls{ROLLO}'s success in conducting multi-objective 
+generative reactor design optimization. 
+There are improvements that could be made to \gls{ROLLO}. 
+Possible improvements include parallelization speedup, JSON input file validation error 
+message clarity, contingency kill switch implementation to minimize wasted compute time, 
+unit testing expansion, and example additions to include more nuclear reactor modeling 
+software.  
+These issues are detailed at \hyperlink{https://github.com/arfc/rollo/issue}.
+
 This dissertation's generative design optimization of the \gls{AHTR} model used sine 
 distribution variations to govern the \gls{TRISO} packing fraction distribution and  
 used cylinder radius variation to generate sinusoidal-like patterned coolant channel 
@@ -148,15 +157,6 @@ Future reactor designers could consider topology optimization to optimize coolan
 channel shape further.
 The major limitation is the computational cost of modeling fluid flow in complex 
 coolant channel designs. 
-
-This dissertation demonstrated \gls{ROLLO}'s success in conducting multi-objective 
-generative reactor design optimization. 
-There are improvements that could be made to \gls{ROLLO}. 
-Possible improvements include parallelization speedup, JSON input file validation error 
-message clarity, contingency kill switch implementation to minimize wasted compute time, 
-unit testing expansion, and example additions to include more nuclear reactor modeling 
-software.  
-These issues are detailed at \hyperlink{https://github.com/arfc/rollo/issue}.
 
 Nuclear reactors represent physics interactions and feedbacks between thermal-hydraulics, 
 neutronics, material performance, structural mechanics, chemistry, and more. 
