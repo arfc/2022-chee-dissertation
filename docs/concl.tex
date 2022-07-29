@@ -98,12 +98,13 @@ the minimize $PF_{total}$ and $PPF_{fuel}$ driving factors influence each other
 resulting in unexpected TRISO distributions at different $PF_{total}$ values. 
 The results also demonstrated that the coolant channel shape variation did 
 not have as high of an impact on $T_{max}$ as the \gls{TRISO} distribution variation.
-All the single and two objective optimizations led to the final largest optimization 
-problem: the one-third assembly multi-objective optimization that ran for 8 generations 
-with 256 reactor models per generation, also known as simulation a-3b-256. 
-Simulation a-3b-256 minimized all three objectives ($PF_{total}$, $T_{max}$, and 
-$PPF_{fuel}$) while varying all the input parameters ($PF_{total}$, TRISO 
-distribution, and coolant channel shape). 
+All the single and two objective optimization simulations led to the final largest 
+optimization problem: the one-third assembly multi-objective optimization that 
+minimized all three objectives ($PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while 
+varying all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel 
+shape), also known as simulation a-3b-256. 
+\gls{ROLLO} optimization simulation a-3b-256 ran for $\sim 3300$ Theta supercomputer 
+node-hours with 8 generations and 256 reactor models per generation. 
 Figure \ref{fig:assem-obj-3-all-256} showed the 38 reactor models on simulation 
 a-3b-256's Pareto front that met all three objectives. 
 The reactor models on the Pareto Front have different $PF_{total}$, TRISO distributions, 
@@ -119,8 +120,8 @@ demonstrated \gls{ROLLO}'s success in conducting multi-objective generative reac
 design optimization. 
 \gls{ROLLO} conducted a global search of the large reactor design space and successfully 
 generated optimal reactor models on the Pareto front that satisfy all the objectives. 
-\gls{ROLLO}'s generative design optimization process also provides reactor designers 
-with unique insight to the reactor design's problem domain and a sense of how 
+\gls{ROLLO}'s generative design optimization process also gives reactor designers 
+unique insight into the reactor design's problem domain and a sense of how 
 sensitive each input parameter is in relation to the objectives. 
 Once the \gls{ROLLO} search is complete, reactor designers gain a better intuition for 
 the model's reactor physics and can view the narrower reactor design space that meets 
@@ -135,26 +136,24 @@ contributes to optimization tool development for reactors of the future.
 
 \section{Limitations and Future Work}
 This dissertation demonstrated results for the \gls{FHR} benchmark's Phases I-A and I-B.
-The \gls{FHR} benchmark is an ongoing project, thus, future work includes further 
-contribution to the benchmark's Phases I-C, II, and III. 
+The \gls{FHR} benchmark is an ongoing project; thus, future work includes further 
+contributions to the benchmark's Phases I-C, II, and III. 
 
 This dissertation demonstrated \gls{ROLLO}'s success in conducting multi-objective 
 generative reactor design optimization. 
-There are improvements that could be made to \gls{ROLLO}. 
-Possible improvements include parallelization speedup, JSON input file validation error 
-message clarity, contingency kill switch implementation to minimize wasted compute time, 
-unit testing expansion, and more nuclear reactor modeling software \gls{ROLLO} coupling 
-examples.  
+\gls{ROLLO} could be further improved in the following ways: parallelization speed-up, 
+JSON input file validation improvement, error message clarity, contingency kill 
+switch implementation to minimize wasted compute time, unit testing expansion, 
+and more nuclear reactor modeling software \gls{ROLLO} coupling examples.  
 These issues are detailed at 
 \hyperlink{https://github.com/arfc/rollo/issue}{https://github.com/arfc/rollo/issue}.
 
 This dissertation's generative design optimization of the \gls{AHTR} model used sine 
 distribution variations to govern the \gls{TRISO} packing fraction distribution and  
-used cylinder radius variation to generate sinusoidal-like patterned coolant channel 
-shapes. 
+cylinder radius variation to generate sinusoidal-like patterned coolant channel shapes. 
 These input parameter variations are only one way to represent the \gls{AHTR} 
 geometry. 
-There are many other ways to represent the geometry that might give \gls{ROLLO} more 
+There are other ways to represent the geometry that might give \gls{ROLLO} more 
 freedom to explore a larger design space and generate more optimized designs. 
 Future reactor designers could consider topology optimization to optimize coolant 
 channel shape further.
@@ -163,17 +162,17 @@ coolant channel designs.
 
 Nuclear reactors represent physics interactions and feedbacks between thermal-hydraulics, 
 neutronics, material performance, structural mechanics, chemistry, and more. 
-Multiphysics modeling is the practice of accounting of these physics interactions 
+Multiphysics modeling is the practice of accounting for these physics interactions 
 during design and analysis. 
 This dissertation's generative design optimization modeled the \gls{AHTR} model's 
 beginning of life neutronics and temperature. 
-Many multiphysics components were not included in this study; their inclusion into 
+Many multiphysics components were not included in this study; their inclusion in
 the \gls{AHTR} optimization process might impact the optimal \gls{AHTR} designs 
 found by \gls{ROLLO}. 
 Future work includes taking into account the effect of burnup, structural mechanics, 
 thermal stresses, chemistry, and higher fidelity thermal-hydraulics for \gls{AHTR} 
 model optimization. 
-This relies on the development in the nuclear reactor multiphysics modeling research 
+This relies on further developments in the reactor multiphysics modeling 
 field through advanced coupling methods and narrowing down the important coupled 
 physics interactions in the reactor types. 
 The optimization work conducted in this dissertation utilized $\sim 50000$ node-hours 
