@@ -98,10 +98,12 @@ the minimize $PF_{total}$ and $PPF_{fuel}$ driving factors influence each other
 resulting in unexpected TRISO distributions at different $PF_{total}$ values. 
 The results also demonstrated that the coolant channel shape variation did 
 not have as high of an impact on $T_{max}$ as the \gls{TRISO} distribution variation.
-All the single objective optimizations led to the one-third assembly multi-objective 
-optimization that minimized all three objectives ($PF_{total}$, $T_{max}$, and 
-$PPF_{fuel}$) while varying all the input parameters ($PF_{total}$, TRISO distribution, 
-and coolant channel shape), also known as simulation a-3b-256.
+All the single and two objective optimizations led to the final largest optimization 
+problem: the one-third assembly multi-objective optimization that ran for 8 generations 
+with 256 reactor models per generation, also known as simulation a-3b-256. 
+Simulation a-3b-256 minimized all three objectives ($PF_{total}$, $T_{max}$, and 
+$PPF_{fuel}$) while varying all the input parameters ($PF_{total}$, TRISO 
+distribution, and coolant channel shape). 
 Figure \ref{fig:assem-obj-3-all-256} showed the 38 reactor models on simulation 
 a-3b-256's Pareto front that met all three objectives. 
 The reactor models on the Pareto Front have different $PF_{total}$, TRISO distributions, 
