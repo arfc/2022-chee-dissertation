@@ -149,14 +149,15 @@ channel shape further.
 The major limitation is the computational cost of modeling fluid flow in complex 
 coolant channel designs. 
 
-Nuclear reactors represent tightly-coupled physics interactions between 
-thermal-hydraulics, neutronics, material performance, structural mechanics, chemistry, 
-and more. 
+Nuclear reactors represent physics interactions and feedbacks between thermal-hydraulics, 
+neutronics, material performance, structural mechanics, chemistry, and more. 
 Multiphysics modeling is the practice of accounting of these physics interactions 
 during design and analysis. 
 This dissertation's generative design optimization modeled the \gls{AHTR} model's 
 beginning of life neutronics and temperature. 
-Many multiphysics components were overlooked. 
+Many multiphysics components were not included in this study; their inclusion into 
+the \gls{AHTR} optimization process might impact the optimal \gls{AHTR} designs 
+found by \gls{ROLLO}. 
 Future work includes taking into account the effect of burnup, structural mechanics, 
 thermal stresses, chemistry, and higher fidelity thermal-hydraulics for \gls{AHTR} 
 model optimization. 
@@ -174,9 +175,10 @@ conduct these simulations.
 This dissertation demonstrated \gls{ROLLO}'s success in conducting multi-objective 
 generative reactor design optimization. 
 There are improvements that could be made to \gls{ROLLO}. 
-Possible improvements include JSON input file validation error message clarity, 
-contingency kill switch to minimize wasted compute time, unit testing improvements, 
-and example expansion to include more nuclear reactor modeling software.  
+Possible improvements include parallelization speedup, JSON input file validation error 
+message clarity, contingency kill switch implementation to minimize wasted compute time, 
+unit testing expansion, and example additions to include more nuclear reactor modeling 
+software.  
 These issues are detailed on 
 \hyperlink{https://github.com/arfc/rollo/issue}{ROLLO's github issues page}. 
 
