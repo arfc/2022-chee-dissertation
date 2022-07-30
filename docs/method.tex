@@ -898,7 +898,7 @@ I compare the following key neutronics parameters: effective
 multiplication factor, reactivity coefficients, flux distribution, and neutron energy 
 spectrum for the \gls{AHTR} plank model.  
 For this verification study, I used an \gls{AHTR} plank model with $PF_{total} = 0.0979$ 
-and $\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$.
+and \\ $\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$.
 Section \ref{sec:rollo-single-hyp} found an optimized hyperparameter set for \gls{ROLLO} 
 single-objective optimization simulations.
 I used the optimized hyperparameter set in a \gls{ROLLO} simulation to maximize the 
@@ -1080,10 +1080,10 @@ lower flux in Group 2 and 4 compared to the Moltres model.
 Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
 between OpenMC and Moltres models' flux values are slight, demonstrating that there is 
 a good overall agreement for each group's flux. 
-The flux neutronics parameter is the most important neutronics parameter as it 
-contributes to the source term in the Moltres simulation. 
-Thus, these flux comparison results verify the accurate calculation 
-of the temperature distribution in the Moltres \gls{AHTR} plank model. 
+%The flux neutronics parameter is the most important neutronics parameter as it 
+%contributes to the source term in the Moltres simulation. 
+%Thus, these flux comparison results verify the accurate calculation 
+%of the temperature distribution in the Moltres \gls{AHTR} plank model. 
 % Max is siginificant but not surprising for neutron diffusion. 
 % Moltres is able to reproduce the correct trend. 
 % This level of accuracy is sufficient for comparing max temp. 
