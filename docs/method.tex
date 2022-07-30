@@ -1193,6 +1193,7 @@ discretization, or differing OpenMC and Moltres solve methods.
     \hline
     \end{tabular}
 \end{table} 
+
 The 13pcm $k_{eff}$ and 7pcm reactivity difference between continuous and homogenized 
 OpenMC simulations is within uncertainty, showing that the selected spatial 
 homogenizationsand energy discretizations are acceptable. 
@@ -1200,13 +1201,6 @@ However, the Moltres simulation shows a $762pcm$ difference in $k_{eff}$ and
 $381pcm$ difference in reactivity, similar to the \gls{AHTR} plank model's difference 
 in Section \ref{sec:plank-knp}.
 The summary at the end of this section explains the differences in these values. 
-%Again, a possible reason is that the neutron diffusion method used in Moltres 
-%does not approximate this reactor geometry as well. 
-%The diffusion coefficients for this reactor type are approximately 1cm. 
-%The \gls{FLiBe} coolant channel has a 0.7cm width which is smaller than the diffusion
-%coefficient, resulting in poor approximations. 
-%The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
-%neutronics modeling but for \gls{AHTR} one-third assembly temperature modeling. 
 
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
 A comparison of reactivity coefficients produced by Moltres and OpenMC verifies that 
@@ -1243,10 +1237,6 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
     \hline
     \end{tabular}
 \end{table}
-% are these beff what you would expect for this fuel type? How does it change with 
-% burnup? 
-% What do these differences apply about Monte Carlo vs diffusion. Can we systematically 
-% assume this difference will be similar? 
 
 \subsubsection{AHTR One-Third Assembly: Flux Distribution}
 A comparison of flux distributions produced by Moltres and OpenMC verifies that the 
@@ -1298,6 +1288,7 @@ centerline flux values from OpenMC and Moltres models.
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:flux_948K_assem} shows that the OpenMC model has 
 lower flux in Group 2 and 4 compared to the Moltres model. 
 Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
@@ -1305,14 +1296,6 @@ between OpenMC and Moltres models' flux values are slight, demonstrating that th
 good overall agreement for each group's flux.
 The summary at the end of this section explains the differences in the flux's maximum 
 percentage differences between the OpenMC and Moltres models. 
-%The large maximum percentage difference in flux values in Group 2 and 3 is attributed to 
-%their resonance regions causing large one-off differences at some discretized points.
-% TODO: why can't we see the 11% diff in the plots. add explanation. 
-%The flux neutronics parameter is most important as it contributes to the source term in the 
-%Moltres simulation. Thus, these accurate flux comparison results verify the accurate calculation 
-%of the temperature distribution in the Moltres \gls{AHTR} one-third assembly model. 
-% TODO: are these accurate? Say how much those 11% differences may affect the source 
-%term. connect it for readers. 
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
 A comparison of the neutron energy spectrum verifies that the Moltres model is replicating 
