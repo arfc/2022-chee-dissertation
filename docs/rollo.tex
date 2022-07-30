@@ -40,15 +40,18 @@ I briefly summarize how \gls{ROLLO} achieves these goals:
     \cite{chee_rollo_2021}. \gls{ROLLO} also utilizes the well-documented, open-source 
     \gls{DEAP} \cite{fortin_deap_2012} Python package to drive the evolutionary 
     algorithm optimization process.
+    % todo: add sentence saying why open source helps your code too. 
     \item Parallel: Users have the option to run \gls{ROLLO} in parallel so that 
     they may effectively use the computational resources available. 
     \item Reproducible: Data from every \gls{ROLLO} run saves into a unique, pickled 
-    file (pickle is a Python module that serializes Python objects).
+    file (pickle is a Python module that serializes Python objects). The pickled file 
+    contains the \gls{ROLLO} input file and coupled evaluator's scripts enabling 
+    results replication. 
 \end{itemize}
 
 \gls{ROLLO} provides a framework to couple an evolutionary algorithm driver with nuclear 
 software, such as neutron transport and thermal-hydraulics codes. 
-\gls{ROLLO} is nuclear code-agnostic and does not have dependencies on any 
+\gls{ROLLO} is nuclear code-agnostic and does not have any hard dependencies on any 
 nuclear software. 
 Figure \ref{fig:genetic_alg} from Chapter \ref{chap:lit-review} outlined a
 general evolutionary algorithm iterative problem solving process. 
