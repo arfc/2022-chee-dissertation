@@ -937,9 +937,9 @@ Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor ($k_{
 and reactivity ($\rho$) for the OpenMC simulation with continuous energy and 
 TRISO-level spatial fidelity, the OpenMC simulation with 4-group energy and spatial 
 homogenization, and the Moltres simulation with 4-group energy and spatial homogenization.
-I included results from the homogenized OpenMC simulation to 
-distinguish between differences caused by spatial homogenization and energy 
-discretization, or differing OpenMC and Moltres solve methods. 
+I included results from the homogenized OpenMC simulation to distinguish between 
+differences caused by spatial homogenization and energy discretization, or differing 
+OpenMC and Moltres solve methods. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -971,11 +971,11 @@ This shows that the selected spatial homogenizations and energy discretizations
 are acceptable. 
 However, the Moltres simulation shows a $706pcm$ difference in $k_{eff}$ and 
 $355pcm$ difference in reactivity.
-A possible reason is that the neutron diffusion method used in Moltres does not 
-approximate this reactor geometry as well. 
-The diffusion coefficients for this reactor type are approximately 1cm.
-The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
-coefficient, resulting in poor approximations. 
+%A possible reason is that the neutron diffusion method used in Moltres does not 
+%approximate this reactor geometry as well. 
+%The diffusion coefficients for this reactor type are approximately 1cm.
+%The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
+%coefficient, resulting in poor approximations. 
 %The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
 %neutronics modeling but for \gls{AHTR} plank temperature modeling. 
 %TODO: ask SM
@@ -1234,21 +1234,20 @@ discretization, or differing OpenMC and Moltres solve methods.
     Moltres & Yes & $1.40895 $ & \Minus762 & 29025 & \Minus381 \\ 
     \hline
     \end{tabular}
-\end{table}
-% TODO: should i include normalized diff? 
-
-The 9pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
-simulations is within uncertainty, showing that the selected spatial homogenizations
-and energy discretizations are acceptable. 
-However, there is a 537pcm difference in the Moltres simulation's $k_{eff}$, similar 
-to the \gls{AHTR} plank model's difference in Section \ref{sec:plank-knp}.
-Again, a possible reason is that the neutron diffusion method used in Moltres 
-does not approximate this reactor geometry as well. 
-The diffusion coefficients for this reactor type are approximately 1cm. 
-The \gls{FLiBe} coolant channel has a 0.7cm width which is smaller than the diffusion
-coefficient, resulting in poor approximations. 
-The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
-neutronics modeling but for \gls{AHTR} one-third assembly temperature modeling. 
+\end{table} 
+The 13pcm $k_{eff}$ and 7pcm reactivity difference between continuous and homogenized 
+OpenMC simulations is within uncertainty, showing that the selected spatial 
+homogenizationsand energy discretizations are acceptable. 
+However, the Moltres simulation shows a $762pcm$ difference in $k_{eff}$ and 
+$381pcm$ difference in reactivity, similar to the \gls{AHTR} plank model's difference 
+in Section \ref{sec:plank-knp}.
+%Again, a possible reason is that the neutron diffusion method used in Moltres 
+%does not approximate this reactor geometry as well. 
+%The diffusion coefficients for this reactor type are approximately 1cm. 
+%The \gls{FLiBe} coolant channel has a 0.7cm width which is smaller than the diffusion
+%coefficient, resulting in poor approximations. 
+%The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
+%neutronics modeling but for \gls{AHTR} one-third assembly temperature modeling. 
 
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
 Comparison of reactivity coefficients produced by Moltres and OpenMC verify that 
