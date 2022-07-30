@@ -594,7 +594,8 @@ In the following subsections, I will describe the steps conducted to produce the
 \label{sec:fhr-bm-group-constant}
 Unlike the OpenMC neutronics model from the previous sections, Moltres does not explicitly 
 model each \gls{TRISO} particle. 
-A TRISO-level fidelity mesh file is impractical and results in extremely long Moltres 
+Because I am using Moltres for temperature distributions and not neutron transport, 
+a TRISO-level fidelity mesh file is impractical and results in extremely long Moltres 
 simulation runtimes.
 Instead, Moltres relies on the OpenMC model to generate group constants data
 for the Moltres simulations. 
@@ -685,13 +686,14 @@ The OpenMC simulation with TRISO-level fidelity generates the group constants fo
 energy and spatially homogenized Moltres simulation. 
 I compare the following key neutronics parameters: effective multiplication factor, 
 reactivity coefficients, flux distribution, and neutron energy spectrum. 
+% todo: add the changes i made in chapter 5. 
 
 \paragraph{Effective Multiplication Factor}
 Table \ref{tab:keff_assem_comparison} compares $k_{eff}$ 
 for OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
 OpenMC simulation with 4-group energy and spatial homogenization, 
 and Moltres simulation with 4-group energy and spatial homogenization.
-I included results from the homogenized OpenMC simulation to 
+I include results from the homogenized OpenMC simulation to 
 distinguish between differences caused by spatial homogenization and energy 
 discretization or differing OpenMC and Moltres solve methods. 
 \begin{table}[htbp]
