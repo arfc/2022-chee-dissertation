@@ -1178,14 +1178,14 @@ discretization, or differing OpenMC and Moltres solve methods.
     model's $k_{eff}$.}
 	\label{tab:keff_ahtr_moltres_assem}
     \footnotesize
-    \begin{tabular}{lllcc}
+    \begin{tabular}{lllclc}
+        \hline 
+        \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
+        & \textbf{Reactivity [pcm]} & \textbf{Reactivity Diff [pcm]} \\
     \hline 
-    \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
-    & \textbf{Normalized Diff [pcm]}\\
-    \hline 
-    OpenMC & No & $1.41657 \pm 0.00131$ & - & -\\ 
-    OpenMC & Yes & $ 1.41670 \pm 0.00116$ & \Plus13 & \Plus9\\ 
-    Moltres & Yes & $1.40895 $ & \Minus762 & \Minus537 \\ 
+    OpenMC & No & $1.41657 \pm 0.00131$ & - & $29406 \pm 65$ & -\\ 
+    OpenMC & Yes & $ 1.41670 \pm 0.00116$ & \Plus13 & $29413 \pm 58$& \Plus 7\\ 
+    Moltres & Yes & $1.40895 $ & \Minus762 & 29025 & \Minus381 \\ 
     \hline
     \end{tabular}
 \end{table}
