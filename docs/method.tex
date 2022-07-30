@@ -1069,6 +1069,7 @@ between centerline flux values from OpenMC and Moltres models.
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:flux_948K} shows that the OpenMC model has higher flux in Group 1 and 
 lower flux in Group 2 and 4 compared to the Moltres model. 
 Table \ref{tab:ahtr-plank-verification-flux} shows that the 2-norm percentage differences 
@@ -1076,17 +1077,10 @@ between OpenMC and Moltres models' flux values are slight, demonstrating that th
 a good overall agreement for each group's flux. 
 The summary at the end of this section explains the differences in the flux's maximum 
 percentage differences between the OpenMC and Moltres models. 
-%The flux neutronics parameter is the most important neutronics parameter as it 
-%contributes to the source term in the Moltres simulation. 
-%Thus, these flux comparison results verify the accurate calculation 
-%of the temperature distribution in the Moltres \gls{AHTR} plank model. 
-% Max is siginificant but not surprising for neutron diffusion. 
-% Moltres is able to reproduce the correct trend. 
-% This level of accuracy is sufficient for comparing max temp. 
 
 \subsubsection{AHTR Plank: Neutron Energy Spectrum}
-Comparison of the neutron energy spectrum verifies that the Moltres model is replicating 
-the OpenMC model's neutronics correctly.
+A comparison of the neutron energy spectrum verifies that the Moltres model is 
+replicating the OpenMC model's neutronics correctly.
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron energy spectrum of the OpenMC 
 simulation for both 252 and 4 groups and the 4-group Moltres simulation.
  \begin{figure}[htbp]
@@ -1350,7 +1344,7 @@ percentage differences between the OpenMC and Moltres models.
 %term. connect it for readers. 
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
-Comparison of the neutron energy spectrum verifies that the Moltres model is replicating 
+A comparison of the neutron energy spectrum verifies that the Moltres model is replicating 
 the OpenMC model's neutronics correctly.
 Figure \ref{fig:assem_neutron_spectrum_948K} shows the one-third assembly's neutron 
 spectrum of the OpenMC simulation for 252 and 4 groups and 4-group Moltres 
