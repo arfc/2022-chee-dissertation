@@ -1726,7 +1726,7 @@ coolant channel shape for most-minimized cases.
 
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, reactor model 5 with the
 most-minimized $PF_{total}$ (the purple dashed distribution) has an oscillating TRISO 
-distribution with $\sim0.01$ variation and $PF_{total} = 0.02$ 
+distribution with $\sim0.01$ TRISO spatial variation and $PF_{total} = 0.02$ 
 (the corresponding geometry is illustrated in Figure \ref{fig:slab-obj-3-min-pf}).
 In Figure \ref{fig:slab-obj-3-distr-most-minimized}, reactor model 2 with the 
 most-minimized $T_{max}$ (the orange dotted distribution) has an almost constant TRISO 
@@ -1741,7 +1741,6 @@ Section \ref{sec:plank-discussion-three} discusses and explains simulation p-3a'
 \subsection{p-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
 Channel Shape}
 \label{sec:p-3b}
-% TODO: Remind readers of the dimensionality and what this means! 
 This section reports results from the three-objective optimization simulation p-3b, 
 the largest and final optimization problem run for the \gls{AHTR} plank model. 
 Simulation p-3b minimized all the objectives: total fuel packing fraction 
@@ -1812,9 +1811,7 @@ confirming that simulation p-3b is sufficiently converged by generation 8.
     \hline
     \end{tabular}
 \end{table}
-% why hypervolume lower... 
-% TODO: this is more gens than before. Maybe a comment on that and # generations 
-% and problem difficulty
+% TODO: why hypervolume lower... 
 
 Figure \ref{fig:slab-obj-3-3d-all} shows a plot of the final generation's reactor 
 models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$; 
