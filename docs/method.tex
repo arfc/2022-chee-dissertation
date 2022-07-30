@@ -1117,33 +1117,6 @@ Reactor designers can then use higher fidelity software for modeling the final o
 In summary, Moltres replicated the relevant neutronics parameters with sufficient 
 accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
 
-%Even though the reactivity and $k_{eff}$ values different, the reactivity coefficients 
-%are in agreement, therefore, Moltres can capture the relative temperature 
-
-
-%the neutron diffusion method used in Moltres does not 
-%approximate this reactor geometry as well. 
-%The diffusion coefficients for this reactor type are approximately 1cm.
-%The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
-%coefficient, resulting in poor approximations. 
-
-% Max is siginificant but not surprising for neutron diffusion. 
-% Moltres is able to reproduce the correct trend. 
-% This level of accuracy is sufficient for comparing max temp. 
-
-% TODO: If you expect any deviations, state them here and say why/why not.
-% primarily from using neutron diffusion instead of neutron transport methods 
-% flux not being reproduced in small regions which are less than a few mean free 
-% path if neutrons, near material interfaces. 
-% Even though the keff differ, the Beta eff values agree and so the Moltres model 
-% can capture the relative temperature distribution accurately. 
-% baseline is off, but the relative values are accurate. The  
-% normalized power, keff is ok. normalizing power = normalizing the number of fission 
-% neutrons produced. 
-
-% using the same materials, the same uranium isotope, the same general structure, 
-% these 3 contribute to similar neutron energy spectrum. so should be ok. 
-
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
 \label{sec:assem-knp}
 Key neutronics parameter verificaiton is necessary for the one-third assembly model 
