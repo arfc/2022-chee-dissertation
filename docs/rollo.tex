@@ -105,6 +105,7 @@ software \gls{DEAP} (Section \ref{sec:rollo-ea}), input file structure (Section
 verification studies (Section \ref{sec:rollo-verification}), and convergence criteria
 (Section \ref{sec:rollo-convergence}). 
 Appendix B lists all the data and analysis related to this chapter.
+% TODO: ^ improve this statement, make it punchier 
 
 \section{Evolutionary Algorithm Driver}
 \label{sec:rollo-ea}
@@ -213,7 +214,6 @@ exposing different explicitness levels \cite{fortin_deap_2012}.
 The high-level examples use the built-in \gls{DEAP} genetic algorithms, 
 whereas the low-level example completely unpacks the genetic algorithm to expose 
 a generational loop. 
-
 I included an unpacked genetic algorithm in ROLLO's 
 \textbf{\textit{Algorithm}} class, depicted in Figure \ref{fig:genetic_alg_nuclear}. 
 The algorithm begins by initializing the starting population and evaluating 
@@ -224,7 +224,6 @@ to create an offspring population, and all offspring individuals are evaluated.
 The selection operator is then applied to both the previous and offspring populations 
 to select the best individuals to create the new population. 
 Finally, the constraints are applied, and the results are saved.
-
 Applying the selection operator to the combined previous and offspring 
 populations expands the population, ensuring the effectiveness of 
 elitism selection operators, such as NSGA-II, which work well 
@@ -237,7 +236,8 @@ There are four sections that the user must define: \\ \texttt{control\_variables
 \texttt{evaluators}, \texttt{constraints}, and \texttt{algorithm}. 
 Figure \ref{fig:rollo-input} shows an example \gls{ROLLO} input file. 
 In this example, \gls{ROLLO} uses a genetic algorithm with user-defined 
-hyperparameters to minimize the \texttt{output1} parameter.
+hyperparameters, defined in the \texttt{algorithm} secion, to minimize the 
+\texttt{output1} parameter.
 The OpenMC evaluator accepts input parameters: \texttt{variable1} and 
 \texttt{variable2}, and calculates the \texttt{output1} parameter.
 \begin{figure}[htbp]
@@ -289,13 +289,14 @@ The OpenMC evaluator accepts input parameters: \texttt{variable1} and
     \caption{\acrfull{ROLLO} sample JSON input file.}
     \label{fig:rollo-input}
 \end{figure}
-
 Next, I describe how to define each section of a \gls{ROLLO} input file. 
 The \gls{ROLLO} documentation \cite{chee_documentation_2021} provides further 
 descriptions for setting up a \gls{ROLLO} input file.
 
 \subsection{Control Variables}
-Control variables are parameters the genetic algorithm will vary. 
+I use the term control variables to refer to parameters the genetic algorithm will 
+vary (conventionally a control variable is held constant in a research study, 
+however this is not the case for \gls{ROLLO}).
 The user must specify the minimum and maximum values for each control variable.
 For example, Lines 2 to 5 in Figure \ref{fig:rollo-input} demonstrate that the 
 control variables, \texttt{variable1} and \texttt{variable2}, 
