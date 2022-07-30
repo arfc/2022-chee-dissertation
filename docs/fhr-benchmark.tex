@@ -82,7 +82,7 @@ hexagonal fuel assembly geometry and the arrangement of all assemblies in the co
 All dimensions specified are at room temperature. 
 The benchmark's phases I and II use room temperature dimensions, while Phase III 
 will address dimensional changes brought about by temperature expansion. 
-Figure \ref{fig:ahtr-fuel-assembly} shows a 2D view of the 
+Figure \ref{fig:ahtr-fuel-assembly} shows a x-y plane view of the 
 \gls{AHTR}'s hexagonal fuel assembly. 
 \begin{figure}[htbp]
     \centering
@@ -197,8 +197,9 @@ fuel plank.
         \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
        \tkzText[above](-0.3,-0.7){}
        \end{tikzpicture} 
-    \caption{XY Placement of z-direction axial burnable poisons stacks in the \acrlong{AHTR} 
-    \cite{petrovic_benchmark_2021}.}
+    \caption{x-y plane's placement of axial burnable poisons in the \acrlong{AHTR} 
+    plank \cite{petrovic_benchmark_2021}. The burnable poisons are stacked in 
+    the z-direction.}
     \label{fig:discrete-poison}
 \end{figure}
 The integral options consist of $Eu_2O_3$ homogenously mixed with the graphite 
@@ -208,8 +209,8 @@ graphite in TRISO particles).
 The \gls{MHC} control rod inserts into the Y-shaped control rod slot, displacing
 the \gls{FLiBe} that occupies the slot 
 (shown in Figure \ref{fig:ahtr-fuel-assembly}). 
-
-Detailed \gls{AHTR} geometry information can be found in \cite{petrovic_benchmark_2021}.
+Detailed \gls{AHTR} geometry and material information can be found in the 
+\gls{FHR} benchmark's specifications \cite{petrovic_benchmark_2021}.
 
 \section{FHR Benchmark Phase I Specifications}
 \label{sec:phase1}
@@ -377,8 +378,8 @@ In the subsequent sections, I will share the results obtained by \gls{UIUC}.
 
 \subsection{Results: Phase I-A}
 \label{sec:fhr-benchmark-results-ia}
-In the \gls{ANS} Mathematics \& Computation (M$\&$C) 2021 conference 
-paper (of which I am a co-author), Petrovic et al. \cite{petrovic_preliminary_2021} 
+In an \gls{ANS} Mathematics \& Computation (M$\&$C) 2021 conference, 
+Petrovic et al. \cite{petrovic_preliminary_2021} 
 compared \gls{FHR} benchmark participants' Phase I-A $k_{eff}$ results.  
 We reported that the standard deviation between participants for each case 
 was in the 231 to 514 pcm range, acceptable and notably close given a blind 
@@ -511,12 +512,13 @@ Figure \ref{fig:phase1a-e} shows the neutron flux distribution in a 100 $\times$
     \includegraphics[width=\linewidth]{phase1a-e-c1a.png} 
     \includegraphics[width=\linewidth]{phase1a-e-c3a.png} 
     \includegraphics[width=\linewidth]{phase1a-e-c6a.png} 
-    \caption{\gls{UIUC} \gls{FHR} benchmark results: neutron flux 
+    \caption{\gls{UIUC} \gls{FHR} benchmark flux results: neutron flux 
     distribution in 100 $\times$ 100 mesh for three coarse energy groups: Case 
     1A (above), Case 3A (middle), Case 6A (below). Energy group 1: $E > 0.1$ MeV, 
     Energy group 2: $3 \times 10^{-6} < E < 0.1$ MeV, Energy group 3: $E < 3 \times 10^{-6}$ MeV. }
     \label{fig:phase1a-e}
 \end{figure}
+% TODO: add axes labels and bigger... 
 For all three cases, fast-flux (energy group 1) peaks in the diamond-shaped sectors containing 
 the fuel stripes, whereas thermal flux (energy group 3) peaks outside the diamond-shaped 
 sectors. 
@@ -536,6 +538,7 @@ Figure \ref{fig:phase1a-f} shows the neutron spectrum for Cases 1A and 6A.
     Phase I-A Case 1A (left) and Case 6A (right).}
     \label{fig:phase1a-f}
 \end{figure}
+% todo: increase label sizes... 
 Case 7A has a similar neutron spectrum to Case 6A since both cases have 
 higher fuel content. 
 All other cases have a similar neutron spectrum to Case 1A.
