@@ -1110,7 +1110,7 @@ and Moltres models, good agreement in their reactivity coefficients, and 4-group
 energy spectrum.
 The verification study also found good agreement in overall flux distributions 
 (based on the 2-norm difference), however there were larger flux differences at 
-specific points (based on the maximum difference). 
+specific points. 
 The reactivity and flux differences are due to Moltres utilizing the neutron diffusion 
 method instead of neutron transport methods, resulting in flux not being reproduced 
 well in small regions which are less than a few mean free paths in length 
@@ -1122,8 +1122,8 @@ agreement, Moltres accurately captures the relative temperature distributions.
 During the \gls{AHTR} optimization, so long the relative maximum temperature between 
 different \gls{AHTR} models are captured correctly, \gls{ROLLO} is able to accurately 
 find optimal reactor geometries. 
-Reactor designers can then use higher fidelity software for the final optimal 
-\gls{AHTR} geometry modeling. 
+Reactor designers can then use higher fidelity software for modeling the final optimal 
+\gls{AHTR} geometry. 
 In summary, Moltres replicated the relevant neutronics parameters with sufficient 
 accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
 
@@ -1156,12 +1156,15 @@ accuracy using OpenMC's group constant data for the \gls{AHTR} plank model.
 
 \subsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification}
 \label{sec:assem-knp}
+Key neutronics parameter verificaiton is necessary for the one-third assembly model 
+as well since it has different ratios of materials compared to the plank model.
+However, successful \gls{AHTR} plank model key neutronics parameter verification gives 
+confidence for a similar one-third assembly model verification study. 
 I compare the following key neutronics parameters: effective multiplication factor, 
 reactivity coefficients, flux distribution, and neutron energy spectrum for the 
 \gls{AHTR} one-third assembly model. 
 For this verification study, I used an \gls{AHTR} one-third assembly model with a 
 constant 0.0979 total packing fraction across all fuel cells.  
-% TODO: say why you chose this and why there isn't a need to change it. 
 Figure \ref{fig:ahtr-assem-verification} shows the \gls{AHTR} one-third assembly 
 model with TRISO-level fidelity.
 \begin{figure}[htbp]
