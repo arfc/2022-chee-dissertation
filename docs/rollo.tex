@@ -44,9 +44,10 @@ I briefly summarize how \gls{ROLLO} achieves these goals:
     \item Parallel: Users have the option to run \gls{ROLLO} in parallel so that 
     they may effectively use the computational resources available. 
     \item Reproducible: Data from every \gls{ROLLO} run saves into a unique, pickled 
-    file (pickle is a Python module that serializes Python objects). The pickled file 
-    contains the \gls{ROLLO} input file and coupled evaluator's scripts enabling 
-    results replication. 
+    checkpoint file (pickle is a Python module that serializes Python objects). 
+    The checkpoint file contains the \gls{ROLLO} input file and coupled evaluator's 
+    scripts enabling results replication. The checkpoint file also acts as a restart 
+    file for partially completed simulations. 
 \end{itemize}
 
 \gls{ROLLO} provides a framework to couple an evolutionary algorithm driver with nuclear 
@@ -295,7 +296,7 @@ descriptions for setting up a \gls{ROLLO} input file.
 
 \subsection{Control Variables}
 I use the term control variables to refer to parameters the genetic algorithm will 
-vary (conventionally a control variable is held constant in a research study, 
+vary (conventionally, a control variable is held constant in a research study 
 however this is not the case for \gls{ROLLO}).
 The user must specify the minimum and maximum values for each control variable.
 For example, Lines 2 to 5 in Figure \ref{fig:rollo-input} demonstrate that the 
@@ -306,7 +307,7 @@ enrichment.
 
 \subsection{Evaluators}
 Evaluators are the nuclear software \gls{ROLLO} utilizes to calculate objective functions. 
-\gls{ROLLO} is nuclear code-agnostic and does not have dependencies on any 
+\gls{ROLLO} is nuclear code-agnostic and does not have hard dependencies on any 
 nuclear software.
 Thus, it is up to the user to ensure that the nuclear software and their corresponding 
 executables are correctly installed. 
@@ -434,8 +435,7 @@ The optional input parameters include \texttt{parallel}, \texttt{keep\_files}, \
 and \texttt{mating\_operator}. 
 Lines 17 to 31 in the example \gls{ROLLO} input file (Figure \ref{fig:rollo-input}) 
 demonstrate \texttt{algorithm} specifications. 
-Table \ref{tab:algorithm-inputs} describes the input parameters accepted by
-ROLLO's \texttt{algorithm} input file section.  
+Table \ref{tab:algorithm-inputs} describes these input parameters in detail. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -480,6 +480,7 @@ Section \ref{sec:hyperparameter-studies} describes the hyperparameter studies.
 As mentioned previously in Section \ref{sec:genetic_alg}, it is important to 
 select genetic algorithm hyperparameters that balance the extent of exploration 
 and exploitation.
+% todo: add this phrasing earlier in chapter too. 
 For each operator, users choose from a list of operators and define each
 of their required hyperparameters. 
 Table \ref{tab:deap_operators} shows the available operators and their respective 
@@ -489,18 +490,19 @@ Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
     \centering
     \onehalfspacing
     \caption{Selection, mutation, and mating operators available in 
-    \acrfull{ROLLO} and their corresponding hyperparameters. }
+    \acrfull{ROLLO} and their corresponding hyperparameters. n/a means that 
+    the operator does not have associated hyperparameters. }
 	\label{tab:deap_operators}
     \footnotesize
     \begin{tabular}{l|p{0.23\textwidth}|p{0.55\textwidth}}
     \hline
     \textbf{Operator} & \textbf{Available Options} & \textbf{Hyperparameters} \\ \hline
     \multirow{4}{1cm}{Selection} & \texttt{selTournament} & \texttt{tournsize}: no. of individuals in each tournament\\ \cline{2-3}
-    & \texttt{selNSGA2} & - \\ \cline{2-3}
-    & \texttt{selBest} & - \\ \hline
+    & \texttt{selNSGA2} & n/a \\ \cline{2-3}
+    & \texttt{selBest} & n/a \\ \hline
     \multirow{2}{1cm}{Mutation} & \multirow{2}{2cm}{\texttt{mutPolynomialBounded}} & \texttt{eta}: crowding degree of the mutation\\  
     && \texttt{indpb}: independent probability for each attribute to be mutated\\ \hline
-    \multirow{3}{1cm}{Mating} & \texttt{cxOnePoint} & -\\ \cline{2-3}
+    \multirow{3}{1cm}{Mating} & \texttt{cxOnePoint} & n/a \\ \cline{2-3}
     & \texttt{cxUniform} & \texttt{indpb}: independent probability for each attribute to be exchanged\\ \cline{2-3}
     & \texttt{cxBlend} & \texttt{alpha}: Extent of the interval that the new values can be drawn for each attribute on both sides of the parents’ attributes\\ \hline
     \end{tabular}
@@ -509,13 +511,13 @@ Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
 \section{ROLLO Software Architecture}
 \label{sec:rollo-archi}
 This section describes the \gls{ROLLO} v1.0 software architecture and 
-how all the parts come together to optimize reactor design.
+how each part contributes the reactor design optimization process.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
 and describes each class's purpose.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{Classes that make up the \gls{ROLLO} architecture. }
+    \caption{Classes that comprise the \gls{ROLLO} architecture. }
 	\label{tab:rollo-architecture}
     \footnotesize
     \begin{tabular}{l|p{0.73\textwidth}}
@@ -626,7 +628,9 @@ and calculates objective functions using the evaluation function created by the
 
 In the \gls{ROLLO} Github repository \cite{chee_rollo_2021}, I include a tests 
 directory that contains unit tests for all methods in the classes described 
-above. % update citation
+above. % todo: update citation
+These tests serve both to document how to use \gls{ROLLO} as well as to ensure 
+\gls{ROLLO} has feature stability. 
 
 \subsection{Installing and Running ROLLO}
 There are two ways to install \gls{ROLLO}.
