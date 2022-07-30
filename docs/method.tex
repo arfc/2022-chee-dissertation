@@ -1162,7 +1162,7 @@ accuracy using OpenMC's group constant data for the \gls{AHTR} plank model.
 Key neutronics parameter verificaiton is necessary for the one-third assembly model 
 as well since it has different ratios of materials compared to the plank model.
 However, successful \gls{AHTR} plank model key neutronics parameter verification gives 
-confidence for a similar one-third assembly model verification study. 
+confidence for the one-third assembly model verification study. 
 I compare the following key neutronics parameters: effective multiplication factor, 
 reactivity coefficients, flux distribution, and neutron energy spectrum for the 
 \gls{AHTR} one-third assembly model. 
@@ -1203,6 +1203,8 @@ model with TRISO-level fidelity.
 % TODO: for all of these, add description on how plank and 1/3 assem are similar or 
 %different. 
 \subsubsection{AHTR One-Third Assembly: Effective Multiplication Factor}
+Comparison of $k_{eff}$ and reactivity verify that the Moltres model is replicating 
+the OpenMC model's neutronics correctly.
 Table \ref{tab:keff_ahtr_moltres_assem} compares the effective multiplication factor 
 for OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
 OpenMC simulation with 4-group energy and spatial homogenization, 
@@ -1249,6 +1251,9 @@ The $k_{eff}$ values are acceptable since I am not using the Moltres simulation 
 neutronics modeling but for \gls{AHTR} one-third assembly temperature modeling. 
 
 \subsubsection{AHTR One-Third Assembly: Reactivity Coefficients}
+Comparison of reactivity coefficients produced by Moltres and OpenMC verify that 
+the Moltres model is replicating the OpenMC model's neutronics correctly, and are also 
+important to ensure that Moltres accurately calculates the temperature distribution.
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
 normalized difference between $k_{eff}$ values with and without \glspl{DNP}. 
 The $\beta{eff}$ values from OpenMC and Moltres in Table 
@@ -1286,15 +1291,9 @@ coefficients from OpenMC and Moltres have good agreement with a discrepancy of
 % assume this difference will be similar? 
 
 \subsubsection{AHTR One-Third Assembly: Flux Distribution}
-The heat produced per fission, $\epsilon_{f,g}$, and macroscopic cross section 
-for fission,$\Sigma_{f,g}$, terms in the Moltres source term (Equation 
-\ref{eq:moltres-source-term}) are provided through the group constants generated 
-by OpenMC.
-Thus, differences in the source term between OpenMC and Moltres are dependent on 
-the flux. 
-Comparison of flux distributions produced by Moltres and OpenMC are key to 
-ensuring that temperature distribution is accurately calculated in Moltres.
-
+Comparison of flux distributions produced by Moltres and OpenMC verify that 
+the Moltres model is replicating the OpenMC model's neutronics correctly, and are also 
+important to ensure that Moltres accurately calculates the temperature distribution.
 Figure \ref{fig:flux_948K_assem} shows the 4-group flux distributions for OpenMC and 
 Moltres on the \gls{AHTR} one-third assembly's centerline, along the y-axis at 
 the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}). 
@@ -1357,6 +1356,8 @@ of the temperature distribution in the Moltres \gls{AHTR} one-third assembly mod
 %term. connect it for readers. 
 
 \subsubsection{AHTR One-Third Assembly: Neutron Energy Spectrum}
+Comparison of the neutron energy spectrum verifies that the Moltres model is replicating 
+the OpenMC model's neutronics correctly.
 Figure \ref{fig:assem_neutron_spectrum_948K} shows the one-third assembly's neutron 
 spectrum of the OpenMC simulation for 252 and 4 groups and 4-group Moltres 
 simulation. 
