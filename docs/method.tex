@@ -1115,6 +1115,20 @@ The reactivity and flux differences are due to Moltres utilizing neutron diffusi
 method instead of neutron transport methods, resulting in flux not being reproduced 
 well in small regions which are less than a few mean free paths in length 
 (i.e. the FLiBe coolant channel). 
+The differences in reactivity and flux at specfic points might result in slightly 
+inaccurate absolute temperature distribution.  
+However, since the reactivity coefficients and overall flux distribution are in 
+agreement, Moltres can accurately capture the relative temperature distributions. 
+During the \gls{AHTR} optimization, so long the relative maximum temperature between 
+different \gls{AHTR} models are captured, \gls{ROLLO} is able to accurately find 
+optimal reactor geometries. 
+Reactor designers can then use higher fidelity software for the final optimal 
+\gls{AHTR} geometry modeling. 
+%Even though the reactivity and $k_{eff}$ values different, the reactivity coefficients 
+%are in agreement, therefore, Moltres can capture the relative temperature 
+
+%In summary, Moltres replicated the relevant neutronics parameters with sufficient 
+%accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
 
 %the neutron diffusion method used in Moltres does not 
 %approximate this reactor geometry as well. 
@@ -1122,14 +1136,10 @@ well in small regions which are less than a few mean free paths in length
 %The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
 %coefficient, resulting in poor approximations. 
 
-%Comparisons of the effective multiplication factor and neutron energy spectrum are 
-%to verify that the Moltres model is replicating the OpenMC model's neutronics correctly.
-%Comparison of the reactivity coefficients and flux distributions produced by Moltres
-%and OpenMC are key to ensuring that Moltres accurately calculates the \gls{AHTR}'s 
-%temperature distribution.
+% Max is siginificant but not surprising for neutron diffusion. 
+% Moltres is able to reproduce the correct trend. 
+% This level of accuracy is sufficient for comparing max temp. 
 
-In summary, Moltres replicated the relevant neutronics parameters with sufficient 
-accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
 % TODO: If you expect any deviations, state them here and say why/why not.
 % primarily from using neutron diffusion instead of neutron transport methods 
 % flux not being reproduced in small regions which are less than a few mean free 
