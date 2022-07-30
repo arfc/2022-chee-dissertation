@@ -1106,7 +1106,21 @@ There is good agreement between OpenMC and Moltres with their 4-group spectrums.
 
 \subsubsection{AHTR Plank: Key Neutronics Parameters Verification Summary}
 The verification study found a $355$ pcm reactivity difference between OpenMC 
-and Moltres models, good agreement in their reactivity coefficients,  
+and Moltres models, good agreement in their reactivity coefficients, and 4-group neutron 
+energy spectrum.
+The verification study also found good agreement in overall flux distributions 
+(based on the 2-norm difference), however there were larger flux differences at 
+specific points (based on the maximum difference). 
+The reactivity and flux differences are due to Moltres utilizing neutron diffusion 
+method instead of neutron transport methods, resulting in flux not being reproduced 
+well in small regions which are less than a few mean free paths (i.e. the FLiBe
+coolant channel). 
+
+%the neutron diffusion method used in Moltres does not 
+%approximate this reactor geometry as well. 
+%The diffusion coefficients for this reactor type are approximately 1cm.
+%The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
+%coefficient, resulting in poor approximations. 
 
 %Comparisons of the effective multiplication factor and neutron energy spectrum are 
 %to verify that the Moltres model is replicating the OpenMC model's neutronics correctly.
