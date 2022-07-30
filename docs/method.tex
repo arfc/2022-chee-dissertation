@@ -929,14 +929,12 @@ TRISO-level fidelity.
 \subsubsection{AHTR Plank: Effective Multiplication Factor}
 % TODO: why start w keff, lead your readers,,, 
 Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor ($k_{eff}$)
-for the OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
-the OpenMC simulation with 4-group energy and spatial homogenization, 
-and the Moltres simulation with 4-group energy and spatial homogenization.
+and reactivity ($\rho$) for the OpenMC simulation with continuous energy and 
+TRISO-level spatial fidelity, the OpenMC simulation with 4-group energy and spatial 
+homogenization, and the Moltres simulation with 4-group energy and spatial homogenization.
 I included results from the homogenized OpenMC simulation to 
 distinguish between differences caused by spatial homogenization and energy 
 discretization, or differing OpenMC and Moltres solve methods. 
-The normalized difference is the pcm difference normalized by OpenMC non-homogenized 
-model's $k_{eff}$.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -946,18 +944,18 @@ model's $k_{eff}$.
     spatial homogenization. All simulations are at 948K.}
 	\label{tab:keff_ahtr_moltres}
     \footnotesize
-    \begin{tabular}{lllcc}
+    \begin{tabular}{lllccc}
     \hline 
     \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
-    & \textbf{Normalized Diff [pcm]}\\
+    & \textbf{Reactivity [pcm]} & \textbf{Reactivity Diff [pcm]} \\
     \hline 
-    OpenMC & No & $1.41402 \pm 0.00140$ & - & -\\ 
-    OpenMC & Yes & $1.41473 \pm 0.00098$ & \Plus71 & \Plus50\\ 
-    Moltres & Yes & $1.40696 $ & \Minus706 & \Minus502\\ 
+    OpenMC & No & $1.41402 \pm 0.00140$ & - & 29279 & -\\ 
+    OpenMC & Yes & $1.41473 \pm 0.00098$ & \Plus71 & 29314 & \Plus35\\ 
+    Moltres & Yes & $1.40696 $ & \Minus706 & 28924 & \Minus355\\ 
     \hline
     \end{tabular}
 \end{table}
-% instead of difference, report reactivity difference... 
+% TODO: instead of difference, report reactivity difference... 
 
 The 50pcm $k_{eff}$ difference, that can be observed in Table 
 \ref{tab:keff_ahtr_moltres}, between continuous and homogenized OpenMC simulations 
