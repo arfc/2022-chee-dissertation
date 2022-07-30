@@ -490,7 +490,7 @@ Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
     \centering
     \onehalfspacing
     \caption{Selection, mutation, and mating operators available in 
-    \acrfull{ROLLO} and their corresponding hyperparameters. n/a means that 
+    \acrfull{ROLLO} and their corresponding hyperparameters. n/a indicates that 
     the operator does not have associated hyperparameters. }
 	\label{tab:deap_operators}
     \footnotesize
@@ -645,9 +645,14 @@ scripts in a directory.
 When running \gls{ROLLO} from the command line, there is one mandatory argument and 
 two optional arguments. 
 The mandatory argument is the input file (\texttt{-i}). 
-The optional arguments are the checkpoint file (\texttt{-c}) and verbose 
-output flag (\texttt{-v}).  
-Thus, the structure of a command line input for running \gls{ROLLO} is: 
+The optional arguments are the checkpoint file (\texttt{-c}) and verbosity 
+flag (\texttt{-v}).  
+The checkpoint file holds the results from the \gls{ROLLO} simulation. 
+The checkpoint file also acts as a restart file. 
+If a ROLLO simulation ends prematurely, the checkpoint file can be used to restart 
+the simulation from the most recent generation.
+The verbosity flag turns on verbose output. 
+The structure of a command line input for running \gls{ROLLO} is: 
 
 \noindent
 \texttt{python -m rollo -i <input file name> -c <checkpoint file name> -v}
