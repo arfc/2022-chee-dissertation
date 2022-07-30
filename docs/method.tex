@@ -862,7 +862,7 @@ PF_j &= \mbox{fuel packing fraction at position j } [-] \nonumber
 \label{sec:ahtr_model_verification}
 This section verifies Moltres' ability to reproduce key neutronics parameters 
 using group constant data from OpenMC, which is essential for accurate neutronics 
-calculations in the temperature models.
+calculations in the Moltres temperature models.
 I set up a criticality eigenvalue problem in Moltres and calculate key neutronics 
 parameters using group constant data from OpenMC. 
 For both the \gls{AHTR} plank and one-third assembly models, I compare the key neutronics 
@@ -905,9 +905,9 @@ I used the optimized hyperparameter set in a \gls{ROLLO} simulation to maximize 
 $k_{eff}$ in a \gls{AHTR} plank model. 
 Then, I used the \gls{AHTR} plank model with the largest $k_{eff}$ in the optimization's 
 final generation for this verification study.
-Since the same materials, uranium isotope, and general plank model 
-structure is used for the \gls{AHTR} plank's optimization, conducting 
-verification for one geometry is acceptable.  
+Since the same materials, uranium isotope, and general plank structure is used for 
+the \gls{AHTR} plank's optimization, conducting verification for one geometry is 
+acceptable.  
 Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with 
 TRISO-level fidelity.
  \begin{figure}[htbp]
@@ -931,7 +931,7 @@ TRISO-level fidelity.
 \end{figure}
 
 \subsubsection{AHTR Plank: Effective Multiplication Factor}
-Comparison of $k_{eff}$ and reactivity verify that the Moltres model is replicating 
+The comparison of $k_{eff}$ and reactivity verify that the Moltres model is replicating 
 the OpenMC model's neutronics correctly.
 Table \ref{tab:keff_ahtr_moltres} compares effective multiplication factor ($k_{eff}$)
 and reactivity ($\rho$) for the OpenMC simulation with continuous energy and 
@@ -972,16 +972,6 @@ are acceptable.
 However, the Moltres simulation shows a $706pcm$ difference in $k_{eff}$ and 
 $355pcm$ difference in reactivity.
 The summary at the end of this section explains the differences in these values. 
-%A possible reason is that the neutron diffusion method used in Moltres does not 
-%approximate this reactor geometry as well. 
-%The diffusion coefficients for this reactor type are approximately 1cm.
-%The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
-%coefficient, resulting in poor approximations. 
-%The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
-%neutronics modeling but for \gls{AHTR} plank temperature modeling. 
-%TODO: ask SM
-% are there any potential risks for this? Statae them here. Could it be possible 
-% that you are over or under estimating heat produced? 
 
 \subsubsection{AHTR Plank: Reactivity Coefficients}
 Comparison of reactivity coefficients produced by Moltres and OpenMC verify that 
@@ -1398,7 +1388,8 @@ find optimal reactor geometries.
 Reactor designers can then use higher fidelity software for modeling the final optimal 
 \gls{AHTR} geometry. 
 In summary, Moltres replicated the relevant neutronics parameters with sufficient 
-accuracy using OpenMC's group constant data for the \gls{AHTR} plank model. 
+accuracy using OpenMC's group constant data for the \gls{AHTR} one-third assembly 
+model. 
 
 \subsection{AHTR Plank and One-Third Assembly: Mesh Refinement Studies}
 I performed mesh refinement studies on the \gls{AHTR} plank and one-third assembly 
