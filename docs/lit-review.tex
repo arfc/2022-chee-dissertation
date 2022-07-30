@@ -94,7 +94,7 @@ By combining \gls{FLiBe} coolant from \gls{MSR} technology and
 \gls{TRISO} fuel from \gls{VHTR} technology, the \gls{FHR} benefits from 
 low operating pressure and large thermal margin enabled by the molten fluoride
 salt coolant and the thermal resilience of \gls{TRISO} particle fuel. 
-Molten fluoride salts low vapor pressure ensures reduced stress on the system
+The low vapor pressure in molten fluoride salts ensures reduced stress on the system
 and increased safety compared to the \gls{VHTR}'s high operating pressure. 
 \gls{TRISO} solid fuel cladding in the \gls{FHR} system adds an extra barrier 
 to fission product release compared to \glspl{MSR} with liquid fuel 
@@ -136,8 +136,8 @@ modeled in this dissertation.
 
 \subsection{Previous AHTR modeling efforts and challenges} 
 \label{sec:previous_ahtr}
-Nuclear reactor scientists built most of the current state-of-the-art reactor simulation 
-tools for \gls{LWR} modeling.
+Most state-of-the-art reactor simulation tools today have been designed for 
+\gls{LWR} analysis.
 The \gls{AHTR} core design differs significantly from the currently operating \gls{LWR} 
 cores.  
 These differences lead to modeling challenges with the current tools, highlighting
@@ -151,8 +151,8 @@ This section outlines the previous efforts to model and validate
 the \gls{AHTR}'s neutronics and thermal-hydraulics. 
 
 \subsubsection{AHTR Neutronics Modeling}
-Several neutronics studies conducted along the way to the current \gls{AHTR} 
-design have shed light on the design's technical challenges 
+Several neutronics studies conducted to support the current iteration of the \gls{AHTR} 
+design have illuminated the design's technical challenges 
 \cite{ramey_monte_2018,holcomb_fluoride_2013,greene_pre-conceptual_2010}. 
 \gls{Georgia Tech} led an Integrated Research Project to understand \gls{AHTR} 
 material and modeling challenges \cite{zhang_integrated_2019}. 
@@ -222,7 +222,7 @@ absence of thermal scattering data will impact the accuracy of the results
 \cite{ramey_monte_2018}. 
 
 \subsubsection{AHTR Multiphysics Modeling}
-In past effort toward \gls{AHTR} multiphysics modeling, Gentry et al. 
+In a past effort toward \gls{AHTR} multiphysics modeling, Gentry et al. 
 \cite{gentry_development_2016} developed an adapted lattice physics-to-core 
 simulator two-step procedure with Serpent \cite{leppanen_serpent_2014} 
 and \gls{NESTLE} \cite{turinsky_nestle_1994} for the \gls{AHTR} design. 
@@ -283,6 +283,8 @@ benchmark's phases and results.
 In this dissertation, I use OpenMC \cite{romano_openmc:_2015} to model \gls{AHTR}'s 
 neutronics and Moltres \cite{lindsay_introduction_2018} to model the \gls{AHTR}'s 
 temperature. 
+In the following subsections, I will describe the capabilities of each software 
+and motivate their use for my dissertation. 
 
 \subsubsection{OpenMC}
 OpenMC \cite{romano_openmc:_2015} is a continuous-energy Monte Carlo neutron transport 
