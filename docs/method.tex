@@ -905,6 +905,9 @@ I used the optimized hyperparameter set in a \gls{ROLLO} simulation to maximize 
 $k_{eff}$ in a \gls{AHTR} plank model. 
 Then, I used the \gls{AHTR} plank model with the largest $k_{eff}$ in the optimization's 
 final generation for this verification study.
+Since the same materials, uranium isotope, and general plank model 
+structure is used for the \gls{AHTR} plank's optimization, conducting 
+verification for one geometry is acceptable.  
 Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with 
 TRISO-level fidelity.
  \begin{figure}[htbp]
@@ -1368,6 +1371,7 @@ simulation.
 \end{figure}
 There is good agreement between OpenMC and Moltres models' 4-group spectrums. 
 
+\subsubsection{AHTR One-Third Assembly: Key Neutronics Parameters Verification Summary}
 In summary, Moltres replicated the relevant neutronics parameters with sufficient 
 accuracy using OpenMC's group constant data for the \gls{AHTR} one-third assembly 
 model. 
