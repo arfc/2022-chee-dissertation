@@ -947,7 +947,7 @@ discretization, or differing OpenMC and Moltres solve methods.
     TRISO-level spatial fidelity (no homogenization).}
 	\label{tab:keff_ahtr_moltres}
     \footnotesize
-    \begin{tabular}{lllccc}
+    \begin{tabular}{lllclc}
     \hline 
     \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
     & \textbf{Reactivity [pcm]} & \textbf{Reactivity Diff [pcm]} \\
@@ -960,13 +960,13 @@ discretization, or differing OpenMC and Moltres solve methods.
 \end{table}
 % TODO: instead of difference, report reactivity difference... 
 
-The 50pcm $k_{eff}$ and 35pcm reactivity difference, that can be observed in Table 
+The $50pcm$ $k_{eff}$ and $35pcm$ reactivity difference, that can be observed in Table 
 \ref{tab:keff_ahtr_moltres}, between continuous and homogenized OpenMC simulations 
 are within uncertainty.
 This shows that the selected spatial homogenizations and energy discretizations 
 are acceptable. 
-However, there is a 706 pcm difference in the Moltres simulation's $k_{eff}$ and 
-355pcm difference in reactivity.
+However, the Moltres simulation shows a $706pcm$ difference in $k_{eff}$ and 
+$355pcm$ difference in reactivity.
 A possible reason is that the neutron diffusion method used in Moltres does not 
 approximate this reactor geometry as well. 
 The diffusion coefficients for this reactor type are approximately 1cm.
