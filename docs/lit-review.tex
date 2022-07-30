@@ -291,11 +291,12 @@ OpenMC \cite{romano_openmc:_2015} is a continuous-energy Monte Carlo neutron tra
 open-source code hosted on Github.
 It was created in 2011 at \gls{MIT} as part of an effort to develop scalable parallel 
 Monte Carlo neutron transport algorithms for future exascale supercomputers 
-\cite{romano_openmc:_2015}.
+\cite{romano_openmc:_2015}, and is currently supported by resources from \gls{ANL}. 
 OpenMC runs in parallel using \gls{MPI} and OpenMP. 
 Many components of OpenMC have been validated and verified with experimental data 
 and other well-established neutron transport codes through benchmarks 
 \cite{romano_openmc:_2015}. 
+% TODO: describe a few relevant ones to this work... 
 
 OpenMC is capable of performing fixed source and k-eigenvalue calculations. 
 This dissertation uses OpenMC's k-eigenvalue calculations for \gls{AHTR} neutronics 
@@ -309,6 +310,7 @@ OpenMC models use constructive solid geometry representation; they provide stand
 geometric surfaces (e.g. planes, cylinders) for defining reactor geometries.  
 This dissertation uses v0.12.2 of OpenMC with the ENDF VII.1 nuclear data library
 \cite{chadwick_endf/b-vii.1_2011}. 
+% Based on results of other benchmarks, why did you choose this software? 
 
 \subsubsection{Moltres}
 Moltres is an open-source tool designed to simulate \glspl{MSR} using 
@@ -348,6 +350,7 @@ equations:
     I &= \text{ total number of delayed neutron precursor groups,} \nonumber \\
     \beta &= \text{ total delayed neutron fraction.} \nonumber
 \end{align}
+% todo: units 
 
 Moltres' governing temperature equation is an advection-diffusion
 equation with a fission heat source term $Q_f$: 
@@ -367,6 +370,9 @@ equation with a fission heat source term $Q_f$:
     \epsilon_g =& \text{ average fission energy released by neutrons in group
     $g$.} \nonumber
 \end{align} 
+% todo: units 
+% todo: how do neutronics and TH couple in moltres? why is it a good choice for this 
+% work? what has been done previously with it? 
 
 \section{Additive Manufacturing}
 Additive manufacturing is the formal term for what is popularly known as `3D printing' 
@@ -427,13 +433,13 @@ components into single parts, tailoring local material properties, and enabling
 geometry redesign for increased safety and performance 
 \cite{simpson_considerations_2019}. 
 Many Generation IV advanced reactor concepts have complex geometries, 
-such as hex-ducts for sodium-cooled fast reactors, that are costly and difficult 
+such as hexagonal-ducts for sodium-cooled fast reactors, that are costly and difficult 
 to fabricate using standard processing techniques \cite{sridharan_performance_2019}.  
-These complex designs will benefit from 3D printed parts. 
+These complex designs can leverage 3D printed parts to enormous benefit. 
 Additive manufacturing advancements for reactor core components remove
 conventional fuel manufacturing geometric constraints.
 Reactor designers can now approach the nuclear design problems with truly 
-arbitrary geometries, no longer limited by traditional geometric shapes that are 
+arbitrary geometries, no longer limited by conventional geometric shapes that are 
 easy to manufacture with traditional processes: slabs as fuel planks, cylinders 
 as fuel rods, spheres as fuel pebbles, axis-aligned coolant channels, etc 
 \cite{sobes_artificial_2020}.
@@ -521,11 +527,8 @@ These qualities make \gls{SiC} suitable for many applications in nuclear systems
 such as fuel cladding, constituents of fuel particles \cite{snead_handbook_2007} 
 and pellets \cite{terrani_progress_2015}, and core structural components in fission 
 reactors \cite{sauder_ceramic_2014}. 
-
-%Many of the materials and fabrication methods discussed above are applicable 
-%for \gls{FHR}-part manufacturing. 
-%Therefore, this reiterates the possibility of leveraging additive manufacturing 
-%to 3D print a \gls{FHR}-type reactor with non-conventional geometry. 
+% TODO: reichard and hosemann have also done work in this space with functionally 
+% graded components. 
 
 \section{Nuclear Reactor Design Optimization}
 \label{sec:opt}
@@ -542,6 +545,8 @@ improved without degrading another objective.
 An ideal optimization method for a multi-objective problem like reactor design 
 should find widely spread solutions in the obtained Pareto front 
 \cite{deb_multi-objective_2001}. 
+% todo: add example pareto front? so that you can describe features of importance 
+% in the text. 
 
 Traditional manufacturing constraints result in most of the past nuclear reactor 
 optimization work focusing on optimizing classical reactor 
@@ -638,7 +643,7 @@ Contrary to a single solution per iteration in deterministic and stochastic
 simulated annealing methods, evolutionary algorithms use a population of 
 solutions in each iteration \cite{deb_multi-objective_2001}. 
 Evolutionary algorithm methods mimic nature's evolutionary principles by driving 
-the search toward an optimal solution.
+the search toward an optimal solution through population elimination and combinations. 
 
 Peireira et al. \cite{pereira_coarse-grained_2003,pereira_parallel_2008} 
 used a coarse-grained parallel genetic algorithm and a niching genetic algorithm
@@ -662,10 +667,11 @@ the evolutionary algorithm method can leverage parallel computing to find a
 solution faster than the simulated annealing method.
 Therefore, I will utilize the evolutionary algorithm optimization method in 
 this dissertation.
-Section \ref{sec:ea} gives a literature review on evolutionary algorithms.
+Section \ref{sec:ea} provides an overview of the literature on evolutionary algorithms.
 
 \subsection{Reactor Optimization for Arbitrary Parameters}
 \label{sec:lit-review-reactor-arbitrary}
+% todo: add intro paragraph 
 Sobes et al. \cite{sobes_artificial_2020} used a genetic algorithm to find 
 minimum volume geometric configurations for a \gls{TCR}-like reactor with 
 multiphysics constraints of 1500 pcm excess reactivity and maximum fuel 
@@ -678,8 +684,8 @@ cone geometry, with the inlet surface being larger than the outlet
 \cite{sobes_artificial_2020}.
 
 See et al. \cite{see_design_2022} conducted design optimization of the 
-\gls{TCR}'s outlet plenum design with Siemens design optimization tool, HEEDS,
-and \gls{CFD} code, STAR-CCM+. 
+\gls{TCR}'s outlet plenum design with a Siemens design optimization tool, HEEDS,
+and the \gls{CFD} code, STAR-CCM+. 
 They had to design an instrumentation plane to monitor core coolant flow average 
 temperature within $\pm 5 ^{\circ}C$ while maintaining a tight design 
 constraint of 0.5-psi pressure drop across the outlet plenum.
@@ -702,9 +708,11 @@ instrumentation plane.
         \caption{Geometric representation of inlet channels.}
         \label{fig:see2} 
     \end{subfigure}
-    \caption{Initial design versus the optimal design of outlet plenum. The optimal design 
-    meets the following design objectives: 0.5-psi pressure drop across the outlet plenum, 
-    monitor core coolant flow average temperature within $\pm 5 ^{\circ}C$.
+    \caption{Initial design versus the optimal design of outlet plenum from the study 
+    by See et al. 
+    The optimal design meets the following design objectives: 0.5-psi pressure drop 
+    across the outlet plenum, monitor core coolant flow average temperature within 
+    $\pm 5 ^{\circ}C$.
     Figures reproduced from \cite{betzler_transformational_2020}.}
     \label{fig:compare-outlet-plenum}
 \end{figure}
@@ -712,7 +720,8 @@ instrumentation plane.
     \centering
     \includegraphics[width=0.9\linewidth]{see3.png} 
     \caption{Initial design versus optimal design of stream tubes in the outlet 
-    plenum.The optimal design meets the following design objectives: 0.5-psi pressure 
+    plenum from the study by See et al. 
+    The optimal design meets the following design objectives: 0.5-psi pressure 
     drop across the outlet plenum, monitor core coolant flow average temperature 
     within $\pm 5 ^{\circ}C$.
     Figures reproduced from \cite{see_design_2022}.}
@@ -961,15 +970,14 @@ space but a far more even distribution in the subspaces.
 \end{figure}
 
 \section{Summary}
-% this also needs improvement. 
-This chapter provided a literature review of relevant past research 
-efforts that give context to this dissertation. 
+This chapter provided a literature review of relevant past research efforts that 
+give context to and sipport the work of this dissertation. 
 In summary, participation in the \acrfull{OECD}-\acrfull{NEA} \acrfull{FHR} 
 benchmarking exercise contributes to assessing the current neutron transport and 
 thermal-hydraulics modeling and simulation capabilities for the \acrfull{AHTR} design.
-Also, additive manufacturing of nuclear reactor components is a quickly 
-developing field thanks to the aerospace and automotive industries, which led to
-breakthroughs in metal component additive manufacturing fabrication. 
+Furthermore, additive manufacturing of nuclear reactor components is a quickly 
+developing field due to advancements driven by the aerospace and automotive industries, 
+which led to breakthroughs in metal component additive manufacturing fabrication. 
 The promise of cheaper and faster manufacturing of reactor components with 
 additive manufacturing frees complex reactor geometries from previous 
 manufacturing constraints and allows reactor designers to reexamine reactor 
