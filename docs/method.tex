@@ -20,7 +20,7 @@ outline the \gls{AHTR} modeling workflow (Section \ref{sec:ahtr-model-workflow})
 verify the \gls{AHTR} models (Section \ref{sec:ahtr_model_verification}), 
 and describe the process of tuning \gls{ROLLO}'s hyperparameters (Section 
 \ref{sec:hyperparameter-studies}). 
-Appendix xx lists all the data and analysis related to this chapter.
+Appendix B lists all the data and analysis related to this chapter.
 
 \section{ROLLO Optimization Problem Definitions}
 \label{sec:opt-problem}
@@ -331,7 +331,7 @@ Equation \ref{eq:plank-sine}.
     x &= \mbox{midpoint x-value for each cell } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
-Appendix xx describes the normalization factor's calculation. 
+Appendix A describes the normalization factor's calculation. 
 Figure \ref{fig:straightened_plank} depicted the ten fuel cells.
 The sine distribution's coefficients, \textit{a b c}, are the independent variables 
 \gls{ROLLO} utilizes to manipulate the plank's $\rho_{TRISO}(\vec{x})$.
@@ -343,7 +343,7 @@ An \gls{AHTR} plank with $PF_{total} = 0.0979$, and
 $\rho_{TRISO}(\vec{x}) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right) 
 \cdot NF$, results in the following packing fractions for the ten cells, respectively: 
 0.103, 0.120, 0.049, 0.138, 0.076, 0.081, 0.136, 0.048, 0.125, and 0.098. 
-Figure \ref{fig:triso_distribution} shows this sine distribution, highlights 
+Figure \ref{fig:ahtr-plank-triso-distr} shows this sine distribution, highlights 
 the packing fraction at the respective midpoints, and displays the plank's x-y 
 axis view with the packing fraction varying based on this sine distribution. 
 \begin{figure}[htbp]
