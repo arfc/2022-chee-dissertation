@@ -68,9 +68,6 @@ Table \ref{tab:objectives} describes each objective, how I quantified them, and 
     \hline
     \end{tabular}
 \end{table}
-% TODO: Motivation (talk to Madicken)
-% minimize thermal stress in the fuel. Lowering max temp, means gradient is smaller, at 
-% the same power
 
 To optimize the objectives, I will vary the parameters in the \gls{AHTR} plank and 
 one-third assembly models. 
@@ -882,12 +879,16 @@ energy and spatially homogenized Moltres simulation.
 \label{sec:plank-knp}
 I compare the following key neutronics parameters: effective 
 multiplication factor, reactivity coefficients, flux distribution, and neutron energy 
-spectrum for the \gls{AHTR} plank model. 
-For this verification study, I selected to use an \gls{AHTR} plank model with a 
-$PF_{total} = 0.0979$ and 
-$\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$. 
-Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with TRISO-level 
-fidelity.
+spectrum for the \gls{AHTR} plank model.  
+Section \ref{sec:rollo-single-hyp} found an optimized hyperparameter set for \gls{ROLLO} 
+single-objective optimization simulations.
+The \gls{ROLLO} optimization simulation with the most-optimized hyperparameter 
+set's resulting \gls{AHTR} plank model with the highest $k_{eff}$ value is used for 
+this verification study. 
+The \gls{AHTR} plank model has a $PF_{total} = 0.0979$ and 
+$\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$.
+Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with 
+TRISO-level fidelity.
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{ahtr-plank-verification.png}
