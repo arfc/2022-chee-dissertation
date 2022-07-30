@@ -52,12 +52,12 @@ August 2022.
 \end{table}
 
 In the subsequent sections, I will describe the benchmark's \gls{AHTR} design details
-(Section \ref{sec:fhr-design} and Phase I specifications (Section 
-\ref{sec:phase1}. 
-Then, I will share our Phase I-A and I-B 
-results generated with the OpenMC neutronics code \cite{romano_openmc_2013}. 
-And finally, the preliminary \gls{AHTR} temperature modeling results.  
-Appendix xx lists all the data and analysis related to this chapter.
+(Section \ref{sec:fhr-design} and Phase I specifications (Section \ref{sec:phase1}. 
+Then, I will share our Phase I-A and I-B results generated with the OpenMC neutronics 
+code \cite{romano_openmc_2013} (Section \ref{sec:fhr-phase1-results}) and the 
+\gls{AHTR} temperature model's results (Section \ref{sec:fhr-bm-temp}).  
+Appendix B lists all the data and analysis related to this chapter to enable the 
+reproduction of all the simulations.
 
 \section{FHR Benchmark \acrlong{AHTR} Design}
 \label{sec:fhr-design}
@@ -365,6 +365,7 @@ The benchmark assumes that depletion occurs only in the fuel and burnable poison
 and that the depletion performs under the critical spectrum assumption. 
 
 \section{FHR Benchmark Phase I Results}
+\label{sec:fhr-phase1-results}
 The \texttt{arfc/fhr-benchmark} Github repository contains all the results submitted 
 by \gls{UIUC} for the \gls{FHR} benchmark \cite{chee_arfcfhr-benchmark_2021}. 
 The benchmark used a phased blind approach -- participants were asked to 
@@ -569,7 +570,7 @@ Case 7B has a $19.75\%$ fuel enrichment, resulting in a higher initial $k_{eff}$
 With a higher enrichment, the assembly stays critical till 140 Gwd/tU. 
 
 \section{FHR Benchmark Temperature Model}
-\label{sec:fhr-bm-multiphysics}
+\label{sec:fhr-bm-temp}
 I used Moltres \cite{lindsay_moltres_2017} to conduct \gls{AHTR} full assembly temperature 
 simulations. 
 AHTR Moltres simulations will capture thermal feedback effects absent from the purely 
