@@ -884,8 +884,8 @@ Section \ref{sec:rollo-single-hyp} found an optimized hyperparameter set for \gl
 single-objective optimization simulations.
 I used the optimized hyperparameter set in a \gls{ROLLO} simulation to maximize the 
 $k_{eff}$ in a \gls{AHTR} plank model. 
-The \gls{AHTR} plank model in the final generation with the largest $k_{eff}$ is used 
-for this verification study; it has a $PF_{total} = 0.0979$ and 
+I used the \gls{AHTR} plank model with the largest $k_{eff}$ in the optimization's 
+final generation for this verification study; it has a $PF_{total} = 0.0979$ and 
 $\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$.
 Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with 
 TRISO-level fidelity.
@@ -908,8 +908,6 @@ TRISO-level fidelity.
     The white line corresponds to the centerline where flux distribution is measured. }  
     \label{fig:ahtr-plank-verification}
 \end{figure}
-% TODO: Why did i pick this model. 
-% i picked it because it was one of the optimized cases... 
 
 \subsubsection{AHTR Plank: Effective Multiplication Factor}
 % TODO: why start w keff, lead your readers,,, 
