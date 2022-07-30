@@ -802,12 +802,13 @@ Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto fron
     \cite{bassi_statistics_2018}. }
     \label{fig:binh_paretofront}
 \end{figure}
-I use the hypervolume indicator to quantify the Pareto front's goodness. 
+I use the hypervolume indicator to quantify the Pareto front's quality. 
 The hypervolume indicator is the most used set-quality indicator for assessing 
 stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
 The hypervolume indicator measures the volume (in the objective space) covered by 
 non-dominated solutions for problems in which all objectives are to be 
 minimized \cite{deb_multi-objective_2001}. 
+% todo: remind us of how the reference point is chosen and how it affects hypervolume. 
 Figure \ref{fig:pareto_hypervolume} illustrates the hypervolume enclosed by the 
 non-dominated solutions (A, B, C, D, E) and reference point, W, in the hatched region 
 for a two-dimensional problem.
@@ -815,7 +816,9 @@ for a two-dimensional problem.
     \centering
     \includegraphics[width=0.7\linewidth]{pareto-hypervolume.png} 
     \caption{Example hypervolume enclosed by non-dominated solutions. Figure reproduced 
-    from \cite{deb_multi-objective_2001}.}
+    from \cite{deb_multi-objective_2001}. 
+    The f1 and f2 axes correspond to the optimization objectives in a \gls{ROLLO} 
+    simulation. }
     \label{fig:pareto_hypervolume}
 \end{figure}
 I added an integration test to ROLLO that checks that a ROLLO simulation will 
@@ -823,10 +826,11 @@ find a hypervolume comparable to the ideal Pareto front when minimizing the
 Binh and Korn function. 
 
 \subsection{Pu-239 Critical Bare Sphere}
-I run a neutronics verification problem: finding the critical radius for a $^{239}Pu$ 
+I ran a neutronics verification problem: finding the critical radius for a $^{239}Pu$ 
 bare sphere, to ensure successful coupling between \gls{ROLLO} and reactor neutronics 
 modeling software, OpenMC \cite{romano_openmc:_2015}. 
-The solution to this problem is well studied and available \cite{blanchard_updated_1999}. 
+The solution to this problem is well studied and readily available in the 
+literature \cite{blanchard_updated_1999}. 
 Blanchard et al reported that with MCNP4b code and ENDF/B-VI data library, the 
 critical mass of a Pu239 bare sphere is 10.00 kg which corresponds to a diameter 
 of 9.9cm \cite{blanchard_updated_1999}.
@@ -957,14 +961,16 @@ amount of compute time available to them:
 ROLLO does not utilize a mathematical expression to evaluate problem convergence. 
 The complexity of reactor design optimization means that no single indicator determines 
 if convergence is met.
-Instead, ROLLO's purpose is to help the human reactor designer narrow down 
-the search space. 
+Instead, ROLLO's purpose is to help the human reactor designer narrow down the design space. 
 When a ROLLO run completes, the user plots the objectives' convergence and 
 Pareto front (for multiobjective simulations) to evaluate if they are confident 
 about the final solution set. 
-If not, the user can easily restart the optimization simulation using the 
-\texttt{checkpoint.pkl} file and run the problem for a few more generations. 
-
+Section \ref{sec:opt} described that an ideal optimization method for a 
+multi-objective problem like reactor design should find widely spread solutions 
+on the obtained Pareto front \cite{deb_multi-objective_2001}. 
+If the simulation is not converged, the user can easily restart the optimization 
+simulation using the \texttt{checkpoint.pkl} file and run the problem for a few more 
+generations. 
 % add about hypervolume for multiobj and obj convergence for singleobj
 
 \section{Summary}
