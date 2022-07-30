@@ -100,11 +100,13 @@ the flow chart in Figure \ref{fig:genetic_alg_nuclear}, in which the nuclear
 software evaluates each individual reactor model's fitness. 
 
 The subsequent sections describe \gls{ROLLO}'s evolutionary algorithm driver 
-software (\gls{DEAP}), input file structure, software architecture, verification 
-methods, and stopping criteria. 
-Appendix xx lists all the data and analysis related to this chapter.
+software \gls{DEAP} (Section \ref{sec:rollo-ea}), input file structure (Section 
+\ref{sec:rollo-input-file}), software architecture (Section \ref{sec:rollo-archi}), 
+verification methods, and convergence criteria. 
+Appendix B lists all the data and analysis related to this chapter.
 
 \section{Evolutionary Algorithm Driver}
+\label{sec:rollo-ea}
 Evolutionary algorithm computation uses sophisticated, diverse techniques 
 and mechanisms, resulting in even the most well-designed software frameworks 
 being complicated under the hood. 
@@ -228,6 +230,7 @@ elitism selection operators, such as NSGA-II, which work well
 for multiobjective optimization. 
 
 \section{ROLLO Input File}
+\label{sec:rollo-input-file}
 \gls{ROLLO}'s input file is in JSON format. 
 There are four sections that the user must define: \\ \texttt{control\_variables}, 
 \texttt{evaluators}, \texttt{constraints}, and \texttt{algorithm}. 
@@ -502,6 +505,7 @@ Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
     \end{table}
 
 \section{ROLLO Software Architecture}
+\label{sec:rollo-archi}
 This section describes the \gls{ROLLO} v1.0 software architecture and 
 how all the parts come together to optimize reactor design.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
@@ -912,9 +916,9 @@ constraining $k_{eff} \geq 1$ and improving with each generation.
     to the find the critical radius of a  $^{239}Pu$ bare sphere.}
 \end{figure}
 
-\section{ROLLO Stopping Criteria}
+\section{ROLLO Convergence Criteria}
 The \texttt{generations} input parameter defines \gls{ROLLO}'s evolutionary algorithm 
-stopping criterion. 
+convergence criterion. 
 Each nuclear reactor model's evaluation is computationally intensive. 
 Users will most likely be constrained by the total available compute time. 
 Therefore, rather than setting a results-based stopping criterion, ROLLO enables 
