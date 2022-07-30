@@ -901,7 +901,7 @@ Section \ref{sec:rollo-single-hyp} found an optimized hyperparameter set for \gl
 single-objective optimization simulations.
 I used the optimized hyperparameter set in a \gls{ROLLO} simulation to maximize the 
 $k_{eff}$ in a \gls{AHTR} plank model. 
-I used the \gls{AHTR} plank model with the largest $k_{eff}$ in the optimization's 
+Then, I used the \gls{AHTR} plank model with the largest $k_{eff}$ in the optimization's 
 final generation for this verification study; it has a $PF_{total} = 0.0979$ and 
 $\rho_{TRISO}(\vec{x}) = \left(1.989\cdot sin(0.354\cdot x + 3.143) + 2\right) \cdot NF$.
 Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with 
@@ -960,7 +960,7 @@ discretization, or differing OpenMC and Moltres solve methods.
 \end{table}
 % TODO: instead of difference, report reactivity difference... 
 
-The $50pcm$ $k_{eff}$ and $35pcm$ reactivity difference, that can be observed in Table 
+The $71pcm$ $k_{eff}$ and $35pcm$ reactivity difference, that can be observed in Table 
 \ref{tab:keff_ahtr_moltres}, between continuous and homogenized OpenMC simulations 
 are within uncertainty.
 This shows that the selected spatial homogenizations and energy discretizations 
@@ -972,8 +972,8 @@ approximate this reactor geometry as well.
 The diffusion coefficients for this reactor type are approximately 1cm.
 The \gls{FLiBe} coolant channel has a 0.35cm width which is smaller than the diffusion
 coefficient, resulting in poor approximations. 
-The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
-neutronics modeling but for \gls{AHTR} plank temperature modeling. 
+%The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
+%neutronics modeling but for \gls{AHTR} plank temperature modeling. 
 %TODO: ask SM
 % are there any potential risks for this? Statae them here. Could it be possible 
 % that you are over or under estimating heat produced? 
