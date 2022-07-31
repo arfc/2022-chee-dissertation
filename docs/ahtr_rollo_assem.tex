@@ -402,9 +402,19 @@ assembly model with the most-minimized $T_{max}$.
     \ContinuedFloat
     \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.7\linewidth]{assem-obj-1-temp-most-minimized.png}
+        \begin{subfigure}{0.7\textwidth}
+            \includegraphics[width=\linewidth]{assem-obj-1-temp-most-minimized.png}
+            \end{subfigure}%
+            \begin{subfigure}{.3\textwidth}
+                \begin{tikzpicture}
+                    \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+                    \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+                    \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+                   \tkzText[above](-0.3,-0.7){}
+                \end{tikzpicture} 
+            \end{subfigure}
         \caption{\gls{AHTR} one-third assembly model with the most-minimized 
-        $T_{max}$, corresponding to the first TRISO distribution in Figure 
+        $T_{max}$, corresponding to the top left TRISO distribution in Figure 
         \ref{fig:assem-obj-1-temp-final}. The reactor model has $T_{max}=1180.29$K
         and $k_{eff}=1.3046$.}
         \label{fig:assem-obj-1-temp-most-minimized} 
