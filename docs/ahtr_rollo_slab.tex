@@ -968,12 +968,14 @@ To ensure that the multi-objective optimization problems are converged, I report
 hypervolume values for each generation. 
 As previously described in Section \ref{sec:binhandkorn}, the hypervolume indicator 
 quantifies the Pareto front's goodness (bigger = better).
-I use a different reference point for each optimization problem.
-Section \ref{sec:binhandkorn} described how the reference point value and 
-the Pareto front's reactor models objective values are used to calculate the 
-hypervolume. 
+The hypervolume is calculated by finding the volume between the reference point and 
+the objective values of the Pareto front's reactor models. 
+The reference point must be selected to ensure that every reactor model falls within 
+the hypervolume; thus, I use a different reference point for each optimization problem.
+I use the hypervolume values to determine if the simulation converges across generations 
+and do not compare them across different optimization simulations.
 The hypervolume is converging if the difference between generations' hypervolume values 
-are getting smaller. 
+is getting smaller. 
 
 For a single generation with 64 reactor models, OpenMC and Moltres software must be 
 run for each reactor model, resulting in high computational cost. 

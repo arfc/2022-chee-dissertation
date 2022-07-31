@@ -1072,14 +1072,22 @@ improved without degrading another objective.
 An ideal optimization method for a multi-objective problem like reactor design 
 optimization should find widely spread out reactor model solutions in the Pareto front 
 \cite{deb_multi-objective_2001}. 
-Thus, I report on the optimal reactor models on the Pareto front for the multi-objective 
-optimization problems in this section and Section \ref{sec:assem-three-obj}. 
+Thus, I report on the optimal reactor models on the Pareto front for the 
+multi-objective optimization problems in this section and Section 
+\ref{sec:assem-three-obj}. 
+Several optimal solutions will be highlighted in the Pareto front figures. 
 
 To ensure that the multi-objective optimization problems are converged, I report the 
 hypervolume values for each generation. 
 As previously described in Section \ref{sec:binhandkorn}, the hypervolume indicator 
 quantifies the Pareto front's goodness (bigger = better).
 I use a different reference point for each optimization problem. 
+Section \ref{sec:binhandkorn} described how the reference point value and 
+the Pareto front's reactor models objective values are used to calculate the 
+hypervolume. 
+The hypervolume is converging if the difference between generations' hypervolume values 
+are getting smaller. 
+
 If a multi-objective optimization problem's hypervolume converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
