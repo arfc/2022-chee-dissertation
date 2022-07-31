@@ -1081,22 +1081,38 @@ To ensure that the multi-objective optimization problems are converged, I report
 hypervolume values for each generation. 
 As previously described in Section \ref{sec:binhandkorn}, the hypervolume indicator 
 quantifies the Pareto front's goodness (bigger = better).
-I use a different reference point for each optimization problem. 
-Section \ref{sec:binhandkorn} described how the reference point value and 
-the Pareto front's reactor models objective values are used to calculate the 
-hypervolume. 
+The hypervolume is calculated by finding the volume between the reference point and 
+the objective values of the Pareto front's reactor models. 
+The reference point must be selected to ensure that every reactor model falls within 
+the hypervolume; thus, I use a different reference point for each optimization problem.
+I use the hypervolume values to determine if the simulation converges across generations 
+and do not compare them across different optimization simulations.
 The hypervolume is converging if the difference between generations' hypervolume values 
-are getting smaller. 
+is getting smaller. 
 
+For a single generation with 128 reactor models, OpenMC and Moltres software must be 
+run for each reactor model, resulting in high computational cost. 
+For each optimization simulation, I must balance convergence and computational cost.
+\gls{ROLLO}'s purpose is to help the human reactor designer narrow down reactor design 
+the search space, therefore, the reactor designer uses the computational 
+power available to them, to narrow down the search space as much as possible. 
+Section \ref{sec:rollo-convergence} described that the reactor designer should 
+plot the Pareto front and observe the hypervolume values to evaluate if they are 
+confident about the final solution set.  
+Thus, I determine if convergence criteria is met by evaluating if the difference 
+between generations' hypervolume values are getting smaller. 
 If a multi-objective optimization problem's hypervolume converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
+However, if the multi-objective optimization problem's hypervolume does not converge by 
+generation 5, I run the problem for a few more generations until satisfactory 
+convergence is achieved.
 
 \subsection{a-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:a-2a}
-This section reports results from the two-objective optimization simulation a-2a;
-minimized objectives are total fuel packing fraction ($PF_{total}$) and maximum 
-temperature ($T_{max}$) in the one-third assembly.  
+This section reports results from the two-objective optimization simulation a-2a; the 
+objectives minimized are total fuel packing fraction ($PF_{total}$) and maximum
+temperature ($T_{max}$).  
 Table \ref{tab:simulationa2a} shows simulation a-2a's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
