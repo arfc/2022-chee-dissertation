@@ -12,7 +12,7 @@ As with the \gls{AHTR} plank models presented in Chapter
     \item coolant channel shape ($r_1, r_2, r_3, r_4,$ and $r_5$)
 \end{itemize} 
 Section \ref{sec:input-parameter-modeling} detailed how I vary these 
-\gls{AHTR} one-third assembly's input parameters. 
+input parameters in my models. 
 I optimize the \gls{AHTR} one-third assembly for the following 
 objectives:
 \begin{itemize}
@@ -20,7 +20,29 @@ objectives:
     \item Minimize maximum one-third assembly temperature ($T_{max}$)
     \item Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
 \end{itemize} 
-Table \ref{tab:objectives} outlined these objectives and their motivation.
+Table \ref{tab:objectives-3} outlines these objectives and their motivation.
+\begin{table}[htbp]
+    \centering
+    \onehalfspacing
+    \caption{\acrfull{ROLLO} \acrfull{AHTR} optimization problem objectives with 
+    their quantification descriptions and motivation.}
+	\label{tab:objectives-3}
+    \footnotesize
+    \begin{tabular}{p{4.5cm}|p{5cm}p{5cm}}
+    \hline 
+    \textbf{Objective}& \textbf{Quantification}& \textbf{Motivation} \\
+    \hline
+    \textbf{Minimize fuel amount} & Minimize total fuel packing \newline fraction 
+    & Cost savings, Non-proliferation \\ 
+    \hline
+    \textbf{Maximize heat transfer} & Minimize maximum temperature 
+    & Minimize thermal stress in the fuel \\
+    \hline
+    \textbf{Minimize power peaking} & Minimize power peaking factor normalized by fuel distribution 
+    & Efficient fuel utilization, longer core life, safety\\
+    \hline
+    \end{tabular}
+\end{table}
 Chapter \ref{chap:method} detailed the methodology for \gls{AHTR} one-third 
 assembly modeling and \gls{ROLLO} optimization. 
 
