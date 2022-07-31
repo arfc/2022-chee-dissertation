@@ -60,8 +60,8 @@ reproduction of all the simulations.
 In this chapter, I conducted single objective, single input parameter 
 \gls{ROLLO} optimizations to understand the individual impacts of each objective on 
 each input parameter for the \gls{AHTR} one-third assembly model. 
-Table \ref{tab:assem-obj-breakdown} details the \gls{ROLLO} optimization problems 
-explored in this chapter.
+Table \ref{tab:assem-obj-breakdown} summarizes the details of each \gls{ROLLO} 
+optimization simulation conducted in this chapter.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -74,7 +74,7 @@ explored in this chapter.
     \footnotesize
     \begin{tabular}{p{1.4cm}|p{1cm}|lllp{3cm}}
     \hline 
-    \textbf{Num of Objs} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Coupled Nuclear Software} \\
+    \textbf{Objs [\#]s} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
     \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
@@ -116,10 +116,10 @@ Their results will inform the multi-objective optimization simulation setup.
 Simulations are run on the Theta supercomputer at the Argonne Leadership Computing 
 Facility under the Director's Discretionary Allocation Program 
 \cite{noauthor_argonne_2022}. 
-Section \ref{sec:assem-compute-cost} details each optimization simulation's computational 
-cost.  
-Appendix B lists all the data and analysis related to this chapter to enable the 
-reproduction of all the simulations.
+Section \ref{sec:assem-compute-cost} details each optimization simulation's 
+computational cost.  
+The reader must consider the computational cost if they desire to reproduce this 
+analysis. 
 
 \section{AHTR One-Third Assembly: Single-Objective Optimization Results}
 \label{sec:assem-one-obj}

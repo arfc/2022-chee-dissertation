@@ -66,10 +66,10 @@ optimization simulation conducted in this chapter.
     There are six single objective optimization simulations (p-1a to p-1f) that are 
     used to understand the individual impacts of each objective on each input parameter. 
     Their results are then used to inform the multi-objective optimization simulations 
-    (p-2a, p-2b, p-2c, p-3a, p-3b) setup.
-    $PF_{total}$: Total fuel packing fraction; 
-    $T_{max}$: Maximum plank temperature;
-    $PPF_{fuel}$: Fuel-normalized power peaking factor; 
+    (p-2a, p-2b, p-2c, p-3a, p-3b) setup. Relevant variables include:
+    $PF_{total}$: total fuel packing fraction; 
+    $T_{max}$: maximum plank temperature;
+    $PPF_{fuel}$: fuel-normalized power peaking factor; 
     $\rho_{TRISO}(\vec{r})$: \gls{TRISO} particle distribution.}
 	\label{tab:slab-obj-breakdown}
     \footnotesize
@@ -128,6 +128,8 @@ supercomputer at the Argonne Leadership Computing Facility under the Director's
 Discretionary Allocation Program \cite{noauthor_argonne_2022}. 
 Section \ref{sec:plank-compute-cost} details the computational 
 cost of each optimization simulation.  
+The reader must consider the computational cost if they desire to reproduce this 
+analysis. 
 
 \section{AHTR Plank: Single-Objective Optimization Results}
 \label{sec:plank-one-obj}
