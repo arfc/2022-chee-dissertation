@@ -1042,20 +1042,27 @@ thermal flux distribution and influences $PF_{total}$ and oscillations in the TR
 distribution to achieve the objective. 
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives do not correlate
 with the coolant channel shape. 
-Simulation a-1b and a-1e results demonstrated that coolant channel shape variation does 
-not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation.
+Simulation a-1b and a-1e results demonstrated that coolant channel shape variation 
+does not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation.
+Since the variations in coolant channel shape only impact the minimize maximum 
+temperature ($T_{max}$) objective, I do not conduct two-objective 
+optimization for coolant channel shape variations.  
 
 \section{AHTR One-Third Assembly: Two-Objective Optimization Results}
 \label{sec:assem-two-obj}
-This section reports the \gls{AHTR} one-third assembly's \gls{ROLLO} two-objective 
+This section reports the \gls{AHTR} one-third assembly's \gls{ROLLO} double-objective 
 optimization results. 
-The previous section's one-objective optimization results inform the multi-objective 
-optimization simulations in this section and Section \ref{sec:assem-three-obj}.
-Since the variations in coolant channel shape only impact one objective: 
-minimize one-third assembly's maximum temperature ($T_{max}$), I do not conduct 
-two-objective optimization for coolant channel shape variations.  
-Table \ref{tab:assem-obj-breakdown} summarized the two-objective simulations: 
-a-2a, a-2b, and a-2c.
+The previous section's single-objective optimization results inform the double-objective 
+optimization simulations in this section.
+Section \ref{sec:assem-one-obj} concluded that coolant channel shape variations 
+only correlate with the minimize $T_{max}$ objective, thus, I do not conduct 
+two-objective optimization for coolant channel shape variations.
+I run two-objective optimization simulations that vary total fuel packing 
+fraction ($PF_{total}$) and \gls{TRISO} packing fraction distribution 
+($\rho_{TRISO}(\vec{r})$), for combinations of the three objectives (minimize 
+$PF_{total}$, $T_{max}$, and $PPF_{fuel}$). 
+Earlier in this chapter, Table \ref{tab:assem-obj-breakdown} summarized the 
+two-objective simulations: a-2a, a-2b, and a-2c.
 
 As described in Section \ref{sec:opt}, multi-objective optimization returns 
 multiple optimal solutions that meet each objective to varying degrees; this set of 
