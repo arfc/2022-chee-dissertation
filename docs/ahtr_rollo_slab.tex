@@ -143,6 +143,10 @@ grouped by the minimized objective (Sections \ref{sec:plank-1-obj-pf},
 about the single-objective simulations results (Section 
 \ref{sec:plank-discussion-single}).
 
+Section \ref{sec:rollo-convergence} described that for single-objective optimization, 
+the reactor designer should plot the objective's convergence.
+Thus, I determine that the convergence criteria is met if the objective's 
+average and minimum values are no longer changing. 
 If a single-objective optimization problem's objective converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation to 
@@ -151,7 +155,6 @@ However, if the problem's objective does not converge by generation 5, I run the
 problem for a few more generations until satisfactory convergence is reached.
 Section \ref{sec:rollo-convergence} described how reactor designers can use 
 \gls{ROLLO} to determine problem convergence. 
-% todo: describe single obj convergence. 
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 \label{sec:plank-1-obj-pf}
