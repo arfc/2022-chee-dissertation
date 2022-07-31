@@ -148,14 +148,18 @@ Section \ref{sec:rollo-convergence} described how reactor designers use
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 \label{sec:assem-1-obj-pf}
-This section reports results from the minimize total fuel packing fraction 
-($PF_{total}$) single-objective optimization simulations: a-1a and a-1d. 
-Simulation a-1a varies the $PF_{total}$ and \gls{TRISO} 
-packing fraction distribution ($\rho_{TRISO}(\vec{r})$), and simulation a-1d varies 
-the $PF_{total}$ and coolant channel shape ($r_1, r_2, r_3, r_4,$ and $r_5$). 
+This section describes the single-objective a-1a and a-1d optimization simulation
+results. 
+Both simulations minimize the total fuel packing fraction ($PF_{total}$) objective. 
+The minimize $PF_{total}$ objective is important because a reactor that uses less fuel
+with similar performance enables cost savings. 
+Simulation a-1a varies the $PF_{total}$ and \gls{TRISO} packing fraction distribution 
+($\rho_{TRISO}(\vec{r})$), and simulation a-1d varies the $PF_{total}$ and coolant 
+channel shape ($r_1, r_2, r_3, r_4,$ and $r_5$) to achieve this objective. 
 
 \subsubsection{Simulation a-1a: Variation of $PF_{total}$ and $\rho_{TRISO}(\vec{r})$}
-Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem parameters. 
+Table \ref{tab:simulationa1a}  summarizes the optimization problem parameters for 
+simulation a-1a.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -180,20 +184,20 @@ Table \ref{tab:simulationa1a} shows simulation a-1a's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
-The one-third assembly's TRISO distribution is varied based on sine distributions, 
+The one-third assembly's TRISO distribution is varied based on sine distributions. 
+These sine distributions vary in x across each plank and in y between planks, 
 as described in Section \ref{sec:input-parameter-modeling}. 
 If the simulation used the FHR benchmark equivalent $PF_{total} = 0.153$, at
 certain sine distributions, some fuel cells would have $PF > 0.3$. 
 OpenMC's random sequential packing algorithm becomes prohibitively slow at $PF > 0.3$, 
 resulting in long runtimes. 
-Therefore, I used $PF_{total} = 0.06$ because it is approximately the smallest 
+Therefore, I used $PF_{total} = 0.06$ because it is approximately the largest 
 $PF_{total}$ that enables $k_{eff} \geq 1.38$ and will avoid fuel cells with 
 $PF > 0.3$ occurrences. 
-I use $PF_{total} = 0.06$ for all optimization simulations that do not vary 
-$PF_{total}$: a-1b, a-1c, a-1e, a-1f, and a-2c. 
-I vary $PF_{total}$ between $0.05$ and $0.07$ for all optimization simulations 
-that vary $PF_{total}$: a-1a, a-1d, a-2a, a-2b, a-3a, and a-3b.
+For simulations that do not vary $PF_{total}$ (a-1b, a-1c, a-1e, a-1f, and a-2c), 
+I set $PF_{total} = 0.06$, and for simulations that vary $PF_{total}$ 
+(a-1a, a-1d, a-2a, a-2b, a-3a, and a-3b), I set the boundaries of $PF_{total}$ 
+between $0.05$ and $0.07$.
 
 Figure \ref{fig:assem-obj-1-pf-evol} shows the $PF_{total}$ evolution.
 Figure \ref{fig:assem-obj-1-pf-final} shows four unique TRISO packing fraction 
