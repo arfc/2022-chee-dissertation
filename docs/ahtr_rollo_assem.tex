@@ -7,9 +7,9 @@ As with the \gls{AHTR} plank models presented in Chapter
 \ref{chap:ahtr-plank-opt-results}, I vary the following input parameters for the 
 \gls{AHTR} one-third assembly:
 \begin{itemize}
-    \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$),
-    \item total fuel packing fraction ($PF_{total}$), and
-    \item coolant channel shape ($r_1, r_2, r_3, r_4,$ and $r_5$)
+    \item \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$)
+    \item Total fuel packing fraction ($PF_{total}$)
+    \item Coolant channel shape ($r_1, r_2, r_3, r_4,$ and $r_5$).
 \end{itemize} 
 Section \ref{sec:input-parameter-modeling} detailed how I vary these 
 input parameters in my models. 
@@ -46,13 +46,17 @@ Table \ref{tab:objectives-3} outlines these objectives and their motivation.
 Chapter \ref{chap:method} detailed the methodology for \gls{AHTR} one-third 
 assembly modeling and \gls{ROLLO} optimization. 
 
-The subsequent sections outline the \gls{AHTR} one-third assembly's optimization 
-simulations, describe the single-objective and multi-objective \gls{ROLLO} optimization 
-simulations' results, report each simulation's computational cost, and discuss the 
-results' significance.
-Appendix xx lists all the data and analysis related to this chapter.
+The subsequent sections outline the \gls{AHTR} one-third assembly optimization 
+simulations (Section \ref{sec:assem-overview}), describe the single-objective 
+(Section \ref{sec:assem-one-obj}), two-objective (Section \ref{sec:assem-two-obj}), 
+and three-objective (Section \ref{sec:assem-three-obj}) \gls{ROLLO} optimization 
+simulation results, and report each simulation's computational cost 
+(Section \ref{sec:assem-compute-cost}).
+Appendix B lists all the data and analysis related to this chapter to enable the 
+reproduction of all the simulations.
 
 \section{ROLLO AHTR One-Third Assembly Optimization Simulations Overview}
+\label{sec:assem-overview}
 Table \ref{tab:assem-obj-breakdown} details the \gls{ROLLO} optimization problems 
 explored in this chapter.
 \begin{table}[htbp!]
