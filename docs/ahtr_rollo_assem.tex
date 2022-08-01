@@ -1137,7 +1137,6 @@ Table \ref{tab:simulationa2a} shows simulation a-2a's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
 Table \ref{tab:a2a-hypervolume} shows the hypervolume value at each generation, 
 confirming that simulation a-2a converges by generation 5. 
 \begin{table}[htbp!]
@@ -1162,11 +1161,13 @@ confirming that simulation a-2a converges by generation 5.
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:assem-obj-2-pftemp-pareto} shows a plot of the final generation's reactor 
-models' $PF_{total}$ against $T_{max}$; crosses mark the reactor models that fall on 
-the Pareto front.
+Figure \ref{fig:assem-obj-2-pftemp-pareto} shows a plot of the final generation's 
+reactor models' $PF_{total}$ against $T_{max}$; crosses mark the reactor models 
+that fall on the Pareto front.
 Figure \ref{fig:assem-obj-2-pftemp-pareto-distr} shows the 22 TRISO packing fraction 
-distributions in the final generation that fall on the Pareto front. 
+distributions, labeled numerically, in the final generation that fall on the 
+Pareto front. 
+% todo: talk about how some reactor models are very similar. 
 \begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \centering
@@ -1201,7 +1202,9 @@ distributions in the final generation that fall on the Pareto front.
 \end{figure}
 
 Figure \ref{fig:assem-obj-2-pftemp-pareto} shows that minimize $PF_{total}$ and 
-minimize $T_{max}$ are contrasting objectives. 
+minimize $T_{max}$ are competing objectives. 
+That is, by minimizing $T_{max}$ we increase $PF_{total}$ and by minimizing 
+$PF_{total}$ we increase $T_{max}$. 
 In Figure \ref{fig:assem-obj-2-pftemp}, the one-third assembly model with the 
 most-minimized $PF_{total}$ and highest $T_{max}$ are reactor models 13 to 20. 
 These models have an oscillating TRISO distribution along the 
@@ -1325,7 +1328,7 @@ distributions that fall on the Pareto front.
 \end{figure}
 
 Figure \ref{fig:assem-obj-2-pfppf-pareto} shows that minimize $PF_{total}$ and 
-minimize $PPF_{fuel}$ are contrasting objectives. 
+minimize $PPF_{fuel}$ are competing objectives. 
 In Figure \ref{fig:assem-obj-2-pfppf}, the one-third assembly model with 
 the most-minimized $PF_{total}$ and highest $PPF_{fuel}$ is reactor model 11. 
 Reactor model 11 has an oscillating TRISO distribution along the 
@@ -1478,7 +1481,7 @@ assembly model on the Pareto front.
 \end{figure}
 
 Figure \ref{fig:assem-obj-2-tempppf-pareto} shows that minimize $T_{max}$ and minimize 
-$PPF_{fuel}$ are non-contrasting objectives, resulting in a single reactor model on the 
+$PPF_{fuel}$ are non-competing objectives, resulting in a single reactor model on the 
 Pareto Front. 
 Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} shows the TRISO distribution that best 
 minimizes both $T_{max}$ and $PPF_{fuel}$. 
