@@ -2479,8 +2479,6 @@ temperatures for three reactors on simulation a-3b's Pareto front.
 Reactor model 11 with most-minimized $PF_{total}$ peaks at 16.52cm with 1322K, 
 reactor model 1 with most-minimized $T_{max}$ peaks at 3.52cm with 1170K, 
 and reactor model 4 with most-minimized $PPF_{fuel}$ peaks at 3.52cm with 1209K.
-$r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 18cm, 
-15cm, 12cm, 8cm, and 6cm, respectively. 
 \begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \centering
@@ -2498,28 +2496,28 @@ $r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 
     15cm, 12cm, 8cm, and 6cm, respectively.  }
     \label{fig:a-3b-temp-distribution}
 \end{figure}
-Section \ref{sec:assem-discussion-single} concluded that the one-third assembly's FLiBe 
-channels (corresponding to $r_1, r_2, r_3, r_4, r_5$) closest to the temperature peaks 
-are most important to minimizing $T_{max}$. 
-However, coolant channel shape variation does not have as high of an impact on 
-$T_{max}$ as \gls{TRISO} distribution variation: the average $T_{max}$ due to 
-\gls{TRISO} variation decreased by ${\sim}150K$ over 3 generations, while average 
-$T_{max}$ due to coolant channel shape variation only decreased by ${\sim}10K$ over 
-3 generations. 
-Sections \ref{sec:assem-discussion-pf}, \ref{sec:assem-discussion-temp}, and 
-\ref{sec:assem-discussion-ppf} also concluded that only coolant channel shape only 
-correlates with the minimize $T_{max}$ objective. 
-
+Section \ref{sec:assem-discussion-single} concluded that the one-third assembly's 
+FLiBe channels (corresponding to $r_1, r_2, r_3, r_4, r_5$) located closest to the 
+temperature peaks are most important to minimizing $T_{max}$. 
+However, all their radius values located closest to the temperature peaks in Figure 
+\ref{fig:a-3b-centerline-temp} are unexpectedly small. 
+$r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 18cm, 
+15cm, 12cm, 8cm, and 6cm, respectively. 
 Figure \ref{fig:a-3b-centerline-temp} shows that reactor model 11 with most minimized 
-$PF_{total}$ peaks in the 4th graphite plank (at 16.52cm) and has $r_1 = 0.22cm$ and 
-$r_2 = 0.11cm$, reactor model 1 with most minimized $T_{max}$ peaks in the 1st 
-graphite plank (at 3.52cm) and has $r_5 = 0.13cm$, and reactor model 4 with most 
-minimized $PPF_{fuel}$ peaks in the 1st graphite plank (at 3.52cm) and has 
-$r_5 = 0.15cm$. 
-All their radius values are unexpectedly small. 
+$PF_{total}$ temperature peaks in the 4th graphite plank (at 16.52cm) and 
+has $r_1 = 0.22cm$ and $r_2 = 0.11cm$ . Reactor model 1 with most minimized 
+$T_{max}$ temperature peaks in the 1st graphite plank (at 3.52cm) and has 
+$r_5 = 0.13cm$, and reactor model 4 with most minimized $PPF_{fuel}$ temperature 
+peaks in the 1st graphite plank (at 3.52cm) and has $r_5 = 0.15cm$. 
+
+Section\ref{sec:assem-discussion-single} concluded that only coolant channel shape 
+only correlates with the minimize $T_{max}$ objective. 
 This could be due to the coolant channel shape not having a high impact on $T_{max}$ 
 compared to TRISO distribution; thus, \gls{ROLLO} was more influenced by TRISO 
 distribution when searching for optimal reactor models. 
+During simulation a-3b's the genetic algorithm optimization process, 
+variations in the coolant channel shape only minimize $T_{max}$ by 10K, while
+variations in the TRISO distribution minimizes $T_{max}$ by 150K. 
 This paired with simulation a-3b's 128 individuals per generation possibly being  
 too small to explore reactor models with 12 input parameters. 
 Simulation a-3b has 12 input parameters which is higher than all the other optimization 
