@@ -702,7 +702,8 @@ the flux.
 \paragraph{Effective Multiplication Factor}
 Comparing $k_{eff}$ and reactivity produced by Moltres and OpenMC verify that the 
 Moltres model replicates the OpenMC model's neutronics correctly.
-Table \ref{tab:keff_assem_comparison} compares $k_{eff}$ 
+Table \ref{tab:keff_assem_comparison} compares the effective multiplication factor 
+($k_{eff}$) and reactivity ($\rho$)
 for OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
 OpenMC simulation with 4-group energy and spatial homogenization, 
 and Moltres simulation with 4-group energy and spatial homogenization.
@@ -712,22 +713,23 @@ discretization or differing OpenMC and Moltres solve methods.
 \begin{table}[htbp]
     \centering
     \onehalfspacing
-    \caption{\acrfull{AHTR} assembly's $k_{eff}$ values from the OpenMC simulation with 
-    continuous energy and TRISO-level spatial fidelity, OpenMC simulation with 4-group 
-    energy and spatial homogenization, and Moltres simulation with 4-group energy and 
-    spatial homogenization. All simulations are at 948K.
+    \caption{\acrfull{AHTR} assembly's $k_{eff}$ and reactivity values from the 
+    OpenMC simulation with continuous energy and TRISO-level spatial fidelity, 
+    OpenMC simulation with 4-group energy and spatial homogenization, and Moltres 
+    simulation with 4-group energy and spatial homogenization. 
+    All simulations are at 948K.
     The normalized difference is the pcm difference normalized by OpenMC non-homogenized 
     model's $k_{eff}$.}
 	\label{tab:keff_assem_comparison}
     \footnotesize
-    \begin{tabular}{lllcc}
+    \begin{tabular}{lllclc}
     \hline 
     \textbf{Software}& \textbf{Homogenized?}& \textbf{$k_{eff}$} & \textbf{Diff [pcm]}  
-    & \textbf{Normalized Diff [pcm]}\\
+    & \textbf{Reactivity [pcm]} & \textbf{Reactivity Diff [pcm]} \\
     \hline 
-    OpenMC & No & $1.39850 \pm 0.00126$ & - & -\\ 
-    OpenMC & Yes & $1.398373 \pm 0.00115$ & \Minus13 & \Minus9\\ 
-    Moltres & Yes & $1.40273 $ & \Plus423 & \Plus302\\ 
+    OpenMC & No & $1.39850 \pm 0.00126$ & - & $28495 \pm 64$ & - \\ 
+    OpenMC & Yes & $1.398373 \pm 0.00115$ & \Minus13 & $28488 \pm 58$ & \Minus6\\ 
+    Moltres & Yes & $1.40273 $ & \Plus423 & 28710 & \Plus 216\\ 
     \hline
     \end{tabular}
 \end{table}
