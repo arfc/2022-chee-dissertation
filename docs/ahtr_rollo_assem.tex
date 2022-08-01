@@ -1960,7 +1960,7 @@ all three objectives.
 \end{figure}
 
 In Figure \ref{fig:assem-obj-3-most-minimized-distr}, the one-third assembly model with 
-the most-minimized $PF_{total}$ is reactor model 30 (also illustrated in Figure 
+the most-minimized $PF_{total}$ is reactor model 30 (the corresponding geometry is illustrated in Figure 
 \ref{fig:assem-obj-3-min-pf}). 
 Reactor model 30 has an oscillating TRISO distribution along the 
 x-axis and y-axis, and a packing fraction standard deviation of $0.052$ across the 
@@ -1973,14 +1973,15 @@ $PF\approx0.16$.
 The odd fuel cell rows have a ${\sim}0.02$ x-axis variation with minimums of 
 $PF\approx0.005$. 
 
-In Figure \ref{fig:assem-obj-3-most-minimized-distr}, the one-third assembly model with 
-the most-minimized $T_{max}$ is reactor model 3 (also illustrated in Figure 
-\ref{fig:assem-obj-3-min-temp}). 
+In the top right Figure \ref{fig:assem-obj-3-most-minimized-distr}, the one-third 
+assembly model with the most-minimized $T_{max}$ is reactor model 3 (the corresponding geometry is illustrated 
+in Figure \ref{fig:assem-obj-3-min-temp}). 
 Reactor model 3 has an almost constant TRISO packing fraction distribution with 
 a packing fraction standard deviation of $0.003$ across the one-third assembly. 
-In Figure \ref{fig:assem-obj-3-most-minimized-distr}, the one-third assembly model with 
-the most-minimized $PPF_{fuel}$ is reactor model 1 (also illustrated in Figure 
-\ref{fig:assem-obj-3-min-ppf}).
+
+In Figure \ref{fig:assem-obj-3-most-minimized-distr} in the bottom left, the 
+one-third assembly model with the most-minimized $PPF_{fuel}$ is reactor model 1 
+(the corresponding geometry is illustrated in Figure \ref{fig:assem-obj-3-min-ppf}).
 Reactor model 1 has an oscillating TRISO distribution along the 
 x-axis and y-axis and a packing fraction standard deviation of $0.019$ across the 
 one-third assembly.
@@ -1993,9 +1994,9 @@ Along the y-axis, the distribution peaks at the 1st, 3rd, and 6th fuel cell rows
 These three fuel cell rows have a ${\sim}0.05$ x-axis variation with peaks of 
 $PF\approx0.1$. 
 
-In Figure \ref{fig:assem-obj-3-most-minimized-distr}, the one-third assembly model that 
-equally minimized all three objectives is reactor model 22 (also illustrated in Figure 
-\ref{fig:assem-obj-3-min-all}).
+In the bottom right of Figure \ref{fig:assem-obj-3-most-minimized-distr}, the 
+one-third assembly model that equally minimized all three objectives is reactor 
+model 22 (the corresponding geometry is illustrated in Figure \ref{fig:assem-obj-3-min-all}).
 Reactor model 22 has an oscillating TRISO distribution along x-axis and a packing 
 fraction standard deviation of $0.015$ across the one-third assembly. 
 Along the x-axis, the distribution peaks at the 2nd, 9th, and 10th fuel cell columns 
@@ -2009,11 +2010,19 @@ results.
 Channel Shape}
 \label{sec:a-3b}
 This section reports results from the triple-objective optimization simulation a-3b, 
-with all objectives minimized: total fuel packing fraction ($PF_{total}$), maximum 
-temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$)
-in the one-third assembly.  
-The input parameters varied are $PF_{total}$, TRISO packing fraction distribution 
-($\rho_{TRISO}(\vec{r})$), and coolant channel shape ($r_1, r_2, r_3, r_4,$ and $r_5$).  
+the largest and final optimization problem run for the \gls{AHTR} plank model. 
+Simulation a-3b minimized all the objectives: total fuel packing fraction 
+($PF_{total}$), maximum temperature ($T_{max}$), and fuel-normalized power 
+peaking factor ($PPF_{fuel}$), and varied all the input parameters: total fuel packing 
+fraction ($PF_{total}$), TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), 
+and coolant channel shape ($r_1, r_2, r_3, r_4,$ and $r_5$).  
+Previous optimization simulations varied combinations of the objectives and input 
+parameters, but not all together. 
+Simulation a-3b-256 ran for 3359 node-hours on the Theta supercomputer with 6 
+generations and 128 reactor models per generation, which is ten times the compute 
+time per single-objective simulation, and three times the compute time per 
+two-objective simulation, as reported in Table \ref{tab:assem-compute-cost}. 
+
 Table \ref{tab:simulationa3b} shows simulation a-3b's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
@@ -2200,8 +2209,8 @@ all three objectives.
 % update equally minimized
 
 In Figure \ref{fig:assem-obj-3-all-most-minimized-distr}, the one-third assembly model 
-with the most-minimized $PF_{total}$ is reactor model 11 (also illustrated in Figure 
-\ref{fig:assem-obj-3-all-min-pf}). 
+with the most-minimized $PF_{total}$ is reactor model 11 (the corresponding geometry 
+is illustrated in Figure \ref{fig:assem-obj-3-all-min-pf}). 
 Reactor model 11's TRISO distribution oscillates along the x-axis, slightly 
 oscillates along the y-axis, and has a packing fraction standard deviation of 
 $0.044$ across the one-third assembly. 
@@ -2214,12 +2223,12 @@ The 1st and 8th columns have ${\sim}0.03$ y-axis variation with minimums of
 $PF\approx0.003$. 
 
 In Figure \ref{fig:assem-obj-3-all-most-minimized-distr}, the one-third assembly model 
-with the most-minimized $T_{max}$ is reactor model 1 (also illustrated in Figure 
-\ref{fig:assem-obj-3-all-min-temp}). 
+with the most-minimized $T_{max}$ is reactor model 1 (the corresponding geometry is 
+illustrated in Figure \ref{fig:assem-obj-3-all-min-temp}). 
 Reactor model 1 has an almost constant TRISO packing fraction distribution with 
 a packing fraction standard deviation of $0.001$ across the one-third assembly. 
 In Figure \ref{fig:assem-obj-3-all-most-minimized-distr}, the one-third assembly model 
-with the most-minimized $PPF_{fuel}$ is reactor model 4 (also illustrated in Figure 
+with the most-minimized $PPF_{fuel}$ is reactor model 4 (the corresponding geometry is illustrated in Figure 
 \ref{fig:assem-obj-3-all-min-ppf}). 
 Reactor model 4's TRISO distribution oscillates slightly along the y-axis, and has a 
 packing fraction standard deviation of $0.005$ across the one-third assembly. 
@@ -2229,7 +2238,7 @@ The distribution has minimums at the 4th, 5th, and 6th fuel cell rows (at 13.3cm
 16.5cm, and 19.8cm) with $PF\approx0.052$.
 
 In Figure \ref{fig:assem-obj-3-all-most-minimized-distr}, the one-third assembly model 
-that equally minimized all three objectives is reactor model 2 (also illustrated in 
+that equally minimized all three objectives is reactor model 2 (the corresponding geometry is illustrated in 
 Figure \ref{fig:assem-obj-3-all-min-all}).  
 Reactor model 2's TRISO distribution oscillates slightly along the y-axis, and has a 
 packing fraction standard deviation of $0.003$ across the one-third assembly.
