@@ -734,17 +734,14 @@ discretization or differing OpenMC and Moltres solve methods.
     \end{tabular}
 \end{table}
 
-The 9pcm $k_{eff}$ difference between continuous and homogenized OpenMC 
-simulations is within uncertainty, showing that the selected spatial homogenizations
-and energy discretizations are acceptable. 
-However, there is a 302pcm difference in the Moltres simulation's $k_{eff}$. 
-A possible reason is that the neutron diffusion method used in Moltres 
-does not approximate this reactor geometry as well. 
-The diffusion coefficients for this reactor type are approximately 1cm. 
-The \gls{FLiBe} coolant channel has a 0.7cm width which is smaller than the diffusion
-coefficient, resulting in poor approximations. 
-The $k_{eff}$ values are acceptable since I am not using the Moltres simulation for 
-neutronics modeling but for \gls{AHTR} assembly temperature modeling. 
+The $13pcm$ $k_{eff}$ and $6pcm$ reactivity difference, that can be observed in Table 
+\ref{tab:keff_ahtr_moltres}, between continuous and homogenized OpenMC simulations 
+are within uncertainty.
+This shows that the selected spatial homogenizations and energy discretizations 
+are acceptable. 
+However, the Moltres simulation shows a $423pcm$ difference in $k_{eff}$ and 
+$216pcm$ difference in reactivity.
+The summary at the end of this section explains the differences in these values. 
 
 \paragraph{Reactivity Coefficients}
 Moltres' delayed neutron fraction, $\beta{eff}$, is calculated by taking the 
