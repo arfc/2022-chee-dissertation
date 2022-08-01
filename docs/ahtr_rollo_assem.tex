@@ -2055,7 +2055,6 @@ Table \ref{tab:simulationa3b} shows simulation a-3b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
 Table \ref{tab:a3b-hypervolume} shows the hypervolume value at each generation, 
 confirming that simulation a-3b converges by generation 6. 
 \begin{table}[htbp!]
@@ -2124,6 +2123,8 @@ in the final generation that fall on the Pareto front.
     TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$), 
     coolant channel shape $(r_1, r_2, r_3, r_4, r_5)$.}
 \end{figure}
+% todo: say that i include this so readers can see the variety of triso pfs on 
+% the pareto front. (also for earlier figures)
 
 Figure \ref{fig:assem-obj-3-all} demonstrates that \gls{ROLLO} found 12 reactor models 
 on simulation a-3b final generation's Pareto front. 
@@ -2227,6 +2228,7 @@ with the most-minimized $T_{max}$ is reactor model 1 (the corresponding geometry
 illustrated in Figure \ref{fig:assem-obj-3-all-min-temp}). 
 Reactor model 1 has an almost constant TRISO packing fraction distribution with 
 a packing fraction standard deviation of $0.001$ across the one-third assembly. 
+
 In Figure \ref{fig:assem-obj-3-all-most-minimized-distr}, the one-third assembly model 
 with the most-minimized $PPF_{fuel}$ is reactor model 4 (the corresponding geometry is illustrated in Figure 
 \ref{fig:assem-obj-3-all-min-ppf}). 
@@ -2251,6 +2253,8 @@ results.
 
 \section{AHTR One-Third Assembly: Computational Cost Summary}
 \label{sec:assem-compute-cost}
+% todo: add narrative intro explaining why reporting computational cost is impt 
+% relevant and matters for readers. 
 Optimization simulations are run on the Theta supercomputer at the Argonne Leadership 
 Computing Facility under the Director's Discretionary Allocation Program 
 \cite{noauthor_argonne_2022}. 
