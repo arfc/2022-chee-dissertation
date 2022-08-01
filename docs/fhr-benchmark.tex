@@ -519,9 +519,12 @@ Figure \ref{fig:phase1a-e} shows the neutron flux distribution in a 100 $\times$
     \includegraphics[width=0.32\linewidth]{p1a_6a_e_eg2.png} 
     \includegraphics[width=0.32\linewidth]{p1a_6a_e_eg3.png} 
     \caption{\gls{UIUC} \gls{FHR} benchmark flux results: neutron flux 
-    distribution in 100 $\times$ 100 mesh for three coarse energy groups: Case 
-    1A (above), Case 3A (middle), Case 6A (below). Energy group 1: $E > 0.1$ MeV, 
-    Energy group 2: $3 \times 10^{-6} < E < 0.1$ MeV, Energy group 3: $E < 3 \times 10^{-6}$ MeV. }
+    distribution in 100 $\times$ 100 mesh for three coarse energy groups normalized 
+    by the group's average flux.
+    Three cases are shown: Case 1A (above), Case 3A (middle), Case 6A (below). 
+    Energy group 1: $E > 0.1$ MeV, 
+    Energy group 2: $3 \times 10^{-6} < E < 0.1$ MeV, 
+    Energy group 3: $E < 3 \times 10^{-6}$ MeV. }
     \label{fig:phase1a-e}
 \end{figure}
 % TODO: add axes labels and bigger... 
@@ -897,6 +900,8 @@ Future work includes using higher fidelity software to model \gls{AHTR} full
 assembly's temperature distribution. 
 
 \subsection{FHR Benchmark: Moltres Mesh Generation}
+To run Moltres simulations, the user must provide a mesh file representing the reactor 
+geometry. 
 I created an \gls{AHTR} assembly geometry file (\texttt{.geo}) based on the spatial 
 homogenization described in Section \ref{sec:fhr-bm-group-constant}.
 The \gls{AHTR} mesh is then generated from the geometry file using Gmsh 
