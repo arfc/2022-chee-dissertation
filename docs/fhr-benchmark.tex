@@ -547,7 +547,6 @@ Figure \ref{fig:phase1a-f} shows the neutron spectrum for Cases 1A and 6A.
     Phase I-A Case 1A (left) and Case 6A (right).}
     \label{fig:phase1a-f}
 \end{figure}
-% todo: increase label sizes... 
 Case 7A has a similar neutron spectrum to Case 6A since both cases have 
 higher fuel content. 
 All other cases have a similar neutron spectrum to Case 1A.
@@ -920,7 +919,7 @@ geometry file.
 
 \pagebreak
 \subsubsection{FHR Benchmark: Mesh Refinement Study}
-I performed a mesh refinement study on the \gls{AHTR} full assembly Moltres temperature 
+I performed a mesh refinement study on the Moltres \gls{AHTR} full assembly temperature 
 model to ensure that the geometry mesh inputs are sufficiently converged. 
 Table \ref{tab:ahtr-full-assem-mesh-refinement} reports the average, maximum, and 
 normalized 2-norm of discretized temperature difference between refinement steps 
@@ -958,8 +957,8 @@ normalized 2-norm of discretized temperature difference between refinement steps
 
 The mesh refinement study shows suitable $||\Delta T_k||_N$ convergence with more 
 refinement steps. 
-Therefore, I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres 
-temperature model. 
+I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres temperature model
+because $||\Delta T_k||_N = 0.053K$, which I evaluated as sufficiently converged.  
 
 \subsection{FHR Benchmark: Temperature Model}
 \label{sec:fhr-benchmark-temp-model}

@@ -1344,10 +1344,6 @@ accuracy using OpenMC's group constant data for the \gls{AHTR} one-third assembl
 I performed mesh refinement studies on the \gls{AHTR} plank and one-third assembly 
 Moltres temperature models to ensure that their geometry mesh inputs are sufficiently 
 converged. 
-% TODO: how do you know when they are converged? What criteria? What happens if they 
-% are not converged? 
-% good enough. 
-% 2 norm, N = 2
 Tables \ref{tab:ahtr-plank-mesh-refinement} and \ref{tab:ahtr-assem-mesh-refinement}
 show the mesh refinement study results for the \gls{AHTR} plank and one-third 
 assembly.
@@ -1405,19 +1401,16 @@ steps.
     \end{tabular}
 \end{table}
 
+For each Moltres temperature model, I must balance convergence and computational cost, 
+thus, I determine that mesh convergence is met if $||\Delta T_k||_N < 0.5K$. 
 Both \gls{AHTR} plank and one-third assembly show suitable $||\Delta T_k||_N$ 
-convergence with more refinement steps. 
-I used x3 mesh refinement for all \gls{AHTR} plank and one-third assembly Moltres 
-temperature models. 
-Further refinement is unfeasible due to the large mesh size. 
+convergence at x3 mesh refinement; thus I used x3 mesh refinement for all 
+\gls{AHTR} plank and one-third assembly Moltres temperature models. 
+Further refinement is computationally unfeasible due to the large mesh size. 
 I used the Theta supercomputer \cite{noauthor_thetathetagpu_2022} for the 
 optimization work.
 Each supercomputer node saves the entire mesh file, further refinement results in 
 mesh sizes that are larger than each Theta node's memory size. 
-% TODO: So does this mean you aren't converged or that future work needs to split the 
-% problem somehow... How do we know this is good enough? 
-% balance accuracy and computational cost. 
-% high bar... 
 
 \subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
 % make this a little clearer... 
