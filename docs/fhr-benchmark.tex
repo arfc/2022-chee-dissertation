@@ -978,7 +978,7 @@ Moltres solves the four-group diffusion equations
 as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
 In the 2D cross-sectional \gls{AHTR} steady-state temperature model, I ignore the 
 time-dependent and velocity-dependent terms from Moltres' temperature governing 
-equation (Equation \ref{eq:moltres-temp}) since it is a steady-state model with
+equation (Equation \ref{eq:moltres-temp}) as I am running a steady-state model with
 no moving fuel, resulting in Equation \ref{eq:moltres-temp-ss-bm}: 
 \begin{align}
     \label{eq:moltres-temp-ss-bm}
@@ -1009,9 +1009,8 @@ used for each \gls{AHTR} material.
     \hline
     \end{tabular}
 \end{table}
-
 Equation \ref{eq:moltres-source-term-bm} defines the fuel cells' fission source term 
-($Q_f$):
+($Q_f$).
 \begin{align}
 \label{eq:moltres-source-term-bm}
     Q_f &= \sum_{g=1}^G \epsilon_{f,g}\Sigma_{f,g}\phi_g
@@ -1022,9 +1021,8 @@ G &= \mbox{number of discrete groups, g } [-] \nonumber \\
 \Sigma_{f,g} &= \mbox{macroscopic cross section for fission due to neutrons in group g } [\frac{1}{cm}] \nonumber \\
 \phi_g &= \mbox{flux of neutrons in group g } [\frac{n}{cm^2s}]\nonumber
 \end{align}
-
 Equation \ref{eq:moltres-heat-removal-bm} defines the heat removal from the AHTR 
-model:
+model.
 \begin{align}
     \label{eq:moltres-heat-removal-bm}
     Q &= h \cdot A \cdot(T(\vec{r})-T_{ref})
@@ -1054,7 +1052,6 @@ transfer coefficient values for the convective heat transfer process.
     \hline
     \end{tabular}
 \end{table} 
-
 I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} assembly
 using Equation \ref{eq:calc-htc-full-assem} with the following assumptions: 
 \begin{itemize}
