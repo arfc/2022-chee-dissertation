@@ -317,7 +317,7 @@ deterministic neutronics and thermal-hydraulics implemented as an application
 atop the \gls{MOOSE} finite-element framework.  
 Moltres solves arbitrary group neutron diffusion, temperature, and precursor 
 governing equations on a single mesh and can be deployed on an arbitrary number 
-of processing units \cite{lindsay_introduction_2018}.
+of processing units \cite{lindsay_introduction_2018, park_advancement_2020}.
 To perform neutronics calculations, Moltres requires group constant data from 
 high-fidelity neutronics software such as OpenMC \cite{romano_openmc:_2015} or 
 Serpent 2 \cite{leppanen_serpent_2014}. 
@@ -363,14 +363,14 @@ equation with a fission heat source term $Q_f$:
     c_p =& \text{ specific heat capacity of molten salt [$J \cdot g^{-1} \cdot K^{-1}$],} \nonumber \\
     T =& \text{ temperature of molten salt [K],} \nonumber \\
     k =& \text{ thermal conductivity of molten salt [$W \cdot cm^{-1} \cdot K^{-1}$],} \nonumber \\
-    Q_f =& \text{ fission heat source,} \nonumber \\
+    Q_f =& \text{ fission heat source [$W cm^{-3}$],} \nonumber \\
     \epsilon_g =& \text{ average fission energy released by neutrons in group $g$ [J].} \nonumber \\
     \Sigma^f_{g} &= \text{ macroscopic fission cross section for neutron in group $g$ [$cm^{-1}$],} \nonumber \\
     \phi_g &= \text{ neutron flux in group $g$ [$cm^{-2} \cdot s^{-1}$],}\nonumber 
 \end{align} 
-% todo: units 
 % todo: how do neutronics and TH couple in moltres? why is it a good choice for this 
 % work? what has been done previously with it? 
+% Todo: ask sm 
 
 \section{Additive Manufacturing}
 Additive manufacturing is the formal term for what is popularly known as `3D printing' 
@@ -538,13 +538,21 @@ simultaneously optimizes all objectives.
 Instead, multi-objective optimization returns multiple optimal 
 solutions that meet each objective to varying degrees; this set of solutions is 
 the Pareto front \cite{deb_multi-objective_2001}. 
+Figure \ref{fig:pareto} illustrates a two-dimensional problem's objective space and 
+Pareto Front. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{example_pareto_front.png} 
+    \caption{Illustration of an objective space and Pareto Front. Figure reproduced 
+    from \cite{deb_multi-objective_2001}. 
+    The f1 and f2 axes correspond to the optimization objectives.}
+    \label{fig:pareto}
+\end{figure}
 For each solution in the Pareto front, none of the objective functions can be 
 improved without degrading another objective.
 An ideal optimization method for a multi-objective problem like reactor design 
 should find widely spread solutions in the obtained Pareto front 
-\cite{deb_multi-objective_2001}. 
-% todo: add example pareto front? so that you can describe features of importance 
-% in the text. 
+\cite{deb_multi-objective_2001}.  
 
 Traditional manufacturing constraints result in most of the past nuclear reactor 
 optimization work focusing on optimizing classical reactor 
