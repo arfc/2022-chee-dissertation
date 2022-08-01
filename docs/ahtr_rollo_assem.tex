@@ -2510,15 +2510,16 @@ $T_{max}$ temperature peaks in the 1st graphite plank (at 3.52cm) and has
 $r_5 = 0.13cm$, and reactor model 4 with most minimized $PPF_{fuel}$ temperature 
 peaks in the 1st graphite plank (at 3.52cm) and has $r_5 = 0.15cm$. 
 
-The unexpectedly small r values could be due to the coolant channel shape not 
+The unexpectedly small radius values could be due to the coolant channel shape not 
 having a high impact on $T_{max}$ compared to TRISO distribution; thus, 
 \gls{ROLLO} was more influenced by TRISO distribution when searching for optimal 
 reactor models. 
 During simulation a-3b's the genetic algorithm optimization process, 
 variations in the coolant channel shape only minimize $T_{max}$ by 10K, while
 variations in the TRISO distribution minimizes $T_{max}$ by 150K. 
-This paired with simulation a-3b's 128 individuals per generation possibly being  
-too small to explore reactor models with 12 input parameters. 
+
+Simulation a-3b's 128 individuals per generation could also be too small to explore 
+reactor models with 12 input parameters. 
 Simulation a-3b has 12 input parameters which is higher than all the other 
 optimization simulations, which have 7 or fewer input parameters. 
 Larger population size could enable \gls{ROLLO} to explore more reactor model 
