@@ -197,7 +197,7 @@ fuel plank.
         \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
        \tkzText[above](-0.3,-0.7){}
        \end{tikzpicture} 
-    \caption{x-y plane's placement of axial burnable poisons in the \acrlong{AHTR} 
+    \caption{XY plane's placement of axial burnable poisons in the \acrlong{AHTR} 
     plank \cite{petrovic_benchmark_2021}. The burnable poisons are stacked in 
     the z-direction.}
     \label{fig:discrete-poison}
@@ -256,15 +256,15 @@ for each region divided by the average \texttt{fission} tally score of all the r
 \begin{align}
     FD_i &=  \frac{f_i}{f_{ave}}\ [-]\\
     \intertext{where}
-    f_i &= \mbox{fission reaction rate in a single region i [reactions/src]} \nonumber \\
-    f_{ave} &= \mbox{average of all $f_i$ [reactions/src]} \nonumber
+    f_i &= \mbox{fission reaction rate in a single region i [$reactions \cdot src^{-1}$]} \nonumber \\
+    f_{ave} &= \mbox{average of all $f_i$ [$reactions \cdot src^{-1}$]} \nonumber
 \end{align}
 The uncertainty calculations for $FD_i$ and $f_{ave}$: 
 \begin{align}
     \delta FD_i &= |FD_i| \sqrt{\left(\frac{\delta f_i}{f_i}\right)^2+\left(\frac{\delta f_{ave}}{f_{ave}}\right)^2} \\
     \delta f_{ave} &= \frac{1}{N}\sqrt{\sum_i^Nf_i^2} \\
     \intertext{where}
-    N &= \mbox{No. of fission score values} \nonumber
+    N &= \mbox{No. of fission score values [-]} \nonumber
 \end{align}
 
 \subsubsection{Neutron Flux (d, e, f)}
@@ -277,15 +277,15 @@ results with other software results in the benchmark, I converted flux to
     \Phi_c &= \frac{N \cdot \Phi_o}{V} \\
     N &= \frac{P\cdot\nu}{Q\cdot k} \\
     \intertext{where}
-    \Phi_c &= \mbox{converted flux [$\frac{neutrons}{cm^2s}$]} \nonumber \\ 
-    \Phi_o &= \mbox{original flux [$\frac{neutrons\ cm}{src}$]} \nonumber \\
-    N &= \mbox{normalization factor [$\frac{src}{s}$]} \nonumber \\
+    \Phi_c &= \mbox{converted flux [$neutrons \cdot cm^{-2} \cdot s^{-1}$]} \nonumber \\ 
+    \Phi_o &= \mbox{original flux [$neutrons \cdot cm \cdot src^{-1}$]} \nonumber \\
+    N &= \mbox{normalization factor [$src \cdot s^{-1}$]} \nonumber \\
     V &= \mbox{volume of fuel assembly [$cm^3$]} \nonumber \\
-    P &= \mbox{power [$\frac{J}{s}$]} \nonumber \\
-    \nu &= \mbox{$\frac{\nu_f}{f}$ [$\frac{neutrons}{fission}$]} \nonumber \\
-    Q &= \mbox{Energy produced per fission [$\frac{J}{fission}$]} \nonumber \\
+    P &= \mbox{power [$J \cdot s^{-1}$]} \nonumber \\
+    \nu &= \mbox{$\frac{\nu_f}{f}$ [$neutrons \cdot fission^{-1}$]} \nonumber \\
+    Q &= \mbox{Energy produced per fission [$J \cdot fission^{-1}$]} \nonumber \\
     &= \mbox{$3.2044 \times 10^{-11}$ J per $U_{235}$ fission} \nonumber \\
-    k &= \mbox{$k_{eff}$ [$\frac{neutrons}{src}$]} \nonumber 
+    k &= \mbox{$k_{eff}$ [$neutrons \cdot src^{-1}$]} \nonumber 
 \end{align}
 The flux standard deviation is: 
 \begin{align}
