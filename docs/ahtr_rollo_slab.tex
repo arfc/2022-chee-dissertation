@@ -44,8 +44,8 @@ and \gls{ROLLO} optimization.
 
 The subsequent sections outline the \gls{AHTR} plank optimization simulations 
 (Section \ref{sec:plank-overview}), describe the single-objective (Section 
-\ref{sec:plank-one-obj}), two-objective (Section \ref{sec:plank-two-obj}), and 
-three-objective (Section \ref{sec:plank-three-obj}) \gls{ROLLO} optimization 
+\ref{sec:plank-one-obj}), double-objective (Section \ref{sec:plank-two-obj}), and 
+triple-objective (Section \ref{sec:plank-three-obj}) \gls{ROLLO} optimization 
 simulation results, and report each simulation's computational cost 
 (Section \ref{sec:plank-compute-cost}).
 Appendix B lists all the data and analysis related to this chapter to enable the 
@@ -933,23 +933,23 @@ distribution and influences $PF_{total}$ and TRISO disribution to achieve the ob
 Both the minimize $PF_{total}$ and minimize $PPF_{fuel}$ objectives have no correlation 
 with the coolant channel shape. 
 Since the variations in coolant channel shape only impact the minimize plank's maximum 
-temperature ($T_{max}$) objective, I do not conduct two-objective 
+temperature ($T_{max}$) objective, I do not conduct double-objective 
 optimization for coolant channel shape variations.  
 
-\section{AHTR Plank: Two-Objective Optimization Results}
+\section{AHTR Plank: Double-Objective Optimization Results}
 \label{sec:plank-two-obj}
-This section reports the \gls{AHTR} plank's \gls{ROLLO} two-objective optimization 
+This section reports the \gls{AHTR} plank's \gls{ROLLO} double-objective optimization 
 results. 
-The previous section's single-objective optimization results inform the two-objective 
+The previous section's single-objective optimization results inform the double-objective 
 optimization simulations in this section.
 Section \ref{sec:plank-one-obj} concluded that coolant channel shape variations 
 only correlate with the minimize $T_{max}$ objective, thus, I do not conduct 
-two-objective optimization for coolant channel shape variations.
-I run two-objective optimization simulations that vary total fuel packing 
+double-objective optimization for coolant channel shape variations.
+I run double-objective optimization simulations that vary total fuel packing 
 fraction ($PF_{total}$) and \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), for combinations of the three objectives (minimize 
 $PF_{total}$, $T_{max}$, and $PPF_{fuel}$). 
-Earlier in this chapter, Table \ref{tab:slab-obj-breakdown} summarized the two-objective 
+Earlier in this chapter, Table \ref{tab:slab-obj-breakdown} summarized the double-objective 
 simulations in this section: p-2a, p-2b, and p-2c.
 
 As previously described in Section \ref{sec:opt}, multi-objective optimization returns 
@@ -997,7 +997,7 @@ convergence is achieved.
 
 \subsection{p-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:p-2a}
-This section reports results from the two-objective optimization simulation p-2a; the 
+This section reports results from the double-objective optimization simulation p-2a; the 
 objectives minimized are total fuel packing fraction ($PF_{total}$) and maximum plank
 temperature ($T_{max}$).  
 Combining the minimize $PF_{total}$ and $T_{max}$ objectives enables us to observe if 
@@ -1073,7 +1073,7 @@ are two of the \gls{AHTR} plank geometries that fall on the Pareto front.
         Pareto front.}
         \label{fig:slab-obj-2-pftemp-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2a -- ROLLO two-objective optimization to minimize the total 
+    \caption{Simulation p-2a -- ROLLO double-objective optimization to minimize the total 
     fuel packing fraction ($PF_{total}$) and maximum plank temperature ($T_{max}$). 
     Input parameters varied: total fuel packing fraction ($PF_{total}$), 
     \gls{TRISO} distribution ($\rho_{TRISO}(\vec{r})$).}
@@ -1097,7 +1097,7 @@ are two of the \gls{AHTR} plank geometries that fall on the Pareto front.
         $T_{max} = 1128.0K$.}
         \label{fig:slab-obj-2-pftemp-min-temp} 
     \end{subfigure}
-    \caption{(contd.) Simulation p-2a -- ROLLO two-objective optimization to minimize 
+    \caption{(contd.) Simulation p-2a -- ROLLO double-objective optimization to minimize 
     the total packing fraction ($PF_{total}$) and maximum plank temperature ($T_{max}$). 
     Input parameters varied: total fuel packing fraction ($PF_{total}$), 
     \gls{TRISO} packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
@@ -1117,11 +1117,11 @@ most-minimized $T_{max}$ and highest $PF_{total}$ (the purple densely dashed dis
 has an almost constant TRISO distribution of $PF_{total}=0.032$ across the plank (also 
 illustrated in Figure \ref{fig:slab-obj-2-pftemp-min-temp}). 
 Section \ref{sec:plank-discussion-two} discusses and explains simulation p-2a's results
-in context with the other two-objective optimization results.
+in context with the other double-objective optimization results.
 
 \subsection{p-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
 \label{sec:p-2b}
-This section reports results from the two-objective optimization simulation p-2b; the 
+This section reports results from the double-objective optimization simulation p-2b; the 
 objectives minimized are total fuel packing fraction ($PF_{total}$) and fuel-normalized 
 power peaking factor ($PPF_{fuel}$).  
 Combining the minimize $PF_{total}$ and $PPF_{fuel}$ objectives enables us to observe if 
@@ -1198,7 +1198,7 @@ are two of the \gls{AHTR} plank geometries that fall on the Pareto front.
         \caption{TRISO distribution for the four reactor models on the Pareto front.}
         \label{fig:slab-obj-2-pfppf-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2b -- ROLLO two-objective optimization to minimize total fuel 
+    \caption{Simulation p-2b -- ROLLO double-objective optimization to minimize total fuel 
     packing fraction ($PF_{total}$) and normalized power peaking factor ($PPF_{fuel}$) 
     in the plank. 
     Input parameters varied: TRISO packing fraction distribution 
@@ -1221,7 +1221,7 @@ are two of the \gls{AHTR} plank geometries that fall on the Pareto front.
         \ref{fig:slab-obj-2-pfppf-pareto-distr}).}
         \label{fig:slab-obj-2-pfppf-min-ppf} 
     \end{subfigure}
-    \caption{(contd.) Simulation p-2b -- ROLLO two-objective optimization to minimize 
+    \caption{(contd.) Simulation p-2b -- ROLLO double-objective optimization to minimize 
     total packing fraction ($PF_{total}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the plank. 
     Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
@@ -1241,11 +1241,11 @@ most-minimized $PPF_{fuel}$ and highest $PF_{total}$
 and on both sides (the corresponding geometry is illustrated in 
 Figure \ref{fig:slab-obj-2-pfppf-min-ppf}). 
 Section \ref{sec:plank-discussion-two} discusses and explains simulation p-2b's results
-in context with the other two-objective optimization results.
+in context with the other double-objective optimization results.
 
 \subsection{p-2c: Minimize $T_{max}$ and $PPF_{fuel}$}
 \label{sec:p-2c}
-This section reports results from the two-objective optimization simulation p-2c; the 
+This section reports results from the double-objective optimization simulation p-2c; the 
 objectives minimized are maximum plank temperature ($T_{max}$) and fuel-normalized 
 power peaking factor ($PPF_{fuel}$).  
 Combining the minimize $T_{max}$ and $PPF_{fuel}$ objectives enables us to observe if 
@@ -1332,7 +1332,7 @@ are two of the \gls{AHTR} plank geometries that fall on the Pareto front.
         Pareto front.}
         \label{fig:slab-obj-2-tempppf-pareto-distr} 
     \end{subfigure}
-    \caption{Simulation p-2c -- ROLLO two-objective optimization to minimize the 
+    \caption{Simulation p-2c -- ROLLO double-objective optimization to minimize the 
     maximum plank temperature ($T_{max}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the plank. 
     Input parameters varied: TRISO packing fraction distribution 
@@ -1355,7 +1355,7 @@ are two of the \gls{AHTR} plank geometries that fall on the Pareto front.
         \ref{fig:slab-obj-2-tempppf-pareto-distr}).}
         \label{fig:slab-obj-2-tempppf-min-ppf} 
     \end{subfigure}
-    \caption{(contd.) Simulation p-2c -- ROLLO two-objective optimization to minimize 
+    \caption{(contd.) Simulation p-2c -- ROLLO double-objective optimization to minimize 
     the maximum plank temperature ($T_{max}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the plank. 
     Input parameters varied: TRISO packing fraction distribution 
@@ -1378,19 +1378,19 @@ distribution) has a TRISO distribution that peaks near the plank's sides and has
 a minimum point at the plank's center (the corresponding geometry is illustrated in Figure 
 \ref{fig:slab-obj-2-tempppf-min-ppf}). 
 Section \ref{sec:plank-discussion-two} discusses and explains simulation p-2c's results
-in context with the other two-objective optimization results.
+in context with the other double-objective optimization results.
 
-\subsection{Two-Objective Optimization Discussion}
+\subsection{Double-Objective Optimization Discussion}
 \label{sec:plank-discussion-two}
 \gls{ROLLO} successfully found a wide spread of reactor models in each of the 
-two-objective optimization simulation's final generation Pareto fronts.
+double-objective optimization simulation's final generation Pareto fronts.
 In this section, I explain how the driving factors and phenomena observed in 
 the previous single-objective discussion (Section \ref{sec:plank-discussion-single}) 
-combine to result in the optimal reactor models found by the two-objective optimization 
+combine to result in the optimal reactor models found by the double-objective optimization 
 simulations. 
 
 \subsubsection{Simulation p-2a}
-In Section \ref{sec:p-2a}'s simulation p-2a, I conducted a two-objective 
+In Section \ref{sec:p-2a}'s simulation p-2a, I conducted a double-objective 
 optimization simulation to minimize the total fuel packing fraction ($PF_{total}$) and 
 maximum plank temperature ($T_{max}$) by varying the total fuel 
 packing fraction ($PF_{total}$) and the TRISO distribution. 
@@ -1443,7 +1443,7 @@ the minimize $PF_{total}$ objective influences the oscillating pattern.
 Section \ref{sec:plank-discussion-single} described both influences in detail. 
 
 \subsubsection{Simulation p-2b}
-In Section \ref{sec:p-2b}'s simulation p-2b, I conducted a two-objective 
+In Section \ref{sec:p-2b}'s simulation p-2b, I conducted a double-objective 
 optimization simulation to minimize the total fuel packing fraction ($PF_{total}$) and 
 fuel-normalized power peaking factor ($PPF_{fuel}$) by varying total fuel 
 packing fraction ($PF_{total}$) and TRISO distribution. 
@@ -1527,7 +1527,7 @@ Reactor designers participating in further optimization of the \gls{AHTR} design
 will benefit from awareness of these objectives' relationship. 
 
 \subsubsection{Simulation p-2c}
-In Section \ref{sec:p-2c}'s simulation p-2c, I conducted a two-objective 
+In Section \ref{sec:p-2c}'s simulation p-2c, I conducted a double-objective 
 optimization simulation to minimize the maximum plank temperature ($T_{max}$) and the 
 fuel-normalized power peaking factor ($PPF_{fuel}$) by varying TRISO distribution. 
 \gls{ROLLO} found eight widely spread reactor models on simulation p-2c's Pareto 
@@ -1573,11 +1573,11 @@ The minimize $T_{max}$ objective influences the TRISO distribution's flatness, w
 the minimize $PPF_{fuel}$ objective influences the oscillating pattern.
 Section \ref{sec:plank-discussion-single} described both influences in detail. 
 
-\subsection{Two-Objective Optimization Major Takeaways}
+\subsection{Double-Objective Optimization Major Takeaways}
 The driving factors and influences from each objective come together in 
-each two-objective optimization simulation to give a set of optimal reactor models 
+each double-objective optimization simulation to give a set of optimal reactor models 
 on a Pareto front. 
-In the two-objective optimization simulations, the minimize $T_{max}$ objective 
+In the double-objective optimization simulations, the minimize $T_{max}$ objective 
 continued to influence the flattening of the TRISO distribution. 
 The results from simulation p-2b suggests that the minimize $PF_{total}$ 
 objective's driving factor maximize total fission reaction rate and 
@@ -1585,17 +1585,17 @@ minimize $PPF_{fuel}$ objective's driving factor flattening thermal flux distrib
 influence each other resulting in unexpected TRISO distributions at different 
 $PF_{total}$ values. 
 
-\section{AHTR Plank: Three-Objective Optimization Results}
+\section{AHTR Plank: Triple-Objective Optimization Results}
 \label{sec:plank-three-obj}
-This section reports the \gls{AHTR} plank's \gls{ROLLO} three-objective 
+This section reports the \gls{AHTR} plank's \gls{ROLLO} triple-objective 
 optimization results. 
-I run two three-objective optimization simulations that optimize all the 
+I run two triple-objective optimization simulations that optimize all the 
 objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$). 
 The first simulation varies total fuel packing fraction ($PF_{total}$) and \gls{TRISO} 
 packing fraction distribution ($\rho_{TRISO}(\vec{r})$).
 The second simulation varies $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and coolant channel 
 shape. 
-Table \ref{tab:slab-obj-breakdown} summarized the three-objective simulations in this 
+Table \ref{tab:slab-obj-breakdown} summarized the triple-objective simulations in this 
 section: p-3a, and p-3b. 
 The following two subsections describing the optimization results are distinguished 
 by the input parameters varied, since both simulations optimize for all three 
@@ -1603,7 +1603,7 @@ objectives.
 
 \subsection{p-3a: Variation of $PF_{total}$ and $\rho_{TRISO}(\vec{r})$}
 \label{sec:p-3a}
-This section reports results from the three-objective optimization simulation p-3a, 
+This section reports results from the triple-objective optimization simulation p-3a, 
 with all objectives minimized: total fuel packing fraction ($PF_{total}$), 
 maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$).  
@@ -1683,7 +1683,7 @@ the final generation that fall on the Pareto front.
         \ref{fig:slab-obj-3-3d}.}
         \label{fig:slab-obj-3-distr} 
     \end{subfigure}
-    \caption{Simulation p-3a -- ROLLO three-objective optimization to minimize the total 
+    \caption{Simulation p-3a -- ROLLO triple-objective optimization to minimize the total 
     fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$) and 
     fuel-normalized power peaking factor ($PPF_{fuel}$) in the plank. 
     Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
@@ -1729,7 +1729,7 @@ coolant channel shape for most-minimized cases.
     \end{subfigure}
     \caption{AHTR plank models and TRISO distribution for the 3 reactor models on 
     simulation p-3a's Pareto front that most-minimized each objective.
-    Simulation p-3a -- ROLLO three-objective optimization to minimize the total fuel 
+    Simulation p-3a -- ROLLO triple-objective optimization to minimize the total fuel 
     packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$) and 
     normalized power peaking factor ($PPF_{fuel}$) in the plank. 
     Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
@@ -1754,7 +1754,7 @@ Section \ref{sec:plank-discussion-three} discusses and explains simulation p-3a'
 \subsection{p-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
 Channel Shape}
 \label{sec:p-3b}
-This section reports results from the three-objective optimization simulation p-3b, 
+This section reports results from the triple-objective optimization simulation p-3b, 
 the largest and final optimization problem run for the \gls{AHTR} plank model. 
 Simulation p-3b minimized all the objectives: total fuel packing fraction 
 ($PF_{total}$), maximum plank temperature ($T_{max}$), and fuel-normalized power 
@@ -1847,7 +1847,7 @@ Pareto front.
         \caption{TRISO distribution for the 21 reactor models on the Pareto front.}
         \label{fig:slab-obj-3-distr-all} 
     \end{subfigure}
-    \caption{Simulation p-3b -- ROLLO three-objective optimization to minimize the total 
+    \caption{Simulation p-3b -- ROLLO triple-objective optimization to minimize the total 
     fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$), and 
     fuel-normalized power peaking factor ($PPF_{fuel}$) in the plank. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
@@ -1893,7 +1893,7 @@ coolant channel shape for most-minimized cases.
         \label{fig:slab-obj-3-all-min-ppf}
     \end{subfigure}
     \caption{AHTR models and TRISO distribution for the 3 reactor models on simulation 
-    p-3b -- ROLLO three-objective optimization to minimize the total 
+    p-3b -- ROLLO triple-objective optimization to minimize the total 
     fuel packing fraction ($PF_{total}$), maximum plank temperature ($T_{max}$), and 
     fuel-normalized power peaking factor ($PPF_{fuel}$) in the plank. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
@@ -1919,18 +1919,18 @@ $r_{bot}=0.245cm$ (the corresponding geometry is illustrated in Figure
 Section \ref{sec:plank-discussion-three} discusses and explains simulation p-3b's 
 results.
 
-\subsection{Three-Objective Optimization Discussion}
+\subsection{Triple-Objective Optimization Discussion}
 \label{sec:plank-discussion-three} 
 \gls{ROLLO} successfully found a wide spread of reactor models in each of the 
-three-objective optimization simulation's final generation Pareto fronts.
+triple-objective optimization simulation's final generation Pareto fronts.
 In this section, I explain how the driving factors and phenomena observed in 
 the previous single-objective discussion (Section \ref{sec:plank-discussion-single}) 
-combine to result in the optimal reactor models found by the three-objective 
+combine to result in the optimal reactor models found by the triple-objective 
 optimization simulations. 
 
 % TODO: should I add comparison figures... 
 \subsubsection{Simulation p-3a}
-In Section \ref{sec:p-3a}'s simulation p-3a, I conducted a three-objective 
+In Section \ref{sec:p-3a}'s simulation p-3a, I conducted a triple-objective 
 optimization simulation to minimize total fuel packing fraction ($PF_{total}$), 
 maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$) by varying $PF_{total}$ and TRISO distribution.
@@ -1968,7 +1968,7 @@ to enable a higher $k_{eff}$ for a lower $PF_{total}$, and
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
 \subsubsection{Simulation p-3b}
-In Section \ref{sec:p-3b}'s simulation p-3b, I conducted a three-objective 
+In Section \ref{sec:p-3b}'s simulation p-3b, I conducted a triple-objective 
 optimization simulation to minimize the total fuel packing fraction ($PF_{total}$), 
 maximum plank temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$) by varying $PF_{total}$, TRISO distribution, and coolant channel shape.
@@ -2020,9 +2020,9 @@ The minimize $PF_{total}$ objective tries to maximize fission reaction rate
 to enable a higher $k_{eff}$ for lower $PF_{total}$, and 
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
-\subsection{Three-Objective Optimization Major Takeaways}
+\subsection{Triple-Objective Optimization Major Takeaways}
 All the driving factors and influences from each objective come together in 
-each three-objective optimization simulation to give a set of optimal reactor models 
+each triple-objective optimization simulation to give a set of optimal reactor models 
 on a Pareto front. 
 Simulation p-3b's multi-objective optimization shows the result of minimizing all 
 three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 

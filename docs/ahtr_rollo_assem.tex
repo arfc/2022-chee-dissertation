@@ -48,8 +48,8 @@ assembly modeling and \gls{ROLLO} optimization.
 
 The subsequent sections outline the \gls{AHTR} one-third assembly optimization 
 simulations (Section \ref{sec:assem-overview}), describe the single-objective 
-(Section \ref{sec:assem-one-obj}), two-objective (Section \ref{sec:assem-two-obj}), 
-and three-objective (Section \ref{sec:assem-three-obj}) \gls{ROLLO} optimization 
+(Section \ref{sec:assem-one-obj}), double-objective (Section \ref{sec:assem-two-obj}), 
+and triple-objective (Section \ref{sec:assem-three-obj}) \gls{ROLLO} optimization 
 simulation results, and report each simulation's computational cost 
 (Section \ref{sec:assem-compute-cost}).
 Appendix B lists all the data and analysis related to this chapter to enable the 
@@ -1043,10 +1043,10 @@ with the coolant channel shape.
 Simulation a-1b and a-1e results demonstrated that coolant channel shape variation 
 does not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation.
 Since the variations in coolant channel shape only impact the minimize maximum 
-temperature ($T_{max}$) objective, I do not conduct two-objective 
+temperature ($T_{max}$) objective, I do not conduct double-objective 
 optimization for coolant channel shape variations.  
 
-\section{AHTR One-Third Assembly: Two-Objective Optimization Results}
+\section{AHTR One-Third Assembly: Double-Objective Optimization Results}
 \label{sec:assem-two-obj}
 This section reports the \gls{AHTR} one-third assembly's \gls{ROLLO} double-objective 
 optimization results. 
@@ -1054,13 +1054,13 @@ The previous section's single-objective optimization results inform the double-o
 optimization simulations in this section.
 Section \ref{sec:assem-one-obj} concluded that coolant channel shape variations 
 only correlate with the minimize $T_{max}$ objective, thus, I do not conduct 
-two-objective optimization for coolant channel shape variations.
-I run two-objective optimization simulations that vary total fuel packing 
+double-objective optimization for coolant channel shape variations.
+I run double-objective optimization simulations that vary total fuel packing 
 fraction ($PF_{total}$) and \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), for combinations of the three objectives (minimize 
 $PF_{total}$, $T_{max}$, and $PPF_{fuel}$). 
 Earlier in this chapter, Table \ref{tab:assem-obj-breakdown} summarized the 
-two-objective simulations: a-2a, a-2b, and a-2c.
+double-objective simulations: a-2a, a-2b, and a-2c.
 
 As described in Section \ref{sec:opt}, multi-objective optimization returns 
 multiple optimal solutions that meet each objective to varying degrees; this set of 
@@ -1108,7 +1108,7 @@ convergence is achieved.
 
 \subsection{a-2a: Minimize $PF_{total}$ and $T_{max}$}
 \label{sec:a-2a}
-This section reports results from the two-objective optimization simulation a-2a; the 
+This section reports results from the double-objective optimization simulation a-2a; the 
 objectives minimized are total fuel packing fraction ($PF_{total}$) and maximum
 temperature ($T_{max}$).  
 Table \ref{tab:simulationa2a} shows simulation a-2a's optimization problem parameters. 
@@ -1178,7 +1178,7 @@ Pareto front.
         on each cross correspond to TRISO distributions in the plot below.}
         \label{fig:assem-obj-2-pftemp-pareto} 
     \end{subfigure}
-    \caption{Simulation a-2a -- ROLLO two-objective optimization to minimize total fuel 
+    \caption{Simulation a-2a -- ROLLO double-objective optimization to minimize total fuel 
     packing fraction ($PF_{total}$) and maximum temperature ($T_{max}$) in 
     the one-third assembly. 
     Input parameters varied: total fuel packing fraction ($PF_{total}$) and TRISO 
@@ -1194,7 +1194,7 @@ Pareto front.
         Numbered reactor models correspond to numbered crosses in the plot above. }
         \label{fig:assem-obj-2-pftemp-pareto-distr} 
     \end{subfigure}
-    \caption{(contd.) Simulation a-2a -- ROLLO two-objective optimization to minimize total fuel 
+    \caption{(contd.) Simulation a-2a -- ROLLO double-objective optimization to minimize total fuel 
     packing fraction ($PF_{total}$) and maximum temperature ($T_{max}$) in 
     the one-third assembly. 
     Input parameters varied: total fuel packing fraction ($PF_{total}$) and TRISO 
@@ -1233,7 +1233,7 @@ results.
 
 \subsection{a-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
 \label{sec:a-2b}
-This section reports results from the two-objective optimization simulation a-2b; the 
+This section reports results from the double-objective optimization simulation a-2b; the 
 objectives minimized are total fuel packing fraction ($PF_{total}$) and fuel-normalized 
 power peaking factor ($PPF_{fuel}$) in the one-third assembly.  
 Table \ref{tab:simulationa2b} shows simulation a-2b's optimization problem parameters. 
@@ -1262,7 +1262,6 @@ Table \ref{tab:simulationa2b} shows simulation a-2b's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
 Table \ref{tab:a2b-hypervolume} shows the hypervolume value at each generation, 
 confirming that simulation a-2b converges by generation 5. 
 \begin{table}[htbp!]
@@ -1291,7 +1290,7 @@ Figure \ref{fig:assem-obj-2-pfppf-pareto} shows a plot of the final generation's
 models' $PF_{total}$ against $PPF_{fuel}$; crosses mark the reactor models that fall on 
 the Pareto front.
 Figure \ref{fig:assem-obj-2-pfppf-pareto-distr} shows the 12 TRISO packing fraction 
-distributions that fall on the Pareto front. 
+distributions, labeled numerically, that fall on the Pareto front. 
 \begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \centering
@@ -1303,7 +1302,7 @@ distributions that fall on the Pareto front.
         \ref{fig:assem-obj-2-pfppf-pareto-distr}.}
         \label{fig:assem-obj-2-pfppf-pareto} 
     \end{subfigure}
-    \caption{Simulation a-2b -- ROLLO two-objective optimization to minimize total fuel 
+    \caption{Simulation a-2b -- ROLLO double-objective optimization to minimize total fuel 
     packing fraction ($PF_{total}$) and normalized power peaking factor ($PPF_{fuel}$) 
     in the \gls{AHTR} one-third assembly. 
     Input parameters varied: $PF_{total}$ and TRISO 
@@ -1320,7 +1319,7 @@ distributions that fall on the Pareto front.
         \ref{fig:assem-obj-2-pfppf-pareto}. }
         \label{fig:assem-obj-2-pfppf-pareto-distr} 
     \end{subfigure}
-    \caption{(contd.) Simulation a-2b -- ROLLO two-objective optimization to minimize total fuel 
+    \caption{(contd.) Simulation a-2b -- ROLLO double-objective optimization to minimize total fuel 
     packing fraction ($PF_{total}$) and normalized power peaking factor ($PPF_{fuel}$) 
     in the \gls{AHTR} one-third assembly. 
     Input parameters varied: $PF_{total}$ and TRISO 
@@ -1383,7 +1382,7 @@ results.
 
 \subsection{a-2c: Minimize $T_{max}$ and $PPF_{fuel}$}
 \label{sec:a-2c}
-This section reports results from the two-objective optimization simulation a-2c; 
+This section reports results from the double-objective optimization simulation a-2c; 
 minimized objectives are maximum temperature ($T_{max}$) and fuel-normalized power 
 peaking factor ($PPF_{fuel}$) in the one-third assembly.  
 Table \ref{tab:simulationa2c} shows simulation a-2c's optimization problem parameters. 
@@ -1413,7 +1412,6 @@ Table \ref{tab:simulationa2c} shows simulation a-2c's optimization problem param
     \hline
     \end{tabular}
 \end{table}
-
 Table \ref{tab:a2c-hypervolume} shows the hypervolume value at each generation, 
 confirming that simulation a-2c converges by generation 2. 
 \begin{table}[htbp!]
@@ -1435,9 +1433,10 @@ confirming that simulation a-2c converges by generation 2.
     \end{tabular}
 \end{table}
 
-Figure \ref{fig:assem-obj-2-tempppf-pareto} shows a plot of the final generation's reactor 
-models' $T_{max}$ against $PPF_{fuel}$; crosses mark the reactor models that fall on 
-the Pareto front.
+Figure \ref{fig:assem-obj-2-tempppf-pareto} shows a plot of the final generation's 
+reactor models' $T_{max}$ against $PPF_{fuel}$; crosses mark the reactor models 
+that fall on the Pareto front.
+% todo: comment on the shape of this pareto front. is it even a front? 
 Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} shows the one TRISO packing fraction 
 distribution in the final generation that falls on the Pareto front. 
 Figure \ref{fig:assem-obj-2-tempppf-min-tempppf} illustrates the one \gls{AHTR} one-third 
@@ -1452,7 +1451,7 @@ assembly model on the Pareto front.
         on each cross correspond to TRISO distributions in the plot below.}
         \label{fig:assem-obj-2-tempppf-pareto} 
     \end{subfigure}
-    \caption{Simulation a-2c -- ROLLO two-objective optimization to minimize 
+    \caption{Simulation a-2c -- ROLLO double-objective optimization to minimize 
     one-third assembly's maximum temperature ($T_{max}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the \gls{AHTR} one-third assembly. 
     Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
@@ -1474,7 +1473,7 @@ assembly model on the Pareto front.
         $PPF_{fuel}$ (corresponds to the TRISO distribution in the above plot).}
         \label{fig:assem-obj-2-tempppf-min-tempppf} 
     \end{subfigure}
-    \caption{(contd.) Simulation a-2c -- ROLLO two-objective optimization to minimize 
+    \caption{(contd.) Simulation a-2c -- ROLLO double-objective optimization to minimize 
     one-third assembly's maximum temperature ($T_{max}$) and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the \gls{AHTR} one-third assembly. 
     Input parameters varied: TRISO packing fraction distribution ($\rho_{TRISO}(\vec{r})$).}
@@ -1494,16 +1493,16 @@ with $PF\approx0.06$ and has minimum points at the even rows (at 6.8cm, 13.3cm, 
 Sections \ref{sec:assem-discussion-multi} discusses and explains simulation a-2c's 
 results.
 
-\section{AHTR One-Third Assembly: Three-Objective Optimization Results}
+\section{AHTR One-Third Assembly: Triple-Objective Optimization Results}
 \label{sec:assem-three-obj}
-This section reports the \gls{AHTR} one-third assembly's \gls{ROLLO} three-objective 
+This section reports the \gls{AHTR} one-third assembly's \gls{ROLLO} triple-objective 
 optimization results. 
-Table \ref{tab:assem-obj-breakdown} summarized the three-objective simulations in this 
+Table \ref{tab:assem-obj-breakdown} summarized the triple-objective simulations in this 
 section: a-3a and a-3b. 
 
 \subsection{a-3a: Variation of $PF_{total}$ and $\rho_{TRISO}(\vec{r})$}
 \label{sec:a-3a}
-This section reports results from the three-objective optimization simulation a-3a, 
+This section reports results from the triple-objective optimization simulation a-3a, 
 with all objectives minimized: total fuel packing fraction ($PF_{total}$), 
 maximum temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$)
 in the one-third assembly.  
@@ -1577,7 +1576,7 @@ the final generation that fall on the Pareto front.
         \ref{fig:assem-obj-3-distr}.}
         \label{fig:assem-obj-3-2d} 
     \end{subfigure}
-    \caption{Simulation a-3a -- ROLLO three-objective optimization to minimize total 
+    \caption{Simulation a-3a -- ROLLO triple-objective optimization to minimize total 
     fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), and 
     fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
@@ -1594,7 +1593,7 @@ the final generation that fall on the Pareto front.
         \ref{fig:assem-obj-3-2d}. }
         \label{fig:assem-obj-3-distr} 
     \end{subfigure}
-    \caption{(contd.) Simulation a-3a -- ROLLO three-objective optimization to minimize 
+    \caption{(contd.) Simulation a-3a -- ROLLO triple-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$),
     and fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
@@ -1623,7 +1622,7 @@ all three objectives.
     \caption{AHTR one-third assembly models and TRISO distributions for the three reactor 
     models on simulation a-3a's Pareto front that most minimized each objective, and 
     one reactor model that equally minimized all three objectives.
-    Simulation a-3a -- ROLLO three-objective optimization to minimize total fuel packing 
+    Simulation a-3a -- ROLLO triple-objective optimization to minimize total fuel packing 
     fraction ($PF_{total}$), maximum temperature ($T_{max}$) and 
     normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
@@ -1674,7 +1673,7 @@ all three objectives.
     \caption{(contd.) AHTR one-third assembly models and TRISO distributions for the 
     three reactor models on simulation a-3a's Pareto front that most-minimized each 
     objective, and one reactor model that equally minimized all three objectives.
-    Simulation a-3a -- ROLLO three-objective optimization to minimize total fuel packing 
+    Simulation a-3a -- ROLLO triple-objective optimization to minimize total fuel packing 
     fraction ($PF_{total}$), maximum temperature ($T_{max}$) and 
     normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: $PF_{total}$, TRISO packing fraction distribution
@@ -1730,7 +1729,7 @@ results.
 \subsection{a-3b: Variation of $PF_{total}$, $\rho_{TRISO}(\vec{r})$, and Coolant 
 Channel Shape}
 \label{sec:a-3b}
-This section reports results from the three-objective optimization simulation a-3b, 
+This section reports results from the triple-objective optimization simulation a-3b, 
 with all objectives minimized: total fuel packing fraction ($PF_{total}$), maximum 
 temperature ($T_{max}$), and fuel-normalized power peaking factor ($PPF_{fuel}$)
 in the one-third assembly.  
@@ -1810,7 +1809,7 @@ in the final generation that fall on the Pareto front.
         \ref{fig:assem-obj-3-all-distr}.}
         \label{fig:assem-obj-3-all-2d} 
     \end{subfigure}
-    \caption{Simulation a-3b -- ROLLO three-objective optimization to minimize total 
+    \caption{Simulation a-3b -- ROLLO triple-objective optimization to minimize total 
     fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), and 
     fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
@@ -1828,7 +1827,7 @@ in the final generation that fall on the Pareto front.
         \ref{fig:assem-obj-3-all-2d}. }
         \label{fig:assem-obj-3-all-distr} 
     \end{subfigure}
-    \caption{(contd.) Simulation a-3b -- ROLLO three-objective optimization to minimize 
+    \caption{(contd.) Simulation a-3b -- ROLLO triple-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), 
     and fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
@@ -1858,7 +1857,7 @@ all three objectives.
     \caption{AHTR one-third assembly models and TRISO distributions for the 3 reactor 
     models on simulation a-3b's Pareto front that most minimized each objective, and 
     1 reactor model that equally minimized all three objectives.
-    Simulation a-3b -- ROLLO three-objective optimization to minimize 
+    Simulation a-3b -- ROLLO triple-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), 
     and fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
@@ -1910,7 +1909,7 @@ all three objectives.
     \caption{(contd.) AHTR one-third assembly models and TRISO distributions for the 3 
     reactor models on simulation a-3b's Pareto front that most-minimized each 
     objective, and 1 reactor model that equally minimized all three objectives.
-    Simulation a-3b -- ROLLO three-objective optimization to minimize 
+    Simulation a-3b -- ROLLO triple-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), 
     and fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
