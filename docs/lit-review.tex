@@ -348,8 +348,7 @@ equations:
     \chi^d_g &= \text{ delayed fission spectrum for neutrons in group $g$ [-],} \nonumber \\
     I &= \text{ total number of delayed neutron precursor groups [-],} \nonumber \\
     \beta &= \text{ total delayed neutron fraction [-].} \nonumber
-\end{align}
-% todo: units 
+\end{align} 
 
 Moltres' governing temperature equation is an advection-diffusion
 equation with a fission heat source term $Q_f$: 
@@ -360,14 +359,14 @@ equation with a fission heat source term $Q_f$:
     \intertext{and}
     Q_f &= \sum^G_{g=1} \epsilon_g \Sigma_g^f \phi_g
     \intertext{where}
-    \rho =& \text{ density of the molten salt,}
-    \nonumber \\
-    c_p =& \text{ specific heat capacity of molten salt,} \nonumber \\
-    T =& \text{ temperature of molten salt,} \nonumber \\
-    k =& \text{ effective thermal conductivity of molten salt,} \nonumber \\
+    \rho =& \text{ density of the molten salt [$g \cdot cm^{-3}$],} \nonumber \\
+    c_p =& \text{ specific heat capacity of molten salt [$J \cdot g^{-1} \cdot K^{-1}$],} \nonumber \\
+    T =& \text{ temperature of molten salt [K],} \nonumber \\
+    k =& \text{ thermal conductivity of molten salt [$W \cdot cm^{-1} \cdot K^{-1}$],} \nonumber \\
     Q_f =& \text{ fission heat source,} \nonumber \\
-    \epsilon_g =& \text{ average fission energy released by neutrons in group
-    $g$.} \nonumber
+    \epsilon_g =& \text{ average fission energy released by neutrons in group $g$ [J].} \nonumber \\
+    \Sigma^f_{g} &= \text{ macroscopic fission cross section for neutron in group $g$ [$cm^{-1}$],} \nonumber \\
+    \phi_g &= \text{ neutron flux in group $g$ [$cm^{-2} \cdot s^{-1}$],}\nonumber 
 \end{align} 
 % todo: units 
 % todo: how do neutronics and TH couple in moltres? why is it a good choice for this 
