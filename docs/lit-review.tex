@@ -296,7 +296,6 @@ OpenMC runs in parallel using \gls{MPI} and OpenMP.
 Many components of OpenMC have been validated and verified with experimental data 
 and other well-established neutron transport codes through benchmarks 
 \cite{romano_openmc:_2015}. 
-% TODO: describe a few relevant ones to this work... 
 
 OpenMC is capable of performing fixed source and k-eigenvalue calculations. 
 This dissertation uses OpenMC's k-eigenvalue calculations for \gls{AHTR} neutronics 
@@ -336,10 +335,10 @@ equations:
     \sum^G_{g'=1} (1-\beta) \nu \Sigma^f_{g'} \phi_{g'} + \chi^d_g \sum^I_i
     \lambda_i C_i \\
     \intertext{where}
-    v_g &= \text{ average speed of neutrons in group $g$,} \nonumber \\
-    \phi_g &= \text{ neutron flux in group $g$,}\nonumber \\
-    t &= \text{ time,} \nonumber \\
-    D_g &= \text{ diffusion coefficient of neutrons in group $g$,} \nonumber \\
+    v_g &= \text{ average speed of neutrons in group $g$ [$cm \cdot s^{-1}$],} \nonumber \\
+    \phi_g &= \text{ neutron flux in group $g$ [$cm^{-2} \cdot s^{-1}$],}\nonumber \\
+    t &= \text{ time $[s]$,} \nonumber \\
+    D_g &= \text{ diffusion coefficient of neutrons in group $g$ [$cm^{-2} \cdot s^{-1}$],} \nonumber \\
     \Sigma^r_g &= \text{ macroscopic cross section for removal of neutrons from group $g$,} \nonumber \\
     \Sigma^s_{g' \rightarrow g} &= \text{ macroscopic cross section of scattering from groups $g'$ to $g$,} \nonumber \\
     \chi^p_g &= \text{ prompt fission spectrum for neutrons in group $g$,} \nonumber \\
