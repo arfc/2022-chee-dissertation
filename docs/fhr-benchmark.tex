@@ -955,9 +955,9 @@ normalized 2-norm of discretized temperature difference between refinement steps
     \end{tabular}
 \end{table}
 
-The mesh refinement study shows suitable $||\Delta T_k||_N$ convergence with more 
+The mesh refinement study shows $||\Delta T_k||_N$ convergence with more 
 refinement steps. 
-I used x4 mesh refinement for the \gls{AHTR} full assembly Moltres temperature model
+I used x4 mesh refinement for the Moltres \gls{AHTR} full assembly temperature model
 because $||\Delta T_k||_N = 0.053K$, which I evaluated as sufficiently converged.  
 
 \subsection{FHR Benchmark: Temperature Model}
@@ -1054,28 +1054,25 @@ transfer coefficient values for the convective heat transfer process.
 \end{table} 
 I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} assembly
 using Equation \ref{eq:calc-htc-full-assem} with the following assumptions: 
-\begin{itemize}
-    \item AHTR models generate constant amount of power, which is all removed by the 
-    coolant
-    \item a linear increase in temperature from inlet to outlet 
-\end{itemize}
+AHTR models generate constant amount of power, which is all removed by the coolant, and 
+that there is linear increase in temperature from inlet to outlet. 
 \begin{align}
       \label{eq:calc-htc-full-assem}
-      h_{assem} &= \frac{P_{dz}}{V_{coolant}} \div \Delta T \\
-      &= \frac{26223 W/cm}{471cm^3} \div 0.0909 K/cm \nonumber \\
+      h_{assem} &= \frac{P_{dz}}{V_{coolant \cdot \Delta T}} \\
+      &= \frac{26223 W/cm}{471cm^3 \cdot 0.0909 K\cot cm^{-1}} \nonumber \\
       &= 611 W cm^{-3}K^{-1} \nonumber 
 \intertext{and}
 \Delta T  &= \frac{T_{total}}{H} = \frac{50 K}{550 cm} = 0.0909 K/cm
 \intertext{where}
-h_{assem} &= \mbox{assembly's heat transfer coefficient } [\frac{W}{cm^3 \cdot K}] \nonumber \\
-P_{dz} &= \mbox{power produced in 1cm AHTR assembly $\Delta z$ slice [$W/cm$]}\nonumber \\
+h_{assem} &= \mbox{assembly's heat transfer coefficient } [W cm^{-3} K^{-1}] \nonumber \\
+P_{dz} &= \mbox{power produced in 1cm AHTR assembly $\Delta z$ slice [$W \cdot cm^{-1}$]}\nonumber \\
 V_{coolant} &= \mbox{coolant volume in AHTR assembly [$cm^3$]} \nonumber \\
 \Delta T &= \mbox{temperature change across 1cm AHTR assembly $\Delta z$ slice [$K$]}\\
 T_{total} &= \mbox{total temperature change from inlet to outlet [$K$]} \nonumber \\
 H &= \mbox{AHTR height from inlet to outlet [cm]} \nonumber 
 \end{align}
 The power produced by the \gls{AHTR} assembly model is calculated based 
-on the \gls{FHR} benchmark model's specific power of 200 $\frac{W}{gU}$ and the FHR 
+on the \gls{FHR} benchmark model's specific power of 200 $W gU^{-1}$ and the FHR 
 benchmark's TRISO packing fractions in a 1cm thick slice of the assembly.
 
 \subsubsection{FHR Benchmark: Temperature Model Results}
