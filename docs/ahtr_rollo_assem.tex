@@ -2074,7 +2074,7 @@ confirming that simulation a-3b converges by generation 6.
     \begin{tabular}{ll}
     \hline 
     \multicolumn{2}{c}{\textbf{Three Objectives: Simulation a-3b}} \\
-    \multicolumn{2}{c}{Reference point: (0.06, 1260,1.5)} \\
+    \multicolumn{2}{c}{Reference point: (0.07, 1700, 1.8)} \\
     \hline 
     \textbf{Generation} & \textbf{Hypervolume [-]} \\
     \hline
@@ -2526,10 +2526,32 @@ variations and potentially find even more optimal reactor models.
 To better explore simulation a-3b's design space, I re-ran simulation a-3b with 
 256 individuals per generation. 
 
-\subsubsection{Simulation a-3b with 256 Population Size}
+\subsection{Simulation a-3b with 256 Population Size}
 Simulation a-3b-256 has the exact same optimization problem parameters as simulation 
 a-3b (Table \ref{tab:simulationa3b}) except for an increase in population size to 256
 individuals. 
+Table \ref{tab:a3b-256-hypervolume} shows the hypervolume value at each generation, 
+confirming that simulation a-3b-256 converges by generation 4. 
+\begin{table}[htbp!]
+    \centering
+    \onehalfspacing
+    \caption{Simulation a-3b-256 hypervolume values at each generation.}
+	\label{tab:a3b-256-hypervolume}
+    \footnotesize
+    \begin{tabular}{ll}
+    \hline 
+    \multicolumn{2}{c}{\textbf{Three Objectives: Simulation a-3b-256}} \\
+    \multicolumn{2}{c}{Reference point: (0.07, 1700, 1.8)} \\
+    \hline 
+    \textbf{Generation} & \textbf{Hypervolume [-]} \\
+    \hline
+    1 & 5.7867 \\
+    2 & 5.8019 \\
+    3 & 5.9412 \\
+    4 & 5.9675 \\
+    \hline
+    \end{tabular}
+\end{table}
 Figure \ref{fig:assem-obj-3-all-256-2d} shows a plot of the final generation's reactor 
 models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$; crosses mark the reactor 
 models that fall on the Pareto front.
