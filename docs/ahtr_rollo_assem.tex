@@ -2500,7 +2500,7 @@ Section \ref{sec:assem-discussion-single} concluded that the one-third assembly'
 FLiBe channels (corresponding to $r_1, r_2, r_3, r_4, r_5$) located closest to the 
 temperature peaks are most important to minimizing $T_{max}$. 
 However, all their radius values located closest to the temperature peaks in Figure 
-\ref{fig:a-3b-centerline-temp} are unexpectedly small. 
+\ref{fig:a-3b-centerline-temp} are not fully maximized (0.35cm). 
 $r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 18cm, 
 15cm, 12cm, 8cm, and 6cm, respectively. 
 Figure \ref{fig:a-3b-centerline-temp} shows that reactor model 11 with most minimized 
@@ -2521,10 +2521,11 @@ This paired with simulation a-3b's 128 individuals per generation possibly being
 too small to explore reactor models with 12 input parameters. 
 Simulation a-3b has 12 input parameters which is higher than all the other 
 optimization simulations, which have 7 or fewer input parameters. 
-Larger population size will enable \gls{ROLLO} to explore more reactor model 
+Larger population size could enable \gls{ROLLO} to explore more reactor model 
 variations and potentially find even more optimal reactor models. 
-To better explore simulation a-3b's design space, I re-ran simulation a-3b with 
-256 individuals per generation. 
+Future work includes running simulation a-3b with a larger population size for more 
+generations. 
+Appendix C begins this preliminary future work. 
 
 \subsection{Triple-Objective Optimization Major Takeaways}
 All the driving factors and influences from each objective come together in 
