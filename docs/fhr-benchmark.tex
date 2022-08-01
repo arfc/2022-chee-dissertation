@@ -882,24 +882,14 @@ diffusion method instead of neutron transport methods, resulting in flux not
 being reproduced well in small regions which are less than a few mean free paths 
 in length (i.e., the FLiBe coolant channel has 0.7cm which is smaller than 
 the diffusion coefficient). 
-The differences in reactivity and flux at specific points might result in a 
+The differences in reactivity and flux at specific points might result in
 slightly inaccurate temperatures at certain points. 
 However, since the reactivity coefficients and overall flux distribution are in 
-agreement, OpenMC's group constants are sufficient to use to calculate an overall 
-temperature distribution for the \gls{AHTR} full assembly model. 
+agreement, OpenMC's group constants are sufficient to use to calculate and gain 
+an overall perspective of the temperature distribution in the \gls{AHTR} full 
+assembly model. 
 Future work includes using higher fidelity software to model \gls{AHTR} full 
 assembly's temperature distribution. 
-
-However, since the reactivity coefficients and overall flux distribution are in 
-agreement, Moltres accurately captures the relative temperature distributions. 
-During the \gls{AHTR} optimization, so long the relative maximum temperature between 
-different \gls{AHTR} models is captured correctly, \gls{ROLLO} can find optimal reactor 
-geometries accurately. 
-Reactor designers can then use higher fidelity software for modeling the final optimal 
-\gls{AHTR} geometry. 
-In summary, Moltres replicated the relevant neutronics parameters with sufficient 
-accuracy using OpenMC's group constant data for the \gls{AHTR} full assembly 
-model. 
 
 \subsection{FHR Benchmark: Moltres Mesh Generation}
 I created an \gls{AHTR} assembly geometry file (\texttt{.geo}) based on the spatial 
