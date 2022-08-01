@@ -1771,10 +1771,11 @@ $PF_{total}$ values.
 
 \section{AHTR One-Third Assembly: Triple-Objective Optimization Results}
 \label{sec:assem-three-obj}
+% IM HERE 
 This section reports the \gls{AHTR} one-third assembly's \gls{ROLLO} triple-objective 
 optimization results. 
-Table \ref{tab:assem-obj-breakdown} summarized the triple-objective simulations in this 
-section: a-3a and a-3b. 
+Earlier in this chapter, Table \ref{tab:assem-obj-breakdown} summarized the 
+triple-objective simulations in this section: a-3a and a-3b. 
 
 \subsection{a-3a: Variation of $PF_{total}$ and $\rho_{TRISO}(\vec{r})$}
 \label{sec:a-3a}
@@ -2261,11 +2262,11 @@ combine to result in the optimal reactor models found by the triple-objective
 optimization simulations. 
 
 \subsubsection{Simulation a-3a}
-In Section \ref{sec:a-3a}'s simulation a-3a, I conducted a three-objective 
+In Section \ref{sec:a-3a}'s simulation a-3a, I conducted a triple-objective 
 optimization simulation to minimize total fuel packing fraction ($PF_{total}$), 
 maximum temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$) in the one-third assembly model by varying $PF_{total}$ and 
-TRISO distribution.
+TRISO distribution in the x and y directions of the one-third assembly.
 \gls{ROLLO} found 32 widely spread reactor models on simulation a-3a's Pareto 
 front (Figure \ref{fig:assem-obj-3-2d}). 
 
@@ -2309,7 +2310,7 @@ $T_{max}$ reactor model 3 and simulation a-1b's most-minimized $T_{max}$ reactor
 \end{figure}
 Figure \ref{fig:a-3a-temp-triso-comparison} shows that simulation a-3a's most-minimized 
 $T_{max}$ reactor model, and simulation a-1b's most-minimized $T_{max}$ reactor model 
-have similar almost constant TRISO distributions with packing fraction standard 
+have similar, almost constant, TRISO distributions with packing fraction standard 
 deviations of $0.003$ and $0.0009$, respectively.
 However, they have different $PF_{total}$ values, and simulation a-3a's most-minimized 
 $T_{max}$'s TRISO distribution is not as flat as simulation a-1b. 
@@ -2335,8 +2336,8 @@ Figure \ref{fig:a-3a-ppf-triso-comparison} shows that simulation a-3a's reactor 
 and simulation a-1a's most-minimized $PPF_{fuel}$ reactor model have similarly small 
 packing fraction standard deviation of  $0.019$ and $0.017$, respectively. 
 However, they do not follow the same TRISO distribution pattern; this is 
-attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
-TRISO distributions at different $PF_{total}$ values, as mentioned previously. 
+attributed to the aforementioned $PF_{total}$ and $PPF_{fuel}$ relationship 
+resulting in unexpected TRISO distributions at different $PF_{total}$ values. 
 
 Figure \ref{fig:a-3a-balanced-reactor-model} shows reactor model 22, which 
 minimized $PF_{total}$, $T_{max}$, and $PPF_{fuel}$ to an equal extent by balancing 
@@ -2363,7 +2364,7 @@ to enable a higher $k_{eff}$ for a lower $PF_{total}$, and
 the $PPF_{fuel}$ objective tries to flatten thermal flux. 
 
 \subsubsection{Simulation a-3b}
-In Section \ref{sec:a-3b}'s simulation a-3b, I conducted a three-objective 
+In Section \ref{sec:a-3b}'s simulation a-3b, I conducted a triple-objective 
 optimization simulation to minimize total fuel packing fraction ($PF_{total}$), 
 maximum temperature ($T_{max}$), and fuel-normalized power peaking factor 
 ($PPF_{fuel}$) in a one-third assembly model by varying $PF_{total}$, 
@@ -2392,9 +2393,9 @@ and simulation a-1a's most-minimized $PF_{total}$ reactor model.
 Figure \ref{fig:a-3b-pf-triso-comparison} shows that simulation a-3b's reactor model 11 
 and simulation a-1a's most-minimized $PF_{total}$ reactor model have similarly large 
 packing fraction standard deviation of $0.044$ and $0.04$, respectively. 
-However, they do not follow the same TRISO distribution pattern, which is
-attributed to the $PF_{total}$ and $PPF_{fuel}$ relationship resulting in unexpected 
-TRISO distributions at different $PF_{total}$ values, as mentioned previously. 
+However, they do not follow the same TRISO distribution pattern. 
+The $PF_{total}$ and $PPF_{fuel}$ relationship results in unexpected 
+TRISO distributions at different $PF_{total}$ values.  
 
 In simulation a-3b, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $T_{max}$ objective, reactor model 1 (Figure 
@@ -2415,7 +2416,8 @@ Figure \ref{fig:a-3b-temp-triso-comparison} shows that simulation a-3b's most-mi
 $T_{max}$ reactor model, and simulation a-1b's most-minimized $T_{max}$ reactor model 
 have similar almost constant TRISO distributions with packing fraction standard 
 deviations of $0.001$ and $0.0009$, respectively.
-However, they have different $PF_{total}$ values.
+However, they have different $PF_{total}$ values, and simulation a-3b has a slightly 
+stronger gradient from left to right. 
 
 In simulation a-3b, \gls{ROLLO} found that the one-third assembly model with the 
 most-minimized $PPF_{fuel}$ objective, reactor model 4 (Figure 
@@ -2453,22 +2455,24 @@ influences from all objectives.
 \label{fig:a-3b-balanced-reactor-model}
 \end{figure}
 Similar to simulation a-3a, for all the reactor models on simulation a-3b's Pareto front 
-(Figure \ref{fig:assem-obj-3-all-2d}), the TRISO distribution flatness is influenced 
-by the minimize $T_{max}$ objective. 
+(Figure \ref{fig:assem-obj-3-all-2d}), the TRISO distribution flatness is strongly 
+influenced by the minimize $T_{max}$ objective. 
 The variations in \gls{TRISO} distributions are influenced by both the minimize 
 $PF_{total}$ and minimize $PPF_{fuel}$ objectives. 
 However, as mentioned previously, the $PF_{total}$ and $PPF_{fuel}$ relationship
 result in unexpected TRISO distributions at different $PF_{total}$ values. 
 The minimize $PF_{total}$ objective tries to maximize the fission reaction rate
 to enable a higher $k_{eff}$ for a lower $PF_{total}$, and 
-the $PPF_{fuel}$ objective tries to flatten thermal flux.
+the $PPF_{fuel}$ objective tries to flatten thermal flux, resulting in the 
+distribution observed in Figure \ref{fig:a-3b-balanced-reactor-model}. 
 
 Figure \ref{fig:a-3b-centerline-temp} shows the one-third assembly centerline 
 temperatures for three reactors on simulation a-3b's Pareto front: reactor model 11 
 with most-minimized $PF_{total}$, reactor model 1 with most-minimized $T_{max}$, and
 reactor model 4 with most-minimized $PPF_{fuel}$.
 $r_1$, $r_2$, $r_3$, $r_4$, and $r_5$ values correspond to the FliBe channel at 18cm, 
-15cm, 12cm, 8cm, and 6cm, respectively.  
+15cm, 12cm, 8cm, and 6cm, respectively. 
+% todo: state where the temp peaks are. 
 \begin{figure}[htbp!]
     \begin{subfigure}{\textwidth}
         \centering
@@ -2514,7 +2518,7 @@ Simulation a-3b has 12 input parameters which is higher than all the other optim
 simulations, which have 7 or fewer input parameters. 
 Larger population size will enable \gls{ROLLO} to explore more reactor model 
 variations and potentially find even more optimal reactor models. 
-To better explore simulation a-3b's design space, I re-run simulation a-3b with 
+To better explore simulation a-3b's design space, I re-ran simulation a-3b with 
 256 individuals per generation. 
 
 \subsubsection{Simulation a-3b with 256 Population Size}
@@ -2537,7 +2541,7 @@ distributions in the final generation that fall on the Pareto front.
         \ref{fig:assem-obj-3-all-distr}.}
         \label{fig:assem-obj-3-all-256-2d} 
     \end{subfigure}
-    \caption{Simulation a-3b-256 -- ROLLO three-objective optimization with 
+    \caption{Simulation a-3b-256 -- ROLLO triple-objective optimization with 
     256 population size to minimize total fuel packing fraction ($PF_{total}$), 
     maximum temperature ($T_{max}$), and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the one-third assembly. 
@@ -2556,7 +2560,7 @@ distributions in the final generation that fall on the Pareto front.
         \ref{fig:assem-obj-3-all-256-2d}. }
         \label{fig:assem-obj-3-all-256-distr} 
     \end{subfigure}
-    \caption{(contd.) Simulation a-3b-256 -- ROLLO three-objective optimization with 
+    \caption{(contd.) Simulation a-3b-256 -- ROLLO triple-objective optimization with 
     256 population size to minimize total fuel packing fraction ($PF_{total}$), 
     maximum temperature ($T_{max}$), and fuel-normalized power peaking factor 
     ($PPF_{fuel}$) in the one-third assembly. 
@@ -2587,7 +2591,7 @@ all three objectives.
     \caption{AHTR one-third assembly models and TRISO distributions for the 3 reactor 
     models on simulation a-3b-256's Pareto front that most-minimized each objective, and 
     1 reactor model that equally minimized all three objectives.
-    Simulation a-3b -- ROLLO three-objective optimization to minimize 
+    Simulation a-3b -- ROLLO triple-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), 
     and fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
@@ -2639,7 +2643,7 @@ all three objectives.
     \caption{(contd.) AHTR one-third assembly models and TRISO distributions for the 3 reactor 
     models on simulation a-3b-256's Pareto front that most-minimized each objective, and 
     1 reactor model that equally minimized all three objectives.
-    Simulation a-3b -- ROLLO three-objective optimization to minimize 
+    Simulation a-3b -- ROLLO triple-objective optimization to minimize 
     total fuel packing fraction ($PF_{total}$), maximum temperature ($T_{max}$), 
     and fuel-normalized power peaking factor ($PPF_{fuel}$) in the one-third assembly. 
     Input parameters varied: total fuel packing fraction $PF_{total}$, 
@@ -2678,6 +2682,10 @@ in simulation a-3b-256 compared to simulation a-3b's equivalent reactor models
 This suggests that simulation a-3b-256's larger population size enabled \gls{ROLLO} 
 to explore more reactor model variations and find even more optimal reactor models 
 that further minimized $T_{max}$. 
+
+% you need to relate it back to the original a-3b simulation and also compare 
+% it to the single objectives from before, especiallly if you see differences 
+% from original a-3b simulation. 
 
 \subsection{Triple-Objective Optimization Major Takeaways}
 
