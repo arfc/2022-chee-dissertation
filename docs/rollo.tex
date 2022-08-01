@@ -481,8 +481,7 @@ Section \ref{sec:hyperparameter-studies} describes the hyperparameter studies.
 
 As mentioned previously in Section \ref{sec:genetic_alg}, it is important to 
 select genetic algorithm hyperparameters that balance the extent of exploration 
-and exploitation.
-% todo: add this phrasing earlier in chapter too. 
+and exploitation. 
 For each operator, users choose from a list of operators and define each
 of their required hyperparameters. 
 Table \ref{tab:deap_operators} shows the available operators and their respective 
@@ -665,7 +664,12 @@ restart the code from the most recent population and continue the simulation.
 
 \subsection{ROLLO Parallelization}
 \label{sec:rollo_parallel}
-% todo: motivate the need for parallelization and why it is necessary. 
+For each \gls{ROLLO} simulation, nuclear reactor modeling software must be run to 
+calculate the fitness values for each reactor model in each generation; i.e. a \gls{ROLLO} 
+simulation that runs for 5 generations with 100 reactor models will require 500 separate 
+reactor modeling software runs. 
+Computing fitness values with nuclear reactor modeling software is computationally 
+expensive, necessitating efficient software parallelization on supercomputers. 
 \gls{ROLLO} has a serial run mode and two modes for parallelization. 
 The serial mode runs each reactor model in each generation serially and utilizes a 
 map() function to run the nuclear software for each reactor model.
