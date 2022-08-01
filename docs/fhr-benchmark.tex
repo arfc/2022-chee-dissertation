@@ -871,18 +871,19 @@ There is good agreement between OpenMC and Moltres models 4-group spectrums.
 
 \subsubsection{Key Neutronics Parameters Verification Summary}
 % todo: edits to make this more correct for the fhr benchmark. 
-The verification study found a xx pcm reactivity difference between OpenMC 
+The verification study found a 216 pcm reactivity difference between OpenMC 
 and Moltres models and good agreement in their reactivity coefficients and 4-group 
 neutron energy spectrum.
 The verification study also found good agreement in overall flux distributions 
 (based on the 2-norm difference); however, there were larger flux differences at 
 specific points. 
-The reactivity and flux differences are due to Moltres utilizing the neutron diffusion 
-method instead of neutron transport methods, resulting in flux not being reproduced 
-well in small regions which are less than a few mean free paths in length 
-(i.e., the FLiBe coolant channel). 
-The differences in reactivity and flux at specific points might result in a slightly 
-inaccurate absolute temperature distribution.  
+The reactivity and flux differences are due to Moltres utilizing the neutron
+diffusion method instead of neutron transport methods, resulting in flux not 
+being reproduced well in small regions which are less than a few mean free paths 
+in length (i.e., the FLiBe coolant channel has 0.7cm which is smaller than 
+the diffusion coefficient). 
+The differences in reactivity and flux at specific points might result in a 
+slightly inaccurate absolute temperature distribution.  
 However, since the reactivity coefficients and overall flux distribution are in 
 agreement, Moltres accurately captures the relative temperature distributions. 
 During the \gls{AHTR} optimization, so long the relative maximum temperature between 
