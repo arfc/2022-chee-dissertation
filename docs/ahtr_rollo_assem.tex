@@ -2582,8 +2582,7 @@ Table \ref{tab:assem-obj-breakdown} detailed the simulation parameters.
     \hline
     \multirow{2}{2cm}{3}
     & a-3a & Theta & 273.6 & 5 & 1367.9 \\
-    & a-3b & Theta & 305.8 & 5 & 1528.9 \\
-    & a-3b-256 & Theta & 839.8 & 4 & 3359.3 \\
+    & a-3b & Theta & 305.8 & 6 & 1830.0 \\
     \hline
     \end{tabular}
 \end{table}
@@ -2621,7 +2620,7 @@ Simulation a-1b and a-1e results demonstrated that coolant channel shape variati
 not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation.
 
 In Sections \ref{sec:assem-two-obj} and \ref{sec:assem-three-obj}'s multi-objective 
-optimization simulations: a-2a, a-2b, a-2c, a-3a, a-3b, a-3b-256; and the accompanying 
+optimization simulations: a-2a, a-2b, a-2c, a-3a, a-3b; and the accompanying 
 discussion in Section \ref{sec:assem-discussion-multi}, I further 
 analyzed how the objectives' combined effects resulted in the optimal reactor models 
 found by each multi-objective optimization simulation. 
@@ -2637,11 +2636,11 @@ minimize $PPF_{fuel}$ objective's driving factor flattening thermal flux distrib
 influence each other resulting in unexpected TRISO distributions at different 
 $PF_{total}$ values. 
 
-Simulation a-3b-256's multi-objective optimization shows the result of minimizing all 
+Simulation a-3b's multi-objective optimization shows the result of minimizing all 
 three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
 all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
-Figure \ref{fig:assem-obj-3-all-256} shows the 38 reactor models on simulation 
-a-3b-256's Pareto front that meet all three objectives. 
+Figure \ref{fig:assem-obj-3-all} shows the 12 reactor models on simulation 
+a-3b's Pareto front that meet all three objectives. 
 The reactor models on the Pareto Front have different $PF_{total}$, TRISO distributions, 
 and coolant channel shapes, depending on the extent each objective is minimized due 
 to the nature of multi-objective optimization that results in a tradeoff between 
