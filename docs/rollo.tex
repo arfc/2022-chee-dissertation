@@ -814,13 +814,11 @@ Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto fron
     \label{fig:binh_paretofront}
 \end{figure}
 I use the hypervolume indicator to quantify the Pareto front's quality. 
-The hypervolume indicator is the most used set-quality indicator for assessing 
-stochastic multi-objective optimizers \cite{guerreiro_hypervolume_2020}.
 The hypervolume indicator measures the volume (in the objective space) covered by 
 non-dominated solutions for problems in which all objectives are to be 
 minimized \cite{deb_multi-objective_2001}.  
-Section \ref{sec:rollo-convergence} details how the hypervolume indicator calculation.
-I added an integration test to ROLLO that checks that a ROLLO simulation will 
+Section \ref{sec:rollo-convergence} details the hypervolume indicator calculation.
+I added an integration test that checks that a ROLLO simulation will 
 find a hypervolume comparable to the ideal Pareto front when minimizing the
 Binh and Korn function. 
 
@@ -993,13 +991,9 @@ the hypervolume.
     simulation. }
     \label{fig:pareto_hypervolume}
 \end{figure}
-Section \ref{sec:opt} described that an ideal optimization method for a 
-multi-objective problem like reactor design should find widely spread solutions 
-on the obtained Pareto front \cite{deb_multi-objective_2001}. 
 If the simulation is not converged, the user can easily restart the optimization 
 simulation using the \texttt{checkpoint.pkl} file and run the problem for a few more 
 generations. 
-% add about hypervolume for multiobj and obj convergence for singleobj
 
 \section{Summary}
 This chapter described the \acrfull{ROLLO} framework developed for 
