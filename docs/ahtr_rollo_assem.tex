@@ -291,7 +291,7 @@ Table \ref{tab:simulationa1d} summarizes simulation a-1d's optimization problem 
     \hline
     \end{tabular}
 \end{table}
-To remind readers each r value's orientation, Figure 
+To remind readers each radius value's orientation, Figure 
 \ref{fig:coolant-channel-shape-assem-2} shows an annotated \gls{AHTR} one-third 
 assembly's inter-plank coolant channel shapes for 
 $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1, 0.2, 0.3$.
@@ -321,8 +321,8 @@ $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1, 0.2, 0.3$.
     \label{fig:coolant-channel-shape-assem-2}
 \end{figure}
 
-Figure \ref{fig:a-1d} shows the plots of coolant channel shape's 
-$r_1, r_2, r_3, r_4,$ and $r_5$ values against $PF_{total}$. 
+Figure \ref{fig:a-1d} shows the plots of the simulation a-1d final generation 
+coolant channel shape's $r_1, r_2, r_3, r_4,$ and $r_5$ values against $PF_{total}$. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{0.49\textwidth}
@@ -367,8 +367,12 @@ and coolant channel shape's $r_1, r_2, r_3, r_4,$ and $r_5$.
 
 \subsection{Objective: Minimize Maximum Temperature ($T_{max}$)}
 \label{sec:assem-1-obj-temp}
-This section reports results from the minimize maximum one-third assembly temperature 
-($T_{max}$) single-objective optimization simulations: a-1b and a-1e. 
+This section describes the single-objective a-1b and a-1e optimization simulation 
+results. 
+Both simulations minimize the maximum one-third assembly temperature ($T_{max}$) 
+objective. 
+The minimize $T_{max}$ objective is important because a reactor that has a lower 
+peak tempeature minimizes thermal stresses in the fuel. 
 Simulation a-1b varies \gls{TRISO} packing fraction distribution 
 ($\rho_{TRISO}(\vec{r})$), and simulation a-1e varies the coolant channel shape
 ($r_1, r_2, r_3, r_4,$ and $r_5$). 
