@@ -1419,7 +1419,8 @@ mesh sizes that are larger than each Theta node's memory size.
 % effect. 
 During ROLLO optimization, each new reactor model results in the creation of 
 a new Moltres temperature model. 
-Correspondingly, a new set of group constant data needs to be created. 
+Correspondingly, a new set of group constant data needs to be created for each 
+Moltres temperature model. 
 Group constant data with multiple temperatures requires running multiple OpenMC 
 neutronics simulations at the various temperatures, thus, increasing the total 
 compute time required for each new reactor model. 
