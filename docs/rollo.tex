@@ -819,22 +819,7 @@ stochastic multi-objective optimizers \cite{guerreiro_hypervolume_2020}.
 The hypervolume indicator measures the volume (in the objective space) covered by 
 non-dominated solutions for problems in which all objectives are to be 
 minimized \cite{deb_multi-objective_2001}.  
-Figure \ref{fig:pareto_hypervolume} illustrates the hypervolume enclosed by the 
-non-dominated solutions (A, B, C, D, E) and reference point, W, in the hatched region 
-for a two-dimensional problem.
-The hypervolume is calculated by finding the volume between the reference point and 
-the objective values of the Pareto front's solutions. 
-The reference point must be selected to ensure that every solution falls within 
-the hypervolume.
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.7\linewidth]{pareto-hypervolume.png} 
-    \caption{Example hypervolume enclosed by non-dominated solutions. Figure reproduced 
-    from \cite{deb_multi-objective_2001}. 
-    The f1 and f2 axes correspond to the optimization objectives in a \gls{ROLLO} 
-    simulation. }
-    \label{fig:pareto_hypervolume}
-\end{figure}
+Section \ref{sec:rollo-convergence} details how the hypervolume indicator calculation.
 I added an integration test to ROLLO that checks that a ROLLO simulation will 
 find a hypervolume comparable to the ideal Pareto front when minimizing the
 Binh and Korn function. 
