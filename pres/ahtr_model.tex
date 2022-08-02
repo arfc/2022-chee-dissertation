@@ -21,16 +21,17 @@
 
 \begin{frame}
     \frametitle{AHTR Temperature Model Setup}
+    \begin{block}{Steps to produce Moltres AHTR Temperature Model}
+        \begin{itemize}
+          \item OpenMC neutronics model produces group constants data 
+          \item Mesh generation
+          \item Run Moltres model to calculate temperature distribution 
+          (accepts group constants data and mesh)
+        \end{itemize}
+    \end{block}
     For successful AHTR Moltres simulation, I must establish suitable spatial and
     energy homogenization that preserves accuracy while maintaining an acceptable
     runtime
-    \begin{block}{Steps to produce Moltres AHTR Temperature Model}
-        \begin{itemize}
-          \item OpenMC neutronics model produces group constants for the Moltres model
-          \item Mesh generation
-          \item Moltres temperature model accepts group constants and mesh
-        \end{itemize}
-    \end{block}
     \begin{block}{Energy Homogenization}
         \begin{table}[]
             \centering
