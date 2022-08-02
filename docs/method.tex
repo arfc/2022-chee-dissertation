@@ -1413,14 +1413,13 @@ Each supercomputer node saves the entire mesh file, further refinement results i
 mesh sizes that are larger than each Theta node's memory size. 
 
 \subsection{AHTR Plank and One-Third Assembly: Group Constant Temperature Study}
-% make this a little clearer... 
-% moltres does its own interpolation based on the group constants from OpenMC. 
-% i'm doing this to verify but I don't expect it to matter... worth checking to see the 
-% effect. 
 During ROLLO optimization, each new reactor model results in the creation of 
 a new Moltres temperature model. 
 Correspondingly, a new set of group constant data needs to be created for each 
-Moltres temperature model. 
+Moltres temperature model because the Moltres model interpolates the group constant 
+data for required temperatures.
+Moltres relies on the OpenMC model to generate group constant data for the 
+Moltres' multigroup neutron diffusion calculations. 
 Group constant data with multiple temperatures requires running multiple OpenMC 
 neutronics simulations at the various temperatures, thus, increasing the total 
 compute time required for each new reactor model. 
@@ -1429,12 +1428,7 @@ constant data compared to single temperature group constant data.
 I set up Moltres \gls{AHTR} steady-state temperature models for the plank and one-third 
 assembly with group constant data at each and all the of following temperatures: 948, 
 1024, 1100, and 1200K. 
-The OpenMC \gls{AHTR} models then are modified to use the specified temperatures 
-to generate group constant data.
 
-% TODO: make sure to note here how OpenMC treats temperature for XS. Why do you 
-% expect to see differences? Does Temp interpolation of resonances matter here? 
-% TODO: just describe better.. 
 Tables \ref{tab:moltres-group-constant-temps} and 
 \ref{tab:moltres-group-constant-temps-assem}
 show the average and maximum temperature reported by the \gls{AHTR} plank and one-third 
