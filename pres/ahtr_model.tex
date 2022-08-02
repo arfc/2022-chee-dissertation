@@ -56,7 +56,7 @@
     \begin{figure}[]
             \centering
             \includegraphics[width=0.65\linewidth]{figures/assembly_mg_pres.png}
-        \caption{AHTR Assembly Spatial Homogenization for Group Constant Generation.}
+        \caption{AHTR assembly spatial homogenization for group constant generation.}
     \end{figure}
 \end{frame}
 
@@ -69,7 +69,20 @@
         \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity
         \item Moltres simulation with 4-group energy and spatial homogenization
     \end{itemize}
-    \textbf{KNPs}: $k_{eff}$, reactivity coefficients, flux distribution, and neutron spectrum. 
+    \textbf{KNPs}: $k_{eff}$, reactivity coefficients, flux distribution, and neutron 
+    spectrum. 
+    \begin{itemize}
+        \item All comparisons are to verify that the Moltres model is replicating the 
+        OpenMC model's neutronics correctly
+    \end{itemize}
+    Reactivity coefficients, flux distribution
+    \begin{itemize}
+        \item Ensure that Moltres accurately calculates the AHTR's temperature distribution
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR Temp Model keff and reactivity coefficients Verification}
         \begin{table}
             \caption{ $k_{eff}$ comparison.}
             \includegraphics[width=0.85\linewidth]{figures/benchmark-keff.png}
