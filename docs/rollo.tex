@@ -12,7 +12,7 @@ However, the evolutionary algorithm setup is highly customizable with
 an assortment of genetic algorithm designs and related operators.
 A well-performing evolutionary algorithm needs to balance the extent of exploration 
 and exploitation. 
-A reactor designer unfamiliar with evolutionary algorithms will have
+Thus, a reactor designer unfamiliar with evolutionary algorithms will have
 to go through the cumbersome process of customizing a genetic algorithm 
 for their needs and determine which operators and hyperparameters work best for 
 their problem. 
@@ -664,12 +664,12 @@ restart the code from the most recent population and continue the simulation.
 
 \subsection{ROLLO Parallelization}
 \label{sec:rollo_parallel}
-For each \gls{ROLLO} simulation, nuclear reactor modeling software must be run to 
-calculate the fitness values for each reactor model in each generation; i.e. a \gls{ROLLO} 
-simulation that runs for 5 generations with 100 reactor models will require 500 separate 
-reactor modeling software runs. 
-Computing fitness values with nuclear reactor modeling software is computationally 
-expensive, necessitating efficient software parallelization on supercomputers. 
+During a \gls{ROLLO} simulation, \gls{ROLLO} runs nuclear reactor modeling software to calculate the 
+fitness values for each reactor model in each generation. 
+For example, a \gls{ROLLO} simulation that runs for 5 generations with 100 reactor models 
+will require 500 separate reactor modeling software runs. 
+Computing hundreds of fitness values with reactor modeling software is computationally 
+expensive, necessitating \gls{ROLLO} to run in parallel on supercomputers. 
 \gls{ROLLO} has a serial run mode and two modes for parallelization. 
 The serial mode runs each reactor model in each generation serially and utilizes a 
 map() function to run the nuclear software for each reactor model.
