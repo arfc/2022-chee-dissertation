@@ -63,7 +63,7 @@ I modified Figure \ref{fig:genetic_alg} to produce Figure
 thermal-hydraulics software fit within \gls{ROLLO}'s evolutionary algorithm 
 optimization process. 
 % need to update with new algorithm style
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \centering
     \begin{tikzpicture}[node distance=1.7cm]
             \tikzstyle{every node}=[font=\small]
@@ -155,7 +155,7 @@ unchanged \cite{fortin_deap_2012}.
 
 Figure \ref{fig:deap-code} illustrates \gls{DEAP}'s usage of the \textit{creator} and
 \textit{toolbox} modules. 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -243,7 +243,7 @@ hyperparameters, defined in the \texttt{algorithm} secion, to minimize the
 \texttt{output1} parameter.
 The OpenMC evaluator accepts input parameters: \texttt{variable1} and 
 \texttt{variable2}, and calculates the \texttt{output1} parameter.
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -319,7 +319,7 @@ For each evaluator, mandatory parameters are \texttt{order}, \texttt{input\_scri
 \texttt{execute} and \texttt{output\_script}. 
 Table \ref{tab:evaluator-inputs} describes each evaluator's mandatory and optional parameters 
 in the \gls{ROLLO} \texttt{evaluators}' input file section.  
-\begin{table}[htbp]
+\begin{table}[!htb]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} \texttt{evaluator}: Input Parameter Descriptions.}
@@ -363,7 +363,7 @@ Figure \ref{fig:openmcinp.py} shows the template and templated openmc script;
 once the \texttt{openmc\_inp.py} \texttt{input\_script} is templated, 
 \texttt{\{\{variable1\}\}} and \texttt{\{\{variable2\}\}}  on Lines 3 and 4 will be 
 replaced with values selected by the \gls{ROLLO} genetic algorithm. 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \begin{minipage}{0.4\textwidth}
         \centering
     \begin{minted}[
@@ -438,7 +438,7 @@ and \texttt{mating\_operator}.
 Lines 17 to 31 in the example \gls{ROLLO} input file (Figure \ref{fig:rollo-input}) 
 demonstrate \texttt{algorithm} specifications. 
 Table \ref{tab:algorithm-inputs} describes these input parameters in detail. 
-\begin{table}[htbp]
+\begin{table}[!htb]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} \texttt{algorithm}: Input Parameter Descriptions.}
@@ -487,7 +487,7 @@ of their required hyperparameters.
 Table \ref{tab:deap_operators} shows the available operators and their respective 
 hyperparameters. 
 Descriptions for each operator can be found in Section \ref{sec:genetic_alg}.
-\begin{table}[htbp]
+\begin{table}[!htb]
     \centering
     \onehalfspacing
     \caption{Selection, mutation, and mating operators available in 
@@ -515,7 +515,7 @@ This section describes the \gls{ROLLO} v1.0 software architecture and
 how each part contributes the reactor design optimization process.
 Table \ref{tab:rollo-architecture} outlines the classes in the \gls{ROLLO} software 
 and describes each class's purpose.
-\begin{table}[htbp]
+\begin{table}[!htb]
     \centering
     \onehalfspacing
     \caption{Classes that comprise the \gls{ROLLO} architecture. }
@@ -568,7 +568,7 @@ and describes each class's purpose.
     \end{tabular}
     \end{table}
 Figure \ref{fig:rollo_archi} depicts the \gls{ROLLO} software architecture. 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \centering
     \begin{tikzpicture}[node distance=0.5cm]
         \tikzstyle{every node}=[font=\footnotesize]
@@ -773,7 +773,7 @@ The recommended variable values are $a=20$, $b=0.2$, and $c=2\pi$
 \cite{surjanovic_ackley_2013}. 
 The Ackley function's global minimum point is $f(0,0) = 0$. 
 Figure \ref{fig:ackley} shows the resulting two-variable Ackley function.
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.8\linewidth]{ackley.png} 
     \caption{Two variable Ackley function. Figure reproduced from \cite{surjanovic_ackley_2013}.}
@@ -806,7 +806,7 @@ multi-objective optimization capabilities.
     \end{cases}
 \end{align}
 Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto front.
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.7\linewidth]{binh-paretofront.png} 
     \caption{Pareto front of the Binh and Korn test function. Figure reproduced from 
@@ -835,7 +835,7 @@ Figure \ref{fig:verification-sphere} shows the ROLLO input file for this verific
 problem. 
 In the input file, I vary the radius between 1.0 and 8.0cm, with the objective of 
 minimizing the radius while constraining the problem to have $k_{eff} >= 1.0$.
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -873,7 +873,7 @@ minimizing the radius while constraining the problem to have $k_{eff} >= 1.0$.
 \pagebreak
 Figure \ref{fig:critical_sphere.py} shows the OpenMC template used in the 
 \gls{ROLLO} simulation. 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \begin{minted}[
         frame=lines,
         framesep=2mm,
@@ -920,7 +920,7 @@ radius and $k_{eff}$ evolution through the evolutionary algorithm's
 generations. 
 They demonstrate how the average radius converges towards the critical radius while 
 constraining $k_{eff} \geq 1$ and improving with each generation.
-\begin{figure}[htbp]
+\begin{figure}[!htb]
     \centering
     \begin{subfigure}{\textwidth}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{radius-convergence.png}} 
@@ -982,7 +982,10 @@ The hypervolume is calculated by finding the volume between the reference point 
 the objective values of the Pareto front's solutions. 
 The reference point must be selected to ensure that every solution falls within 
 the hypervolume.
-\begin{figure}[htbp]
+If the simulation is not converged, the user can easily restart the optimization 
+simulation using the \texttt{checkpoint.pkl} file and run the problem for a few more 
+generations. 
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.7\linewidth]{pareto-hypervolume.png} 
     \caption{Example hypervolume enclosed by non-dominated solutions. Figure reproduced 
@@ -991,9 +994,6 @@ the hypervolume.
     simulation. }
     \label{fig:pareto_hypervolume}
 \end{figure}
-If the simulation is not converged, the user can easily restart the optimization 
-simulation using the \texttt{checkpoint.pkl} file and run the problem for a few more 
-generations. 
 
 \section{Summary}
 This chapter described the \acrfull{ROLLO} framework developed for 
