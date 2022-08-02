@@ -597,7 +597,7 @@ In the following subsections, I will describe the steps conducted to produce the
     (Moltres model accepts group constants data and mesh) 
 \end{itemize}
 
-\subsection{FHR Benchmark: Group Constant Generation}
+\subsection{Group Constant Generation}
 \label{sec:fhr-bm-group-constant}
 Unlike the OpenMC neutronics model from the previous sections, Moltres does not 
 explicitly model each \gls{TRISO} particle. 
@@ -679,7 +679,7 @@ In the next subsection, I compare the key neutronics parameters for the continuo
 OpenMC and multigroup Moltres simulations for the \gls{AHTR} assembly at 948K to 
 ensure that the spatial homogenization and energy discretization preserve accuracy. 
 
-\subsubsection{FHR Benchmark: Key Neutronics Parameters Verification}
+\subsubsection{Key Neutronics Parameters Verification}
 In this section, I verify that the spatial homogenization and energy discretization 
 I chose are acceptable by verifying key neutronics parameters.
 I compare the key neutronics parameters between two simulations:
@@ -897,7 +897,7 @@ assembly model.
 Future work includes using higher fidelity software to model \gls{AHTR} full 
 assembly's temperature distribution. 
 
-\subsection{FHR Benchmark: Moltres Mesh Generation}
+\subsection{Moltres Mesh Generation}
 To run Moltres simulations, the user must provide a mesh file representing the reactor 
 geometry. 
 I created an \gls{AHTR} assembly geometry file (\texttt{.geo}) based on the spatial 
@@ -917,7 +917,7 @@ geometry file.
 \end{figure}
 
 \pagebreak
-\subsubsection{FHR Benchmark: Mesh Refinement Study}
+\subsubsection{Mesh Refinement Study}
 I performed a mesh refinement study on the Moltres \gls{AHTR} full assembly temperature 
 model to ensure that the geometry mesh inputs are sufficiently converged. 
 Table \ref{tab:ahtr-full-assem-mesh-refinement} reports the average, maximum, and 
@@ -959,7 +959,7 @@ refinement steps.
 I used x4 mesh refinement for the Moltres \gls{AHTR} full assembly temperature model
 because $||\Delta T_k||_N = 0.053K$, which I evaluated as sufficiently converged.  
 
-\subsection{FHR Benchmark: Temperature Model}
+\subsection{Temperature Model Setup and Results}
 \label{sec:fhr-benchmark-temp-model}
 The Moltres \gls{AHTR} steady-state temperature model is a 2D x-y cross-section 
 model of the \gls{AHTR} assembly. 
@@ -973,7 +973,7 @@ These assumptions ignore turbulent effects that would most likely be present.
 However, an in-depth AHTR Moltres model that includes turbulence modeling is 
 out of scope for this dissertation. 
 
-\subsubsection{FHR Benchmark: Temperature Model Setup}
+\subsubsection{Temperature Model Setup}
 Moltres solves the four-group diffusion equations 
 (Equation \ref{eq:moltres-diffusion-equation}) 
 as a steady-state eigenvalue problem to find $k_{eff}$ for the static \gls{AHTR} models.
@@ -1076,7 +1076,7 @@ The power produced by the \gls{AHTR} assembly model is calculated based
 on the \gls{FHR} benchmark model's specific power of 200 $W gU^{-1}$ and the FHR 
 benchmark's TRISO packing fractions in a 1cm thick slice of the assembly.
 
-\subsubsection{FHR Benchmark: Temperature Model Results}
+\subsubsection{Temperature Model Results}
 Figure \ref{fig:benchmark-temperature-model} shows the 2D temperature distribution in the 
 \gls{AHTR} assembly.  
 \begin{figure}[htbp]
