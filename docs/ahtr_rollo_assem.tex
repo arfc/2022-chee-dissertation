@@ -2605,7 +2605,7 @@ same driving factors as the \gls{AHTR} plank optimization objectives (Chapter
 \ref{chap:ahtr-plank-opt-results}) and described each objective's relationship with 
 each input parameter. 
 I determined that \gls{ROLLO} flattens TRISO distribution and maximizes the coolant 
-channel shape's radius values ($r_1, r_2, r_3, r_4, r_5$) that are close to the 
+channel shape's radius values ($r_1, r_2, r_3, r_4, r_5$) that are located close to the 
 reactor model's temperature peak to achieve the minimize $T_{max}$ objective. 
 The minimize $PF_{total}$ objective is driven by maximizing the one-third assembly's 
 total fission reaction rate and influences oscillations in the TRISO distribution to 
@@ -2636,9 +2636,12 @@ minimize $PPF_{fuel}$ objective's driving factor flattening thermal flux distrib
 influence each other resulting in unexpected TRISO distributions at different 
 $PF_{total}$ values. 
 
-Simulation a-3b's multi-objective optimization shows the result of minimizing all 
-three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
-all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
+Simulation a-3b is the final and largest multi-objective optimization problem 
+that minimized all three objectives ($PF_{total}$, $T_{max}$, and 
+$PPF_{fuel}$) while varying all the input parameters ($PF_{total}$, TRISO distribution, 
+and coolant channel shape).
+Simulation a-3b ran for $\sim 1800$ node-hours on the Theta supercomputer 
+with 6 generations and 128 reactor models per generation. 
 Figure \ref{fig:assem-obj-3-all} shows the 12 reactor models on simulation 
 a-3b's Pareto front that meet all three objectives. 
 The reactor models on the Pareto Front have different $PF_{total}$, TRISO distributions, 
