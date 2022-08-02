@@ -98,10 +98,16 @@
 \subsection{AHTR One-Third Assembly Optimization Results}
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Optimization Simulations}
-    \begin{figure}
-        \includegraphics[width=0.9\linewidth]{figures/ahtr-assem-opt-table.png} 
+    \only<1>{
+        \begin{figure}
+        \includegraphics[width=0.8\linewidth]{figures/ahtr-assem-opt-table.png} 
         \caption{ROLLO simulations for optimizing the AHTR one-third assembly.}
-    \end{figure}
+        \end{figure}}
+        \only<2>{
+            \begin{figure}
+            \includegraphics[width=0.8\linewidth]{figures/ahtr-assem-opt-table-annotated.png} 
+            \caption{ROLLO simulations for optimizing the AHTR one-third assembly.}
+            \end{figure}}
 \end{frame}
 
 \begin{frame}
@@ -186,7 +192,7 @@
     \end{figure}
     Minimize $PF_{total}$ objective is driven by \textbf{maximizing the 
     total fission reaction rate}. 
-    
+
     Minimize $PPF_{fuel}$ objective is driven by \textbf{flattening the 
     thermal flux distribution}.
 \end{frame}
