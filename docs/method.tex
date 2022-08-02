@@ -1773,8 +1773,10 @@ for different mutation probabilities.
 The 0.23 mating probability from the best single-objective hyperparameter set 
 (Section \ref{sec:rollo-single-hyp}) performs as well as the 0.1 mating probability. 
 
+Based on the box plot comparisons, I selected the combination of hyperparameters that 
+maximized the hypervolume. 
 Table \ref{tab:multi-obj-hyp} summarizes the hyperparameters I used for \gls{ROLLO} 
-multi-objective optimization based on the hyperparameter search. 
+multi-objective optimization.  
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -1795,10 +1797,14 @@ multi-objective optimization based on the hyperparameter search.
     \hline
     \end{tabular}
 \end{table}
-
-% TODO: your explanation about compute time is good here, but you might want to 
-% comment on how different results for hyperparmateres might be with OpenMC 
-% in this multi-obj domain. 
+Reactor designers with ample computational power may use a reactor 
+modeling problem to conduct their multi-objective optimization hyperparameter search. 
+Using hyperparameters optimized for their reactor model could reduce the number of 
+generations required to find a Pareto front with a large hypervolume and also enable 
+finding a more optimal Pareto front.  
+However, using the multi-objective hyperparameters outlined in Table 
+\ref{tab:multi-obj-hyp} is sufficient for any reactor designers that do not want to 
+conduct a problem-specific hyperparameter search. 
 
 \section{Summary}
 \glsresetall
