@@ -74,9 +74,9 @@ optimization simulation conducted in this chapter.
     \gls{TRISO} packing fraction distribution}
 	\label{tab:assem-obj-breakdown}
     \footnotesize
-    \begin{tabular}{p{1.4cm}|p{1cm}|lllp{3cm}}
+    \begin{tabular}{p{1.5cm}|l|llll}
     \hline 
-    \textbf{Objs [\#]s} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \textbf{Objs [\#]} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
     \hline
     \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
     & & & & \tabitem $PF_{total}$ & \\
@@ -117,7 +117,7 @@ Facility under the Director's Discretionary Allocation Program
 \cite{noauthor_thetathetagpu_2022}. 
 Section \ref{sec:assem-compute-cost} details each optimization simulation's 
 computational cost.  
-The reader must consider the computational cost if they desire to reproduce this 
+Readers must consider the computational cost if they desire to reproduce this 
 analysis. 
 
 \section{AHTR One-Third Assembly: Single-Objective Optimization Results}
@@ -134,16 +134,15 @@ about the single-objective simulations results (Section
 \ref{sec:assem-discussion-single}).
 
 Section \ref{sec:rollo-convergence} described that for single-objective optimization, 
-the reactor designer should plot the objective's convergence and observe the 
-objective's values to evaluate if they are confident about the final solution set.  
-Thus, I determine that the convergence criteria is met if the objective's 
-average and minimum values are no longer changing. 
+the reactor designer should plot the objective's minimum and average values at 
+each generation and when the values are no longer changing, the simulation 
+is converged. 
 If a single-objective optimization problem's objective converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation to 
 save computational resources as the solution will not change. 
-Section \ref{sec:rollo-convergence} described how reactor designers use 
-\gls{ROLLO} to determine problem convergence. 
+However, if the problem's objective does not converge by generation 5, I run the 
+problem for a few more generations until satisfactory convergence is reached.
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 \label{sec:assem-1-obj-pf}

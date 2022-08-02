@@ -129,7 +129,7 @@ supercomputer at the Argonne Leadership Computing Facility under the Director's
 Discretionary Allocation Program \cite{noauthor_thetathetagpu_2022}. 
 Section \ref{sec:plank-compute-cost} details the computational 
 cost of each optimization simulation.  
-The reader must consider the computational cost if they desire to reproduce this 
+Readers must consider the computational cost if they desire to reproduce this 
 analysis. 
 
 \section{AHTR Plank: Single-Objective Optimization Results}
@@ -145,18 +145,15 @@ about the single-objective simulations results (Section
 \ref{sec:plank-discussion-single}).
 
 Section \ref{sec:rollo-convergence} described that for single-objective optimization, 
-the reactor designer should plot the objective's convergence and observe the 
-objective's values to evaluate if they are confident about the final solution set. 
-Thus, I determine that the convergence criteria is met if the objective's 
-average and minimum values are no longer changing. 
+the reactor designer should plot the objective's minimum and average values at 
+each generation and when the values are no longer changing, the simulation 
+is converged. 
 If a single-objective optimization problem's objective converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation to 
 save computational resources as the solution will not change.
 However, if the problem's objective does not converge by generation 5, I run the 
 problem for a few more generations until satisfactory convergence is reached.
-Section \ref{sec:rollo-convergence} described how reactor designers can use 
-\gls{ROLLO} to determine problem convergence. 
 
 \subsection{Objective: Minimize Total Packing Fraction ($PF_{total}$)}
 \label{sec:plank-1-obj-pf}
