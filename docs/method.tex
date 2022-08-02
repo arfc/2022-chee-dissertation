@@ -47,7 +47,7 @@ channel shapes impacts heat transfer.
 I selected three key \gls{AHTR} optimization objectives that address contrasting reactor 
 core qualities. 
 Table \ref{tab:objectives} describes each objective, how I quantified them, and the motivation.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} \acrfull{AHTR} optimization problem objectives with 
@@ -89,7 +89,7 @@ The main differences occur in the fuel plank region.
 In the \gls{FHR} benchmark, the TRISO particles are arranged in rectangular lattices 
 within two fuel stripes in the fuel plank region, shown in Figure 
 \ref{fig:ahtr-fuel-plank-2}. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\linewidth]{ahtr-fuel-plank.png} 
     \resizebox{0.3\textwidth}{!}{
@@ -130,7 +130,7 @@ of slanted as in Figure \ref{fig:ahtr-fuel-plank} for ease of modeling.
 The one-third assembly optimization uses the original slanted \gls{AHTR} planks. 
 Figure \ref{fig:straightened_plank} illustrates the straightened fuel plank with 
 ten fuel cells with random \gls{TRISO} packing in each cell.
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.85\linewidth]{straightened_plank.png}
     \begin{tikzpicture}
@@ -164,7 +164,7 @@ into a single layer.
 The \gls{TRISO} kernel and outer radius dimensions remain the same.
 Table \ref{tab:keff_triso} reports OpenMC's $k_{eff}$ for the straightened \gls{AHTR} configuration 
 with and without the four outer layers \gls{TRISO} homogenization.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{Straightened \acrfull{AHTR} fuel plank $k_{eff}$ for the case with 
@@ -200,7 +200,7 @@ fuel cells with random \gls{TRISO} packing.
 The one-third assembly model has reflective boundary conditions and  
 uses the \gls{TRISO} particle outer four-layer 
 homogenization described in Section \ref{sec:ahtr-plank-geometry}.
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{.7\textwidth}
     \includegraphics[width=\linewidth]{ahtr_assembly.png}
@@ -248,7 +248,7 @@ nuclear software evaluation orange blocks in Figure
 \ref{fig:genetic_alg_nuclear}'s genetic algorithm flow chart.
 Each \gls{AHTR} modeling workflow models a single reactor model. 
 Figure \ref{fig:ahtr-model-flow} illustrates the \gls{AHTR} modeling workflow. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[node distance=0.5cm]
         \tikzstyle{every node}=[font=\footnotesize]
@@ -347,7 +347,7 @@ $\rho_{TRISO}(\vec{x}) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\righ
 Figure \ref{fig:ahtr-plank-triso-distr} shows this sine distribution, highlights 
 the packing fraction at the respective midpoints, and displays the plank's x-y 
 axis view with the packing fraction varying based on this sine distribution. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.9\linewidth]{triso_distribution_sine.png}
@@ -407,7 +407,7 @@ $\rho_{TRISO}(\vec{x}, \vec{y}) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \c
 distribution shown in Figure \ref{fig:ahtr-assem-triso-distr-squares}, which 
 corresponds to the one-third assembly with varying TRISO distribution in its fuel 
 cells, shown in Figure \ref{fig:ahtr-assem-triso-distr}. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{ahtr-assem-triso-distr-squares.png}
@@ -455,7 +455,7 @@ For the \gls{AHTR} plank, the $r_{top}$ and $r_{bot}$ variables control the cool
 shape on the top and bottom \gls{FLiBe} channels. 
 Figure \ref{fig:coolant-channel-shape} shows the \gls{AHTR} plank's coolant channel 
 shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
         \includegraphics[width=\linewidth]{coolant-channel-shape.png}
     \raggedright
@@ -478,7 +478,7 @@ For the \gls{AHTR} one-third assembly, $r_1, r_2, r_3, r_4, r_5$ variables contr
 coolant channel shape in the inter-plank \gls{FLiBe}. 
 Figure \ref{fig:coolant-channel-shape-assem} shows the \gls{AHTR} one-third assembly's 
 inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1, 0.2, 0.3$.
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{.8\textwidth}
     \includegraphics[width=\linewidth]{coolant-channel-shape-assem.png}
@@ -570,7 +570,7 @@ For both the \gls{AHTR} plank and one-third assembly models, I used eight precur
 groups and a 4-group energy structure derived by Gentry et al. 
 \cite{gentry_development_2016} for \gls{AHTR} geometries. 
 Table \ref{tab:energy_structures} defines the 4-group energy boundaries. 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{4-group energy structures for \acrfull{AHTR} geometry 
@@ -600,7 +600,7 @@ different packing fraction and thus a different material definition).
 Figure \ref{fig:straightened_slab_mg} illustrates the \gls{AHTR} plank's spatial 
 homogenization for the OpenMC multigroup calculation for Moltres group constant 
 generation. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{straightened_slab_mg.png}
     \raggedright
@@ -631,7 +631,7 @@ cells per plank (60).
 Figure \ref{fig:fhr_onethird_assem_homogenization} illustrates the \gls{AHTR} 
 one-third assembly's spatial homogenization for the OpenMC multigroup calculation
 for group constant generation. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{fhr_onethird_assem_homogenization.png}
     \raggedright
@@ -666,7 +666,7 @@ I used Gmsh's \textit{refine by splitting} functionality to refine the mesh.
 Figures \ref{fig:ahtr-plank-geo} and \ref{fig:ahtr-assem-geo} show Gmsh rendered 
 geometry file examples generated by the geometry scripts for the \gls{AHTR} plank 
 and one-third assembly, respectively.
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{ahtr-plank-geo.png}
@@ -722,7 +722,7 @@ I use insulated temperature boundary conditions, which mimics an insulator at th
 boundary.
 Table \ref{tab:ahtr-thermal-conductivity} shows the thermal conductivity values 
 used for each \gls{AHTR} material. 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} materials' thermal conductivities used in Moltres 
@@ -769,7 +769,7 @@ T_{ref} &= \mbox{reference temperature [K]} \nonumber
 
 Table \ref{tab:heat-exchanger-constants} shows reference temperature and heat 
 transfer coefficient values for the convective heat transfer process.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} plank and one-third assembly heat transfer constants.}
@@ -911,7 +911,7 @@ the \gls{AHTR} plank's optimization, conducting verification for one geometry is
 acceptable.  
 Figure \ref{fig:ahtr-plank-verification} shows the \gls{AHTR} plank model with 
 TRISO-level fidelity.
- \begin{figure}[!htb]
+ \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{ahtr-plank-verification.png}
     \raggedright
@@ -941,7 +941,7 @@ homogenization, and the Moltres simulation with 4-group energy and spatial homog
 I included results from the homogenized OpenMC simulation to distinguish between 
 differences caused by spatial homogenization and energy discretization, or differing 
 OpenMC and Moltres solve methods. 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{The \acrfull{AHTR} plank's $k_{eff}$ and reactivity values from the OpenMC 
@@ -988,7 +988,7 @@ I calculated the temperature reactivity coefficients using Equation
 Table \ref{tab:ahtr_plank_moltres_coeffs} also shows that the total temperature 
 coefficients from OpenMC and Moltres have good agreement with a discrepancy of 
 0.23 $pcm \cdot K^{-1}$.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} fuel plank's $\beta_{eff}$ values from OpenMC and Moltres simulations 
@@ -1017,7 +1017,7 @@ important to ensure that Moltres accurately calculates the temperature distribut
 Figure \ref{fig:flux_948K} shows the 4-group spatial flux distributions for OpenMC 
 and Moltres on the \gls{AHTR} plank's x-axis centerline, at the y-axis' 
 midpoint (white line on Figure \ref{fig:ahtr-plank-verification}). 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.48\linewidth]{flux_group1_948K.png} 
     \includegraphics[width=0.48\linewidth]{flux_group2_948K.png} 
@@ -1048,7 +1048,7 @@ between centerline flux values from OpenMC and Moltres models.
     \phi_{moltres} &= \mbox{Moltres model's centerline flux } [n \cdot cm^{-2}s^{-1}] \nonumber \\
     \phi_{openmc} &= \mbox{OpenMC model's centerline flux } [n \cdot cm^{-2}s^{-1}] \nonumber 
 \end{align} 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} plank's centerline normalized 2-norm of flux percentage 
@@ -1084,7 +1084,7 @@ A comparison of the neutron energy spectrum verifies that the Moltres model is
 replicating the OpenMC model's neutronics correctly.
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron energy spectrum of the OpenMC 
 simulation for both 252 and 4 groups and the 4-group Moltres simulation.
- \begin{figure}[!htb]
+ \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{neutron_spectrum_948K.png}
     \caption{\acrfull{AHTR} plank's neutron spectrum. Spectrums include 252 
@@ -1134,7 +1134,7 @@ structure is used for the \gls{AHTR} one-third assembly's optimization, conducti
 verification for one geometry is acceptable.  
 Figure \ref{fig:ahtr-assem-verification} shows the \gls{AHTR} one-third assembly 
 model with TRISO-level fidelity.
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{.7\textwidth}
     \includegraphics[width=\linewidth]{assem-constant-0.0979-verification.png}
@@ -1171,7 +1171,7 @@ and Moltres simulation with 4-group energy and spatial homogenization.
 I included results from a homogenized OpenMC simulation to 
 distinguish between differences caused by spatial homogenization and energy 
 discretization, or differing OpenMC and Moltres solve methods. 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} one-third assembly's $k_{eff}$ values from the OpenMC 
@@ -1217,7 +1217,7 @@ I calculated the temperature reactivity coefficients with Equation
 Table \ref{tab:ahtr_assem_moltres_coeffs} shows that the total temperature 
 coefficients from OpenMC and Moltres have good agreement with a discrepancy of 
 0.2 pcm/K.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} one-third assembly's $\beta_{eff}$ values from OpenMC and Moltres at 948K, and 
@@ -1246,7 +1246,7 @@ important to ensure that Moltres accurately calculates the temperature distribut
 Figure \ref{fig:flux_948K_assem} shows the 4-group flux distributions for OpenMC and 
 Moltres on the \gls{AHTR} one-third assembly's centerline, along the y-axis at 
 the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}). 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.48\linewidth]{flux_group1_948K_assem.png} 
     \includegraphics[width=0.48\linewidth]{flux_group2_948K_assem.png} 
@@ -1267,7 +1267,7 @@ the x-axis' midpoint (white line on Figure \ref{fig:ahtr-assem-verification}).
 Table \ref{tab:ahtr-assem-verification-flux} reports the 2-norm percentage difference 
 (Equation \ref{eq:ahtr-plank-flux-2norm}) and maximum percentage difference between 
 centerline flux values from OpenMC and Moltres models. 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} one-third assembly's centerline 2-norm 
@@ -1304,7 +1304,7 @@ the OpenMC model's neutronics correctly.
 Figure \ref{fig:assem_neutron_spectrum_948K} shows the one-third assembly's neutron 
 spectrum of the OpenMC simulation for 252 and 4 groups and 4-group Moltres 
 simulation. 
- \begin{figure}[!htb]
+ \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{assem_neutron_spectrum_948K.png}
     \caption{\acrfull{AHTR} one-third assembly's neutron spectrum.
@@ -1363,7 +1363,7 @@ The 2-norm calculation is defined by Equation \ref{eq:2-norm-tdiff-i}.
 \end{align} 
 I used 100 discretized points (N) to calculate $||\Delta T_k||_N$ for all refinement 
 steps.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} plank's Moltres temperature model mesh refinement study.}
@@ -1381,7 +1381,7 @@ steps.
         \hline
     \end{tabular}
 \end{table}
-\begin{table}[!htb]
+\begin{table}[!tb]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} one-third assembly's Moltres temperature model mesh 
@@ -1452,7 +1452,7 @@ The centerlines where the temperature (T) is measured in the model for the \gls{
 plank and one-third models are depicted in Figures \ref{fig:ahtr-plank-verification} 
 and \ref{fig:ahtr-assem-verification}, respectively. 
 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} plank's average and maximum temperature and normalized 
@@ -1487,7 +1487,7 @@ The 948K single temperature group constant data has the lowest 2-norm difference
 Thus, I chose to use a 948K in the \gls{AHTR} plank OpenMC neutronics model to 
 generate the group constant data for the Moltres temperature models.
 
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{AHTR} one-third assembly's average and maximum temperature and 
@@ -1561,7 +1561,7 @@ the number of generations:
 \end{align}
 Table \ref{tab:hyperparameter_search} shows the lower and upper bounds used 
 for randomly sampling each hyperparameter at each phase of the hyperparameter search.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{The hyperparameter search is conducted in three phases: \textit{Coarse Search}, 
@@ -1594,7 +1594,7 @@ each other with a third color dimension representing the average $k_{eff}$ value
 ($\overline{k_{eff}}$) in each experiment's final generation. 
 Lighter scatter points indicate higher final population $\overline{k_{eff}}$ values, 
 suggesting better hyperparameter sets. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{hyperparameter_sens.png}} 
     \caption{Coarse \acrfull{ROLLO} hyperparameters search's results. 
@@ -1642,7 +1642,7 @@ hyperparameter values and $a$, $b$, $c$ control variables, final generation
 $k_{eff max}$, and final generation $\overline{k_{eff}}$. 
 The coarse experiments' scatter points are $50\%$ transparent, while the fine 
 experiments' scatter points are opaque. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{input_hyperparameters_sens.png}} 
     \caption{ \acrfull{ROLLO} hyperparameter search results for all 40 experiments 
@@ -1675,7 +1675,7 @@ I define the best-performing hyperparameter set as the experiment that produces
 the highest $\overline{k_{eff}}$ in its final generation. 
 Table \ref{tab:topfive} shows the hyperparameters for the five experiments 
 with the highest final generation $\overline{k_{eff}}$.
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{Control variables, $k_{eff}$ results, and hyperparameter values for 
@@ -1734,7 +1734,7 @@ multi-objective domain (bigger = better).
 Figure \ref{fig:hypervolume-comparison} shows boxplots comparing hypervolumes 
 for various hyperparameters. 
 I ran each simulation 25 times to produce each box plot. 
-\begin{figure}[!htb]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.55\textwidth}
     \makebox[\textwidth][c]{\includegraphics[width=\linewidth]{hypervolume-comparison-gens.png}} 
@@ -1777,7 +1777,7 @@ Based on the box plot comparisons, I selected the combination of hyperparameters
 maximized the hypervolume. 
 Table \ref{tab:multi-obj-hyp} summarizes the hyperparameters I used for \gls{ROLLO} 
 multi-objective optimization.  
-\begin{table}[!htb]
+\begin{table}[htbp]
     \centering
     \onehalfspacing
     \caption{\acrfull{ROLLO} hyperparameters used for multi-objective optimization.}
