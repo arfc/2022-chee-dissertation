@@ -190,9 +190,9 @@
     \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
     \begin{figure}
         \centering
-        \makebox[1.1\textwidth]{\includegraphics[width=0.32\linewidth]{../docs/figures/a-2b-pf-most-minimized.png} 
-        \includegraphics[width=0.32\linewidth]{../docs/figures/a-2b-ppf-most-minimized.png} 
-        \includegraphics[width=0.32\linewidth]{../docs/figures/a-2b-both-most-minimized.png}}
+        \includegraphics[width=0.48\linewidth]{../docs/figures/a-2b-pf-most-minimized.png} 
+        \includegraphics[width=0.48\linewidth]{../docs/figures/a-2b-ppf-most-minimized.png} 
+        \includegraphics[width=0.48\linewidth]{../docs/figures/a-2b-both-most-minimized.png}
         \caption{Simulation a-2b Pareto Front's TRISO Distributions.}
     \end{figure}
     Minimize $PF_{total}$ objective is driven by \textbf{maximizing 
@@ -214,11 +214,12 @@
     \end{figure}
     \end{column}
     \begin{column}{0.3\textwidth}
-        \begin{itemize}
-            \item 6 generations 
-            \item 128 reactor models per gen 
-            \item Total runtime: 1528 Theta node-hours 
-        \end{itemize}
+        I vary $PF_{total}$, \textbf{a, b, c, d, e f} ($\rho_{TRISO}(\vec{x}, \vec{y}$)), 
+        and $r_1, r_2, r_3, r_4, r_5$ (coolant channel shape). \\
+        I minimize all three objectives: $PF_{total}$, $T_{max}$ and $PPF_{fuel}$. \\
+        6 generations \\
+        128 reactor models per gen \\
+        Total runtime: 1528 Theta node-hours 
         \end{column}
 \end{columns}
 \end{frame}
