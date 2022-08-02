@@ -7,11 +7,11 @@
         In this defense, I will show that I successfully: 
         \begin{enumerate}
             \item Furthered our understanding of the \gls{AHTR} design's complexities 
-            through neutronics and thermal-hydraulics modeling
+            through neutronics and temperature modeling
             \item Created an open-source tool that enables reactor generative 
-            design optimization for non-conventional geometries and fuel 
-            distributions with evolutionary algorithms
-            \item Applied the optimization tool to the \gls{AHTR} design 
+            design optimization with evolutionary algorithms
+            \item Applied the optimization tool to the \gls{AHTR} design for 
+            non-conventional geometries and fuel distributions 
         \end{enumerate}
     \end{frame}
 
@@ -32,7 +32,7 @@
             \hspace{1cm}
             \includegraphics[height=3cm]{figures/vhtr}
             \caption{Left: Molten Salt Reactor System, Right: Very High-Temperature
-            Reactor System \cite{gif_technology_2002}. }
+            Reactor System \cite{gen_iv_international_forum_technology_2014}. }
         \end{figure}
         \end{itemize}
     \end{frame}
@@ -74,7 +74,7 @@
         \centering
         \includegraphics[width=0.5\linewidth]{../docs/figures/reactor-schematic.png} 
         \caption{\acrfull{AHTR} schematic (left) and vessel (right) reproduced from
-        \cite{noauthor_fluoride_nodate}.}
+        \cite{petrovic_benchmark_2021}.}
     \end{figure}
     \end{frame}
     \begin{frame}
@@ -98,8 +98,8 @@
     The AHTR fuel has a \emph{triple heterogeneity}: hexagonal fuel elements with 
     fuel planks, and TRISO particles embedded in stripes within each plank.
     \begin{figure}[]
-        \includegraphics[width=0.49\linewidth]{../docs/figures/ahtr-fuel-element.png} 
-        \includegraphics[width=0.49\linewidth]{figures/ahtr-plank.png}
+        \includegraphics[width=0.45\linewidth]{../docs/figures/ahtr-fuel-element.png} 
+        \includegraphics[width=0.45\linewidth]{figures/ahtr-plank.png}
         \caption{AHTR fuel assembly with 18 fuel plates arranged in 
         three diamond-shaped sectors, with a central Y-shaped and external channel 
         graphite structure.}
@@ -157,8 +157,9 @@
             \item Wide-spread adoption of additive manufacturing methods in the nuclear industry 
             could drastically reduce reactor fabrication costs and deployment timelines 
             and improve reactor safety
-            \item Fully benefitting from the new ability to 3D print reactor components 
-            requires further research into reactor generative design optimization
+            \item Due to the expansion of the potential design space facilitated through 
+            additive manufacturing, reactor designers need to find methods, such as 
+            generative design, to explore the design space efficiently
           \end{itemize}
     \end{block}
   \end{frame}
@@ -166,7 +167,7 @@
   \begin{frame}
     \frametitle{Generative Reactor Design Optimization}
     Generative design is an \textbf{iterative design exploration process} \cite{autodesk_autodesk_2020}. 
-    Designers input design goals and constraints into the generative design software. 
+    Designers provide design goals and constraints into the generative design software. 
     The software explores all the possible permutations of a solution, quickly generating 
     design alternatives. 
     It tests and learns from each iteration what works and what doesn't.
@@ -236,8 +237,9 @@
     \begin{block}{Research Objectives: AHTR Model Development}
         \begin{itemize}
             \item Participate in the OECD-NEA's FHR Benchmark to further our understanding 
-            of the AHTR design's complexities through neutronics modeling
-            \item AHTR temperature model
+            of the AHTR design's complexities through neutronics modeling with 
+            OpenMC \cite{romano_openmc:_2015}
+            \item AHTR Moltres \cite{lindsay_moltres_2017} temperature model
         \end{itemize}
     \end{block}
 
