@@ -1237,7 +1237,7 @@ a packing fraction standard deviation of $0.018$ across the one-third assembly.
 Along the y-axis, the distribution peaks at the 2nd, 3rd, 5th, and 6th rows 
 (at 6.8cm, 10.0cm, 16.5cm, and 19.8cm) with $PF\approx0.07$ and has minimum points at 
 the 1st and 4th rows (at 3.5cm and 13.3cm) with $PF\approx0.03$. 
-Section \ref{sec:assem-discussion-multi} discusses and explains simulation a-2a's 
+Section \ref{sec:assem-discussion-double} discusses and explains simulation a-2a's 
 results.
 
 \subsection{a-2b: Minimize $PF_{total}$ and $PPF_{fuel}$}
@@ -1387,7 +1387,7 @@ The 4th and 6th rows have the largest x-axis variation of ${\sim}0.024$ with pea
 $PF\approx0.08$. 
 The 5th row has the smallest x-axis variation of ${\sim}0.015$ with minimums of 
 $PF\approx0.035$. 
-Sections \ref{sec:assem-discussion-multi} discusses and explains simulation a-2b's 
+Sections \ref{sec:assem-discussion-double} discusses and explains simulation a-2b's 
 results.
 
 \subsection{a-2c: Minimize $T_{max}$ and $PPF_{fuel}$}
@@ -1470,8 +1470,7 @@ TRISO packing fraction distribution and geometry.
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.7\linewidth]{a-2c-most-minimized.png}
-        \caption{TRISO distribution for the 1 reactor model on the Pareto front.
-        Numbered reactor models correspond to numbered crosses in the plot above. }
+        \caption{TRISO distribution for the 1 reactor model on the Pareto front. }
         \label{fig:assem-obj-2-tempppf-pareto-distr} 
     \end{subfigure}
     \begin{subfigure}{\textwidth}
@@ -1498,7 +1497,7 @@ across the one-third assembly.
 Along the y-axis, the distribution peaks at the odd rows (at 3.5cm, 10.0cm, and 16.5cm) 
 with $PF\approx0.06$ and has minimum points at the even rows (at 6.8cm, 13.3cm, and 
 19.8cm) with $PF\approx0.055$.
-Section \ref{sec:assem-discussion-multi} discusses and explains simulation a-2c's 
+Section \ref{sec:assem-discussion-double} discusses and explains simulation a-2c's 
 results.
 
 \subsection{Double-Objective Optimization Discussion}
@@ -1574,10 +1573,9 @@ from both objectives.
 The \gls{TRISO} distributions on simulation a-2a's Pareto front in Figure 
 \ref{fig:assem-obj-2-pftemp} minimize both $PF_{total}$ and $T_{max}$ and vary
 between the two extreme cases: most-minimized $PF_{total}$ and most-minimized $T_{max}$. 
-The minimize $T_{max}$ objective influences the TRISO distribution's flatness, as 
-described in Section \ref{sec:assem-discussion-temp}, while 
-the minimize $PF_{total}$ objective influences the oscillating pattern, as described 
-in Section \ref{sec:assem-discussion-pf}.
+The minimize $T_{max}$ objective influences the TRISO distribution's flatness, while 
+the minimize $PF_{total}$ objective influences the oscillating pattern.
+Section \ref{sec:assem-discussion-single} described both influences in detail. 
 
 \subsubsection{Simulation a-2b}
 % compare reactor models 1,3,5's fission reaction rate and thermal flux flattness
