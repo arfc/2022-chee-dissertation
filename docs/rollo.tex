@@ -230,7 +230,7 @@ Finally, the constraints are applied, and the results are saved.
 Applying the selection operator to the combined previous and offspring 
 populations expands the population, ensuring the effectiveness of 
 elitism selection operators, such as NSGA-II, which work well 
-for multiobjective optimization. 
+for multi-objective optimization. 
 
 \section{ROLLO Input File}
 \label{sec:rollo-input-file}
@@ -753,7 +753,7 @@ the genetic algorithm's third generation will be named:
 \section{ROLLO Verification}
 \label{sec:rollo-verification}
 I conducted multiple verification studies to verify \gls{ROLLO}'s optimization capabilities: 
-commonly used evolutionary algorithm single and multiobjective benchmark problems and 
+commonly used evolutionary algorithm single and multi-objective benchmark problems and 
 a nuclear reactor-specific problem. 
 They prove that \gls{ROLLO}'s evolutionary algorithm is both correctly implemented 
 and suitable for conducting nuclear reactor optimization problems. 
@@ -816,7 +816,7 @@ Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto fron
 \end{figure}
 I use the hypervolume indicator to quantify the Pareto front's quality. 
 The hypervolume indicator is the most used set-quality indicator for assessing 
-stochastic multiobjective optimizers \cite{guerreiro_hypervolume_2020}.
+stochastic multi-objective optimizers \cite{guerreiro_hypervolume_2020}.
 The hypervolume indicator measures the volume (in the objective space) covered by 
 non-dominated solutions for problems in which all objectives are to be 
 minimized \cite{deb_multi-objective_2001}.  
@@ -979,7 +979,7 @@ if convergence is met.
 Instead, ROLLO's purpose is to help the human reactor designer narrow down the design 
 space. 
 When a ROLLO run completes, the user plots the objectives' convergence and 
-Pareto front (for multiobjective simulations) to evaluate if they are confident 
+Pareto front (for multi-objective simulations) to evaluate if they are confident 
 about the final solution set. 
 Section \ref{sec:opt} described that an ideal optimization method for a 
 multi-objective problem like reactor design should find widely spread solutions 
