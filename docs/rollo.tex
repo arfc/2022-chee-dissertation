@@ -788,8 +788,15 @@ function's many local minimums.
 
 \subsection{Binh and Korn Function}
 \label{sec:binhandkorn}
-The Binh and Korn function \cite{binh_mobes_1997} is a two-objective function:
+The Binh and Korn function \cite{binh_mobes_1997}, shown in Equation 
+\ref{eq:binhandkorn}, is a two-objective function with a widely spread out Pareto 
+front. 
+An effective multi-objective optimization algorithm should successfully find widely 
+spread solutions in the obtained Pareto front \cite{deb_multi-objective_2001}, 
+thus, I used the Binh and Korn function as a performance test for \gls{ROLLO}'s 
+multi-objective optimization capabilities.
 \begin{align}
+    \label{eq:binhandkorn}
     \mbox{Minimize} &= \begin{cases}
         f_1 (x_1,x_2) &= 4x_1^2+4x_2^2 \\
         f_2 (x_1,x_2) &= (x_1-5)^2 + (x_2-5)^2 
@@ -799,8 +806,6 @@ The Binh and Korn function \cite{binh_mobes_1997} is a two-objective function:
         0 \leq x_1 \leq 5, 0 \leq x_2 \leq 3 \nonumber
     \end{cases}
 \end{align}
-We use it as a performance test for multiobjective optimization.
-% todo: why is this a good problem? what makes it a good evaluator. 
 Figure \ref{fig:binh_paretofront} shows the Binh and Korn function's Pareto front.
 \begin{figure}[htbp]
     \centering
