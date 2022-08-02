@@ -1083,8 +1083,15 @@ multi-objective optimization problems in this section and Section
 \ref{sec:assem-three-obj}. 
 Several optimal solutions will be highlighted in the Pareto front figures. 
 
-To ensure that the multi-objective optimization problems are converged, I report the 
-hypervolume values for each generation. 
+For a single generation with 128 reactor models, OpenMC and Moltres software must be 
+run for each reactor model, resulting in high computational cost. 
+For each optimization simulation, I must balance convergence and computational cost.
+\gls{ROLLO}'s purpose is to help the human reactor designer narrow down reactor design 
+the search space, therefore, the reactor designer uses the computational 
+power available to them, to narrow down the search space as much as possible. 
+Section \ref{sec:rollo-convergence} described that the reactor designer should 
+plot the Pareto front and observe the hypervolume values to evaluate if they are 
+confident about the final solution set.  
 As previously described in Section \ref{sec:binhandkorn}, the hypervolume indicator 
 quantifies the Pareto front's goodness (bigger = better).
 The hypervolume is calculated by finding the volume between the reference point and 
@@ -1096,17 +1103,6 @@ and do not compare them across different optimization simulations.
 The hypervolume is converging if the difference between generations' hypervolume values 
 is getting smaller. 
 
-For a single generation with 128 reactor models, OpenMC and Moltres software must be 
-run for each reactor model, resulting in high computational cost. 
-For each optimization simulation, I must balance convergence and computational cost.
-\gls{ROLLO}'s purpose is to help the human reactor designer narrow down reactor design 
-the search space, therefore, the reactor designer uses the computational 
-power available to them, to narrow down the search space as much as possible. 
-Section \ref{sec:rollo-convergence} described that the reactor designer should 
-plot the Pareto front and observe the hypervolume values to evaluate if they are 
-confident about the final solution set.  
-Thus, I determine if convergence criteria is met by evaluating if the difference 
-between generations' hypervolume values are getting smaller. 
 If a multi-objective optimization problem's hypervolume converges earlier than the 
 five generations I intended to run (determined in Section 
 \ref{sec:multi-obj-hyperparameters}), I stop the simulation at that generation. 
