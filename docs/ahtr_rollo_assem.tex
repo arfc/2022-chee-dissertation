@@ -1386,7 +1386,8 @@ results.
 This section reports results from the double-objective optimization simulation a-2c; 
 minimized objectives are maximum temperature ($T_{max}$) and fuel-normalized power 
 peaking factor ($PPF_{fuel}$) in the one-third assembly.  
-Table \ref{tab:simulationa2c} summarizes simulation a-2c's optimization problem parameters. 
+Table \ref{tab:simulationa2c} summarizes simulation a-2c's optimization problem 
+parameters. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -1435,13 +1436,10 @@ confirming that simulation a-2c converges by generation 2.
 \end{table}
 
 Figure \ref{fig:assem-obj-2-tempppf-pareto} shows a plot of the final generation's 
-reactor models' $T_{max}$ against $PPF_{fuel}$; crosses mark the reactor models 
-that fall on the Pareto front.
-% todo: comment on the shape of this pareto front. is it even a front? 
-Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} shows the one TRISO packing fraction 
-distribution in the final generation that falls on the Pareto front. 
-Figure \ref{fig:assem-obj-2-tempppf-min-tempppf} illustrates the one \gls{AHTR} one-third 
-assembly model on the Pareto front. 
+reactor models' $T_{max}$ against $PPF_{fuel}$; crosses mark the optimal reactor model.
+Figures \ref{fig:assem-obj-2-tempppf-pareto-distr} and 
+\ref{fig:assem-obj-2-tempppf-min-tempppf} show the optimal reactor model's 
+TRISO packing fraction distribution and geometry. 
 \begin{figure}[htbp!]
     \centering
     \begin{subfigure}{\textwidth}
@@ -1481,8 +1479,8 @@ assembly model on the Pareto front.
 \end{figure}
 
 Figure \ref{fig:assem-obj-2-tempppf-pareto} shows that minimize $T_{max}$ and minimize 
-$PPF_{fuel}$ are non-competing objectives, resulting in a single reactor model on the 
-Pareto Front. 
+$PPF_{fuel}$ are non-competing objectives, resulting in a single optimal reactor 
+model. 
 Figure \ref{fig:assem-obj-2-tempppf-pareto-distr} shows the TRISO distribution that best 
 minimizes both $T_{max}$ and $PPF_{fuel}$. 
 The reactor model has a TRISO distribution that oscillates along the y-axis and 
@@ -1491,7 +1489,7 @@ across the one-third assembly.
 Along the y-axis, the distribution peaks at the odd rows (at 3.5cm, 10.0cm, and 16.5cm) 
 with $PF\approx0.06$ and has minimum points at the even rows (at 6.8cm, 13.3cm, and 
 19.8cm) with $PF\approx0.055$.
-Sections \ref{sec:assem-discussion-multi} discusses and explains simulation a-2c's 
+Section \ref{sec:assem-discussion-multi} discusses and explains simulation a-2c's 
 results.
 
 \subsection{Double-Objective Optimization Discussion}
@@ -1760,8 +1758,8 @@ The driving factors and influences from each objective come together in
 the a-2a and a-2b double-objective optimization simulations to give widely spread out
 optimal reactor models on their Pareto fronts. 
 Simulation a-2c demonstrated that at $PF_{total}=0.06$, minimize $T_{max}$ and 
-minimize $PPF_{fuel}$ are non-competing objectives, resulting in a single reactor 
-model on the Pareto Front. 
+minimize $PPF_{fuel}$ are non-competing objectives, resulting in a single optimal 
+reactor model. 
 In the double-objective optimization simulations, the minimize $T_{max}$ objective 
 continued to influence the flattening of the TRISO distribution. 
 The results from simulation a-2b suggests that the minimize $PF_{total}$ 
