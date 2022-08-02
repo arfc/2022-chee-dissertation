@@ -148,11 +148,12 @@
             \caption{Plot of $T_{max}$ against $r_5$.}
             \label{fig:a-1e-r5} 
         \end{subfigure}
+        \begin{subfigure}{0.3\textwidth}
+            The FliBe channels located closest to temperature peaks shows a negative 
+            correlation with $T_{max}$.
+        \end{subfigure}
         \caption{Simulation a-1e.}
     \end{figure}
-    
-    \textbf{The FliBe channels located closest to temperature peaks shows a negative 
-    correlation with $T_{max}$.}
 \end{frame}
 
 \begin{frame}
@@ -160,7 +161,7 @@
     I vary $PF_{total}$ and \textbf{a, b, c, d, e f} ($\rho_{TRISO}(\vec{x}, \vec{y}$)
     input parameters to minimize $PF_{total}$ and $PPF_{fuel}$. 
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto.png} 
+        \includegraphics[width=0.7\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto.png} 
         \caption{Simulation a-2b Pareto Front.}
     \end{figure}
 \end{frame}
@@ -170,9 +171,24 @@
     I vary $PF_{total}$ and \textbf{a, b, c, d, e f} ($\rho_{TRISO}(\vec{x}, \vec{y}$)
     input parameters to minimize $PF_{total}$ and $PPF_{fuel}$. 
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto-distr.png} 
+        \includegraphics[width=0.75\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto-distr.png} 
         \caption{Simulation a-2b Pareto Front's TRISO Distributions.}
     \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
+    \begin{figure}
+        \includegraphics[width=0.3\linewidth]{../docs/figures/a-2b-pf-most-minimized.png} 
+        \includegraphics[width=0.3\linewidth]{../docs/figures/a-2b-ppf-most-minimized.png} 
+        \includegraphics[width=0.3\linewidth]{../docs/figures/a-2b-both-most-minimized.png} 
+        \caption{Simulation a-2b Pareto Front's TRISO Distributions.}
+    \end{figure}
+    Minimize $PF_{total}$ objective is driven by \textbf{maximizing the 
+    total fission reaction rate}. 
+    
+    Minimize $PPF_{fuel}$ objective is driven by \textbf{flattening the 
+    thermal flux distribution}.
 \end{frame}
 
 \begin{frame}
