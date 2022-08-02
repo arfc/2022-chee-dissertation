@@ -62,37 +62,37 @@
 
 % show a single obj workflow first and then full workflow.. step through it. 
 \begin{frame}
-    \frametitle{AHTR Modeling Workflow}
+    \frametitle{ROLLO AHTR Optimization Workflow}
     \begin{figure}
         \includegraphics[width=0.95\linewidth]{figures/ahtr-modeling-workflow.png} 
         \caption{AHTR Modeling Workflow.}
     \end{figure}
 \end{frame}
 
-\subsection{AHTR Plank Optimization Results}
+%\subsection{AHTR Plank Optimization Results}
 
-\begin{frame}
-    \frametitle{AHTR Plank Optimization Simulations}
-    \begin{figure}
-        \includegraphics[width=0.95\linewidth]{figures/ahtr-plank-opt-table.png} 
-        \caption{simulations.}
-    \end{figure}
-\end{frame}
+%\begin{frame}
+%    \frametitle{AHTR Plank Optimization Simulations}
+%    \begin{figure}
+%        \includegraphics[width=0.95\linewidth]{figures/ahtr-plank-opt-table.png} 
+%        \caption{ROLLO simulations for optimizing the AHTR plank.}
+%    \end{figure}
+%\end{frame}
 
-\begin{frame}
-    \frametitle{AHTR Plank Optimization Simulations: Major Takeaways}
-    \begin{itemize}
-        \item Minimize $T_{max}$ objective is driven by minimizing plank's maximum 
-        temperature and, flattens TRISO distribution and maximizes coolant channel 
-        shape's $r_{top}$ and $r_{bot}$ to achieve the objective
-        \item Minimize $PF_{total}$ objective is driven by maximizing the plank's 
-        total fission reaction rate and influences the TRISO disribution to achieve 
-        the objective
-        \item Minimize $PPF_{fuel}$ objective is driven by flattening the plank's 
-        thermal flux distribution and influences $PF_{total}$ and TRISO disribution to 
-        achieve the objective
-    \end{itemize}
-\end{frame}
+%\begin{frame}
+%    \frametitle{AHTR Plank Optimization Simulations: Major Takeaways}
+%    \begin{itemize}
+%        \item Minimize $T_{max}$ objective is driven by minimizing plank's maximum 
+%        temperature and, flattens TRISO distribution and maximizes coolant channel 
+%        shape's $r_{top}$ and $r_{bot}$ to achieve the objective
+%        \item Minimize $PF_{total}$ objective is driven by maximizing the plank's 
+%       total fission reaction rate and influences the TRISO disribution to achieve 
+%        the objective
+%        \item Minimize $PPF_{fuel}$ objective is driven by flattening the plank's 
+%        thermal flux distribution and influences $PF_{total}$ and TRISO disribution to 
+%        achieve the objective
+%    \end{itemize}
+%\end{frame}
 
 % highlight which one i'm going to deep dive on 
 \subsection{AHTR One-Third Assembly Optimization Results}
@@ -100,9 +100,15 @@
     \frametitle{AHTR One-Third Assembly Optimization Simulations}
     \begin{figure}
         \includegraphics[width=0.9\linewidth]{figures/ahtr-assem-opt-table.png} 
-        \caption{simulations.}
+        \caption{ROLLO simulations for optimizing the AHTR one-third assembly.}
     \end{figure}
 \end{frame}
+
+\begin{frame}
+    \frametitle{AHTR One-Third Assembly Simulation a-1b Results}
+    I vary \textbf{a, b, c, d, e f} 
+\end{frame}
+
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
@@ -111,6 +117,15 @@
         \caption{Simulation a-3b: Plot of final generation's reactor models' 
         $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$ as a color dimension. 
         Crosses indicate the reactor models on the Pareto front.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
+    \begin{figure}
+        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr.png} 
+        \caption{TRISO distributions for the 12 reactor models on simulation 
+        a-3b's Pareto front.}
     \end{figure}
 \end{frame}
 
