@@ -225,15 +225,31 @@ assembly model with the most-minimized $PF_{total}$.
 \end{figure}
 \begin{figure}[htbp!]
     \ContinuedFloat
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{.8\textwidth}
         \centering
-        \includegraphics[width=0.7\linewidth]{assem-obj-1-pf-most-minimized.png}
+        \includegraphics[width=\linewidth]{assem-obj-1-pf-most-minimized.png}
         \caption{\gls{AHTR} one-third assembly model with the most-minimized 
         $PF_{total}$, corresponding to the top left TRISO distribution in Figure 
         \ref{fig:assem-obj-1-pf-final}. The reactor model has $PF_{total}=0.0559$
         and $k_{eff}=1.3802$.}
-        \label{fig:assem-obj-1-pf-most-minimized} 
     \end{subfigure}
+    \begin{subfigure}{.2\textwidth}
+        \begin{tikzpicture}
+            \draw[ thick,-latex] (0,0) -- (1,0) node[anchor=south west] {$x$};
+            \draw[ thick,-latex] (0,0) -- (0,1) node[anchor=south west] {$y$};
+            \draw[ thick,-latex] (0,0) -- (1,1) node[anchor=south west] {$z$};
+            \tkzText[above](-0.3,-0.7){}
+        \end{tikzpicture} 
+        \vspace{1cm}
+        \resizebox{1.2\textwidth}{!}{
+        \fbox{\begin{tabular}{ll}
+            \textcolor{fhrblue}{$\blacksquare$} & \gls{FLiBe} \\
+            \textcolor{fhrgrey}{$\blacksquare$} & Graphite (structure)\\
+            \textcolor{fhrred}{$\blacksquare$} & Graphite (fuel plank) \\
+            \textcolor{fhrblack}{$\blacksquare$} & TRISO particle 
+            \end{tabular}}}
+    \end{subfigure}
+    \label{fig:assem-obj-1-pf-most-minimized} 
     \caption{(contd.) Simulation a-1a -- ROLLO single-objective optimization to minimize total 
     fuel packing fraction ($PF_{total}$) in \gls{AHTR} one-third assembly. 
     Input parameters varied: total fuel packing fraction 
