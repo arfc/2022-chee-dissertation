@@ -2030,7 +2030,6 @@ Simulation a-3b ran for 1528 node-hours on the Theta supercomputer with 6
 generations and 128 reactor models per generation, which is five times the compute 
 time per single-objective simulation, and larger than the compute time per 
 two-objective simulation, as reported in Table \ref{tab:assem-compute-cost}. 
-
 Table \ref{tab:simulationa3b} summarizes simulation a-3b's optimization problem parameters. 
 \begin{table}[htbp!]
     \centering
@@ -2527,9 +2526,8 @@ generations.
 Appendix B begins this preliminary future work. 
 
 \subsection{Triple-Objective Optimization Major Takeaways}
-All the driving factors and influences from each objective come together in 
-each triple-objective optimization simulation to give a set of optimal reactor models 
-on a Pareto front. 
+The triple-objective optimization simulations successfully found a wide spread of 
+reactor models on their Pareto fronts that meet each objective to varying degrees. 
 Simulation a-3b's multi-objective optimization shows the result of minimizing all 
 three objectives (minimize $PF_{total}$, $T_{max}$, and $PPF_{fuel}$) while varying 
 all the input parameters ($PF_{total}$, TRISO distribution, and coolant channel shape).
@@ -2550,12 +2548,11 @@ Computing Facility under the Director's Discretionary Allocation Program
 \cite{noauthor_thetathetagpu_2022}. 
 Each Theta compute node has 64 processor cores with a nominal clock speed of 
 1.5GHz \cite{noauthor_thetathetagpu_2022}.  
-
 Each optimization simulation takes a different amount of node-hours due to 
 differences in simulation software, tallies, and intermediate steps required. 
 Table \ref{tab:assem-compute-cost} reports the computational cost for each optimization 
 simulation. 
-Table \ref{tab:assem-obj-breakdown} detailed the simulation parameters.
+One may refer to Table \ref{tab:assem-obj-breakdown} for each simulation's parameters.
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -2602,10 +2599,9 @@ objectives: $PF_{total}$, maximum temperature ($T_{max}$), and fuel-normalized p
 peaking factor ($PPF_{fuel}$) in the one-third assembly. 
 
 In Section \ref{sec:assem-one-obj}'s single-objective optimization simulations: 
-a-1a, a-1b, a-1c, a-1d, a-1e, a-1f; and Sections \ref{sec:assem-discussion-pf}, 
-\ref{sec:assem-discussion-temp}, and \ref{sec:assem-discussion-ppf} discussions,    
-I verified that each of the one-third assembly objective follows the same driving 
-factors as the \gls{AHTR} plank optimization objectives (Chapter 
+a-1a, a-1b, a-1c, a-1d, a-1e, a-1f; and Section \ref{sec:assem-discussion-single}'s
+discussions, I verified that each of the one-third assembly objective follows the 
+same driving factors as the \gls{AHTR} plank optimization objectives (Chapter 
 \ref{chap:ahtr-plank-opt-results}) and described each objective's relationship with 
 each input parameter. 
 I determined that \gls{ROLLO} flattens TRISO distribution and maximizes the coolant 
@@ -2624,15 +2620,16 @@ not have as high of an impact on $T_{max}$ as \gls{TRISO} distribution variation
 
 In Sections \ref{sec:assem-two-obj} and \ref{sec:assem-three-obj}'s multi-objective 
 optimization simulations: a-2a, a-2b, a-2c, a-3a, a-3b; and the accompanying 
-discussion in Section \ref{sec:assem-discussion-multi}, I further 
-analyzed how the objectives' combined effects resulted in the optimal reactor models 
-found by each multi-objective optimization simulation. 
+discussions in Section \ref{sec:assem-discussion-double} and 
+\ref{sec:assem-discussion-triple}, I further analyzed how the objectives' combined 
+effects resulted in the optimal reactor models found by each multi-objective 
+optimization simulation. 
 The multi-objective optimization simulations successfully found a wide spread of 
 reactor models on their Pareto fronts that meet each objective to varying degrees. 
 In the multi-objective optimization simulations, the minimize $T_{max}$ objective 
 continued to influence the flattening of the TRISO distribution and maximizing of 
-the coolant channel shape's radius values ($r_1, r_2, r_3, r_4, r_5$) that are close 
-to the reactor model's temperature peak. 
+the coolant channel shape's radius values ($r_1, r_2, r_3, r_4, r_5$) that are located 
+close to the reactor model's temperature peak. 
 Simulation a-2b results suggested that the minimize $PF_{total}$ 
 objective's driving factor maximize total fission reaction rate and 
 minimize $PPF_{fuel}$ objective's driving factor flattening thermal flux distribution 
