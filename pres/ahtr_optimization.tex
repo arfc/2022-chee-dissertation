@@ -201,7 +201,7 @@
     total fission reaction rate}. \\
     Minimize $PPF_{fuel}$ objective is driven by \textbf{flattening 
     thermal flux distribution}. 
-    
+
     \begin{figure}
         \centering
         \includegraphics[width=0.37\linewidth]{../docs/figures/a-2b-pf-most-minimized.png} 
@@ -209,6 +209,8 @@
         \includegraphics[width=0.37\linewidth]{../docs/figures/a-2b-both-most-minimized.png}
         \caption{Simulation a-2b Pareto Front's TRISO Distributions.}
     \end{figure}
+    \vspace{-0.2cm}
+    Minimize $PF_{total}$ and Minimize $PPF_{fuel}$ objectives \textbf{influence TRISO distribution}. 
 \end{frame}
 
 \begin{frame}
@@ -240,21 +242,22 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr.png} 
+        \only<1>{\includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr.png}}
+        \only<2>{\includegraphics[width=0.8\linewidth]{figures/assem-obj-3-all-distr-annotated.png}}  
         \caption{TRISO distributions for the 12 reactor models on simulation 
         a-3b's Pareto front.}
     \end{figure}
 \end{frame}
 
-\begin{frame}
-    \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
-    \begin{figure}
-        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr-most-minimized.png} 
-        \caption{Simulation a-3b: Plot of final generation's reactor models' 
-        $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$ as a color dimension. 
-        Crosses indicate the reactor models on the Pareto front.}
-    \end{figure}
-\end{frame}
+%\begin{frame}
+%    \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
+%    \begin{figure}
+%        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr-most-minimized.png} 
+%        \caption{Simulation a-3b: Plot of final generation's reactor models' 
+%        $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$ as a color dimension. 
+%        Crosses indicate the reactor models on the Pareto front.}
+%    \end{figure}
+%\end{frame}
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
