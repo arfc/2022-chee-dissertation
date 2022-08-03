@@ -100,7 +100,7 @@
             \caption{Reactivity coefficients comparison.}
             \includegraphics[width=0.85\linewidth]{figures/benchmark-coeff.png}
         \end{table}
-        Good agreement for Moltres' delayed neutron fraction ($\beta_{eff}$) and 
+        \textbf{Good agreement} for Moltres' delayed neutron fraction ($\beta_{eff}$) and 
         temperature reactivity feedback ($\frac{\Delta \rho}{\Delta T}$)
 \end{frame}
 
@@ -126,11 +126,26 @@
 
 \begin{frame}
     \frametitle{Key Neutronics Parameter Verification Summary}
-    Key findings 
+    OpenMC vs Moltres models key observations 
     \begin{itemize}
-        \item Verification study found a 216 pcm reactivity diff between OpenMC and Moltres 
-        models and good agreement in their reactivity coeffcients and 4-group neutron 
-        energy spectrum
+        \item 216 pcm reactivity diff 
+        \item good agreement in reactivity coeffcients and 4-group neutron energy spectrum
+        \item good agreement in overall flux distributions and larger 
+        flux differences at specific points.
+    \end{itemize}
+    Takeaways 
+    \begin{itemize}
+        \item Differences in reactivity and flux at specific points might result in 
+        slightly inaccurate temperatures at certain points.
+        \item However, since the reactivity coefficients and overall flux distribution 
+        are in agreement, OpenMC's group constants are sufficient to use to calculate
+        and gain an overall perspective of the temperature distribution in the AHTR 
+        model.
+    \end{itemize}
+    Methodology 
+    \begin{itemize}
+        \item I use this same Moltres model verification method for the optimized 
+        AHTR designs
     \end{itemize}
 \end{frame}
 
