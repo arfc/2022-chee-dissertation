@@ -87,8 +87,9 @@
 \begin{frame}
     \frametitle{AHTR Temp Model $k_{eff}$ and Reactivity Coefficients Verification}
         \begin{table}
-            \caption{ $k_{eff}$ comparison.}
-            \includegraphics[width=0.85\linewidth]{figures/benchmark-keff.png}
+            \caption{$k_{eff}$ and reactivity comparison.}
+            \vspace{-0.5cm}
+            \includegraphics[width=0.9\linewidth]{figures/benchmark-keff.png}
         \end{table}
         The 13pcm $k_{eff}$ and 6pcm reactivity diff, between
         continuous and homogenized OpenMC simulations are within uncertainty, showing 
@@ -106,11 +107,22 @@
 
 \begin{frame}
     \frametitle{AHTR Temp Model Flux Verification}
+    \begin{columns}
+    \begin{column}{0.8\textwidth}
     \begin{figure}[]
         \centering
         \includegraphics[width=0.8\linewidth]{figures/benchmark-flux.png} 
         \caption{4-group flux distribution comparison.}
     \end{figure}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+        \begin{figure}[]
+            \centering
+            \includegraphics[width=0.8\linewidth]{figures/benchmark-flux-table.png} 
+            \caption{4-group flux distribution comparison.}
+        \end{figure}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -120,8 +132,7 @@
                 \includegraphics[width=0.75\linewidth]{figures/benchmark-spectrum.png} 
                 \caption{Neutron Energy Spectrum Comparison.}
             \end{figure}
-        Moltres replicated the relevant neutronics parameters with sufficient accuracy
-        using OpenMC's group constant data for the AHTR full assembly model.
+        \textbf{Good agreement} between OpenMC and Moltres models 4-group spectrums.
 \end{frame}
 
 \begin{frame}
