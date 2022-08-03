@@ -90,12 +90,12 @@
             \caption{ $k_{eff}$ comparison.}
             \includegraphics[width=0.85\linewidth]{figures/benchmark-keff.png}
         \end{table}
-        The 13pcm $k_{eff}$ and 6pcm reactivity difference, between
+        The 13pcm $k_{eff}$ and 6pcm reactivity diff, between
         continuous and homogenized OpenMC simulations are within uncertainty, showing 
         that \textbf{selected spatial homogenizations and energy discretizations are 
         acceptable.}
-        The Moltres simulation shows a 423pcm difference in $k_{eff}$ and 216pcm 
-        difference in reactivity.
+        The Moltres simulation shows a 423pcm diff in $k_{eff}$ and 216pcm 
+        diff in reactivity.
         \begin{table}
             \caption{Reactivity coefficients comparison.}
             \includegraphics[width=0.85\linewidth]{figures/benchmark-coeff.png}
@@ -122,6 +122,16 @@
             \end{figure}
         Moltres replicated the relevant neutronics parameters with sufficient accuracy
         using OpenMC's group constant data for the AHTR full assembly model.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Key Neutronics Parameter Verification Summary}
+    Key findings 
+    \begin{itemize}
+        \item Verification study found a 216 pcm reactivity diff between OpenMC and Moltres 
+        models and good agreement in their reactivity coeffcients and 4-group neutron 
+        energy spectrum
+    \end{itemize}
 \end{frame}
 
 \subsection{AHTR Temperature Model Results}
