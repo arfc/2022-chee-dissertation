@@ -70,31 +70,6 @@
     \end{figure}
 \end{frame}
 
-%\subsection{AHTR Plank Optimization Results}
-
-%\begin{frame}
-%    \frametitle{AHTR Plank Optimization Simulations}
-%    \begin{figure}
-%        \includegraphics[width=0.95\linewidth]{figures/ahtr-plank-opt-table.png} 
-%        \caption{ROLLO simulations for optimizing the AHTR plank.}
-%    \end{figure}
-%\end{frame}
-
-%\begin{frame}
-%    \frametitle{AHTR Plank Optimization Simulations: Major Takeaways}
-%    \begin{itemize}
-%        \item Minimize $T_{max}$ objective is driven by minimizing plank's maximum 
-%        temperature and, flattens TRISO distribution and maximizes coolant channel 
-%        shape's $r_{top}$ and $r_{bot}$ to achieve the objective
-%        \item Minimize $PF_{total}$ objective is driven by maximizing the plank's 
-%       total fission reaction rate and influences the TRISO disribution to achieve 
-%        the objective
-%        \item Minimize $PPF_{fuel}$ objective is driven by flattening the plank's 
-%        thermal flux distribution and influences $PF_{total}$ and TRISO disribution to 
-%        achieve the objective
-%    \end{itemize}
-%\end{frame}
-
 % highlight which one i'm going to deep dive on 
 \subsection{AHTR One-Third Assembly Optimization Results}
 \begin{frame}
@@ -288,10 +263,10 @@
             \item The multi-objective optimization simulations successfully found a 
             wide spread of reactor models on their Pareto fronts that meet each 
             objective to varying degrees
-            \item The minimize $T_{max}$ objective flattens TRISO distribution and 
+            \item The $T_{max}$ objective flattens TRISO distribution and 
             maximizes radius values near temperature peaks 
-            \item The minimize $PF_{total}$ objective's driving factor maximize 
-            total fission reaction rate and minimize $PPF_{fuel}$ objective's driving 
+            \item The $PF_{total}$ objective's driving factor maximize 
+            total fission reaction rate and $PPF_{fuel}$ objective's driving 
             factor flattening thermal flux distribution influence each other resulting 
             in unexpected TRISO distributions at different $PF_{total}$ values 
         \end{itemize}
