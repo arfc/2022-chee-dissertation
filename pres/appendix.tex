@@ -1,0 +1,59 @@
+\begin{frame}
+    \frametitle{AHTR Temp Model $k_{eff}$ and Reactivity Coefficients Verification}
+        \begin{table}
+            \caption{$k_{eff}$ and reactivity comparison.}
+            \vspace{-0.2cm}
+            \includegraphics[width=0.9\linewidth]{figures/benchmark-keff.png}
+        \end{table}
+        The 13pcm $k_{eff}$ and 6pcm reactivity diff, between
+        continuous and homogenized OpenMC simulations are within uncertainty, showing 
+        that \textbf{selected spatial homogenizations and energy discretizations are 
+        acceptable.}
+        The Moltres simulation shows a 423pcm diff in $k_{eff}$ and 216pcm 
+        diff in reactivity.
+        \begin{table}
+            \caption{Reactivity coefficients comparison.}
+            \includegraphics[width=0.85\linewidth]{figures/benchmark-coeff.png}
+        \end{table}
+        \textbf{Good agreement} for Moltres' delayed neutron fraction ($\beta_{eff}$) and 
+        temperature reactivity feedback ($\frac{\Delta \rho}{\Delta T}$)
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR Temp Model Flux Verification}
+    \begin{columns}
+    \begin{column}{0.7\textwidth}
+    \begin{figure}[]
+        \centering
+        \includegraphics[width=\linewidth]{figures/benchmark-flux.png} 
+        \caption{4-group flux distribution comparison.}
+    \end{figure}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        2-norm Diff [\%]
+        \begin{itemize}
+            \item Group 1: 0.13\% 
+            \item Group 2: 0.08\% 
+            \item Group 3: 0.10\% 
+            \item Group 4: 0.09\%
+        \end{itemize}
+        Max Diff [\%]
+        \begin{itemize}
+            \item Group 1: -10.57\% 
+            \item Group 2: +7.58\% 
+            \item Group 3: +8.96\% 
+            \item Group 4: +6.97\%
+        \end{itemize}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR Temp Model Neutron Energy Spectrum Verification}
+            \begin{figure}[]
+                \centering
+                \includegraphics[width=0.75\linewidth]{figures/benchmark-spectrum.png} 
+                \caption{Neutron Energy Spectrum Comparison.}
+            \end{figure}
+        \textbf{Good agreement} between OpenMC and Moltres models 4-group spectrums.
+\end{frame}
