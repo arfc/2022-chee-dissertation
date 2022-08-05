@@ -24,9 +24,6 @@ Dept. of Nuclear, Plasma and Radiological Engineering \\ University of Illinois 
 \usepackage{bigints}
 \usepackage{minted}
 
-\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
-\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
-\newcommand{\deploy}{\texttt{d3ploy}\xspace}%
 \newcommand{\units}[1] {\:\text{#1}}%
 \newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
 \DeclareMathOperator{\erf}{erf}
@@ -34,6 +31,7 @@ Dept. of Nuclear, Plasma and Radiological Engineering \\ University of Illinois 
 \DeclareMathOperator{\erfc}{erfc}
 %page numbers
 \setbeamertemplate{footline}[page number]
+\setbeamertemplate{page number in head/foot}[appendixframenumber]
 \setbeamertemplate{caption}[numbered]
 %Those icons in the references are terrible looking
 \setbeamertemplate{bibliography item}[text]
@@ -166,6 +164,7 @@ text width=20em, minimum height=4em, rounded corners]
 \input{concl}
 
 \appendix
+
 \begin{frame}[allowframebreaks]
   \frametitle{References}
   \bibliographystyle{../docs/ieeetran}
