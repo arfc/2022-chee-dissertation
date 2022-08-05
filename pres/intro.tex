@@ -16,83 +16,29 @@
     \end{frame}
 
 \subsection{Background: Advanced High Temperature Reactor}
-
-    \begin{frame}
-        \frametitle{Why Generation IV Reactors?}
-        \begin{itemize}
-        \item Energy use and production contribute $\frac{2}{3}$ of Greenhouse Gas 
-        emissions \cite{noauthor_climate_2018}
-        \item  Large scale emissions-free nuclear power deployment could 
-        significantly reduce GHG production but faces both cost and perceived 
-        safety challenges 
-        \item The Generation IV International Forum identified six systems 
-        that promise significant advances in safety, sustainability, efficiency, 
-        and cost over existing designs: GFR, LFR, MSR, SFR, SCWR, and VHTR. 
-        \begin{figure}[htbp!]
-            \includegraphics[height=3cm]{figures/msr}
-            \hspace{1cm}
-            \includegraphics[height=3cm]{figures/vhtr}
-            \caption{Left: Molten Salt Reactor System, Right: Very High-Temperature
-            Reactor System \cite{gen_iv_international_forum_technology_2014}. }
-        \end{figure}
-        \end{itemize}
-    \end{frame}
-    \begin{frame}
-    \frametitle{MSRs and VHTRs}
-    \begin{block}{Molten Salt Reactor (MSR) System Advantages}
-        \begin{itemize}
-        \item Molten Fluoride Salts: chemical stability, low vapor pressure at 
-        high temperatures, good heat transfer, resistance against radiation damage
-        \item Inherent System Safety: passive cooling, fail-safe drainage
-        \end{itemize}
-    \end{block}
-    \vspace{-0.25cm}
-    \begin{block}{Very High Temperature Reactor (VHTR) System Advantages}
-        \begin{itemize}
-        \item TRISO Fuel: withstands high burnup and temperature
-        \item High Outlet Temperature: increases power conversion efficiency, reduces 
-        waste heat generation, enables high-temperature heat applications 
-        \end{itemize}
-    \end{block}
-    \begin{figure}[htbp!]
-        \includegraphics[width=0.2\linewidth]{../docs/figures/ahtr-triso.png}
-        \caption{TRISO particle. Diameter: $\sim 8mm$}
-    \end{figure}
-    \end{frame}
-
     \begin{frame}
         \frametitle{MSR + VHTR = FHR}
         Gen IV Forum identified \textbf{new and innovative Gen IV nuclear energy systems}: 
-        Molten Salt Reactors (MSR) and Very High-Temperature Reactors (VHTR). \\
-        \vspace{0.5cm}
+        Molten Salt Reactors (MSR) and Very High-Temperature Reactors (VHTR). 
+        \vspace{0.2cm}
         The Fluoride-Salt Cooled High-Temperature Reactor (FHR) concept combines 
         the \textbf{best aspects of MSR and VHTR}.
+        \vspace{-0.2cm}
+        \begin{columns}
+        \begin{column}{0.7\textwidth}
         \begin{figure}[]
             \centering
-            \includegraphics[width=0.7\linewidth]{figures/fhr_venn.png} 
+            \includegraphics[width=\linewidth]{figures/fhr_venn.png} 
             \caption{Venn diagram.}
         \end{figure}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            TRISO fuel = safety
+            \\
+            salt-cooled = superior cooling and low operating pressure 
+        \end{column}
+    \end{columns}
         \end{frame}
-
-    \begin{frame}
-    \frametitle{\acrlong{FHR}}
-    FHR concept combines the best aspects of MSR and VHTR:
-    low-pressure liquid fluoride-salt coolant and TRISO fuel 
-    \begin{block}{\acrfull{FHR} Advantages}
-        \begin{itemize}
-        \item Molten salt coolant vs. VHTR helium coolant: superior cooling, 
-        moderating properties, low operating pressure, large thermal margin
-        \item TRISO fuel vs. MSR circulating liquid fuel: solid fuel cladding 
-        adds an extra barrier to fission product release
-        \end{itemize}
-    \end{block}
-    \begin{figure}[]
-        \centering
-        \includegraphics[width=0.5\linewidth]{../docs/figures/reactor-schematic.png} 
-        \caption{\acrfull{AHTR} schematic (left) and vessel (right) reproduced from
-        \cite{petrovic_benchmark_2021}.}
-    \end{figure}
-    \end{frame}
 
     \begin{frame}
     \frametitle{Advanced High Temperature Reactor Design}
@@ -112,8 +58,6 @@
 
     \begin{frame}
     \frametitle{Advanced High Temperature Reactor Geometry}
-    The AHTR fuel has a \emph{triple heterogeneity}: hexagonal fuel elements with 
-    fuel planks, and TRISO particles embedded in stripes within each plank.
     \begin{figure}[]
         \includegraphics[width=0.45\linewidth]{../docs/figures/ahtr-fuel-element.png} 
         \includegraphics[width=0.45\linewidth]{figures/ahtr-plank.png}
@@ -121,14 +65,17 @@
         three diamond-shaped sectors, with a central Y-shaped and external channel 
         graphite structure.}
     \end{figure}
+    \vspace{-0.2cm}
+    The AHTR fuel has a \textbf{triple heterogeneity}: hexagonal fuel elements with 
+    fuel planks, and TRISO particles embedded in stripes within each plank.
     \end{frame}
 
     \begin{frame}
     \frametitle{FHR Benchmark}
     \begin{itemize}
         \item The AHTR's fuel geometry's triple heterogeneity results in
-        complex reactor physics and significant modeling challenges
-        \item In 2019 the OECD-NEA initiated a FHR benchmark exercise. Its objective 
+        \textbf{complex reactor physics} and \textbf{significant modeling challenges}
+        \item In 2019 the OECD-NEA initiated a FHR benchmark. Its objective 
         is to identify the applicability, accuracy, and practicality of the latest 
         methods and codes to assess the current state of the art for FHR simulation 
         and modeling
