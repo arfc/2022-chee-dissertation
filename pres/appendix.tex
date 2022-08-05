@@ -98,3 +98,21 @@
             \end{figure}
         \textbf{Good agreement} between OpenMC and Moltres models 4-group spectrums.
 \end{frame}
+
+\begin{frame}
+    \frametitle{AHTR Plank Geometry}
+    A sine distribution governs TRISO packing fraction distribution: 
+    \begin{align}
+        \rho_{TRISO}(\vec{x}) &= \left(\textbf{a}\cdot sin(\textbf{b}\cdot x + \textbf{c}) + 2\right) \cdot NF \nonumber
+    \end{align}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{../docs/figures/straightened_plank.png} 
+        \caption{Straightened AHTR Plank with 10 fuel cells with random TRISO packing.}
+    \end{figure}
+    $r_{top}$ and $r_{bot}$ control coolant channel shape: 
+    \begin{figure}
+        \includegraphics[width=\linewidth]{../docs/figures/coolant-channel-shape.png} 
+        \caption{AHTR Plank with coolant channel shape variation, $r_{top}$ = 0.2cm and 
+        $r_{bot}$ = 0.3cm.}
+    \end{figure}
+\end{frame}
