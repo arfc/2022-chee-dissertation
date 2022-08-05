@@ -1,10 +1,8 @@
 \subsection{FHR Benchmark Specifications}
 \begin{frame}
     \frametitle{FHR Benchmark Specifications}
-    \begin{itemize}
-        \item UIUC participates in the benchmark with OpenMC and using the ENDF/B-VII.1 material 
-        cross section library
-    \end{itemize}
+    UIUC participates in the benchmark with OpenMC and using the ENDF/B-VII.1 material 
+    cross section library
     \vspace{-0.2cm}
     \begin{table}
         \caption{OECD NEA's FHR Benchmark Phases 
@@ -28,8 +26,12 @@
         \vspace{-0.25cm}
         \cite{petrovic_benchmark_2021}.}
         \includegraphics[width=0.6\linewidth]{figures/benchmark-cases.png} 
-        \includegraphics[width=0.27\linewidth]{../docs/figures/ahtr-fuel-element.png}
     \end{table}
+    \begin{figure}[]
+        \includegraphics[width=0.27\linewidth]{../docs/figures/ahtr-fuel-element.png} 
+        \vspace{-0.2cm}
+        \caption{AHTR fuel assembly.}
+    \end{figure}
     Benchmark participants must produce the following results for 
     the 9 cases: $k_{eff}$, reactivity coefficients ($\beta_{eff}$, 
     $\alpha_D$, $\alpha_{T, FliBe}$, $\alpha_M$), fission source distribution, 
@@ -79,24 +81,5 @@
         distribution in 100 $\times$ 100 mesh for three coarse energy groups: Case 
         1A (above), Case 3A (middle), Case 6A (below). Energy group 1: $E > 0.1$ MeV, 
         Energy group 2: $3 \times 10^{-6} < E < 0.1$ MeV, Energy group 3: $E < 3 \times 10^{-6}$ MeV. }
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{FHR Benchmark Phase I-B Results}
-    \begin{itemize}
-        \item FHR Benchmark Phase I-B: 2D assembly depletion model
-        \item Benchmark participants are working on resolving differences in 
-        these results
-    \end{itemize}
-    \vspace{-0.2cm}
-    \begin{figure}[]
-        \centering
-        \includegraphics[width=0.75\linewidth]{../docs/figures/phase1b_keff.png} 
-        \caption{UIUC results: FHR Benchmark Phase I-B depletion 
-        $k_{eff}$ evolution for Cases 1B, 4B, and 7B. Case 1B is the reference case, 
-        Case 4B is the discrete \acrlong{BP} case, and Case 7B is the 19.75$\%$ 
-        enrichment case. Error bars are included but are barely visible due to the 
-        low $\sim$40pcm uncertainty.}
     \end{figure}
 \end{frame}
