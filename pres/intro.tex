@@ -154,8 +154,8 @@
     \vspace{0.2cm}
     The generative design software does not replace the human reactor designer but 
     \textbf{shifts the human designer's focus} away from conjecturing suitable geometries 
-    to \textbf{defining the design criteria of optimal designs}.
-    \\
+    to \textbf{defining the design criteria of optimal designs}. \\
+
     \textbf{Evolutionary algorithms} can be used to \textbf{drive generative reactor 
     design optimization} to promptly explore the large design space to find global optimal 
     designs. 
@@ -164,42 +164,20 @@
     \begin{frame}
     \frametitle{Evolutionary Algorithms for Reactor Generative Design}
     Evolutionary algorithms imitate natural selection to evolve solutions. 
-    \begin{minipage}[c]{0.6\textwidth}
+    \begin{minipage}{0.55\textwidth}
             Evolutionary Algorithm Benefits 
             \begin{itemize}
                 \item Successful at finding multi-objective problems' global optimum 
                 \item Easily parallelized 
             \end{itemize}
         \end{minipage}\hfill
-        \begin{minipage}[c]{0.4\textwidth}
+        \begin{minipage}[c]{0.45\textwidth}
             \begin{figure}
-                \includegraphics[width=\linewidth]{figures/ea-flow.png} 
+                \includegraphics[width=0.8\linewidth]{figures/ea-flow.png} 
                 \caption{Evolutionary algorithm flow \cite{renner_genetic_2003}. }
               \end{figure}
         \end{minipage}
     \end{frame}
-
-  \begin{frame}
-    \frametitle{Evolutionary Algorithm Optimization for Reactor Generative Design}
-    \begin{minipage}[c]{0.6\textwidth}
-        \begin{itemize}
-            \item We can leverage evolutionary algorithm optimization to 
-            explore the large design space enabled by 3D printing to find global 
-            optimal designs
-            \item Evolutionary algorithms have proven successful in optimizing 
-            multi-objective problems as they can find solutions at the global 
-            optimum and can be run in parallel
-            \item Evolutionary algorithms imitate natural selection to evolve solutions 
-            \end{itemize}
-  \end{minipage}\hfill
-  \begin{minipage}[c]{0.4\textwidth}
-    \centering
-    \begin{figure}
-      \includegraphics[width=0.8\linewidth]{figures/ea-flow.png} 
-      \caption{Evolutionary algorithm flow \cite{renner_genetic_2003}. }
-    \end{figure}
-  \end{minipage}
-  \end{frame}
 
 \subsection{Objectives: AHTR Optimization for Non-Conventional Designs}
 \begin{frame}
