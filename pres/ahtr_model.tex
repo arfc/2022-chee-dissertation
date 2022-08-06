@@ -15,13 +15,14 @@
 				\item Delayed neutron precursor decay (with advection)
 				\item Incompressible Navier-Stokes for temperature
 				advection-diffusion
-				\item 1D, 2D, and 3D modeling are supported
 			\end{itemize}
 		\end{itemize}
+    \vspace{-0.2cm}
     \end{block}
     \begin{block}{AHTR Temperature Model with Moltres}
         \begin{itemize}
-            \item Captures thermal feedback effects, absent from the purely neutronics OpenMC simulations
+            \item Captures thermal feedback effects, absent from the purely neutronics OpenMC
+            simulations
             \item I model the steady-state temperature of a 2D x-y AHTR cross-section
             \item Assumptions: conductive heat transfer, heat removal by uniform 
             salt flow in coolant regions
@@ -33,28 +34,36 @@
     \frametitle{AHTR Temperature Model Setup}
     \begin{block}{Steps to produce Moltres AHTR Temperature Model}
         \begin{itemize}
-          \item OpenMC neutronics model produces group constants data 
+          \item OpenMC neutronics model produces group constants data (various macroscopic 
+          neutron cross sections, neutron diffusion coefficient, etc. )
           \item Mesh generation
           \item Run Moltres model to calculate temperature distribution 
           (accepts group constants data and mesh)
         \end{itemize}
     \end{block}
-    For successful AHTR Moltres simulation, I must establish suitable spatial and
-    energy homogenization that preserves accuracy while maintaining an acceptable
+    Using these group constants and mesh, Moltres then solves for the flux and temperature 
+    based on the neutron diffusion equation coupled with temperature advection due to coolant flow.
+    
+    For successful AHTR Moltres simulation, I must establish \textbf{suitable spatial and
+    energy homogenization that preserves accuracy} while maintaining an acceptable
     runtime
-    \begin{block}{Energy Homogenization}
-        \begin{table}[]
-            \centering
-            \begin{minipage}[c]{0.6\textwidth}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR Temperature Model Energy Homogenization}
+        \begin{block}{Energy Homogenization}
+            \begin{table}[]
                 \centering
-                \includegraphics[width=0.8\linewidth]{figures/ahtr-energy-discr.png}
-            \end{minipage}\hfill
-            \begin{minipage}[c]{0.4\textwidth}
-            \caption{4-group energy structures for AHTR geometry 
-            derived by \cite{gentry_development_2016}.}
-        \end{minipage}
-        \end{table}
-    \end{block}
+                \begin{minipage}[c]{0.6\textwidth}
+                    \centering
+                    \includegraphics[width=0.8\linewidth]{figures/ahtr-energy-discr.png}
+                \end{minipage}\hfill
+                \begin{minipage}[c]{0.4\textwidth}
+                \caption{4-group energy structures for AHTR geometry 
+                derived by \cite{gentry_development_2016}.}
+            \end{minipage}
+            \end{table}
+        \end{block}
 \end{frame}
 
 \begin{frame}
