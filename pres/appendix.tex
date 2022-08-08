@@ -138,7 +138,15 @@
     \frametitle{Simulation a-3b hypervolume}
     \begin{table}
         \caption{Simulation a-3b hypervolume values at each generation.}
-        \includegraphics[width=0.7\linewidth]{figures/a-3b-hypervolume.png} 
+        \includegraphics[width=0.4\linewidth]{figures/a-3b-hypervolume.png} 
     \end{table}
 
+    For each optimization simulation, I must balance convergence and computational cost.
+
+    The hypervolume is calculated by finding the volume between the reference point and 
+    the objective values of the Pareto front's reactor models (bigger hypervolume = 
+    more converged solution).
+
+    I determine if convergence criteria is met by evaluating if the difference between 
+    generations' hypervolume values are getting smaller.
 \end{frame}
