@@ -167,24 +167,27 @@
     \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
     I vary $PF_{total}$ and \textbf{a, b, c, d, e f} ($\rho_{TRISO}(\vec{x}, \vec{y}$))
     to minimize $PF_{total}$ and $PPF_{fuel}$. 
+
+    \vspace{0.2cm}
     \begin{figure}
-        \includegraphics[width=0.65\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto.png} 
+        \includegraphics[width=0.73\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto.png} 
         \caption{Simulation a-2b Pareto Front.}
     \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
-    \only<1>{
+    \begin{columns}
+    \begin{column}{0.7\textwidth}
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto-distr.png}
+        \only<1>{\includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto-distr.png}}
+        \only<2>{\includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto-distr-annotated.png}}
         \caption{Simulation a-2b Pareto Front's TRISO Distributions.}
-    \end{figure}}
-    \only<2>{
-    \begin{figure}
-        \includegraphics[width=0.8\linewidth]{figures/assem-obj-2-pfppf-pareto-distr-annotated.png}
-        \caption{Simulation a-2b Pareto Front's TRISO Distributions.}
-    \end{figure}}
+    \end{figure}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
