@@ -9,11 +9,24 @@
         \end{itemize}
     \end{block}
     \begin{block}{AHTR Optimization Objectives}
-        \begin{figure}
-            \includegraphics[width=0.9\linewidth]{figures/ahtr-opt-obj.png} 
-            \caption{AHTR optimization problem objectives.}
-        \end{figure}
-    Maximum temperature ($T_{max}$), Normalized power peaking factor ($PPF_{fuel}$)
+     \textbf{Minimize total fuel packing fraction ($PF_{total}$)}
+     \begin{itemize}
+        \item Cost savings, non-proliferation 
+     \end{itemize}
+     \textbf{Minimize maximum temperature ($T_{max}$)}
+     \begin{itemize}
+        \item Maximize heat transfer 
+        \item Minimize thermal stress in the fuel 
+     \end{itemize}
+     \textbf{Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)} 
+     \begin{itemize}
+        \item Efficient fuel utilization
+     \end{itemize}
+        %\begin{figure}
+        %    \includegraphics[width=0.9\linewidth]{figures/ahtr-opt-obj.png} 
+        %    \caption{AHTR optimization problem objectives.}
+        %\end{figure}
+    %Maximum temperature ($T_{max}$), Normalized power peaking factor ($PPF_{fuel}$)
     \end{block}
 \end{frame}
 
@@ -232,8 +245,8 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
     \begin{figure}
-        \only<1>{\includegraphics[width=0.85\linewidth]{../docs/figures/assem-obj-3-all-distr.png}}
-        \only<2>{\includegraphics[width=0.85\linewidth]{figures/assem-obj-3-all-distr-annotated.png}}  
+        \only<1>{\includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr.png}}
+        \only<2>{\includegraphics[width=0.8\linewidth]{figures/assem-obj-3-all-distr-annotated.png}}  
         \caption{TRISO distributions for the 12 reactor models on simulation 
         a-3b's Pareto front.}
     \end{figure}
@@ -242,7 +255,7 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
     \begin{figure}
-        \includegraphics[width=0.85\linewidth]{../docs/figures/assem-obj-3-all-distr-most-minimized.png} 
+        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr-most-minimized.png} 
         \caption{Simulation a-3b Pareto Front's TRISO Distributions.}
     \end{figure}
 \end{frame}
