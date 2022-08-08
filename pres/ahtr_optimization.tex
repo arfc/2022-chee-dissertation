@@ -230,43 +230,34 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
-    \begin{columns}
-        \begin{column}{0.7\textwidth}
     \begin{figure}
-        \only<1>{\includegraphics[width=\linewidth]{../docs/figures/assem-obj-3-all-distr.png}}
-        \only<2>{\includegraphics[width=\linewidth]{figures/assem-obj-3-all-distr-annotated.png}}  
+        \only<1>{\includegraphics[width=0.85\linewidth]{../docs/figures/assem-obj-3-all-distr.png}}
+        \only<2>{\includegraphics[width=0.85\linewidth]{figures/assem-obj-3-all-distr-annotated.png}}  
         \caption{TRISO distributions for the 12 reactor models on simulation 
         a-3b's Pareto front.}
     \end{figure}
-\end{column}
-\begin{column}{0.35\textwidth}
-    \begin{block}{Simulation a-3b}
-        \begin{itemize}
-        \item Minimize $T_{max}$ objective: Flattens TRISO distribution and maximizes radius values 
-        near temperature peaks 
-        \item Minimize $PF_{total}$ and $PPF_{fuel}$ influence each other to have different 
-        TRISO distributions at different $PF_{total}$ values 
-        \end{itemize}
-        \end{block}
-    \end{column}
-\end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr-most-minimized.png} 
-        \caption{Simulation a-3b: Plot of final generation's reactor models' 
-        $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$ as a color dimension. 
-        Crosses indicate the reactor models on the Pareto front.}
+        \includegraphics[width=0.6\linewidth]{../docs/figures/assem-obj-3-all-distr-most-minimized.png} 
+        \caption{Simulation a-3b Pareto Front's TRISO Distributions.}
     \end{figure}
+    \vspace{-0.5cm}
+    \begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
+        Minimize $T_{max}$ objective: Flattens TRISO distribution and maximizes radius 
+        values near temperature peaks 
+        Minimize $PF_{total}$ and $PPF_{fuel}$ influence each other to have different 
+        TRISO distributions at different $PF_{total}$ values 
+    \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
     \begin{figure}
-        \includegraphics[width=0.7\linewidth]{../docs/figures/assem-obj-3-all-min-all.png} 
-        \caption{Simulation a-3b: One-third assembly model that equally minimized all 
+        \includegraphics[width=0.75\linewidth]{../docs/figures/assem-obj-3-all-min-all.png} 
+        \caption{Simulation a-3b: one-third assembly model that equally minimized all 
         objectives (reactor model 2).}
     \end{figure}
 \end{frame}
