@@ -203,11 +203,10 @@
     \begin{figure}
         \centering
         \includegraphics[width=\linewidth]{figures/a-2b-comparison-reactors.png}
-        \vspace{-0.65cm}
-        \scriptsize
+        \vspace{-0.6cm}
         \caption{Simulation a-2b Pareto Front's TRISO Distributions.}
     \end{figure}
-    \vspace{-0.45cm}
+    \vspace{-0.55cm}
     \begin{columns}
         \begin{column}{0.4\linewidth}
             \begin{figure}
@@ -220,7 +219,7 @@
             Minimize $PF_{total}$ is driven by \textbf{maximizing total fission 
             reaction rate} 
             \begin{itemize}
-                \item High to lowest total fission reaction rate: reactor model 
+                \item Highest to lowest total fission reaction rate: reactor model 
                 $1 \rightarrow 11 \rightarrow 5$
             \end{itemize}
             Minimize $PPF_{fuel}$ objective is driven by \textbf{flattening thermal 
@@ -231,7 +230,7 @@
             \end{itemize}
         \end{column}
     \end{columns}
-    \vspace{-0.3cm}
+    \vspace{-0.35cm}
     \begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
         Minimize $PF_{total}$ and Minimize $PPF_{fuel}$ objectives 
         influence each other resulting in \textbf{unexpected TRISO distributions at 
@@ -242,14 +241,6 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
     \begin{columns}
-    \begin{column}{0.7\textwidth}
-    \begin{figure}
-        \includegraphics[width=\linewidth]{../docs/figures/assem-obj-3-all-2d.png} 
-        \caption{Plot of final generation's reactor models' 
-        $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$ as a color dimension. 
-        Crosses indicate the reactor models on the Pareto front.}
-    \end{figure}
-    \end{column}
     \begin{column}{0.35\textwidth}
         \begin{block}{Simulation a-3b}
             \begin{itemize}
@@ -262,6 +253,14 @@
             \end{itemize}
             \end{block}
         \end{column}
+    \begin{column}{0.7\textwidth}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{../docs/figures/assem-obj-3-all-2d.png} 
+        \caption{Plot of final generation's reactor models' 
+        $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$ as a color dimension. 
+        Crosses indicate the reactor models on the Pareto front.}
+    \end{figure}
+    \end{column}
 \end{columns}
 \end{frame}
 
@@ -295,14 +294,17 @@
 \begin{frame}
     \frametitle{Multi-Objective Optimization Major Takeaways}
     The multi-objective optimization simulations successfully found a \textbf{wide 
-    spread of reactor models on their Pareto fronts that meet each objective to varying 
-    degrees}. 
+    spread of reactor models on their Pareto fronts}. 
+    The reactor models on the Pareto fronts have \textbf{different $PF_{total}$, 
+    TRISO distributions, and coolant channel shapes}, depending on the extent 
+    each objective is minimized due to the nature of multi-objective
+    optimization that results in a \textbf{tradeoff between objectives}. 
 
     \vspace{0.3cm}
     \textbf{Minimize $T_{max}$ objective} 
     \begin{itemize}
         \item Continues to flatten TRISO distribution 
-        \item Maximize radius values near temperature peaks 
+        \item Maximize radius values of FliBe channels located near temperature peaks 
     \end{itemize}
 
     \textbf{Minimize $PF_{total}$ and $PPF_{fuel}$} 
@@ -310,13 +312,6 @@
     \item These two objectives influence each other to have unexpected TRISO
     distributions at different $PF_{total}$ values
     \end{itemize} 
-
-    \vspace{0.3cm}
-    The reactor models on the Pareto fronts have \textbf{different $PF_{total}$, 
-    TRISO distributions, and coolant channel shapes}, depending on the extent 
-    each objective is minimized due to the nature of multi-objective
-    optimization that results in a \textbf{tradeoff between objectives}. 
-
 
 \end{frame}
 
@@ -328,7 +323,7 @@
         \item I developed \acrfull{ROLLO} tool that enables generative reactor design
         optimization with evolutionary algorithms 
         \item I demonstrated ROLLO's application on AHTR optimization for spatially variant 
-        fuel distribution and wavy coolant channels
+        fuel distributions and wavy coolant channels
     \end{itemize}    
     \end{block}
     \begin{block}{Major Takeaways}
