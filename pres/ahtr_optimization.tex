@@ -264,14 +264,20 @@
 
 \begin{frame}
     \frametitle{Multi-Objective Optimization Major Takeaways}
-    The multi-objective optimization simulations successfully found a wide spread of 
-    reactor models on their Pareto fronts that meet each objective to varying 
-    degrees. 
+    The multi-objective optimization simulations successfully found a \textbf{wide 
+    spread of reactor models on their Pareto fronts that meet each objective to varying 
+    degrees}. 
 
+    The reactor models on the Pareto Fronts have different $PF_{total}$, 
+    TRISO distributions, and coolant channel shapes, depending on the extent 
+    each objective is minimized due to the nature of multi-objective
+    optimization that results in a tradeoff between objectives
+
+    \vspace{0.3cm}
     \textbf{Minimize $T_{max}$ objective} 
     \begin{itemize}
-        \item Continues to flatten TRISO distribution and maximize radius 
-        values near temperature peaks 
+        \item Continues to flatten TRISO distribution 
+        \item Maximize radius values near temperature peaks 
     \end{itemize}
 
     \textbf{Minimize $PF_{total}$ and $PPF_{fuel}$} 
@@ -279,6 +285,7 @@
     \item These two objectives influence each other to have unexpected TRISO
     distributions at different $PF_{total}$ values
     \end{itemize} 
+
 \end{frame}
 
 \begin{frame}
@@ -297,10 +304,9 @@
             \item Results demonstrate ROLLO's success in conducting a multi-objective 
             global search of the large AHTR design space to find optimal reactor models 
             that satisfy all the objectives
-            \item The reactor models on the Pareto Fronts have different $PF_{total}$, 
-            TRISO distributions, and coolant channel shapes, depending on the extent 
-            each objective is minimized due to the nature of multi-objective
-            optimization that results in a tradeoff between objectives
+            \item Once the ROLLO search is complete, reactor designers gain a better 
+            intuition of the model's reactor physics and can view the narrower reactor 
+            design space that meets their defined objectives
         \end{itemize}
     \end{block}
 \end{frame}
