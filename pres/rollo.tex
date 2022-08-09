@@ -19,6 +19,7 @@
     \frametitle{How does ROLLO work?}
     \begin{columns}
         \begin{column}{0.7\textwidth}
+            ROLLO Flow 
             \begin{itemize}
                 \item Reads and validates the JSON input file
                 \item Initializes the \acrfull{DEAP} genetic algorithm hyperparameters
@@ -26,17 +27,20 @@
                 \item During the run, nuclear modeling software evaluates each individual 
                 reactor model's fitness
             \end{itemize}
+
+            \vspace{0.2cm}
             For each ROLLO optimization simulation, one must \textbf{balance convergence and 
             computational cost}. 
 
+            \vspace{0.2cm}
             ROLLO's purpose is to help the human reactor designer narrow down reactor design 
             search space. The reactor designer uses the \textbf{computational power 
             available}, to \textbf{narrow down the search space} as much as possible.
         \end{column}
         \begin{column}{0.3\textwidth}
             \begin{figure}
-                \includegraphics[width=0.8\linewidth]{figures/rollo-flow2.png} 
-                \caption{ROLLO Genetic Algorithm Flow.}
+                \includegraphics[width=0.85\linewidth]{figures/rollo-flow2.png} 
+                \caption{ROLLO's Genetic Algorithm Flow.}
             \end{figure}
         \end{column}
     \end{columns}
