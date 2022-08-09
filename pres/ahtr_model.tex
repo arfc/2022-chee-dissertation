@@ -34,8 +34,8 @@
     \frametitle{AHTR Temperature Model Setup}
     Steps to produce Moltres AHTR Temperature Model
         \begin{itemize}
-          \item OpenMC neutronics model produces group constants cross section data 
-          (various macroscopic neutron cross sections, neutron diffusion coefficient, etc. )
+          \item OpenMC neutronics model produces group constants cross-section data 
+          (various macroscopic neutron cross sections, neutron diffusion coefficient, etc.)
           \item Mesh generation with Gmsh \cite{geuzaine_gmsh_2009}
           \item Run Moltres model: using these group constants and mesh, Moltres solves for the 
           flux and temperature based on the neutron diffusion equation coupled with temperature 
@@ -63,7 +63,7 @@
             \end{minipage}\hfill
             \begin{minipage}[c]{0.4\textwidth}
             \caption{4-group energy structures for AHTR geometry 
-            derived by \cite{gentry_development_2016}.}
+            derived by Gentry et al \cite{gentry_development_2016}.}
         \end{minipage}
         \end{table}
 \end{frame}
@@ -109,7 +109,7 @@
     \frametitle{Key Neutronics Parameter Verification Summary}
     OpenMC vs Moltres models \textbf{key observations} 
     \begin{itemize}
-        \item 216 pcm reactivity diff 
+        \item 216 pcm reactivity difference  
         \item Good agreement in reactivity coefficients and 4-group neutron spectrum
         \item Good agreement in overall flux but larger flux diffs at specific points
     \end{itemize}
@@ -120,9 +120,9 @@
         \item Differences in reactivity and flux at specific points might result in 
         \textbf{slightly inaccurate temperatures at certain points}
         \item Since the reactivity coefficients and overall flux distribution 
-        are in agreement, OpenMC's group constants are \textbf{sufficiently accurate} 
-        to calculate and gain an \textbf{overall perspective} of the AHTR's temperature 
-        distribution
+        are in agreement, this spatial homogenization and energy discretization are 
+        \textbf{sufficiently accurate} to calculate and gain an \textbf{overall perspective} 
+        of the AHTR's temperature distribution
     \end{itemize}
     Methodology 
     \begin{itemize}
@@ -160,11 +160,11 @@
 
 \subsection{Summary}
 \begin{frame}
-    \frametitle{FHR Benchmark + AHTR Model Development: Summary}
+    \frametitle{FHR Benchmark + AHTR Temperature Model: Summary}
     \begin{block}{I Successfully Completed AHTR Model Development Research Objectives}
         \begin{itemize}
             \item I participated in the OECD-NEA's FHR Benchmark Phases I-A and I-B
-            \item I modeled the \gls{AHTR}'s temperature distribution 
+            \item I modeled the \gls{AHTR}'s temperature distribution with Moltres
         \end{itemize}
     \end{block}
     \begin{block}{Major Takeaways}
@@ -172,8 +172,8 @@
             \item AHTR has passive safety behavior with negative temperature coeffcients
             \item Increased fuel packing does not always correspond with increased 
             $k_{eff}$ due to self-shielding effects 
-            \item These results hint at the possibility of minimizing fuel required by 
-            optimizing for heterogenous fuel distributions within the core
+            \item These results hint at the possibility of \textbf{minimizing fuel required by 
+            optimizing for heterogenous fuel distributions} within the core
             \item AHTR temperature peaks in the fuel stripes near the spacers 
         \end{itemize}
     \end{block}
