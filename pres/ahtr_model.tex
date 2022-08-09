@@ -1,4 +1,4 @@
-\subsection{AHTR Moltres Temperature Model}
+\subsection{AHTR Temperature Model with Moltres}
 \begin{frame}
     \frametitle{AHTR Temperature Model}
     \begin{block}{Moltres \cite{lindsay_introduction_2018}}
@@ -37,16 +37,15 @@
           \item OpenMC neutronics model produces group constants data (various macroscopic 
           neutron cross sections, neutron diffusion coefficient, etc. )
           \item Mesh generation
-          \item Run Moltres model to calculate temperature distribution 
-          (accepts group constants data and mesh)
+          \item Run Moltres model: using these group constants and mesh, Moltres solves for the 
+          flux and temperature based on the neutron diffusion equation coupled with temperature 
+          advection due to coolant flow
         \end{itemize}
-    Using these group constants and mesh, Moltres then solves for the flux and temperature 
-    based on the neutron diffusion equation coupled with temperature advection due to coolant flow.
-    
+
     \vspace{0.3cm}
-    For successful AHTR Moltres simulation, I must establish \textbf{suitable spatial and
-    energy homogenization} to create group constants that preserve accuracy while maintaining 
-    an acceptable runtime
+    For successful AHTR temperature model with Moltres, I must establish 
+    \textbf{suitable spatial and energy homogenization} to create group constants that preserve 
+    accuracy while maintaining an acceptable runtime.
 \end{frame}
 
 \begin{frame}
