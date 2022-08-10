@@ -3,12 +3,12 @@
         \frametitle{Overview}
         In this defense, I will show that I successfully: 
         \begin{enumerate}
-            \item Furthered our understanding of the \gls{AHTR} design's complexities 
-            through neutronics and temperature modeling
-            \item Created an open-source tool that enables reactor generative 
-            design optimization with evolutionary algorithms
-            \item Applied the optimization tool to the \gls{AHTR} design for 
-            non-conventional geometries and fuel distributions 
+            \only<1>{\item Furthered our understanding of the \gls{AHTR} design's complexities 
+            through neutronics and temperature modeling}
+            \only<2>{\item Created an open-source tool that enables reactor generative 
+            design optimization with evolutionary algorithms}
+            \only<3>{\item Applied the optimization tool to the \gls{AHTR} design for 
+            non-conventional geometries and fuel distributions} 
         \end{enumerate}
     \end{frame}
 
@@ -54,7 +54,7 @@
         \begin{itemize}
         \item Design developed by Oak Ridge National Laboratory
         \item Prismatic FHR design with 252 hexagonal fuel assemblies consisting of 
-        18 fuel planks arranged in 3 diamond-shaped sectors. 
+        18 fuel planks arranged in 3 diamond-shaped sectors
         \end{itemize}
     
     \vspace{0.2cm}
@@ -83,7 +83,7 @@
     \begin{frame}
     \frametitle{FHR Benchmark}
     The AHTR's geometry's triple heterogeneity results in
-    \textbf{complex reactor physics} and \textbf{significant modeling challenges}
+    \textbf{complex reactor physics} and \textbf{significant modeling challenges}.
     \begin{itemize}
         \item Many surfaces to model = computationally expensive 
         \item Homogenization might result in loss of reactor physics effects 
@@ -143,7 +143,7 @@
     manufacturing constraints} and optimize for \textbf{arbitrary geometries and 
     parameters}. 
     \begin{figure}[]
-        \includegraphics[width=0.4\linewidth]{figures/tungsten-wavy-channels.png}
+        \includegraphics[width=0.3\linewidth]{figures/tungsten-wavy-channels.png}
         \caption{3D printed Tungsten wavy flow channels, reproduced from NASA's Refractory 
         Alloy Additive Manufacturing Build Optimization Project (RAAMBO) 
         \cite{mireles_refractory_2022}.}
