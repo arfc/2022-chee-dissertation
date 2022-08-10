@@ -69,29 +69,27 @@
 
     \begin{frame}
     \frametitle{Advanced High Temperature Reactor Geometry}
-    \begin{figure}[]
+    \visible<1->{\begin{figure}[]
         \includegraphics[width=\linewidth]{figures/ahtr-assembly.png} 
         \caption{AHTR fuel assembly with 18 fuel plates arranged in 
         three diamond-shaped sectors, with a central Y-shaped and external channel 
         graphite structure.}
-    \end{figure}
-    \pause
+    \end{figure}}
     \vspace{-0.2cm}
-    The AHTR fuel has \textbf{triple heterogeneity}: hexagonal fuel elements within the 
-    core, and TRISO particles embedded in stripes within each plank.
+    \visible<2->{The AHTR fuel has \textbf{triple heterogeneity}: hexagonal fuel 
+    elements within the core, and TRISO particles embedded in stripes within each plank.}
     \end{frame}
 
     \begin{frame}
     \frametitle{FHR Benchmark}
-    The AHTR's geometry's triple heterogeneity results in
-    \textbf{complex reactor physics} and \textbf{significant modeling challenges}.
+    \visible<1->{The AHTR's geometry's triple heterogeneity results in
+    \textbf{complex reactor physics} and \textbf{significant modeling challenges}.}
     \begin{itemize}
-        \item Many surfaces to model = computationally expensive 
-        \item Homogenization might result in loss of reactor physics effects 
+        \visible<2->{\item Many surfaces to model = computationally expensive} 
+        \visible<3->{\item Homogenization might result in loss of reactor physics effects} 
     \end{itemize}
-    \pause
     \vspace{0.3cm}
-    In 2019 the \textbf{OECD-NEA initiated the FHR benchmark}. Its objective 
+    \visible<4->{In 2019 the \textbf{OECD-NEA initiated the FHR benchmark}. Its objective 
     is to identify the applicability, accuracy, and practicality of the latest 
     methods and codes to assess the current state of the art for FHR modeling.
 
@@ -100,7 +98,7 @@
         \includegraphics[width=0.7\linewidth]{figures/benchmark.png} 
         \caption{OECD NEA's FHR Benchmark \cite{petrovic_benchmark_2021}.}
     \end{figure}
-    \end{frame}
+    \end{frame}}
 
 \subsection{Objectives: AHTR Model Development}
     \begin{frame}
