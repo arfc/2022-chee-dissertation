@@ -77,11 +77,15 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Optimization Simulations}
         \begin{figure}
-            \only<1>{\includegraphics[width=0.95\linewidth]{figures/ahtr-assem-opt-table.png}} 
+            \only<1>{\includegraphics[width=0.8\linewidth]{figures/ahtr-assem-opt-table.png}} 
             \only<2>{\includegraphics[width=\linewidth]{figures/ahtr-assem-opt-table-annotated1.png}} 
             \only<3>{\includegraphics[width=\linewidth]{figures/ahtr-assem-opt-table-annotated2.png}} 
+            \only<4>{\includegraphics[width=\linewidth]{figures/ahtr-assem-opt-table-annotated3.png}} 
             \end{figure}
-
+        \visible<1>{
+            All the optimization simulations are run on the Theta supercomputer at the 
+            Argonne Leadership Computing Facility \cite{noauthor_thetathetagpu_2022}.
+        }
         \visible<2>{
         Simulations a-1b and a-1e show \textbf{how the $\rho_{TRISO}(\vec{r})$ and 
         coolant channel shape varying parameters respond to 
@@ -90,12 +94,15 @@
         \vspace{0.2cm}
         I constrained $k_{eff} \geq 1.38$ find optimal input parameters 
         that achieve \textbf{similar performance to the FHR benchmark} TRISO distribution.}
-        
         \visible<3>{
-
         Simulation a-2b demonstrates how input parameters $PF_{total}$ and 
         $\rho_{TRISO}(\vec{r})$ change as the minimize $PF_{total}$ and $PPF_{fuel}$ 
         objectives interact.}
+        \visible<4>{
+        Simulation a-3b is the \textbf{final and largest optimization problem} run for 
+        the one-third assembly model that varies all input parameters to optimize 
+        for all objectives. 
+        }
 \end{frame}
 
 \begin{frame}
