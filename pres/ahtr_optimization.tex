@@ -55,10 +55,10 @@
         \begin{column}{0.5\textwidth}
         \begin{figure}
             \only<2>{\includegraphics[width=\linewidth]{../docs/figures/ahtr_assembly.png} 
-            \vspace{-0.3cm}
+            \vspace{-0.6cm}
             \caption{AHTR one-third assembly illustrating packing fraction discretization.}}
             \only<3>{\includegraphics[width=\linewidth]{../docs/figures/assem-obj-1-pf-most-minimized.png} 
-            \vspace{-0.3cm}
+            \vspace{-0.6cm}
             \caption{AHTR one-third assembly illustrating packing fraction variation.}}
         \end{figure}
         \end{column}
@@ -113,7 +113,7 @@
 
         \only<2>{
             \begin{figure}
-                \includegraphics[width=0.95\linewidth]{figures/ahtr-assem-opt-table-annotated.png}
+                \includegraphics[width=0.9\linewidth]{figures/ahtr-assem-opt-table-annotated.png}
             \end{figure}}
 
         \only<3>{
@@ -230,11 +230,11 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-1e Results}
-    \begin{figure}
-        \includegraphics[width=0.55\linewidth]{../docs/figures/a-1e-temp-distribution-2d.png} 
+    \makebox[\textwidth][c]{\begin{figure}
+        \includegraphics[width=0.65\linewidth]{../docs/figures/a-1e-temp-distribution-2d.png} 
         \includegraphics[width=0.4\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
         \caption{Temperature Distribution in the reactor model with the lowest $T_{max}$.}
-    \end{figure}
+    \end{figure}}
     \begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
     \textbf{FLiBe channels located closest to temperature peaks shows a \\ negative 
     correlation with $T_{max}$.}
@@ -348,12 +348,12 @@
 
     Minimize $PF_{total}$ is driven by \textbf{maximizing total fission reaction rate} 
     \begin{itemize}
-        \item Reactor 11 with $PF_{total} = 0.056$ and reactor model 5 with 
-        $PF_{total} = 0.059$ have the similar $k_{eff}$ and total fission reaction rate 
-        \item Reactors 11 TRISO distribution enables it to achieve the same $k_{eff}$ 
-        as reactor 5 despite having a lower $PF_{total}$
-        \item \textbf{Reactor 11 TRISO distribution minimizes spatial self-shielding 
-        effects}
+        \visible<1->{\item Reactor 11 with $PF_{total} = 0.056$ and reactor model 5 with 
+        $PF_{total} = 0.059$ have the similar $k_{eff}$ and total fission reaction rate} 
+        \visible<2->{\item Reactors 11 TRISO distribution enables it to achieve the 
+        same $k_{eff}$ as reactor 5 despite having a lower $PF_{total}$}
+        \visible<3->{\item \textbf{Reactor 11 TRISO distribution minimizes spatial 
+        self-shielding effects}}
     \end{itemize}
 \end{frame}
 
