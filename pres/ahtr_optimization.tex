@@ -256,9 +256,9 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
-    \begin{columns}
+    \begin{columns}[t]
     \begin{column}{0.35\textwidth}
-        \begin{block}{Simulation a-2b}
+        \only<1>{\begin{block}{Simulation a-2b}
         \begin{itemize}
         \item I vary $PF_{total}$ and \textbf{a, b, c, d, e f} 
         ($\rho_{TRISO}(\vec{x}, \vec{y}$)) 
@@ -266,15 +266,18 @@
         \item 5 generations 
         \item 128 reactor models per gen  
         \end{itemize}
-        \end{block}
+        \end{block}}
+        \only<2>{\begin{block}{Pareto Front}
+            Multi objective optimization with competing objectives will return multiple 
+            optimal solutions that meet each objective to varying degrees; this set of 
+            solutions is called the pareto front.
+        \end{block}}
         \end{column}
     \begin{column}{0.65\textwidth}
-        \vspace{0.2cm}
         \textbf{Simulation a-2b's Pareto front shows the tradeoff between 
         minimize $PF_{total}$ and $PPF_{fuel}$ objectives.}
         \begin{figure}
             \includegraphics[width=\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto.png} 
-            \caption{Simulation a-2b Pareto Front.}
         \end{figure}
     \end{column}
     \end{columns}
