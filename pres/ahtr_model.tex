@@ -58,8 +58,9 @@
     \frametitle{AHTR Temperature Model Energy Homogenization}
         \begin{figure}[]
             \centering
-            \caption{4-group energy structures for AHTR geometry 
-            derived by Gentry et al \cite{gentry_development_2016}.}
+            \caption{4-group energy structure used for AHTR modeling  
+            derived by Gentry et al \cite{gentry_development_2016}.
+            Figure is not to scale. }
             \includegraphics[width=\linewidth]{figures/four-group-structure.png}
         \end{figure}
 \end{frame}
@@ -72,7 +73,7 @@
         and each fuel stripe (36)
     \begin{figure}[]
             \centering
-            \includegraphics[width=0.65\linewidth]{figures/assembly_mg_pres.png}
+            \includegraphics[width=0.8\linewidth]{figures/assembly_mg_pres.png}
         \caption{AHTR assembly spatial homogenization for group constant generation.}
     \end{figure}
 \end{frame}
@@ -80,25 +81,25 @@
 \subsection{Key Neutronics Parameters Verification}
 \begin{frame}
     \frametitle{AHTR Temp Model Key Neutronics Parameter Verification}
-    I \textbf{verify acceptable spatial homogenization and energy discretization} by 
+    \visible<1->{I \textbf{verify acceptable spatial homogenization and energy discretization} by 
     comparing key neutronics parameters (KNPs) between: 
     \begin{itemize} 
         \item OpenMC simulation with continuous energy and TRISO-level spatial fidelity
         \item Moltres simulation with 4-group energy and spatial homogenization
-    \end{itemize}
-    \textbf{KNPs}: $k_{eff}$, reactivity coefficients, flux distribution, and neutron 
+    \end{itemize}}
+    \visible<2->{\textbf{KNPs}: $k_{eff}$, reactivity coefficients, flux distribution, and neutron 
     spectrum
     \begin{itemize}
         \item All comparisons are to verify that the Moltres model is replicating the 
         OpenMC model's neutronics correctly
-    \end{itemize}
-    \textbf{Reactivity coefficients and flux distribution}
+    \end{itemize}}
+    \visible<3->{\textbf{Reactivity coefficients and flux distribution}
     \begin{itemize}
         \item Ensure that \textbf{Moltres accurately calculates the AHTR's temperature 
         distribution}
         \item Reactivity coefficients capture temperature reactivity feedback on the flux
         \item Moltres source term is dependent on flux 
-    \end{itemize}
+    \end{itemize}}
 \end{frame}
 
 \begin{frame}
