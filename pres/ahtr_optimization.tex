@@ -32,43 +32,39 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Geometry}
+    \textbf{Two sine distributions govern TRISO packing fraction distribution:}
+    \vspace{-0.2cm} 
+    \begin{align}
+    \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(\textbf{a}\cdot sin(\textbf{b}\cdot 
+    x + \textbf{c}) + 2\right) \nonumber \\
+    & \cdot \left(\textbf{d}\cdot sin(\textbf{e}\cdot y + \textbf{f}) + 2\right) 
+    \cdot NF \nonumber
+    \end{align}
+
     \begin{columns}[t]
         \begin{column}{0.5\textwidth}
-        \vspace{0.1cm}
-        \visible<1->{\textbf{Two sine distributions govern TRISO packing fraction 
-        distribution:}
-        \vspace{-0.2cm} 
-        \begin{align}
-        \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(\textbf{a}\cdot sin(\textbf{b}\cdot 
-        x + \textbf{c}) + 2\right) \nonumber \\
-        & \cdot \left(\textbf{d}\cdot sin(\textbf{e}\cdot y + \textbf{f}) + 2\right) 
-        \cdot NF \nonumber
-        \end{align}
-        \vspace{-0.7cm}
         \begin{figure}
             \includegraphics[width=\linewidth]{../docs/figures/ahtr_assembly.png} 
-            \caption{AHTR one-third assembly with ten randomly packed fuel cells in 
-            each graphite plank.}
-        \end{figure}}
+            \caption{AHTR one-third assembly illustrating packing fraction discretization.}
+        \end{figure}
         \end{column}
         \begin{column}{0.5\textwidth} 
-            \visible<2->{\textbf{Five radius values (\textbf{$r_1, r_2, r_3, r_4, r_5$}) 
-            control coolant channel shape.}
             \begin{figure}
-                \includegraphics[width=\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
-                \caption{AHTR one-third assembly with coolant channel shape variation, 
-                $r_1, r_2, r_3, r_4, r_5$ = 0.3cm, 0.2cm, 0.1cm, 0.2cm, 0.3cm.}
-            \end{figure}}
+                \includegraphics[width=\linewidth]{../docs/figures/assem-0.0559-most-minimized.png} 
+                \caption{}
+            \end{figure}
         \end{column}
         \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{TRISO Distribution Illustration}
+    \frametitle{Contd. AHTR One-Third Assembly Geometry}
+    \textbf{Five radius values (\textbf{$r_1, r_2, r_3, r_4, r_5$}) 
+    control coolant channel shape.}
     \begin{figure}
-        \includegraphics[width=0.49\linewidth]{../docs/figures/ahtr_assembly.png} 
-        \caption{AHTR one-third assembly with ten randomly packed fuel cells in 
-        each graphite plank.}
+        \includegraphics[width=0.7\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
+        \caption{AHTR one-third assembly with coolant channel shape variation, 
+        $r_1, r_2, r_3, r_4, r_5$ = 0.3cm, 0.2cm, 0.1cm, 0.2cm, 0.3cm.}
     \end{figure}
 \end{frame}
 
