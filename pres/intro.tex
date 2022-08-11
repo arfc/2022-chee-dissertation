@@ -187,28 +187,30 @@
 
     \begin{frame}
     \frametitle{Evolutionary Algorithms for Reactor Generative Design}
-    \begin{minipage}{0.49\textwidth}
+    \begin{minipage}{0.59\textwidth}
         Evolutionary Algorithms 
         \begin{itemize}
-            \item Imitate natural selection to evolve solutions 
-            \item Set of solutions improve with every generation 
+            \item \textbf{Imitate natural selection} to evolve solutions 
+            \item Uses simple mechanisms: \textbf{selection} (selects good 
+            individuals), \textbf{mutation} and \textbf{crossover} (creates 
+            new better individuals)
+            \item \textbf{Average population improves with every generation} 
         \end{itemize}
         %\textbf{Evolutionary algorithms imitate \\ natural selection} to evolve 
         %solutions, and with every generation \textbf{the average population improves}. 
 
-        \vspace{0.3cm}
-        Evolutionary Algorithm Benefits 
-        \begin{itemize}
-            \item Computationally simple
-            \item Provide robust search in complex spaces
-            \item Proven to be successful at finding globally optimal solutions for 
-            multi-objective optimization problems 
-            \item Can take advantage of parallel systems 
+        Evolutionary Algorithm \textbf{Benefits} 
+        \begin{itemize} 
+            \item \textbf{Computationally simple}
+            \item Proven to be successful at finding \textbf{globally optimal solutions} 
+            for multi-objective optimization problems 
+            \item Can take advantage of \textbf{parallel systems} 
         \end{itemize}
         \end{minipage}
-    \begin{minipage}[c]{0.49\textwidth}
+    \begin{minipage}[c]{0.4\textwidth}
         \begin{figure}
-            \includegraphics[width=0.8\linewidth]{figures/ea-flow.png} 
+            \makebox[\textwidth][c]{
+                \includegraphics[width=1.05\textwidth]{figures/ea-flow.png}} 
             %\caption{Evolutionary algorithm flow \cite{renner_genetic_2003}. }
           \end{figure}
     \end{minipage}
