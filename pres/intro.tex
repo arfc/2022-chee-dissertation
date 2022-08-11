@@ -188,31 +188,29 @@
     \begin{frame}
     \frametitle{Evolutionary Algorithms for Reactor Generative Design}
     \begin{minipage}{0.59\textwidth}
-        Evolutionary Algorithms 
+        \visible<1->{\textbf{Evolutionary Algorithms} 
         \begin{itemize}
             \item \textbf{Imitate natural selection} to evolve solutions 
             \item Uses simple mechanisms: \textbf{selection} (selects good 
             individuals), \textbf{mutation} and \textbf{crossover} (creates 
-            new better individuals)
+            better individuals)
             \item \textbf{Average population improves with every generation} 
-        \end{itemize}
-        %\textbf{Evolutionary algorithms imitate \\ natural selection} to evolve 
-        %solutions, and with every generation \textbf{the average population improves}. 
+        \end{itemize}}
 
-        Evolutionary Algorithm \textbf{Benefits} 
+        \visible<2->{Evolutionary Algorithm \textbf{Benefits} 
         \begin{itemize} 
             \item \textbf{Computationally simple}
             \item Proven to be successful at finding \textbf{globally optimal solutions} 
             for multi-objective optimization problems 
             \item Can take advantage of \textbf{parallel systems} 
-        \end{itemize}
+        \end{itemize}}
         \end{minipage}
     \begin{minipage}[c]{0.4\textwidth}
-        \begin{figure}
+        \visible<1->{\begin{figure}
             \makebox[\textwidth][c]{
                 \includegraphics[width=1.05\textwidth]{figures/ea-flow.png}} 
             %\caption{Evolutionary algorithm flow \cite{renner_genetic_2003}. }
-          \end{figure}
+          \end{figure}}
     \end{minipage}
     \end{frame}
 
