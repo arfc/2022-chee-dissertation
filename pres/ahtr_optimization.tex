@@ -175,8 +175,6 @@
     \visible<1->{\textbf{I vary $r_1, r_2, r_3, r_4, r_5$ (coolant channel shape)
     to minimize $T_{max}$.}}
 
-    \only<1>{Black dot: reactor model, red cross: reactor model with lowest $T_{max}$.}
-
     \begin{figure}
         \centering
         \begin{subfigure}{0.3\textwidth}
@@ -232,7 +230,7 @@
 
 \begin{frame}
     \frametitle{Single-Objective Optimization Major Takeaways}
-    \visible<2->{\textbf{Minimize $PF_{total}$ Objective} 
+    \visible<1->{\textbf{Minimize $PF_{total}$ Objective} 
     \begin{itemize}
         \item Driven by maximizing total fission reaction rate
         \item Influences oscillations in TRISO's spatial distribution
@@ -240,15 +238,15 @@
     \end{itemize}}
 
     \vspace{0.2cm}
-    \visible<3->{\textbf{Minimize $T_{max}$ Objective}
+    \visible<2->{\textbf{Minimize $T_{max}$ Objective}
     \begin{itemize}
-        \item Minimize $T_{max}$ objective prefers a flatter TRISO distribution 
+        \item The minimize $T_{max}$ objective prefers a flatter TRISO distribution 
         \item FLiBe channels located closest to temperature peaks shows a negative 
         correlation with $T_{max}$
     \end{itemize}}
 
     \vspace{0.2cm}
-    \visible<4->{\textbf{Minimize $PPF_{fuel}$ Objective} 
+    \visible<3->{\textbf{Minimize $PPF_{fuel}$ Objective} 
     \begin{itemize}
         \item Driven by flattening thermal flux distribution
         \item Influences oscillations in TRISO's spatial distribution
@@ -258,14 +256,22 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
-    \textbf{Simulation a-2b: I vary $PF_{total}$ and a, b, c, d, e f
-    ($\rho_{TRISO}(\vec{x}, \vec{y}$)) to minimize $PF_{total}$ and $PPF_{fuel}$.} 
-
-    \vspace{0.1cm}
+    \begin{columns}
+        \begin{column}{0.35\textwidth}
+        \begin{block}{Simulation a-2b}
+        \begin{itemize}
+        \item I vary $PF_{total}$ and a, b, c, d, e f 
+        ($\rho_{TRISO}(\vec{x}, \vec{y}$)) 
+        \item Minimize $PF_{total}$ and $PPF_{fuel}$ objectives 
+        \end{itemize}
+        \end{block}
+        \end{column}
+    \begin{column}{0.65\textwidth}
     \begin{figure}
         \includegraphics[width=0.73\linewidth]{../docs/figures/assem-obj-2-pfppf-pareto.png} 
         \caption{Simulation a-2b Pareto Front.}
     \end{figure}
+    \end{column}
 \end{frame}
 
 \begin{frame}
