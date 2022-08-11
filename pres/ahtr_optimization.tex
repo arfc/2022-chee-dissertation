@@ -32,28 +32,30 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Geometry}
-    \textbf{Two sine distributions govern TRISO packing fraction distribution:}
+    \visible<1->{\textbf{Two sine distributions govern TRISO packing fraction distribution:}
     \vspace{-0.2cm} 
     \begin{align}
     \rho_{TRISO}(\vec{x}, \vec{y}) &= \left(\textbf{a}\cdot sin(\textbf{b}\cdot 
     x + \textbf{c}) + 2\right) \cdot \left(\textbf{d}\cdot sin(\textbf{e}\cdot y + 
     \textbf{f}) + 2\right) \cdot NF \nonumber
-    \end{align}
+    \end{align}}
 
     \begin{columns}[t]
         \begin{column}{0.5\textwidth}
         \begin{figure}
-            \includegraphics[width=\linewidth]{../docs/figures/ahtr_assembly.png} 
-            \caption{AHTR one-third assembly illustrating packing fraction discretization.}
+            \only<2>{\includegraphics[width=\linewidth]{../docs/figures/ahtr_assembly.png} 
+            \caption{AHTR one-third assembly illustrating packing fraction discretization.}}
+            \only<3>{\includegraphics[width=\linewidth]{../docs/figures/assem-obj-1-pf-most-minimized.png} 
+            \caption{AHTR one-third assembly illustrating packing fraction variation.}}
         \end{figure}
         \end{column}
         \begin{column}{0.5\textwidth} 
-            \begin{figure}
-                \textbf{a} = 1.435, \textbf{b} = 1.488, \textbf{c} = 2.362, 
-                \textbf{d} = 0.689, \textbf{e} = 0.584, \textbf{f} = 4.170
+            \visible<2->{\begin{figure}
+                \textbf{a} = 1.435, \textbf{b} = 1.488, \\ \textbf{c} = 2.362, 
+                \textbf{d} = 0.689, \\ \textbf{e} = 0.584, \textbf{f} = 4.170
                 \includegraphics[width=\linewidth]{../docs/figures/assem-0.0559-most-minimized.png} 
                 \caption{TRISO distribution example.}
-            \end{figure}
+            \end{figure}}
         \end{column}
         \end{columns}
 \end{frame}
