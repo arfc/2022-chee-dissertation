@@ -208,7 +208,7 @@
             \caption{Plot of $T_{max}$ against $r_5$.}
         \end{subfigure}
     \end{figure}
-    \only<1>{\textbf{Plots demonstrate if $T_{max}>$ is correlated with each radius values.}}
+    \only<1>{\textbf{Plots demonstrate if $T_{max}$ is correlated with each radius values.}}
     \only<2>{\textbf{There is a strong negative linear correlation between $T_{max}$ and 
     $r_1$ and $r_5$.}}
     \only<3>{\textbf{Random scattering shows that $T_{max}$ has a weak correlation with 
@@ -265,6 +265,7 @@
         \item Minimize $PF_{total}$ and $PPF_{fuel}$ objectives
         \item 5 generations 
         \item 128 reactor models per gen  
+        \item Total runtime: 492 Theta node-hours
         \end{itemize}
         \end{block}
         \end{column}}
@@ -282,7 +283,7 @@
             \begin{block}{Simulation a-2b}
             \begin{itemize}
             \item 12 reactor models on simulation a-2b's Pareto front have different 
-            $PF_{total}$ and $rho_{TRISO}(\vec{r})$ depending on \textbf{extent each
+            $PF_{total}$ and $\rho_{TRISO}(\vec{r})$ depending on \textbf{extent each
             objective is minimized.}
             \item Reactor model 11 = lowest $PF_{total}$, highest $PPF_{fuel}$
             \item Reactor model 3 = lowest $PPF_{fuel}$, highest $PF_{total}$
@@ -305,6 +306,8 @@
         \end{figure}
     \end{column}}
     \end{columns}
+
+    \vspace{0.4cm}
     \only<2>{\textbf{Successful multi-objective optimization finds a wide spread of 
     reactor models on their Pareto fronts}}
 \end{frame}
