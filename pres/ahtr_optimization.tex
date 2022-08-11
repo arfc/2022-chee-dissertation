@@ -327,6 +327,45 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{figures/a-2b-comparison-reactors.png}
+    \end{figure}
+
+    Minimize $PF_{total}$ is driven by \textbf{maximizing total fission reaction rate} 
+    \begin{itemize}
+        \item Reactor 11 with $PF_{total} = 0.056$ and reactor model 5 with 
+        $PF_{total} = 0.059$ have the same $k_{eff}$ and total fission reaction rate 
+        \item Reactors 11 TRISO distribution enables it to achieve the same $k_{eff}$ 
+        as reactor 5 despite having a lower $PF_{total}$
+        \item \textbf{Reactor 11 TRISO distribution minimizes spatial self-shielding 
+        effects}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{figures/a-2b-comparison-reactors.png}
+    \end{figure}
+
+    Minimize $PPF_{fuel}$ objective is driven by \textbf{flattening thermal 
+    flux distribution}  
+    \begin{itemize}
+        \item Most to least flat thermal flux: reactor model 
+                $1 \rightarrow 5 \rightarrow 11$
+    \end{itemize}
+
+    \begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
+        Minimize $PF_{total}$ and Minimize $PPF_{fuel}$ objectives 
+        influence each other resulting in \textbf{unexpected TRISO distributions at 
+        different $PF_{total}$ values}. 
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AHTR One-Third Assembly Simulation a-2b Results}
     \vspace{-0.25cm}
     \begin{figure}
         \centering
@@ -419,7 +458,7 @@
 \begin{frame}
     \frametitle{Multi-Objective Optimization Major Takeaways}
     The multi-objective optimization simulations successfully explored the large 
-    design space by finding \textbf{wide spreads of reactor models on their 
+    design space by finding \textbf{wide spread of reactor models on their 
     Pareto fronts}. 
 
     \vspace{0.2cm}
