@@ -43,10 +43,10 @@
         \begin{column}{0.7\textwidth}
 
             \vspace{-0.5cm}
-            ROLLO Flow 
+            \visible<1->{ROLLO Flow 
             \begin{itemize}
-                \item Reads and validates the JSON input file
-                \item Blue blocks 
+                \item Reads and validates the JSON input file}
+                \visible<2->{\item Blue blocks 
                 \begin{itemize}
                     \item Evolutionary algorithm is driven by \acrfull{DEAP} 
                 \end{itemize}
@@ -55,23 +55,24 @@
                     \item Reactor modeling software evaluates the fitness of each 
                     reactor model in each generation 
                 \end{itemize}
-            \end{itemize}
+            \end{itemize}}
 
             \vspace{0.2cm}
-            For each ROLLO optimization simulation, one must \textbf{balance convergence and 
-            computational cost}. 
+            \visible<3->{For each ROLLO optimization simulation, one must \textbf{balance convergence and 
+            computational cost}.} 
 
             \vspace{0.2cm}
-            ROLLO's purpose is to help the human reactor designer narrow down reactor design 
-            search space. The reactor designer uses the \textbf{computational power 
-            available}, to \textbf{narrow down the search space} as much as possible.
+            \visible<4->{ROLLO's purpose is to help the human reactor designer narrow 
+            down reactor design search space. The reactor designer uses the 
+            \textbf{computational power available}, to 
+            \textbf{narrow down the search space} as much as possible.}
         \end{column}
         \begin{column}{0.3\textwidth}
             \vspace{-0.3cm}
-            \begin{figure}
+            \visible<1->{\begin{figure}
                 \includegraphics[width=0.97\linewidth]{figures/rollo-flow2.png} 
                 %\caption{ROLLO's Genetic Algorithm Flow.}
-            \end{figure}
+            \end{figure}}
         \end{column}
     \end{columns}
 \end{frame}
