@@ -277,11 +277,20 @@
                 \item For each reactor model on the pareto front, \textbf{none of the 
                 objective values can be improved without degrading another}
             \end{itemize}
-
-            \textbf{Successful multi-objective optimization finds a wide spread of 
-            reactor models on their Pareto fronts}
         \end{column}}
-    \only<1>{    
+        \only<3>{\begin{column}{0.35\textwidth}
+            \begin{block}{Simulation a-2b}
+            \begin{itemize}
+            \item 12 reactor models on simulation a-2b's Pareto front have different 
+            $PF_{total}$ and $rho_{TRISO}(\vec{r})$ depending on \textbf{extent each
+            objective is minimized.}
+            \item Reactor model 11 = lowest $PF_{total}$, highest $PPF_{fuel}$
+            \item Reactor model 3 = lowest $PPF_{fuel}$, highest $PF_{total}$
+            \item Reactor model 5 = minimizes both objectives to an equal extent 
+            \end{itemize}
+            \end{block}
+            \end{column}}
+    \only<1,3>{    
         \begin{column}{0.65\textwidth}
         \textbf{Simulation a-2b's Pareto front shows the tradeoff between 
         minimize $PF_{total}$ and $PPF_{fuel}$ objectives.}
@@ -296,6 +305,8 @@
         \end{figure}
     \end{column}}
     \end{columns}
+    \only<2>{\textbf{Successful multi-objective optimization finds a wide spread of 
+    reactor models on their Pareto fronts}}
 \end{frame}
 
 \begin{frame}
