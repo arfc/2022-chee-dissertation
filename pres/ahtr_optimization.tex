@@ -122,8 +122,8 @@
                 \includegraphics[width=\linewidth]{figures/ahtr-assem-opt-table-annotated3.png}
             \end{figure}
 
-            Simulation a-3b is the \textbf{final and largest optimization problem} run for 
-            the one-third assembly model that varies all input parameters to optimize 
+            Simulation a-3b is the \textbf{final and largest optimization problem} run 
+            for the one-third assembly model that varies all input parameters to optimize 
             for all objectives. 
         }
     
@@ -131,21 +131,22 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-1b Results}
-    I vary \textbf{a, b, c, d, e f} ($\rho_{TRISO}(\vec{x}, \vec{y}$))
-    to minimize $T_{max}$. 
+    \visible<1->{\textbf{Simulation a-1b: I vary a, b, c, d, e f ($\rho_{TRISO}(\vec{x}, \vec{y}$))
+    to minimize $T_{max}$.}} 
 
     \begin{figure}
-        \includegraphics[width=0.39\linewidth]{figures/assem-obj-1-temp-evol-pres.png} 
-        \includegraphics[width=0.59\linewidth]{../docs/figures/assem-obj-1-temp-final.png}
+        \only<1>{\includegraphics[width=\linewidth]{figures/assem-obj-1-temp.png}}
+        \only<2>{\includegraphics[width=\linewidth]{figures/assem-obj-1-temp-annotated1.png}}
+        \only<3>{\includegraphics[width=\linewidth]{figures/assem-obj-1-temp-annotated2.png}}
         \caption{Simulation a-1b $T_{max}$ evolution.}
     \end{figure}
 
-    Simulation a-1b runs for 3 generations with 128 reactor models per generation, the 
-    \textbf{average one-third assembly $T_{max}$ converged to  $\approx 1200K$}.
+    \only<2>{Simulation a-1b runs for 3 generations with 128 reactor models per generation, the 
+    \textbf{average one-third assembly $T_{max}$ converged to  $\approx 1200K$}.}
 
-    \begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
+    \only<4>{\begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
         \textbf{A flatter TRISO distribution minimizes $T_{max}$.}
-    \end{tcolorbox}
+    \end{tcolorbox}}
 \end{frame}
 
 \begin{frame}
