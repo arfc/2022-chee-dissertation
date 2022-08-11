@@ -77,14 +77,26 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Optimization Simulations}
     \only<1>{
+        \vspace{-0.2cm}
         \begin{figure}
             \includegraphics[width=0.8\linewidth]{figures/ahtr-assem-opt-table.png}
         \end{figure}
 
+        \vspace{-0.2cm}
         All the optimization simulations are run on the \textbf{Theta supercomputer} 
         at the Argonne Leadership Computing Facility \cite{noauthor_thetathetagpu_2022}.
 
         Each Theta node has 64 1.3-GHz Intel Xeon Phi 7230 processors.}
+        \only<2>{
+            \vspace{-0.2cm}
+            \begin{figure}
+                \includegraphics[width=0.8\linewidth]{figures/ahtr-assem-opt-table-annotated1.png}
+            \end{figure}
+    
+            Simulations a-1b and a-1e show \textbf{how the $\rho_{TRISO}(\vec{r})$ and 
+            coolant channel shape varying parameters respond to 
+            the minimize $T_{max}$ objective}.}
+    
 \end{frame}
 
 \begin{frame}
