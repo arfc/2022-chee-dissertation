@@ -173,7 +173,9 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-1e Results}
     \visible<1->{\textbf{I vary $r_1, r_2, r_3, r_4, r_5$ (coolant channel shape)
-    to minimize $T_{max}$.}} 
+    to minimize $T_{max}$.}}
+
+    \only<1>{Black dot: reactor model, red cross: reactor model with lowest $T_{max}$.}
 
     \begin{figure}
         \centering
@@ -208,10 +210,11 @@
             \caption{Plot of $T_{max}$ against $r_5$.}
         \end{subfigure}
     \end{figure}
+    \only<1>{\textbf{Plots demonstrate if $T_{max}>$ is correlated with each radius values.}}
     \only<2>{\textbf{There is a strong negative linear correlation between $T_{max}$ and 
     $r_1$ and $r_5$.}}
     \only<3>{\textbf{Random scattering shows that $T_{max}$ has a weak correlation with 
-    $r_2$, $r_3$, and $r_4$}.}
+    $r_2$, $r_3$, $r_4$}.}
 \end{frame}
 
 \begin{frame}
@@ -219,8 +222,7 @@
     \begin{figure}
         \includegraphics[width=0.55\linewidth]{../docs/figures/a-1e-temp-distribution-2d.png} 
         \includegraphics[width=0.4\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
-        \caption{Temperature Distribution in simulation a-1e's most-minimized $T_{max}$ reactor 
-        model.}
+        \caption{Temperature Distribution in the reactor model with the lowest $T_{max}$.}
     \end{figure}
     \begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
     \textbf{FLiBe channels located closest to temperature peaks shows a \\ negative 
