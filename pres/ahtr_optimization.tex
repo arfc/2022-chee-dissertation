@@ -33,8 +33,8 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Geometry}
     \begin{figure}
-        \only<1>{\includegraphics[width=0.7\linewidth]{../docs/figures/ahtr-fuel-element.png}} 
-        \only<2>{\includegraphics[width=0.7\linewidth]{figures/ahtr-fuel-element-annotated.png}} 
+        \only<1>{\includegraphics[width=0.6\linewidth]{../docs/figures/ahtr-fuel-element.png}} 
+        \only<2>{\includegraphics[width=0.6\linewidth]{figures/ahtr-fuel-element-annotated.png}} 
     \end{figure}
 \end{frame}
 
@@ -55,8 +55,10 @@
         \begin{column}{0.5\textwidth}
         \begin{figure}
             \only<2>{\includegraphics[width=\linewidth]{../docs/figures/ahtr_assembly.png} 
+            \vspace{-0.3cm}
             \caption{AHTR one-third assembly illustrating packing fraction discretization.}}
             \only<3>{\includegraphics[width=\linewidth]{../docs/figures/assem-obj-1-pf-most-minimized.png} 
+            \vspace{-0.3cm}
             \caption{AHTR one-third assembly illustrating packing fraction variation.}}
         \end{figure}
         \end{column}
@@ -77,6 +79,7 @@
     control coolant channel shape.}
     \begin{figure}
         \includegraphics[width=0.7\linewidth]{../docs/figures/coolant-channel-shape-assem.png} 
+        \vspace{-0.3cm}
         \caption{AHTR one-third assembly with coolant channel shape variation, 
         $r_1, r_2, r_3, r_4, r_5$ = 0.3cm, 0.2cm, 0.1cm, 0.2cm, 0.3cm.}
     \end{figure}
@@ -87,7 +90,7 @@
     \vspace{-0.2cm}
     \begin{figure}
         \makebox[\textwidth][c]{
-            \includegraphics[width=1.05\linewidth]{figures/ahtr-modeling-workflow-numbered.png}} 
+            \includegraphics[width=1.1\linewidth]{figures/ahtr-modeling-workflow-numbered.png}} 
         %\caption{ROLLO AHTR Optimization Workflow.}
     \end{figure}
 \end{frame}
@@ -173,7 +176,9 @@
     lowest $T_{max}$ has $T_{max}$ = 1186K and an almost constant TRISO packing fraction 
     distribution.}}
 
-    \only<4>{\begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
+    \only<4>{
+    \vspace{-0.4cm}    
+    \begin{tcolorbox}[colback=illiniorange,colframe=illiniorange!50!black]
         \textbf{A flatter TRISO distribution minimizes $T_{max}$.}
     \end{tcolorbox}}
 \end{frame}
@@ -188,31 +193,31 @@
         \begin{subfigure}{0.3\textwidth}
             \only<1,3>{\includegraphics[width=\linewidth]{figures/a-1e-r1-pres.png}}
             \only<2>{\includegraphics[width=\linewidth]{figures/a-1e-r1-pres-annotated.png}}
-            \vspace{-0.3cm}
+            \vspace{-0.5cm}
             \caption{Plot of $T_{max}$ against $r_1$.}
         \end{subfigure}
         \begin{subfigure}{0.3\textwidth}
             \only<1,2>{\includegraphics[width=\linewidth]{figures/a-1e-r2-pres.png}}
             \only<3>{\includegraphics[width=\linewidth]{figures/a-1e-r2-pres-annotated.png}}
-            \vspace{-0.3cm}
+            \vspace{-0.5cm}
             \caption{Plot of $T_{max}$ against $r_2$.}
         \end{subfigure}
         \begin{subfigure}{0.3\textwidth}
             \only<1,2>{\includegraphics[width=\linewidth]{figures/a-1e-r3-pres.png}}
             \only<3>{\includegraphics[width=\linewidth]{figures/a-1e-r3-pres-annotated.png}}
-            \vspace{-0.3cm}
+            \vspace{-0.5cm}
             \caption{Plot of $T_{max}$ against $r_3$.}
         \end{subfigure}
         \begin{subfigure}{0.3\textwidth}
             \only<1,2>{\includegraphics[width=\linewidth]{figures/a-1e-r4-pres.png}}
             \only<3>{\includegraphics[width=\linewidth]{figures/a-1e-r4-pres-annotated.png}}
-            \vspace{-0.3cm}
+            \vspace{-0.5cm}
             \caption{Plot of $T_{max}$ against $r_4$.}
         \end{subfigure}
         \begin{subfigure}{0.3\textwidth}
             \only<1,3>{\includegraphics[width=\linewidth]{figures/a-1e-r5-pres.png}}
             \only<2>{\includegraphics[width=\linewidth]{figures/a-1e-r5-pres-annotated.png}}
-            \vspace{-0.3cm}
+            \vspace{-0.5cm}
             \caption{Plot of $T_{max}$ against $r_5$.}
         \end{subfigure}
     \end{figure}
@@ -278,7 +283,7 @@
         \end{block}
         \end{column}}
         \only<2>{\begin{column}{0.5\textwidth}
-            \textbf{Pareto Front}
+            \begin{block}{Pareto Front}
             \begin{itemize}
                 \item Multi objective optimization with competing objectives will return 
                 \textbf{multiple optimal solutions that meet each objective to varying 
@@ -286,6 +291,7 @@
                 \item For each reactor model on the pareto front, \textbf{none of the 
                 objective values can be improved without degrading another}
             \end{itemize}
+        \end{block}
         \end{column}}
         \only<3>{\begin{column}{0.35\textwidth}
             \vspace{-0.4cm}
@@ -414,17 +420,25 @@
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
-    \begin{figure}
-        \includegraphics[width=0.8\linewidth]{../docs/figures/assem-obj-3-all-distr-most-minimized.png} 
-    \end{figure}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+        \begin{figure}
+            \includegraphics[width=0.8\linewidth]{figures/a-3b-four-disr.png} 
+        \end{figure}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            hi 
+        \end{column}
+        \end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
+    \textbf{Simulation a-3b: One-third assembly model that equally minimized all 
+    objectives (reactor model 2).}
+    
     \begin{figure}
         \includegraphics[width=0.75\linewidth]{../docs/figures/assem-obj-3-all-min-all.png} 
-        \caption{Simulation a-3b: one-third assembly model that equally minimized all 
-        objectives (reactor model 2).}
     \end{figure}
 \end{frame}
 
