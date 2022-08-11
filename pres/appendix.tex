@@ -145,13 +145,14 @@
         layers. Both simulations were run on one BlueWaters supercomputer XE Node 
         using OpenMC with 80 active 
         cycles, 20 inactive cycles, and 8000 particles.}
-        \includegraphics[width=0.75\linewidth]{figures/triso-homogenization.png} 
+        \includegraphics[width=0.9\linewidth]{figures/triso-homogenization.png} 
     \end{table}
 
     The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
     speed-up without compromising accuracy with $k_{eff}$ values within each 
     other's uncertainty.
 
+    \vspace{0.3cm}
     As a result, the homogenized models are used for all subsequent optimization efforts. 
 
 \end{frame}
@@ -197,18 +198,20 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Simulation a-3b hypervolume}
+    \frametitle{Simulation a-3b Hypervolume}
     \begin{table}
         \caption{Simulation a-3b hypervolume values at each generation.}
-        \includegraphics[width=0.4\linewidth]{figures/a-3b-hypervolume.png} 
+        \includegraphics[width=0.35\linewidth]{figures/a-3b-hypervolume.png} 
     \end{table}
 
-    For each optimization simulation, I must balance convergence and computational cost.
+    For each optimization, I must \textbf{balance convergence and computational cost}.
 
+    \vspace{0.1cm}
     The hypervolume is calculated by finding the volume between the reference point and 
     the objective values of the Pareto front's reactor models (bigger hypervolume = 
     more converged solution).
 
-    I determine if convergence criteria is met by evaluating if the difference between 
-    generations' hypervolume values are getting smaller.
+    \vspace{0.1cm}
+    \textbf{I determine if convergence criteria is met by evaluating if the difference between 
+    generations' hypervolume values are getting smaller.}
 \end{frame}
