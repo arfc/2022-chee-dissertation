@@ -33,7 +33,7 @@
 
 \begin{frame}
     \frametitle{AHTR Temperature Model Setup}
-    Steps to produce Moltres AHTR Temperature Model
+    \visible<1->{Steps to produce Moltres AHTR Temperature Model
         \begin{itemize}
           \item OpenMC neutronics model produces group constants cross-section data 
           (various macroscopic neutron cross sections, neutron diffusion coefficient, etc.)
@@ -41,17 +41,17 @@
           \item Run Moltres model: using these group constants and mesh, Moltres solves for the 
           flux and temperature based on the neutron diffusion equation coupled with temperature 
           advection due to coolant flow
-        \end{itemize}
+        \end{itemize}}
 
     \vspace{0.3cm}
-    Unlike the OpenMC neutronics model, Moltres \textbf{does not explicitly model each TRISO 
+    \visible<2->{Unlike the OpenMC neutronics model, Moltres \textbf{does not explicitly model each TRISO 
     particle} because A TRISO-level fidelity mesh file is impractical and will result in an 
-    extremely long Moltres runtimes. 
+    extremely long Moltres runtimes.} 
     
     \vspace{0.3cm}
-    For successful AHTR temperature model with Moltres, I must establish 
+    \visible<3->{For successful AHTR temperature model with Moltres, I must establish 
     \textbf{suitable spatial and energy homogenization} to create group constants and mesh 
-    that preserve accuracy while maintaining an acceptable runtime.
+    that preserve accuracy while maintaining an acceptable runtime.}
 \end{frame}
 
 \begin{frame}
