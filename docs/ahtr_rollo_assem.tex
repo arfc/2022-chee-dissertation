@@ -74,38 +74,38 @@ optimization simulation conducted in this chapter.
     \gls{TRISO} packing fraction distribution}
 	\label{tab:assem-obj-breakdown}
     \footnotesize
-    \begin{tabular}{p{1.5cm}|l|llll}
+    \begin{tabular}{p{1.5cm}|l|lllp{3cm}}
     \hline 
-    \textbf{Objs [\#]} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Simulation Software} \\
+    \textbf{Objs [\#]} & \textbf{Sim} & \textbf{Objectives} & \textbf{Constraints} &\textbf{Varying Parameters} & \textbf{Total Compute Cost [node-hours]} \\
     \hline
-    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC \\
+    \multirow{9}{2cm}{1}& a-1a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & 285.8 \\
     & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & a-1b & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & 740.9\\
     \cline{2-6}
-    & a-1c & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & a-1c & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem $\rho_{TRISO}(\vec{r})$ & 230.0\\
     \cline{2-6}
-    & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.0$ &\tabitem Coolant channel shape & OpenMC \\
+    & a-1d & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.0$ &\tabitem Coolant channel shape & 334.6 \\
     & & & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem Coolant channel shape & OpenMC, Moltres\\
+    & a-1e & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ &\tabitem Coolant channel shape & 692.3\\
     \cline{2-6}
-    & a-1f & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff} \geq 1.0$ &\tabitem Coolant channel shape & OpenMC\\
+    & a-1f & \tabitem min($PPF_{fuel}$) & \tabitem $k_{eff} \geq 1.0$ &\tabitem Coolant channel shape & 222.9\\
     \hline
-    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{6}{2cm}{2}& a-2a & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & 1250.9\\
     & &\tabitem min($T_{max}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-2b & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC\\
+    & a-2b & \tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & 491.7\\
     & & \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     \cline{2-6}
-    & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & a-2c & \tabitem min($T_{max}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & 537.7\\
     & & \tabitem min($PPF_{fuel}$) & & & \\
     \hline
-    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    \multirow{6}{2cm}{3}& a-3a &\tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & 1367.9\\
     && \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & & \\
     \cline{2-6}
-    & a-3b &\tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & OpenMC, Moltres\\
+    & a-3b &\tabitem min($PF_{total}$) & \tabitem $k_{eff} \geq 1.38$ & \tabitem $\rho_{TRISO}(\vec{r})$ & 1830.0\\
     && \tabitem min($PPF_{fuel}$) & & \tabitem $PF_{total}$ & \\
     && \tabitem min($T_{max}$) & & \tabitem Coolant channel shape& \\
     \hline
