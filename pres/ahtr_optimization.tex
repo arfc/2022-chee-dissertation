@@ -387,7 +387,7 @@
 \begin{frame}
     \frametitle{AHTR One-Third Assembly Simulation a-3b Results}
     \begin{columns}
-    \begin{column}{0.35\textwidth}
+    \only<1>{\begin{column}{0.35\textwidth}
         \begin{block}{Simulation a-3b}
             \begin{itemize}
             \item Vary $PF_{total}$, \textbf{a, b, c, d, e f} ($\rho_{TRISO}(\vec{x}, 
@@ -398,7 +398,21 @@
             \item Total runtime: 1528 Theta node-hours = 97792 real-time hours 
             \end{itemize}
             \end{block}
-        \end{column}
+        \end{column}}
+    \only<2>{\begin{column}{0.35\textwidth}
+        \begin{block}{Simulation a-3b}
+        \begin{itemize}
+        \item The 12 reactor models on simulation a-2b's Pareto front have different 
+        input parameters depending on \textbf{extent each
+        objective is minimized}
+        \item Reactor 11 = lowest $PF_{total}$
+        \item Reactor model 1 = lowest $T_{max}$
+        \item Reactor 4 = lowest $PPF_{fuel}$
+        \item Reactor 2 = minimizes all objectives to an equal extent 
+        \end{itemize}
+        \end{block}
+        \end{column}}
+        
     \begin{column}{0.7\textwidth}
     \begin{figure}
         \includegraphics[width=\linewidth]{../docs/figures/assem-obj-3-all-2d.png} 
