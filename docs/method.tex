@@ -332,13 +332,13 @@ Equation \ref{eq:plank-sine}.
     x &= \mbox{midpoint x-value for each cell } [cm]\nonumber \\
     NF &= \mbox{normalization factor } [-]\nonumber
 \end{align}
-%Appendix A describes the normalization factor's calculation. 
 Figure \ref{fig:straightened_plank} depicted the ten fuel cells.
 The sine distribution's coefficients, \textit{a b c}, are the control variables 
 \gls{ROLLO} utilizes to manipulate the plank's $\rho_{TRISO}(\vec{x})$.
 Thus, \gls{ROLLO} will vary the \textit{a, b, c} variables to find an optimal 
 $\rho_{TRISO}(\vec{x})$ that optimizes objectives. 
-The normalization factor is based on the defined total packing fraction.
+The normalization factor normalizes each fuel cell to ensure that the total volume of 
+TRISO particles in the plank corresponds to $PF_{total}$.
 
 An \gls{AHTR} plank with $PF_{total} = 0.0979$, and 
 $\rho_{TRISO}(\vec{x}) = \left(0.5\cdot sin(\frac{\pi}{3}\cdot x + \pi) + 2\right) 
@@ -399,7 +399,8 @@ The sine distribution's coefficients, \textit{a b c d e f}, are the control vari
 one-third assembly.
 Thus, \gls{ROLLO} will vary \textit{a b c d e f} constants to find an optimal 
 $\rho_{TRISO}(\vec{x}, \vec{y})$ that optimizes objectives.
-The normalization factor is based on the defined total packing fraction.
+The normalization factor normalizes each fuel cell to ensure that the total volume of 
+TRISO particles in the one-third assembly corresponds to $PF_{total}$.
 
 An \gls{AHTR} one-third assembly with $PF_{total} = 0.1$ and 
 $\rho_{TRISO}(\vec{x}, \vec{y}) = \left(0.5\cdot sin(1\cdot x + 1) + 2\right) \cdot 
