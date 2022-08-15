@@ -3,8 +3,11 @@
 Simulation a-3b-256 has the exact same optimization problem parameters as simulation 
 a-3b (Table \ref{tab:simulationa3b}) except for an increase in population size to 256
 individuals. 
-Table \ref{tab:a3b-256-hypervolume} shows the hypervolume value at each generation, 
-confirming that simulation a-3b-256 converges by generation 4. 
+Table \ref{tab:a3b-256-hypervolume} shows the hypervolume value at each generation.
+The compute time required to run simulation a-3b-256 for four generations is 3359 
+node-hours. 
+I ran simulation a-3b-256 for only four generations due to limited computational 
+resources.  
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -25,6 +28,7 @@ confirming that simulation a-3b-256 converges by generation 4.
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:assem-obj-3-all-256-2d} shows a plot of the final generation's reactor 
 models' $PF_{total}$ against $T_{max}$ against $PPF_{fuel}$; crosses mark the reactor 
 models that fall on the Pareto front.
@@ -185,7 +189,3 @@ in simulation a-3b-256 compared to simulation a-3b's equivalent reactor models
 This suggests that simulation a-3b-256's larger population size enabled \gls{ROLLO} 
 to explore more reactor model variations and find even more optimal reactor models 
 that further minimized $T_{max}$. 
-
-The compute time required to run simulation a-3b-256 for 4 generations is 3359 
-node-hours. 
-Due to the lack of computational resources... 
