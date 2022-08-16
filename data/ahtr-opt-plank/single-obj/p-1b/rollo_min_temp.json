@@ -1,0 +1,33 @@
+{
+    "control_variables": {
+        "sine_a": {"min": 0.0, "max": 2.0},
+        "sine_b": {"min": 0.0, "max": 1.57},
+        "sine_c": {"min": 0.0, "max": 6.28}
+    },
+    "evaluators": {
+        "openmc_gc": {
+            "order": 0,
+            "input_script": ["aprun -n 1 -d 1 -- bwpy-environ -- python", "fhr_plank_openmc.py"],
+            "execute2": [["aprun -n 19 -d 32 openmc -s 32", ""], ["aprun -n 1 -d 1 -- bwpy-environ -- python ../../../../moltres/python/moltres_xs.py", "fhr_plank_gc.inp"]], 
+            "inputs": ["sine_a", "sine_b", "sine_c"],
+            "output_script": ["aprun -n 1 -d 1 -- bwpy-environ -- python", "fhr_plank_openmc_keff.py"],
+            "outputs": ["keff2"]
+        },
+        "moltres": {
+            "order": 1,
+            "input_script": ["aprun -n 608 /projects/sciteam/bbcc/projects/moltres/moltres-opt -i", "fhr_plank_moltres.i"],
+            "execute2": [],
+            "inputs": [],
+            "output_script": ["aprun -n 1 -d 1 -- bwpy-environ -- python", "fhr_plank_moltres_output.py"], 
+            "outputs": ["max_temp"]
+        }
+    },
+    "constraints": {"keff2": {"operator": [">="], "constrained_val": [1.0]}},
+    "algorithm": {
+        "objective": ["min"],
+        "optimized_variable": ["max_temp"],
+        "pop_size": 60,
+        "generations": 10,
+        "parallel": "none"
+    }
+}
