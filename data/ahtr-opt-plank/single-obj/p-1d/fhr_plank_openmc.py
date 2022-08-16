@@ -2,9 +2,8 @@ import openmc
 import numpy as np
 from numpy import sin
 import sys 
-sys.path.insert(1, '../../../scripts/')
+sys.path.insert(1, '../../../../scripts/')
 from plank_constants import *
-sys.path.insert(1, '../../../scripts/')
 from channel_variations_correct import * 
 
 temp = 948
