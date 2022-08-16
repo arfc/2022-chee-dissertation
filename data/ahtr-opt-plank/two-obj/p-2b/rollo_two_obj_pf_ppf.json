@@ -1,0 +1,32 @@
+{
+    "control_variables": {
+        "pf": {"min":0.01, "max": 0.1},
+        "sine_a": {"min": 0.0, "max": 2.0},
+        "sine_b": {"min": 0.0, "max": 1.57},
+        "sine_c": {"min": 0.0, "max": 6.28}
+    },
+    "evaluators": {
+        "openmc_gc": {
+            "order": 0,
+            "input_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_openmc.py"],
+            "execute2": [["aprun -n 1 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2"]], 
+            "inputs": ["pf", "sine_a", "sine_b", "sine_c"],
+            "output_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_openmc_output.py"],
+            "outputs": ["pf", "keff2", "ppf"]
+        }
+    },
+    "constraints": {"keff2": {"operator": [">="], "constrained_val": [1.35]}},
+    "algorithm": {
+        "objective": ["min","min"],
+        "weight": [1.0, 1.0],
+        "optimized_variable": ["pf", "ppf"],
+        "pop_size": 128,
+        "generations": 4,
+        "mutation_probability": 0.23,
+        "mating_probability": 0.9,  
+        "selection_operator": {
+            "operator": "selNSGA2"
+        }, 
+        "parallel": "theta"
+    }
+}
