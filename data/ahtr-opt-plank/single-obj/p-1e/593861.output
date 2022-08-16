@@ -1,0 +1,32 @@
+WARNING:root: ROLLO added default for variable: keep_files, default value = all
+WARNING:root: ROLLO added default for variable: mutation_probability, default value = 0.23
+WARNING:root: ROLLO added default for variable: mating_probability, default value = 0.47
+WARNING:root: ROLLO added default for variable: selection_operator, default value = {'operator': 'selTournament', 'tournsize': 5}
+WARNING:root: ROLLO added default for variable: mutation_operator, default value = {'operator': 'mutPolynomialBounded', 'eta': 0.23, 'indpb': 0.23}
+WARNING:root: ROLLO added default for variable: mating_operator, default value = {'operator': 'cxBlend', 'alpha': 0.46}
+       	   	     	                                                             oup                                                             	                                  ind                                  
+       	   	     	-----------------------------------------------------------------------------------------------------------------------------	-----------------------------------------------------------------------
+time   	gen	evals	avg                          	std                            	min                          	max                          	avg                    	min                    	max                    
+2363.53	0  	64   	[1127.38057143    1.36521131]	[6.52341064e+00 1.34187203e-03]	[1112.0722007    1.3630908]  	[1145.71899548    1.36921257]	[0.19726412 0.19681852]	[0.05010263 0.05674233]	[0.34526157 0.3416314 ]
+1999.54	1  	39   	[1118.53208664    1.3653443 ]	[4.36611324e+00 1.37775053e-03]	[1112.0722007     1.36316457]	[1126.14937565    1.36819357]	[0.28823505 0.2560626 ]	[0.17231178 0.1306795 ]	[0.34526157 0.3416314 ]
+1798.67	2  	35   	[1113.20824567    1.36530497]	[1.93079986e+00 7.47793163e-04]	[1111.68598757    1.36339294]	[1120.47216037    1.36703595]	[0.31607995 0.3231625 ]	[0.19929666 0.17324325]	[0.34594428 0.34306769]
+Entering generation 3...
+INFO:root: Solver: openmc_gc, Input Script Runtime: 133.76 seconds
+INFO:root: Solver: openmc_gc, Execute 0 Runtime: 1248.98 seconds
+INFO:root: Solver: openmc_gc, Execute 1 Runtime: 199.66 seconds
+INFO:root: Solver: openmc_gc, Output Script Runtime: 56.85 seconds
+INFO:root: Solver: moltres, Input Script Runtime: 46.09 seconds
+INFO:root: Solver: moltres, Execute 0 Runtime: 41.28 seconds
+INFO:root: Solver: moltres, Execute 1 Runtime: 97.61 seconds
+INFO:root: Solver: moltres, Output Script Runtime: 48.36 seconds
+INFO:root: Generation: 3, Evaluation Total Runtime: 1873.45 seconds
+WARNING:root: 0 out of 64 inds were constrained
+       	   	     	                                                             oup                                                             	                                  ind                                  
+       	   	     	-----------------------------------------------------------------------------------------------------------------------------	-----------------------------------------------------------------------
+time   	gen	evals	avg                          	std                            	min                          	max                          	avg                    	min                    	max                    
+2363.53	0  	64   	[1127.38057143    1.36521131]	[6.52341064e+00 1.34187203e-03]	[1112.0722007    1.3630908]  	[1145.71899548    1.36921257]	[0.19726412 0.19681852]	[0.05010263 0.05674233]	[0.34526157 0.3416314 ]
+1999.54	1  	39   	[1118.53208664    1.3653443 ]	[4.36611324e+00 1.37775053e-03]	[1112.0722007     1.36316457]	[1126.14937565    1.36819357]	[0.28823505 0.2560626 ]	[0.17231178 0.1306795 ]	[0.34526157 0.3416314 ]
+1798.67	2  	35   	[1113.20824567    1.36530497]	[1.93079986e+00 7.47793163e-04]	[1111.68598757    1.36339294]	[1120.47216037    1.36703595]	[0.31607995 0.3231625 ]	[0.19929666 0.17324325]	[0.34594428 0.34306769]
+1873.52	3  	40   	[1111.63965906    1.36513839]	[0.57695684 0.00096688]        	[1110.0268064     1.36144677]	[1112.68361602    1.36703595]	[0.32523618 0.33272995]	[0.30546696 0.31923461]	[0.34719521 0.34855814]
+rollo Simulation Completed!
+Total time in simulation 1873.52 seconds

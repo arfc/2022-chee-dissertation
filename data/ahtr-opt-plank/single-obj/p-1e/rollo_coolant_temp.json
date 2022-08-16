@@ -1,0 +1,34 @@
+{
+    "control_variables": {
+        "radius_top": {"min": 0.05, "max": 0.35},
+        "radius_bot": {"min": 0.05, "max": 0.35}
+    },
+    "evaluators": {
+        "openmc_gc": {
+            "order": 0,
+            "input_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_openmc.py"],
+            "execute": [["aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2"], ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ../../../../../moltres/python/moltres_xs.py", "fhr_plank_gc.inp"]], 
+            "inputs": ["radius_top", "radius_bot"],
+            "output_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_openmc_output.py"],
+            "outputs": ["keff2"]
+        },
+        "moltres": {
+            "order": 1, 
+            "input_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "automate_mesh.py"],
+            "execute": [["bash", "mesh_generate.sh"], ["aprun -n 64 -N 64 -d 1 -j 1 moltres-opt -i ", "fhr_plank_moltres.i"] ],
+            "inputs": ["radius_top", "radius_bot"],
+            "output_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_moltres_output.py"], 
+            "outputs": ["max_temp"]
+        }
+    },
+    "constraints": {"keff2": {"operator": [">="], "constrained_val": [1.36]}},
+    "algorithm": {
+        "objective": ["min"],
+        "weight": [1.0],
+        "optimized_variable": ["max_temp"],
+        "pop_size": 64,
+        "generations": 4,
+        "parallel": "job_control"
+    }
+}
+
