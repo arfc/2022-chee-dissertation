@@ -1,0 +1,206 @@
+----------------------------------------
+Begin Torque Prologue on nid25252
+at Thu Nov  4 12:32:01 CDT 2021
+Job Id:			12967824.bw
+Username:		chee1
+Group:			ILL_bbcc
+Job name:		run
+Requested resources:	nodes=10:ppn=32:xe,walltime=00:30:00,neednodes=10:ppn=32:xe
+Queue:			debug
+Account:		bbcc
+End Torque Prologue:  0.167 elapsed
+----------------------------------------
+
+
+
+
+ModuleCmd_Switch.c(179):ERROR:152: Module 'PrgEnv-cray/5.2.82' is currently not loaded
+                                %%%%%%%%%%%%%%%
+                           %%%%%%%%%%%%%%%%%%%%%%%%
+                        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                    %%%%%%%%%%%%%%%%%%%%%%%%
+                                     %%%%%%%%%%%%%%%%%%%%%%%%
+                 ###############      %%%%%%%%%%%%%%%%%%%%%%%%
+                ##################     %%%%%%%%%%%%%%%%%%%%%%%
+                ###################     %%%%%%%%%%%%%%%%%%%%%%%
+                ####################     %%%%%%%%%%%%%%%%%%%%%%
+                #####################     %%%%%%%%%%%%%%%%%%%%%
+                ######################     %%%%%%%%%%%%%%%%%%%%
+                #######################     %%%%%%%%%%%%%%%%%%
+                 #######################     %%%%%%%%%%%%%%%%%
+                 ######################     %%%%%%%%%%%%%%%%%
+                  ####################     %%%%%%%%%%%%%%%%%
+                    #################     %%%%%%%%%%%%%%%%%
+                     ###############     %%%%%%%%%%%%%%%%
+                       ############     %%%%%%%%%%%%%%%
+                          ########     %%%%%%%%%%%%%%
+                                      %%%%%%%%%%%
+
+                   | The OpenMC Monte Carlo Code
+         Copyright | 2011-2021 MIT and OpenMC contributors
+           License | https://docs.openmc.org/en/latest/license.html
+           Version | 0.12.1
+          Git SHA1 | 36913589c4f43b7f843332181645241f0f10ae9e
+         Date/Time | 2021-11-04 12:32:07
+     MPI Processes | 10
+    OpenMP Threads | 32
+
+ Reading settings XML file...
+ Reading cross sections HDF5 file...
+ Reading materials XML file...
+ Reading geometry XML file...
+ Loading cross section data...
+ Loading bounds data...
+[0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+          to the nearest temperature method.
+[0m[0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+          to the nearest temperature method.
+[0m[0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+[0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+          [0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+          to the nearest temperature method.[0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting          to the nearest temperature method.
+[0m[0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting[0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+          [0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+          [0;33m WARNING: Cross sections for  are only available at one temperature.  Reverting
+          to the nearest temperature method.
+[0mto the nearest temperature method.
+[0mto the nearest temperature method.
+[0m
+          to the nearest temperature method.
+[0m Loading graphite1 data...
+ Loading graphite2 data...
+ Loading prism_cell_1 data...
+ Loading prism_cell_2 data...
+ Loading prism_cell_3 data...
+ Loading prism_cell_4 data...
+ Loading prism_cell_5 data...
+
+[0mto the nearest temperature method.
+[0m
+          to the nearest temperature method.
+[0m Loading prism_cell_6 data...
+ Loading prism_cell_7 data...
+ Loading prism_cell_8 data...
+ Loading prism_cell_9 data...
+ Loading prism_cell_10 data...
+ Reading tallies XML file...
+ Preparing distributed cell instances...
+ Writing summary.h5 file...
+ Initializing source particles...
+
+ ====================>     K EIGENVALUE SIMULATION     <====================
+
+  Bat./Gen.      k            Average k
+  =========   ========   ====================
+        1/1    1.39127
+        2/1    1.40795
+        3/1    1.38459
+        4/1    1.39656
+        5/1    1.38475
+        6/1    1.40229
+        7/1    1.40470
+        8/1    1.35603
+        9/1    1.43727
+       10/1    1.40637
+       11/1    1.41613
+       12/1    1.41046
+       13/1    1.43808
+       14/1    1.40531
+       15/1    1.38699
+       16/1    1.42219
+       17/1    1.41744
+       18/1    1.40251
+       19/1    1.36195
+       20/1    1.42281
+       21/1    1.41384
+       22/1    1.38701    1.40042 +/- 0.01342
+       23/1    1.40628    1.40238 +/- 0.00799
+       24/1    1.37745    1.39614 +/- 0.00841
+       25/1    1.39682    1.39628 +/- 0.00652
+       26/1    1.41082    1.39870 +/- 0.00585
+       27/1    1.43530    1.40393 +/- 0.00719
+       28/1    1.43735    1.40811 +/- 0.00750
+       29/1    1.43372    1.41095 +/- 0.00720
+       30/1    1.43256    1.41312 +/- 0.00679
+       31/1    1.42242    1.41396 +/- 0.00620
+       32/1    1.40308    1.41305 +/- 0.00573
+       33/1    1.38247    1.41070 +/- 0.00578
+       34/1    1.42235    1.41153 +/- 0.00541
+       35/1    1.41382    1.41169 +/- 0.00504
+       36/1    1.41589    1.41195 +/- 0.00472
+       37/1    1.40280    1.41141 +/- 0.00447
+       38/1    1.41093    1.41138 +/- 0.00421
+       39/1    1.43672    1.41272 +/- 0.00420
+       40/1    1.43605    1.41388 +/- 0.00415
+       41/1    1.41113    1.41375 +/- 0.00395
+       42/1    1.43895    1.41490 +/- 0.00394
+       43/1    1.40560    1.41449 +/- 0.00379
+       44/1    1.40437    1.41407 +/- 0.00365
+       45/1    1.44120    1.41516 +/- 0.00366
+       46/1    1.42416    1.41550 +/- 0.00354
+       47/1    1.40488    1.41511 +/- 0.00343
+       48/1    1.41016    1.41493 +/- 0.00331
+       49/1    1.42612    1.41532 +/- 0.00321
+       50/1    1.43033    1.41582 +/- 0.00315
+       51/1    1.40930    1.41561 +/- 0.00305
+       52/1    1.40961    1.41542 +/- 0.00296
+       53/1    1.42302    1.41565 +/- 0.00288
+       54/1    1.41509    1.41563 +/- 0.00279
+       55/1    1.40668    1.41538 +/- 0.00272
+       56/1    1.43215    1.41584 +/- 0.00269
+       57/1    1.43294    1.41631 +/- 0.00265
+       58/1    1.44330    1.41702 +/- 0.00268
+       59/1    1.42448    1.41721 +/- 0.00262
+       60/1    1.43879    1.41775 +/- 0.00261
+       61/1    1.42341    1.41789 +/- 0.00255
+       62/1    1.42489    1.41805 +/- 0.00249
+       63/1    1.40940    1.41785 +/- 0.00244
+       64/1    1.42167    1.41794 +/- 0.00238
+       65/1    1.40931    1.41775 +/- 0.00234
+       66/1    1.43459    1.41811 +/- 0.00232
+       67/1    1.42224    1.41820 +/- 0.00227
+       68/1    1.39100    1.41763 +/- 0.00229
+       69/1    1.40941    1.41747 +/- 0.00225
+       70/1    1.38838    1.41688 +/- 0.00228
+       71/1    1.41491    1.41685 +/- 0.00224
+       72/1    1.37771    1.41609 +/- 0.00232
+       73/1    1.43552    1.41646 +/- 0.00230
+       74/1    1.40154    1.41618 +/- 0.00228
+       75/1    1.41710    1.41620 +/- 0.00224
+       76/1    1.39097    1.41575 +/- 0.00224
+       77/1    1.43733    1.41613 +/- 0.00223
+       78/1    1.40535    1.41594 +/- 0.00220
+       79/1    1.41178    1.41587 +/- 0.00217
+       80/1    1.42367    1.41600 +/- 0.00213
+ Creating state point statepoint.80.h5...
+
+ =======================>     TIMING STATISTICS     <=======================
+
+ Total time for initialization     = 2.7510e-01 seconds
+   Reading cross sections          = 9.5794e-02 seconds
+ Total time in simulation          = 2.5296e+01 seconds
+   Time in transport only          = 2.3722e+01 seconds
+   Time in inactive batches        = 1.9849e+00 seconds
+   Time in active batches          = 2.3311e+01 seconds
+   Time synchronizing fission bank = 1.1537e+00 seconds
+     Sampling source sites         = 2.0162e-02 seconds
+     SEND/RECV source sites        = 1.1096e-02 seconds
+   Time accumulating tallies       = 3.1363e-01 seconds
+   Time writing statepoints        = 2.7989e-02 seconds
+ Total time for finalization       = 8.9558e-02 seconds
+ Total time elapsed                = 2.5664e+01 seconds
+ Calculation Rate (inactive)       = 80608.1 particles/second
+ Calculation Rate (active)         = 20591.2 particles/second
+
+ ============================>     RESULTS     <============================
+
+ k-effective (Collision)     = 1.41610 +/- 0.00211
+ k-effective (Track-length)  = 1.41600 +/- 0.00213
+ k-effective (Absorption)    = 1.41483 +/- 0.00098
+ Combined k-effective        = 1.41473 +/- 0.00098
+ Leakage Fraction            = 0.00000 +/- 0.00000
+
+Application 107417312 resources: utime ~5694s, stime ~31s, Rss ~26136, inblocks ~79507, outblocks ~7559

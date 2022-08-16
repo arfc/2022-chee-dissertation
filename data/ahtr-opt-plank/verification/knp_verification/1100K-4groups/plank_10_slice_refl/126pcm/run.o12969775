@@ -1,0 +1,218 @@
+----------------------------------------
+Begin Torque Prologue on nid25256
+at Thu Nov  4 19:35:26 CDT 2021
+Job Id:			12969775.bw
+Username:		chee1
+Group:			ILL_bbcc
+Job name:		run
+Requested resources:	nodes=10:ppn=32:xe,walltime=00:30:00,neednodes=10:ppn=32:xe
+Queue:			debug
+Account:		bbcc
+End Torque Prologue:  0.117 elapsed
+----------------------------------------
+
+
+
+
+ModuleCmd_Switch.c(179):ERROR:152: Module 'PrgEnv-cray/5.2.82' is currently not loaded
+                                %%%%%%%%%%%%%%%
+                           %%%%%%%%%%%%%%%%%%%%%%%%
+                        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                    %%%%%%%%%%%%%%%%%%%%%%%%
+                                     %%%%%%%%%%%%%%%%%%%%%%%%
+                 ###############      %%%%%%%%%%%%%%%%%%%%%%%%
+                ##################     %%%%%%%%%%%%%%%%%%%%%%%
+                ###################     %%%%%%%%%%%%%%%%%%%%%%%
+                ####################     %%%%%%%%%%%%%%%%%%%%%%
+                #####################     %%%%%%%%%%%%%%%%%%%%%
+                ######################     %%%%%%%%%%%%%%%%%%%%
+                #######################     %%%%%%%%%%%%%%%%%%
+                 #######################     %%%%%%%%%%%%%%%%%
+                 ######################     %%%%%%%%%%%%%%%%%
+                  ####################     %%%%%%%%%%%%%%%%%
+                    #################     %%%%%%%%%%%%%%%%%
+                     ###############     %%%%%%%%%%%%%%%%
+                       ############     %%%%%%%%%%%%%%%
+                          ########     %%%%%%%%%%%%%%
+                                      %%%%%%%%%%%
+
+                   | The OpenMC Monte Carlo Code
+         Copyright | 2011-2021 MIT and OpenMC contributors
+           License | https://docs.openmc.org/en/latest/license.html
+           Version | 0.12.1
+          Git SHA1 | 36913589c4f43b7f843332181645241f0f10ae9e
+         Date/Time | 2021-11-04 19:35:32
+     MPI Processes | 10
+    OpenMP Threads | 32
+
+ Reading settings XML file...
+ Reading cross sections XML file...
+ Reading materials XML file...
+ Reading geometry XML file...
+ Reading U235 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/U235.h5
+ Reading U235 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/092235.h5
+ Reading U238 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/U238.h5
+ Reading U238 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/092238.h5
+ Reading O16 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/O16.h5
+ Reading O16 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/008016.h5
+ Reading C0 from /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/C0.h5
+ Reading C0 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/006000.h5
+ Reading Si28 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/Si28.h5
+ Reading Si28 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/014028.h5
+ Reading Si29 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/Si29.h5
+ Reading Si29 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/014029.h5
+ Reading Si30 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/Si30.h5
+ Reading Si30 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/014030.h5
+ Reading Li6 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/Li6.h5
+ Reading Li6 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/003006.h5
+ Reading Li7 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/Li7.h5
+ Reading Li7 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/003007.h5
+ Reading Be9 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/Be9.h5
+ Reading Be9 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/004009.h5
+ Reading F19 from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/F19.h5
+ Reading F19 WMP data from
+ /projects/sciteam/bbcc/projects/openmc/data/endfb71_hdf5/wmp/009019.h5
+ Minimum neutron data temperature: 900.0 K
+ Maximum neutron data temperature: 1200.0 K
+ Reading tallies XML file...
+ Preparing distributed cell instances...
+ Writing summary.h5 file...
+ Maximum neutron transport energy: 20000000.0 eV for U235
+ Initializing source particles...
+
+ ====================>     K EIGENVALUE SIMULATION     <====================
+
+  Bat./Gen.      k            Average k
+  =========   ========   ====================
+        1/1    1.41467
+        2/1    1.41955
+        3/1    1.36564
+        4/1    1.42277
+        5/1    1.41455
+        6/1    1.40115
+        7/1    1.38344
+        8/1    1.40916
+        9/1    1.43119
+       10/1    1.42333
+       11/1    1.37564
+       12/1    1.39362
+       13/1    1.44240
+       14/1    1.42873
+       15/1    1.35296
+       16/1    1.40710
+       17/1    1.40001
+       18/1    1.39155
+       19/1    1.38832
+       20/1    1.37494
+       21/1    1.44149
+       22/1    1.40447    1.42298 +/- 0.01851
+       23/1    1.41187    1.41928 +/- 0.01131
+       24/1    1.37843    1.40906 +/- 0.01297
+       25/1    1.39431    1.40611 +/- 0.01047
+       26/1    1.40118    1.40529 +/- 0.00859
+       27/1    1.41565    1.40677 +/- 0.00741
+       28/1    1.37876    1.40327 +/- 0.00731
+       29/1    1.42265    1.40542 +/- 0.00680
+       30/1    1.40757    1.40564 +/- 0.00608
+       31/1    1.39874    1.40501 +/- 0.00554
+       32/1    1.38682    1.40349 +/- 0.00528
+       33/1    1.39628    1.40294 +/- 0.00489
+       34/1    1.39693    1.40251 +/- 0.00454
+       35/1    1.36991    1.40034 +/- 0.00476
+       36/1    1.39522    1.40002 +/- 0.00446
+       37/1    1.39112    1.39949 +/- 0.00422
+       38/1    1.43853    1.40166 +/- 0.00453
+       39/1    1.40880    1.40204 +/- 0.00430
+       40/1    1.43478    1.40367 +/- 0.00440
+       41/1    1.36838    1.40199 +/- 0.00451
+       42/1    1.39604    1.40172 +/- 0.00431
+       43/1    1.43391    1.40312 +/- 0.00435
+       44/1    1.39961    1.40298 +/- 0.00417
+       45/1    1.41539    1.40347 +/- 0.00403
+       46/1    1.41214    1.40381 +/- 0.00388
+       47/1    1.38712    1.40319 +/- 0.00379
+       48/1    1.42829    1.40408 +/- 0.00376
+       49/1    1.39689    1.40384 +/- 0.00363
+       50/1    1.42108    1.40441 +/- 0.00356
+       51/1    1.36126    1.40302 +/- 0.00371
+       52/1    1.43468    1.40401 +/- 0.00373
+       53/1    1.40255    1.40396 +/- 0.00361
+       54/1    1.40349    1.40395 +/- 0.00351
+       55/1    1.42360    1.40451 +/- 0.00345
+       56/1    1.42429    1.40506 +/- 0.00340
+       57/1    1.42311    1.40555 +/- 0.00334
+       58/1    1.38406    1.40498 +/- 0.00330
+       59/1    1.41102    1.40514 +/- 0.00322
+       60/1    1.41065    1.40528 +/- 0.00314
+       61/1    1.38095    1.40468 +/- 0.00312
+       62/1    1.43019    1.40529 +/- 0.00310
+       63/1    1.37370    1.40456 +/- 0.00312
+       64/1    1.41159    1.40472 +/- 0.00305
+       65/1    1.38778    1.40434 +/- 0.00301
+       66/1    1.39675    1.40417 +/- 0.00294
+       67/1    1.37755    1.40361 +/- 0.00294
+       68/1    1.38785    1.40328 +/- 0.00289
+       69/1    1.40531    1.40332 +/- 0.00283
+       70/1    1.37577    1.40277 +/- 0.00283
+       71/1    1.39874    1.40269 +/- 0.00278
+       72/1    1.40325    1.40270 +/- 0.00272
+       73/1    1.43355    1.40328 +/- 0.00273
+       74/1    1.41130    1.40343 +/- 0.00269
+       75/1    1.37816    1.40297 +/- 0.00268
+       76/1    1.43561    1.40355 +/- 0.00269
+       77/1    1.40107    1.40351 +/- 0.00264
+       78/1    1.39040    1.40329 +/- 0.00261
+       79/1    1.35880    1.40253 +/- 0.00267
+       80/1    1.36376    1.40189 +/- 0.00271
+ Creating state point statepoint.80.h5...
+
+ =======================>     TIMING STATISTICS     <=======================
+
+ Total time for initialization     = 1.1477e+02 seconds
+   Reading cross sections          = 6.5424e+00 seconds
+ Total time in simulation          = 2.0082e+02 seconds
+   Time in transport only          = 1.8621e+02 seconds
+   Time in inactive batches        = 1.9597e+01 seconds
+   Time in active batches          = 1.8122e+02 seconds
+   Time synchronizing fission bank = 1.1678e+01 seconds
+     Sampling source sites         = 1.9998e-02 seconds
+     SEND/RECV source sites        = 2.5053e-03 seconds
+   Time accumulating tallies       = 2.2222e+00 seconds
+   Time writing statepoints        = 6.6281e-01 seconds
+ Total time for finalization       = 1.1413e-01 seconds
+ Total time elapsed                = 3.1573e+02 seconds
+ Calculation Rate (inactive)       = 8164.44 particles/second
+ Calculation Rate (active)         = 2648.69 particles/second
+
+ ============================>     RESULTS     <============================
+
+ k-effective (Collision)     = 1.40192 +/- 0.00170
+ k-effective (Track-length)  = 1.40189 +/- 0.00271
+ k-effective (Absorption)    = 1.40095 +/- 0.00131
+ Combined k-effective        = 1.40119 +/- 0.00126
+ Leakage Fraction            = 0.00000 +/- 0.00000
+
+Application 107425958 resources: utime ~51111s, stime ~75s, Rss ~446868, inblocks ~1869035, outblocks ~483746

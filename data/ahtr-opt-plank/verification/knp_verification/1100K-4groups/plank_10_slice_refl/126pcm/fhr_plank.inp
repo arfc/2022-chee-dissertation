@@ -1,0 +1,26 @@
+[TITLE]
+  fhr_plank.json
+
+[MAT]
+  13
+  bounds graphite1 graphite2 prism_cell_1 prism_cell_2 prism_cell_3 prism_cell_4 prism_cell_5 prism_cell_6 prism_cell_7 prism_cell_8 prism_cell_9 prism_cell_10
+
+[BRANCH]
+  13
+  bounds          948 1 1 4 1 
+  graphite1       948 1 1 5 1
+  graphite2       948 1 1 6 1
+  prism_cell_1    948 1 1 11 1
+  prism_cell_2    948 1 1 12 1
+  prism_cell_3    948 1 1 13 1
+  prism_cell_4    948 1 1 14 1
+  prism_cell_5    948 1 1 15 1
+  prism_cell_6    948 1 1 16 1
+  prism_cell_7    948 1 1 17 1
+  prism_cell_8    948 1 1 18 1
+  prism_cell_9    948 1 1 19 1
+  prism_cell_10   948 1 1 20 1
+
+[FILES]
+  1
+  statepoint.80.h5  openmc openmc_file.py summary.h5

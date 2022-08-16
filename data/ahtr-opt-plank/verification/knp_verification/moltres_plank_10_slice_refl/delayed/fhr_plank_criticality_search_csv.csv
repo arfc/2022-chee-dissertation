@@ -1,0 +1,2 @@
+time,bnorm,group1_flux,group1diff,group1max,group1norm,group2_flux,group2diff,group2max,group2norm,group3_flux,group4_flux,powernorm,tot_fissions,Executioner/eigenvalue
+0,1.004,0,8.6109256481334,0,80.812057693112,0,8.6109256481334,0,80.812057693112,0,0,1.274445962426e-11,0.41181010216904,1.004

@@ -1,0 +1,228 @@
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ ../../../moltres/moltres-opt -i fhr_plank_criticality_search.i
+
+
+
+*** Warning, This code is deprecated and will be removed in future versions:
+'InversePowerMethod' executioner is deprecated in favor of 'Eigenvalue' executioner.
+Few parameters such as 'bx_norm', 'k0', 'xdiff', 'max_power_iterations', 'min_power_iterations', 'eig_check_tol', 'sol_check_tol', and 'output_before_normalization' are no longer supported.
+However, 'Eigenvalue' executioner supports more solving options by interfacing SLEPc.
+
+Stack frames: 14
+0: 0   libmesh_opt.0.dylib                 0x000000011105d6a5 libMesh::print_trace(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) + 1141
+1: 1   libmoose-opt.0.dylib                0x000000010fc3ee78 void moose::internal::mooseDeprecatedStream<ConsoleStream const, char const (&) [86], char const (&) [191], char const (&) [87]>(ConsoleStream const&, bool, char const (&) [86], char const (&) [191], char const (&) [87]) + 904
+2: 2   libmoose-opt.0.dylib                0x000000010fc3e3ed InversePowerMethod::InversePowerMethod(InputParameters const&) + 893
+3: 3   libmoose-opt.0.dylib                0x000000010fc3df7e std::__1::shared_ptr<MooseObject> moose::internal::buildObj<InversePowerMethod>(InputParameters const&) + 78
+4: 4   libmoose-opt.0.dylib                0x000000011066bd54 Factory::create(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int, bool) + 372
+5: 5   libmoose-opt.0.dylib                0x00000001102540a4 std::__1::shared_ptr<Executioner> Factory::create<Executioner>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int) + 52
+6: 6   libmoose-opt.0.dylib                0x000000011022b7f6 CreateExecutionerAction::act() + 262
+7: 7   libmoose-opt.0.dylib                0x0000000110209736 ActionWarehouse::executeActionsWithAction(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 1350
+8: 8   libmoose-opt.0.dylib                0x0000000110242428 ActionWarehouse::executeAllActions() + 280
+9: 9   libmoose-opt.0.dylib                0x00000001106e119e MooseApp::runInputFile() + 94
+10: 10  libmoose-opt.0.dylib                0x00000001106dc29a MooseApp::run() + 2730
+11: 11  moltres-opt                         0x000000010e15ac33 main + 131
+12: 12  libdyld.dylib                       0x00007fff204d4621 start + 1
+13: 13  ???                                 0x0000000000000003 0x0 + 3
+
+Framework Information:
+MOOSE Version:           git commit 0d650f19e1 on 2021-09-10
+LibMesh Version:         
+PETSc Version:           3.15.1
+SLEPc Version:           3.15.1
+Current Time:            Tue Nov  9 11:00:16 2021
+Executable Timestamp:    Thu Oct 28 18:06:46 2021
+
+Parallelism:
+  Num Processors:          1
+  Num Threads:             1
+
+Mesh: 
+  Parallel Type:           replicated
+  Mesh Dimension:          2
+  Spatial Dimension:       2
+  Nodes:                   3473
+  Elems:                   6688
+  Num Subdomains:          13
+
+Nonlinear System:
+  Num DOFs:                38852
+  Num Local DOFs:          38852
+  Variables:               { "group1" "group2" "group3" "group4" } { "pre1" "pre2" "pre3" "pre4" "pre5" 
+                             "pre6" } 
+  Finite Element Types:    "LAGRANGE" "MONOMIAL" 
+  Approximation Orders:    "FIRST" "CONSTANT" 
+
+Execution Information:
+  Executioner:             InversePowerMethod
+  Solver Mode:             NEWTON
+  MOOSE Preconditioner:    SMP
+
+LEGACY MODES ENABLED:
+ This application uses the legacy material output option: material properties are output only on TIMESTEP_END, not INITIAL. To remove this message, set 'use_legacy_material_output' to false in this application. If there are gold output files that contain material property output for which output occurs on INITIAL, then these will generate diffs due to zero values being stored, and these tests should be re-golded.
+
+
+|Bx| = 1.0040000000
+
+Time Step 0, time = 0
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group1max      | group1norm     | group2_flux    | group2diff     | group2max      | group2norm     | group3_flux    | group4_flux    | powernorm      | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.004000e+00 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   0.000000e+00 |   1.274446e-11 |   4.118101e-01 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.004000e+00 |
++----------------+------------------------+
+
+
+
+*** Warning ***
+/Users/gwenchee/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl/fhr_plank_criticality_search.i:26: unused parameter 'Nt/transient'
+
+
+ Power iterations starts
+ ________________________________________________________________________________ 
+ Power iteration= 0
+ 0 Nonlinear |R| = 4.260561e+01
+      0 Linear |R| = 4.260561e+01
+      1 Linear |R| = 8.272724e-11
+ 1 Nonlinear |R| = 9.182996e-11
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.40677275e+00 |      2.42709313e+00 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+Executing
+  Finished Solving                                                                       [  6.37 s] [   11 MB]
+ ________________________________________________________________________________ 
+ Power iteration= 1
+ 0 Nonlinear |R| = 1.313843e+00
+      0 Linear |R| = 1.313843e+00
+      1 Linear |R| = 4.431636e-13
+ 1 Nonlinear |R| = 3.722375e-11
+  Finished Solving                                                                       [  5.84 s] [  -22 MB]
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.40677275e+00 |      2.42709313e+00 |
+ |              1 |      1.40695392e+00 |      6.00539680e-02 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+ ________________________________________________________________________________ 
+ Power iteration= 2
+ 0 Nonlinear |R| = 3.995128e-03
+      0 Linear |R| = 3.995128e-03
+      1 Linear |R| = 3.107601e-15
+ 1 Nonlinear |R| = 3.734230e-11
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.40677275e+00 |      2.42709313e+00 |
+ |              1 |      1.40695392e+00 |      6.00539680e-02 |
+ |              2 |      1.40695427e+00 |      3.89298639e-04 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+ ________________________________________________________________________________ 
+  Finished Solving                                                                       [  6.03 s] [    0 MB]
+ Power iteration= 3
+ 0 Nonlinear |R| = 8.243185e-05
+      0 Linear |R| = 8.243185e-05
+      1 Linear |R| = 7.194013e-17
+ 1 Nonlinear |R| = 3.685727e-11
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.40677275e+00 |      2.42709313e+00 |
+ |              1 |      1.40695392e+00 |      6.00539680e-02 |
+ |              2 |      1.40695427e+00 |      3.89298639e-04 |
+ |              3 |      1.40695427e+00 |      8.89163273e-06 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+ ________________________________________________________________________________ 
+  Finished Solving                                                                       [  5.89 s] [    0 MB]
+
+*******************************************************
+ Eigenvalue = 1.4069542703
+*******************************************************
+
+Outlier Variable Residual Norms:
+  group1: 2.029766e-11
+  group2: 1.887838e-11
+  group4: 2.350954e-11
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group1max      | group1norm     | group2_flux    | group2diff     | group2max      | group2norm     | group3_flux    | group4_flux    | powernorm      | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.004000e+00 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   0.000000e+00 |   1.274446e-11 |   4.118101e-01 |
+|   1.000000e+00 |   1.406954e+00 |   1.105932e+00 |   2.383991e+00 |   1.365940e+00 |   9.740500e+01 |   1.003287e+00 |   8.062473e-01 |   1.010660e+00 |   8.836447e+01 |   3.928097e-01 |   1.624135e+00 |   1.785915e-11 |   5.770806e-01 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.004000e+00 |
+|   1.000000e+00 |           1.406954e+00 |
++----------------+------------------------+
+
+ Solution is rescaled with factor 1.17784e+16 for normalization!
+
+Outlier Variable Residual Norms:
+  group1: 2.029766e-11
+  group2: 1.887838e-11
+  group4: 2.350954e-11
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group1max      | group1norm     | group2_flux    | group2diff     | group2max      | group2norm     | group3_flux    | group4_flux    | powernorm      | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.004000e+00 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   0.000000e+00 |   1.274446e-11 |   4.118101e-01 |
+|   1.000000e+00 |   1.406954e+00 |   1.105932e+00 |   2.383991e+00 |   1.365940e+00 |   9.740500e+01 |   1.003287e+00 |   8.062473e-01 |   1.010660e+00 |   8.836447e+01 |   3.928097e-01 |   1.624135e+00 |   1.785915e-11 |   5.770806e-01 |
+|   2.000000e+00 |   1.657173e+16 |   1.302616e+16 |   1.236909e+17 |   1.608865e+16 |   1.147279e+18 |   1.181716e+16 |   1.109035e+17 |   1.190400e+16 |   1.040796e+18 |   4.626687e+15 |   1.912978e+16 |   2.103530e+05 |   6.797112e+15 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.004000e+00 |
+|   1.000000e+00 |           1.406954e+00 |
+|   2.000000e+00 |           1.406954e+00 |
++----------------+------------------------+
+
+
+
+Performance Graph:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                Section                               | Calls |   Self(s)  |   Avg(s)   |    %   | Mem(MB) |  Total(s)  |   Avg(s)   |    %   | Mem(MB) |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| MoltresApp (main)                                                    |     1 |      0.014 |      0.014 |   0.05 |       1 |     27.137 |     27.137 | 100.00 |      54 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::setup_mesh    |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.000 |      0.000 |   0.00 |       0 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::set_mesh_base |     2 |      0.000 |      0.000 |   0.00 |       0 |      0.026 |      0.013 |   0.09 |       2 |
+|   FEProblem::computeUserObjects                                      |     6 |      0.657 |      0.110 |   2.42 |       0 |      0.657 |      0.110 |   2.42 |       0 |
+|   FEProblem::outputStep                                              |     3 |      0.002 |      0.001 |   0.01 |       0 |      0.241 |      0.080 |   0.89 |       4 |
+|     Exodus::outputStep                                               |     3 |      0.151 |      0.050 |   0.56 |       3 |      0.151 |      0.050 |   0.56 |       3 |
+|   FEProblem::solve                                                   |     4 |      5.605 |      1.401 |  20.65 |     -23 |     24.123 |      6.031 |  88.89 |     -11 |
+|     FEProblem::computeResidualInternal                               |     4 |      0.000 |      0.000 |   0.00 |       0 |      3.226 |      0.807 |  11.89 |       0 |
+|       FEProblem::computeUserObjects                                  |     4 |      0.688 |      0.172 |   2.54 |       0 |      0.688 |      0.172 |   2.54 |       0 |
+|     FEProblem::computeResidualInternal                               |     8 |      0.000 |      0.000 |   0.00 |       0 |      6.718 |      0.840 |  24.76 |      -9 |
+|       FEProblem::computeUserObjects                                  |     8 |      1.583 |      0.198 |   5.83 |       0 |      1.583 |      0.198 |   5.83 |       0 |
+|     FEProblem::computeJacobianInternal                               |     4 |      0.000 |      0.000 |   0.00 |       0 |      8.572 |      2.143 |  31.59 |      21 |
+|   InversePowerMethod::final                                          |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.003 |      0.003 |   0.01 |       0 |
+|     FEProblem::computeUserObjects                                    |     1 |      0.002 |      0.002 |   0.01 |       0 |      0.002 |      0.002 |   0.01 |       0 |
+|     FEProblem::outputStep                                            |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.000 |      0.000 |   0.00 |       0 |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Finished Executing                                                                       [ 25.38 s] [   -5 MB]

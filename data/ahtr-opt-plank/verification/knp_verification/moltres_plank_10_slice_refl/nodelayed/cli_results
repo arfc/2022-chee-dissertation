@@ -1,0 +1,413 @@
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ ../../.
+./../../moltres-delayed/moltres/moltres-opt -i fhr_assem_moltres.i
+
+
+
+*** Warning, This code is deprecated and will be removed in future versions:
+'NonlinearEigen' executioner is deprecated in favor of 'Eigenvalue' executioner.
+Few parameters such as 'bx_norm', 'k0', 'free_l_tol', 'output_before_normalization' and 'output_after_power_iterations' are no longer supported.
+However, 'Eigenvalue' executioner supports more solving options by interfacing SLEPc.
+Most of the inputs will work by simply replacing the executioner type with 'Eigenvalue'.
+Stack frames: 13
+0: 0   libmesh_opt.0.dylib                 0x00000001027756a5 libMesh::print_trace(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) + 1141
+1: 1   libmoose-opt.0.dylib                0x0000000103c3078b void moose::internal::mooseDeprecatedStream<ConsoleStream const, char const (&) [82], char const (&) [146], char const (&) [87], char const (&) [89]>(ConsoleStream const&, bool, char const (&) [82], char const (&) [146], char const (&) [87], char const (&) [89]) + 939
+2: 2   libmoose-opt.0.dylib                0x0000000103c302eb NonlinearEigen::NonlinearEigen(InputParameters const&) + 747
+3: 3   libmoose-opt.0.dylib                0x0000000103c2ff0e std::__1::shared_ptr<MooseObject> moose::internal::buildObj<NonlinearEigen>(InputParameters const&) + 78
+4: 4   libmoose-opt.0.dylib                0x000000010465c7b4 Factory::create(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int, bool) + 372
+5: 5   libmoose-opt.0.dylib                0x0000000104244c24 std::__1::shared_ptr<Executioner> Factory::create<Executioner>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int) + 52
+6: 6   libmoose-opt.0.dylib                0x000000010421c376 CreateExecutionerAction::act() + 262
+7: 7   libmoose-opt.0.dylib                0x00000001041fa2b6 ActionWarehouse::executeActionsWithAction(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 1350
+
+
+
+Performance Graph:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                Section                               | Calls |   Self(s)  |   Avg(s)   |    %   | Mem(MB) |  Total(s)  |   Avg(s)   |    %   | Mem(MB) |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| MoltresApp (main)                                                    |     1 |      0.015 |      0.015 |   0.00 |       2 |   1133.604 |   1133.604 | 100.00 |     235 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::setup_mesh    |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.000 |      0.000 |   0.00 |       0 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::set_mesh_base |     2 |      0.000 |      0.000 |   0.00 |       0 |      0.553 |      0.277 |   0.05 |      46 |
+|   FEProblem::computeUserObjects                                      |     7 |     16.143 |      2.306 |   1.42 |      -1 |     16.143 |      2.306 |   1.42 |      -1 |
+|   FEProblem::outputStep                                              |     4 |      0.008 |      0.002 |   0.00 |       0 |      4.517 |      1.129 |   0.40 |      46 |
+|     Exodus::outputStep                                               |     4 |      2.749 |      0.687 |   0.24 |      45 |      2.749 |      0.687 |   0.24 |      45 |
+|   FEProblem::solve                                                   |     9 |    380.031 |     42.226 |  33.52 |   -4902 |   1052.306 |    116.923 |  92.83 |    -785 |
+|     FEProblem::computeResidualInternal                               |     9 |      0.000 |      0.000 |   0.00 |       0 |    151.199 |     16.800 |  13.34 |       0 |
+|       FEProblem::computeUserObjects                                  |     9 |     39.147 |      4.350 |   3.45 |       0 |     39.147 |      4.350 |   3.45 |       0 |
+|     FEProblem::computeResidualInternal                               |    15 |      0.001 |      0.000 |   0.00 |       0 |    249.555 |     16.637 |  22.01 |    -334 |
+|       FEProblem::computeUserObjects                                  |    15 |     66.211 |      4.414 |   5.84 |      95 |     66.211 |      4.414 |   5.84 |      95 |
+|     FEProblem::computeJacobianInternal                               |     6 |      0.000 |      0.000 |   0.00 |       0 |    262.611 |     43.768 |  23.17 |    4395 |
+|   NonlinearEigen::final                                              |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.014 |      0.014 |   0.00 |       0 |
+|     FEProblem::computeUserObjects                                    |     1 |      0.013 |      0.013 |   0.00 |       0 |      0.013 |      0.013 |   0.00 |       0 |
+|     FEProblem::outputStep                                            |     1 |      0.001 |      0.001 |   0.00 |       0 |      0.001 |      0.001 |   0.00 |       0 |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Finished Executing                                                                       [1083.07 s] [ -620 MB]
+|   0.000000e+00 |           1.400000e+00 |
+|   1.000000e+00 |           1.399771e+00 |
+|   2.000000e+00 |           1.399771e+00 |
++----------------+------------------------+
+
+ Solution is rescaled with factor 4.91832e+14 for normalization!
+
+Outlier Variable Residual Norms:
+  group3: 6.590315e-07
+
+8: 8   libmoose-opt.0.dylib                0x0000000104232fa8 ActionWarehouse::executeAllActions() + 280
+9: 9   libmoose-opt.0.dylib                0x00000001046d1bfe MooseApp::runInputFile() + 94
+10: 10  libmoose-opt.0.dylib                0x00000001046cccfa MooseApp::run() + 2730
+11: 11  moltres-opt                         0x0000000100d3ec33 main + 131
+12: 12  libdyld.dylib                       0x00007fff205fc621 start + 1
+
+"moltres_delayed_output.txt" 613L, 34045C
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ ls
+1100K				mesh_refinement_assem.ipynb
+123pcm_1024K			moltres_200flux_refinedx3
+134pcm_1200K			moltres_delayed_output
+150pcm_1100K			moltres_delayed_output.txt
+all_temp			moltres_knp_model
+depr				output_1024K_refinedx3.txt
+fhr_assem.geo			output_948K.txt
+fhr_assem.msh			refined_x0
+fhr_assem_gc.json		refined_x1
+fhr_assem_geo_maker.ipynb	refined_x2
+fhr_assem_moltres.i		refined_x3
+fhr_assem_openmc.py		run_moltres.sh
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ cd moltres_delayed_output
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test/moltres_delayed_output [main] $ ls
+fhr_assem_moltres_csv.csv
+fhr_assem_moltres_csv_flux_centerline_0000.csv
+fhr_assem_moltres_csv_flux_centerline_0001.csv
+fhr_assem_moltres_csv_flux_centerline_0002.csv
+fhr_assem_moltres_csv_flux_centerline_0003.csv
+fhr_assem_moltres_exodus.e
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test/moltres_delayed_output [main] $ cd ../
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ ls
+1100K				mesh_refinement_assem.ipynb
+123pcm_1024K			moltres_200flux_refinedx3
+134pcm_1200K			moltres_delayed_output
+150pcm_1100K			moltres_delayed_output.txt
+all_temp			moltres_knp_model
+depr				output_1024K_refinedx3.txt
+fhr_assem.geo			output_948K.txt
+fhr_assem.msh			refined_x0
+fhr_assem_gc.json		refined_x1
+fhr_assem_geo_maker.ipynb	refined_x2
+fhr_assem_moltres.i		refined_x3
+fhr_assem_openmc.py		run_moltres.sh
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ vi moltres_delayed_output
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ vi moltres_delayed_output.txt
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ mv moltres_delayed_output.txt moltres_nodelayed.txt
+Merge branch 'main' of github.com:gwenchee/dissertation-results into main
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ mv moltres_nodelayed.txt moltres_delayed_output/.
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ ls
+1100K				depr				fhr_assem_moltres.i		moltres_knp_model		refined_x2
+123pcm_1024K			fhr_assem.geo			fhr_assem_openmc.py		output_1024K_refinedx3.txt	refined_x3
+134pcm_1200K			fhr_assem.msh			mesh_refinement_assem.ipynb	output_948K.txt			run_moltres.sh
+150pcm_1100K			fhr_assem_gc.json		moltres_200flux_refinedx3	refined_x0
+all_temp			fhr_assem_geo_maker.ipynb	moltres_delayed_output		refined_x1
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ mv moltres_delayed_output/ moltres_nodelayed_output
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ pwd
+/Users/gwenchee/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ scp -r moltres_nodelayed_output gwenchee@gwendolynsmbp2:/Users/gwenchee/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test
+Password:
+moltres_nodelayed.txt                                                                                                                           100%   33KB 324.0KB/s   00:00
+fhr_assem_moltres_csv.csv                                                                                                                       100%  760    10.3KB/s   00:00
+fhr_assem_moltres_csv_flux_centerline_0003.csv                                                                                                  100%   12KB 626.1KB/s   00:00
+fhr_assem_moltres_csv_flux_centerline_0002.csv                                                                                                  100%   42     2.7KB/s   00:00
+fhr_assem_moltres_csv_flux_centerline_0000.csv                                                                                                  100%   42     2.3KB/s   00:00
+fhr_assem_moltres_csv_flux_centerline_0001.csv                                                                                                  100%   42     4.4KB/s   00:00
+fhr_assem_moltres_exodus.e                                                                                                                      100%   33MB 296.4KB/s   01:53
+gwenchee ~/github/dissertation-results/fhr_assembly/one_obj/temp_keff1_triso/gc-test [main] $ cd ../../../../
+gwenchee ~/github/dissertation-results [main] $ cd ahtr_multiphysics/moltres_plank_10_slice_refl
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ git add cli_result
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ git commit -m " cli result"
+[main 5c6383e]  cli result
+ 1 file changed, 228 insertions(+)
+ create mode 100644 ahtr_multiphysics/moltres_plank_10_slice_refl/cli_result
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ git push
+To github.com:gwenchee/dissertation-results.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'git@github.com:gwenchee/dissertation-results.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ git pull
+remote: Enumerating objects: 71, done.
+remote: Counting objects: 100% (71/71), done.
+remote: Compressing objects: 100% (39/39), done.
+remote: Total 63 (delta 37), reused 42 (delta 16), pack-reused 0
+Unpacking objects: 100% (63/63), done.
+From github.com:gwenchee/dissertation-results
+   fef03a7..8c27eac  main       -> origin/main
+Merge made by the 'recursive' strategy.
+ fhr_assembly/one_obj/temp_keff1_triso/gc-test/knp_v3.ipynb                       | 940 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ fhr_assembly/one_obj/temp_keff1_triso/gc-test/mesh_refinement.ipynb              | 237 +++++++++++++++++++++++
+ fhr_assembly/one_obj/temp_keff1_triso/gc-test/openmc_mgxs_131pcm/mgxs_output.txt | 223 +++++++++++++++++++++
+ fhr_assembly/one_obj/temp_keff1_triso/gc-test/readme.md                          |  14 ++
+ fhr_assembly/one_obj/temp_keff1_triso/gc-test/temp_comparison.ipynb              | 294 ++++++++++++++++++++++++++++
+ moltres_option4/constant_0.0979_alltemp/temp_comparison.ipynb                    |  37 ++--
+ moltres_option4/constant_0.0979_bw_test/refinement_comparison.ipynb              | 328 +++++++++++++++++++++++++++++++
+ 7 files changed, 2052 insertions(+), 21 deletions(-)
+ create mode 100644 fhr_assembly/one_obj/temp_keff1_triso/gc-test/knp_v3.ipynb
+ create mode 100644 fhr_assembly/one_obj/temp_keff1_triso/gc-test/mesh_refinement.ipynb
+ create mode 100644 fhr_assembly/one_obj/temp_keff1_triso/gc-test/openmc_mgxs_131pcm/mgxs_output.txt
+ create mode 100644 fhr_assembly/one_obj/temp_keff1_triso/gc-test/readme.md
+ create mode 100644 fhr_assembly/one_obj/temp_keff1_triso/gc-test/temp_comparison.ipynb
+ create mode 100644 moltres_option4/constant_0.0979_bw_test/refinement_comparison.ipynb
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 3.77 KiB | 3.77 MiB/s, done.
+Total 7 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.com:gwenchee/dissertation-results.git
+   8c27eac..16bbdee  main -> main
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ ls
+cli_result							fhr_plank_criticality_search_csv_flux_centerline_0000.csv
+fhr_plank.geo							fhr_plank_criticality_search_csv_flux_centerline_0001.csv
+fhr_plank.msh							fhr_plank_criticality_search_csv_flux_centerline_0002.csv
+fhr_plank_criticality_search.i					fhr_plank_criticality_search_exodus.e
+fhr_plank_criticality_search_csv.csv				fhr_plank_unrefined.msh
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ cd ..
+gwenchee ~/github/dissertation-results/ahtr_multiphysics [main] $ ls
+1100K-4groups			__pycache__			flux_group1_948K.png		moltres_plank_10_slice_refl	~$kefff_vals.xlsx
+13grp				analysis-short.ipynb		flux_group2_948K.png		neutron_spectrum_948K.png
+6grp				analysis.ipynb			flux_group3_948K.png		plank_10_slice_mg_refl
+700K-4groups			analysis.py			flux_group4_948K.png		plank_10_slice_refl
+800K-4groups			constants.py			kefff_vals.xlsx			readme.md
+gwenchee ~/github/dissertation-results/ahtr_multiphysics [main] $ cd moltres_plank_10_slice_refl
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ ls
+cli_result							fhr_plank_criticality_search_csv_flux_centerline_0000.csv
+fhr_plank.geo							fhr_plank_criticality_search_csv_flux_centerline_0001.csv
+fhr_plank.msh							fhr_plank_criticality_search_csv_flux_centerline_0002.csv
+fhr_plank_criticality_search.i					fhr_plank_criticality_search_exodus.e
+fhr_plank_criticality_search_csv.csv				fhr_plank_unrefined.msh
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ mkdir delayed
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ git mv cli_result delayed/.
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ git mv fhr_plank_criticality_search_* delayed/.
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ ls
+delayed				fhr_plank.geo			fhr_plank.msh			fhr_plank_criticality_search.i	fhr_plank_unrefined.msh
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ mkdir nodelayed
+gwenchee ~/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl [main] $ ../../../moltres-delayed/moltres/moltres-opt -i fhr_plank_criticality_search.i
+
+
+
+*** Warning, This code is deprecated and will be removed in future versions:
+'InversePowerMethod' executioner is deprecated in favor of 'Eigenvalue' executioner.
+Few parameters such as 'bx_norm', 'k0', 'xdiff', 'max_power_iterations', 'min_power_iterations', 'eig_check_tol', 'sol_check_tol', and 'output_before_normalization' are no longer supported.
+However, 'Eigenvalue' executioner supports more solving options by interfacing SLEPc.
+
+Stack frames: 13
+0: 0   libmesh_opt.0.dylib                 0x00000001052576a5 libMesh::print_trace(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) + 1141
+1: 1   libmoose-opt.0.dylib                0x0000000103e3e9f8 void moose::internal::mooseDeprecatedStream<ConsoleStream const, char const (&) [86], char const (&) [191], char const (&) [87]>(ConsoleStream const&, bool, char const (&) [86], char const (&) [191], char const (&) [87]) + 904
+2: 2   libmoose-opt.0.dylib                0x0000000103e3df6d InversePowerMethod::InversePowerMethod(InputParameters const&) + 893
+3: 3   libmoose-opt.0.dylib                0x0000000103e3dafe std::__1::shared_ptr<MooseObject> moose::internal::buildObj<InversePowerMethod>(InputParameters const&) + 78
+4: 4   libmoose-opt.0.dylib                0x000000010486b7b4 Factory::create(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int, bool) + 372
+5: 5   libmoose-opt.0.dylib                0x0000000104453c24 std::__1::shared_ptr<Executioner> Factory::create<Executioner>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int) + 52
+6: 6   libmoose-opt.0.dylib                0x000000010442b376 CreateExecutionerAction::act() + 262
+7: 7   libmoose-opt.0.dylib                0x00000001044092b6 ActionWarehouse::executeActionsWithAction(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 1350
+8: 8   libmoose-opt.0.dylib                0x0000000104441fa8 ActionWarehouse::executeAllActions() + 280
+9: 9   libmoose-opt.0.dylib                0x00000001048e0bfe MooseApp::runInputFile() + 94
+10: 10  libmoose-opt.0.dylib                0x00000001048dbcfa MooseApp::run() + 2730
+11: 11  moltres-opt                         0x0000000102355c33 main + 131
+12: 12  libdyld.dylib                       0x00007fff205fc621 start + 1
+
+Framework Information:
+MOOSE Version:           git commit 0d650f19e1 on 2021-09-10
+LibMesh Version:
+PETSc Version:           3.15.1
+SLEPc Version:           3.15.1
+Current Time:            Tue May  3 13:30:45 2022
+Executable Timestamp:    Fri Oct 29 11:45:21 2021
+
+Parallelism:
+  Num Processors:          1
+  Num Threads:             1
+
+Mesh:
+  Parallel Type:           replicated
+  Mesh Dimension:          2
+  Spatial Dimension:       2
+  Nodes:                   3473
+  Elems:                   6688
+  Num Subdomains:          13
+
+Nonlinear System:
+  Num DOFs:                38852
+  Num Local DOFs:          38852
+  Variables:               { "group1" "group2" "group3" "group4" } { "pre1" "pre2" "pre3" "pre4" "pre5"
+                             "pre6" }
+  Finite Element Types:    "LAGRANGE" "MONOMIAL"
+  Approximation Orders:    "FIRST" "CONSTANT"
+
+Execution Information:
+  Executioner:             InversePowerMethod
+  Solver Mode:             NEWTON
+  MOOSE Preconditioner:    SMP
+
+LEGACY MODES ENABLED:
+ This application uses the legacy material output option: material properties are output only on TIMESTEP_END, not INITIAL. To remove this message, set 'use_legacy_material_output' to false in this application. If there are gold output files that contain material property output for which output occurs on INITIAL, then these will generate diffs due to zero values being stored, and these tests should be re-golded.
+
+
+|Bx| = 1.0040000000
+
+Time Step 0, time = 0
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group1max      | group1norm     | group2_flux    | group2diff     | group2max      | group2norm     | group3_flux    | group4_flux    | powernorm      | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.004000e+00 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   0.000000e+00 |   1.274446e-11 |   4.118101e-01 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.004000e+00 |
++----------------+------------------------+
+
+
+
+*** Warning ***
+/Users/gwenchee/github/dissertation-results/ahtr_multiphysics/moltres_plank_10_slice_refl/fhr_plank_criticality_search.i:26: unused parameter 'Nt/transient'
+
+
+ Power iterations starts
+ ________________________________________________________________________________
+ Power iteration= 0
+ 0 Nonlinear |R| = 4.251552e+01
+      0 Linear |R| = 4.251552e+01
+      1 Linear |R| = 8.210566e-11
+ 1 Nonlinear |R| = 9.029442e-11
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.39756766e+00 |      2.37048846e+00 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+ ________________________________________________________________________________
+ Power iteration= 1
+ 0 Nonlinear |R| = 1.305267e+00
+      0 Linear |R| = 1.305267e+00
+      1 Linear |R| = 4.489988e-13
+ 1 Nonlinear |R| = 3.510719e-11
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.39756766e+00 |      2.37048846e+00 |
+ |              1 |      1.39774828e+00 |      5.96602455e-02 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+ ________________________________________________________________________________
+ Power iteration= 2
+ 0 Nonlinear |R| = 3.968678e-03
+      0 Linear |R| = 3.968678e-03
+      1 Linear |R| = 3.106961e-15
+ 1 Nonlinear |R| = 3.584202e-11
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.39756766e+00 |      2.37048846e+00 |
+ |              1 |      1.39774828e+00 |      5.96602455e-02 |
+ |              2 |      1.39774863e+00 |      3.86714570e-04 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+ ________________________________________________________________________________
+ Power iteration= 3
+ 0 Nonlinear |R| = 8.188094e-05
+      0 Linear |R| = 8.188094e-05
+      1 Linear |R| = 7.142952e-17
+ 1 Nonlinear |R| = 3.536490e-11
+
+ +================+=====================+=====================+
+ | iteration      | eigenvalue          | solution_difference |
+ +================+=====================+=====================+
+ |              0 |      1.39756766e+00 |      2.37048846e+00 |
+ |              1 |      1.39774828e+00 |      5.96602455e-02 |
+ |              2 |      1.39774863e+00 |      3.86714570e-04 |
+ |              3 |      1.39774863e+00 |      8.83226249e-06 |
+ +================+=====================+=====================+
+ Chebyshev step: 0
+ ________________________________________________________________________________
+
+*******************************************************
+ Eigenvalue = 1.3977486275
+*******************************************************
+
+Outlier Variable Residual Norms:
+  group1: 2.043626e-11
+  group4: 2.343645e-11
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group1max      | group1norm     | group2_flux    | group2diff     | group2max      | group2norm     | group3_flux    | group4_flux    | powernorm      | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.004000e+00 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   0.000000e+00 |   1.274446e-11 |   4.118101e-01 |
+|   1.000000e+00 |   1.397749e+00 |   1.098719e+00 |   2.327082e+00 |   1.357027e+00 |   9.676965e+01 |   9.967217e-01 |   7.447417e-01 |   1.004051e+00 |   8.778627e+01 |   3.902396e-01 |   1.613508e+00 |   1.774230e-11 |   5.733048e-01 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.004000e+00 |
+|   1.000000e+00 |           1.397749e+00 |
++----------------+------------------------+
+
+ Solution is rescaled with factor 1.1856e+16 for normalization!
+
+Outlier Variable Residual Norms:
+  group1: 2.043626e-11
+  group4: 2.343645e-11
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group1max      | group1norm     | group2_flux    | group2diff     | group2max      | group2norm     | group3_flux    | group4_flux    | powernorm      | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.004000e+00 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.000000e+00 |   8.610926e+00 |   0.000000e+00 |   8.081206e+01 |   0.00
+0000e+00 |   0.000000e+00 |   1.274446e-11 |   4.118101e-01 |
+|   1.000000e+00 |   1.397749e+00 |   1.098719e+00 |   2.327082e+00 |   1.357027e+00 |   9.676965e+01 |   9.967217e-01 |   7.447417e-01 |   1.004051e+00 |   8.778627e+01 |   3.902396e-01 |   1.613508e+00 |   1.774230e-11 |   5.733048e-01 |
+|   2.000000e+00 |   1.657173e+16 |   1.302643e+16 |   1.236934e+17 |   1.608894e+16 |   1.147303e+18 |   1.181715e+16 |   1.109034e+17 |   1.190404e+16 |   1.040796e+18 |   4.626687e+15 |   1.912978e+16 |   2.103530e+05 |   6.797112e+15 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.004000e+00 |
+|   1.000000e+00 |           1.397749e+00 |
+|   2.000000e+00 |           1.397749e+00 |
++----------------+------------------------+
+
+
+
+Performance Graph:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                Section                               | Calls |   Self(s)  |   Avg(s)   |    %   | Mem(MB) |  Total(s)  |   Avg(s)   |    %   | Mem(MB) |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| MoltresApp (main)                                                    |     1 |      0.015 |      0.015 |   0.07 |       2 |     22.052 |     22.052 | 100.00 |      91 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::setup_mesh    |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.000 |      0.000 |   0.00 |       0 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::set_mesh_base |     2 |      0.000 |      0.000 |   0.00 |       0 |      0.023 |      0.012 |   0.11 |       2 |
+|   FEProblem::computeUserObjects                                      |     6 |      0.536 |      0.089 |   2.43 |       1 |      0.536 |      0.089 |   2.43 |       1 |
+|   FEProblem::outputStep                                              |     3 |      0.001 |      0.000 |   0.00 |       0 |      0.143 |      0.048 |   0.65 |       2 |
+|     Exodus::outputStep                                               |     3 |      0.105 |      0.035 |   0.48 |       2 |      0.105 |      0.035 |   0.48 |       2 |
+|   FEProblem::solve                                                   |     4 |      4.477 |      1.119 |  20.30 |       7 |     19.385 |      4.846 |  87.91 |      28 |
+|     FEProblem::computeResidualInternal                               |     4 |      0.000 |      0.000 |   0.00 |       0 |      2.654 |      0.663 |  12.03 |       0 |
+|       FEProblem::computeUserObjects                                  |     4 |      0.625 |      0.156 |   2.84 |       0 |      0.625 |      0.156 |   2.84 |       0 |
+|     FEProblem::computeResidualInternal                               |     8 |      0.000 |      0.000 |   0.00 |       0 |      5.316 |      0.665 |  24.11 |       0 |
+|       FEProblem::computeUserObjects                                  |     8 |      1.240 |      0.155 |   5.62 |       0 |      1.240 |      0.155 |   5.62 |       0 |
+|     FEProblem::computeJacobianInternal                               |     4 |      0.000 |      0.000 |   0.00 |       0 |      6.937 |      1.734 |  31.46 |      21 |
+|   InversePowerMethod::final                                          |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.002 |      0.002 |   0.01 |       0 |
+|     FEProblem::computeUserObjects                                    |     1 |      0.002 |      0.002 |   0.01 |       0 |      0.002 |      0.002 |   0.01 |       0 |
+|     FEProblem::outputStep                                            |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.000 |      0.000 |   0.00 |       0 |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
