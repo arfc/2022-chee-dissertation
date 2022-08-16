@@ -1,0 +1,1646 @@
+       	   	     	                                              oup                                              	                                  ind                                  
+       	   	     	-----------------------------------------------------------------------------------------------	-----------------------------------------------------------------------
+time   	gen	evals	avg                    	std                    	min                    	max                    	avg                    	min                    	max                    
+1416.1 	0  	64   	[1.09284508 1.36521512]	[0.00280345 0.00146365]	[1.08758621 1.36205582]	[1.10210035 1.36911383]	[0.19455893 0.20632889]	[0.05133676 0.05430868]	[0.34710491 0.34863213]
+2819.98	1  	60   	[1.0909732  1.36499471]	[0.00149497 0.00134533]	[1.08706768 1.36205582]	[1.09296146 1.36782878]	[0.19490494 0.19749126]	[0.05133676 0.05312806]	[0.34308232 0.34863213]
+Entering generation 2...
+control_dict OrderedDict([('radius_top', ['openmc_gc', 1]), ('radius_bot', ['openmc_gc', 1])])
+control_vars_dict {'2_0': {'openmc_gc': {'radius_top': 0.2445239375563808, 'radius_bot': 0.0810908219358154}}, '2_1': {'openmc_gc': {'radius_top': 0.1629900515833516, 'radius_bot': 0.0575060954533194}}, '2_2': {'openmc_gc': {'radius_top': 0.21844383750577137, 'radius_bot': 0.23228887593071312}}, '2_3': {'openmc_gc': {'radius_top': 0.2193151458801108, 'radius_bot': 0.1423484291941986}}, '2_4': {'openmc_gc': {'radius_top': 0.09128077764404693, 'radius_bot': 0.16974584559775624}}, '2_5': {'openmc_gc': {'radius_top': 0.22902199976595145, 'radius_bot': 0.1800835768654176}}, '2_6': {'openmc_gc': {'radius_top': 0.2445335127527067, 'radius_bot': 0.12144691604785801}}, '2_7': {'openmc_gc': {'radius_top': 0.3245316651597176, 'radius_bot': 0.20348483722404234}}, '2_8': {'openmc_gc': {'radius_top': 0.3069693091311131, 'radius_bot': 0.056539859446195204}}, '2_9': {'openmc_gc': {'radius_top': 0.296996597251842, 'radius_bot': 0.11510088456275262}}, '2_10': {'openmc_gc': {'radius_top': 0.1799370177347313, 'radius_bot': 0.1502033801434161}}, '2_11': {'openmc_gc': {'radius_top': 0.09853754681874004, 'radius_bot': 0.14906396209868866}}, '2_12': {'openmc_gc': {'radius_top': 0.24988048481393882, 'radius_bot': 0.29976092375192304}}, '2_13': {'openmc_gc': {'radius_top': 0.14113605450733663, 'radius_bot': 0.2255467976238184}}, '2_14': {'openmc_gc': {'radius_top': 0.181258504272994, 'radius_bot': 0.15698788550924098}}, '2_15': {'openmc_gc': {'radius_top': 0.10345850551370621, 'radius_bot': 0.3080139993905686}}, '2_16': {'openmc_gc': {'radius_top': 0.20733032956413772, 'radius_bot': 0.1675919149370651}}, '2_17': {'openmc_gc': {'radius_top': 0.14209145961756373, 'radius_bot': 0.16789679567891758}}, '2_18': {'openmc_gc': {'radius_top': 0.21807327844954094, 'radius_bot': 0.1520124157666905}}, '2_19': {'openmc_gc': {'radius_top': 0.21807327844954094, 'radius_bot': 0.1520124157666905}}, '2_20': {'openmc_gc': {'radius_top': 0.10527048143290611, 'radius_bot': 0.29697018654544927}}, '2_21': {'openmc_gc': {'radius_top': 0.17491838213213215, 'radius_bot': 0.09078841401725248}}, '2_22': {'openmc_gc': {'radius_top': 0.20387883243649924, 'radius_bot': 0.23413623436019582}}, '2_23': {'openmc_gc': {'radius_top': 0.09790099058592464, 'radius_bot': 0.2222085295206458}}, '2_24': {'openmc_gc': {'radius_top': 0.33301389559001926, 'radius_bot': 0.30223530101844326}}, '2_25': {'openmc_gc': {'radius_top': 0.16199462239651335, 'radius_bot': 0.2400756814600013}}, '2_26': {'openmc_gc': {'radius_top': 0.21620120999161835, 'radius_bot': 0.18480766497955448}}, '2_27': {'openmc_gc': {'radius_top': 0.27388893345233795, 'radius_bot': 0.13144965503470227}}, '2_28': {'openmc_gc': {'radius_top': 0.12314446750957297, 'radius_bot': 0.2341848104219947}}, '2_29': {'openmc_gc': {'radius_top': 0.2751232794900138, 'radius_bot': 0.22310321852406764}}, '2_30': {'openmc_gc': {'radius_top': 0.1831736586635305, 'radius_bot': 0.2654701578157019}}, '2_31': {'openmc_gc': {'radius_top': 0.1466915889334719, 'radius_bot': 0.16524112796017565}}, '2_32': {'openmc_gc': {'radius_top': 0.09651130676257788, 'radius_bot': 0.11874900605189395}}, '2_33': {'openmc_gc': {'radius_top': 0.2845224900292516, 'radius_bot': 0.25076484977856417}}, '2_34': {'openmc_gc': {'radius_top': 0.32476113032408915, 'radius_bot': 0.2799688980907703}}, '2_35': {'openmc_gc': {'radius_top': 0.31724278245474047, 'radius_bot': 0.3385851362863489}}, '2_36': {'openmc_gc': {'radius_top': 0.2658892069858317, 'radius_bot': 0.16514432957113118}}, '2_37': {'openmc_gc': {'radius_top': 0.12658182008656466, 'radius_bot': 0.24347646556409136}}, '2_38': {'openmc_gc': {'radius_top': 0.14777525005851327, 'radius_bot': 0.13487946890740887}}, '2_39': {'openmc_gc': {'radius_top': 0.16289116625493288, 'radius_bot': 0.15776013307394127}}, '2_40': {'openmc_gc': {'radius_top': 0.1347688568731617, 'radius_bot': 0.10376869551468891}}, '2_41': {'openmc_gc': {'radius_top': 0.20925313047633387, 'radius_bot': 0.279829152410014}}, '2_42': {'openmc_gc': {'radius_top': 0.18286333496398746, 'radius_bot': 0.29100075384347}}, '2_43': {'openmc_gc': {'radius_top': 0.21672534162576162, 'radius_bot': 0.32970192282931193}}, '2_44': {'openmc_gc': {'radius_top': 0.23557265726940957, 'radius_bot': 0.22454120329255176}}, '2_45': {'openmc_gc': {'radius_top': 0.23803149281821534, 'radius_bot': 0.1212253780296721}}, '2_46': {'openmc_gc': {'radius_top': 0.05776279829000133, 'radius_bot': 0.21190857800375523}}, '2_47': {'openmc_gc': {'radius_top': 0.11880996700820468, 'radius_bot': 0.13373355472952142}}, '2_48': {'openmc_gc': {'radius_top': 0.21274671703926273, 'radius_bot': 0.09576608409306432}}, '2_49': {'openmc_gc': {'radius_top': 0.21230796205879393, 'radius_bot': 0.3029253118606112}}, '2_50': {'openmc_gc': {'radius_top': 0.3457787581847407, 'radius_bot': 0.1474102025801709}}, '2_51': {'openmc_gc': {'radius_top': 0.05271487720063965, 'radius_bot': 0.21338009057573798}}, '2_52': {'openmc_gc': {'radius_top': 0.20764879757212806, 'radius_bot': 0.2627215028728346}}, '2_53': {'openmc_gc': {'radius_top': 0.2374178032144285, 'radius_bot': 0.19966929616388074}}, '2_54': {'openmc_gc': {'radius_top': 0.10793206965913875, 'radius_bot': 0.2656645450886271}}, '2_56': {'openmc_gc': {'radius_top': 0.19993265911661962, 'radius_bot': 0.2575984122521763}}, '2_57': {'openmc_gc': {'radius_top': 0.20719794028476762, 'radius_bot': 0.3075890527069534}}, '2_58': {'openmc_gc': {'radius_top': 0.05133676248768422, 'radius_bot': 0.1751397044654061}}, '2_59': {'openmc_gc': {'radius_top': 0.05133676248768422, 'radius_bot': 0.1751397044654061}}, '2_60': {'openmc_gc': {'radius_top': 0.2026477901848291, 'radius_bot': 0.17428958152419935}}, '2_61': {'openmc_gc': {'radius_top': 0.26313152382235877, 'radius_bot': 0.13069155985905823}}, '2_62': {'openmc_gc': {'radius_top': 0.2536315528251679, 'radius_bot': 0.1984533542714978}}, '2_63': {'openmc_gc': {'radius_top': 0.1205107410975261, 'radius_bot': 0.19823430765759875}}}
+run input  cd openmc_gc_2_0
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_1
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_2
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_3
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_4
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_5
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_6
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_7
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_8
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_9
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_10
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_11
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_12
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_13
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_14
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_15
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_16
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_17
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_18
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_19
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_20
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_21
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_22
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_23
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_24
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_25
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_26
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_27
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_28
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_29
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_30
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_31
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_32
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_33
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_34
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_35
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_36
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_37
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_38
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_39
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_40
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_41
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_42
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_43
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_44
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_45
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_46
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_47
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_48
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_49
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_50
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_51
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_52
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_53
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_54
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_56
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_57
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_58
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_59
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_60
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_61
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_62
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_63
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME INPUT  152.26226329803467
+run execute  cd openmc_gc_2_0
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_1
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_2
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_3
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_4
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_5
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_6
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_7
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_8
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_9
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_10
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_11
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_12
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_13
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_14
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_15
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_16
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_17
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_18
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_19
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_20
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_21
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_22
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_23
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_24
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_25
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_26
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_27
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_28
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_29
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_30
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_31
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_32
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_33
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_34
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_35
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_36
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_37
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_38
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_39
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_40
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_41
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_42
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_43
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_44
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_45
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_46
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_47
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_48
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_49
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_50
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_51
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_52
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_53
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_54
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_56
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_57
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_58
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_59
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_60
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_61
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_62
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_63
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME EXECUTE  0 961.4589896202087
+run output  cd openmc_gc_2_0
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_1
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_2
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_3
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_4
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_5
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_6
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_7
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_8
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_9
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_10
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_11
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_12
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_13
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_14
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_15
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_16
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_17
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_18
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_19
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_20
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_21
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_22
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_23
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_24
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_25
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_26
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_27
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_28
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_29
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_30
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_31
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_32
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_33
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_34
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_35
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_36
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_37
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_38
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_39
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_40
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_41
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_42
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_43
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_44
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_45
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_46
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_47
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_48
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_49
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_50
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_51
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_52
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_53
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_54
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_56
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_57
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_58
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_59
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_60
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_61
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_62
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_2_63
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+wait/home/gchee/.local/miniconda-3/latest/lib/python3.9/site-packages/rollo-0.1.1-py3.9.egg/rollo/constraints.py:128: UserWarning: 0 out of 64 inds were constrained
+
+openmc_gc RUNTIME OUTPUT  152.85883259773254
+openmc_gc [1.0942824345617046, 1.3650329300773014] output vals dict
+RUNTIME EVAL FN  1267.1574873924255
+       	   	     	                                              oup                                              	                                  ind                                  
+       	   	     	-----------------------------------------------------------------------------------------------	-----------------------------------------------------------------------
+time   	gen	evals	avg                    	std                    	min                    	max                    	avg                    	min                    	max                    
+1416.1 	0  	64   	[1.09284508 1.36521512]	[0.00280345 0.00146365]	[1.08758621 1.36205582]	[1.10210035 1.36911383]	[0.19455893 0.20632889]	[0.05133676 0.05430868]	[0.34710491 0.34863213]
+2819.98	1  	60   	[1.0909732  1.36499471]	[0.00149497 0.00134533]	[1.08706768 1.36205582]	[1.09296146 1.36782878]	[0.19490494 0.19749126]	[0.05133676 0.05312806]	[0.34308232 0.34863213]
+1267.25	2  	63   	[1.09032211 1.36512141]	[0.00130137 0.0013594 ]	[1.08685581 1.36205582]	[1.09192637 1.36782878]	[0.20414152 0.1981671 ]	[0.05271488 0.05312806]	[0.34308232 0.34863213]
+Entering generation 3...
+control_dict OrderedDict([('radius_top', ['openmc_gc', 1]), ('radius_bot', ['openmc_gc', 1])])
+control_vars_dict {'3_2': {'openmc_gc': {'radius_top': 0.24159242179739257, 'radius_bot': 0.12956086228011116}}, '3_3': {'openmc_gc': {'radius_top': 0.23725481429119807, 'radius_bot': 0.15557729621079275}}, '3_4': {'openmc_gc': {'radius_top': 0.2222456599178232, 'radius_bot': 0.09054389527156781}}, '3_5': {'openmc_gc': {'radius_top': 0.21551332346805904, 'radius_bot': 0.28409340985334386}}, '3_6': {'openmc_gc': {'radius_top': 0.1398801290108092, 'radius_bot': 0.21671684715209982}}, '3_7': {'openmc_gc': {'radius_top': 0.22341986068303885, 'radius_bot': 0.133112575311074}}, '3_8': {'openmc_gc': {'radius_top': 0.30692104558562994, 'radius_bot': 0.16948955816669437}}, '3_9': {'openmc_gc': {'radius_top': 0.21958653193023467, 'radius_bot': 0.15544219510520607}}, '3_10': {'openmc_gc': {'radius_top': 0.3023824407422532, 'radius_bot': 0.07111257231106302}}, '3_11': {'openmc_gc': {'radius_top': 0.30158346564070204, 'radius_bot': 0.10052817169788482}}, '3_12': {'openmc_gc': {'radius_top': 0.2850052344908694, 'radius_bot': 0.24976115247437472}}, '3_13': {'openmc_gc': {'radius_top': 0.19682146755277322, 'radius_bot': 0.11651932973887667}}, '3_14': {'openmc_gc': {'radius_top': 0.23481205845404232, 'radius_bot': 0.14322511894176476}}, '3_15': {'openmc_gc': {'radius_top': 0.19961850866879088, 'radius_bot': 0.3126258833630793}}, '3_17': {'openmc_gc': {'radius_top': 0.14113605450733663, 'radius_bot': 0.2255467976238184}}, '3_20': {'openmc_gc': {'radius_top': 0.0639669899539504, 'radius_bot': 0.17955708320379585}}, '3_21': {'openmc_gc': {'radius_top': 0.2207500198327498, 'radius_bot': 0.2854448016960138}}, '3_24': {'openmc_gc': {'radius_top': 0.22617282281903672, 'radius_bot': 0.1446070847680483}}, '3_25': {'openmc_gc': {'radius_top': 0.21811830601097176, 'radius_bot': 0.16686060362874636}}, '3_26': {'openmc_gc': {'radius_top': 0.318696922384584, 'radius_bot': 0.19335923043039127}}, '3_27': {'openmc_gc': {'radius_top': 0.2166191385196974, 'radius_bot': 0.2972383216226481}}, '3_28': {'openmc_gc': {'radius_top': 0.21807327844954094, 'radius_bot': 0.15201241576669053}}, '3_29': {'openmc_gc': {'radius_top': 0.21807327844954094, 'radius_bot': 0.15201241576669053}}, '3_30': {'openmc_gc': {'radius_top': 0.1147296483349588, 'radius_bot': 0.16015607070040927}}, '3_31': {'openmc_gc': {'radius_top': 0.23743240004027247, 'radius_bot': 0.05470032203762227}}, '3_32': {'openmc_gc': {'radius_top': 0.20622223261799585, 'radius_bot': 0.31864334168746744}}, '3_33': {'openmc_gc': {'radius_top': 0.20009332596244167, 'radius_bot': 0.2811204868858681}}, '3_34': {'openmc_gc': {'radius_top': 0.15022003967816425, 'radius_bot': 0.20344586157783404}}, '3_35': {'openmc_gc': {'radius_top': 0.282945475937011, 'radius_bot': 0.3320749564914089}}, '3_36': {'openmc_gc': {'radius_top': 0.2116474356381931, 'radius_bot': 0.18677066567480005}}, '3_37': {'openmc_gc': {'radius_top': 0.22965645368441048, 'radius_bot': 0.19087255044269685}}, '3_38': {'openmc_gc': {'radius_top': 0.18319719255507572, 'radius_bot': 0.06681879594047234}}, '3_39': {'openmc_gc': {'radius_top': 0.16447045706925445, 'radius_bot': 0.1106523811674708}}, '3_42': {'openmc_gc': {'radius_top': 0.33416889836794017, 'radius_bot': 0.33308976744717056}}, '3_43': {'openmc_gc': {'radius_top': 0.2248872306869935, 'radius_bot': 0.3367506112859723}}, '3_44': {'openmc_gc': {'radius_top': 0.08398218337999382, 'radius_bot': 0.1442538853449933}}, '3_45': {'openmc_gc': {'radius_top': 0.3316549610137565, 'radius_bot': 0.06396194590062958}}, '3_46': {'openmc_gc': {'radius_top': 0.09237986446359324, 'radius_bot': 0.11509924343892615}}, '3_47': {'openmc_gc': {'radius_top': 0.16326152808909664, 'radius_bot': 0.17496039844686567}}, '3_48': {'openmc_gc': {'radius_top': 0.3189466729805514, 'radius_bot': 0.30269786224239825}}, '3_49': {'openmc_gc': {'radius_top': 0.3230572397982783, 'radius_bot': 0.31585617213472095}}, '3_50': {'openmc_gc': {'radius_top': 0.11186323774878275, 'radius_bot': 0.2342763845083274}}, '3_51': {'openmc_gc': {'radius_top': 0.14006652989518045, 'radius_bot': 0.2143616197119856}}, '3_52': {'openmc_gc': {'radius_top': 0.1681771157723901, 'radius_bot': 0.13429470613443006}}, '3_53': {'openmc_gc': {'radius_top': 0.14248930054105607, 'radius_bot': 0.09496488144406177}}, '3_54': {'openmc_gc': {'radius_top': 0.1508581025222943, 'radius_bot': 0.3063416014446544}}, '3_55': {'openmc_gc': {'radius_top': 0.20941208819862006, 'radius_bot': 0.09496380663590383}}, '3_56': {'openmc_gc': {'radius_top': 0.2263675447392403, 'radius_bot': 0.15132232178145832}}, '3_57': {'openmc_gc': {'radius_top': 0.19871421371408624, 'radius_bot': 0.31397900678871526}}, '3_58': {'openmc_gc': {'radius_top': 0.18092552839978787, 'radius_bot': 0.32853049345862073}}, '3_59': {'openmc_gc': {'radius_top': 0.21866314818996116, 'radius_bot': 0.29217218321416116}}, '3_60': {'openmc_gc': {'radius_top': 0.1271886998285465, 'radius_bot': 0.15669863127842223}}, '3_61': {'openmc_gc': {'radius_top': 0.12817396755692226, 'radius_bot': 0.23097104082151515}}}
+run input  cd openmc_gc_3_2
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_3
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_4
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_5
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_6
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_7
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_8
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_9
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_10
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_11
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_12
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_13
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_14
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_15
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_17
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_20
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_21
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_24
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_25
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_26
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_27
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_28
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_29
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_30
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_31
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_32
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_33
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_34
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_35
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_36
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_37
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_38
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_39
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_42
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_43
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_44
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_45
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_46
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_47
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_48
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_49
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_50
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_51
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_52
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_53
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_54
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_55
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_56
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_57
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_58
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_59
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_60
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_61
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME INPUT  141.9438157081604
+run execute  cd openmc_gc_3_2
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_3
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_4
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_5
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_6
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_7
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_8
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_9
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_10
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_11
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_12
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_13
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_14
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_15
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_17
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_20
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_21
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_24
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_25
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_26
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_27
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_28
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_29
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_30
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_31
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_32
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_33
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_34
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_35
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_36
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_37
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_38
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_39
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_42
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_43
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_44
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_45
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_46
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_47
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_48
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_49
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_50
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_51
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_52
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_53
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_54
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_55
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_56
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_57
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_58
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_59
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_60
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_61
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME EXECUTE  0 883.6653370857239
+run output  cd openmc_gc_3_2
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_3
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_4
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_5
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_6
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_7
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_8
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_9
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_10
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_11
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_12
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_13
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_14
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_15
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_17
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_20
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_21
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_24
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_25
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_26
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_27
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_28
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_29
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_30
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_31
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_32
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_33
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_34
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_35
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_36
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_37
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_38
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_39
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_42
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_43
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_44
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_45
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_46
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_47
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_48
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_49
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_50
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_51
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_52
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_53
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_54
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_55
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_56
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_57
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_58
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_59
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_60
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_3_61
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME OUTPUT  143.4210546016693
+openmc_gc [1.0941836152380446, 1.3668876247005939] output vals dict
+RUNTIME EVAL FN  1169.3697445392609
+       	   	     	                                              oup                                              	                                  ind                                  
+       	   	     	-----------------------------------------------------------------------------------------------	-----------------------------------------------------------------------
+time   	gen	evals	avg                    	std                    	min                    	max                    	avg                    	min                    	max                    
+1416.1 	0  	64   	[1.09284508 1.36521512]	[0.00280345 0.00146365]	[1.08758621 1.36205582]	[1.10210035 1.36911383]	[0.19455893 0.20632889]	[0.05133676 0.05430868]	[0.34710491 0.34863213]
+2819.98	1  	60   	[1.0909732  1.36499471]	[0.00149497 0.00134533]	[1.08706768 1.36205582]	[1.09296146 1.36782878]	[0.19490494 0.19749126]	[0.05133676 0.05312806]	[0.34308232 0.34863213]
+1267.25	2  	63   	[1.09032211 1.36512141]	[0.00130137 0.0013594 ]	[1.08685581 1.36205582]	[1.09192637 1.36782878]	[0.20414152 0.1981671 ]	[0.05271488 0.05312806]	[0.34308232 0.34863213]
+2436.64	3  	53   	[1.08983945 1.36508979]	[0.0012306  0.00132447]	[1.08685581 1.36205582]	[1.09114984 1.36782878]	[0.20022923 0.19271235]	[0.05518543 0.05312806]	[0.34308232 0.34138628]
+Entering generation 4...
+control_dict OrderedDict([('radius_top', ['openmc_gc', 1]), ('radius_bot', ['openmc_gc', 1])])
+control_vars_dict {'4_0': {'openmc_gc': {'radius_top': 0.21161514220819258, 'radius_bot': 0.34334848710148247}}, '4_1': {'openmc_gc': {'radius_top': 0.19993265911661962, 'radius_bot': 0.2575984122521763}}, '4_2': {'openmc_gc': {'radius_top': 0.16608455626557025, 'radius_bot': 0.05312805506211163}}, '4_3': {'openmc_gc': {'radius_top': 0.16608455626557025, 'radius_bot': 0.05312805506211163}}, '4_4': {'openmc_gc': {'radius_top': 0.33792404252270836, 'radius_bot': 0.2147731560025151}}, '4_5': {'openmc_gc': {'radius_top': 0.2363612038533769, 'radius_bot': 0.0703650024883888}}, '4_6': {'openmc_gc': {'radius_top': 0.1948787609675083, 'radius_bot': 0.1563060138639522}}, '4_7': {'openmc_gc': {'radius_top': 0.22794434450582746, 'radius_bot': 0.2645408575855047}}, '4_8': {'openmc_gc': {'radius_top': 0.18204646503381317, 'radius_bot': 0.05638254294337084}}, '4_9': {'openmc_gc': {'radius_top': 0.18475532620898633, 'radius_bot': 0.3133736412335138}}, '4_10': {'openmc_gc': {'radius_top': 0.23441179776269422, 'radius_bot': 0.10890168504809823}}, '4_11': {'openmc_gc': {'radius_top': 0.20561157041481884, 'radius_bot': 0.20817956764710227}}, '4_12': {'openmc_gc': {'radius_top': 0.25076817289794484, 'radius_bot': 0.20507805446363733}}, '4_13': {'openmc_gc': {'radius_top': 0.3000308436022212, 'radius_bot': 0.09067246583713762}}, '4_14': {'openmc_gc': {'radius_top': 0.2145492114512108, 'radius_bot': 0.12342104525963823}}, '4_15': {'openmc_gc': {'radius_top': 0.29087843900277255, 'radius_bot': 0.1296277756344841}}, '4_17': {'openmc_gc': {'radius_top': 0.1845500823088944, 'radius_bot': 0.15316813162932247}}, '4_18': {'openmc_gc': {'radius_top': 0.24988048481393882, 'radius_bot': 0.29976092375192304}}, '4_19': {'openmc_gc': {'radius_top': 0.24988048481393882, 'radius_bot': 0.29976092375192304}}, '4_20': {'openmc_gc': {'radius_top': 0.14493592624315407, 'radius_bot': 0.28154522583302594}}, '4_21': {'openmc_gc': {'radius_top': 0.24608061307812137, 'radius_bot': 0.24376249554271556}}, '4_22': {'openmc_gc': {'radius_top': 0.14113605450733663, 'radius_bot': 0.2255467976238184}}, '4_23': {'openmc_gc': {'radius_top': 0.14113605450733663, 'radius_bot': 0.2255467976238184}}, '4_24': {'openmc_gc': {'radius_top': 0.15628912150075575, 'radius_bot': 0.22667523884119845}}, '4_25': {'openmc_gc': {'radius_top': 0.08274792359250549, 'radius_bot': 0.22108008830326575}}, '4_26': {'openmc_gc': {'radius_top': 0.086030059831058, 'radius_bot': 0.16838426205217522}}, '4_27': {'openmc_gc': {'radius_top': 0.22808144609223446, 'radius_bot': 0.17743987010501405}}, '4_28': {'openmc_gc': {'radius_top': 0.05176686852058492, 'radius_bot': 0.17402110929378478}}, '4_29': {'openmc_gc': {'radius_top': 0.18491674170113756, 'radius_bot': 0.3016598791039114}}, '4_30': {'openmc_gc': {'radius_top': 0.12444580623180378, 'radius_bot': 0.16636945141338663}}, '4_31': {'openmc_gc': {'radius_top': 0.12444580623180378, 'radius_bot': 0.16636945141338663}}, '4_32': {'openmc_gc': {'radius_top': 0.34523314301314484, 'radius_bot': 0.06100073106622071}}, '4_33': {'openmc_gc': {'radius_top': 0.12178782268762886, 'radius_bot': 0.23744314444094816}}, '4_36': {'openmc_gc': {'radius_top': 0.22226492760535715, 'radius_bot': 0.16705343257957764}}, '4_37': {'openmc_gc': {'radius_top': 0.22082936135551226, 'radius_bot': 0.16892643025176476}}, '4_38': {'openmc_gc': {'radius_top': 0.23778194602946062, 'radius_bot': 0.27209553222294064}}, '4_39': {'openmc_gc': {'radius_top': 0.2975341148748208, 'radius_bot': 0.2185020198300987}}, '4_40': {'openmc_gc': {'radius_top': 0.21807327844954094, 'radius_bot': 0.1520124157666905}}, '4_41': {'openmc_gc': {'radius_top': 0.21807327844954094, 'radius_bot': 0.1520124157666905}}, '4_42': {'openmc_gc': {'radius_top': 0.20119967020546475, 'radius_bot': 0.0807944922905357}}, '4_43': {'openmc_gc': {'radius_top': 0.09797784410101948, 'radius_bot': 0.13406190044749583}}, '4_44': {'openmc_gc': {'radius_top': 0.19924386393896196, 'radius_bot': 0.31685202555411446}}, '4_45': {'openmc_gc': {'radius_top': 0.2070716946414756, 'radius_bot': 0.24711898052343106}}, '4_46': {'openmc_gc': {'radius_top': 0.08743322958783808, 'radius_bot': 0.2429951473520972}}, '4_47': {'openmc_gc': {'radius_top': 0.11937694167500101, 'radius_bot': 0.19486097419393164}}, '4_48': {'openmc_gc': {'radius_top': 0.33252218444320136, 'radius_bot': 0.2676982510586706}}, '4_49': {'openmc_gc': {'radius_top': 0.15591643733608185, 'radius_bot': 0.26768869155070496}}, '4_50': {'openmc_gc': {'radius_top': 0.2734286251297283, 'radius_bot': 0.18688148734247403}}, '4_51': {'openmc_gc': {'radius_top': 0.21658594921967408, 'radius_bot': 0.19076172877502287}}, '4_52': {'openmc_gc': {'radius_top': 0.14209145961756373, 'radius_bot': 0.16789679567891758}}, '4_54': {'openmc_gc': {'radius_top': 0.2007237337950721, 'radius_bot': 0.3029648777748596}}, '4_55': {'openmc_gc': {'radius_top': 0.32324398782541014, 'radius_bot': 0.10770240316293163}}, '4_56': {'openmc_gc': {'radius_top': 0.05518542558313949, 'radius_bot': 0.12733335924535777}}, '4_57': {'openmc_gc': {'radius_top': 0.05518542558313949, 'radius_bot': 0.12733335924535777}}, '4_58': {'openmc_gc': {'radius_top': 0.1799370177347313, 'radius_bot': 0.1502033801434161}}, '4_59': {'openmc_gc': {'radius_top': 0.1799370177347313, 'radius_bot': 0.1502033801434161}}, '4_60': {'openmc_gc': {'radius_top': 0.3372678609606733, 'radius_bot': 0.3359182332621933}}, '4_61': {'openmc_gc': {'radius_top': 0.22178826809426047, 'radius_bot': 0.33392214547094967}}, '4_62': {'openmc_gc': {'radius_top': 0.07192904671539242, 'radius_bot': 0.09149284571267398}}, '4_63': {'openmc_gc': {'radius_top': 0.3437080976783579, 'radius_bot': 0.19875928687750968}}}
+run input  cd openmc_gc_4_0
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_1
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_2
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_3
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_4
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_5
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_6
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_7
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_8
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_9
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_10
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_11
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_12
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_13
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_14
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_15
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_17
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_18
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_19
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_20
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_21
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_22
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_23
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_24
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_25
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_26
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_27
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_28
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_29
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_30
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_31
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_32
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_33
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_36
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_37
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_38
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_39
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_40
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_41
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_42
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_43
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_44
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_45
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_46
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_47
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_48
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_49
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_50
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_51
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_52
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_54
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_55
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_56
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_57
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_58
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_59
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_60
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_61
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_62
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_63
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc.py > input_script_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME INPUT  149.22478914260864
+run execute  cd openmc_gc_4_0
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_1
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_2
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_3
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_4
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_5
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_6
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_7
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_8
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_9
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_10
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_11
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_12
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_13
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_14
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_15
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_17
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_18
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_19
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_20
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_21
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_22
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_23
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_24
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_25
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_26
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_27
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_28
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_29
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_30
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_31
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_32
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_33
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_36
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_37
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_38
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_39
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_40
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_41
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_42
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_43
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_44
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_45
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_46
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_47
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_48
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_49
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_50
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_51
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_52
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_54
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_55
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_56
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_57
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_58
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_59
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_60
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_61
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_62
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_63
+aprun -n 2 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2  > execute2_0_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME EXECUTE  0 963.5788443088531
+run output  cd openmc_gc_4_0
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_1
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_2
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_3
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_4
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_5
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_6
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_7
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_8
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_9
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_10
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_11
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_12
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_13
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_14
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_15
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_17
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_18
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_19
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_20
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_21
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_22
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_23
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_24
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_25
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_26
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_27
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_28
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_29
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_30
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_31
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_32
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_33
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_36
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_37
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_38
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_39
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_40
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_41
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_42
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_43
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_44
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_45
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_46
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_47
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_48
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_49
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_50
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_51
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_52
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_54
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_55
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_56
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_57
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_58
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_59
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_60
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_61
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_62
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+ cd ../openmc_gc_4_63
+aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python  fhr_plank_openmc_output.py > output_script_out.txt & 
+sleep 1 
+wait
+openmc_gc RUNTIME OUTPUT  151.39865398406982
+openmc_gc [1.0935424200508115, 1.3672594969908907] output vals dict
+RUNTIME EVAL FN  1264.6227841377258
+       	   	     	                                              oup                                              	                                  ind                                  
+       	   	     	-----------------------------------------------------------------------------------------------	-----------------------------------------------------------------------
+time   	gen	evals	avg                    	std                    	min                    	max                    	avg                    	min                    	max                    
+1416.1 	0  	64   	[1.09284508 1.36521512]	[0.00280345 0.00146365]	[1.08758621 1.36205582]	[1.10210035 1.36911383]	[0.19455893 0.20632889]	[0.05133676 0.05430868]	[0.34710491 0.34863213]
+2819.98	1  	60   	[1.0909732  1.36499471]	[0.00149497 0.00134533]	[1.08706768 1.36205582]	[1.09296146 1.36782878]	[0.19490494 0.19749126]	[0.05133676 0.05312806]	[0.34308232 0.34863213]
+1267.25	2  	63   	[1.09032211 1.36512141]	[0.00130137 0.0013594 ]	[1.08685581 1.36205582]	[1.09192637 1.36782878]	[0.20414152 0.1981671 ]	[0.05271488 0.05312806]	[0.34308232 0.34863213]
+2436.64	3  	53   	[1.08983945 1.36508979]	[0.0012306  0.00132447]	[1.08685581 1.36205582]	[1.09114984 1.36782878]	[0.20022923 0.19271235]	[0.05518543 0.05312806]	[0.34308232 0.34138628]
+3701.28	4  	60   	[1.08928903 1.36520605]	[0.00116799 0.00118181]	[1.08685581 1.36205582]	[1.09070736 1.36712913]	[0.20203213 0.18604749]	[0.06850649 0.05312806]	[0.32453167 0.34138628]
+rollo Simulation Completed!
+Total time in simulation 3701.2910368442535 seconds
