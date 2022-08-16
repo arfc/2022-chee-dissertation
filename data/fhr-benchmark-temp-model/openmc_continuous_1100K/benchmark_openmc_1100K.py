@@ -2,10 +2,10 @@ import openmc
 import numpy as np
 from numpy import sin, cos, tan, pi
 import sys
-sys.path.insert(1, '../../../fhr-benchmark-1/scripts/')
+sys.path.insert(1, '../../../../fhr-benchmark-1/scripts/')
 from phase1a_constants import *
 from tallies import *
-sys.path.insert(1, '../../../moltres/python')
+sys.path.insert(1, '../../../../moltres/python')
 from moltres_xs import *  # noqa: E402
 
 ###############################################################################
