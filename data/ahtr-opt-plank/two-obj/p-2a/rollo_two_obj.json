@@ -1,0 +1,40 @@
+{
+    "control_variables": {
+        "pf": {"min":0.02, "max": 0.06},
+        "sine_a": {"min": 0.0, "max": 2.0},
+        "sine_b": {"min": 0.0, "max": 1.57},
+        "sine_c": {"min": 0.0, "max": 6.28}
+    },
+    "evaluators": {
+        "openmc_gc": {
+            "order": 0,
+            "input_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_openmc.py"],
+            "execute2": [["aprun -n 1 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2"], ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ../../../../moltres/python/moltres_xs.py", "fhr_plank_gc.inp"]], 
+            "inputs": ["pf", "sine_a", "sine_b", "sine_c"],
+            "output_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_openmc_keff.py"],
+            "outputs": ["pf", "keff2"]
+        },
+        "moltres": {
+            "order": 1,
+            "input_script": ["aprun -n 20 -N 20 -d 1 -j 1 moltres-opt -i ", "fhr_plank_moltres.i"],
+            "execute2": [],
+            "inputs": [],
+            "output_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_plank_moltres_output.py"], 
+            "outputs": ["max_temp"]
+        }
+    },
+    "constraints": {"keff2": {"operator": [">="], "constrained_val": [1.35]}},
+    "algorithm": {
+        "objective": ["min","min"],
+        "weight": [1.0, 1.0],
+        "optimized_variable": ["pf","max_temp"],
+        "pop_size": 128,
+        "generations": 2,
+        "mutation_probability": 0.23,
+        "mating_probability": 0.9,  
+        "selection_operator": {
+            "operator": "selNSGA2"
+        }, 
+        "parallel": "theta"
+    }
+}
