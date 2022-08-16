@@ -109,19 +109,21 @@ def get_252_spectrum(sp_file, k, P):
     fluxvals = np.append(np.array(df_ff['flux'])[0], np.array(df_ff['flux']))
     return fluxvals
 
-E_4 = [1.8554, 2.9023e1, 9.1188e3, 2.0e7]
-bins = []
-x = 0
-num = 0
-for e in engs:
-    if e <= E_4[x]:
-        num += 1 
-    else: 
-        bins.append(num)
-        x += 1
-        num = 0
-bins.append(num)
-bins = np.array(bins)      
+def generate_bins():
+    E_4 = [1.8554, 2.9023e1, 9.1188e3, 2.0e7]
+    bins = []
+    x = 0
+    num = 0
+    for e in engs:
+        if e <= E_4[x]:
+            num += 1 
+        else: 
+            bins.append(num)
+            x += 1
+            num = 0
+    bins.append(num)
+    bins = np.array(bins)      
+    return bins, engs
 
 def get_4_spectrum(sp_file, k, P):
     tally_spectrum_4 = sp_file.get_tally(name='spectrum 4 groups')

@@ -9,6 +9,4 @@ The `run` bash script uses ROLLO to run the following input file `rollo_min_pf.j
 
 All the `*.png` figures in this directory are included in the dissertation.  
 
-`0.023_flux_comparison.ipynb` conducts a flux comparison study used in Section 
-6.2.4 of the dissertation. It uses files from `/most_minimized/` and 
-`/flat_study/`. 
+`0.023_flux_comparison.ipynb` conducts a flux comparison study used in Section 6.2.4 of the dissertation. It uses files from `/most_minimized/` and `/flat_study/`. 
