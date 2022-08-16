@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -j oe
+#PBS -l nodes=20:ppn=32:xe
+#PBS -l walltime=50:00:00
+#PBS -N run
+#PBS -q normal
+#PBS -A bbcc
+
+cd $PBS_O_WORKDIR
+source /projects/sciteam/bbcc/env/moose_env
+
+bwpy-environ
+
+export CXX=CC 
+export CC=cc 
+
+cd /u/sciteam/chee1/github/dissertation-results/ppf/obj_ppf_constr_keff1/
+
+source /projects/sciteam/bbcc/projects/openmc/openmc-0.12.2-parallel2/openmc/build/myvirtualenv/bin/activate
+
+export OMP_NUM_THREADS=32
+
+python -u ../../../rollo/rollo -i rollo_min_ppf.json
+
