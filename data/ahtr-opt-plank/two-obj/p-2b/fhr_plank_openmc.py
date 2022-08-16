@@ -3,7 +3,7 @@ import numpy as np
 from numpy import sin, cos, tan, pi
 import sys 
 sys.path.insert(1, '../../../../scripts/')
-from constants import *
+from plank_constants import *
 
 temp = 948
 uoc_9.temperature = temp
