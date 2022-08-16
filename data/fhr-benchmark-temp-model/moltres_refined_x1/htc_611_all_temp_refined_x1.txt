@@ -1,0 +1,564 @@
+
+
+[33m
+*** Warning, This code is deprecated and will be removed in future versions:
+'NonlinearEigen' executioner is deprecated in favor of 'Eigenvalue' executioner.
+Few parameters such as 'bx_norm', 'k0', 'free_l_tol', 'output_before_normalization' and 'output_after_power_iterations' are no longer supported.
+However, 'Eigenvalue' executioner supports more solving options by interfacing SLEPc.
+Most of the inputs will work by simply replacing the executioner type with 'Eigenvalue'.[39m
+Stack frames: 13
+0: 0   libmesh_opt.0.dylib                 0x00000001110456a5 libMesh::print_trace(std::__1::basic_ostream<char, std::__1::char_traits<char> >&) + 1141
+1: 1   libmoose-opt.0.dylib                0x000000010fc2ac0b void moose::internal::mooseDeprecatedStream<ConsoleStream const, char const (&) [82], char const (&) [146], char const (&) [87], char const (&) [89]>(ConsoleStream const&, bool, char const (&) [82], char const (&) [146], char const (&) [87], char const (&) [89]) + 939
+2: 2   libmoose-opt.0.dylib                0x000000010fc2a76b NonlinearEigen::NonlinearEigen(InputParameters const&) + 747
+3: 3   libmoose-opt.0.dylib                0x000000010fc2a38e std::__1::shared_ptr<MooseObject> moose::internal::buildObj<NonlinearEigen>(InputParameters const&) + 78
+4: 4   libmoose-opt.0.dylib                0x0000000110656d54 Factory::create(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int, bool) + 372
+5: 5   libmoose-opt.0.dylib                0x000000011023f0a4 std::__1::shared_ptr<Executioner> Factory::create<Executioner>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, InputParameters&, unsigned int) + 52
+6: 6   libmoose-opt.0.dylib                0x00000001102167f6 CreateExecutionerAction::act() + 262
+7: 7   libmoose-opt.0.dylib                0x00000001101f4736 ActionWarehouse::executeActionsWithAction(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 1350
+8: 8   libmoose-opt.0.dylib                0x000000011022d428 ActionWarehouse::executeAllActions() + 280
+9: 9   libmoose-opt.0.dylib                0x00000001106cc19e MooseApp::runInputFile() + 94
+10: 10  libmoose-opt.0.dylib                0x00000001106c729a MooseApp::run() + 2730
+11: 11  moltres-opt                         0x000000010e148c33 main + 131
+12: 12  libdyld.dylib                       0x00007fff205fc621 start + 1
+
+Setting Up
+  Initializing
+    Finished Initializing Equation Systems                                               [[33m  7.87 s[39m] [[33m  128 MB[39m]
+  Finished Initializing                                                                  [[33m  7.89 s[39m] [[33m  129 MB[39m]
+Finished Setting Up                                                                      [[33m 10.88 s[39m] [[33m  170 MB[39m]
+Framework Information:
+MOOSE Version:           git commit 0d650f19e1 on 2021-09-10
+LibMesh Version:         
+PETSc Version:           3.15.1
+SLEPc Version:           3.15.1
+Current Time:            Thu May 19 12:32:38 2022
+Executable Timestamp:    Thu Oct 28 18:06:46 2021
+
+Parallelism:
+  Num Processors:          1
+  Num Threads:             1
+
+Mesh: 
+  Parallel Type:           replicated
+  Mesh Dimension:          2
+  Spatial Dimension:       2
+  Nodes:                   17561
+  Elems:                   34784
+  Num Subdomains:          61
+
+Nonlinear System:
+  Num DOFs:                122365
+  Num Local DOFs:          122365
+  Variables:               { "temp" "group1" "group2" "group3" "group4" } { "pre1" "pre2" "pre3" "pre4" 
+                             "pre5" "pre6" } 
+  Finite Element Types:    "LAGRANGE" "MONOMIAL" 
+  Approximation Orders:    "FIRST" "CONSTANT" 
+
+Execution Information:
+  Executioner:             NonlinearEigen
+  Solver Mode:             NEWTON
+  MOOSE Preconditioner:    SMP
+
+[31mLEGACY MODES ENABLED:[39m
+ This application uses the legacy material output option: material properties are output only on TIMESTEP_END, not INITIAL. To remove this message, set 'use_legacy_material_output' to false in this application. If there are gold output files that contain material property output for which output occurs on INITIAL, then these will generate diffs due to zero values being stored, and these tests should be re-golded.
+[39m
+
+|Bx| = 1.4000000000
+
+Time Step 0, time = 0
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group2_flux    | group3_flux    | group4_flux    | powernorm      | temp_ave       | temp_max       | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.400000e+00 |   0.000000e+00 |   3.077918e+00 |   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |   1.777135e-11 |   0.000000e+00 |   0.000000e+00 |   5.742448e-01 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.400000e+00 |
++----------------+------------------------+
+
+ Free power iteration starts
+
+ Power iterations starts
+ ________________________________________________________________________________ 
+ Power iteration= 0
+ 0 Nonlinear |R| = [32m6.799428e-02[39m
+    |residual|_2 of individual variables:
+                     temp:   4.2067e-06
+                     group1: 0.0162514
+                     group2: 0.00270034
+                     group3: 0.0183517
+                     group4: 0.0221006
+                     pre1:   0.00420062
+                     pre2:   0.0217189
+                     pre3:   0.0207557
+                     pre4:   0.0466178
+                     pre5:   0.0191988
+                     pre6:   0.00803934
+      0 Linear |R| = [32m6.799428e-02[39m
+      1 Linear |R| = [32m3.704786e-14[39m
+ 1 Nonlinear |R| = [32m1.458138e-02[39m
+    |residual|_2 of individual variables:
+                     temp:   1.03489e-05
+                     group1: 6.12423e-15
+                     group2: 0.00361358
+                     group3: 0.000644925
+                     group4: 0.0141118
+                     pre1:   8.08104e-17
+                     pre2:   4.16398e-16
+                     pre3:   3.97843e-16
+                     pre4:   8.91793e-16
+                     pre5:   3.68192e-16
+                     pre6:   1.54758e-16
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+ Power iteration= 1
+Executing
+  Finished Solving                                                                       [[33m 15.82 s[39m] [[33m  116 MB[39m]
+ 0 Nonlinear |R| = [32m1.459242e-02[39m
+    |residual|_2 of individual variables:
+                     temp:   1.03489e-05
+                     group1: 0.000568117
+                     group2: 0.00361348
+                     group3: 0.000644925
+                     group4: 0.0141118
+                     pre1:   8.08104e-17
+                     pre2:   4.16398e-16
+                     pre3:   3.97843e-16
+                     pre4:   8.91793e-16
+                     pre5:   3.68192e-16
+                     pre6:   1.54758e-16
+  Solving
+
+    Computing Jacobian                                                                   [[33m  5.40 s[39m] [[33m    0 MB[39m]
+      0 Linear |R| = [32m1.459242e-02[39m
+      1 Linear |R| = [32m2.797728e-14[39m
+ 1 Nonlinear |R| = [32m3.280920e-03[39m
+    |residual|_2 of individual variables:
+                     temp:   2.058e-06
+                     group1: 3.86003e-15
+                     group2: 7.55775e-05
+                     group3: 0.00311385
+                     group4: 0.00103085
+                     pre1:   2.67819e-18
+                     pre2:   1.36064e-17
+                     pre3:   1.30373e-17
+                     pre4:   2.64522e-17
+                     pre5:   1.17375e-17
+                     pre6:   5.03712e-18
+  Finished Solving                                                                       [[33m 17.18 s[39m] [[33m    4 MB[39m]
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ |              1 |      2.14997100e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+ Power iteration= 2
+ 0 Nonlinear |R| = [32m3.281245e-03[39m
+    |residual|_2 of individual variables:
+                     temp:   2.058e-06
+                     group1: 4.62139e-05
+                     group2: 7.55809e-05
+                     group3: 0.00311385
+                     group4: 0.00103085
+                     pre1:   2.67819e-18
+                     pre2:   1.36064e-17
+                     pre3:   1.30373e-17
+                     pre4:   2.64522e-17
+                     pre5:   1.17375e-17
+                     pre6:   5.03712e-18
+  Solving
+
+    Computing Jacobian                                                                   [[33m  5.94 s[39m] [[33m    0 MB[39m]
+      0 Linear |R| = [32m3.281245e-03[39m
+      1 Linear |R| = [32m2.406457e-15[39m
+ 1 Nonlinear |R| = [32m2.627664e-03[39m
+    |residual|_2 of individual variables:
+                     temp:   4.71593e-07
+                     group1: 3.76041e-15
+                     group2: 5.34412e-06
+                     group3: 5.15969e-05
+                     group4: 0.00262715
+                     pre1:   1.13411e-18
+                     pre2:   6.00251e-18
+                     pre3:   5.80117e-18
+                     pre4:   1.26604e-17
+                     pre5:   5.39412e-18
+                     pre6:   2.11245e-18
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ |              1 |      2.14997100e+00 |
+ |              2 |      1.92917666e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+  Finished Solving                                                                       [[33m 17.89 s[39m] [[33m    7 MB[39m]
+ Power iteration= 3
+ 0 Nonlinear |R| = [32m2.627697e-03[39m
+    |residual|_2 of individual variables:
+                     temp:   4.71593e-07
+                     group1: 1.30896e-05
+                     group2: 5.3449e-06
+                     group3: 5.15969e-05
+                     group4: 0.00262715
+                     pre1:   1.13411e-18
+                     pre2:   6.00251e-18
+                     pre3:   5.80117e-18
+                     pre4:   1.26604e-17
+                     pre5:   5.39412e-18
+                     pre6:   2.11245e-18
+      0 Linear |R| = [32m2.627697e-03[39m
+      1 Linear |R| = [32m5.226800e-15[39m
+ 1 Nonlinear |R| = [32m5.584383e-05[39m
+    |residual|_2 of individual variables:
+                     temp:   1.10767e-06
+                     group1: 3.86167e-15
+                     group2: 2.85362e-06
+                     group3: 1.73494e-06
+                     group4: 5.57329e-05
+                     pre1:   9.30263e-19
+                     pre2:   5.07999e-18
+                     pre3:   4.94581e-18
+                     pre4:   1.10058e-17
+                     pre5:   4.47895e-18
+                     pre6:   1.83526e-18
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ |              1 |      2.14997100e+00 |
+ |              2 |      1.92917666e+00 |
+ |              3 |      1.41402858e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+ Power iteration= 4
+  Finished Solving                                                                       [[33m 16.17 s[39m] [[33m   -1 MB[39m]
+ 0 Nonlinear |R| = [32m6.821298e-05[39m
+    |residual|_2 of individual variables:
+                     temp:   1.10767e-06
+                     group1: 3.91726e-05
+                     group2: 2.85156e-06
+                     group3: 1.73494e-06
+                     group4: 5.57329e-05
+                     pre1:   9.30263e-19
+                     pre2:   5.07999e-18
+                     pre3:   4.94581e-18
+                     pre4:   1.10058e-17
+                     pre5:   4.47895e-18
+                     pre6:   1.83526e-18
+  Solving
+
+    Computing Jacobian                                                                   [[33m  5.10 s[39m] [[33m    0 MB[39m]
+      0 Linear |R| = [32m6.821298e-05[39m
+      1 Linear |R| = [32m1.090195e-16[39m
+ 1 Nonlinear |R| = [32m5.214222e-06[39m
+    |residual|_2 of individual variables:
+                     temp:   5.88174e-08
+                     group1: 3.83145e-15
+                     group2: 4.4707e-06
+                     group3: 1.55838e-06
+                     group4: 2.18379e-06
+                     pre1:   7.52529e-19
+                     pre2:   3.83218e-18
+                     pre3:   3.68833e-18
+                     pre4:   8.52836e-18
+                     pre5:   3.53944e-18
+                     pre6:   1.47745e-18
+  Finished Solving                                                                       [[33m 16.41 s[39m] [[33m   -3 MB[39m]
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ |              1 |      2.14997100e+00 |
+ |              2 |      1.92917666e+00 |
+ |              3 |      1.41402858e+00 |
+ |              4 |      1.40311458e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+ Power iteration= 5
+ 0 Nonlinear |R| = [32m5.554626e-06[39m
+    |residual|_2 of individual variables:
+                     temp:   5.88174e-08
+                     group1: 1.91501e-06
+                     group2: 4.47053e-06
+                     group3: 1.55838e-06
+                     group4: 2.18379e-06
+                     pre1:   7.52529e-19
+                     pre2:   3.83218e-18
+                     pre3:   3.68833e-18
+                     pre4:   8.52836e-18
+                     pre5:   3.53944e-18
+                     pre6:   1.47745e-18
+  Solving
+
+    Computing Jacobian                                                                   [[33m  5.14 s[39m] [[33m    0 MB[39m]
+      0 Linear |R| = [32m5.554626e-06[39m
+      1 Linear |R| = [32m4.242173e-18[39m
+ 1 Nonlinear |R| = [32m1.791641e-06[39m
+    |residual|_2 of individual variables:
+                     temp:   2.64558e-09
+                     group1: 3.82921e-15
+                     group2: 5.07923e-07
+                     group3: 1.36107e-06
+                     group4: 1.04856e-06
+                     pre1:   7.58672e-19
+                     pre2:   3.76653e-18
+                     pre3:   3.6413e-18
+                     pre4:   8.33962e-18
+                     pre5:   3.51401e-18
+                     pre6:   1.46645e-18
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ |              1 |      2.14997100e+00 |
+ |              2 |      1.92917666e+00 |
+ |              3 |      1.41402858e+00 |
+ |              4 |      1.40311458e+00 |
+ |              5 |      1.40272672e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+ Power iteration= 6
+  Finished Solving                                                                       [[33m 16.45 s[39m] [[33m    4 MB[39m]
+ 0 Nonlinear |R| = [32m1.902681e-06[39m
+    |residual|_2 of individual variables:
+                     temp:   2.64558e-09
+                     group1: 6.40554e-07
+                     group2: 5.07834e-07
+                     group3: 1.36107e-06
+                     group4: 1.04856e-06
+                     pre1:   7.58672e-19
+                     pre2:   3.76653e-18
+                     pre3:   3.6413e-18
+                     pre4:   8.33962e-18
+                     pre5:   3.51401e-18
+                     pre6:   1.46645e-18
+  Solving
+
+    Computing Jacobian                                                                   [[33m  5.27 s[39m] [[33m    0 MB[39m]
+      0 Linear |R| = [32m1.902681e-06[39m
+      1 Linear |R| = [32m1.157141e-18[39m
+ 1 Nonlinear |R| = [32m7.571856e-07[39m
+    |residual|_2 of individual variables:
+                     temp:   1.03059e-10
+                     group1: 3.79138e-15
+                     group2: 2.06084e-07
+                     group3: 2.92224e-07
+                     group4: 6.67431e-07
+                     pre1:   7.54476e-19
+                     pre2:   3.78435e-18
+                     pre3:   3.603e-18
+                     pre4:   8.42721e-18
+                     pre5:   3.50802e-18
+                     pre6:   1.47199e-18
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ |              1 |      2.14997100e+00 |
+ |              2 |      1.92917666e+00 |
+ |              3 |      1.41402858e+00 |
+ |              4 |      1.40311458e+00 |
+ |              5 |      1.40272672e+00 |
+ |              6 |      1.40271581e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+  Finished Solving                                                                       [[33m 16.75 s[39m] [[33m   -2 MB[39m]
+ Power iteration= 7
+ 0 Nonlinear |R| = [32m1.372591e-06[39m
+    |residual|_2 of individual variables:
+                     temp:   1.03059e-10
+                     group1: 1.14488e-06
+                     group2: 2.05912e-07
+                     group3: 2.92224e-07
+                     group4: 6.67431e-07
+                     pre1:   7.54476e-19
+                     pre2:   3.78435e-18
+                     pre3:   3.603e-18
+                     pre4:   8.42721e-18
+                     pre5:   3.50802e-18
+                     pre6:   1.47199e-18
+  Solving
+
+    Computing Jacobian                                                                   [[33m  5.20 s[39m] [[33m    0 MB[39m]
+      0 Linear |R| = [32m1.372591e-06[39m
+      1 Linear |R| = [32m6.592351e-19[39m
+ 1 Nonlinear |R| = [32m4.411250e-07[39m
+    |residual|_2 of individual variables:
+                     temp:   3.75689e-11
+                     group1: 3.83293e-15
+                     group2: 3.76023e-07
+                     group3: 1.22744e-07
+                     group4: 1.95274e-07
+                     pre1:   7.49497e-19
+                     pre2:   3.84022e-18
+                     pre3:   3.60339e-18
+                     pre4:   8.5971e-18
+                     pre5:   3.55681e-18
+                     pre6:   1.46412e-18
+  Finished Solving                                                                       [[33m 16.68 s[39m] [[33m    3 MB[39m]
+
+ +================+=====================+
+ | iteration      | eigenvalue          |
+ +================+=====================+
+ |              0 |      4.94670973e+00 |
+ |              1 |      2.14997100e+00 |
+ |              2 |      1.92917666e+00 |
+ |              3 |      1.41402858e+00 |
+ |              4 |      1.40311458e+00 |
+ |              5 |      1.40272672e+00 |
+ |              6 |      1.40271581e+00 |
+ |              7 |      1.40270382e+00 |
+ +================+=====================+
+
+ ________________________________________________________________________________ 
+
+Outlier Variable Residual Norms:
+  group2: [33m3.760228e-07[39m
+  group4: [33m1.952740e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group2_flux    | group3_flux    | group4_flux    | powernorm      | temp_ave       | temp_max       | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.400000e+00 |   0.000000e+00 |   3.077918e+00 |   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |   1.777135e-11 |   0.000000e+00 |   0.000000e+00 |   5.742448e-01 |
+|   1.000000e+00 |   1.402704e+00 |   5.061031e-02 |   8.939714e-01 |   4.764983e-02 |   1.902313e-02 |   8.409989e-02 |   1.780751e-11 |   9.628543e+02 |   1.048941e+03 |   5.754247e-01 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.400000e+00 |
+|   1.000000e+00 |           1.402704e+00 |
++----------------+------------------------+
+
+
+[33m
+*** Warning ***
+/Users/gwenchee/github/dissertation-results/fhr_assembly/benchmark_full_model/benchmark_moltres.i:15: unused parameter 'GlobalParams/integrate_p_by_parts'
+/Users/gwenchee/github/dissertation-results/fhr_assembly/benchmark_full_model/benchmark_moltres.i:656: unused parameter 'Executioner/max_power_iterations'
+/Users/gwenchee/github/dissertation-results/fhr_assembly/benchmark_full_model/benchmark_moltres.i:667: unused parameter 'Executioner/xdiff'
+/Users/gwenchee/github/dissertation-results/fhr_assembly/benchmark_full_model/benchmark_moltres.i:670: unused parameter 'Executioner/pfactor'
+[39m
+ Nonlinear iteration starts
+
+Time Step 1, time = 0, dt = 1
+ 0 Nonlinear |R| = [32m6.030052e-07[39m
+    |residual|_2 of individual variables:
+                     temp:   3.75689e-11
+                     group1: 4.11171e-07
+                     group2: 3.75973e-07
+                     group3: 1.22744e-07
+                     group4: 1.95274e-07
+                     pre1:   7.49497e-19
+                     pre2:   3.84022e-18
+                     pre3:   3.60339e-18
+                     pre4:   8.5971e-18
+                     pre5:   3.55681e-18
+                     pre6:   1.46412e-18
+
+*******************************************************
+ Eigenvalue = 1.4027038219
+*******************************************************
+  Finished Solving                                                                       [[33m  5.46 s[39m] [[33m    0 MB[39m]
+
+Outlier Variable Residual Norms:
+  group1: [33m4.111705e-07[39m
+  group2: [33m3.759733e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group2_flux    | group3_flux    | group4_flux    | powernorm      | temp_ave       | temp_max       | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.400000e+00 |   0.000000e+00 |   3.077918e+00 |   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |   1.777135e-11 |   0.000000e+00 |   0.000000e+00 |   5.742448e-01 |
+|   1.000000e+00 |   1.402704e+00 |   5.061031e-02 |   8.939714e-01 |   4.764983e-02 |   1.902313e-02 |   8.409989e-02 |   1.780751e-11 |   9.628543e+02 |   1.048941e+03 |   5.754247e-01 |
+|   2.000000e+00 |   1.402704e+00 |   5.061031e-02 |   0.000000e+00 |   4.764983e-02 |   1.902313e-02 |   8.409989e-02 |   1.780751e-11 |   9.628543e+02 |   1.048941e+03 |   5.754247e-01 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.400000e+00 |
+|   1.000000e+00 |           1.402704e+00 |
+|   2.000000e+00 |           1.402704e+00 |
++----------------+------------------------+
+
+ Solution is rescaled with factor 1.47258e+15 for normalization!
+
+Outlier Variable Residual Norms:
+  group1: [33m4.111705e-07[39m
+  group2: [33m3.759733e-07[39m
+
+Postprocessor Values:
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+| time           | bnorm          | group1_flux    | group1diff     | group2_flux    | group3_flux    | group4_flux    | powernorm      | temp_ave       | temp_max       | tot_fissions   |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+|   0.000000e+00 |   1.400000e+00 |   0.000000e+00 |   3.077918e+00 |   0.000000e+00 |   0.000000e+00 |   0.000000e+00 |   1.777135e-11 |   0.000000e+00 |   0.000000e+00 |   5.742448e-01 |
+|   1.000000e+00 |   1.402704e+00 |   5.061031e-02 |   8.939714e-01 |   4.764983e-02 |   1.902313e-02 |   8.409989e-02 |   1.780751e-11 |   9.628543e+02 |   1.048941e+03 |   5.754247e-01 |
+|   2.000000e+00 |   1.402704e+00 |   5.061031e-02 |   0.000000e+00 |   4.764983e-02 |   1.902313e-02 |   8.409989e-02 |   1.780751e-11 |   9.628543e+02 |   1.048941e+03 |   5.754247e-01 |
+|   3.000000e+00 |   2.065595e+15 |   7.452778e+13 |   3.257791e+15 |   7.016823e+13 |   2.801309e+13 |   1.238439e+14 |   2.622300e+04 |   9.628543e+02 |   1.048941e+03 |   8.473594e+14 |
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Reporter Values:
++----------------+------------------------+
+| time           | Executioner/eigenvalue |
++----------------+------------------------+
+|   0.000000e+00 |           1.400000e+00 |
+|   1.000000e+00 |           1.402704e+00 |
+|   2.000000e+00 |           1.402704e+00 |
+|   3.000000e+00 |           1.402704e+00 |
++----------------+------------------------+
+
+
+
+Performance Graph:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                Section                               | Calls |   Self(s)  |   Avg(s)   |    %   | Mem(MB) |  Total(s)  |   Avg(s)   |    %   | Mem(MB) |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| MoltresApp (main)                                                    |     1 |      0.015 |      0.015 |   0.01 |       2 |    155.907 |    155.907 | 100.00 |     316 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::setup_mesh    |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.000 |      0.000 |   0.00 |       0 |
+|   Action::SetupMeshAction::Mesh::SetupMeshAction::act::set_mesh_base |     2 |      0.000 |      0.000 |   0.00 |       0 |      0.114 |      0.057 |   0.07 |       9 |
+|   FEProblem::computeUserObjects                                      |     7 |      3.234 |      0.462 |   2.07 |       0 |      3.234 |      0.462 |   2.07 |       0 |
+|   FEProblem::outputStep                                              |     4 |      0.001 |      0.000 |   0.00 |       0 |      0.847 |      0.212 |   0.54 |      14 |
+|     Exodus::outputStep                                               |     4 |      0.568 |      0.142 |   0.36 |      14 |      0.568 |      0.142 |   0.36 |      14 |
+|   FEProblem::solve                                                   |     9 |     26.746 |      2.972 |  17.15 |      59 |    138.819 |     15.424 |  89.04 |     128 |
+|     FEProblem::computeResidualInternal                               |     9 |      0.000 |      0.000 |   0.00 |       0 |     23.875 |      2.653 |  15.31 |       0 |
+|       FEProblem::computeUserObjects                                  |     9 |      7.603 |      0.845 |   4.88 |       0 |      7.603 |      0.845 |   4.88 |       0 |
+|     FEProblem::computeResidualInternal                               |    17 |      0.000 |      0.000 |   0.00 |       0 |     44.729 |      2.631 |  28.69 |       0 |
+|       FEProblem::computeUserObjects                                  |    17 |     14.362 |      0.845 |   9.21 |       0 |     14.362 |      0.845 |   9.21 |       0 |
+|     FEProblem::computeJacobianInternal                               |     8 |      0.000 |      0.000 |   0.00 |       0 |     41.962 |      5.245 |  26.91 |      69 |
+|   NonlinearEigen::final                                              |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.014 |      0.014 |   0.01 |       0 |
+|     FEProblem::computeUserObjects                                    |     1 |      0.013 |      0.013 |   0.01 |       0 |      0.013 |      0.013 |   0.01 |       0 |
+|     FEProblem::outputStep                                            |     1 |      0.000 |      0.000 |   0.00 |       0 |      0.000 |      0.000 |   0.00 |       0 |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Finished Executing                                                                       [[33m145.01 s[39m] [[33m  144 MB[39m]
