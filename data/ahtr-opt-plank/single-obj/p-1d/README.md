@@ -1,4 +1,4 @@
-# AHTR Plank Optimization, Simulation p-1c
+# AHTR Plank Optimization, Simulation p-1d
 
 The results are presented in Section 6.2.1 of the dissertation. 
 
