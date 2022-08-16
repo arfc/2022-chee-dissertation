@@ -2,9 +2,9 @@ import openmc
 import numpy as np
 from numpy import sin, cos, tan, pi
 import sys 
-sys.path.insert(1, '../../../scripts/')
+sys.path.insert(1, '../../../../scripts/')
 from plank_constants import *
-sys.path.insert(1, '../../../../../moltres/python')
+sys.path.insert(1, '../../../../../../moltres/python')
 from moltres_xs import *  # noqa: E402
 
 temp = 948

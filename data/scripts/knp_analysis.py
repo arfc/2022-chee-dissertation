@@ -126,6 +126,7 @@ def generate_bins():
     return bins, engs
 
 def get_4_spectrum(sp_file, k, P):
+    bins, engs = generate_bins()
     tally_spectrum_4 = sp_file.get_tally(name='spectrum 4 groups')
     df_spectrum_4 = tally_spectrum_4.get_pandas_dataframe()
     index_list = []
