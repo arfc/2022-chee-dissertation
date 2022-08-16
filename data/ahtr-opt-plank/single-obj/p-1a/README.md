@@ -7,4 +7,4 @@ The CLI output from Bluewaters is printed in `run.o13562143`.
 
 The `run` bash script uses ROLLO to run the following input file `rollo_min_pf.json`, which also utilizes the following evaluator scripts:  `fhr_plank_openmc.py` and `fhr_plank_openmc_keff.py`.
 
-All the *.png figures in this directory are used in the dissertation.  
+All the *.png figures in this directory are included in the dissertation.  
