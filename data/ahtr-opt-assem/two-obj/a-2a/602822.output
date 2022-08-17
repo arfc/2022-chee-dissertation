@@ -1,0 +1,22 @@
+WARNING:root: ROLLO added default for variable: keep_files, default value = all
+WARNING:root: ROLLO added default for variable: mutation_operator, default value = {'operator': 'mutPolynomialBounded', 'eta': 0.23, 'indpb': 0.23}
+WARNING:root: ROLLO added default for variable: mating_operator, default value = {'operator': 'cxBlend', 'alpha': 0.46}
+Entering generation 0...
+WARNING:root: parallel method = job_control
+INFO:root: Solver: openmc, Input Script Runtime: 262.66 seconds
+INFO:root: Solver: openmc, Execute 0 Runtime: 8504.27 seconds
+INFO:root: Solver: openmc, Execute 1 Runtime: 567.36 seconds
+INFO:root: Solver: openmc, Output Script Runtime: 145.04 seconds
+INFO:root: Solver: moltres, Input Script Runtime: 275.56 seconds
+INFO:root: Solver: moltres, Output Script Runtime: 136.64 seconds
+INFO:root: Generation: 0, Evaluation Total Runtime: 9893.76 seconds
+WARNING:root: 5 out of 128 inds were constrained
+       	   	     	                                                                                             oup                                                                                              	                                                                                                                        ind                                                                                                                         
+       	   	     	----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+time   	gen	evals	avg                                           	std                                           	min                                           	max                                           	avg                                                                            	min                                                                           	max                                                                            
+9893.84	0  	128  	[2.72049165e-02 1.40550246e+03 1.17671607e+00]	[5.65109479e-03 1.22504160e+02 7.50447522e-02]	[1.71098624e-02 1.20870116e+03 1.00596149e+00]	[3.93850670e-02 1.94454749e+03 1.30444008e+00]	[0.02720492 1.09475784 0.77510358 3.3024383  1.01490461 0.79784896
+ 3.16959478]	[0.01710986 0.00230976 0.0197815  0.09353276 0.00160131 0.0115515
+ 0.08394351]	[0.03938507 1.99840834 1.56757128 6.15688803 1.97425928 1.55794834
+ 6.25227677]
+rollo Simulation Completed!
+Total time in simulation 9893.84 seconds
