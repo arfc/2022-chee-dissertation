@@ -1,0 +1,35 @@
+{
+    "control_variables": {
+        "total_pf": {"min": 0.05, "max": 0.07},
+        "sine_a_x": {"min": 0.0, "max": 2.0},
+        "sine_b_x": {"min": 0.0, "max": 1.57},
+        "sine_c_x": {"min": 0.0, "max": 6.28},
+        "sine_a_y": {"min": 0.0, "max": 2.0},
+        "sine_b_y": {"min": 0.0, "max": 1.57},
+        "sine_c_y": {"min": 0.0, "max": 6.28}
+    },
+    "evaluators": {
+        "openmc": {
+            "order": 0,
+            "input_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_assem_openmc.py"],
+            "execute": [["aprun -n 1 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2"]], 
+            "inputs": ["total_pf", "sine_a_x", "sine_b_x", "sine_c_x", "sine_a_y", "sine_b_y", "sine_c_y"],
+            "output_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_assem_openmc_output.py"],
+            "outputs": ["total_pf", "ppf", "keff"]
+        }
+    },
+    "constraints": {"keff": {"operator": [">="], "constrained_val": [1.38]}},
+    "algorithm": {
+        "objective": ["min", "min"],
+        "weight": [1.0, 1.0],
+        "optimized_variable": ["total_pf", "ppf"],
+        "pop_size": 128,
+        "generations": 5,
+        "mutation_probability": 0.23,
+        "mating_probability": 0.9,  
+        "selection_operator": {
+            "operator": "selNSGA2"
+        }, 
+        "parallel": "job_control"
+    }
+}

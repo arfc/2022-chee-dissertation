@@ -1,0 +1,182 @@
+Application 26889796 resources: utime ~171s, stime ~5s, Rss ~489772, inblocks ~122, outblocks ~59160
+                                %%%%%%%%%%%%%%%
+                           %%%%%%%%%%%%%%%%%%%%%%%%
+                        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                    %%%%%%%%%%%%%%%%%%%%%%%%
+                                     %%%%%%%%%%%%%%%%%%%%%%%%
+                 ###############      %%%%%%%%%%%%%%%%%%%%%%%%
+                ##################     %%%%%%%%%%%%%%%%%%%%%%%
+                ###################     %%%%%%%%%%%%%%%%%%%%%%%
+                ####################     %%%%%%%%%%%%%%%%%%%%%%
+                #####################     %%%%%%%%%%%%%%%%%%%%%
+                ######################     %%%%%%%%%%%%%%%%%%%%
+                #######################     %%%%%%%%%%%%%%%%%%
+                 #######################     %%%%%%%%%%%%%%%%%
+                 ######################     %%%%%%%%%%%%%%%%%
+                  ####################     %%%%%%%%%%%%%%%%%
+                    #################     %%%%%%%%%%%%%%%%%
+                     ###############     %%%%%%%%%%%%%%%%
+                       ############     %%%%%%%%%%%%%%%
+                          ########     %%%%%%%%%%%%%%
+                                      %%%%%%%%%%%
+
+                   | The OpenMC Monte Carlo Code
+         Copyright | 2011-2021 MIT and OpenMC contributors
+           License | https://docs.openmc.org/en/latest/license.html
+           Version | 0.12.2
+          Git SHA1 | cbfcf908f8abdc1ef6603f67872dcf64c5c657b1
+         Date/Time | 2022-06-22 21:42:30
+     MPI Processes | 8
+    OpenMP Threads | 64
+
+ Reading settings XML file...
+ Reading cross sections XML file...
+ Reading materials XML file...
+ Reading geometry XML file...
+ Reading U235 from /home/gchee/data/zip/endfb71_hdf5/U235.h5
+ Reading U235 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/092235.h5
+ Reading U238 from /home/gchee/data/zip/endfb71_hdf5/U238.h5
+ Reading U238 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/092238.h5
+ Reading O16 from /home/gchee/data/zip/endfb71_hdf5/O16.h5
+ Reading O16 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/008016.h5
+ Reading C0 from /home/gchee/data/zip/endfb71_hdf5/C0.h5
+ Reading C0 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/006000.h5
+ Reading Li6 from /home/gchee/data/zip/endfb71_hdf5/Li6.h5
+ Reading Li6 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/003006.h5
+ Reading Li7 from /home/gchee/data/zip/endfb71_hdf5/Li7.h5
+ Reading Li7 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/003007.h5
+ Reading Be9 from /home/gchee/data/zip/endfb71_hdf5/Be9.h5
+ Reading Be9 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/004009.h5
+ Reading F19 from /home/gchee/data/zip/endfb71_hdf5/F19.h5
+ Reading F19 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/009019.h5
+ Reading Si28 from /home/gchee/data/zip/endfb71_hdf5/Si28.h5
+ Reading Si28 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/014028.h5
+ Reading Si29 from /home/gchee/data/zip/endfb71_hdf5/Si29.h5
+ Reading Si29 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/014029.h5
+ Reading Si30 from /home/gchee/data/zip/endfb71_hdf5/Si30.h5
+ Reading Si30 WMP data from /home/gchee/data/zip/endfb71_hdf5/wmp/014030.h5
+ Reading c_Graphite from /home/gchee/data/zip/endfb71_hdf5/c_Graphite.h5
+ Minimum neutron data temperature: 294.0 K
+ Maximum neutron data temperature: 1200.0 K
+ Reading tallies XML file...
+ Preparing distributed cell instances...
+ Writing summary.h5 file...
+ Maximum neutron transport energy: 20000000.0 eV for U235
+ Initializing source particles...
+
+ ====================>     K EIGENVALUE SIMULATION     <====================
+
+  Bat./Gen.      k            Average k
+  =========   ========   ====================
+        1/1    1.36507
+        2/1    1.38134
+        3/1    1.36515
+        4/1    1.39191
+        5/1    1.38436
+        6/1    1.38446
+        7/1    1.40849
+        8/1    1.42161
+        9/1    1.37614
+       10/1    1.36374
+       11/1    1.38127
+       12/1    1.39504
+       13/1    1.34752
+       14/1    1.37478
+       15/1    1.40193
+       16/1    1.39717
+       17/1    1.37659
+       18/1    1.38007
+       19/1    1.39634
+       20/1    1.38389
+       21/1    1.36322
+       22/1    1.37987    1.37154 +/- 0.00832
+       23/1    1.37470    1.37259 +/- 0.00492
+       24/1    1.37345    1.37281 +/- 0.00349
+       25/1    1.38370    1.37499 +/- 0.00347
+       26/1    1.37555    1.37508 +/- 0.00283
+       27/1    1.39239    1.37755 +/- 0.00344
+       28/1    1.36501    1.37599 +/- 0.00337
+       29/1    1.40497    1.37921 +/- 0.00438
+       30/1    1.39990    1.38128 +/- 0.00443
+       31/1    1.38453    1.38157 +/- 0.00402
+       32/1    1.38795    1.38210 +/- 0.00371
+       33/1    1.38740    1.38251 +/- 0.00343
+       34/1    1.36505    1.38126 +/- 0.00342
+       35/1    1.40162    1.38262 +/- 0.00346
+       36/1    1.41313    1.38453 +/- 0.00375
+       37/1    1.34362    1.38212 +/- 0.00427
+       38/1    1.38599    1.38234 +/- 0.00403
+       39/1    1.39733    1.38313 +/- 0.00389
+       40/1    1.39486    1.38371 +/- 0.00374
+       41/1    1.36723    1.38293 +/- 0.00364
+       42/1    1.35839    1.38181 +/- 0.00365
+       43/1    1.39460    1.38237 +/- 0.00353
+       44/1    1.40104    1.38315 +/- 0.00347
+       45/1    1.36103    1.38226 +/- 0.00344
+       46/1    1.38932    1.38253 +/- 0.00332
+       47/1    1.38892    1.38277 +/- 0.00320
+       48/1    1.38396    1.38281 +/- 0.00309
+       49/1    1.38148    1.38277 +/- 0.00298
+       50/1    1.37550    1.38252 +/- 0.00289
+       51/1    1.39410    1.38290 +/- 0.00282
+       52/1    1.36094    1.38221 +/- 0.00281
+       53/1    1.35116    1.38127 +/- 0.00288
+       54/1    1.36860    1.38090 +/- 0.00282
+       55/1    1.38613    1.38105 +/- 0.00274
+       56/1    1.39237    1.38136 +/- 0.00269
+       57/1    1.37581    1.38121 +/- 0.00262
+       58/1    1.39869    1.38167 +/- 0.00259
+       59/1    1.40651    1.38231 +/- 0.00260
+       60/1    1.37260    1.38207 +/- 0.00255
+       61/1    1.34317    1.38112 +/- 0.00266
+       62/1    1.35496    1.38049 +/- 0.00267
+       63/1    1.40072    1.38096 +/- 0.00265
+       64/1    1.40032    1.38140 +/- 0.00262
+       65/1    1.39748    1.38176 +/- 0.00259
+       66/1    1.36741    1.38145 +/- 0.00255
+       67/1    1.36278    1.38105 +/- 0.00253
+       68/1    1.38435    1.38112 +/- 0.00248
+       69/1    1.37831    1.38106 +/- 0.00243
+       70/1    1.39690    1.38138 +/- 0.00240
+       71/1    1.35130    1.38079 +/- 0.00242
+       72/1    1.37540    1.38069 +/- 0.00238
+       73/1    1.39123    1.38089 +/- 0.00234
+       74/1    1.38636    1.38099 +/- 0.00230
+       75/1    1.34066    1.38025 +/- 0.00237
+       76/1    1.40269    1.38066 +/- 0.00236
+       77/1    1.37260    1.38051 +/- 0.00233
+       78/1    1.41522    1.38111 +/- 0.00236
+       79/1    1.35487    1.38067 +/- 0.00237
+       80/1    1.39520    1.38091 +/- 0.00234
+ Creating state point statepoint.80.h5...
+
+ =======================>     TIMING STATISTICS     <=======================
+
+ Total time for initialization     = 3.8680e+02 seconds
+   Reading cross sections          = 1.4728e+01 seconds
+ Total time in simulation          = 2.8213e+02 seconds
+   Time in transport only          = 2.5774e+02 seconds
+   Time in inactive batches        = 5.8103e+01 seconds
+   Time in active batches          = 2.2403e+02 seconds
+   Time synchronizing fission bank = 2.3636e+01 seconds
+     Sampling source sites         = 3.0209e-02 seconds
+     SEND/RECV source sites        = 4.9298e-03 seconds
+   Time accumulating tallies       = 5.9441e-01 seconds
+   Time writing statepoints        = 9.6012e-02 seconds
+ Total time for finalization       = 9.6077e-01 seconds
+ Total time elapsed                = 6.7003e+02 seconds
+ Calculation Rate (inactive)       = 2753.73 particles/second
+ Calculation Rate (active)         = 2142.60 particles/second
+
+ ============================>     RESULTS     <============================
+
+ k-effective (Collision)     = 1.38021 +/- 0.00174
+ k-effective (Track-length)  = 1.38091 +/- 0.00234
+ k-effective (Absorption)    = 1.38061 +/- 0.00154
+ Combined k-effective        = 1.38058 +/- 0.00135
+ Leakage Fraction            = 0.00000 +/- 0.00000
+
+Application 26889798 resources: utime ~93184s, stime ~143s, Rss ~2520544, inblocks ~1516358, outblocks ~1138776
