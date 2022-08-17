@@ -1,7 +1,4 @@
 import numpy as np
-import sys
-sys.path.insert(1, '/Users/gwenchee/github/dissertation-results/fhr_assembly/')
-#sys.path.insert(1, '/eagle/arfc-msr-ahtr/projects-gwen/dissertation-results/fhr_assembly/')
 from assem_constants import *  # noqa
 
 def generate_outer_flibe():

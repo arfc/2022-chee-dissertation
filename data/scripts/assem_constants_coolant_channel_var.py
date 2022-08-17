@@ -1,9 +1,6 @@
 import openmc
 import numpy as np
 from numpy import sin, cos, tan, pi
-import sys 
-sys.path.insert(1, "/Users/gwenchee/github/dissertation-results/fhr_assembly/")
-#sys.path.insert(1, "/eagle/arfc-msr-ahtr/projects-gwen/dissertation-results/fhr_assembly/")
 from assem_constants import *
 
 def circle_centers(center_point, radius, stop_before, stop_after):
