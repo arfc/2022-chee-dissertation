@@ -1,5 +1,5 @@
 import sys 
-sys.path.insert(1, "../../../")
+sys.path.insert(1, "../../../../scripts/")
 from assem_constants_coolant_channel_var import *
 
 total_pf = {{total_pf}}
