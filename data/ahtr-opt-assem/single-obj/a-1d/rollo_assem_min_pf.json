@@ -1,0 +1,29 @@
+{
+    "control_variables": {
+        "total_pf": {"min": 0.05, "max": 0.07},
+        "r1": {"min": 0.1, "max": 0.35},
+        "r2": {"min": 0.1, "max": 0.35},
+        "r3": {"min": 0.1, "max": 0.35},
+        "r4": {"min": 0.1, "max": 0.35},
+        "r5": {"min": 0.1, "max": 0.35}
+    },
+    "evaluators": {
+        "openmc": {
+            "order": 0,
+            "input_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_assem_openmc.py"],
+            "execute": [["aprun -n 1 -d 64 --env OMP_NUM_THREADS=64 openmc-0.12.2"]], 
+            "inputs": ["total_pf", "r1", "r2", "r3", "r4", "r5"],
+            "output_script": ["aprun -n 1 -d 1 --env OMP_NUM_THREADS=1 python ", "fhr_assem_openmc_output.py"],
+            "outputs": ["total_pf","keff"]
+        }
+    },
+    "constraints": {"keff": {"operator": [">="], "constrained_val": [1.38]}},
+    "algorithm": {
+        "objective": ["min"],
+        "weight": [1.0],
+        "optimized_variable": ["total_pf"],
+        "pop_size": 128,
+        "generations": 1,
+        "parallel": "job_control"
+    }
+}
