@@ -1,0 +1,84 @@
+[TITLE]
+  ./134pcm_1200K/fhr_assem_gc.json
+
+[MAT]
+  70
+  outer_flibe graphite_structure inner_flibe slot_flibe graphite_plank_1 graphite_plank_2 graphite_plank_3 graphite_plank_4 graphite_plank_5 graphite_plank_6 fuel_cell_0 fuel_cell_1 fuel_cell_2 fuel_cell_3 fuel_cell_4 fuel_cell_5 fuel_cell_6 fuel_cell_7 fuel_cell_8 fuel_cell_9 fuel_cell_10 fuel_cell_11 fuel_cell_12 fuel_cell_13 fuel_cell_14 fuel_cell_15 fuel_cell_16 fuel_cell_17 fuel_cell_18 fuel_cell_19 fuel_cell_20 fuel_cell_21 fuel_cell_22 fuel_cell_23 fuel_cell_24 fuel_cell_25 fuel_cell_26 fuel_cell_27 fuel_cell_28 fuel_cell_29 fuel_cell_30 fuel_cell_31 fuel_cell_32 fuel_cell_33 fuel_cell_34 fuel_cell_35 fuel_cell_36 fuel_cell_37 fuel_cell_38 fuel_cell_39 fuel_cell_40 fuel_cell_41 fuel_cell_42 fuel_cell_43 fuel_cell_44 fuel_cell_45 fuel_cell_46 fuel_cell_47 fuel_cell_48 fuel_cell_49 fuel_cell_50 fuel_cell_51 fuel_cell_52 fuel_cell_53 fuel_cell_54 fuel_cell_55 fuel_cell_56 fuel_cell_57 fuel_cell_58 fuel_cell_59
+
+[BRANCH]
+  70
+  outer_flibe            948 1 1 1001 1 
+  graphite_structure     948 1 1 1002 1
+  inner_flibe            948 1 1 1003 1   
+  slot_flibe             948 1 1 1004 1 
+  graphite_plank_1       948 1 1 1005 1 
+  graphite_plank_2       948 1 1 1006 1 
+  graphite_plank_3       948 1 1 1007 1 
+  graphite_plank_4       948 1 1 1008 1 
+  graphite_plank_5       948 1 1 1009 1 
+  graphite_plank_6       948 1 1 1010 1 
+  fuel_cell_0            948 1 1 5000 1
+  fuel_cell_1            948 1 1 15000 1
+  fuel_cell_2            948 1 1 25000 1
+  fuel_cell_3            948 1 1 35000 1
+  fuel_cell_4            948 1 1 45000 1
+  fuel_cell_5            948 1 1 55000 1
+  fuel_cell_6            948 1 1 65000 1
+  fuel_cell_7            948 1 1 75000 1
+  fuel_cell_8            948 1 1 85000 1
+  fuel_cell_9            948 1 1 95000 1
+  fuel_cell_10           948 1 1 105000 1
+  fuel_cell_11           948 1 1 115000 1
+  fuel_cell_12           948 1 1 125000 1
+  fuel_cell_13           948 1 1 135000 1
+  fuel_cell_14           948 1 1 145000 1
+  fuel_cell_15           948 1 1 155000 1
+  fuel_cell_16           948 1 1 165000 1
+  fuel_cell_17           948 1 1 175000 1
+  fuel_cell_18           948 1 1 185000 1
+  fuel_cell_19           948 1 1 195000 1
+  fuel_cell_20           948 1 1 205000 1
+  fuel_cell_21           948 1 1 215000 1
+  fuel_cell_22           948 1 1 225000 1
+  fuel_cell_23           948 1 1 235000 1
+  fuel_cell_24           948 1 1 245000 1
+  fuel_cell_25           948 1 1 255000 1
+  fuel_cell_26           948 1 1 265000 1
+  fuel_cell_27           948 1 1 275000 1
+  fuel_cell_28           948 1 1 285000 1
+  fuel_cell_29           948 1 1 295000 1
+  fuel_cell_30           948 1 1 305000 1
+  fuel_cell_31           948 1 1 315000 1
+  fuel_cell_32           948 1 1 325000 1
+  fuel_cell_33           948 1 1 335000 1
+  fuel_cell_34           948 1 1 345000 1
+  fuel_cell_35           948 1 1 355000 1
+  fuel_cell_36           948 1 1 365000 1
+  fuel_cell_37           948 1 1 375000 1
+  fuel_cell_38           948 1 1 385000 1
+  fuel_cell_39           948 1 1 395000 1
+  fuel_cell_40           948 1 1 405000 1
+  fuel_cell_41           948 1 1 415000 1
+  fuel_cell_42           948 1 1 425000 1
+  fuel_cell_43           948 1 1 435000 1
+  fuel_cell_44           948 1 1 445000 1
+  fuel_cell_45           948 1 1 455000 1
+  fuel_cell_46           948 1 1 465000 1
+  fuel_cell_47           948 1 1 475000 1
+  fuel_cell_48           948 1 1 485000 1
+  fuel_cell_49           948 1 1 495000 1
+  fuel_cell_50           948 1 1 505000 1
+  fuel_cell_51           948 1 1 515000 1
+  fuel_cell_52           948 1 1 525000 1
+  fuel_cell_53           948 1 1 535000 1
+  fuel_cell_54           948 1 1 545000 1
+  fuel_cell_55           948 1 1 555000 1
+  fuel_cell_56           948 1 1 565000 1
+  fuel_cell_57           948 1 1 575000 1
+  fuel_cell_58           948 1 1 585000 1
+  fuel_cell_59           948 1 1 595000 1
+
+
+[FILES]
+  1
+  ./134pcm_1200K/statepoint.80.h5  openmc fhr_assem_openmc.py summary_dummy.h5
