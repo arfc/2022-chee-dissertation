@@ -1,4 +1,4 @@
-# AHTR Plank Optimization, Simulation p-1a
+# AHTR Plank Optimization, Simulation a-1a
 
 The results are presented in Section 7.2.1 of the dissertation. 
 
@@ -11,4 +11,4 @@ The ROLLO output file is `checkpoint.pkl` and is analyzed using `assem_one_obj_p
 
 All the `*.png` figures in this directory are included in the dissertation.  
 
-`new-a-1a-comparison.ipynb` conducts a comparison study used in Section 6.2.4 of the dissertation. It uses files from `/most_minimized_gen1_128/` and `/flat_distr_gen1_128/`. 
+`new-a-1a-comparison.ipynb` conducts a comparison study used in Section 7.2.4 of the dissertation. It uses files from `/most_minimized_gen1_128/` and `/flat_distr_gen1_128/`. 
