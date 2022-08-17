@@ -1,0 +1,23 @@
+WARNING:root: ROLLO added default for variable: keep_files, default value = all
+WARNING:root: ROLLO added default for variable: mutation_probability, default value = 0.23
+WARNING:root: ROLLO added default for variable: mating_probability, default value = 0.47
+WARNING:root: ROLLO added default for variable: selection_operator, default value = {'operator': 'selTournament', 'tournsize': 5}
+WARNING:root: ROLLO added default for variable: mutation_operator, default value = {'operator': 'mutPolynomialBounded', 'eta': 0.23, 'indpb': 0.23}
+WARNING:root: ROLLO added default for variable: mating_operator, default value = {'operator': 'cxBlend', 'alpha': 0.46}
+       	   	     	                                              oup                                              	                                                                                                        ind                                                                                                        
+       	   	     	-----------------------------------------------------------------------------------------------	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+time   	gen	evals	avg                    	std                    	min                    	max                    	avg                                                                	min                                                                	max                                                                
+3958.79	0  	128  	[1.20942331 1.38552567]	[0.11727037 0.0027178 ]	[1.08724249 1.38012701]	[1.60152829 1.39450463]	[0.94204531 0.77790525 2.88723969 0.95459975 0.84881006 3.2142599 ]	[0.0220914  0.02573636 0.07223415 0.000298   0.04306858 0.1472749 ]	[1.95896644 1.56879898 6.21534488 1.94069581 1.56149441 6.25411174]
+Entering generation 1...
+INFO:root: Solver: openmc, Input Script Runtime: 265.11 seconds
+INFO:root: Solver: openmc, Execute 0 Runtime: 1977.93 seconds
+INFO:root: Solver: openmc, Output Script Runtime: 267.08 seconds
+INFO:root: Generation: 1, Evaluation Total Runtime: 2510.66 seconds
+WARNING:root: 0 out of 128 inds were constrained
+       	   	     	                                              oup                                              	                                                                                                        ind                                                                                                        
+       	   	     	-----------------------------------------------------------------------------------------------	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+time   	gen	evals	avg                    	std                    	min                    	max                    	avg                                                                	min                                                                	max                                                                
+3958.79	0  	128  	[1.20942331 1.38552567]	[0.11727037 0.0027178 ]	[1.08724249 1.38012701]	[1.60152829 1.39450463]	[0.94204531 0.77790525 2.88723969 0.95459975 0.84881006 3.2142599 ]	[0.0220914  0.02573636 0.07223415 0.000298   0.04306858 0.1472749 ]	[1.95896644 1.56879898 6.21534488 1.94069581 1.56149441 6.25411174]
+2510.71	1  	80   	[1.10806476 1.3840743 ]	[0.02109911 0.00174642]	[1.08724249 1.38061255]	[1.24309039 1.39053619]	[0.63685446 0.8595426  2.60450091 0.63113528 0.73792445 2.50782792]	[0.0220914  0.02573636 0.02872239 0.00295907 0.027274   0.1472749 ]	[1.63351155 1.56593695 6.22579863 1.80777193 1.48741983 6.18262907]
+rollo Simulation Completed!
+Total time in simulation 2510.71 seconds
