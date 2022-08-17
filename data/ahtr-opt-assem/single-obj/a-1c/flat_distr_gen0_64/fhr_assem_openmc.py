@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, '../../../')
+sys.path.insert(1, '../../../../scripts')
 from assem_constants import *  # noqa
 
 # Templated Inputs
