@@ -1,7 +1,7 @@
 import sys 
-sys.path.insert(1, "../../../coolant_variation/")
+sys.path.insert(1, '../../../../scripts/')
 from assem_constants_coolant_channel_var import *
-sys.path.insert(1, '../../../../../moltres/python')
+sys.path.insert(1, '../../../../../../moltres/python')
 from moltres_xs import *  # noqa: E402
 
 # Templated Inputs
