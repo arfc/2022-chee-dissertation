@@ -164,6 +164,10 @@ into a single layer.
 The \gls{TRISO} kernel and outer radius dimensions remain the same.
 Table \ref{tab:keff_triso} reports OpenMC's $k_{eff}$ for the straightened \gls{AHTR} configuration 
 with and without the four outer layers \gls{TRISO} homogenization.
+The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
+speed-up without compromising accuracy with $k_{eff}$ values within each 
+other's uncertainty.
+As a result, the homogenized models are used for all subsequent optimization efforts. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -183,10 +187,6 @@ with and without the four outer layers \gls{TRISO} homogenization.
     \hline
     \end{tabular}
 \end{table}
-The \gls{TRISO} particle outer four-layer homogenization resulted in a $30\%$ 
-speed-up without compromising accuracy with $k_{eff}$ values within each 
-other's uncertainty.
-As a result, the homogenized models are used for all subsequent optimization efforts. 
 
 \subsection{AHTR One-Third Assembly Geometry}
 \label{sec:ahtr-assem-geometry}
@@ -456,6 +456,8 @@ For the \gls{AHTR} plank, the $r_{top}$ and $r_{bot}$ variables control the cool
 shape on the top and bottom \gls{FLiBe} channels. 
 Figure \ref{fig:coolant-channel-shape} shows the \gls{AHTR} plank's coolant channel 
 shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
+Thus, \gls{ROLLO} will vary $r_{top}$ and $r_{bot}$ to find optimal coolant 
+channel shapes that optimizes objectives.
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=\linewidth]{coolant-channel-shape.png}
@@ -472,13 +474,17 @@ shape for $r_{top} = 0.2$ and $r_{bot} = 0.3$.
     = 0.2cm$ and $r_{bot} = 0.3cm$.}  
     \label{fig:coolant-channel-shape}
 \end{figure}
-Thus, \gls{ROLLO} will vary $r_{top}$ and $r_{bot}$ to find optimal coolant 
-channel shapes that optimizes objectives.
 
 For the \gls{AHTR} one-third assembly, $r_1, r_2, r_3, r_4, r_5$ variables control the
 coolant channel shape in the inter-plank \gls{FLiBe}. 
 Figure \ref{fig:coolant-channel-shape-assem} shows the \gls{AHTR} one-third assembly's 
 inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1, 0.2, 0.3$.
+Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
+channel shapes for the \gls{AHTR} one-third assembly model.
+I did not vary the shape of the one-third assembly's top and bottom coolant channels, 
+since they have half the thickness of the inner coolant channels.  
+$r_1, r_2, r_3, r_4, r_5$ are sufficient to show the effect of changing the 
+coolant channel shape.
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{.8\textwidth}
@@ -504,12 +510,6 @@ inter-plank coolant channel shapes for $r_1, r_2, r_3, r_4, r_5 = 0.3, 0.2, 0.1,
     $r_1, r_2, r_3, r_4, r_5 = 0.3cm, 0.2cm, 0.1cm, 0.2cm, 0.3cm$.}
     \label{fig:coolant-channel-shape-assem}
 \end{figure}
-Thus, \gls{ROLLO} will vary $r_1, r_2, r_3, r_4, r_5$ to find optimal coolant 
-channel shapes for the \gls{AHTR} one-third assembly model.
-I did not vary the shape of the one-third assembly's top and bottom coolant channels, 
-since they have half the thickness of the inner coolant channels.  
-$r_1, r_2, r_3, r_4, r_5$ are sufficient to show the effect of changing the 
-coolant channel shape.
 
 \subsection{AHTR OpenMC and Moltres Models}
 \label{sec:ahtr-moltres-hom}
@@ -1085,6 +1085,7 @@ A comparison of the neutron energy spectrum verifies that the Moltres model is
 replicating the OpenMC model's neutronics correctly.
 Figure \ref{fig:neutron_spectrum_948K} shows the neutron energy spectrum of the OpenMC 
 simulation for both 252 and 4 groups and the 4-group Moltres simulation.
+There is good agreement between OpenMC and Moltres with their 4-group spectrums. 
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]{neutron_spectrum_948K.png}
@@ -1094,7 +1095,6 @@ simulation for both 252 and 4 groups and the 4-group Moltres simulation.
     4-group energy and spatial homogenization.}  
     \label{fig:neutron_spectrum_948K}
 \end{figure}
-There is good agreement between OpenMC and Moltres with their 4-group spectrums. 
 
 \subsubsection{AHTR Plank: Key Neutronics Parameters Verification Summary}
 The verification study found a 355 pcm reactivity difference between OpenMC 
@@ -1597,7 +1597,7 @@ Lighter scatter points indicate higher final population $\overline{k_{eff}}$ val
 suggesting better hyperparameter sets. 
 \begin{figure}[htbp]
     \centering
-    \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{hyperparameter_sens.png}} 
+    \includegraphics[width=\linewidth]{hyperparameter_sens.png}
     \caption{Coarse \acrfull{ROLLO} hyperparameters search's results. 
     Hyperparameter values are plot against each other with a third color dimension 
     representing each experiment's final population's $\overline{k_{eff}}$.}
@@ -1645,7 +1645,7 @@ The coarse experiments' scatter points are $50\%$ transparent, while the fine
 experiments' scatter points are opaque. 
 \begin{figure}[htbp]
     \centering
-    \makebox[\textwidth][c]{\includegraphics[width=1.3\linewidth]{input_hyperparameters_sens.png}} 
+    \includegraphics[width=\linewidth]{input_hyperparameters_sens.png}
     \caption{ \acrfull{ROLLO} hyperparameter search results for all 40 experiments 
     (coarse and fine). I plot the hyperparameters against: the \textit{a, b, c} control 
     variables, each experiment's final generation $k_{eff max}$, and the final generation 
@@ -1676,6 +1676,10 @@ I define the best-performing hyperparameter set as the experiment that produces
 the highest $\overline{k_{eff}}$ in its final generation. 
 Table \ref{tab:topfive} shows the hyperparameters for the five experiments 
 with the highest final generation $\overline{k_{eff}}$.
+\textit{Fine Search 2}'s experiment 39 produces the best performing 
+hyperparameter set, with $\overline{k_{eff}} = 1.40165ß$. 
+Therefore, for single-objective ROLLO optimization simulations in this dissertation, 
+I use the hyperparameter set from experiment 39. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -1709,10 +1713,6 @@ with the highest final generation $\overline{k_{eff}}$.
     \hline
     \end{tabular}}
 \end{table}
-\textit{Fine Search 2}'s experiment 39 produces the best performing 
-hyperparameter set, with $\overline{k_{eff}} = 1.40165ß$. 
-Therefore, for single-objective ROLLO optimization simulations in this dissertation, 
-I use the hyperparameter set from experiment 39. 
 
 \subsection{ROLLO Multi-Objective Optimization Hyperparameters}
 \label{sec:multi-obj-hyperparameters}
@@ -1798,6 +1798,7 @@ multi-objective optimization.
     \hline
     \end{tabular}
 \end{table}
+
 Reactor designers with ample computational power may use a reactor 
 modeling problem to conduct their multi-objective optimization hyperparameter search. 
 Using hyperparameters optimized for their reactor model could reduce the number of 

@@ -493,6 +493,8 @@ fission distribution trends, but case 6A has a bigger fission source value range
 \subsubsection{Results: Average Neutron Flux (d)}
 Figure \ref{fig:phase1a-d} shows the average neutron flux in the fuel assembly in 
 three coarse energy groups. 
+Most cases have the most flux in the intermediate group, followed by 
+the thermal group, and the least flux in the fast group.   
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\linewidth]{phase1a-d-flux.png} 
@@ -501,8 +503,6 @@ three coarse energy groups.
     each Phase I-A case. Neutron flux uncertainty is on the order of 1e10.}
     \label{fig:phase1a-d}
 \end{figure}
-Most cases have the most flux in the intermediate group, followed by 
-the thermal group, and the least flux in the fast group.   
 
 \subsubsection{Results: Neutron Flux Distribution (e)}
 Figure \ref{fig:phase1a-e} shows the neutron flux distribution in a 100 $\times$ 
@@ -637,6 +637,7 @@ Table \ref{tab:energy_structures-bm} defines the 4-group energy boundaries.
     \hline
     \end{tabular}
 \end{table}
+
 For spatial homogenization of the \gls{AHTR} fuel assembly, I used OpenMC's \textit{cell} 
 domain type to compute multigroup cross sections for different \textit{cells}.
 I discretized the fuel assembly into 61 \textit{cells}: inter-assembly \gls{FLiBe}, Y-shaped 
@@ -1053,6 +1054,7 @@ transfer coefficient values for the convective heat transfer process.
     \hline
     \end{tabular}
 \end{table} 
+
 I calculated the heat transfer coefficient ($h$) for the \gls{AHTR} assembly
 using Equation \ref{eq:calc-htc-full-assem} with the following assumptions: 
 AHTR models generate constant amount of power, which is all removed by the coolant, and 
