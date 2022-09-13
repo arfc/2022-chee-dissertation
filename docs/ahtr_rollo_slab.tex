@@ -17,6 +17,8 @@ I optimize the \gls{AHTR} plank for the following objectives:
     \item Minimize fuel-normalized power peaking factor ($PPF_{fuel}$)
 \end{itemize} 
 Table \ref{tab:objectives-2} outlines these objectives and their motivation.
+Chapter \ref{chap:method} detailed the methodology for \gls{AHTR} plank modeling 
+and \gls{ROLLO} optimization. 
 \begin{table}[htbp]
     \centering
     \onehalfspacing
@@ -39,8 +41,6 @@ Table \ref{tab:objectives-2} outlines these objectives and their motivation.
     \hline
     \end{tabular}
 \end{table}
-Chapter \ref{chap:method} detailed the methodology for \gls{AHTR} plank modeling 
-and \gls{ROLLO} optimization. 
 
 The subsequent sections outline the \gls{AHTR} plank optimization simulations 
 (Section \ref{sec:plank-overview}), describe the single-objective (Section 
@@ -263,6 +263,7 @@ simulation p-1d.
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-pf-evol-coolant} shows the $PF_{total}$ evolution converges 
 over three generations.  
 Figure \ref{fig:slab-obj-1-pf-final-coolant} shows plots of $r_{top}$ and $r_{bot}$ 
@@ -332,6 +333,7 @@ simulation p-1b.
     \hline
     \end{tabular}
 \end{table}
+
 Unlike simulation p-1a, I did not vary $PF_{total}$ and held it constant at 0.0979. 
 Section \ref{sec:plank-overview} described that for the optimization simulations which 
 do not vary $PF_{total}$, I use $PF_{total} = 0.0979$, which corresponds to the 
@@ -411,6 +413,7 @@ simulation p-1e.
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-temp-evol-coolant} shows the plank's $T_{max}$ evolution.
 Figure \ref{fig:slab-obj-1-temp-final-coolant} shows the plots of $r_{top}$ and 
 $r_{bot}$ against $T_{max}$.
@@ -464,7 +467,7 @@ Simulation p-1c varies the \gls{TRISO} packing fraction distribution
 
 \subsubsection{Simulation p-1c: Variation of $\rho_{TRISO}(\vec{r})$}
 Table \ref{tab:simulationp1c} summarizes simulation p-1c's optimization problem parameters. 
-\begin{table}[htbp!]
+\begin{table}[H]
     \centering
     \onehalfspacing
     \caption{Simulation p-1c optimization problem parameters.}
@@ -489,6 +492,7 @@ Table \ref{tab:simulationp1c} summarizes simulation p-1c's optimization problem 
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-ppf-evol} shows the plank's $PPF_{fuel}$ evolution 
 converges over ten generations.  
 Figure \ref{fig:slab-obj-1-ppf-final} shows the five overlapped \gls{TRISO} 
@@ -558,6 +562,7 @@ Table \ref{tab:simulationp1f} summarizes simulation p-1f's optimization problem 
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-1-ppf-evol-coolant} shows the plank's $PPF_{fuel}$ evolution, 
 and Figure \ref{fig:slab-obj-1-ppf-final-coolant} shows the plots $r_{top}$ and 
 $r_{bot}$ against $PPF_{fuel}$. 
@@ -620,6 +625,10 @@ Table \ref{tab:0.023-plank-fission-rate} compares the total fission reaction rat
 (OpenMC's \texttt{fission} tally) between the most-minimized $PF_{total}$ TRISO 
 distribution and a constant $PF_{total}$ = 0.023 TRISO distribution (both shown in 
 Figure \ref{fig:triso-0.023}).
+The most-minimized $PF_{total}$ TRISO distribution has $0.18\%$ higher total fission 
+reaction rate than the constant $PF_{total}$ = 0.023 TRISO distribution, explaining 
+why the oscillating TRISO distribution enabled a lower packing fraction 
+for the same $k_{eff}$ compared to the constant TRISO distribution. 
 \begin{table}[htbp!]
     \centering
     \onehalfspacing
@@ -645,10 +654,6 @@ Figure \ref{fig:triso-0.023}).
     \hline
     \end{tabular}
 \end{table}
-The most-minimized $PF_{total}$ TRISO distribution has $0.18\%$ higher total fission 
-reaction rate than the constant $PF_{total}$ = 0.023 TRISO distribution, explaining 
-why the oscillating TRISO distribution enabled a lower packing fraction 
-for the same $k_{eff}$ compared to the constant TRISO distribution. 
 
 \paragraph{Simulation p-1d}
 In Section \ref{sec:plank-1-obj-pf}'s simulation p-1d, I conducted a single-objective 
@@ -891,6 +896,7 @@ $PF_{total}$ = 0.0979 TRISO distribution (both shown in Figure \ref{fig:triso-0.
     \hline
     \end{tabular}
 \end{table}
+
 In energy group 4, the most-minimized $PPF_{fuel}$ flux distribution is $3.96\%$ 
 flatter than the constant $PF_{total}$ = 0.0979 flux distribution, resulting in a 
 lower $PPF_{fuel}$ (as shown by Equation \ref{eq:flux-prop-ppf}). 
@@ -1049,6 +1055,7 @@ confirming that simulation p-2a is sufficiently converged by generation 2.
     \hline
     \end{tabular}
 \end{table}
+
 Figure \ref{fig:slab-obj-2-pftemp-pareto} shows a plot of the final generation's 
 $PF_{total}$ against $T_{max}$; crosses indicate the reactor models that 
 fall on the Pareto front.
@@ -1407,6 +1414,7 @@ most-minimized $PF_{total}$ reactor model.
     distribution (orange dotted distribution).}
     \label{fig:p-2a-pf-triso-comparison}
 \end{figure}
+
 Figure \ref{fig:p-2a-pf-triso-comparison} shows that simulation p-2a and 
 p-1a AHTR plank models' that most-minimized $PF_{total}$ objective have 
 similar oscillating TRISO distributions. 
@@ -1460,6 +1468,7 @@ most-minimized $PF_{total}$ reactor model.
     distribution (orange dotted distribution).}
     \label{fig:p-2b-pf-triso-comparison}
 \end{figure}
+
 Figure \ref{fig:p-2b-pf-triso-comparison} shows that simulation p-2b's plank model 
 with the most-minimized $PF_{total}$ has a constant TRISO distribution which differs 
 from simulation p-1a's most-minimized $PF_{total}$ oscillating TRISO distribution. 
@@ -1481,6 +1490,7 @@ most-minimized $PPF_{fuel}$ reactor model.
     distribution (orange dotted distribution).}
     \label{fig:p-2b-ppf-triso-comparison}
 \end{figure}
+
 Figure \ref{fig:p-2b-ppf-triso-comparison} shows that simulation p-2b's plank model 
 with the most-minimized $PPF_{fuel}$ (oranged dotted distribution) has a TRISO 
 distribution that peaks in the plank's center and both sides with a ${\sim}0.02$ 
@@ -1506,6 +1516,7 @@ TRISO distribution with $PF_{total}$ = 0.029.
     TRISO distribution.}
     \label{fig:triso-0.0292}
 \end{figure}
+
 Figure \ref{fig:triso-0.0292} shows that for the same $PF_{total}=0.0292$, 
 simulation p-2b's most-minimized $PPF_{fuel}$ TRISO distribution has a lower 
 $PPF_{fuel}$ than the simulation p-1c's most-minimized $PPF_{fuel}$ TRISO distribution 
@@ -1535,6 +1546,9 @@ front.
 Figure \ref{fig:p-2c-temp-triso-comparison} compares the TRISO distribution's of 
 simulation p-2c's most-minimized $T_{max}$ reactor model and simulation p-1b's 
 most-minimized $T_{max}$ reactor model. 
+Figure \ref{fig:p-2c-temp-triso-comparison} shows that simulation p-2c and 
+p-1b AHTR plank models' that most-minimized $T_{max}$ objective have 
+somewhat similar flat slightly TRISO distributions. 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.9\linewidth]{p-2c-p-1b-temp-most-minimized-comparison.png} 
@@ -1542,14 +1556,15 @@ most-minimized $T_{max}$ reactor model.
     solid distribution) and simulation p-1b's most-minimized $T_{max}$ TRISO 
     distribution (orange dotted distribution).}
     \label{fig:p-2c-temp-triso-comparison}
-\end{figure}
-Figure \ref{fig:p-2c-temp-triso-comparison} shows that simulation p-2c and 
-p-1b AHTR plank models' that most-minimized $T_{max}$ objective have 
-somewhat similar flat slightly TRISO distributions.  
+\end{figure} 
 
 Figure \ref{fig:p-2c-ppf-triso-comparison} compares the TRISO distribution's of 
 simulation p-2c's most-minimized $PPF_{fuel}$ reactor model and simulation p-1c's 
 most-minimized $PPF_{fuel}$ reactor model. 
+Figure \ref{fig:p-2c-ppf-triso-comparison} shows that simulation p-2c and 
+p-1c AHTR plank models' that most-minimized $PPF_{fuel}$ objective have 
+somewhat similar TRISO distributions with peaks near the sides of the plank and a 
+minimum point at the plank's center. 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.9\linewidth]{p-2c-p-1c-ppf-most-minimized-comparison.png} 
@@ -1558,11 +1573,6 @@ most-minimized $PPF_{fuel}$ reactor model.
     distribution (orange dotted distribution).}
     \label{fig:p-2c-ppf-triso-comparison}
 \end{figure}
-% add temps, need to run 1c with Moltres.. 
-Figure \ref{fig:p-2c-ppf-triso-comparison} shows that simulation p-2c and 
-p-1c AHTR plank models' that most-minimized $PPF_{fuel}$ objective have 
-somewhat similar TRISO distributions with peaks near the sides of the plank and a 
-minimum point at the plank's center. 
 
 The \gls{TRISO} distributions on simulation p-2c's Pareto front in Figure 
 \ref{fig:slab-obj-2-tempppf} minimize both $T_{max}$ and $PPF_{fuel}$, they vary 
@@ -1635,6 +1645,7 @@ Table \ref{tab:simulationp3a} summarizes simulation p-3a's optimization problem 
     \hline
     \end{tabular}
 \end{table}
+
 Table \ref{tab:p3a-hypervolume} shows each generation's hypervolume value, 
 confirming that simulation p-3a is sufficiently converged by generation 5. 
 \begin{table}[htbp!]
